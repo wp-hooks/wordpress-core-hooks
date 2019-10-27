@@ -1,0 +1,26 @@
+{
+    "name": "johnbillion/wp-hooks",
+    "description": "WordPress actions and filters in machine-readable format.",
+    "type": "library",
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "John Blackbourn",
+            "email": "johnbillion@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "roots/wordpress": "dev-nightly",
+        "oomphinc/composer-installers-extender": "^1.1",
+        "wordpress/phpdoc-parser": "dev-master"
+    },
+    "minimum-stability": "dev",
+	"extra": {
+        "wordpress-install-dir": "vendor/wordpress/wordpress",
+        "installer-paths": {
+            "vendor/wordpress/{$name}/": [
+                "wordpress/phpdoc-parser"
+            ]
+        }
+	}
+}
