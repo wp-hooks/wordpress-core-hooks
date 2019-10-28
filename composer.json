@@ -1,6 +1,6 @@
 {
     "name": "johnbillion/wp-hooks",
-    "description": "WordPress actions and filters in machine-readable format.",
+    "description": "WordPress actions and filters in machine-readable JSON format.",
     "type": "library",
     "license": "GPL-3.0-or-later",
     "authors": [
