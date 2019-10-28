@@ -74,14 +74,30 @@ function hooks_parse_files( $files, $root ) : array {
 
 $output = hooks_parse_files( $files, $source_dir );
 
+// Actions
 $actions = array_values( array_filter( $output, function( array $hook ) : bool {
 	return in_array( $hook['type'], [ 'action', 'action_reference' ], true );
 } ) );
 
 $result = file_put_contents( $target_dir . '/actions.json', json_encode( $actions, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES ) );
 
+// Filters
 $filters = array_values( array_filter( $output, function( array $hook ) : bool {
 	return in_array( $hook['type'], [ 'filter', 'filter_reference' ], true );
 } ) );
 
 $result = file_put_contents( $target_dir . '/filters.json', json_encode( $filters, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES ) );
+
+// Deprecated Actions
+$actions_deprecated = array_values( array_filter( $output, function( array $hook ) : bool {
+	return in_array( $hook['type'], [ 'action_deprecated' ], true );
+} ) );
+
+$result = file_put_contents( $target_dir . '/actions-deprecated.json', json_encode( $actions_deprecated, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES ) );
+
+// Deprecated Filters
+$filters_deprecated = array_values( array_filter( $output, function( array $hook ) : bool {
+	return in_array( $hook['type'], [ 'filter_deprecated' ], true );
+} ) );
+
+$result = file_put_contents( $target_dir . '/filters-deprecated.json', json_encode( $filters_deprecated, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES ) );

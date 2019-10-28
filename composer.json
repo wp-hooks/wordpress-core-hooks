@@ -18,7 +18,9 @@
         "generate-from": "@php -f src/generate.php",
         "validate-files": [
             "@composer validate-from -- hooks/actions.json",
-            "@composer validate-from -- hooks/filters.json"
+            "@composer validate-from -- hooks/filters.json",
+            "@composer validate-from -- hooks/actions-deprecated.json",
+            "@composer validate-from -- hooks/filters-deprecated.json"
         ],
         "validate-from": "@php -f src/validate.php"
     },

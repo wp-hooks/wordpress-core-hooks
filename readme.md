@@ -22,6 +22,13 @@ WordPress actions and filters in machine-readable JSON format.
 
 The hook extraction component of the [WP Parser library](https://github.com/WordPress/phpdoc-parser) is used to scan files in order to generate the hook data. WordPress nightly is used so hooks are always up to date.
 
+## Deprecated Actions and Filters
+
+Deprecated actions and filters are also generated, in case they're needed.
+
+* Deprecated actions can be found in [`hooks/actions-deprecated.json`](hooks/actions-deprecated.json).
+* Deprecated filters can be found in [`hooks/filters-deprecated.json`](hooks/filters-deprecated.json).
+
 ## Regenerating the Hook Files
 
 `composer generate`
