@@ -14,6 +14,10 @@
 	},
     "scripts": {
         "post-update-cmd": [
+            "rm vendor/wordpress/wordpress/wp-admin/includes/deprecated.php",
+            "rm vendor/wordpress/wordpress/wp-includes/deprecated.php",
+            "rm vendor/wordpress/wordpress/wp-admin/includes/ms-deprecated.php",
+            "rm vendor/wordpress/wordpress/wp-includes/ms-deprecated.php",
             "rm -rf vendor/wordpress/wordpress/wp-content",
             "rm -rf vendor/wordpress/wordpress/wp-includes/ID3",
             "rm -rf vendor/wordpress/wordpress/wp-includes/IXR",
