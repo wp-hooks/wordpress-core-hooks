@@ -13,6 +13,6 @@ WordPress actions and filters in machine-readable JSON format.
 
 ## Re-generating the Hooks
 
-* `composer install`
-* `composer generate`
-* `composer validate`
+1. `composer install`
+2. `composer generate`
+3. `composer validate`
