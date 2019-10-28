@@ -765,8 +765,8 @@
     },
     {
         "name": "allow_dev_auto_core_updates",
-        "line": 344,
-        "end_line": 344,
+        "line": 345,
+        "end_line": 345,
         "type": "filter",
         "doc": {
             "description": "Filters whether to enable automatic core updates for development versions.",
@@ -823,8 +823,8 @@
     },
     {
         "name": "allow_major_auto_core_updates",
-        "line": 373,
-        "end_line": 373,
+        "line": 374,
+        "end_line": 374,
         "type": "filter",
         "doc": {
             "description": "Filters whether to enable major automatic core updates.",
@@ -848,8 +848,8 @@
     },
     {
         "name": "allow_minor_auto_core_updates",
-        "line": 360,
-        "end_line": 360,
+        "line": 361,
+        "end_line": 361,
         "type": "filter",
         "doc": {
             "description": "Filters whether to enable minor automatic core updates.",
@@ -14353,18 +14353,6 @@
     },
     {
         "name": "get_the_excerpt",
-        "line": 409,
-        "end_line": 409,
-        "type": "filter",
-        "doc": {
-            "description": "",
-            "long_description": "",
-            "tags": []
-        },
-        "file": "wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php"
-    },
-    {
-        "name": "get_the_excerpt",
         "line": 425,
         "end_line": 425,
         "type": "filter",
@@ -14400,18 +14388,6 @@
             ]
         },
         "file": "wp-includes/post-template.php"
-    },
-    {
-        "name": "get_the_excerpt",
-        "line": 1561,
-        "end_line": 1561,
-        "type": "filter",
-        "doc": {
-            "description": "",
-            "long_description": "",
-            "tags": []
-        },
-        "file": "wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php"
     },
     {
         "name": "get_the_generator_{$type}",
@@ -20077,30 +20053,6 @@
         "file": "wp-includes/class-wp-editor.php"
     },
     {
-        "name": "mce_buttons",
-        "line": 811,
-        "end_line": 811,
-        "type": "filter",
-        "doc": {
-            "description": "",
-            "long_description": "",
-            "tags": []
-        },
-        "file": "wp-includes/script-loader.php"
-    },
-    {
-        "name": "mce_buttons_2",
-        "line": 828,
-        "end_line": 828,
-        "type": "filter",
-        "doc": {
-            "description": "",
-            "long_description": "",
-            "tags": []
-        },
-        "file": "wp-includes/script-loader.php"
-    },
-    {
         "name": "mce_buttons_2",
         "line": 632,
         "end_line": 632,
@@ -20132,18 +20084,6 @@
             ]
         },
         "file": "wp-includes/class-wp-editor.php"
-    },
-    {
-        "name": "mce_buttons_3",
-        "line": 830,
-        "end_line": 830,
-        "type": "filter",
-        "doc": {
-            "description": "",
-            "long_description": "",
-            "tags": []
-        },
-        "file": "wp-includes/script-loader.php"
     },
     {
         "name": "mce_buttons_3",
@@ -20210,18 +20150,6 @@
             ]
         },
         "file": "wp-includes/class-wp-editor.php"
-    },
-    {
-        "name": "mce_buttons_4",
-        "line": 832,
-        "end_line": 832,
-        "type": "filter",
-        "doc": {
-            "description": "",
-            "long_description": "",
-            "tags": []
-        },
-        "file": "wp-includes/script-loader.php"
     },
     {
         "name": "mce_css",
@@ -20297,18 +20225,6 @@
             ]
         },
         "file": "wp-includes/class-wp-editor.php"
-    },
-    {
-        "name": "mce_external_plugins",
-        "line": 834,
-        "end_line": 834,
-        "type": "filter",
-        "doc": {
-            "description": "",
-            "long_description": "",
-            "tags": []
-        },
-        "file": "wp-includes/script-loader.php"
     },
     {
         "name": "media_buttons_context",
@@ -23531,18 +23447,6 @@
             ]
         },
         "file": "wp-includes/query.php"
-    },
-    {
-        "name": "option_enable_xmlrpc",
-        "line": 240,
-        "end_line": 240,
-        "type": "filter",
-        "doc": {
-            "description": "",
-            "long_description": "",
-            "tags": []
-        },
-        "file": "wp-includes/class-wp-xmlrpc-server.php"
     },
     {
         "name": "option_page_capability_{$option_page}",
@@ -28315,18 +28219,6 @@
         "file": "wp-includes/class-wp-oembed.php"
     },
     {
-        "name": "pre_option_enable_xmlrpc",
-        "line": 238,
-        "end_line": 238,
-        "type": "filter",
-        "doc": {
-            "description": "",
-            "long_description": "",
-            "tags": []
-        },
-        "file": "wp-includes/class-wp-xmlrpc-server.php"
-    },
-    {
         "name": "pre_option_{$option}",
         "line": 58,
         "end_line": 58,
@@ -32337,8 +32229,8 @@
     },
     {
         "name": "rest_prepare_attachment",
-        "line": 507,
-        "end_line": 507,
+        "line": 511,
+        "end_line": 511,
         "type": "filter",
         "doc": {
             "description": "Filters an attachment returned from the REST API.",
@@ -32706,8 +32598,8 @@
     },
     {
         "name": "rest_prepare_{$this->post_type}",
-        "line": 1688,
-        "end_line": 1688,
+        "line": 1692,
+        "end_line": 1692,
         "type": "filter",
         "doc": {
             "description": "Filters the post data for a response.",
@@ -33250,8 +33142,8 @@
     },
     {
         "name": "rest_{$this->post_type}_collection_params",
-        "line": 2576,
-        "end_line": 2576,
+        "line": 2580,
+        "end_line": 2580,
         "type": "filter",
         "doc": {
             "description": "Filter collection parameters for the posts controller.",
@@ -40303,30 +40195,6 @@
         "file": "wp-includes/class-wp-editor.php"
     },
     {
-        "name": "tiny_mce_before_init",
-        "line": 855,
-        "end_line": 855,
-        "type": "filter",
-        "doc": {
-            "description": "",
-            "long_description": "",
-            "tags": []
-        },
-        "file": "wp-includes/script-loader.php"
-    },
-    {
-        "name": "tiny_mce_plugins",
-        "line": 782,
-        "end_line": 782,
-        "type": "filter",
-        "doc": {
-            "description": "",
-            "long_description": "",
-            "tags": []
-        },
-        "file": "wp-includes/script-loader.php"
-    },
-    {
         "name": "tiny_mce_plugins",
         "line": 439,
         "end_line": 439,
@@ -40704,18 +40572,6 @@
             ]
         },
         "file": "wp-admin/includes/update-core.php"
-    },
-    {
-        "name": "update_feedback",
-        "line": 130,
-        "end_line": 130,
-        "type": "filter",
-        "doc": {
-            "description": "",
-            "long_description": "",
-            "tags": []
-        },
-        "file": "wp-admin/includes/class-core-upgrader.php"
     },
     {
         "name": "update_footer",
@@ -44549,7 +44405,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "{     Values for the extension, mime type, and corrected filename.     @type string|false $0 File extension, or false if the file doesn't match a mime type.     @type string|false $1 File mime type, or false if the file doesn't match a mime type.     @type string|false $2 File name with its correct extension, or false if it cannot be determined. }",
+                    "content": "{     Values for the extension, mime type, and corrected filename.     @type string|false $ext             File extension, or false if the file doesn't match a mime type.     @type string|false $type            File mime type, or false if the file doesn't match a mime type.     @type string|false $proper_filename File name with its correct extension, or false if it cannot be determined. }",
                     "types": [
                         "array"
                     ],

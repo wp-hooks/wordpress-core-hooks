@@ -8460,42 +8460,6 @@
         "file": "wp-admin/user-new.php"
     },
     {
-        "name": "load-categories.php",
-        "line": 381,
-        "end_line": 381,
-        "type": "action",
-        "doc": {
-            "description": "",
-            "long_description": "",
-            "tags": []
-        },
-        "file": "wp-admin/admin.php"
-    },
-    {
-        "name": "load-edit-link-categories.php",
-        "line": 383,
-        "end_line": 383,
-        "type": "action",
-        "doc": {
-            "description": "",
-            "long_description": "",
-            "tags": []
-        },
-        "file": "wp-admin/admin.php"
-    },
-    {
-        "name": "load-edit-tags.php",
-        "line": 386,
-        "end_line": 386,
-        "type": "action",
-        "doc": {
-            "description": "",
-            "long_description": "",
-            "tags": []
-        },
-        "file": "wp-admin/admin.php"
-    },
-    {
         "name": "load-importer-{$importer}",
         "line": 318,
         "end_line": 318,
@@ -8509,30 +8473,6 @@
                     "content": "3.5.0"
                 }
             ]
-        },
-        "file": "wp-admin/admin.php"
-    },
-    {
-        "name": "load-page-new.php",
-        "line": 375,
-        "end_line": 375,
-        "type": "action",
-        "doc": {
-            "description": "",
-            "long_description": "",
-            "tags": []
-        },
-        "file": "wp-admin/admin.php"
-    },
-    {
-        "name": "load-page.php",
-        "line": 377,
-        "end_line": 377,
-        "type": "action",
-        "doc": {
-            "description": "",
-            "long_description": "",
-            "tags": []
         },
         "file": "wp-admin/admin.php"
     },
