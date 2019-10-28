@@ -13,7 +13,17 @@
 		"sort-packages": true
 	},
     "scripts": {
-        "post-update-cmd": "rm -rf vendor/wordpress/wordpress/wp-content",
+        "post-update-cmd": [
+            "rm -rf vendor/wordpress/wordpress/wp-content",
+            "rm -rf vendor/wordpress/wordpress/wp-includes/ID3",
+            "rm -rf vendor/wordpress/wordpress/wp-includes/IXR",
+            "rm -rf vendor/wordpress/wordpress/wp-includes/pomo",
+            "rm -rf vendor/wordpress/wordpress/wp-includes/random_compat",
+            "rm -rf vendor/wordpress/wordpress/wp-includes/Requests",
+            "rm -rf vendor/wordpress/wordpress/wp-includes/SimplePie",
+            "rm -rf vendor/wordpress/wordpress/wp-includes/sodium_compat",
+            "rm -rf vendor/wordpress/wordpress/wp-includes/Text"
+        ],
         "generate": "@composer generate-from -- vendor/wordpress/wordpress hooks",
         "generate-from": "@php -f src/generate.php",
         "validate-files": [
