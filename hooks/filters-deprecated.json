@@ -1,0 +1,138 @@
+[
+    {
+        "name": "auth_{$object_type}_{$object_subtype}_meta_{$meta_key}",
+        "line": 367,
+        "end_line": 367,
+        "type": "filter_deprecated",
+        "doc": {
+            "description": "Filters whether the user is allowed to edit meta for specific object types/subtypes.",
+            "long_description": "<p>Return true to have the mapped meta caps from <code>edit_{$object_type}</code> apply.</p> <p>The dynamic portion of the hook name, <code>$object_type</code> refers to the object type being filtered. The dynamic portion of the hook name, <code>$object_subtype</code> refers to the object subtype being filtered. The dynamic portion of the hook name, <code>$meta_key</code>, refers to the meta key passed to map_meta_cap().</p>",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "4.6.0",
+                    "description": "As <code>auth_post_{$post_type}_meta_{$meta_key}</code>."
+                },
+                {
+                    "name": "since",
+                    "content": "4.7.0"
+                },
+                {
+                    "name": "deprecated",
+                    "content": "4.9.8",
+                    "description": "Use <code>auth_{$object_type}_meta_{$meta_key}_for_{$object_subtype}</code>"
+                },
+                {
+                    "name": "param",
+                    "content": "Whether the user can add the object meta. Default false.",
+                    "types": [
+                        "bool"
+                    ],
+                    "variable": "$allowed"
+                },
+                {
+                    "name": "param",
+                    "content": "The meta key.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$meta_key"
+                },
+                {
+                    "name": "param",
+                    "content": "Object ID.",
+                    "types": [
+                        "int"
+                    ],
+                    "variable": "$object_id"
+                },
+                {
+                    "name": "param",
+                    "content": "User ID.",
+                    "types": [
+                        "int"
+                    ],
+                    "variable": "$user_id"
+                },
+                {
+                    "name": "param",
+                    "content": "Capability name.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$cap"
+                },
+                {
+                    "name": "param",
+                    "content": "Array of the user's capabilities.",
+                    "types": [
+                        "string[]"
+                    ],
+                    "variable": "$caps"
+                }
+            ]
+        },
+        "file": "wp-includes/capabilities.php"
+    },
+    {
+        "name": "blog_details",
+        "line": 256,
+        "end_line": 256,
+        "type": "filter_deprecated",
+        "doc": {
+            "description": "Filters a blog's details.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "MU (3.0.0)",
+                    "description": "MU (3.0.0)"
+                },
+                {
+                    "name": "deprecated",
+                    "content": "4.7.0",
+                    "description": "Use site_details"
+                },
+                {
+                    "name": "param",
+                    "content": "The blog details.",
+                    "types": [
+                        "object"
+                    ],
+                    "variable": "$details"
+                }
+            ]
+        },
+        "file": "wp-includes/ms-blogs.php"
+    },
+    {
+        "name": "login_headertitle",
+        "line": 142,
+        "end_line": 148,
+        "type": "filter_deprecated",
+        "doc": {
+            "description": "Filters the title attribute of the header logo above login form.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "2.1.0"
+                },
+                {
+                    "name": "deprecated",
+                    "content": "5.2.0",
+                    "description": "Use login_headertext"
+                },
+                {
+                    "name": "param",
+                    "content": "Login header logo title attribute.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$login_header_title"
+                }
+            ]
+        },
+        "file": "wp-login.php"
+    }
+]

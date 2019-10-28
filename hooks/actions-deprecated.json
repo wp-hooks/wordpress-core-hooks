@@ -1,0 +1,178 @@
+[
+    {
+        "name": "delete_blog",
+        "line": 243,
+        "end_line": 243,
+        "type": "action_deprecated",
+        "doc": {
+            "description": "Fires before a site is deleted.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "MU (3.0.0)",
+                    "description": "MU (3.0.0)"
+                },
+                {
+                    "name": "deprecated",
+                    "content": "5.1.0"
+                },
+                {
+                    "name": "param",
+                    "content": "The site ID.",
+                    "types": [
+                        "int"
+                    ],
+                    "variable": "$site_id"
+                },
+                {
+                    "name": "param",
+                    "content": "True if site's table should be dropped. Default is false.",
+                    "types": [
+                        "bool"
+                    ],
+                    "variable": "$drop"
+                }
+            ]
+        },
+        "file": "wp-includes/ms-site.php"
+    },
+    {
+        "name": "deleted_blog",
+        "line": 285,
+        "end_line": 285,
+        "type": "action_deprecated",
+        "doc": {
+            "description": "Fires after the site is deleted from the network.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "4.8.0"
+                },
+                {
+                    "name": "deprecated",
+                    "content": "5.1.0"
+                },
+                {
+                    "name": "param",
+                    "content": "The site ID.",
+                    "types": [
+                        "int"
+                    ],
+                    "variable": "$site_id"
+                },
+                {
+                    "name": "param",
+                    "content": "True if site's tables should be dropped. Default is false.",
+                    "types": [
+                        "bool"
+                    ],
+                    "variable": "$drop"
+                }
+            ]
+        },
+        "file": "wp-includes/ms-site.php"
+    },
+    {
+        "name": "refresh_blog_details",
+        "line": 1033,
+        "end_line": 1033,
+        "type": "action_deprecated",
+        "doc": {
+            "description": "Fires after the blog details cache is cleared.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "3.4.0"
+                },
+                {
+                    "name": "deprecated",
+                    "content": "4.9.0",
+                    "description": "Use clean_site_cache"
+                },
+                {
+                    "name": "param",
+                    "content": "Blog ID.",
+                    "types": [
+                        "int"
+                    ],
+                    "variable": "$blog_id"
+                }
+            ]
+        },
+        "file": "wp-includes/ms-site.php"
+    },
+    {
+        "name": "wpmu_new_blog",
+        "line": 133,
+        "end_line": 133,
+        "type": "action_deprecated",
+        "doc": {
+            "description": "Fires immediately after a new site is created.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "MU (3.0.0)",
+                    "description": "MU (3.0.0)"
+                },
+                {
+                    "name": "deprecated",
+                    "content": "5.1.0",
+                    "description": "Use wp_insert_site"
+                },
+                {
+                    "name": "param",
+                    "content": "Site ID.",
+                    "types": [
+                        "int"
+                    ],
+                    "variable": "$site_id"
+                },
+                {
+                    "name": "param",
+                    "content": "User ID.",
+                    "types": [
+                        "int"
+                    ],
+                    "variable": "$user_id"
+                },
+                {
+                    "name": "param",
+                    "content": "Site domain.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$domain"
+                },
+                {
+                    "name": "param",
+                    "content": "Site path.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$path"
+                },
+                {
+                    "name": "param",
+                    "content": "Network ID. Only relevant on multi-network installations.",
+                    "types": [
+                        "int"
+                    ],
+                    "variable": "$network_id"
+                },
+                {
+                    "name": "param",
+                    "content": "Meta data. Used to set initial site options.",
+                    "types": [
+                        "array"
+                    ],
+                    "variable": "$meta"
+                }
+            ]
+        },
+        "file": "wp-includes/ms-site.php"
+    }
+]
