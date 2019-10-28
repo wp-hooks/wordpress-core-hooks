@@ -1,0 +1,80 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "http://example.com/wp-hooks.json",
+	"type": "array",
+	"items": {
+		"type": "object",
+		"required": [
+			"name",
+			"line",
+			"end_line",
+			"type",
+			"arguments",
+			"doc",
+			"file"
+		],
+		"properties": {
+			"name": {
+				"type": "string"
+			},
+			"line": {
+				"type": "integer"
+			},
+			"end_line": {
+				"type": "integer"
+			},
+			"type": {
+				"type": "string",
+				"examples": [
+					"action"
+				]
+			},
+			"arguments": {
+				"type": "array"
+			},
+			"doc": {
+				"type": "object",
+				"required": [
+					"description",
+					"long_description",
+					"tags"
+				],
+				"properties": {
+					"description": {
+						"type": "string"
+					},
+					"long_description": {
+						"type": "string"
+					},
+					"tags": {
+						"type": "array",
+						"items": {
+							"type": "object",
+							"required": [
+								"name",
+								"content"
+							],
+							"properties": {
+								"name": {
+									"type": "string",
+									"examples": [
+										"private"
+									]
+								},
+								"content": {
+									"type": "string"
+								}
+							}
+						}
+					}
+				}
+			},
+			"file": {
+				"type": "string",
+				"examples": [
+					"wp-admin/includes/menu.php"
+				]
+			}
+		}
+	}
+}
