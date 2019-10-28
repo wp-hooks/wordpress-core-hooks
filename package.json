@@ -1,0 +1,18 @@
+{
+  "name": "@johnbillion/wp-hooks",
+  "version": "0.1.0",
+  "description": "WordPress actions and filters in machine-readable JSON format",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnbillion/wp-hooks.git"
+  },
+  "keywords": [
+    "wordpress"
+  ],
+  "author": "John Blackbourn",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/johnbillion/wp-hooks/issues"
+  },
+  "homepage": "https://github.com/johnbillion/wp-hooks#readme"
+}
