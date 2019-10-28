@@ -9,6 +9,9 @@
             "homepage": "https://johnblackbourn.com/"
         }
     ],
+	"config": {
+		"sort-packages": true
+	},
     "scripts": {
         "generate": "@php -f src/generate.php"
     },
@@ -16,8 +19,9 @@
         "generate": "Generates the hook files"
     },
     "require-dev": {
-        "roots/wordpress": "dev-nightly",
+        "php": ">=7",
         "oomphinc/composer-installers-extender": "^1.1",
+        "roots/wordpress": "dev-nightly",
         "wordpress/phpdoc-parser": "dev-master"
     },
     "minimum-stability": "dev",
