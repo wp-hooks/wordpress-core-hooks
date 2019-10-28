@@ -43,6 +43,10 @@ function hooks_parse_files( $files, $root ) : array {
 		return true;
 	} );
 
+	usort( $output, function( array $a, array $b ) : int {
+		return strcmp( $a['name'], $b['name'] );
+	} );
+
 	$output = array_values( $output );
 
 	return $output;
