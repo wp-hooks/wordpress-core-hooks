@@ -9,6 +9,11 @@
   "keywords": [
     "wordpress"
   ],
+  "files":[
+    "hooks",
+    "readme.md",
+    "schema.json"
+  ],
   "author": "John Blackbourn",
   "license": "GPL-3.0-or-later",
   "bugs": {
