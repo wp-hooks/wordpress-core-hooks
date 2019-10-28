@@ -2,7 +2,7 @@
 
 WordPress actions and filters in machine-readable JSON format.
 
-**Note:** This is still a work in progress.
+**Note:** This is still a work in progress. The code that generates the actions and filters data is not yet complete.
 
 ## Installation
 
@@ -30,6 +30,8 @@ $search = 'permalink';
 $results = array_filter( $filters, function( array $hook ) use ( $search ) {
     return ( false !== strpos( $hook['name'], $search ) );
 } );
+
+var_dump( $results );
 ```
 
 ## Usage in JavaScript
@@ -44,6 +46,8 @@ const search = 'menu';
 const results = actions.filter( function( hook ) {
     return ( null !== hook.name.match( search ) );
 } );
+
+console.log(results);
 ```
 
 ## Schema
