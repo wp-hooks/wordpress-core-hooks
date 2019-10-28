@@ -2,6 +2,8 @@
 
 WordPress actions and filters in machine-readable JSON format.
 
+**Note:** This is still a work in progress.
+
 ## Actions and Filters
 
 * Actions can be found in [`hooks/actions.json`](hooks/actions.json).
