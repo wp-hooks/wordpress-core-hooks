@@ -18,7 +18,7 @@
     },
     "scripts-descriptions": {
         "generate": "Generates the hook files",
-        "validate-schema": "Validates the generated hook files against the schema"
+        "validate-schema": "Validates a given file against the schema"
     },
     "require-dev": {
         "php": ">=7",

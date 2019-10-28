@@ -15,4 +15,5 @@ WordPress actions and filters in machine-readable JSON format.
 
 1. `composer install`
 2. `composer generate`
-3. `composer validate`
+3. `composer validate-schema -- hooks/actions.json`
+4. `composer validate-schema -- hooks/filters.json`
