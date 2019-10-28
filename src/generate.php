@@ -53,22 +53,20 @@ function hooks_parse_files( $files, $root ) : array {
 		return strcmp( $a['name'], $b['name'] );
 	} );
 
-	$output = array_values( $output );
-
 	return $output;
 }
 
-$output = hooks_parse_files( $files, 'vendor/wordpress/wordpress' );
+$output = array_values( hooks_parse_files( $files, 'vendor/wordpress/wordpress' ) );
 $result = file_put_contents( 'hooks/all.json', json_encode( $output, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES ) );
 
-$actions = array_filter( $output, function( array $hook ) : bool {
+$actions = array_values( array_filter( $output, function( array $hook ) : bool {
 	return in_array( $hook['type'], [ 'action', 'action_reference' ], true );
-} );
+} ) );
 
 $result = file_put_contents( 'hooks/actions.json', json_encode( $actions, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES ) );
 
-$filters = array_filter( $output, function( array $hook ) : bool {
+$filters = array_values( array_filter( $output, function( array $hook ) : bool {
 	return in_array( $hook['type'], [ 'filter', 'filter_reference' ], true );
-} );
+} ) );
 
 $result = file_put_contents( 'hooks/filters.json', json_encode( $filters, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES ) );

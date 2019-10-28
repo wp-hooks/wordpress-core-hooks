@@ -1,5 +1,5 @@
-{
-    "0": {
+[
+    {
         "name": "_admin_menu",
         "line": 41,
         "end_line": 41,
@@ -21,7 +21,7 @@
         },
         "file": "wp-admin/includes/menu.php"
     },
-    "1": {
+    {
         "name": "_core_updated_successfully",
         "line": 1290,
         "end_line": 1290,
@@ -49,7 +49,7 @@
         },
         "file": "wp-admin/includes/update-core.php"
     },
-    "3": {
+    {
         "name": "_network_admin_menu",
         "line": 19,
         "end_line": 19,
@@ -71,7 +71,7 @@
         },
         "file": "wp-admin/includes/menu.php"
     },
-    "4": {
+    {
         "name": "_user_admin_menu",
         "line": 30,
         "end_line": 30,
@@ -93,7 +93,7 @@
         },
         "file": "wp-admin/includes/menu.php"
     },
-    "7": {
+    {
         "name": "_wp_put_post_revision",
         "line": 329,
         "end_line": 329,
@@ -121,7 +121,7 @@
         },
         "file": "wp-includes/revision.php"
     },
-    "9": {
+    {
         "name": "activate_blog",
         "line": 261,
         "end_line": 261,
@@ -150,7 +150,7 @@
         },
         "file": "wp-admin/network/sites.php"
     },
-    "10": {
+    {
         "name": "activate_header",
         "line": 79,
         "end_line": 79,
@@ -168,7 +168,7 @@
         },
         "file": "wp-activate.php"
     },
-    "11": {
+    {
         "name": "activate_plugin",
         "line": 666,
         "end_line": 666,
@@ -205,7 +205,7 @@
         },
         "file": "wp-admin/includes/plugin.php"
     },
-    "12": {
+    {
         "name": "activate_wp_head",
         "line": 96,
         "end_line": 96,
@@ -223,7 +223,7 @@
         },
         "file": "wp-activate.php"
     },
-    "13": {
+    {
         "name": "activate_{$plugin}",
         "line": 681,
         "end_line": 681,
@@ -251,7 +251,7 @@
         },
         "file": "wp-admin/includes/plugin.php"
     },
-    "14": {
+    {
         "name": "activated_plugin",
         "line": 708,
         "end_line": 708,
@@ -288,7 +288,7 @@
         },
         "file": "wp-admin/includes/plugin.php"
     },
-    "15": {
+    {
         "name": "activity_box_end",
         "line": 387,
         "end_line": 387,
@@ -306,7 +306,7 @@
         },
         "file": "wp-admin/includes/dashboard.php"
     },
-    "16": {
+    {
         "name": "add_attachment",
         "line": 4051,
         "end_line": 4051,
@@ -334,7 +334,7 @@
         },
         "file": "wp-includes/post.php"
     },
-    "17": {
+    {
         "name": "add_category_form_pre",
         "line": 381,
         "end_line": 381,
@@ -367,7 +367,7 @@
         },
         "file": "wp-admin/edit-tags.php"
     },
-    "18": {
+    {
         "name": "add_inline_data",
         "line": 383,
         "end_line": 383,
@@ -404,7 +404,7 @@
         },
         "file": "wp-admin/includes/template.php"
     },
-    "19": {
+    {
         "name": "add_link",
         "line": 243,
         "end_line": 243,
@@ -432,7 +432,7 @@
         },
         "file": "wp-admin/includes/bookmark.php"
     },
-    "20": {
+    {
         "name": "add_link_category_form_pre",
         "line": 391,
         "end_line": 391,
@@ -465,7 +465,7 @@
         },
         "file": "wp-admin/edit-tags.php"
     },
-    "22": {
+    {
         "name": "add_meta_boxes",
         "line": 1549,
         "end_line": 1549,
@@ -502,7 +502,7 @@
         },
         "file": "wp-admin/includes/meta-boxes.php"
     },
-    "23": {
+    {
         "name": "add_meta_boxes_comment",
         "line": 211,
         "end_line": 211,
@@ -530,7 +530,7 @@
         },
         "file": "wp-admin/edit-form-comment.php"
     },
-    "24": {
+    {
         "name": "add_meta_boxes_link",
         "line": 46,
         "end_line": 46,
@@ -558,7 +558,7 @@
         },
         "file": "wp-admin/edit-link-form.php"
     },
-    "25": {
+    {
         "name": "add_meta_boxes_{$post_type}",
         "line": 1560,
         "end_line": 1560,
@@ -586,7 +586,7 @@
         },
         "file": "wp-admin/includes/meta-boxes.php"
     },
-    "26": {
+    {
         "name": "add_option",
         "line": 499,
         "end_line": 499,
@@ -623,7 +623,7 @@
         },
         "file": "wp-includes/option.php"
     },
-    "27": {
+    {
         "name": "add_option_{$option}",
         "line": 534,
         "end_line": 534,
@@ -665,7 +665,7 @@
         },
         "file": "wp-includes/option.php"
     },
-    "30": {
+    {
         "name": "add_site_option",
         "line": 1450,
         "end_line": 1450,
@@ -716,7 +716,7 @@
         },
         "file": "wp-includes/option.php"
     },
-    "31": {
+    {
         "name": "add_site_option_{$option}",
         "line": 1438,
         "end_line": 1438,
@@ -772,7 +772,7 @@
         },
         "file": "wp-includes/option.php"
     },
-    "32": {
+    {
         "name": "add_tag_form",
         "line": 557,
         "end_line": 557,
@@ -805,7 +805,7 @@
         },
         "file": "wp-admin/edit-tags.php"
     },
-    "33": {
+    {
         "name": "add_tag_form_fields",
         "line": 509,
         "end_line": 509,
@@ -833,7 +833,7 @@
         },
         "file": "wp-admin/edit-tags.php"
     },
-    "34": {
+    {
         "name": "add_tag_form_pre",
         "line": 401,
         "end_line": 401,
@@ -866,7 +866,7 @@
         },
         "file": "wp-admin/edit-tags.php"
     },
-    "35": {
+    {
         "name": "add_term_relationship",
         "line": 2493,
         "end_line": 2493,
@@ -917,7 +917,7 @@
         },
         "file": "wp-includes/taxonomy.php"
     },
-    "36": {
+    {
         "name": "add_user_to_blog",
         "line": 208,
         "end_line": 208,
@@ -964,7 +964,7 @@
         },
         "file": "wp-includes/ms-functions.php"
     },
-    "37": {
+    {
         "name": "add_{$meta_type}_meta",
         "line": 102,
         "end_line": 102,
@@ -1010,7 +1010,7 @@
         },
         "file": "wp-includes/meta.php"
     },
-    "39": {
+    {
         "name": "added_existing_user",
         "line": 2133,
         "end_line": 2133,
@@ -1048,7 +1048,7 @@
         },
         "file": "wp-includes/ms-functions.php"
     },
-    "40": {
+    {
         "name": "added_option",
         "line": 544,
         "end_line": 544,
@@ -1085,7 +1085,7 @@
         },
         "file": "wp-includes/option.php"
     },
-    "41": {
+    {
         "name": "added_term_relationship",
         "line": 2512,
         "end_line": 2512,
@@ -1136,7 +1136,7 @@
         },
         "file": "wp-includes/taxonomy.php"
     },
-    "42": {
+    {
         "name": "added_usermeta",
         "line": 2351,
         "end_line": 2351,
@@ -1154,7 +1154,7 @@
         },
         "file": "wp-includes/deprecated.php"
     },
-    "43": {
+    {
         "name": "added_{$meta_type}_meta",
         "line": 134,
         "end_line": 134,
@@ -1209,7 +1209,7 @@
         },
         "file": "wp-includes/meta.php"
     },
-    "45": {
+    {
         "name": "admin_action_{$action}",
         "line": 401,
         "end_line": 401,
@@ -1227,7 +1227,7 @@
         },
         "file": "wp-admin/admin.php"
     },
-    "46": {
+    {
         "name": "admin_bar_menu",
         "line": 86,
         "end_line": 86,
@@ -1255,7 +1255,7 @@
         },
         "file": "wp-includes/admin-bar.php"
     },
-    "48": {
+    {
         "name": "admin_color_scheme_picker",
         "line": 309,
         "end_line": 309,
@@ -1288,7 +1288,7 @@
         },
         "file": "wp-admin/user-edit.php"
     },
-    "50": {
+    {
         "name": "admin_email_confirm",
         "line": 618,
         "end_line": 618,
@@ -1316,7 +1316,7 @@
         },
         "file": "wp-login.php"
     },
-    "51": {
+    {
         "name": "admin_email_confirm_form",
         "line": 629,
         "end_line": 629,
@@ -1334,7 +1334,7 @@
         },
         "file": "wp-login.php"
     },
-    "52": {
+    {
         "name": "admin_enqueue_scripts",
         "line": 104,
         "end_line": 104,
@@ -1362,7 +1362,7 @@
         },
         "file": "wp-admin/admin-header.php"
     },
-    "53": {
+    {
         "name": "admin_footer",
         "line": 78,
         "end_line": 78,
@@ -1390,7 +1390,7 @@
         },
         "file": "wp-admin/admin-footer.php"
     },
-    "54": {
+    {
         "name": "admin_footer-{$hook_suffix}",
         "line": 105,
         "end_line": 105,
@@ -1408,7 +1408,7 @@
         },
         "file": "wp-admin/admin-footer.php"
     },
-    "56": {
+    {
         "name": "admin_head",
         "line": 149,
         "end_line": 149,
@@ -1426,7 +1426,7 @@
         },
         "file": "wp-admin/admin-header.php"
     },
-    "57": {
+    {
         "name": "admin_head-media-upload-popup",
         "line": 567,
         "end_line": 567,
@@ -1444,7 +1444,7 @@
         },
         "file": "wp-admin/includes/media.php"
     },
-    "58": {
+    {
         "name": "admin_head-{$hook_suffix}",
         "line": 142,
         "end_line": 142,
@@ -1462,7 +1462,7 @@
         },
         "file": "wp-admin/admin-header.php"
     },
-    "59": {
+    {
         "name": "admin_head_{$content_func}",
         "line": 584,
         "end_line": 584,
@@ -1480,7 +1480,7 @@
         },
         "file": "wp-admin/includes/media.php"
     },
-    "60": {
+    {
         "name": "admin_init",
         "line": 170,
         "end_line": 170,
@@ -1498,7 +1498,7 @@
         },
         "file": "wp-admin/admin.php"
     },
-    "62": {
+    {
         "name": "admin_menu",
         "line": 155,
         "end_line": 155,
@@ -1526,7 +1526,7 @@
         },
         "file": "wp-admin/includes/menu.php"
     },
-    "63": {
+    {
         "name": "admin_notices",
         "line": 281,
         "end_line": 281,
@@ -1544,7 +1544,7 @@
         },
         "file": "wp-admin/admin-header.php"
     },
-    "64": {
+    {
         "name": "admin_page_access_denied",
         "line": 348,
         "end_line": 348,
@@ -1562,7 +1562,7 @@
         },
         "file": "wp-admin/includes/menu.php"
     },
-    "65": {
+    {
         "name": "admin_post",
         "line": 60,
         "end_line": 60,
@@ -1580,7 +1580,7 @@
         },
         "file": "wp-admin/admin-post.php"
     },
-    "66": {
+    {
         "name": "admin_post_nopriv",
         "line": 41,
         "end_line": 41,
@@ -1598,7 +1598,7 @@
         },
         "file": "wp-admin/admin-post.php"
     },
-    "67": {
+    {
         "name": "admin_post_nopriv_{$action}",
         "line": 51,
         "end_line": 51,
@@ -1616,7 +1616,7 @@
         },
         "file": "wp-admin/admin-post.php"
     },
-    "70": {
+    {
         "name": "admin_post_{$action}",
         "line": 70,
         "end_line": 70,
@@ -1634,7 +1634,7 @@
         },
         "file": "wp-admin/admin-post.php"
     },
-    "71": {
+    {
         "name": "admin_print_footer_scripts",
         "line": 95,
         "end_line": 95,
@@ -1652,7 +1652,7 @@
         },
         "file": "wp-admin/admin-footer.php"
     },
-    "72": {
+    {
         "name": "admin_print_footer_scripts-{$hook_suffix}",
         "line": 88,
         "end_line": 88,
@@ -1670,7 +1670,7 @@
         },
         "file": "wp-admin/admin-footer.php"
     },
-    "73": {
+    {
         "name": "admin_print_scripts",
         "line": 132,
         "end_line": 132,
@@ -1688,7 +1688,7 @@
         },
         "file": "wp-admin/admin-header.php"
     },
-    "74": {
+    {
         "name": "admin_print_scripts-media-upload-popup",
         "line": 556,
         "end_line": 556,
@@ -1706,7 +1706,7 @@
         },
         "file": "wp-admin/includes/media.php"
     },
-    "75": {
+    {
         "name": "admin_print_scripts-{$hook_suffix}",
         "line": 125,
         "end_line": 125,
@@ -1724,7 +1724,7 @@
         },
         "file": "wp-admin/admin-header.php"
     },
-    "76": {
+    {
         "name": "admin_print_styles",
         "line": 118,
         "end_line": 118,
@@ -1742,7 +1742,7 @@
         },
         "file": "wp-admin/admin-header.php"
     },
-    "77": {
+    {
         "name": "admin_print_styles-media-upload-popup",
         "line": 546,
         "end_line": 546,
@@ -1760,7 +1760,7 @@
         },
         "file": "wp-admin/includes/media.php"
     },
-    "78": {
+    {
         "name": "admin_print_styles-{$hook_suffix}",
         "line": 111,
         "end_line": 111,
@@ -1778,7 +1778,7 @@
         },
         "file": "wp-admin/admin-header.php"
     },
-    "82": {
+    {
         "name": "admin_xml_ns",
         "line": 2433,
         "end_line": 2433,
@@ -1796,7 +1796,7 @@
         },
         "file": "wp-admin/includes/template.php"
     },
-    "83": {
+    {
         "name": "adminmenu",
         "line": 283,
         "end_line": 283,
@@ -1814,7 +1814,7 @@
         },
         "file": "wp-admin/menu-header.php"
     },
-    "84": {
+    {
         "name": "after-{$taxonomy}-table",
         "line": 637,
         "end_line": 637,
@@ -1842,7 +1842,7 @@
         },
         "file": "wp-admin/edit-tags.php"
     },
-    "85": {
+    {
         "name": "after_db_upgrade",
         "line": 47,
         "end_line": 47,
@@ -1860,7 +1860,7 @@
         },
         "file": "wp-admin/admin.php"
     },
-    "86": {
+    {
         "name": "after_delete_post",
         "line": 3058,
         "end_line": 3058,
@@ -1893,7 +1893,7 @@
         },
         "file": "wp-includes/post.php"
     },
-    "87": {
+    {
         "name": "after_menu_locations_table",
         "line": 762,
         "end_line": 762,
@@ -1911,7 +1911,7 @@
         },
         "file": "wp-admin/nav-menus.php"
     },
-    "88": {
+    {
         "name": "after_mu_upgrade",
         "line": 111,
         "end_line": 111,
@@ -1941,7 +1941,7 @@
         },
         "file": "wp-admin/network/upgrade.php"
     },
-    "89": {
+    {
         "name": "after_password_reset",
         "line": 2464,
         "end_line": 2464,
@@ -1978,7 +1978,7 @@
         },
         "file": "wp-includes/user.php"
     },
-    "90": {
+    {
         "name": "after_setup_theme",
         "line": 507,
         "end_line": 507,
@@ -1996,7 +1996,7 @@
         },
         "file": "wp-settings.php"
     },
-    "91": {
+    {
         "name": "after_signup_form",
         "line": 1010,
         "end_line": 1010,
@@ -2014,7 +2014,7 @@
         },
         "file": "wp-signup.php"
     },
-    "92": {
+    {
         "name": "after_signup_site",
         "line": 801,
         "end_line": 801,
@@ -2096,7 +2096,7 @@
         },
         "file": "wp-includes/ms-functions.php"
     },
-    "93": {
+    {
         "name": "after_signup_user",
         "line": 864,
         "end_line": 864,
@@ -2151,7 +2151,7 @@
         },
         "file": "wp-includes/ms-functions.php"
     },
-    "94": {
+    {
         "name": "after_switch_theme",
         "line": 2964,
         "end_line": 2964,
@@ -2188,7 +2188,7 @@
         },
         "file": "wp-includes/theme.php"
     },
-    "96": {
+    {
         "name": "all_admin_notices",
         "line": 289,
         "end_line": 289,
@@ -2206,7 +2206,7 @@
         },
         "file": "wp-admin/admin-header.php"
     },
-    "105": {
+    {
         "name": "archive_blog",
         "line": 1217,
         "end_line": 1217,
@@ -2235,7 +2235,7 @@
         },
         "file": "wp-includes/ms-site.php"
     },
-    "107": {
+    {
         "name": "atom_author",
         "line": 63,
         "end_line": 63,
@@ -2253,7 +2253,7 @@
         },
         "file": "wp-includes/feed-atom.php"
     },
-    "108": {
+    {
         "name": "atom_comments_ns",
         "line": 27,
         "end_line": 27,
@@ -2271,7 +2271,7 @@
         },
         "file": "wp-includes/feed-atom-comments.php"
     },
-    "110": {
+    {
         "name": "atom_entry",
         "line": 83,
         "end_line": 83,
@@ -2289,7 +2289,7 @@
         },
         "file": "wp-includes/feed-atom.php"
     },
-    "111": {
+    {
         "name": "atom_head",
         "line": 45,
         "end_line": 45,
@@ -2307,7 +2307,7 @@
         },
         "file": "wp-includes/feed-atom.php"
     },
-    "112": {
+    {
         "name": "atom_ns",
         "line": 27,
         "end_line": 27,
@@ -2325,7 +2325,7 @@
         },
         "file": "wp-includes/feed-atom.php"
     },
-    "119": {
+    {
         "name": "attachment_submitbox_misc_actions",
         "line": 408,
         "end_line": 408,
@@ -2358,7 +2358,7 @@
         },
         "file": "wp-admin/includes/meta-boxes.php"
     },
-    "121": {
+    {
         "name": "attachment_updated",
         "line": 4041,
         "end_line": 4041,
@@ -2404,7 +2404,7 @@
         },
         "file": "wp-includes/post.php"
     },
-    "126": {
+    {
         "name": "auth_cookie_bad_hash",
         "line": 673,
         "end_line": 673,
@@ -2432,7 +2432,7 @@
         },
         "file": "wp-includes/pluggable.php"
     },
-    "127": {
+    {
         "name": "auth_cookie_bad_session_token",
         "line": 686,
         "end_line": 686,
@@ -2460,7 +2460,7 @@
         },
         "file": "wp-includes/pluggable.php"
     },
-    "128": {
+    {
         "name": "auth_cookie_bad_username",
         "line": 653,
         "end_line": 653,
@@ -2488,7 +2488,7 @@
         },
         "file": "wp-includes/pluggable.php"
     },
-    "130": {
+    {
         "name": "auth_cookie_expired",
         "line": 640,
         "end_line": 640,
@@ -2516,7 +2516,7 @@
         },
         "file": "wp-includes/pluggable.php"
     },
-    "131": {
+    {
         "name": "auth_cookie_malformed",
         "line": 615,
         "end_line": 615,
@@ -2553,7 +2553,7 @@
         },
         "file": "wp-includes/pluggable.php"
     },
-    "132": {
+    {
         "name": "auth_cookie_valid",
         "line": 703,
         "end_line": 703,
@@ -2590,7 +2590,7 @@
         },
         "file": "wp-includes/pluggable.php"
     },
-    "133": {
+    {
         "name": "auth_redirect",
         "line": 1069,
         "end_line": 1069,
@@ -2618,7 +2618,7 @@
         },
         "file": "wp-includes/pluggable.php"
     },
-    "145": {
+    {
         "name": "before_delete_post",
         "line": 2974,
         "end_line": 2974,
@@ -2651,7 +2651,7 @@
         },
         "file": "wp-includes/post.php"
     },
-    "146": {
+    {
         "name": "before_signup_form",
         "line": 86,
         "end_line": 86,
@@ -2669,7 +2669,7 @@
         },
         "file": "wp-signup.php"
     },
-    "147": {
+    {
         "name": "before_signup_header",
         "line": 50,
         "end_line": 50,
@@ -2687,7 +2687,7 @@
         },
         "file": "wp-signup.php"
     },
-    "148": {
+    {
         "name": "begin_fetch_post_thumbnail_html",
         "line": 167,
         "end_line": 167,
@@ -2734,7 +2734,7 @@
         },
         "file": "wp-includes/post-thumbnail-template.php"
     },
-    "151": {
+    {
         "name": "block_editor_meta_box_hidden_fields",
         "line": 2433,
         "end_line": 2433,
@@ -2758,7 +2758,7 @@
         },
         "file": "wp-admin/includes/post.php"
     },
-    "158": {
+    {
         "name": "blog_privacy_selector",
         "line": 200,
         "end_line": 200,
@@ -2776,7 +2776,7 @@
         },
         "file": "wp-admin/options-reading.php"
     },
-    "172": {
+    {
         "name": "check_admin_referer",
         "line": 1133,
         "end_line": 1133,
@@ -2814,7 +2814,7 @@
         },
         "file": "wp-includes/pluggable.php"
     },
-    "173": {
+    {
         "name": "check_ajax_referer",
         "line": 1185,
         "end_line": 1185,
@@ -2852,7 +2852,7 @@
         },
         "file": "wp-includes/pluggable.php"
     },
-    "174": {
+    {
         "name": "check_comment_flood",
         "line": 737,
         "end_line": 743,
@@ -2912,7 +2912,7 @@
         },
         "file": "wp-includes/comment.php"
     },
-    "177": {
+    {
         "name": "check_passwords",
         "line": 164,
         "end_line": 164,
@@ -2956,7 +2956,7 @@
         },
         "file": "wp-admin/includes/user.php"
     },
-    "178": {
+    {
         "name": "clean_attachment_cache",
         "line": 6701,
         "end_line": 6701,
@@ -2984,7 +2984,7 @@
         },
         "file": "wp-includes/post.php"
     },
-    "179": {
+    {
         "name": "clean_comment_cache",
         "line": 3024,
         "end_line": 3024,
@@ -3012,7 +3012,7 @@
         },
         "file": "wp-includes/comment.php"
     },
-    "180": {
+    {
         "name": "clean_network_cache",
         "line": 95,
         "end_line": 95,
@@ -3040,7 +3040,7 @@
         },
         "file": "wp-includes/ms-network.php"
     },
-    "181": {
+    {
         "name": "clean_object_term_cache",
         "line": 3211,
         "end_line": 3211,
@@ -3077,7 +3077,7 @@
         },
         "file": "wp-includes/taxonomy.php"
     },
-    "182": {
+    {
         "name": "clean_page_cache",
         "line": 6589,
         "end_line": 6589,
@@ -3105,7 +3105,7 @@
         },
         "file": "wp-includes/post.php"
     },
-    "183": {
+    {
         "name": "clean_post_cache",
         "line": 6577,
         "end_line": 6577,
@@ -3142,7 +3142,7 @@
         },
         "file": "wp-includes/post.php"
     },
-    "184": {
+    {
         "name": "clean_site_cache",
         "line": 1021,
         "end_line": 1021,
@@ -3188,7 +3188,7 @@
         },
         "file": "wp-includes/ms-site.php"
     },
-    "185": {
+    {
         "name": "clean_taxonomy_cache",
         "line": 3304,
         "end_line": 3304,
@@ -3216,7 +3216,7 @@
         },
         "file": "wp-includes/taxonomy.php"
     },
-    "186": {
+    {
         "name": "clean_term_cache",
         "line": 3276,
         "end_line": 3276,
@@ -3267,7 +3267,7 @@
         },
         "file": "wp-includes/taxonomy.php"
     },
-    "188": {
+    {
         "name": "clean_user_cache",
         "line": 1382,
         "end_line": 1382,
@@ -3304,7 +3304,7 @@
         },
         "file": "wp-includes/user.php"
     },
-    "189": {
+    {
         "name": "clear_auth_cookie",
         "line": 960,
         "end_line": 960,
@@ -3322,7 +3322,7 @@
         },
         "file": "wp-includes/pluggable.php"
     },
-    "191": {
+    {
         "name": "comment_atom_entry",
         "line": 131,
         "end_line": 131,
@@ -3359,7 +3359,7 @@
         },
         "file": "wp-includes/feed-atom-comments.php"
     },
-    "195": {
+    {
         "name": "comment_closed",
         "line": 3254,
         "end_line": 3254,
@@ -3387,7 +3387,7 @@
         },
         "file": "wp-includes/comment.php"
     },
-    "198": {
+    {
         "name": "comment_duplicate_trigger",
         "line": 701,
         "end_line": 701,
@@ -3415,7 +3415,7 @@
         },
         "file": "wp-includes/comment.php"
     },
-    "206": {
+    {
         "name": "comment_flood_trigger",
         "line": 915,
         "end_line": 915,
@@ -3452,7 +3452,7 @@
         },
         "file": "wp-includes/comment.php"
     },
-    "207": {
+    {
         "name": "comment_form",
         "line": 2637,
         "end_line": 2637,
@@ -3480,7 +3480,7 @@
         },
         "file": "wp-includes/comment-template.php"
     },
-    "208": {
+    {
         "name": "comment_form_after",
         "line": 2651,
         "end_line": 2651,
@@ -3498,7 +3498,7 @@
         },
         "file": "wp-includes/comment-template.php"
     },
-    "209": {
+    {
         "name": "comment_form_after_fields",
         "line": 2588,
         "end_line": 2588,
@@ -3516,7 +3516,7 @@
         },
         "file": "wp-includes/comment-template.php"
     },
-    "210": {
+    {
         "name": "comment_form_before",
         "line": 2449,
         "end_line": 2449,
@@ -3534,7 +3534,7 @@
         },
         "file": "wp-includes/comment-template.php"
     },
-    "211": {
+    {
         "name": "comment_form_before_fields",
         "line": 2567,
         "end_line": 2567,
@@ -3552,7 +3552,7 @@
         },
         "file": "wp-includes/comment-template.php"
     },
-    "212": {
+    {
         "name": "comment_form_comments_closed",
         "line": 2264,
         "end_line": 2264,
@@ -3570,7 +3570,7 @@
         },
         "file": "wp-includes/comment-template.php"
     },
-    "219": {
+    {
         "name": "comment_form_logged_in_after",
         "line": 2517,
         "end_line": 2517,
@@ -3607,7 +3607,7 @@
         },
         "file": "wp-includes/comment-template.php"
     },
-    "220": {
+    {
         "name": "comment_form_must_log_in_after",
         "line": 2473,
         "end_line": 2473,
@@ -3625,7 +3625,7 @@
         },
         "file": "wp-includes/comment-template.php"
     },
-    "223": {
+    {
         "name": "comment_form_top",
         "line": 2490,
         "end_line": 2490,
@@ -3643,7 +3643,7 @@
         },
         "file": "wp-includes/comment-template.php"
     },
-    "225": {
+    {
         "name": "comment_id_not_found",
         "line": 3230,
         "end_line": 3230,
@@ -3671,7 +3671,7 @@
         },
         "file": "wp-includes/comment.php"
     },
-    "237": {
+    {
         "name": "comment_on_draft",
         "line": 3280,
         "end_line": 3280,
@@ -3699,7 +3699,7 @@
         },
         "file": "wp-includes/comment.php"
     },
-    "238": {
+    {
         "name": "comment_on_password_protected",
         "line": 3296,
         "end_line": 3296,
@@ -3727,7 +3727,7 @@
         },
         "file": "wp-includes/comment.php"
     },
-    "239": {
+    {
         "name": "comment_on_trash",
         "line": 3267,
         "end_line": 3267,
@@ -3755,7 +3755,7 @@
         },
         "file": "wp-includes/comment.php"
     },
-    "240": {
+    {
         "name": "comment_post",
         "line": 2159,
         "end_line": 2159,
@@ -3807,7 +3807,7 @@
         },
         "file": "wp-includes/comment.php"
     },
-    "249": {
+    {
         "name": "comment_{$new_status}_{$comment->comment_type}",
         "line": 1748,
         "end_line": 1748,
@@ -3844,7 +3844,7 @@
         },
         "file": "wp-includes/comment.php"
     },
-    "250": {
+    {
         "name": "comment_{$old_status}_to_{$new_status}",
         "line": 1732,
         "end_line": 1732,
@@ -3872,7 +3872,7 @@
         },
         "file": "wp-includes/comment.php"
     },
-    "251": {
+    {
         "name": "commentrss2_item",
         "line": 114,
         "end_line": 114,
@@ -3909,7 +3909,7 @@
         },
         "file": "wp-includes/feed-rss2-comments.php"
     },
-    "253": {
+    {
         "name": "comments_atom_head",
         "line": 67,
         "end_line": 67,
@@ -3927,7 +3927,7 @@
         },
         "file": "wp-includes/feed-atom-comments.php"
     },
-    "260": {
+    {
         "name": "commentsrss2_head",
         "line": 71,
         "end_line": 71,
@@ -3945,7 +3945,7 @@
         },
         "file": "wp-includes/feed-rss2-comments.php"
     },
-    "262": {
+    {
         "name": "core_upgrade_preamble",
         "line": 781,
         "end_line": 781,
@@ -3963,7 +3963,7 @@
         },
         "file": "wp-admin/update-core.php"
     },
-    "265": {
+    {
         "name": "create_term",
         "line": 2348,
         "end_line": 2348,
@@ -4009,7 +4009,7 @@
         },
         "file": "wp-includes/taxonomy.php"
     },
-    "266": {
+    {
         "name": "create_{$taxonomy}",
         "line": 2361,
         "end_line": 2361,
@@ -4046,7 +4046,7 @@
         },
         "file": "wp-includes/taxonomy.php"
     },
-    "267": {
+    {
         "name": "created_term",
         "line": 2384,
         "end_line": 2384,
@@ -4092,7 +4092,7 @@
         },
         "file": "wp-includes/taxonomy.php"
     },
-    "268": {
+    {
         "name": "created_{$taxonomy}",
         "line": 2397,
         "end_line": 2397,
@@ -4129,7 +4129,7 @@
         },
         "file": "wp-includes/taxonomy.php"
     },
-    "273": {
+    {
         "name": "customize_controls_enqueue_scripts",
         "line": 123,
         "end_line": 123,
@@ -4147,7 +4147,7 @@
         },
         "file": "wp-admin/customize.php"
     },
-    "274": {
+    {
         "name": "customize_controls_init",
         "line": 112,
         "end_line": 112,
@@ -4165,7 +4165,7 @@
         },
         "file": "wp-admin/customize.php"
     },
-    "275": {
+    {
         "name": "customize_controls_print_footer_scripts",
         "line": 266,
         "end_line": 266,
@@ -4183,7 +4183,7 @@
         },
         "file": "wp-admin/customize.php"
     },
-    "276": {
+    {
         "name": "customize_controls_print_scripts",
         "line": 173,
         "end_line": 173,
@@ -4201,7 +4201,7 @@
         },
         "file": "wp-admin/customize.php"
     },
-    "277": {
+    {
         "name": "customize_controls_print_styles",
         "line": 166,
         "end_line": 166,
@@ -4219,7 +4219,7 @@
         },
         "file": "wp-admin/customize.php"
     },
-    "294": {
+    {
         "name": "dbx_post_advanced",
         "line": 1511,
         "end_line": 1511,
@@ -4252,7 +4252,7 @@
         },
         "file": "wp-admin/includes/meta-boxes.php"
     },
-    "295": {
+    {
         "name": "dbx_post_sidebar",
         "line": 712,
         "end_line": 712,
@@ -4280,7 +4280,7 @@
         },
         "file": "wp-admin/edit-form-advanced.php"
     },
-    "296": {
+    {
         "name": "deactivate_blog",
         "line": 272,
         "end_line": 272,
@@ -4309,7 +4309,7 @@
         },
         "file": "wp-admin/network/sites.php"
     },
-    "297": {
+    {
         "name": "deactivate_plugin",
         "line": 763,
         "end_line": 763,
@@ -4346,7 +4346,7 @@
         },
         "file": "wp-admin/includes/plugin.php"
     },
-    "298": {
+    {
         "name": "deactivate_{$plugin}",
         "line": 802,
         "end_line": 802,
@@ -4374,7 +4374,7 @@
         },
         "file": "wp-admin/includes/plugin.php"
     },
-    "299": {
+    {
         "name": "deactivated_plugin",
         "line": 816,
         "end_line": 816,
@@ -4411,7 +4411,7 @@
         },
         "file": "wp-admin/includes/plugin.php"
     },
-    "310": {
+    {
         "name": "delete_attachment",
         "line": 5601,
         "end_line": 5601,
@@ -4439,7 +4439,7 @@
         },
         "file": "wp-includes/post.php"
     },
-    "312": {
+    {
         "name": "delete_comment",
         "line": 1401,
         "end_line": 1401,
@@ -4481,7 +4481,7 @@
         },
         "file": "wp-includes/comment.php"
     },
-    "313": {
+    {
         "name": "delete_link",
         "line": 99,
         "end_line": 99,
@@ -4509,7 +4509,7 @@
         },
         "file": "wp-admin/includes/bookmark.php"
     },
-    "314": {
+    {
         "name": "delete_option",
         "line": 581,
         "end_line": 581,
@@ -4537,7 +4537,7 @@
         },
         "file": "wp-includes/option.php"
     },
-    "315": {
+    {
         "name": "delete_option_{$option}",
         "line": 606,
         "end_line": 606,
@@ -4565,7 +4565,7 @@
         },
         "file": "wp-includes/option.php"
     },
-    "316": {
+    {
         "name": "delete_plugin",
         "line": 954,
         "end_line": 954,
@@ -4593,7 +4593,7 @@
         },
         "file": "wp-admin/includes/plugin.php"
     },
-    "317": {
+    {
         "name": "delete_post",
         "line": 3024,
         "end_line": 3024,
@@ -4621,7 +4621,7 @@
         },
         "file": "wp-includes/post.php"
     },
-    "318": {
+    {
         "name": "delete_postmeta",
         "line": 425,
         "end_line": 425,
@@ -4649,7 +4649,7 @@
         },
         "file": "wp-includes/meta.php"
     },
-    "320": {
+    {
         "name": "delete_site_option",
         "line": 1543,
         "end_line": 1543,
@@ -4691,7 +4691,7 @@
         },
         "file": "wp-includes/option.php"
     },
-    "321": {
+    {
         "name": "delete_site_option_{$option}",
         "line": 1532,
         "end_line": 1532,
@@ -4738,7 +4738,7 @@
         },
         "file": "wp-includes/option.php"
     },
-    "322": {
+    {
         "name": "delete_site_transient_{$transient}",
         "line": 1701,
         "end_line": 1701,
@@ -4766,7 +4766,7 @@
         },
         "file": "wp-includes/option.php"
     },
-    "323": {
+    {
         "name": "delete_term",
         "line": 1918,
         "end_line": 1918,
@@ -4835,7 +4835,7 @@
         },
         "file": "wp-includes/taxonomy.php"
     },
-    "324": {
+    {
         "name": "delete_term_relationships",
         "line": 2652,
         "end_line": 2652,
@@ -4886,7 +4886,7 @@
         },
         "file": "wp-includes/taxonomy.php"
     },
-    "325": {
+    {
         "name": "delete_term_taxonomy",
         "line": 1886,
         "end_line": 1886,
@@ -4914,7 +4914,7 @@
         },
         "file": "wp-includes/taxonomy.php"
     },
-    "326": {
+    {
         "name": "delete_transient_{$transient}",
         "line": 640,
         "end_line": 640,
@@ -4942,7 +4942,7 @@
         },
         "file": "wp-includes/option.php"
     },
-    "327": {
+    {
         "name": "delete_user",
         "line": 367,
         "end_line": 367,
@@ -4980,7 +4980,7 @@
         },
         "file": "wp-admin/includes/user.php"
     },
-    "328": {
+    {
         "name": "delete_user_form",
         "line": 341,
         "end_line": 341,
@@ -5022,7 +5022,7 @@
         },
         "file": "wp-admin/users.php"
     },
-    "329": {
+    {
         "name": "delete_usermeta",
         "line": 2234,
         "end_line": 2234,
@@ -5040,7 +5040,7 @@
         },
         "file": "wp-includes/deprecated.php"
     },
-    "330": {
+    {
         "name": "delete_widget",
         "line": 185,
         "end_line": 185,
@@ -5086,7 +5086,7 @@
         },
         "file": "wp-admin/widgets.php"
     },
-    "331": {
+    {
         "name": "delete_{$meta_type}_meta",
         "line": 414,
         "end_line": 414,
@@ -5141,7 +5141,7 @@
         },
         "file": "wp-includes/meta.php"
     },
-    "334": {
+    {
         "name": "delete_{$meta_type}meta",
         "line": 838,
         "end_line": 838,
@@ -5169,7 +5169,7 @@
         },
         "file": "wp-includes/meta.php"
     },
-    "335": {
+    {
         "name": "delete_{$taxonomy}",
         "line": 1935,
         "end_line": 1935,
@@ -5229,7 +5229,7 @@
         },
         "file": "wp-includes/taxonomy.php"
     },
-    "337": {
+    {
         "name": "deleted_comment",
         "line": 1429,
         "end_line": 1429,
@@ -5271,7 +5271,7 @@
         },
         "file": "wp-includes/comment.php"
     },
-    "338": {
+    {
         "name": "deleted_link",
         "line": 112,
         "end_line": 112,
@@ -5299,7 +5299,7 @@
         },
         "file": "wp-admin/includes/bookmark.php"
     },
-    "339": {
+    {
         "name": "deleted_option",
         "line": 615,
         "end_line": 615,
@@ -5327,7 +5327,7 @@
         },
         "file": "wp-includes/option.php"
     },
-    "340": {
+    {
         "name": "deleted_plugin",
         "line": 973,
         "end_line": 973,
@@ -5364,7 +5364,7 @@
         },
         "file": "wp-admin/includes/plugin.php"
     },
-    "341": {
+    {
         "name": "deleted_post",
         "line": 3037,
         "end_line": 3037,
@@ -5392,7 +5392,7 @@
         },
         "file": "wp-includes/post.php"
     },
-    "342": {
+    {
         "name": "deleted_postmeta",
         "line": 468,
         "end_line": 468,
@@ -5420,7 +5420,7 @@
         },
         "file": "wp-includes/meta.php"
     },
-    "343": {
+    {
         "name": "deleted_site_transient",
         "line": 1722,
         "end_line": 1722,
@@ -5448,7 +5448,7 @@
         },
         "file": "wp-includes/option.php"
     },
-    "344": {
+    {
         "name": "deleted_term_relationships",
         "line": 2668,
         "end_line": 2668,
@@ -5499,7 +5499,7 @@
         },
         "file": "wp-includes/taxonomy.php"
     },
-    "345": {
+    {
         "name": "deleted_term_taxonomy",
         "line": 1896,
         "end_line": 1896,
@@ -5527,7 +5527,7 @@
         },
         "file": "wp-includes/taxonomy.php"
     },
-    "346": {
+    {
         "name": "deleted_transient",
         "line": 662,
         "end_line": 662,
@@ -5555,7 +5555,7 @@
         },
         "file": "wp-includes/option.php"
     },
-    "347": {
+    {
         "name": "deleted_user",
         "line": 444,
         "end_line": 444,
@@ -5593,7 +5593,7 @@
         },
         "file": "wp-admin/includes/user.php"
     },
-    "348": {
+    {
         "name": "deleted_usermeta",
         "line": 2245,
         "end_line": 2245,
@@ -5611,7 +5611,7 @@
         },
         "file": "wp-includes/deprecated.php"
     },
-    "349": {
+    {
         "name": "deleted_{$meta_type}_meta",
         "line": 457,
         "end_line": 457,
@@ -5666,7 +5666,7 @@
         },
         "file": "wp-includes/meta.php"
     },
-    "350": {
+    {
         "name": "deleted_{$meta_type}meta",
         "line": 862,
         "end_line": 862,
@@ -5694,7 +5694,7 @@
         },
         "file": "wp-includes/meta.php"
     },
-    "351": {
+    {
         "name": "deprecated_argument_run",
         "line": 4783,
         "end_line": 4783,
@@ -5740,7 +5740,7 @@
         },
         "file": "wp-includes/functions.php"
     },
-    "353": {
+    {
         "name": "deprecated_constructor_run",
         "line": 4626,
         "end_line": 4626,
@@ -5791,7 +5791,7 @@
         },
         "file": "wp-includes/functions.php"
     },
-    "355": {
+    {
         "name": "deprecated_file_included",
         "line": 4719,
         "end_line": 4719,
@@ -5846,7 +5846,7 @@
         },
         "file": "wp-includes/functions.php"
     },
-    "357": {
+    {
         "name": "deprecated_function_run",
         "line": 4567,
         "end_line": 4567,
@@ -5892,7 +5892,7 @@
         },
         "file": "wp-includes/functions.php"
     },
-    "359": {
+    {
         "name": "deprecated_hook_run",
         "line": 4841,
         "end_line": 4841,
@@ -5947,7 +5947,7 @@
         },
         "file": "wp-includes/functions.php"
     },
-    "366": {
+    {
         "name": "do_feed_{$feed}",
         "line": 1538,
         "end_line": 1538,
@@ -5989,7 +5989,7 @@
         },
         "file": "wp-includes/functions.php"
     },
-    "367": {
+    {
         "name": "do_meta_boxes",
         "line": 1575,
         "end_line": 1575,
@@ -6037,7 +6037,7 @@
         },
         "file": "wp-admin/includes/meta-boxes.php"
     },
-    "369": {
+    {
         "name": "do_robots",
         "line": 37,
         "end_line": 37,
@@ -6055,7 +6055,7 @@
         },
         "file": "wp-includes/template-loader.php"
     },
-    "370": {
+    {
         "name": "do_robotstxt",
         "line": 1612,
         "end_line": 1612,
@@ -6073,7 +6073,7 @@
         },
         "file": "wp-includes/functions.php"
     },
-    "375": {
+    {
         "name": "doing_it_wrong_run",
         "line": 4890,
         "end_line": 4890,
@@ -6119,7 +6119,7 @@
         },
         "file": "wp-includes/functions.php"
     },
-    "380": {
+    {
         "name": "dynamic_sidebar",
         "line": 802,
         "end_line": 802,
@@ -6147,7 +6147,7 @@
         },
         "file": "wp-includes/widgets.php"
     },
-    "381": {
+    {
         "name": "dynamic_sidebar_after",
         "line": 822,
         "end_line": 822,
@@ -6185,7 +6185,7 @@
         },
         "file": "wp-includes/widgets.php"
     },
-    "382": {
+    {
         "name": "dynamic_sidebar_before",
         "line": 706,
         "end_line": 706,
@@ -6223,7 +6223,7 @@
         },
         "file": "wp-includes/widgets.php"
     },
-    "385": {
+    {
         "name": "edit_attachment",
         "line": 4029,
         "end_line": 4029,
@@ -6251,7 +6251,7 @@
         },
         "file": "wp-includes/post.php"
     },
-    "387": {
+    {
         "name": "edit_category_form",
         "line": 537,
         "end_line": 537,
@@ -6284,7 +6284,7 @@
         },
         "file": "wp-admin/edit-tags.php"
     },
-    "388": {
+    {
         "name": "edit_category_form_fields",
         "line": 204,
         "end_line": 204,
@@ -6317,7 +6317,7 @@
         },
         "file": "wp-admin/edit-tag-form.php"
     },
-    "389": {
+    {
         "name": "edit_category_form_pre",
         "line": 24,
         "end_line": 24,
@@ -6350,7 +6350,7 @@
         },
         "file": "wp-admin/edit-tag-form.php"
     },
-    "390": {
+    {
         "name": "edit_comment",
         "line": 2402,
         "end_line": 2402,
@@ -6392,7 +6392,7 @@
         },
         "file": "wp-includes/comment.php"
     },
-    "393": {
+    {
         "name": "edit_form_advanced",
         "line": 696,
         "end_line": 696,
@@ -6420,7 +6420,7 @@
         },
         "file": "wp-admin/edit-form-advanced.php"
     },
-    "394": {
+    {
         "name": "edit_form_after_editor",
         "line": 638,
         "end_line": 638,
@@ -6448,7 +6448,7 @@
         },
         "file": "wp-admin/edit-form-advanced.php"
     },
-    "395": {
+    {
         "name": "edit_form_after_title",
         "line": 570,
         "end_line": 570,
@@ -6476,7 +6476,7 @@
         },
         "file": "wp-admin/edit-form-advanced.php"
     },
-    "396": {
+    {
         "name": "edit_form_before_permalink",
         "line": 526,
         "end_line": 526,
@@ -6504,7 +6504,7 @@
         },
         "file": "wp-admin/edit-form-advanced.php"
     },
-    "397": {
+    {
         "name": "edit_form_top",
         "line": 494,
         "end_line": 494,
@@ -6532,7 +6532,7 @@
         },
         "file": "wp-admin/edit-form-advanced.php"
     },
-    "398": {
+    {
         "name": "edit_link",
         "line": 234,
         "end_line": 234,
@@ -6560,7 +6560,7 @@
         },
         "file": "wp-admin/includes/bookmark.php"
     },
-    "399": {
+    {
         "name": "edit_link_category_form",
         "line": 547,
         "end_line": 547,
@@ -6593,7 +6593,7 @@
         },
         "file": "wp-admin/edit-tags.php"
     },
-    "400": {
+    {
         "name": "edit_link_category_form_fields",
         "line": 214,
         "end_line": 214,
@@ -6626,7 +6626,7 @@
         },
         "file": "wp-admin/edit-tag-form.php"
     },
-    "401": {
+    {
         "name": "edit_link_category_form_pre",
         "line": 34,
         "end_line": 34,
@@ -6659,7 +6659,7 @@
         },
         "file": "wp-admin/edit-tag-form.php"
     },
-    "402": {
+    {
         "name": "edit_page_form",
         "line": 687,
         "end_line": 687,
@@ -6687,7 +6687,7 @@
         },
         "file": "wp-admin/edit-form-advanced.php"
     },
-    "403": {
+    {
         "name": "edit_post",
         "line": 4079,
         "end_line": 4079,
@@ -6724,7 +6724,7 @@
         },
         "file": "wp-includes/post.php"
     },
-    "406": {
+    {
         "name": "edit_post_{$post->post_type}",
         "line": 4069,
         "end_line": 4069,
@@ -6761,7 +6761,7 @@
         },
         "file": "wp-includes/post.php"
     },
-    "409": {
+    {
         "name": "edit_tag_form",
         "line": 257,
         "end_line": 257,
@@ -6794,7 +6794,7 @@
         },
         "file": "wp-admin/edit-tag-form.php"
     },
-    "410": {
+    {
         "name": "edit_tag_form_fields",
         "line": 224,
         "end_line": 224,
@@ -6827,7 +6827,7 @@
         },
         "file": "wp-admin/edit-tag-form.php"
     },
-    "411": {
+    {
         "name": "edit_tag_form_pre",
         "line": 44,
         "end_line": 44,
@@ -6860,7 +6860,7 @@
         },
         "file": "wp-admin/edit-tag-form.php"
     },
-    "413": {
+    {
         "name": "edit_term",
         "line": 3006,
         "end_line": 3006,
@@ -6906,7 +6906,7 @@
         },
         "file": "wp-includes/taxonomy.php"
     },
-    "415": {
+    {
         "name": "edit_term_taxonomies",
         "line": 1824,
         "end_line": 1824,
@@ -6934,7 +6934,7 @@
         },
         "file": "wp-includes/taxonomy.php"
     },
-    "416": {
+    {
         "name": "edit_term_taxonomy",
         "line": 2983,
         "end_line": 2983,
@@ -6971,7 +6971,7 @@
         },
         "file": "wp-includes/taxonomy.php"
     },
-    "418": {
+    {
         "name": "edit_terms",
         "line": 2943,
         "end_line": 2943,
@@ -7008,7 +7008,7 @@
         },
         "file": "wp-includes/taxonomy.php"
     },
-    "419": {
+    {
         "name": "edit_user_created_user",
         "line": 242,
         "end_line": 242,
@@ -7045,7 +7045,7 @@
         },
         "file": "wp-admin/includes/user.php"
     },
-    "420": {
+    {
         "name": "edit_user_profile",
         "line": 726,
         "end_line": 726,
@@ -7073,7 +7073,7 @@
         },
         "file": "wp-admin/user-edit.php"
     },
-    "421": {
+    {
         "name": "edit_user_profile_update",
         "line": 147,
         "end_line": 147,
@@ -7101,7 +7101,7 @@
         },
         "file": "wp-admin/user-edit.php"
     },
-    "425": {
+    {
         "name": "edit_{$taxonomy}",
         "line": 3019,
         "end_line": 3019,
@@ -7138,7 +7138,7 @@
         },
         "file": "wp-includes/taxonomy.php"
     },
-    "430": {
+    {
         "name": "edited_term",
         "line": 3035,
         "end_line": 3035,
@@ -7184,7 +7184,7 @@
         },
         "file": "wp-includes/taxonomy.php"
     },
-    "431": {
+    {
         "name": "edited_term_taxonomies",
         "line": 1839,
         "end_line": 1839,
@@ -7212,7 +7212,7 @@
         },
         "file": "wp-includes/taxonomy.php"
     },
-    "432": {
+    {
         "name": "edited_term_taxonomy",
         "line": 2995,
         "end_line": 2995,
@@ -7249,7 +7249,7 @@
         },
         "file": "wp-includes/taxonomy.php"
     },
-    "433": {
+    {
         "name": "edited_terms",
         "line": 2973,
         "end_line": 2973,
@@ -7286,7 +7286,7 @@
         },
         "file": "wp-includes/taxonomy.php"
     },
-    "434": {
+    {
         "name": "edited_{$taxonomy}",
         "line": 3048,
         "end_line": 3048,
@@ -7323,7 +7323,7 @@
         },
         "file": "wp-includes/taxonomy.php"
     },
-    "438": {
+    {
         "name": "embed_content",
         "line": 109,
         "end_line": 109,
@@ -7341,7 +7341,7 @@
         },
         "file": "wp-includes/theme-compat/embed-content.php"
     },
-    "439": {
+    {
         "name": "embed_content_meta",
         "line": 122,
         "end_line": 122,
@@ -7359,7 +7359,7 @@
         },
         "file": "wp-includes/theme-compat/embed-content.php"
     },
-    "441": {
+    {
         "name": "embed_footer",
         "line": 18,
         "end_line": 18,
@@ -7377,7 +7377,7 @@
         },
         "file": "wp-includes/theme-compat/footer-embed.php"
     },
-    "442": {
+    {
         "name": "embed_head",
         "line": 29,
         "end_line": 29,
@@ -7395,7 +7395,7 @@
         },
         "file": "wp-includes/theme-compat/header-embed.php"
     },
-    "461": {
+    {
         "name": "end_fetch_post_thumbnail_html",
         "line": 183,
         "end_line": 183,
@@ -7442,7 +7442,7 @@
         },
         "file": "wp-includes/post-thumbnail-template.php"
     },
-    "462": {
+    {
         "name": "enqueue_block_assets",
         "line": 2854,
         "end_line": 2854,
@@ -7460,7 +7460,7 @@
         },
         "file": "wp-includes/script-loader.php"
     },
-    "463": {
+    {
         "name": "enqueue_block_editor_assets",
         "line": 361,
         "end_line": 361,
@@ -7478,7 +7478,7 @@
         },
         "file": "wp-admin/edit-form-blocks.php"
     },
-    "464": {
+    {
         "name": "enqueue_embed_scripts",
         "line": 995,
         "end_line": 995,
@@ -7496,7 +7496,7 @@
         },
         "file": "wp-includes/embed.php"
     },
-    "475": {
+    {
         "name": "export_filters",
         "line": 317,
         "end_line": 317,
@@ -7514,7 +7514,7 @@
         },
         "file": "wp-admin/export.php"
     },
-    "476": {
+    {
         "name": "export_wp",
         "line": 76,
         "end_line": 76,
@@ -7542,7 +7542,7 @@
         },
         "file": "wp-admin/includes/export.php"
     },
-    "541": {
+    {
         "name": "get_footer",
         "line": 66,
         "end_line": 66,
@@ -7576,7 +7576,7 @@
         },
         "file": "wp-includes/general-template.php"
     },
-    "542": {
+    {
         "name": "get_header",
         "line": 31,
         "end_line": 31,
@@ -7610,7 +7610,7 @@
         },
         "file": "wp-includes/general-template.php"
     },
-    "571": {
+    {
         "name": "get_sidebar",
         "line": 101,
         "end_line": 101,
@@ -7644,7 +7644,7 @@
         },
         "file": "wp-includes/general-template.php"
     },
-    "576": {
+    {
         "name": "get_template_part",
         "line": 166,
         "end_line": 166,
@@ -7690,7 +7690,7 @@
         },
         "file": "wp-includes/general-template.php"
     },
-    "577": {
+    {
         "name": "get_template_part_{$slug}",
         "line": 147,
         "end_line": 147,
@@ -7728,7 +7728,7 @@
         },
         "file": "wp-includes/general-template.php"
     },
-    "617": {
+    {
         "name": "grant_super_admin",
         "line": 910,
         "end_line": 910,
@@ -7756,7 +7756,7 @@
         },
         "file": "wp-includes/capabilities.php"
     },
-    "618": {
+    {
         "name": "granted_super_admin",
         "line": 927,
         "end_line": 927,
@@ -7784,7 +7784,7 @@
         },
         "file": "wp-includes/capabilities.php"
     },
-    "626": {
+    {
         "name": "heartbeat_nopriv_tick",
         "line": 67,
         "end_line": 67,
@@ -7821,7 +7821,7 @@
         },
         "file": "wp-admin/includes/ajax-actions.php"
     },
-    "630": {
+    {
         "name": "heartbeat_tick",
         "line": 3393,
         "end_line": 3393,
@@ -7858,7 +7858,7 @@
         },
         "file": "wp-admin/includes/ajax-actions.php"
     },
-    "659": {
+    {
         "name": "in_admin_footer",
         "line": 31,
         "end_line": 31,
@@ -7876,7 +7876,7 @@
         },
         "file": "wp-admin/admin-footer.php"
     },
-    "660": {
+    {
         "name": "in_admin_header",
         "line": 245,
         "end_line": 245,
@@ -7894,7 +7894,7 @@
         },
         "file": "wp-admin/admin-header.php"
     },
-    "661": {
+    {
         "name": "in_plugin_update_message-{$file}",
         "line": 536,
         "end_line": 536,
@@ -7931,7 +7931,7 @@
         },
         "file": "wp-admin/includes/update.php"
     },
-    "662": {
+    {
         "name": "in_theme_update_message-{$theme_key}",
         "line": 684,
         "end_line": 684,
@@ -7968,7 +7968,7 @@
         },
         "file": "wp-admin/includes/update.php"
     },
-    "665": {
+    {
         "name": "init",
         "line": 523,
         "end_line": 523,
@@ -7986,7 +7986,7 @@
         },
         "file": "wp-settings.php"
     },
-    "668": {
+    {
         "name": "install_plugins_pre_{$tab}",
         "line": 70,
         "end_line": 70,
@@ -8004,7 +8004,7 @@
         },
         "file": "wp-admin/plugin-install.php"
     },
-    "669": {
+    {
         "name": "install_plugins_{$tab}",
         "line": 174,
         "end_line": 174,
@@ -8032,7 +8032,7 @@
         },
         "file": "wp-admin/plugin-install.php"
     },
-    "670": {
+    {
         "name": "install_themes_pre_{$tab}",
         "line": 91,
         "end_line": 91,
@@ -8050,7 +8050,7 @@
         },
         "file": "wp-admin/theme-install.php"
     },
-    "672": {
+    {
         "name": "install_themes_{$tab}",
         "line": 257,
         "end_line": 257,
@@ -8078,7 +8078,7 @@
         },
         "file": "wp-admin/theme-install.php"
     },
-    "675": {
+    {
         "name": "invite_user",
         "line": 111,
         "end_line": 111,
@@ -8124,7 +8124,7 @@
         },
         "file": "wp-admin/user-new.php"
     },
-    "692": {
+    {
         "name": "load-categories.php",
         "line": 381,
         "end_line": 381,
@@ -8137,7 +8137,7 @@
         },
         "file": "wp-admin/admin.php"
     },
-    "693": {
+    {
         "name": "load-edit-link-categories.php",
         "line": 383,
         "end_line": 383,
@@ -8150,7 +8150,7 @@
         },
         "file": "wp-admin/admin.php"
     },
-    "694": {
+    {
         "name": "load-edit-tags.php",
         "line": 386,
         "end_line": 386,
@@ -8163,7 +8163,7 @@
         },
         "file": "wp-admin/admin.php"
     },
-    "695": {
+    {
         "name": "load-importer-{$importer}",
         "line": 318,
         "end_line": 318,
@@ -8181,7 +8181,7 @@
         },
         "file": "wp-admin/admin.php"
     },
-    "696": {
+    {
         "name": "load-page-new.php",
         "line": 375,
         "end_line": 375,
@@ -8194,7 +8194,7 @@
         },
         "file": "wp-admin/admin.php"
     },
-    "697": {
+    {
         "name": "load-page.php",
         "line": 377,
         "end_line": 377,
@@ -8207,7 +8207,7 @@
         },
         "file": "wp-admin/admin.php"
     },
-    "698": {
+    {
         "name": "load-widgets.php",
         "line": 2280,
         "end_line": 2280,
@@ -8225,7 +8225,7 @@
         },
         "file": "wp-admin/includes/ajax-actions.php"
     },
-    "699": {
+    {
         "name": "load-{$page_hook}",
         "line": 232,
         "end_line": 232,
@@ -8248,7 +8248,7 @@
         },
         "file": "wp-admin/admin.php"
     },
-    "700": {
+    {
         "name": "load-{$pagenow}",
         "line": 367,
         "end_line": 367,
@@ -8266,7 +8266,7 @@
         },
         "file": "wp-admin/admin.php"
     },
-    "701": {
+    {
         "name": "load-{$plugin_page}",
         "line": 277,
         "end_line": 277,
@@ -8289,7 +8289,7 @@
         },
         "file": "wp-admin/admin.php"
     },
-    "704": {
+    {
         "name": "load_feed_engine",
         "line": 27,
         "end_line": 27,
@@ -8311,7 +8311,7 @@
         },
         "file": "wp-includes/rss.php"
     },
-    "712": {
+    {
         "name": "load_textdomain",
         "line": 657,
         "end_line": 657,
@@ -8348,7 +8348,7 @@
         },
         "file": "wp-includes/l10n.php"
     },
-    "717": {
+    {
         "name": "login_enqueue_scripts",
         "line": 112,
         "end_line": 112,
@@ -8366,7 +8366,7 @@
         },
         "file": "wp-login.php"
     },
-    "719": {
+    {
         "name": "login_footer",
         "line": 312,
         "end_line": 312,
@@ -8384,7 +8384,7 @@
         },
         "file": "wp-login.php"
     },
-    "720": {
+    {
         "name": "login_form",
         "line": 1354,
         "end_line": 1354,
@@ -8402,7 +8402,7 @@
         },
         "file": "wp-login.php"
     },
-    "725": {
+    {
         "name": "login_form_{$action}",
         "line": 534,
         "end_line": 534,
@@ -8420,7 +8420,7 @@
         },
         "file": "wp-login.php"
     },
-    "726": {
+    {
         "name": "login_head",
         "line": 119,
         "end_line": 119,
@@ -8438,7 +8438,7 @@
         },
         "file": "wp-login.php"
     },
-    "727": {
+    {
         "name": "login_header",
         "line": 203,
         "end_line": 203,
@@ -8456,7 +8456,7 @@
         },
         "file": "wp-login.php"
     },
-    "731": {
+    {
         "name": "login_init",
         "line": 523,
         "end_line": 523,
@@ -8474,7 +8474,7 @@
         },
         "file": "wp-login.php"
     },
-    "741": {
+    {
         "name": "lost_password",
         "line": 815,
         "end_line": 815,
@@ -8507,7 +8507,7 @@
         },
         "file": "wp-login.php"
     },
-    "742": {
+    {
         "name": "lostpassword_form",
         "line": 839,
         "end_line": 839,
@@ -8525,7 +8525,7 @@
         },
         "file": "wp-login.php"
     },
-    "743": {
+    {
         "name": "lostpassword_post",
         "line": 380,
         "end_line": 380,
@@ -8558,7 +8558,7 @@
         },
         "file": "wp-login.php"
     },
-    "747": {
+    {
         "name": "make_delete_blog",
         "line": 1241,
         "end_line": 1241,
@@ -8586,7 +8586,7 @@
         },
         "file": "wp-includes/ms-site.php"
     },
-    "748": {
+    {
         "name": "make_ham_blog",
         "line": 1179,
         "end_line": 1179,
@@ -8615,7 +8615,7 @@
         },
         "file": "wp-includes/ms-site.php"
     },
-    "749": {
+    {
         "name": "make_ham_user",
         "line": 1886,
         "end_line": 1886,
@@ -8643,7 +8643,7 @@
         },
         "file": "wp-includes/user.php"
     },
-    "750": {
+    {
         "name": "make_spam_blog",
         "line": 1169,
         "end_line": 1169,
@@ -8672,7 +8672,7 @@
         },
         "file": "wp-includes/ms-site.php"
     },
-    "751": {
+    {
         "name": "make_spam_user",
         "line": 1877,
         "end_line": 1877,
@@ -8700,7 +8700,7 @@
         },
         "file": "wp-includes/user.php"
     },
-    "752": {
+    {
         "name": "make_undelete_blog",
         "line": 1251,
         "end_line": 1251,
@@ -8728,7 +8728,7 @@
         },
         "file": "wp-includes/ms-site.php"
     },
-    "755": {
+    {
         "name": "mature_blog",
         "line": 1193,
         "end_line": 1193,
@@ -8756,7 +8756,7 @@
         },
         "file": "wp-includes/ms-site.php"
     },
-    "775": {
+    {
         "name": "media_upload_{$tab}",
         "line": 111,
         "end_line": 111,
@@ -8774,7 +8774,7 @@
         },
         "file": "wp-admin/media-upload.php"
     },
-    "776": {
+    {
         "name": "media_upload_{$type}",
         "line": 99,
         "end_line": 99,
@@ -8792,7 +8792,7 @@
         },
         "file": "wp-admin/media-upload.php"
     },
-    "784": {
+    {
         "name": "ms_loaded",
         "line": 123,
         "end_line": 123,
@@ -8810,7 +8810,7 @@
         },
         "file": "wp-includes/ms-settings.php"
     },
-    "785": {
+    {
         "name": "ms_network_not_found",
         "line": 356,
         "end_line": 356,
@@ -8847,7 +8847,7 @@
         },
         "file": "wp-includes/ms-load.php"
     },
-    "787": {
+    {
         "name": "ms_site_not_found",
         "line": 415,
         "end_line": 415,
@@ -8893,7 +8893,7 @@
         },
         "file": "wp-includes/ms-load.php"
     },
-    "788": {
+    {
         "name": "mu_activity_box_end",
         "line": 475,
         "end_line": 475,
@@ -8912,7 +8912,7 @@
         },
         "file": "wp-admin/includes/dashboard.php"
     },
-    "791": {
+    {
         "name": "mu_plugin_loaded",
         "line": 300,
         "end_line": 300,
@@ -8940,7 +8940,7 @@
         },
         "file": "wp-settings.php"
     },
-    "792": {
+    {
         "name": "mu_rightnow_end",
         "line": 468,
         "end_line": 468,
@@ -8959,7 +8959,7 @@
         },
         "file": "wp-admin/includes/dashboard.php"
     },
-    "793": {
+    {
         "name": "muplugins_loaded",
         "line": 327,
         "end_line": 327,
@@ -8977,7 +8977,7 @@
         },
         "file": "wp-settings.php"
     },
-    "794": {
+    {
         "name": "myblogs_allblogs_options",
         "line": 92,
         "end_line": 92,
@@ -8995,7 +8995,7 @@
         },
         "file": "wp-admin/my-sites.php"
     },
-    "803": {
+    {
         "name": "network_admin_edit_{$action}",
         "line": 38,
         "end_line": 38,
@@ -9013,7 +9013,7 @@
         },
         "file": "wp-admin/network/edit.php"
     },
-    "805": {
+    {
         "name": "network_admin_menu",
         "line": 135,
         "end_line": 135,
@@ -9041,7 +9041,7 @@
         },
         "file": "wp-admin/includes/menu.php"
     },
-    "806": {
+    {
         "name": "network_admin_notices",
         "line": 267,
         "end_line": 267,
@@ -9059,7 +9059,7 @@
         },
         "file": "wp-admin/admin-header.php"
     },
-    "810": {
+    {
         "name": "network_plugin_loaded",
         "line": 317,
         "end_line": 317,
@@ -9087,7 +9087,7 @@
         },
         "file": "wp-settings.php"
     },
-    "811": {
+    {
         "name": "network_site_new_created_user",
         "line": 136,
         "end_line": 136,
@@ -9115,7 +9115,7 @@
         },
         "file": "wp-admin/network/site-new.php"
     },
-    "812": {
+    {
         "name": "network_site_new_form",
         "line": 296,
         "end_line": 296,
@@ -9133,7 +9133,7 @@
         },
         "file": "wp-admin/network/site-new.php"
     },
-    "814": {
+    {
         "name": "network_site_users_after_list_table",
         "line": 295,
         "end_line": 295,
@@ -9151,7 +9151,7 @@
         },
         "file": "wp-admin/network/site-users.php"
     },
-    "815": {
+    {
         "name": "network_site_users_created_user",
         "line": 87,
         "end_line": 87,
@@ -9179,7 +9179,7 @@
         },
         "file": "wp-admin/network/site-users.php"
     },
-    "817": {
+    {
         "name": "network_user_new_created_user",
         "line": 63,
         "end_line": 63,
@@ -9207,7 +9207,7 @@
         },
         "file": "wp-admin/network/user-new.php"
     },
-    "818": {
+    {
         "name": "network_user_new_form",
         "line": 143,
         "end_line": 143,
@@ -9225,7 +9225,7 @@
         },
         "file": "wp-admin/network/user-new.php"
     },
-    "844": {
+    {
         "name": "opml_head",
         "line": 43,
         "end_line": 43,
@@ -9243,7 +9243,7 @@
         },
         "file": "wp-links-opml.php"
     },
-    "851": {
+    {
         "name": "page_attributes_meta_box_template",
         "line": 961,
         "end_line": 961,
@@ -9280,7 +9280,7 @@
         },
         "file": "wp-admin/includes/meta-boxes.php"
     },
-    "852": {
+    {
         "name": "page_attributes_misc_attributes",
         "line": 992,
         "end_line": 992,
@@ -9308,7 +9308,7 @@
         },
         "file": "wp-admin/includes/meta-boxes.php"
     },
-    "861": {
+    {
         "name": "password_reset",
         "line": 2451,
         "end_line": 2451,
@@ -9345,7 +9345,7 @@
         },
         "file": "wp-includes/user.php"
     },
-    "864": {
+    {
         "name": "personal_options",
         "line": 383,
         "end_line": 383,
@@ -9373,7 +9373,7 @@
         },
         "file": "wp-admin/user-edit.php"
     },
-    "865": {
+    {
         "name": "personal_options_update",
         "line": 138,
         "end_line": 138,
@@ -9401,7 +9401,7 @@
         },
         "file": "wp-admin/user-edit.php"
     },
-    "867": {
+    {
         "name": "phpmailer_init",
         "line": 484,
         "end_line": 484,
@@ -9429,7 +9429,7 @@
         },
         "file": "wp-includes/pluggable.php"
     },
-    "871": {
+    {
         "name": "plugin_loaded",
         "line": 369,
         "end_line": 369,
@@ -9457,7 +9457,7 @@
         },
         "file": "wp-settings.php"
     },
-    "876": {
+    {
         "name": "plugins_loaded",
         "line": 392,
         "end_line": 392,
@@ -9475,7 +9475,7 @@
         },
         "file": "wp-settings.php"
     },
-    "883": {
+    {
         "name": "populate_options",
         "line": 370,
         "end_line": 370,
@@ -9493,7 +9493,7 @@
         },
         "file": "wp-admin/includes/schema.php"
     },
-    "885": {
+    {
         "name": "post-html-upload-ui",
         "line": 2227,
         "end_line": 2227,
@@ -9511,7 +9511,7 @@
         },
         "file": "wp-admin/includes/media.php"
     },
-    "886": {
+    {
         "name": "post-plupload-upload-ui",
         "line": 2200,
         "end_line": 2200,
@@ -9534,7 +9534,7 @@
         },
         "file": "wp-admin/includes/media.php"
     },
-    "887": {
+    {
         "name": "post-upload-ui",
         "line": 2247,
         "end_line": 2247,
@@ -9552,7 +9552,7 @@
         },
         "file": "wp-admin/includes/media.php"
     },
-    "888": {
+    {
         "name": "post_action_{$action}",
         "line": 348,
         "end_line": 348,
@@ -9580,7 +9580,7 @@
         },
         "file": "wp-admin/post.php"
     },
-    "890": {
+    {
         "name": "post_comment_status_meta_box-options",
         "line": 795,
         "end_line": 795,
@@ -9608,7 +9608,7 @@
         },
         "file": "wp-admin/includes/meta-boxes.php"
     },
-    "895": {
+    {
         "name": "post_edit_form_tag",
         "line": 457,
         "end_line": 457,
@@ -9636,7 +9636,7 @@
         },
         "file": "wp-admin/edit-form-advanced.php"
     },
-    "901": {
+    {
         "name": "post_lock_lost_dialog",
         "line": 1779,
         "end_line": 1779,
@@ -9664,7 +9664,7 @@
         },
         "file": "wp-admin/includes/post.php"
     },
-    "902": {
+    {
         "name": "post_locked_dialog",
         "line": 1742,
         "end_line": 1742,
@@ -9692,7 +9692,7 @@
         },
         "file": "wp-admin/includes/post.php"
     },
-    "907": {
+    {
         "name": "post_stuck",
         "line": 2522,
         "end_line": 2522,
@@ -9720,7 +9720,7 @@
         },
         "file": "wp-includes/post.php"
     },
-    "908": {
+    {
         "name": "post_submitbox_minor_actions",
         "line": 83,
         "end_line": 83,
@@ -9748,7 +9748,7 @@
         },
         "file": "wp-admin/includes/meta-boxes.php"
     },
-    "909": {
+    {
         "name": "post_submitbox_misc_actions",
         "line": 292,
         "end_line": 292,
@@ -9781,7 +9781,7 @@
         },
         "file": "wp-admin/includes/meta-boxes.php"
     },
-    "910": {
+    {
         "name": "post_submitbox_start",
         "line": 309,
         "end_line": 309,
@@ -9815,7 +9815,7 @@
         },
         "file": "wp-admin/includes/meta-boxes.php"
     },
-    "919": {
+    {
         "name": "post_unstuck",
         "line": 2563,
         "end_line": 2563,
@@ -9843,7 +9843,7 @@
         },
         "file": "wp-includes/post.php"
     },
-    "920": {
+    {
         "name": "post_updated",
         "line": 4092,
         "end_line": 4092,
@@ -9889,7 +9889,7 @@
         },
         "file": "wp-includes/post.php"
     },
-    "926": {
+    {
         "name": "pre-html-upload-ui",
         "line": 2211,
         "end_line": 2211,
@@ -9907,7 +9907,7 @@
         },
         "file": "wp-admin/includes/media.php"
     },
-    "927": {
+    {
         "name": "pre-plupload-upload-ui",
         "line": 2183,
         "end_line": 2183,
@@ -9930,7 +9930,7 @@
         },
         "file": "wp-admin/includes/media.php"
     },
-    "928": {
+    {
         "name": "pre-upload-ui",
         "line": 2101,
         "end_line": 2101,
@@ -9948,7 +9948,7 @@
         },
         "file": "wp-admin/includes/media.php"
     },
-    "938": {
+    {
         "name": "pre_comment_on_post",
         "line": 3309,
         "end_line": 3309,
@@ -9976,7 +9976,7 @@
         },
         "file": "wp-includes/comment.php"
     },
-    "942": {
+    {
         "name": "pre_current_active_plugins",
         "line": 618,
         "end_line": 618,
@@ -10004,7 +10004,7 @@
         },
         "file": "wp-admin/plugins.php"
     },
-    "944": {
+    {
         "name": "pre_delete_site_option_{$option}",
         "line": 1497,
         "end_line": 1497,
@@ -10051,7 +10051,7 @@
         },
         "file": "wp-includes/option.php"
     },
-    "945": {
+    {
         "name": "pre_delete_term",
         "line": 1804,
         "end_line": 1804,
@@ -10088,7 +10088,7 @@
         },
         "file": "wp-includes/taxonomy.php"
     },
-    "956": {
+    {
         "name": "pre_get_search_form",
         "line": 210,
         "end_line": 210,
@@ -10116,7 +10116,7 @@
         },
         "file": "wp-includes/general-template.php"
     },
-    "964": {
+    {
         "name": "pre_network_site_new_created_user",
         "line": 117,
         "end_line": 117,
@@ -10144,7 +10144,7 @@
         },
         "file": "wp-admin/network/site-new.php"
     },
-    "966": {
+    {
         "name": "pre_ping",
         "line": 2852,
         "end_line": 2852,
@@ -10188,7 +10188,7 @@
         },
         "file": "wp-includes/comment.php"
     },
-    "968": {
+    {
         "name": "pre_post_update",
         "line": 3894,
         "end_line": 3894,
@@ -10225,7 +10225,7 @@
         },
         "file": "wp-includes/post.php"
     },
-    "981": {
+    {
         "name": "pre_trackback_post",
         "line": 110,
         "end_line": 110,
@@ -10298,7 +10298,7 @@
         },
         "file": "wp-trackback.php"
     },
-    "984": {
+    {
         "name": "pre_uninstall_plugin",
         "line": 1198,
         "end_line": 1198,
@@ -10335,7 +10335,7 @@
         },
         "file": "wp-admin/includes/plugin.php"
     },
-    "1010": {
+    {
         "name": "preprocess_signup_form",
         "line": 970,
         "end_line": 970,
@@ -10353,7 +10353,7 @@
         },
         "file": "wp-signup.php"
     },
-    "1018": {
+    {
         "name": "print_media_templates",
         "line": 1455,
         "end_line": 1455,
@@ -10371,7 +10371,7 @@
         },
         "file": "wp-includes/media-template.php"
     },
-    "1023": {
+    {
         "name": "private_to_published",
         "line": 6738,
         "end_line": 6738,
@@ -10404,7 +10404,7 @@
         },
         "file": "wp-includes/post.php"
     },
-    "1024": {
+    {
         "name": "profile_personal_options",
         "line": 398,
         "end_line": 398,
@@ -10432,7 +10432,7 @@
         },
         "file": "wp-admin/user-edit.php"
     },
-    "1025": {
+    {
         "name": "profile_update",
         "line": 1866,
         "end_line": 1866,
@@ -10469,7 +10469,7 @@
         },
         "file": "wp-includes/user.php"
     },
-    "1028": {
+    {
         "name": "publish_phone",
         "line": 241,
         "end_line": 241,
@@ -10497,7 +10497,7 @@
         },
         "file": "wp-mail.php"
     },
-    "1030": {
+    {
         "name": "rdf_header",
         "line": 56,
         "end_line": 56,
@@ -10515,7 +10515,7 @@
         },
         "file": "wp-includes/feed-rdf.php"
     },
-    "1031": {
+    {
         "name": "rdf_item",
         "line": 92,
         "end_line": 92,
@@ -10533,7 +10533,7 @@
         },
         "file": "wp-includes/feed-rdf.php"
     },
-    "1032": {
+    {
         "name": "rdf_ns",
         "line": 29,
         "end_line": 29,
@@ -10551,7 +10551,7 @@
         },
         "file": "wp-includes/feed-rdf.php"
     },
-    "1040": {
+    {
         "name": "register_form",
         "line": 1072,
         "end_line": 1072,
@@ -10569,7 +10569,7 @@
         },
         "file": "wp-login.php"
     },
-    "1042": {
+    {
         "name": "register_new_user",
         "line": 2574,
         "end_line": 2574,
@@ -10597,7 +10597,7 @@
         },
         "file": "wp-includes/user.php"
     },
-    "1043": {
+    {
         "name": "register_post",
         "line": 2527,
         "end_line": 2527,
@@ -10643,7 +10643,7 @@
         },
         "file": "wp-includes/user.php"
     },
-    "1045": {
+    {
         "name": "register_sidebar",
         "line": 302,
         "end_line": 302,
@@ -10671,7 +10671,7 @@
         },
         "file": "wp-includes/widgets.php"
     },
-    "1048": {
+    {
         "name": "registered_post_type",
         "line": 1438,
         "end_line": 1438,
@@ -10713,7 +10713,7 @@
         },
         "file": "wp-includes/post.php"
     },
-    "1049": {
+    {
         "name": "registered_taxonomy",
         "line": 443,
         "end_line": 443,
@@ -10760,7 +10760,7 @@
         },
         "file": "wp-includes/taxonomy.php"
     },
-    "1050": {
+    {
         "name": "registered_taxonomy_for_object_type",
         "line": 635,
         "end_line": 635,
@@ -10797,7 +10797,7 @@
         },
         "file": "wp-includes/taxonomy.php"
     },
-    "1054": {
+    {
         "name": "remove_user_from_blog",
         "line": 248,
         "end_line": 248,
@@ -10835,7 +10835,7 @@
         },
         "file": "wp-includes/ms-functions.php"
     },
-    "1059": {
+    {
         "name": "resetpass_form",
         "line": 974,
         "end_line": 974,
@@ -10863,7 +10863,7 @@
         },
         "file": "wp-login.php"
     },
-    "1061": {
+    {
         "name": "rest_api_init",
         "line": 471,
         "end_line": 471,
@@ -10891,7 +10891,7 @@
         },
         "file": "wp-includes/rest-api.php"
     },
-    "1065": {
+    {
         "name": "retreive_password",
         "line": 2275,
         "end_line": 2275,
@@ -10924,7 +10924,7 @@
         },
         "file": "wp-includes/user.php"
     },
-    "1066": {
+    {
         "name": "retrieve_password",
         "line": 2284,
         "end_line": 2284,
@@ -10952,7 +10952,7 @@
         },
         "file": "wp-includes/user.php"
     },
-    "1067": {
+    {
         "name": "retrieve_password_key",
         "line": 2318,
         "end_line": 2318,
@@ -10989,7 +10989,7 @@
         },
         "file": "wp-includes/user.php"
     },
-    "1071": {
+    {
         "name": "revoke_super_admin",
         "line": 957,
         "end_line": 957,
@@ -11017,7 +11017,7 @@
         },
         "file": "wp-includes/capabilities.php"
     },
-    "1072": {
+    {
         "name": "revoked_super_admin",
         "line": 976,
         "end_line": 976,
@@ -11045,7 +11045,7 @@
         },
         "file": "wp-includes/capabilities.php"
     },
-    "1074": {
+    {
         "name": "rightnow_end",
         "line": 378,
         "end_line": 378,
@@ -11063,7 +11063,7 @@
         },
         "file": "wp-admin/includes/dashboard.php"
     },
-    "1076": {
+    {
         "name": "rss2_comments_ns",
         "line": 31,
         "end_line": 31,
@@ -11081,7 +11081,7 @@
         },
         "file": "wp-includes/feed-rss2-comments.php"
     },
-    "1077": {
+    {
         "name": "rss2_head",
         "line": 83,
         "end_line": 83,
@@ -11099,7 +11099,7 @@
         },
         "file": "wp-includes/feed-rss2.php"
     },
-    "1078": {
+    {
         "name": "rss2_item",
         "line": 121,
         "end_line": 121,
@@ -11117,7 +11117,7 @@
         },
         "file": "wp-includes/feed-rss2.php"
     },
-    "1079": {
+    {
         "name": "rss2_ns",
         "line": 36,
         "end_line": 36,
@@ -11135,7 +11135,7 @@
         },
         "file": "wp-includes/feed-rss2.php"
     },
-    "1081": {
+    {
         "name": "rss_head",
         "line": 27,
         "end_line": 27,
@@ -11153,7 +11153,7 @@
         },
         "file": "wp-includes/feed-rss.php"
     },
-    "1082": {
+    {
         "name": "rss_item",
         "line": 44,
         "end_line": 44,
@@ -11171,7 +11171,7 @@
         },
         "file": "wp-includes/feed-rss.php"
     },
-    "1083": {
+    {
         "name": "rss_tag_pre",
         "line": 21,
         "end_line": 21,
@@ -11199,7 +11199,7 @@
         },
         "file": "wp-includes/feed-rss2.php"
     },
-    "1089": {
+    {
         "name": "sanitize_comment_cookies",
         "line": 405,
         "end_line": 405,
@@ -11217,7 +11217,7 @@
         },
         "file": "wp-settings.php"
     },
-    "1104": {
+    {
         "name": "save_post",
         "line": 4118,
         "end_line": 4118,
@@ -11263,7 +11263,7 @@
         },
         "file": "wp-includes/post.php"
     },
-    "1105": {
+    {
         "name": "save_post_{$post->post_type}",
         "line": 4107,
         "end_line": 4107,
@@ -11309,7 +11309,7 @@
         },
         "file": "wp-includes/post.php"
     },
-    "1123": {
+    {
         "name": "set_auth_cookie",
         "line": 909,
         "end_line": 909,
@@ -11387,7 +11387,7 @@
         },
         "file": "wp-includes/pluggable.php"
     },
-    "1124": {
+    {
         "name": "set_comment_cookies",
         "line": 55,
         "end_line": 55,
@@ -11438,7 +11438,7 @@
         },
         "file": "wp-comments-post.php"
     },
-    "1125": {
+    {
         "name": "set_current_user",
         "line": 47,
         "end_line": 47,
@@ -11456,7 +11456,7 @@
         },
         "file": "wp-includes/pluggable.php"
     },
-    "1126": {
+    {
         "name": "set_logged_in_cookie",
         "line": 926,
         "end_line": 926,
@@ -11534,7 +11534,7 @@
         },
         "file": "wp-includes/pluggable.php"
     },
-    "1127": {
+    {
         "name": "set_object_terms",
         "line": 2574,
         "end_line": 2574,
@@ -11607,7 +11607,7 @@
         },
         "file": "wp-includes/taxonomy.php"
     },
-    "1128": {
+    {
         "name": "set_site_transient_{$transient}",
         "line": 1877,
         "end_line": 1877,
@@ -11658,7 +11658,7 @@
         },
         "file": "wp-includes/option.php"
     },
-    "1129": {
+    {
         "name": "set_transient_{$transient}",
         "line": 833,
         "end_line": 833,
@@ -11714,7 +11714,7 @@
         },
         "file": "wp-includes/option.php"
     },
-    "1131": {
+    {
         "name": "setted_site_transient",
         "line": 1888,
         "end_line": 1888,
@@ -11760,7 +11760,7 @@
         },
         "file": "wp-includes/option.php"
     },
-    "1132": {
+    {
         "name": "setted_transient",
         "line": 845,
         "end_line": 845,
@@ -11811,7 +11811,7 @@
         },
         "file": "wp-includes/option.php"
     },
-    "1133": {
+    {
         "name": "setup_theme",
         "line": 461,
         "end_line": 461,
@@ -11829,7 +11829,7 @@
         },
         "file": "wp-settings.php"
     },
-    "1142": {
+    {
         "name": "show_user_profile",
         "line": 717,
         "end_line": 717,
@@ -11857,7 +11857,7 @@
         },
         "file": "wp-admin/user-edit.php"
     },
-    "1143": {
+    {
         "name": "shutdown",
         "line": 947,
         "end_line": 947,
@@ -11875,7 +11875,7 @@
         },
         "file": "wp-includes/load.php"
     },
-    "1144": {
+    {
         "name": "sidebar_admin_page",
         "line": 574,
         "end_line": 574,
@@ -11893,7 +11893,7 @@
         },
         "file": "wp-admin/widgets.php"
     },
-    "1145": {
+    {
         "name": "sidebar_admin_setup",
         "line": 47,
         "end_line": 47,
@@ -11911,7 +11911,7 @@
         },
         "file": "wp-admin/widgets.php"
     },
-    "1149": {
+    {
         "name": "signup_blogform",
         "line": 223,
         "end_line": 223,
@@ -11939,7 +11939,7 @@
         },
         "file": "wp-signup.php"
     },
-    "1151": {
+    {
         "name": "signup_extra_fields",
         "line": 286,
         "end_line": 286,
@@ -11967,7 +11967,7 @@
         },
         "file": "wp-signup.php"
     },
-    "1152": {
+    {
         "name": "signup_finished",
         "line": 546,
         "end_line": 546,
@@ -11985,7 +11985,7 @@
         },
         "file": "wp-signup.php"
     },
-    "1154": {
+    {
         "name": "signup_header",
         "line": 28,
         "end_line": 28,
@@ -12003,7 +12003,7 @@
         },
         "file": "wp-signup.php"
     },
-    "1155": {
+    {
         "name": "signup_hidden_fields",
         "line": 386,
         "end_line": 386,
@@ -12032,7 +12032,7 @@
         },
         "file": "wp-signup.php"
     },
-    "1171": {
+    {
         "name": "spam_comment",
         "line": 1570,
         "end_line": 1570,
@@ -12074,7 +12074,7 @@
         },
         "file": "wp-includes/comment.php"
     },
-    "1172": {
+    {
         "name": "spammed_comment",
         "line": 1586,
         "end_line": 1586,
@@ -12116,7 +12116,7 @@
         },
         "file": "wp-includes/comment.php"
     },
-    "1173": {
+    {
         "name": "split_shared_term",
         "line": 3904,
         "end_line": 3904,
@@ -12171,7 +12171,7 @@
         },
         "file": "wp-includes/taxonomy.php"
     },
-    "1182": {
+    {
         "name": "submitlink_box",
         "line": 1072,
         "end_line": 1072,
@@ -12189,7 +12189,7 @@
         },
         "file": "wp-admin/includes/meta-boxes.php"
     },
-    "1183": {
+    {
         "name": "submitpage_box",
         "line": 655,
         "end_line": 655,
@@ -12217,7 +12217,7 @@
         },
         "file": "wp-admin/edit-form-advanced.php"
     },
-    "1184": {
+    {
         "name": "submitpost_box",
         "line": 666,
         "end_line": 666,
@@ -12245,7 +12245,7 @@
         },
         "file": "wp-admin/edit-form-advanced.php"
     },
-    "1185": {
+    {
         "name": "switch_blog",
         "line": 515,
         "end_line": 515,
@@ -12283,7 +12283,7 @@
         },
         "file": "wp-includes/ms-blogs.php"
     },
-    "1186": {
+    {
         "name": "switch_theme",
         "line": 815,
         "end_line": 815,
@@ -12334,7 +12334,7 @@
         },
         "file": "wp-includes/theme.php"
     },
-    "1200": {
+    {
         "name": "template_redirect",
         "line": 13,
         "end_line": 13,
@@ -12352,7 +12352,7 @@
         },
         "file": "wp-includes/template-loader.php"
     },
-    "1254": {
+    {
         "name": "the_widget",
         "line": 1183,
         "end_line": 1183,
@@ -12398,7 +12398,7 @@
         },
         "file": "wp-includes/widgets.php"
     },
-    "1269": {
+    {
         "name": "tool_box",
         "line": 89,
         "end_line": 89,
@@ -12416,7 +12416,7 @@
         },
         "file": "wp-admin/tools.php"
     },
-    "1270": {
+    {
         "name": "trackback_post",
         "line": 150,
         "end_line": 150,
@@ -12444,7 +12444,7 @@
         },
         "file": "wp-trackback.php"
     },
-    "1273": {
+    {
         "name": "transition_comment_status",
         "line": 1721,
         "end_line": 1721,
@@ -12492,7 +12492,7 @@
         },
         "file": "wp-includes/comment.php"
     },
-    "1274": {
+    {
         "name": "transition_post_status",
         "line": 4618,
         "end_line": 4618,
@@ -12538,7 +12538,7 @@
         },
         "file": "wp-includes/post.php"
     },
-    "1277": {
+    {
         "name": "trash_comment",
         "line": 1474,
         "end_line": 1474,
@@ -12580,7 +12580,7 @@
         },
         "file": "wp-includes/comment.php"
     },
-    "1278": {
+    {
         "name": "trash_post_comments",
         "line": 3268,
         "end_line": 3268,
@@ -12608,7 +12608,7 @@
         },
         "file": "wp-includes/post.php"
     },
-    "1279": {
+    {
         "name": "trashed_comment",
         "line": 1491,
         "end_line": 1491,
@@ -12650,7 +12650,7 @@
         },
         "file": "wp-includes/comment.php"
     },
-    "1280": {
+    {
         "name": "trashed_post",
         "line": 3165,
         "end_line": 3165,
@@ -12678,7 +12678,7 @@
         },
         "file": "wp-includes/post.php"
     },
-    "1281": {
+    {
         "name": "trashed_post_comments",
         "line": 3295,
         "end_line": 3295,
@@ -12715,7 +12715,7 @@
         },
         "file": "wp-includes/post.php"
     },
-    "1285": {
+    {
         "name": "twentyeleven_credits",
         "line": 28,
         "end_line": 28,
@@ -12728,7 +12728,7 @@
         },
         "file": "wp-content/themes/twentyeleven/footer.php"
     },
-    "1287": {
+    {
         "name": "twentyeleven_enqueue_color_scheme",
         "line": 432,
         "end_line": 432,
@@ -12757,7 +12757,7 @@
         },
         "file": "wp-content/themes/twentyeleven/inc/theme-options.php"
     },
-    "1297": {
+    {
         "name": "twentyfifteen_credits",
         "line": 23,
         "end_line": 23,
@@ -12776,7 +12776,7 @@
         },
         "file": "wp-content/themes/twentyfifteen/footer.php"
     },
-    "1301": {
+    {
         "name": "twentyfourteen_credits",
         "line": 20,
         "end_line": 20,
@@ -12789,7 +12789,7 @@
         },
         "file": "wp-content/themes/twentyfourteen/footer.php"
     },
-    "1304": {
+    {
         "name": "twentyfourteen_featured_posts_after",
         "line": 34,
         "end_line": 34,
@@ -12808,7 +12808,7 @@
         },
         "file": "wp-content/themes/twentyfourteen/featured-content.php"
     },
-    "1305": {
+    {
         "name": "twentyfourteen_featured_posts_before",
         "line": 19,
         "end_line": 19,
@@ -12827,7 +12827,7 @@
         },
         "file": "wp-content/themes/twentyfourteen/featured-content.php"
     },
-    "1330": {
+    {
         "name": "twentysixteen_credits",
         "line": 52,
         "end_line": 52,
@@ -12846,7 +12846,7 @@
         },
         "file": "wp-content/themes/twentysixteen/footer.php"
     },
-    "1337": {
+    {
         "name": "twentyten_credits",
         "line": 44,
         "end_line": 44,
@@ -12865,7 +12865,7 @@
         },
         "file": "wp-content/themes/twentyten/footer.php"
     },
-    "1342": {
+    {
         "name": "twentythirteen_credits",
         "line": 18,
         "end_line": 18,
@@ -12878,7 +12878,7 @@
         },
         "file": "wp-content/themes/twentythirteen/footer.php"
     },
-    "1345": {
+    {
         "name": "twentytwelve_credits",
         "line": 15,
         "end_line": 15,
@@ -12891,7 +12891,7 @@
         },
         "file": "wp-content/themes/twentytwelve/footer.php"
     },
-    "1350": {
+    {
         "name": "twentytwenty_end_of_post_meta_list",
         "line": 459,
         "end_line": 459,
@@ -12919,7 +12919,7 @@
         },
         "file": "wp-content/themes/twentytwenty/inc/template-tags.php"
     },
-    "1360": {
+    {
         "name": "twentytwenty_start_of_post_meta_list",
         "line": 334,
         "end_line": 334,
@@ -12947,7 +12947,7 @@
         },
         "file": "wp-content/themes/twentytwenty/inc/template-tags.php"
     },
-    "1364": {
+    {
         "name": "unarchive_blog",
         "line": 1227,
         "end_line": 1227,
@@ -12976,7 +12976,7 @@
         },
         "file": "wp-includes/ms-site.php"
     },
-    "1365": {
+    {
         "name": "uninstall_{$file}",
         "line": 1233,
         "end_line": 1233,
@@ -12994,7 +12994,7 @@
         },
         "file": "wp-admin/includes/plugin.php"
     },
-    "1366": {
+    {
         "name": "unload_textdomain",
         "line": 728,
         "end_line": 728,
@@ -13022,7 +13022,7 @@
         },
         "file": "wp-includes/l10n.php"
     },
-    "1367": {
+    {
         "name": "unmature_blog",
         "line": 1203,
         "end_line": 1203,
@@ -13050,7 +13050,7 @@
         },
         "file": "wp-includes/ms-site.php"
     },
-    "1368": {
+    {
         "name": "unregistered_post_type",
         "line": 1484,
         "end_line": 1484,
@@ -13078,7 +13078,7 @@
         },
         "file": "wp-includes/post.php"
     },
-    "1369": {
+    {
         "name": "unregistered_taxonomy",
         "line": 486,
         "end_line": 486,
@@ -13106,7 +13106,7 @@
         },
         "file": "wp-includes/taxonomy.php"
     },
-    "1370": {
+    {
         "name": "unregistered_taxonomy_for_object_type",
         "line": 677,
         "end_line": 677,
@@ -13143,7 +13143,7 @@
         },
         "file": "wp-includes/taxonomy.php"
     },
-    "1371": {
+    {
         "name": "unspam_comment",
         "line": 1616,
         "end_line": 1616,
@@ -13185,7 +13185,7 @@
         },
         "file": "wp-includes/comment.php"
     },
-    "1372": {
+    {
         "name": "unspammed_comment",
         "line": 1635,
         "end_line": 1635,
@@ -13227,7 +13227,7 @@
         },
         "file": "wp-includes/comment.php"
     },
-    "1373": {
+    {
         "name": "untrash_comment",
         "line": 1521,
         "end_line": 1521,
@@ -13269,7 +13269,7 @@
         },
         "file": "wp-includes/comment.php"
     },
-    "1374": {
+    {
         "name": "untrash_post",
         "line": 3209,
         "end_line": 3209,
@@ -13297,7 +13297,7 @@
         },
         "file": "wp-includes/post.php"
     },
-    "1375": {
+    {
         "name": "untrash_post_comments",
         "line": 3333,
         "end_line": 3333,
@@ -13325,7 +13325,7 @@
         },
         "file": "wp-includes/post.php"
     },
-    "1376": {
+    {
         "name": "untrashed_comment",
         "line": 1540,
         "end_line": 1540,
@@ -13367,7 +13367,7 @@
         },
         "file": "wp-includes/comment.php"
     },
-    "1377": {
+    {
         "name": "untrashed_post",
         "line": 3236,
         "end_line": 3236,
@@ -13395,7 +13395,7 @@
         },
         "file": "wp-includes/post.php"
     },
-    "1378": {
+    {
         "name": "untrashed_post_comments",
         "line": 3361,
         "end_line": 3361,
@@ -13423,7 +13423,7 @@
         },
         "file": "wp-includes/post.php"
     },
-    "1380": {
+    {
         "name": "update-core-custom_{$action}",
         "line": 947,
         "end_line": 947,
@@ -13441,7 +13441,7 @@
         },
         "file": "wp-admin/update-core.php"
     },
-    "1381": {
+    {
         "name": "update-custom_{$action}",
         "line": 302,
         "end_line": 302,
@@ -13459,7 +13459,7 @@
         },
         "file": "wp-admin/update.php"
     },
-    "1383": {
+    {
         "name": "update_blog_public",
         "line": 1265,
         "end_line": 1265,
@@ -13497,7 +13497,7 @@
         },
         "file": "wp-includes/ms-site.php"
     },
-    "1387": {
+    {
         "name": "update_option",
         "line": 378,
         "end_line": 378,
@@ -13543,7 +13543,7 @@
         },
         "file": "wp-includes/option.php"
     },
-    "1388": {
+    {
         "name": "update_option_{$option}",
         "line": 421,
         "end_line": 421,
@@ -13594,7 +13594,7 @@
         },
         "file": "wp-includes/option.php"
     },
-    "1389": {
+    {
         "name": "update_postmeta",
         "line": 264,
         "end_line": 264,
@@ -13649,7 +13649,7 @@
         },
         "file": "wp-includes/meta.php"
     },
-    "1391": {
+    {
         "name": "update_site_option",
         "line": 1674,
         "end_line": 1674,
@@ -13709,7 +13709,7 @@
         },
         "file": "wp-includes/option.php"
     },
-    "1392": {
+    {
         "name": "update_site_option_{$option}",
         "line": 1661,
         "end_line": 1661,
@@ -13774,7 +13774,7 @@
         },
         "file": "wp-includes/option.php"
     },
-    "1393": {
+    {
         "name": "update_usermeta",
         "line": 2338,
         "end_line": 2338,
@@ -13797,7 +13797,7 @@
         },
         "file": "wp-includes/deprecated.php"
     },
-    "1398": {
+    {
         "name": "update_wpmu_options",
         "line": 132,
         "end_line": 132,
@@ -13816,7 +13816,7 @@
         },
         "file": "wp-admin/network/settings.php"
     },
-    "1399": {
+    {
         "name": "update_{$meta_type}_meta",
         "line": 250,
         "end_line": 250,
@@ -13871,7 +13871,7 @@
         },
         "file": "wp-includes/meta.php"
     },
-    "1403": {
+    {
         "name": "updated_option",
         "line": 432,
         "end_line": 432,
@@ -13917,7 +13917,7 @@
         },
         "file": "wp-includes/option.php"
     },
-    "1404": {
+    {
         "name": "updated_postmeta",
         "line": 303,
         "end_line": 303,
@@ -13972,7 +13972,7 @@
         },
         "file": "wp-includes/meta.php"
     },
-    "1405": {
+    {
         "name": "updated_usermeta",
         "line": 2353,
         "end_line": 2353,
@@ -13990,7 +13990,7 @@
         },
         "file": "wp-includes/deprecated.php"
     },
-    "1406": {
+    {
         "name": "updated_{$meta_type}_meta",
         "line": 289,
         "end_line": 289,
@@ -14045,7 +14045,7 @@
         },
         "file": "wp-includes/meta.php"
     },
-    "1412": {
+    {
         "name": "upload_ui_over_quota",
         "line": 2092,
         "end_line": 2092,
@@ -14063,7 +14063,7 @@
         },
         "file": "wp-admin/includes/media.php"
     },
-    "1418": {
+    {
         "name": "user_admin_menu",
         "line": 145,
         "end_line": 145,
@@ -14091,7 +14091,7 @@
         },
         "file": "wp-admin/includes/menu.php"
     },
-    "1419": {
+    {
         "name": "user_admin_notices",
         "line": 274,
         "end_line": 274,
@@ -14109,7 +14109,7 @@
         },
         "file": "wp-admin/admin-header.php"
     },
-    "1426": {
+    {
         "name": "user_edit_form_tag",
         "line": 244,
         "end_line": 244,
@@ -14127,7 +14127,7 @@
         },
         "file": "wp-admin/user-edit.php"
     },
-    "1429": {
+    {
         "name": "user_new_form",
         "line": 444,
         "end_line": 444,
@@ -14155,7 +14155,7 @@
         },
         "file": "wp-admin/user-new.php"
     },
-    "1430": {
+    {
         "name": "user_new_form_tag",
         "line": 404,
         "end_line": 404,
@@ -14173,7 +14173,7 @@
         },
         "file": "wp-admin/user-new.php"
     },
-    "1432": {
+    {
         "name": "user_profile_update_errors",
         "line": 221,
         "end_line": 221,
@@ -14217,7 +14217,7 @@
         },
         "file": "wp-admin/includes/user.php"
     },
-    "1433": {
+    {
         "name": "user_register",
         "line": 1897,
         "end_line": 1897,
@@ -14245,7 +14245,7 @@
         },
         "file": "wp-includes/user.php"
     },
-    "1435": {
+    {
         "name": "user_request_action_confirmed",
         "line": 1125,
         "end_line": 1125,
@@ -14273,7 +14273,7 @@
         },
         "file": "wp-login.php"
     },
-    "1449": {
+    {
         "name": "validate_password_reset",
         "line": 919,
         "end_line": 919,
@@ -14311,7 +14311,7 @@
         },
         "file": "wp-login.php"
     },
-    "1451": {
+    {
         "name": "welcome_panel",
         "line": 142,
         "end_line": 142,
@@ -14329,7 +14329,7 @@
         },
         "file": "wp-admin/index.php"
     },
-    "1454": {
+    {
         "name": "widgets.php",
         "line": 2287,
         "end_line": 2287,
@@ -14347,7 +14347,7 @@
         },
         "file": "wp-admin/includes/ajax-actions.php"
     },
-    "1455": {
+    {
         "name": "widgets_admin_page",
         "line": 430,
         "end_line": 430,
@@ -14365,7 +14365,7 @@
         },
         "file": "wp-admin/widgets.php"
     },
-    "1456": {
+    {
         "name": "widgets_init",
         "line": 1765,
         "end_line": 1765,
@@ -14383,7 +14383,7 @@
         },
         "file": "wp-includes/widgets.php"
     },
-    "1457": {
+    {
         "name": "wp-mail.php",
         "line": 29,
         "end_line": 29,
@@ -14401,7 +14401,7 @@
         },
         "file": "wp-mail.php"
     },
-    "1458": {
+    {
         "name": "wp_add_nav_menu_item",
         "line": 537,
         "end_line": 537,
@@ -14452,7 +14452,7 @@
         },
         "file": "wp-includes/nav-menu.php"
     },
-    "1462": {
+    {
         "name": "wp_after_admin_bar_render",
         "line": 102,
         "end_line": 102,
@@ -14470,7 +14470,7 @@
         },
         "file": "wp-includes/admin-bar.php"
     },
-    "1463": {
+    {
         "name": "wp_ajax_crop_image_pre_save",
         "line": 3891,
         "end_line": 3891,
@@ -14516,7 +14516,7 @@
         },
         "file": "wp-admin/includes/ajax-actions.php"
     },
-    "1466": {
+    {
         "name": "wp_ajax_nopriv_{$action}",
         "line": 190,
         "end_line": 190,
@@ -14534,7 +14534,7 @@
         },
         "file": "wp-admin/admin-ajax.php"
     },
-    "1467": {
+    {
         "name": "wp_ajax_{$action}",
         "line": 175,
         "end_line": 175,
@@ -14552,7 +14552,7 @@
         },
         "file": "wp-admin/admin-ajax.php"
     },
-    "1478": {
+    {
         "name": "wp_authenticate",
         "line": 67,
         "end_line": 67,
@@ -14592,7 +14592,7 @@
         },
         "file": "wp-includes/user.php"
     },
-    "1480": {
+    {
         "name": "wp_before_admin_bar_render",
         "line": 93,
         "end_line": 93,
@@ -14610,7 +14610,7 @@
         },
         "file": "wp-includes/admin-bar.php"
     },
-    "1481": {
+    {
         "name": "wp_blacklist_check",
         "line": 1271,
         "end_line": 1271,
@@ -14683,7 +14683,7 @@
         },
         "file": "wp-includes/comment.php"
     },
-    "1482": {
+    {
         "name": "wp_body_open",
         "line": 825,
         "end_line": 825,
@@ -14702,7 +14702,7 @@
         },
         "file": "wp-content/themes/twentythirteen/functions.php"
     },
-    "1483": {
+    {
         "name": "wp_body_open",
         "line": 281,
         "end_line": 281,
@@ -14715,7 +14715,7 @@
         },
         "file": "wp-content/themes/twentytwenty/functions.php"
     },
-    "1484": {
+    {
         "name": "wp_body_open",
         "line": 753,
         "end_line": 753,
@@ -14734,7 +14734,7 @@
         },
         "file": "wp-content/themes/twentyten/functions.php"
     },
-    "1485": {
+    {
         "name": "wp_body_open",
         "line": 256,
         "end_line": 256,
@@ -14753,7 +14753,7 @@
         },
         "file": "wp-content/themes/twentynineteen/inc/template-tags.php"
     },
-    "1486": {
+    {
         "name": "wp_body_open",
         "line": 251,
         "end_line": 251,
@@ -14772,7 +14772,7 @@
         },
         "file": "wp-content/themes/twentyfourteen/inc/template-tags.php"
     },
-    "1487": {
+    {
         "name": "wp_body_open",
         "line": 288,
         "end_line": 288,
@@ -14791,7 +14791,7 @@
         },
         "file": "wp-content/themes/twentyfifteen/inc/template-tags.php"
     },
-    "1488": {
+    {
         "name": "wp_body_open",
         "line": 2911,
         "end_line": 2911,
@@ -14809,7 +14809,7 @@
         },
         "file": "wp-includes/general-template.php"
     },
-    "1489": {
+    {
         "name": "wp_body_open",
         "line": 284,
         "end_line": 284,
@@ -14828,7 +14828,7 @@
         },
         "file": "wp-content/themes/twentysixteen/inc/template-tags.php"
     },
-    "1490": {
+    {
         "name": "wp_body_open",
         "line": 912,
         "end_line": 912,
@@ -14847,7 +14847,7 @@
         },
         "file": "wp-content/themes/twentyeleven/functions.php"
     },
-    "1491": {
+    {
         "name": "wp_body_open",
         "line": 217,
         "end_line": 217,
@@ -14866,7 +14866,7 @@
         },
         "file": "wp-content/themes/twentyseventeen/inc/template-tags.php"
     },
-    "1492": {
+    {
         "name": "wp_body_open",
         "line": 719,
         "end_line": 719,
@@ -14885,7 +14885,7 @@
         },
         "file": "wp-content/themes/twentytwelve/functions.php"
     },
-    "1506": {
+    {
         "name": "wp_create_nav_menu",
         "line": 374,
         "end_line": 374,
@@ -14922,7 +14922,7 @@
         },
         "file": "wp-includes/nav-menu.php"
     },
-    "1508": {
+    {
         "name": "wp_creating_autosave",
         "line": 1845,
         "end_line": 1845,
@@ -14950,7 +14950,7 @@
         },
         "file": "wp-admin/includes/post.php"
     },
-    "1509": {
+    {
         "name": "wp_dashboard_setup",
         "line": 109,
         "end_line": 109,
@@ -14968,7 +14968,7 @@
         },
         "file": "wp-admin/includes/dashboard.php"
     },
-    "1514": {
+    {
         "name": "wp_delete_nav_menu",
         "line": 297,
         "end_line": 297,
@@ -14996,7 +14996,7 @@
         },
         "file": "wp-includes/nav-menu.php"
     },
-    "1515": {
+    {
         "name": "wp_delete_post_revision",
         "line": 449,
         "end_line": 449,
@@ -15034,7 +15034,7 @@
         },
         "file": "wp-includes/revision.php"
     },
-    "1516": {
+    {
         "name": "wp_delete_site",
         "line": 274,
         "end_line": 274,
@@ -15062,7 +15062,7 @@
         },
         "file": "wp-includes/ms-site.php"
     },
-    "1530": {
+    {
         "name": "wp_edit_form_attachment_display",
         "line": 3157,
         "end_line": 3157,
@@ -15090,7 +15090,7 @@
         },
         "file": "wp-admin/includes/media.php"
     },
-    "1536": {
+    {
         "name": "wp_enqueue_code_editor",
         "line": 3519,
         "end_line": 3519,
@@ -15118,7 +15118,7 @@
         },
         "file": "wp-includes/general-template.php"
     },
-    "1537": {
+    {
         "name": "wp_enqueue_media",
         "line": 4017,
         "end_line": 4017,
@@ -15136,7 +15136,7 @@
         },
         "file": "wp-includes/media.php"
     },
-    "1538": {
+    {
         "name": "wp_enqueue_scripts",
         "line": 2668,
         "end_line": 2668,
@@ -15154,7 +15154,7 @@
         },
         "file": "wp-includes/script-loader.php"
     },
-    "1540": {
+    {
         "name": "wp_feed_options",
         "line": 774,
         "end_line": 774,
@@ -15190,7 +15190,7 @@
         },
         "file": "wp-includes/feed.php"
     },
-    "1541": {
+    {
         "name": "wp_footer",
         "line": 2895,
         "end_line": 2895,
@@ -15208,7 +15208,7 @@
         },
         "file": "wp-includes/general-template.php"
     },
-    "1570": {
+    {
         "name": "wp_head",
         "line": 2879,
         "end_line": 2879,
@@ -15226,7 +15226,7 @@
         },
         "file": "wp-includes/general-template.php"
     },
-    "1574": {
+    {
         "name": "wp_initialize_site",
         "line": 103,
         "end_line": 103,
@@ -15263,7 +15263,7 @@
         },
         "file": "wp-includes/ms-site.php"
     },
-    "1577": {
+    {
         "name": "wp_insert_comment",
         "line": 1937,
         "end_line": 1937,
@@ -15300,7 +15300,7 @@
         },
         "file": "wp-includes/comment.php"
     },
-    "1578": {
+    {
         "name": "wp_insert_post",
         "line": 4129,
         "end_line": 4129,
@@ -15346,7 +15346,7 @@
         },
         "file": "wp-includes/post.php"
     },
-    "1582": {
+    {
         "name": "wp_insert_site",
         "line": 87,
         "end_line": 87,
@@ -15374,7 +15374,7 @@
         },
         "file": "wp-includes/ms-site.php"
     },
-    "1585": {
+    {
         "name": "wp_install",
         "line": 112,
         "end_line": 112,
@@ -15402,7 +15402,7 @@
         },
         "file": "wp-admin/includes/upgrade.php"
     },
-    "1600": {
+    {
         "name": "wp_loaded",
         "line": 545,
         "end_line": 545,
@@ -15425,7 +15425,7 @@
         },
         "file": "wp-settings.php"
     },
-    "1601": {
+    {
         "name": "wp_login",
         "line": 110,
         "end_line": 110,
@@ -15462,7 +15462,7 @@
         },
         "file": "wp-includes/user.php"
     },
-    "1603": {
+    {
         "name": "wp_login_failed",
         "line": 558,
         "end_line": 558,
@@ -15495,7 +15495,7 @@
         },
         "file": "wp-includes/pluggable.php"
     },
-    "1604": {
+    {
         "name": "wp_logout",
         "line": 581,
         "end_line": 581,
@@ -15513,7 +15513,7 @@
         },
         "file": "wp-includes/pluggable.php"
     },
-    "1608": {
+    {
         "name": "wp_mail_failed",
         "line": 502,
         "end_line": 502,
@@ -15541,7 +15541,7 @@
         },
         "file": "wp-includes/pluggable.php"
     },
-    "1612": {
+    {
         "name": "wp_maybe_auto_update",
         "line": 242,
         "end_line": 242,
@@ -15559,7 +15559,7 @@
         },
         "file": "wp-includes/update.php"
     },
-    "1614": {
+    {
         "name": "wp_meta",
         "line": 640,
         "end_line": 640,
@@ -15577,7 +15577,7 @@
         },
         "file": "wp-includes/general-template.php"
     },
-    "1623": {
+    {
         "name": "wp_network_dashboard_setup",
         "line": 75,
         "end_line": 75,
@@ -15595,7 +15595,7 @@
         },
         "file": "wp-admin/includes/dashboard.php"
     },
-    "1632": {
+    {
         "name": "wp_playlist_scripts",
         "line": 2358,
         "end_line": 2358,
@@ -15632,7 +15632,7 @@
         },
         "file": "wp-includes/media.php"
     },
-    "1638": {
+    {
         "name": "wp_print_footer_scripts",
         "line": 2651,
         "end_line": 2651,
@@ -15650,7 +15650,7 @@
         },
         "file": "wp-includes/script-loader.php"
     },
-    "1639": {
+    {
         "name": "wp_print_scripts",
         "line": 76,
         "end_line": 76,
@@ -15668,7 +15668,7 @@
         },
         "file": "wp-includes/functions.wp-scripts.php"
     },
-    "1640": {
+    {
         "name": "wp_print_styles",
         "line": 52,
         "end_line": 52,
@@ -15686,7 +15686,7 @@
         },
         "file": "wp-includes/functions.wp-styles.php"
     },
-    "1648": {
+    {
         "name": "wp_privacy_personal_data_erased",
         "line": 814,
         "end_line": 814,
@@ -15714,7 +15714,7 @@
         },
         "file": "wp-admin/includes/privacy-tools.php"
     },
-    "1651": {
+    {
         "name": "wp_privacy_personal_data_export_file",
         "line": 717,
         "end_line": 717,
@@ -15742,7 +15742,7 @@
         },
         "file": "wp-admin/includes/privacy-tools.php"
     },
-    "1652": {
+    {
         "name": "wp_privacy_personal_data_export_file_created",
         "line": 453,
         "end_line": 453,
@@ -15797,7 +15797,7 @@
         },
         "file": "wp-admin/includes/privacy-tools.php"
     },
-    "1662": {
+    {
         "name": "wp_register_sidebar_widget",
         "line": 404,
         "end_line": 404,
@@ -15825,7 +15825,7 @@
         },
         "file": "wp-includes/widgets.php"
     },
-    "1666": {
+    {
         "name": "wp_restore_post_revision",
         "line": 418,
         "end_line": 418,
@@ -15862,7 +15862,7 @@
         },
         "file": "wp-includes/revision.php"
     },
-    "1673": {
+    {
         "name": "wp_set_comment_status",
         "line": 2293,
         "end_line": 2293,
@@ -15900,7 +15900,7 @@
         },
         "file": "wp-includes/comment.php"
     },
-    "1690": {
+    {
         "name": "wp_trash_post",
         "line": 3140,
         "end_line": 3140,
@@ -15928,7 +15928,7 @@
         },
         "file": "wp-includes/post.php"
     },
-    "1694": {
+    {
         "name": "wp_uninitialize_site",
         "line": 252,
         "end_line": 252,
@@ -15956,7 +15956,7 @@
         },
         "file": "wp-includes/ms-site.php"
     },
-    "1702": {
+    {
         "name": "wp_unregister_sidebar_widget",
         "line": 476,
         "end_line": 476,
@@ -15984,7 +15984,7 @@
         },
         "file": "wp-includes/widgets.php"
     },
-    "1704": {
+    {
         "name": "wp_update_comment_count",
         "line": 2540,
         "end_line": 2540,
@@ -16030,7 +16030,7 @@
         },
         "file": "wp-includes/comment.php"
     },
-    "1706": {
+    {
         "name": "wp_update_nav_menu",
         "line": 401,
         "end_line": 401,
@@ -16067,7 +16067,7 @@
         },
         "file": "wp-includes/nav-menu.php"
     },
-    "1707": {
+    {
         "name": "wp_update_nav_menu_item",
         "line": 589,
         "end_line": 589,
@@ -16118,7 +16118,7 @@
         },
         "file": "wp-includes/nav-menu.php"
     },
-    "1709": {
+    {
         "name": "wp_update_site",
         "line": 188,
         "end_line": 188,
@@ -16155,7 +16155,7 @@
         },
         "file": "wp-includes/ms-site.php"
     },
-    "1712": {
+    {
         "name": "wp_upgrade",
         "line": 667,
         "end_line": 667,
@@ -16192,7 +16192,7 @@
         },
         "file": "wp-admin/includes/upgrade.php"
     },
-    "1714": {
+    {
         "name": "wp_user_dashboard_setup",
         "line": 92,
         "end_line": 92,
@@ -16210,7 +16210,7 @@
         },
         "file": "wp-admin/includes/dashboard.php"
     },
-    "1717": {
+    {
         "name": "wp_validate_site_data",
         "line": 511,
         "end_line": 511,
@@ -16257,7 +16257,7 @@
         },
         "file": "wp-includes/ms-site.php"
     },
-    "1718": {
+    {
         "name": "wp_validate_site_deletion",
         "line": 228,
         "end_line": 228,
@@ -16294,7 +16294,7 @@
         },
         "file": "wp-includes/ms-site.php"
     },
-    "1719": {
+    {
         "name": "wp_verify_nonce_failed",
         "line": 2136,
         "end_line": 2136,
@@ -16350,7 +16350,7 @@
         },
         "file": "wp-includes/pluggable.php"
     },
-    "1727": {
+    {
         "name": "wpmu_activate_blog",
         "line": 1228,
         "end_line": 1228,
@@ -16415,7 +16415,7 @@
         },
         "file": "wp-includes/ms-functions.php"
     },
-    "1728": {
+    {
         "name": "wpmu_activate_user",
         "line": 1181,
         "end_line": 1181,
@@ -16462,7 +16462,7 @@
         },
         "file": "wp-includes/ms-functions.php"
     },
-    "1730": {
+    {
         "name": "wpmu_blog_updated",
         "line": 30,
         "end_line": 30,
@@ -16491,7 +16491,7 @@
         },
         "file": "wp-includes/ms-blogs.php"
     },
-    "1732": {
+    {
         "name": "wpmu_delete_user",
         "line": 166,
         "end_line": 166,
@@ -16520,7 +16520,7 @@
         },
         "file": "wp-admin/includes/ms.php"
     },
-    "1735": {
+    {
         "name": "wpmu_new_user",
         "line": 1273,
         "end_line": 1273,
@@ -16549,7 +16549,7 @@
         },
         "file": "wp-includes/ms-functions.php"
     },
-    "1736": {
+    {
         "name": "wpmu_options",
         "line": 483,
         "end_line": 483,
@@ -16568,7 +16568,7 @@
         },
         "file": "wp-admin/network/settings.php"
     },
-    "1743": {
+    {
         "name": "wpmu_update_blog_options",
         "line": 60,
         "end_line": 60,
@@ -16601,7 +16601,7 @@
         },
         "file": "wp-admin/network/site-settings.php"
     },
-    "1744": {
+    {
         "name": "wpmu_upgrade_page",
         "line": 149,
         "end_line": 149,
@@ -16620,7 +16620,7 @@
         },
         "file": "wp-admin/network/upgrade.php"
     },
-    "1745": {
+    {
         "name": "wpmu_upgrade_site",
         "line": 119,
         "end_line": 119,
@@ -16649,7 +16649,7 @@
         },
         "file": "wp-admin/network/upgrade.php"
     },
-    "1750": {
+    {
         "name": "wpmuadminedit",
         "line": 28,
         "end_line": 28,
@@ -16667,7 +16667,7 @@
         },
         "file": "wp-admin/network/edit.php"
     },
-    "1751": {
+    {
         "name": "wpmuadminresult",
         "line": 444,
         "end_line": 444,
@@ -16686,7 +16686,7 @@
         },
         "file": "wp-admin/includes/dashboard.php"
     },
-    "1752": {
+    {
         "name": "wpmueditblogaction",
         "line": 168,
         "end_line": 168,
@@ -16714,7 +16714,7 @@
         },
         "file": "wp-admin/network/site-settings.php"
     },
-    "1758": {
+    {
         "name": "xmlrpc_publish_post",
         "line": 6796,
         "end_line": 6796,
@@ -16742,7 +16742,7 @@
         },
         "file": "wp-includes/post.php"
     },
-    "1759": {
+    {
         "name": "xmlrpc_rsd_apis",
         "line": 54,
         "end_line": 54,
@@ -16765,7 +16765,7 @@
         },
         "file": "xmlrpc.php"
     },
-    "1771": {
+    {
         "name": "{$hook}",
         "line": 138,
         "end_line": 138,
@@ -16805,7 +16805,7 @@
         },
         "file": "wp-cron.php"
     },
-    "1772": {
+    {
         "name": "{$new_status}_{$post->post_type}",
         "line": 4651,
         "end_line": 4651,
@@ -16842,7 +16842,7 @@
         },
         "file": "wp-includes/post.php"
     },
-    "1773": {
+    {
         "name": "{$old_status}_to_{$new_status}",
         "line": 4630,
         "end_line": 4630,
@@ -16870,7 +16870,7 @@
         },
         "file": "wp-includes/post.php"
     },
-    "1774": {
+    {
         "name": "{$page_hook}",
         "line": 254,
         "end_line": 254,
@@ -16893,7 +16893,7 @@
         },
         "file": "wp-admin/admin.php"
     },
-    "1775": {
+    {
         "name": "{$tag}",
         "line": 660,
         "end_line": 660,
@@ -16908,7 +16908,7 @@
         },
         "file": "wp-includes/plugin.php"
     },
-    "1777": {
+    {
         "name": "{$taxonomy}_add_form",
         "line": 569,
         "end_line": 569,
@@ -16936,7 +16936,7 @@
         },
         "file": "wp-admin/edit-tags.php"
     },
-    "1778": {
+    {
         "name": "{$taxonomy}_add_form_fields",
         "line": 521,
         "end_line": 521,
@@ -16964,7 +16964,7 @@
         },
         "file": "wp-admin/edit-tags.php"
     },
-    "1779": {
+    {
         "name": "{$taxonomy}_edit_form",
         "line": 269,
         "end_line": 269,
@@ -17001,7 +17001,7 @@
         },
         "file": "wp-admin/edit-tag-form.php"
     },
-    "1780": {
+    {
         "name": "{$taxonomy}_edit_form_fields",
         "line": 237,
         "end_line": 237,
@@ -17038,7 +17038,7 @@
         },
         "file": "wp-admin/edit-tag-form.php"
     },
-    "1781": {
+    {
         "name": "{$taxonomy}_pre_add_form",
         "line": 413,
         "end_line": 413,
@@ -17066,7 +17066,7 @@
         },
         "file": "wp-admin/edit-tags.php"
     },
-    "1782": {
+    {
         "name": "{$taxonomy}_pre_edit_form",
         "line": 68,
         "end_line": 68,
@@ -17103,7 +17103,7 @@
         },
         "file": "wp-admin/edit-tag-form.php"
     },
-    "1783": {
+    {
         "name": "{$taxonomy}_term_edit_form_tag",
         "line": 101,
         "end_line": 101,
@@ -17121,7 +17121,7 @@
         },
         "file": "wp-admin/edit-tag-form.php"
     },
-    "1784": {
+    {
         "name": "{$taxonomy}_term_edit_form_top",
         "line": 123,
         "end_line": 123,
@@ -17158,7 +17158,7 @@
         },
         "file": "wp-admin/edit-tag-form.php"
     },
-    "1785": {
+    {
         "name": "{$taxonomy}_term_new_form_tag",
         "line": 427,
         "end_line": 427,
@@ -17176,4 +17176,4 @@
         },
         "file": "wp-admin/edit-tags.php"
     }
-}
+]
