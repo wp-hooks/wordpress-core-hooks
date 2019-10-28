@@ -1268,30 +1268,6 @@
         "file": "wp-admin/includes/media.php"
     },
     {
-        "name": "attachment_icon",
-        "line": 1957,
-        "end_line": 1957,
-        "type": "filter",
-        "doc": {
-            "description": "",
-            "long_description": "",
-            "tags": []
-        },
-        "file": "wp-includes/deprecated.php"
-    },
-    {
-        "name": "attachment_innerHTML",
-        "line": 1983,
-        "end_line": 1983,
-        "type": "filter",
-        "doc": {
-            "description": "",
-            "long_description": "",
-            "tags": []
-        },
-        "file": "wp-includes/deprecated.php"
-    },
-    {
         "name": "attachment_link",
         "line": 457,
         "end_line": 457,
@@ -1323,18 +1299,6 @@
             ]
         },
         "file": "wp-includes/link-template.php"
-    },
-    {
-        "name": "attachment_max_dims",
-        "line": 1928,
-        "end_line": 1928,
-        "type": "filter",
-        "doc": {
-            "description": "",
-            "long_description": "",
-            "tags": []
-        },
-        "file": "wp-includes/deprecated.php"
     },
     {
         "name": "attachment_thumbnail_args",
@@ -10148,18 +10112,6 @@
         "file": "wp-includes/functions.php"
     },
     {
-        "name": "extra_theme_headers",
-        "line": 3078,
-        "end_line": 3078,
-        "type": "filter",
-        "doc": {
-            "description": "",
-            "long_description": "",
-            "tags": []
-        },
-        "file": "wp-includes/deprecated.php"
-    },
-    {
         "name": "extra_{$context}_headers",
         "line": 5734,
         "end_line": 5734,
@@ -12650,18 +12602,6 @@
         "file": "wp-includes/link-template.php"
     },
     {
-        "name": "get_editable_authors",
-        "line": 265,
-        "end_line": 265,
-        "type": "filter",
-        "doc": {
-            "description": "",
-            "long_description": "",
-            "tags": []
-        },
-        "file": "wp-admin/includes/deprecated.php"
-    },
-    {
         "name": "get_enclosed",
         "line": 4736,
         "end_line": 4736,
@@ -13201,18 +13141,6 @@
             ]
         },
         "file": "wp-includes/taxonomy.php"
-    },
-    {
-        "name": "get_others_drafts",
-        "line": 705,
-        "end_line": 705,
-        "type": "filter",
-        "doc": {
-            "description": "",
-            "long_description": "",
-            "tags": []
-        },
-        "file": "wp-admin/includes/deprecated.php"
     },
     {
         "name": "get_page_of_comment",
@@ -14437,18 +14365,6 @@
     },
     {
         "name": "get_the_excerpt",
-        "line": 1561,
-        "end_line": 1561,
-        "type": "filter",
-        "doc": {
-            "description": "",
-            "long_description": "",
-            "tags": []
-        },
-        "file": "wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php"
-    },
-    {
-        "name": "get_the_excerpt",
         "line": 425,
         "end_line": 425,
         "type": "filter",
@@ -14484,6 +14400,18 @@
             ]
         },
         "file": "wp-includes/post-template.php"
+    },
+    {
+        "name": "get_the_excerpt",
+        "line": 1561,
+        "end_line": 1561,
+        "type": "filter",
+        "doc": {
+            "description": "",
+            "long_description": "",
+            "tags": []
+        },
+        "file": "wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php"
     },
     {
         "name": "get_the_generator_{$type}",
@@ -15600,30 +15528,6 @@
         "file": "wp-admin/includes/misc.php"
     },
     {
-        "name": "graceful_fail",
-        "line": 91,
-        "end_line": 91,
-        "type": "filter",
-        "doc": {
-            "description": "",
-            "long_description": "",
-            "tags": []
-        },
-        "file": "wp-includes/ms-deprecated.php"
-    },
-    {
-        "name": "graceful_fail_template",
-        "line": 92,
-        "end_line": 115,
-        "type": "filter",
-        "doc": {
-            "description": "",
-            "long_description": "",
-            "tags": []
-        },
-        "file": "wp-includes/ms-deprecated.php"
-    },
-    {
         "name": "handle_bulk_actions-{$screen}",
         "line": 109,
         "end_line": 109,
@@ -16127,35 +16031,6 @@
         "file": "wp-includes/link-template.php"
     },
     {
-        "name": "htmledit_pre",
-        "line": 3612,
-        "end_line": 3612,
-        "type": "filter",
-        "doc": {
-            "description": "Filters the text before it is formatted for the HTML editor.",
-            "long_description": "",
-            "tags": [
-                {
-                    "name": "since",
-                    "content": "2.5.0"
-                },
-                {
-                    "name": "deprecated",
-                    "content": "4.3.0"
-                },
-                {
-                    "name": "param",
-                    "content": "The HTML-formatted text.",
-                    "types": [
-                        "string"
-                    ],
-                    "variable": "$output"
-                }
-            ]
-        },
-        "file": "wp-includes/deprecated.php"
-    },
-    {
         "name": "http_api_transports",
         "line": 529,
         "end_line": 529,
@@ -16650,23 +16525,6 @@
             ]
         },
         "file": "wp-includes/formatting.php"
-    },
-    {
-        "name": "icon_dir",
-        "line": 1894,
-        "end_line": 1894,
-        "type": "filter",
-        "doc": {
-            "description": "",
-            "long_description": "",
-            "tags": [
-                {
-                    "name": "todo",
-                    "content": "Check performance, might be faster to use array slice instead."
-                }
-            ]
-        },
-        "file": "wp-includes/deprecated.php"
     },
     {
         "name": "icon_dir",
@@ -17597,18 +17455,6 @@
         "file": "wp-includes/wp-db.php"
     },
     {
-        "name": "index_rel_link",
-        "line": 2728,
-        "end_line": 2728,
-        "type": "filter",
-        "doc": {
-            "description": "",
-            "long_description": "",
-            "tags": []
-        },
-        "file": "wp-includes/deprecated.php"
-    },
-    {
         "name": "insert_user_meta",
         "line": 1836,
         "end_line": 1836,
@@ -18453,18 +18299,6 @@
             ]
         },
         "file": "wp-includes/general-template.php"
-    },
-    {
-        "name": "link_category",
-        "line": 1040,
-        "end_line": 1040,
-        "type": "filter",
-        "doc": {
-            "description": "",
-            "long_description": "",
-            "tags": []
-        },
-        "file": "wp-includes/deprecated.php"
     },
     {
         "name": "link_category",
@@ -20211,18 +20045,6 @@
     },
     {
         "name": "mce_buttons",
-        "line": 811,
-        "end_line": 811,
-        "type": "filter",
-        "doc": {
-            "description": "",
-            "long_description": "",
-            "tags": []
-        },
-        "file": "wp-includes/script-loader.php"
-    },
-    {
-        "name": "mce_buttons",
         "line": 616,
         "end_line": 616,
         "type": "filter",
@@ -20253,6 +20075,18 @@
             ]
         },
         "file": "wp-includes/class-wp-editor.php"
+    },
+    {
+        "name": "mce_buttons",
+        "line": 811,
+        "end_line": 811,
+        "type": "filter",
+        "doc": {
+            "description": "",
+            "long_description": "",
+            "tags": []
+        },
+        "file": "wp-includes/script-loader.php"
     },
     {
         "name": "mce_buttons_2",
@@ -20301,6 +20135,18 @@
     },
     {
         "name": "mce_buttons_3",
+        "line": 830,
+        "end_line": 830,
+        "type": "filter",
+        "doc": {
+            "description": "",
+            "long_description": "",
+            "tags": []
+        },
+        "file": "wp-includes/script-loader.php"
+    },
+    {
+        "name": "mce_buttons_3",
         "line": 642,
         "end_line": 642,
         "type": "filter",
@@ -20331,30 +20177,6 @@
             ]
         },
         "file": "wp-includes/class-wp-editor.php"
-    },
-    {
-        "name": "mce_buttons_3",
-        "line": 830,
-        "end_line": 830,
-        "type": "filter",
-        "doc": {
-            "description": "",
-            "long_description": "",
-            "tags": []
-        },
-        "file": "wp-includes/script-loader.php"
-    },
-    {
-        "name": "mce_buttons_4",
-        "line": 832,
-        "end_line": 832,
-        "type": "filter",
-        "doc": {
-            "description": "",
-            "long_description": "",
-            "tags": []
-        },
-        "file": "wp-includes/script-loader.php"
     },
     {
         "name": "mce_buttons_4",
@@ -20388,6 +20210,18 @@
             ]
         },
         "file": "wp-includes/class-wp-editor.php"
+    },
+    {
+        "name": "mce_buttons_4",
+        "line": 832,
+        "end_line": 832,
+        "type": "filter",
+        "doc": {
+            "description": "",
+            "long_description": "",
+            "tags": []
+        },
+        "file": "wp-includes/script-loader.php"
     },
     {
         "name": "mce_css",
@@ -20441,18 +20275,6 @@
     },
     {
         "name": "mce_external_plugins",
-        "line": 834,
-        "end_line": 834,
-        "type": "filter",
-        "doc": {
-            "description": "",
-            "long_description": "",
-            "tags": []
-        },
-        "file": "wp-includes/script-loader.php"
-    },
-    {
-        "name": "mce_external_plugins",
         "line": 402,
         "end_line": 402,
         "type": "filter",
@@ -20475,6 +20297,18 @@
             ]
         },
         "file": "wp-includes/class-wp-editor.php"
+    },
+    {
+        "name": "mce_external_plugins",
+        "line": 834,
+        "end_line": 834,
+        "type": "filter",
+        "doc": {
+            "description": "",
+            "long_description": "",
+            "tags": []
+        },
+        "file": "wp-includes/script-loader.php"
     },
     {
         "name": "media_buttons_context",
@@ -24199,18 +24033,6 @@
             ]
         },
         "file": "wp-admin/menu-header.php"
-    },
-    {
-        "name": "parent_post_rel_link",
-        "line": 2771,
-        "end_line": 2771,
-        "type": "filter",
-        "doc": {
-            "description": "",
-            "long_description": "",
-            "tags": []
-        },
-        "file": "wp-includes/deprecated.php"
     },
     {
         "name": "parent_theme_file_path",
@@ -33806,35 +33628,6 @@
         "file": "wp-includes/class-wp-rewrite.php"
     },
     {
-        "name": "richedit_pre",
-        "line": 3574,
-        "end_line": 3574,
-        "type": "filter",
-        "doc": {
-            "description": "Filters text returned for the rich text editor.",
-            "long_description": "<p>This filter is first evaluated, and the value returned, if an empty string is passed to wp_richedit_pre(). If an empty string is passed, it results in a break tag and line feed.</p> <p>If a non-empty string is passed, the filter is evaluated on the wp_richedit_pre() return after being formatted.</p>",
-            "tags": [
-                {
-                    "name": "since",
-                    "content": "2.0.0"
-                },
-                {
-                    "name": "deprecated",
-                    "content": "4.3.0"
-                },
-                {
-                    "name": "param",
-                    "content": "Text for the rich text editor.",
-                    "types": [
-                        "string"
-                    ],
-                    "variable": "$output"
-                }
-            ]
-        },
-        "file": "wp-includes/deprecated.php"
-    },
-    {
         "name": "robots_txt",
         "line": 1630,
         "end_line": 1630,
@@ -35685,35 +35478,6 @@
             ]
         },
         "file": "wp-includes/shortcodes.php"
-    },
-    {
-        "name": "shortcut_link",
-        "line": 3920,
-        "end_line": 3920,
-        "type": "filter",
-        "doc": {
-            "description": "Filters the Press This bookmarklet link.",
-            "long_description": "",
-            "tags": [
-                {
-                    "name": "since",
-                    "content": "2.6.0"
-                },
-                {
-                    "name": "deprecated",
-                    "content": "4.9.0"
-                },
-                {
-                    "name": "param",
-                    "content": "The Press This bookmarklet link.",
-                    "types": [
-                        "string"
-                    ],
-                    "variable": "$link"
-                }
-            ]
-        },
-        "file": "wp-includes/deprecated.php"
     },
     {
         "name": "show_admin_bar",
@@ -38730,31 +38494,6 @@
         "file": "wp-includes/post-template.php"
     },
     {
-        "name": "the_content_rss",
-        "line": 1669,
-        "end_line": 1669,
-        "type": "filter",
-        "doc": {
-            "description": "Filters the post content in the context of an RSS feed.",
-            "long_description": "",
-            "tags": [
-                {
-                    "name": "since",
-                    "content": "0.71"
-                },
-                {
-                    "name": "param",
-                    "content": "Content of the current post.",
-                    "types": [
-                        "string"
-                    ],
-                    "variable": "$content"
-                }
-            ]
-        },
-        "file": "wp-includes/deprecated.php"
-    },
-    {
         "name": "the_date",
         "line": 2373,
         "end_line": 2373,
@@ -39720,18 +39459,6 @@
     },
     {
         "name": "the_title",
-        "line": 186,
-        "end_line": 186,
-        "type": "filter",
-        "doc": {
-            "description": "",
-            "long_description": "",
-            "tags": []
-        },
-        "file": "wp-includes/deprecated.php"
-    },
-    {
-        "name": "the_title",
         "line": 171,
         "end_line": 171,
         "type": "filter",
@@ -39762,42 +39489,6 @@
             ]
         },
         "file": "wp-includes/post-template.php"
-    },
-    {
-        "name": "the_title",
-        "line": 151,
-        "end_line": 151,
-        "type": "filter",
-        "doc": {
-            "description": "",
-            "long_description": "",
-            "tags": []
-        },
-        "file": "wp-includes/deprecated.php"
-    },
-    {
-        "name": "the_title",
-        "line": 2765,
-        "end_line": 2765,
-        "type": "filter",
-        "doc": {
-            "description": "",
-            "long_description": "",
-            "tags": []
-        },
-        "file": "wp-includes/deprecated.php"
-    },
-    {
-        "name": "the_title",
-        "line": 2690,
-        "end_line": 2690,
-        "type": "filter",
-        "doc": {
-            "description": "",
-            "long_description": "",
-            "tags": []
-        },
-        "file": "wp-includes/deprecated.php"
     },
     {
         "name": "the_title_rss",
@@ -40625,6 +40316,18 @@
     },
     {
         "name": "tiny_mce_plugins",
+        "line": 782,
+        "end_line": 782,
+        "type": "filter",
+        "doc": {
+            "description": "",
+            "long_description": "",
+            "tags": []
+        },
+        "file": "wp-includes/script-loader.php"
+    },
+    {
+        "name": "tiny_mce_plugins",
         "line": 439,
         "end_line": 439,
         "type": "filter",
@@ -40647,18 +40350,6 @@
             ]
         },
         "file": "wp-includes/class-wp-editor.php"
-    },
-    {
-        "name": "tiny_mce_plugins",
-        "line": 782,
-        "end_line": 782,
-        "type": "filter",
-        "doc": {
-            "description": "",
-            "long_description": "",
-            "tags": []
-        },
-        "file": "wp-includes/script-loader.php"
     },
     {
         "name": "trackback_url",
@@ -42149,39 +41840,6 @@
     },
     {
         "name": "user_confirmed_action_email_content",
-        "line": 3316,
-        "end_line": 3316,
-        "type": "filter",
-        "doc": {
-            "description": "Filters the body of the data erasure fulfillment notification.",
-            "long_description": "<p>The email is sent to a user when a their data erasure request is fulfilled by an administrator.</p> <p>The following strings have a special meaning and will get replaced dynamically:</p> <h3>SITENAME###           The name of the site.</h3> <h3>PRIVACY_POLICY_URL### Privacy policy page URL.</h3> <h3>SITEURL###            The URL to the site.</h3>",
-            "tags": [
-                {
-                    "name": "since",
-                    "content": "4.9.6"
-                },
-                {
-                    "name": "param",
-                    "content": "Text in the email.",
-                    "types": [
-                        "string"
-                    ],
-                    "variable": "$email_text"
-                },
-                {
-                    "name": "param",
-                    "content": "{     Data relating to the account action email.     @type WP_User_Request $request            User request object.     @type string          $message_recipient  The address that the email will be sent to. Defaults                                               to the value of <code>$request-&gt;email</code>, but can be changed                                               by the <code>user_erasure_fulfillment_email_to</code> filter.     @type string          $privacy_policy_url Privacy policy URL.     @type string          $sitename           The site name sending the mail.     @type string          $siteurl            The site URL sending the mail. }",
-                    "types": [
-                        "array"
-                    ],
-                    "variable": "$email_data"
-                }
-            ]
-        },
-        "file": "wp-includes/user.php"
-    },
-    {
-        "name": "user_confirmed_action_email_content",
         "line": 3140,
         "end_line": 3140,
         "type": "filter",
@@ -42204,6 +41862,39 @@
                 {
                     "name": "param",
                     "content": "{     Data relating to the account action email.     @type WP_User_Request $request     User request object.     @type string          $user_email  The email address confirming a request     @type string          $description Description of the action being performed so the user knows what the email is for.     @type string          $manage_url  The link to click manage privacy requests of this type.     @type string          $sitename    The site name sending the mail.     @type string          $siteurl     The site URL sending the mail.     @type string          $admin_email The administrator email receiving the mail. }",
+                    "types": [
+                        "array"
+                    ],
+                    "variable": "$email_data"
+                }
+            ]
+        },
+        "file": "wp-includes/user.php"
+    },
+    {
+        "name": "user_confirmed_action_email_content",
+        "line": 3316,
+        "end_line": 3316,
+        "type": "filter",
+        "doc": {
+            "description": "Filters the body of the data erasure fulfillment notification.",
+            "long_description": "<p>The email is sent to a user when a their data erasure request is fulfilled by an administrator.</p> <p>The following strings have a special meaning and will get replaced dynamically:</p> <h3>SITENAME###           The name of the site.</h3> <h3>PRIVACY_POLICY_URL### Privacy policy page URL.</h3> <h3>SITEURL###            The URL to the site.</h3>",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "4.9.6"
+                },
+                {
+                    "name": "param",
+                    "content": "Text in the email.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$email_text"
+                },
+                {
+                    "name": "param",
+                    "content": "{     Data relating to the account action email.     @type WP_User_Request $request            User request object.     @type string          $message_recipient  The address that the email will be sent to. Defaults                                               to the value of <code>$request-&gt;email</code>, but can be changed                                               by the <code>user_erasure_fulfillment_email_to</code> filter.     @type string          $privacy_policy_url Privacy policy URL.     @type string          $sitename           The site name sending the mail.     @type string          $siteurl            The site URL sending the mail. }",
                     "types": [
                         "array"
                     ],
@@ -43375,6 +43066,18 @@
     },
     {
         "name": "widget_comments_args",
+        "line": 46,
+        "end_line": 53,
+        "type": "filter",
+        "doc": {
+            "description": "",
+            "long_description": "",
+            "tags": []
+        },
+        "file": "wp-includes/blocks/latest-comments.php"
+    },
+    {
+        "name": "widget_comments_args",
         "line": 103,
         "end_line": 111,
         "type": "filter",
@@ -43415,18 +43118,6 @@
             ]
         },
         "file": "wp-includes/widgets/class-wp-widget-recent-comments.php"
-    },
-    {
-        "name": "widget_comments_args",
-        "line": 46,
-        "end_line": 53,
-        "type": "filter",
-        "doc": {
-            "description": "",
-            "long_description": "",
-            "tags": []
-        },
-        "file": "wp-includes/blocks/latest-comments.php"
     },
     {
         "name": "widget_custom_html_content",
@@ -45194,18 +44885,6 @@
             ]
         },
         "file": "wp-includes/post.php"
-    },
-    {
-        "name": "wp_create_thumbnail",
-        "line": 1128,
-        "end_line": 1128,
-        "type": "filter",
-        "doc": {
-            "description": "",
-            "long_description": "",
-            "tags": []
-        },
-        "file": "wp-admin/includes/deprecated.php"
     },
     {
         "name": "wp_dashboard_widgets",
@@ -53677,18 +53356,6 @@
             ]
         },
         "file": "wp-includes/link-template.php"
-    },
-    {
-        "name": "{$boundary}_post_rel_link",
-        "line": 2697,
-        "end_line": 2697,
-        "type": "filter",
-        "doc": {
-            "description": "",
-            "long_description": "",
-            "tags": []
-        },
-        "file": "wp-includes/deprecated.php"
     },
     {
         "name": "{$context}_memory_limit",

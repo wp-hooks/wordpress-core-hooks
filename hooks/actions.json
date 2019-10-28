@@ -1077,18 +1077,6 @@
         "file": "wp-includes/taxonomy.php"
     },
     {
-        "name": "added_usermeta",
-        "line": 2351,
-        "end_line": 2351,
-        "type": "action",
-        "doc": {
-            "description": "",
-            "long_description": "",
-            "tags": []
-        },
-        "file": "wp-includes/deprecated.php"
-    },
-    {
         "name": "added_{$meta_type}_meta",
         "line": 134,
         "end_line": 134,
@@ -5480,18 +5468,6 @@
         "file": "wp-admin/users.php"
     },
     {
-        "name": "delete_usermeta",
-        "line": 2234,
-        "end_line": 2234,
-        "type": "action",
-        "doc": {
-            "description": "",
-            "long_description": "",
-            "tags": []
-        },
-        "file": "wp-includes/deprecated.php"
-    },
-    {
         "name": "delete_widget",
         "line": 185,
         "end_line": 185,
@@ -5985,18 +5961,6 @@
             ]
         },
         "file": "wp-admin/includes/user.php"
-    },
-    {
-        "name": "deleted_usermeta",
-        "line": 2245,
-        "end_line": 2245,
-        "type": "action",
-        "doc": {
-            "description": "",
-            "long_description": "",
-            "tags": []
-        },
-        "file": "wp-includes/deprecated.php"
     },
     {
         "name": "deleted_{$meta_type}_meta",
@@ -11542,18 +11506,6 @@
         "file": "wp-includes/class-wp-user-query.php"
     },
     {
-        "name": "pre_user_search",
-        "line": 552,
-        "end_line": 552,
-        "type": "action_reference",
-        "doc": {
-            "description": "",
-            "long_description": "",
-            "tags": []
-        },
-        "file": "wp-admin/includes/deprecated.php"
-    },
-    {
         "name": "preprocess_signup_form",
         "line": 970,
         "end_line": 970,
@@ -15525,23 +15477,6 @@
         "file": "wp-includes/option.php"
     },
     {
-        "name": "update_usermeta",
-        "line": 2338,
-        "end_line": 2338,
-        "type": "action",
-        "doc": {
-            "description": "",
-            "long_description": "",
-            "tags": [
-                {
-                    "name": "todo",
-                    "content": "Might need fix because usermeta data is assumed to be already escaped"
-                }
-            ]
-        },
-        "file": "wp-includes/deprecated.php"
-    },
-    {
         "name": "update_wpmu_options",
         "line": 132,
         "end_line": 132,
@@ -15697,18 +15632,6 @@
             ]
         },
         "file": "wp-includes/meta.php"
-    },
-    {
-        "name": "updated_usermeta",
-        "line": 2353,
-        "end_line": 2353,
-        "type": "action",
-        "doc": {
-            "description": "",
-            "long_description": "",
-            "tags": []
-        },
-        "file": "wp-includes/deprecated.php"
     },
     {
         "name": "updated_{$meta_type}_meta",
