@@ -9,7 +9,7 @@
   "keywords": [
     "wordpress"
   ],
-  "files":[
+  "files": [
     "hooks",
     "readme.md",
     "schema.json"
