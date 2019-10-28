@@ -14,7 +14,7 @@
 	},
     "scripts": {
         "post-update-cmd": "rm -rf vendor/wordpress/wordpress/wp-content",
-        "generate": "@composer generate-from -- vendor/wordpress/wordpress",
+        "generate": "@composer generate-from -- vendor/wordpress/wordpress hooks",
         "generate-from": "@php -f src/generate.php",
         "validate-files": [
             "@composer validate-from -- hooks/actions.json",

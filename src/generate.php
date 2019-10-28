@@ -4,7 +4,17 @@ namespace JohnBillion\WPHooks;
 
 require_once 'vendor/autoload.php';
 
-$files = \WP_Parser\get_wp_files( $argv[1] );
+list( , $source_dir, $target_dir ) = $argv;
+
+if ( ! file_exists( $target_dir ) ) {
+	printf(
+		'The target directory "%s" does not exist. Please create it first.' . "\n",
+		$target_dir
+	);
+	exit( 1 );
+}
+
+$files = \WP_Parser\get_wp_files( $source_dir );
 
 function hooks_parse_files( $files, $root ) : array {
 	$output = array();
@@ -62,16 +72,16 @@ function hooks_parse_files( $files, $root ) : array {
 	return $output;
 }
 
-$output = hooks_parse_files( $files, $argv[1] );
+$output = hooks_parse_files( $files, $source_dir );
 
 $actions = array_values( array_filter( $output, function( array $hook ) : bool {
 	return in_array( $hook['type'], [ 'action', 'action_reference' ], true );
 } ) );
 
-$result = file_put_contents( 'hooks/actions.json', json_encode( $actions, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES ) );
+$result = file_put_contents( $target_dir . '/actions.json', json_encode( $actions, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES ) );
 
 $filters = array_values( array_filter( $output, function( array $hook ) : bool {
 	return in_array( $hook['type'], [ 'filter', 'filter_reference' ], true );
 } ) );
 
-$result = file_put_contents( 'hooks/filters.json', json_encode( $filters, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES ) );
+$result = file_put_contents( $target_dir . '/filters.json', json_encode( $filters, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES ) );
