@@ -13,14 +13,17 @@
 		"sort-packages": true
 	},
     "scripts": {
-        "generate": "@php -f src/generate.php"
+        "generate": "@php -f src/generate.php",
+        "validate-schema": "@php -f src/validate.php"
     },
     "scripts-descriptions": {
-        "generate": "Generates the hook files"
+        "generate": "Generates the hook files",
+        "validate-schema": "Validates the generated hook files against the schema"
     },
     "require-dev": {
         "php": ">=7",
         "oomphinc/composer-installers-extender": "^1.1",
+        "opis/json-schema": "^1",
         "roots/wordpress": "dev-nightly",
         "wordpress/phpdoc-parser": "dev-master"
     },

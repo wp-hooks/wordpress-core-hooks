@@ -15,3 +15,4 @@ WordPress actions and filters in machine-readable JSON format.
 
 * `composer install`
 * `composer generate`
+* `composer validate`
