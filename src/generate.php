@@ -68,6 +68,7 @@ function hooks_parse_files( $files, $root ) : array {
 
 		// Special case hooks to ignore.
 		$ignore_hooks = [
+			// Present in core for back-compat:
 			'load-categories.php',
 			'load-edit-link-categories.php',
 			'load-edit-tags.php',
@@ -75,6 +76,9 @@ function hooks_parse_files( $files, $root ) : array {
 			'load-page.php',
 			'option_enable_xmlrpc',
 			'pre_option_enable_xmlrpc',
+
+			// Present in do_action_deprecated() and apply_filters_deprecated():
+			'{$tag}',
 		];
 
 		if ( in_array( $hook['name'], $ignore_hooks, true ) ) {
