@@ -60,4 +60,4 @@ function hooks_parse_files( $files, $root ) : array {
 
 $output = hooks_parse_files( $files, 'vendor/wordpress/wordpress' );
 $json   = json_encode( $output, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES );
-$result = file_put_contents( 'hooks.json', $json );
+$result = file_put_contents( 'hooks/all.json', $json );
