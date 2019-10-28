@@ -134,5 +134,35 @@
             ]
         },
         "file": "wp-login.php"
+    },
+    {
+        "name": "rest_enabled",
+        "line": 267,
+        "end_line": 273,
+        "type": "filter_deprecated",
+        "doc": {
+            "description": "Filters whether the REST API is enabled.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "4.4.0"
+                },
+                {
+                    "name": "deprecated",
+                    "content": "4.7.0",
+                    "description": "Use the rest_authentication_errors filter to restrict access to the API"
+                },
+                {
+                    "name": "param",
+                    "content": "Whether the REST API is enabled. Default true.",
+                    "types": [
+                        "bool"
+                    ],
+                    "variable": "$rest_enabled"
+                }
+            ]
+        },
+        "file": "wp-includes/rest-api/class-wp-rest-server.php"
     }
 ]

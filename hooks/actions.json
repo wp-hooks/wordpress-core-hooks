@@ -281,6 +281,23 @@
         "file": "wp-admin/includes/dashboard.php"
     },
     {
+        "name": "add_admin_bar_menus",
+        "line": 627,
+        "end_line": 627,
+        "type": "action",
+        "doc": {
+            "description": "Fires after menus are added to the menu bar.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "3.1.0"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-admin-bar.php"
+    },
+    {
         "name": "add_attachment",
         "line": 4051,
         "end_line": 4051,
@@ -831,6 +848,39 @@
         "file": "wp-includes/taxonomy.php"
     },
     {
+        "name": "add_user_role",
+        "line": 551,
+        "end_line": 551,
+        "type": "action",
+        "doc": {
+            "description": "Fires immediately after the user has been given a new role.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "4.3.0"
+                },
+                {
+                    "name": "param",
+                    "content": "The user ID.",
+                    "types": [
+                        "int"
+                    ],
+                    "variable": "$user_id"
+                },
+                {
+                    "name": "param",
+                    "content": "The new role.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$role"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-user.php"
+    },
+    {
         "name": "add_user_to_blog",
         "line": 208,
         "end_line": 208,
@@ -1103,6 +1153,23 @@
             ]
         },
         "file": "wp-admin/admin.php"
+    },
+    {
+        "name": "admin_bar_init",
+        "line": 81,
+        "end_line": 81,
+        "type": "action",
+        "doc": {
+            "description": "Fires after WP_Admin_Bar is initialized.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "3.1.0"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-admin-bar.php"
     },
     {
         "name": "admin_bar_menu",
@@ -1800,6 +1867,88 @@
         "file": "wp-includes/user.php"
     },
     {
+        "name": "after_plugin_row",
+        "line": 998,
+        "end_line": 998,
+        "type": "action",
+        "doc": {
+            "description": "Fires after each row in the Plugins list table.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "2.3.0"
+                },
+                {
+                    "name": "param",
+                    "content": "Path to the plugin file relative to the plugins directory.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$plugin_file"
+                },
+                {
+                    "name": "param",
+                    "content": "An array of plugin data.",
+                    "types": [
+                        "array"
+                    ],
+                    "variable": "$plugin_data"
+                },
+                {
+                    "name": "param",
+                    "content": "Status of the plugin. Defaults are 'All', 'Active',                            'Inactive', 'Recently Activated', 'Upgrade', 'Must-Use',                            'Drop-ins', 'Search', 'Paused'.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$status"
+                }
+            ]
+        },
+        "file": "wp-admin/includes/class-wp-plugins-list-table.php"
+    },
+    {
+        "name": "after_plugin_row_{$plugin_file}",
+        "line": 1014,
+        "end_line": 1014,
+        "type": "action",
+        "doc": {
+            "description": "Fires after each specific row in the Plugins list table.",
+            "long_description": "<p>The dynamic portion of the hook name, <code>$plugin_file</code>, refers to the path to the plugin file, relative to the plugins directory.</p>",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "2.7.0"
+                },
+                {
+                    "name": "param",
+                    "content": "Path to the plugin file relative to the plugins directory.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$plugin_file"
+                },
+                {
+                    "name": "param",
+                    "content": "An array of plugin data.",
+                    "types": [
+                        "array"
+                    ],
+                    "variable": "$plugin_data"
+                },
+                {
+                    "name": "param",
+                    "content": "Status of the plugin. Defaults are 'All', 'Active',                            'Inactive', 'Recently Activated', 'Upgrade', 'Must-Use',                            'Drop-ins', 'Search', 'Paused'.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$status"
+                }
+            ]
+        },
+        "file": "wp-admin/includes/class-wp-plugins-list-table.php"
+    },
+    {
         "name": "after_setup_theme",
         "line": 507,
         "end_line": 507,
@@ -1987,6 +2136,113 @@
             ]
         },
         "file": "wp-includes/theme.php"
+    },
+    {
+        "name": "after_theme_row",
+        "line": 780,
+        "end_line": 780,
+        "type": "action",
+        "doc": {
+            "description": "Fires after each row in the Multisite themes list table.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "3.1.0"
+                },
+                {
+                    "name": "param",
+                    "content": "Directory name of the theme.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$stylesheet"
+                },
+                {
+                    "name": "param",
+                    "content": "Current WP_Theme object.",
+                    "types": [
+                        "\\WP_Theme"
+                    ],
+                    "variable": "$theme"
+                },
+                {
+                    "name": "param",
+                    "content": "Status of the theme.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$status"
+                }
+            ]
+        },
+        "file": "wp-admin/includes/class-wp-ms-themes-list-table.php"
+    },
+    {
+        "name": "after_theme_row_{$stylesheet}",
+        "line": 795,
+        "end_line": 795,
+        "type": "action",
+        "doc": {
+            "description": "Fires after each specific row in the Multisite themes list table.",
+            "long_description": "<p>The dynamic portion of the hook name, <code>$stylesheet</code>, refers to the directory name of the theme, most often synonymous with the template name of the theme.</p>",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "3.5.0"
+                },
+                {
+                    "name": "param",
+                    "content": "Directory name of the theme.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$stylesheet"
+                },
+                {
+                    "name": "param",
+                    "content": "Current WP_Theme object.",
+                    "types": [
+                        "\\WP_Theme"
+                    ],
+                    "variable": "$theme"
+                },
+                {
+                    "name": "param",
+                    "content": "Status of the theme.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$status"
+                }
+            ]
+        },
+        "file": "wp-admin/includes/class-wp-ms-themes-list-table.php"
+    },
+    {
+        "name": "after_wp_tiny_mce",
+        "line": 1614,
+        "end_line": 1614,
+        "type": "action",
+        "doc": {
+            "description": "Fires after any core TinyMCE editor instances are created.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "3.2.0"
+                },
+                {
+                    "name": "param",
+                    "content": "TinyMCE settings array.",
+                    "types": [
+                        "array"
+                    ],
+                    "variable": "$mce_settings"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-editor.php"
     },
     {
         "name": "all_admin_notices",
@@ -2379,6 +2635,31 @@
         "file": "wp-includes/pluggable.php"
     },
     {
+        "name": "automatic_updates_complete",
+        "line": 509,
+        "end_line": 509,
+        "type": "action",
+        "doc": {
+            "description": "Fires after all automatic updates have run.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "3.8.0"
+                },
+                {
+                    "name": "param",
+                    "content": "The results of all attempted updates.",
+                    "types": [
+                        "array"
+                    ],
+                    "variable": "$update_results"
+                }
+            ]
+        },
+        "file": "wp-admin/includes/class-wp-automatic-updater.php"
+    },
+    {
         "name": "before_delete_post",
         "line": 2974,
         "end_line": 2974,
@@ -2441,6 +2722,31 @@
             ]
         },
         "file": "wp-signup.php"
+    },
+    {
+        "name": "before_wp_tiny_mce",
+        "line": 1512,
+        "end_line": 1512,
+        "type": "action",
+        "doc": {
+            "description": "Fires immediately before the TinyMCE settings are printed.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "3.2.0"
+                },
+                {
+                    "name": "param",
+                    "content": "TinyMCE settings array.",
+                    "types": [
+                        "array"
+                    ],
+                    "variable": "$mce_settings"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-editor.php"
     },
     {
         "name": "begin_fetch_post_thumbnail_html",
@@ -2521,6 +2827,64 @@
             ]
         },
         "file": "wp-admin/options-reading.php"
+    },
+    {
+        "name": "bulk_edit_custom_box",
+        "line": 1876,
+        "end_line": 1876,
+        "type": "action",
+        "doc": {
+            "description": "Fires once for each column in Bulk Edit mode.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "2.7.0"
+                },
+                {
+                    "name": "param",
+                    "content": "Name of the column to edit.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$column_name"
+                },
+                {
+                    "name": "param",
+                    "content": "The post type slug.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$post_type"
+                }
+            ]
+        },
+        "file": "wp-admin/includes/class-wp-posts-list-table.php"
+    },
+    {
+        "name": "change_locale",
+        "line": 235,
+        "end_line": 235,
+        "type": "action",
+        "doc": {
+            "description": "Fires when the locale is switched to or restored.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "4.7.0"
+                },
+                {
+                    "name": "param",
+                    "content": "The new locale.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$locale"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-locale-switcher.php"
     },
     {
         "name": "check_admin_referer",
@@ -3332,6 +3696,23 @@
         "file": "wp-includes/comment.php"
     },
     {
+        "name": "comment_loop_start",
+        "line": 3366,
+        "end_line": 3366,
+        "type": "action",
+        "doc": {
+            "description": "Fires once the comment loop is started.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "2.2.0"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-query.php"
+    },
+    {
         "name": "comment_on_draft",
         "line": 3280,
         "end_line": 3280,
@@ -3744,6 +4125,48 @@
         "file": "wp-includes/taxonomy.php"
     },
     {
+        "name": "current_screen",
+        "line": 421,
+        "end_line": 421,
+        "type": "action",
+        "doc": {
+            "description": "Fires after the current screen has been set.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "3.0.0"
+                },
+                {
+                    "name": "param",
+                    "content": "Current WP_Screen object.",
+                    "types": [
+                        "\\WP_Screen"
+                    ],
+                    "variable": "$current_screen"
+                }
+            ]
+        },
+        "file": "wp-admin/includes/class-wp-screen.php"
+    },
+    {
+        "name": "custom_header_options",
+        "line": 754,
+        "end_line": 754,
+        "type": "action",
+        "doc": {
+            "description": "Fires just before the submit button in the custom header options form.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "3.1.0"
+                }
+            ]
+        },
+        "file": "wp-admin/includes/class-custom-image-header.php"
+    },
+    {
         "name": "customize_controls_enqueue_scripts",
         "line": 123,
         "end_line": 123,
@@ -3827,6 +4250,513 @@
             ]
         },
         "file": "wp-admin/customize.php"
+    },
+    {
+        "name": "customize_post_value_set",
+        "line": 1874,
+        "end_line": 1874,
+        "type": "action",
+        "doc": {
+            "description": "Announce when any setting's unsanitized post value has been set.",
+            "long_description": "<p>Fires when the WP_Customize_Manager::set_post_value() method is called.</p> <p>This is useful for <code>WP_Customize_Setting</code> instances to watch in order to update a cached previewed value.</p>",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "4.4.0"
+                },
+                {
+                    "name": "param",
+                    "content": "Setting ID.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$setting_id"
+                },
+                {
+                    "name": "param",
+                    "content": "Unsanitized setting post value.",
+                    "types": [
+                        "mixed"
+                    ],
+                    "variable": "$value"
+                },
+                {
+                    "name": "param",
+                    "content": "WP_Customize_Manager instance.",
+                    "types": [
+                        "\\WP_Customize_Manager"
+                    ],
+                    "variable": "$this"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-customize-manager.php"
+    },
+    {
+        "name": "customize_post_value_set_{$setting_id}",
+        "line": 1858,
+        "end_line": 1858,
+        "type": "action",
+        "doc": {
+            "description": "Announce when a specific setting's unsanitized post value has been set.",
+            "long_description": "<p>Fires when the WP_Customize_Manager::set_post_value() method is called.</p> <p>The dynamic portion of the hook name, <code>$setting_id</code>, refers to the setting ID.</p>",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "4.4.0"
+                },
+                {
+                    "name": "param",
+                    "content": "Unsanitized setting post value.",
+                    "types": [
+                        "mixed"
+                    ],
+                    "variable": "$value"
+                },
+                {
+                    "name": "param",
+                    "content": "WP_Customize_Manager instance.",
+                    "types": [
+                        "\\WP_Customize_Manager"
+                    ],
+                    "variable": "$this"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-customize-manager.php"
+    },
+    {
+        "name": "customize_preview_init",
+        "line": 1928,
+        "end_line": 1928,
+        "type": "action",
+        "doc": {
+            "description": "Fires once the Customizer preview has initialized and JavaScript settings have been printed.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "3.4.0"
+                },
+                {
+                    "name": "param",
+                    "content": "WP_Customize_Manager instance.",
+                    "types": [
+                        "\\WP_Customize_Manager"
+                    ],
+                    "variable": "$this"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-customize-manager.php"
+    },
+    {
+        "name": "customize_preview_{$this->id}",
+        "line": 384,
+        "end_line": 384,
+        "type": "action",
+        "doc": {
+            "description": "Fires when the WP_Customize_Setting::preview() method is called for settings not handled as theme_mods or options.",
+            "long_description": "<p>The dynamic portion of the hook name, <code>$this-&gt;id</code>, refers to the setting ID.</p>",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "3.4.0"
+                },
+                {
+                    "name": "param",
+                    "content": "WP_Customize_Setting instance.",
+                    "types": [
+                        "\\WP_Customize_Setting"
+                    ],
+                    "variable": "$this"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-customize-setting.php"
+    },
+    {
+        "name": "customize_preview_{$this->type}",
+        "line": 396,
+        "end_line": 396,
+        "type": "action",
+        "doc": {
+            "description": "Fires when the WP_Customize_Setting::preview() method is called for settings not handled as theme_mods or options.",
+            "long_description": "<p>The dynamic portion of the hook name, <code>$this-&gt;type</code>, refers to the setting type.</p>",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "4.1.0"
+                },
+                {
+                    "name": "param",
+                    "content": "WP_Customize_Setting instance.",
+                    "types": [
+                        "\\WP_Customize_Setting"
+                    ],
+                    "variable": "$this"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-customize-setting.php"
+    },
+    {
+        "name": "customize_register",
+        "line": 928,
+        "end_line": 928,
+        "type": "action",
+        "doc": {
+            "description": "Fires once WordPress has loaded, allowing scripts and styles to be initialized.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "3.4.0"
+                },
+                {
+                    "name": "param",
+                    "content": "WP_Customize_Manager instance.",
+                    "types": [
+                        "\\WP_Customize_Manager"
+                    ],
+                    "variable": "$this"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-customize-manager.php"
+    },
+    {
+        "name": "customize_render_control",
+        "line": 397,
+        "end_line": 397,
+        "type": "action",
+        "doc": {
+            "description": "Fires just before the current Customizer control is rendered.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "3.4.0"
+                },
+                {
+                    "name": "param",
+                    "content": "WP_Customize_Control instance.",
+                    "types": [
+                        "\\WP_Customize_Control"
+                    ],
+                    "variable": "$this"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-customize-control.php"
+    },
+    {
+        "name": "customize_render_control_{$this->id}",
+        "line": 409,
+        "end_line": 409,
+        "type": "action",
+        "doc": {
+            "description": "Fires just before a specific Customizer control is rendered.",
+            "long_description": "<p>The dynamic portion of the hook name, <code>$this-&gt;id</code>, refers to the control ID.</p>",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "3.4.0"
+                },
+                {
+                    "name": "param",
+                    "content": "WP_Customize_Control instance.",
+                    "types": [
+                        "\\WP_Customize_Control"
+                    ],
+                    "variable": "$this"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-customize-control.php"
+    },
+    {
+        "name": "customize_render_panel",
+        "line": 268,
+        "end_line": 268,
+        "type": "action",
+        "doc": {
+            "description": "Fires before rendering a Customizer panel.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "4.0.0"
+                },
+                {
+                    "name": "param",
+                    "content": "WP_Customize_Panel instance.",
+                    "types": [
+                        "\\WP_Customize_Panel"
+                    ],
+                    "variable": "$this"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-customize-panel.php"
+    },
+    {
+        "name": "customize_render_panel_{$this->id}",
+        "line": 278,
+        "end_line": 278,
+        "type": "action",
+        "doc": {
+            "description": "Fires before rendering a specific Customizer panel.",
+            "long_description": "<p>The dynamic portion of the hook name, <code>$this-&gt;id</code>, refers to the ID of the specific Customizer panel to be rendered.</p>",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "4.0.0"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-customize-panel.php"
+    },
+    {
+        "name": "customize_render_partials_after",
+        "line": 408,
+        "end_line": 408,
+        "type": "action",
+        "doc": {
+            "description": "Fires immediately after partials are rendered.",
+            "long_description": "<p>Plugins may do things like call wp_footer() to scrape scripts output and return them via the {@see 'customize_render_partials_response'} filter.</p>",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "4.5.0"
+                },
+                {
+                    "name": "param",
+                    "content": "Selective refresh component.",
+                    "types": [
+                        "\\WP_Customize_Selective_Refresh"
+                    ],
+                    "variable": "$this"
+                },
+                {
+                    "name": "param",
+                    "content": "Placements' context data for the partials rendered in the request.                                                 The array is keyed by partial ID, with each item being an array of                                                 the placements' context data.",
+                    "types": [
+                        "array"
+                    ],
+                    "variable": "$partials"
+                }
+            ]
+        },
+        "file": "wp-includes/customize/class-wp-customize-selective-refresh.php"
+    },
+    {
+        "name": "customize_render_partials_before",
+        "line": 359,
+        "end_line": 359,
+        "type": "action",
+        "doc": {
+            "description": "Fires immediately before partials are rendered.",
+            "long_description": "<p>Plugins may do things like call wp_enqueue_scripts() and gather a list of the scripts and styles which may get enqueued in the response.</p>",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "4.5.0"
+                },
+                {
+                    "name": "param",
+                    "content": "Selective refresh component.",
+                    "types": [
+                        "\\WP_Customize_Selective_Refresh"
+                    ],
+                    "variable": "$this"
+                },
+                {
+                    "name": "param",
+                    "content": "Placements' context data for the partials rendered in the request.                                                 The array is keyed by partial ID, with each item being an array of                                                 the placements' context data.",
+                    "types": [
+                        "array"
+                    ],
+                    "variable": "$partials"
+                }
+            ]
+        },
+        "file": "wp-includes/customize/class-wp-customize-selective-refresh.php"
+    },
+    {
+        "name": "customize_render_section",
+        "line": 286,
+        "end_line": 286,
+        "type": "action",
+        "doc": {
+            "description": "Fires before rendering a Customizer section.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "3.4.0"
+                },
+                {
+                    "name": "param",
+                    "content": "WP_Customize_Section instance.",
+                    "types": [
+                        "\\WP_Customize_Section"
+                    ],
+                    "variable": "$this"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-customize-section.php"
+    },
+    {
+        "name": "customize_render_section_{$this->id}",
+        "line": 295,
+        "end_line": 295,
+        "type": "action",
+        "doc": {
+            "description": "Fires before rendering a specific Customizer section.",
+            "long_description": "<p>The dynamic portion of the hook name, <code>$this-&gt;id</code>, refers to the ID of the specific Customizer section to be rendered.</p>",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "3.4.0"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-customize-section.php"
+    },
+    {
+        "name": "customize_save",
+        "line": 3460,
+        "end_line": 3460,
+        "type": "action",
+        "doc": {
+            "description": "Fires once the theme has switched in the Customizer, but before settings have been saved.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "3.4.0"
+                },
+                {
+                    "name": "param",
+                    "content": "WP_Customize_Manager instance.",
+                    "types": [
+                        "\\WP_Customize_Manager"
+                    ],
+                    "variable": "$manager"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-customize-manager.php"
+    },
+    {
+        "name": "customize_save_after",
+        "line": 3513,
+        "end_line": 3513,
+        "type": "action",
+        "doc": {
+            "description": "Fires after Customize settings have been saved.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "3.6.0"
+                },
+                {
+                    "name": "param",
+                    "content": "WP_Customize_Manager instance.",
+                    "types": [
+                        "\\WP_Customize_Manager"
+                    ],
+                    "variable": "$manager"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-customize-manager.php"
+    },
+    {
+        "name": "customize_save_validation_before",
+        "line": 2750,
+        "end_line": 2750,
+        "type": "action",
+        "doc": {
+            "description": "Fires before save validation happens.",
+            "long_description": "<p>Plugins can add just-in-time {@see 'customize<em>validate</em>{$this-&gt;ID}'} filters at this point to catch any settings registered after <code>customize_register</code>. The dynamic portion of the hook name, <code>$this-&gt;ID</code> refers to the setting ID.</p>",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "4.6.0"
+                },
+                {
+                    "name": "param",
+                    "content": "WP_Customize_Manager instance.",
+                    "types": [
+                        "\\WP_Customize_Manager"
+                    ],
+                    "variable": "$this"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-customize-manager.php"
+    },
+    {
+        "name": "customize_save_{$id_base}",
+        "line": 522,
+        "end_line": 522,
+        "type": "action",
+        "doc": {
+            "description": "Fires when the WP_Customize_Setting::save() method is called.",
+            "long_description": "<p>The dynamic portion of the hook name, <code>$id_base</code> refers to the base slug of the setting name.</p>",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "3.4.0"
+                },
+                {
+                    "name": "param",
+                    "content": "WP_Customize_Setting instance.",
+                    "types": [
+                        "\\WP_Customize_Setting"
+                    ],
+                    "variable": "$this"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-customize-setting.php"
+    },
+    {
+        "name": "customize_update_{$this->type}",
+        "line": 687,
+        "end_line": 687,
+        "type": "action",
+        "doc": {
+            "description": "Fires when the WP_Customize_Setting::update() method is called for settings not handled as theme_mods or options.",
+            "long_description": "<p>The dynamic portion of the hook name, <code>$this-&gt;type</code>, refers to the type of setting.</p>",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "3.4.0"
+                },
+                {
+                    "name": "param",
+                    "content": "Value of the setting.",
+                    "types": [
+                        "mixed"
+                    ],
+                    "variable": "$value"
+                },
+                {
+                    "name": "param",
+                    "content": "WP_Customize_Setting instance.",
+                    "types": [
+                        "\\WP_Customize_Setting"
+                    ],
+                    "variable": "$this"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-customize-setting.php"
     },
     {
         "name": "dbx_post_advanced",
@@ -6808,6 +7738,64 @@
         "file": "wp-admin/includes/export.php"
     },
     {
+        "name": "generate_recovery_mode_key",
+        "line": 75,
+        "end_line": 75,
+        "type": "action",
+        "doc": {
+            "description": "Fires when a recovery mode key is generated.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "5.2.0"
+                },
+                {
+                    "name": "param",
+                    "content": "The recovery data token.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$token"
+                },
+                {
+                    "name": "param",
+                    "content": "The recovery mode key.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$key"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-recovery-mode-key-service.php"
+    },
+    {
+        "name": "generate_rewrite_rules",
+        "line": 1434,
+        "end_line": 1434,
+        "type": "action_reference",
+        "doc": {
+            "description": "Fires after the rewrite rules are generated.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "1.5.0"
+                },
+                {
+                    "name": "param",
+                    "content": "Current WP_Rewrite instance (passed by reference).",
+                    "types": [
+                        "\\WP_Rewrite"
+                    ],
+                    "variable": "$this"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-rewrite.php"
+    },
+    {
         "name": "get_footer",
         "line": 66,
         "end_line": 66,
@@ -7092,6 +8080,105 @@
         "file": "wp-admin/includes/ajax-actions.php"
     },
     {
+        "name": "http_api_curl",
+        "line": 230,
+        "end_line": 230,
+        "type": "action_reference",
+        "doc": {
+            "description": "Fires before the cURL request is executed.",
+            "long_description": "<p>Cookies are not currently handled by the HTTP API. This action allows plugins to handle cookies themselves.</p>",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "2.8.0"
+                },
+                {
+                    "name": "param",
+                    "content": "The cURL handle returned by curl_init() (passed by reference).",
+                    "types": [
+                        "resource"
+                    ],
+                    "variable": "$handle"
+                },
+                {
+                    "name": "param",
+                    "content": "The HTTP request arguments.",
+                    "types": [
+                        "array"
+                    ],
+                    "variable": "$parsed_args"
+                },
+                {
+                    "name": "param",
+                    "content": "The request URL.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$url"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-http-curl.php"
+    },
+    {
+        "name": "http_api_debug",
+        "line": 418,
+        "end_line": 418,
+        "type": "action",
+        "doc": {
+            "description": "Fires after an HTTP API response is received and before the response is returned.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "2.8.0"
+                },
+                {
+                    "name": "param",
+                    "content": "HTTP response or WP_Error object.",
+                    "types": [
+                        "array",
+                        "\\WP_Error"
+                    ],
+                    "variable": "$response"
+                },
+                {
+                    "name": "param",
+                    "content": "Context under which the hook is fired.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$context"
+                },
+                {
+                    "name": "param",
+                    "content": "HTTP transport used.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$class"
+                },
+                {
+                    "name": "param",
+                    "content": "HTTP request arguments.",
+                    "types": [
+                        "array"
+                    ],
+                    "variable": "$parsed_args"
+                },
+                {
+                    "name": "param",
+                    "content": "The request URL.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$url"
+                }
+            ]
+        },
+        "file": "wp-includes/class-http.php"
+    },
+    {
         "name": "in_admin_footer",
         "line": 31,
         "end_line": 31,
@@ -7192,6 +8279,47 @@
         "file": "wp-admin/includes/update.php"
     },
     {
+        "name": "in_widget_form",
+        "line": 536,
+        "end_line": 536,
+        "type": "action_reference",
+        "doc": {
+            "description": "Fires at the end of the widget control form.",
+            "long_description": "<p>Use this hook to add extra fields to the widget form. The hook is only fired if the value passed to the 'widget_form_callback' hook is not false.</p> <p>Note: If the widget has no form, the text echoed from the default form method can be hidden using CSS.</p>",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "2.8.0"
+                },
+                {
+                    "name": "param",
+                    "content": "The widget instance (passed by reference).",
+                    "types": [
+                        "\\WP_Widget"
+                    ],
+                    "variable": "$this"
+                },
+                {
+                    "name": "param",
+                    "content": "Return null if new fields are added.",
+                    "types": [
+                        "null"
+                    ],
+                    "variable": "$return"
+                },
+                {
+                    "name": "param",
+                    "content": "An array of the widget's settings.",
+                    "types": [
+                        "array"
+                    ],
+                    "variable": "$instance"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-widget.php"
+    },
+    {
         "name": "init",
         "line": 523,
         "end_line": 523,
@@ -7224,6 +8352,23 @@
             ]
         },
         "file": "wp-admin/plugin-install.php"
+    },
+    {
+        "name": "install_plugins_table_header",
+        "line": 387,
+        "end_line": 387,
+        "type": "action",
+        "doc": {
+            "description": "Fires before the Plugin Install table header pagination is displayed.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "2.7.0"
+                }
+            ]
+        },
+        "file": "wp-admin/includes/class-wp-plugin-install-list-table.php"
     },
     {
         "name": "install_plugins_{$tab}",
@@ -7266,6 +8411,23 @@
             ]
         },
         "file": "wp-admin/theme-install.php"
+    },
+    {
+        "name": "install_themes_table_header",
+        "line": 207,
+        "end_line": 207,
+        "type": "action",
+        "doc": {
+            "description": "Fires in the Install Themes list table header.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "2.8.0"
+                }
+            ]
+        },
+        "file": "wp-admin/includes/class-wp-theme-install-list-table.php"
     },
     {
         "name": "install_themes_{$tab}",
@@ -7662,6 +8824,81 @@
         "file": "wp-login.php"
     },
     {
+        "name": "loop_end",
+        "line": 3305,
+        "end_line": 3305,
+        "type": "action_reference",
+        "doc": {
+            "description": "Fires once the loop has ended.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "2.0.0"
+                },
+                {
+                    "name": "param",
+                    "content": "The WP_Query instance (passed by reference).",
+                    "types": [
+                        "\\WP_Query"
+                    ],
+                    "variable": "$this"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-query.php"
+    },
+    {
+        "name": "loop_no_results",
+        "line": 3316,
+        "end_line": 3316,
+        "type": "action",
+        "doc": {
+            "description": "Fires if no results are found in a post query.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "4.9.0"
+                },
+                {
+                    "name": "param",
+                    "content": "The WP_Query instance.",
+                    "types": [
+                        "\\WP_Query"
+                    ],
+                    "variable": "$this"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-query.php"
+    },
+    {
+        "name": "loop_start",
+        "line": 3278,
+        "end_line": 3278,
+        "type": "action_reference",
+        "doc": {
+            "description": "Fires once the loop is started.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "2.0.0"
+                },
+                {
+                    "name": "param",
+                    "content": "The WP_Query instance (passed by reference).",
+                    "types": [
+                        "\\WP_Query"
+                    ],
+                    "variable": "$this"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-query.php"
+    },
+    {
         "name": "lost_password",
         "line": 815,
         "end_line": 815,
@@ -7891,6 +9128,419 @@
         "file": "wp-includes/ms-site.php"
     },
     {
+        "name": "manage_comments_custom_column",
+        "line": 946,
+        "end_line": 946,
+        "type": "action",
+        "doc": {
+            "description": "Fires when the default column output is displayed for a single row.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "2.8.0"
+                },
+                {
+                    "name": "param",
+                    "content": "The custom column's name.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$column_name"
+                },
+                {
+                    "name": "param",
+                    "content": "The custom column's unique ID number.",
+                    "types": [
+                        "int"
+                    ],
+                    "variable": "$comment->comment_ID"
+                }
+            ]
+        },
+        "file": "wp-admin/includes/class-wp-comments-list-table.php"
+    },
+    {
+        "name": "manage_comments_nav",
+        "line": 425,
+        "end_line": 425,
+        "type": "action",
+        "doc": {
+            "description": "Fires after the Filter submit button for comment types.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "2.5.0"
+                },
+                {
+                    "name": "param",
+                    "content": "The comment status name. Default 'All'.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$comment_status"
+                }
+            ]
+        },
+        "file": "wp-admin/includes/class-wp-comments-list-table.php"
+    },
+    {
+        "name": "manage_link_custom_column",
+        "line": 293,
+        "end_line": 293,
+        "type": "action",
+        "doc": {
+            "description": "Fires for each registered custom link column.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "2.1.0"
+                },
+                {
+                    "name": "param",
+                    "content": "Name of the custom column.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$column_name"
+                },
+                {
+                    "name": "param",
+                    "content": "Link ID.",
+                    "types": [
+                        "int"
+                    ],
+                    "variable": "$link_id"
+                }
+            ]
+        },
+        "file": "wp-admin/includes/class-wp-links-list-table.php"
+    },
+    {
+        "name": "manage_media_custom_column",
+        "line": 610,
+        "end_line": 610,
+        "type": "action",
+        "doc": {
+            "description": "Fires for each custom column in the Media list table.",
+            "long_description": "<p>Custom columns are registered using the {@see 'manage_media_columns'} filter.</p>",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "2.5.0"
+                },
+                {
+                    "name": "param",
+                    "content": "Name of the custom column.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$column_name"
+                },
+                {
+                    "name": "param",
+                    "content": "Attachment ID.",
+                    "types": [
+                        "int"
+                    ],
+                    "variable": "$post_id"
+                }
+            ]
+        },
+        "file": "wp-admin/includes/class-wp-media-list-table.php"
+    },
+    {
+        "name": "manage_pages_custom_column",
+        "line": 1238,
+        "end_line": 1238,
+        "type": "action",
+        "doc": {
+            "description": "Fires in each custom column on the Posts list table.",
+            "long_description": "<p>This hook only fires if the current post type is hierarchical, such as pages.</p>",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "2.5.0"
+                },
+                {
+                    "name": "param",
+                    "content": "The name of the column to display.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$column_name"
+                },
+                {
+                    "name": "param",
+                    "content": "The current post ID.",
+                    "types": [
+                        "int"
+                    ],
+                    "variable": "$post_id"
+                }
+            ]
+        },
+        "file": "wp-admin/includes/class-wp-posts-list-table.php"
+    },
+    {
+        "name": "manage_plugins_custom_column",
+        "line": 979,
+        "end_line": 979,
+        "type": "action",
+        "doc": {
+            "description": "Fires inside each custom column of the Plugins list table.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "3.1.0"
+                },
+                {
+                    "name": "param",
+                    "content": "Name of the column.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$column_name"
+                },
+                {
+                    "name": "param",
+                    "content": "Path to the plugin file relative to the plugins directory.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$plugin_file"
+                },
+                {
+                    "name": "param",
+                    "content": "An array of plugin data.",
+                    "types": [
+                        "array"
+                    ],
+                    "variable": "$plugin_data"
+                }
+            ]
+        },
+        "file": "wp-admin/includes/class-wp-plugins-list-table.php"
+    },
+    {
+        "name": "manage_posts_custom_column",
+        "line": 1252,
+        "end_line": 1252,
+        "type": "action",
+        "doc": {
+            "description": "Fires in each custom column in the Posts list table.",
+            "long_description": "<p>This hook only fires if the current post type is non-hierarchical, such as posts.</p>",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "1.5.0"
+                },
+                {
+                    "name": "param",
+                    "content": "The name of the column to display.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$column_name"
+                },
+                {
+                    "name": "param",
+                    "content": "The current post ID.",
+                    "types": [
+                        "int"
+                    ],
+                    "variable": "$post_id"
+                }
+            ]
+        },
+        "file": "wp-admin/includes/class-wp-posts-list-table.php"
+    },
+    {
+        "name": "manage_posts_extra_tablenav",
+        "line": 579,
+        "end_line": 579,
+        "type": "action",
+        "doc": {
+            "description": "Fires immediately following the closing \"actions\" div in the tablenav for the posts list table.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "4.4.0"
+                },
+                {
+                    "name": "param",
+                    "content": "The location of the extra table nav markup: 'top' or 'bottom'.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$which"
+                }
+            ]
+        },
+        "file": "wp-admin/includes/class-wp-posts-list-table.php"
+    },
+    {
+        "name": "manage_sites_custom_column",
+        "line": 575,
+        "end_line": 575,
+        "type": "action",
+        "doc": {
+            "description": "Fires for each registered custom column in the Sites list table.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "3.1.0"
+                },
+                {
+                    "name": "param",
+                    "content": "The name of the column to display.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$column_name"
+                },
+                {
+                    "name": "param",
+                    "content": "The site ID.",
+                    "types": [
+                        "int"
+                    ],
+                    "variable": "$blog_id"
+                }
+            ]
+        },
+        "file": "wp-admin/includes/class-wp-ms-sites-list-table.php"
+    },
+    {
+        "name": "manage_sites_extra_tablenav",
+        "line": 353,
+        "end_line": 353,
+        "type": "action",
+        "doc": {
+            "description": "Fires immediately following the closing \"actions\" div in the tablenav for the MS sites list table.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "5.3.0"
+                },
+                {
+                    "name": "param",
+                    "content": "The location of the extra table nav markup: 'top' or 'bottom'.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$which"
+                }
+            ]
+        },
+        "file": "wp-admin/includes/class-wp-ms-sites-list-table.php"
+    },
+    {
+        "name": "manage_themes_custom_column",
+        "line": 662,
+        "end_line": 662,
+        "type": "action",
+        "doc": {
+            "description": "Fires inside each custom column of the Multisite themes list table.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "3.1.0"
+                },
+                {
+                    "name": "param",
+                    "content": "Name of the column.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$column_name"
+                },
+                {
+                    "name": "param",
+                    "content": "Directory name of the theme.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$stylesheet"
+                },
+                {
+                    "name": "param",
+                    "content": "Current WP_Theme object.",
+                    "types": [
+                        "\\WP_Theme"
+                    ],
+                    "variable": "$theme"
+                }
+            ]
+        },
+        "file": "wp-admin/includes/class-wp-ms-themes-list-table.php"
+    },
+    {
+        "name": "manage_users_extra_tablenav",
+        "line": 324,
+        "end_line": 324,
+        "type": "action",
+        "doc": {
+            "description": "Fires immediately following the closing \"actions\" div in the tablenav for the users list table.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "4.9.0"
+                },
+                {
+                    "name": "param",
+                    "content": "The location of the extra table nav markup: 'top' or 'bottom'.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$which"
+                }
+            ]
+        },
+        "file": "wp-admin/includes/class-wp-users-list-table.php"
+    },
+    {
+        "name": "manage_{$post->post_type}_posts_custom_column",
+        "line": 1265,
+        "end_line": 1265,
+        "type": "action",
+        "doc": {
+            "description": "Fires for each custom column of a specific post type in the Posts list table.",
+            "long_description": "<p>The dynamic portion of the hook name, <code>$post-&gt;post_type</code>, refers to the post type.</p>",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "3.1.0"
+                },
+                {
+                    "name": "param",
+                    "content": "The name of the column to display.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$column_name"
+                },
+                {
+                    "name": "param",
+                    "content": "The current post ID.",
+                    "types": [
+                        "int"
+                    ],
+                    "variable": "$post_id"
+                }
+            ]
+        },
+        "file": "wp-admin/includes/class-wp-posts-list-table.php"
+    },
+    {
         "name": "mature_blog",
         "line": 1193,
         "end_line": 1193,
@@ -7914,6 +9564,31 @@
             ]
         },
         "file": "wp-includes/ms-site.php"
+    },
+    {
+        "name": "media_buttons",
+        "line": 235,
+        "end_line": 235,
+        "type": "action",
+        "doc": {
+            "description": "Fires after the default media button(s) are displayed.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "2.5.0"
+                },
+                {
+                    "name": "param",
+                    "content": "Unique editor identifier, e.g. 'content'.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$editor_id"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-editor.php"
     },
     {
         "name": "media_upload_{$tab}",
@@ -7948,6 +9623,47 @@
             ]
         },
         "file": "wp-admin/media-upload.php"
+    },
+    {
+        "name": "metadata_lazyloader_queued_objects",
+        "line": 104,
+        "end_line": 104,
+        "type": "action",
+        "doc": {
+            "description": "Fires after objects are added to the metadata lazy-load queue.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "4.5.0"
+                },
+                {
+                    "name": "param",
+                    "content": "Array of object IDs.",
+                    "types": [
+                        "array"
+                    ],
+                    "variable": "$object_ids"
+                },
+                {
+                    "name": "param",
+                    "content": "Type of object being queued.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$object_type"
+                },
+                {
+                    "name": "param",
+                    "content": "The lazy-loader object.",
+                    "types": [
+                        "\\WP_Metadata_Lazyloader"
+                    ],
+                    "variable": "$lazyloader"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-metadata-lazyloader.php"
     },
     {
         "name": "ms_loaded",
@@ -8421,6 +10137,181 @@
         "file": "wp-admin/includes/meta-boxes.php"
     },
     {
+        "name": "parse_comment_query",
+        "line": 328,
+        "end_line": 328,
+        "type": "action_reference",
+        "doc": {
+            "description": "Fires after the comment query vars have been parsed.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "4.2.0"
+                },
+                {
+                    "name": "param",
+                    "content": "The WP_Comment_Query instance (passed by reference).",
+                    "types": [
+                        "\\WP_Comment_Query"
+                    ],
+                    "variable": "$this"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-comment-query.php"
+    },
+    {
+        "name": "parse_network_query",
+        "line": 163,
+        "end_line": 163,
+        "type": "action_reference",
+        "doc": {
+            "description": "Fires after the network query vars have been parsed.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "4.6.0"
+                },
+                {
+                    "name": "param",
+                    "content": "The WP_Network_Query instance (passed by reference).",
+                    "types": [
+                        "\\WP_Network_Query"
+                    ],
+                    "variable": "$this"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-network-query.php"
+    },
+    {
+        "name": "parse_query",
+        "line": 1069,
+        "end_line": 1069,
+        "type": "action_reference",
+        "doc": {
+            "description": "Fires after the main query vars have been parsed.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "1.5.0"
+                },
+                {
+                    "name": "param",
+                    "content": "The WP_Query instance (passed by reference).",
+                    "types": [
+                        "\\WP_Query"
+                    ],
+                    "variable": "$this"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-query.php"
+    },
+    {
+        "name": "parse_request",
+        "line": 387,
+        "end_line": 387,
+        "type": "action_reference",
+        "doc": {
+            "description": "Fires once all query variables for the current request have been parsed.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "2.1.0"
+                },
+                {
+                    "name": "param",
+                    "content": "Current WordPress environment instance (passed by reference).",
+                    "types": [
+                        "\\WP"
+                    ],
+                    "variable": "$this"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp.php"
+    },
+    {
+        "name": "parse_site_query",
+        "line": 239,
+        "end_line": 239,
+        "type": "action_reference",
+        "doc": {
+            "description": "Fires after the site query vars have been parsed.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "4.6.0"
+                },
+                {
+                    "name": "param",
+                    "content": "The WP_Site_Query instance (passed by reference).",
+                    "types": [
+                        "\\WP_Site_Query"
+                    ],
+                    "variable": "$this"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-site-query.php"
+    },
+    {
+        "name": "parse_tax_query",
+        "line": 1308,
+        "end_line": 1308,
+        "type": "action",
+        "doc": {
+            "description": "Fires after taxonomy-related query vars have been parsed.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "3.7.0"
+                },
+                {
+                    "name": "param",
+                    "content": "The WP_Query instance.",
+                    "types": [
+                        "\\WP_Query"
+                    ],
+                    "variable": "$this"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-query.php"
+    },
+    {
+        "name": "parse_term_query",
+        "line": 275,
+        "end_line": 275,
+        "type": "action",
+        "doc": {
+            "description": "Fires after term query vars have been parsed.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "4.6.0"
+                },
+                {
+                    "name": "param",
+                    "content": "Current instance of WP_Term_Query.",
+                    "types": [
+                        "\\WP_Term_Query"
+                    ],
+                    "variable": "$this"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-term-query.php"
+    },
+    {
         "name": "password_reset",
         "line": 2451,
         "end_line": 2451,
@@ -8452,6 +10343,39 @@
             ]
         },
         "file": "wp-includes/user.php"
+    },
+    {
+        "name": "permalink_structure_changed",
+        "line": 1893,
+        "end_line": 1893,
+        "type": "action",
+        "doc": {
+            "description": "Fires after the permalink structure is updated.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "2.8.0"
+                },
+                {
+                    "name": "param",
+                    "content": "The previous permalink structure.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$old_permalink_structure"
+                },
+                {
+                    "name": "param",
+                    "content": "The new permalink structure.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$permalink_structure"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-rewrite.php"
     },
     {
         "name": "personal_options",
@@ -8527,6 +10451,31 @@
             ]
         },
         "file": "wp-includes/pluggable.php"
+    },
+    {
+        "name": "pingback_post",
+        "line": 6973,
+        "end_line": 6973,
+        "type": "action",
+        "doc": {
+            "description": "Fires after a post pingback has been sent.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "0.71"
+                },
+                {
+                    "name": "param",
+                    "content": "Comment ID.",
+                    "types": [
+                        "int"
+                    ],
+                    "variable": "$comment_ID"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-xmlrpc-server.php"
     },
     {
         "name": "plugin_loaded",
@@ -8946,6 +10895,31 @@
         "file": "wp-includes/post.php"
     },
     {
+        "name": "posts_selection",
+        "line": 2771,
+        "end_line": 2771,
+        "type": "action",
+        "doc": {
+            "description": "Fires to announce the query's current selection parameters.",
+            "long_description": "<p>For use by caching plugins.</p>",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "2.3.0"
+                },
+                {
+                    "name": "param",
+                    "content": "The assembled selection query.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$selection"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-query.php"
+    },
+    {
         "name": "pre-html-upload-ui",
         "line": 2211,
         "end_line": 2211,
@@ -9000,6 +10974,47 @@
             ]
         },
         "file": "wp-admin/includes/media.php"
+    },
+    {
+        "name": "pre_auto_update",
+        "line": 313,
+        "end_line": 313,
+        "type": "action",
+        "doc": {
+            "description": "Fires immediately prior to an auto-update.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "4.4.0"
+                },
+                {
+                    "name": "param",
+                    "content": "The type of update being checked: 'core', 'theme', 'plugin', or 'translation'.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$type"
+                },
+                {
+                    "name": "param",
+                    "content": "The update offer.",
+                    "types": [
+                        "object"
+                    ],
+                    "variable": "$item"
+                },
+                {
+                    "name": "param",
+                    "content": "The filesystem context (a path) against which filesystem access and status                        should be checked.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$context"
+                }
+            ]
+        },
+        "file": "wp-admin/includes/class-wp-automatic-updater.php"
     },
     {
         "name": "pre_comment_on_post",
@@ -9128,6 +11143,81 @@
         "file": "wp-includes/taxonomy.php"
     },
     {
+        "name": "pre_get_comments",
+        "line": 374,
+        "end_line": 374,
+        "type": "action_reference",
+        "doc": {
+            "description": "Fires before comments are retrieved.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "3.1.0"
+                },
+                {
+                    "name": "param",
+                    "content": "Current instance of WP_Comment_Query (passed by reference).",
+                    "types": [
+                        "\\WP_Comment_Query"
+                    ],
+                    "variable": "$this"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-comment-query.php"
+    },
+    {
+        "name": "pre_get_networks",
+        "line": 198,
+        "end_line": 198,
+        "type": "action_reference",
+        "doc": {
+            "description": "Fires before networks are retrieved.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "4.6.0"
+                },
+                {
+                    "name": "param",
+                    "content": "Current instance of WP_Network_Query (passed by reference).",
+                    "types": [
+                        "\\WP_Network_Query"
+                    ],
+                    "variable": "$this"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-network-query.php"
+    },
+    {
+        "name": "pre_get_posts",
+        "line": 1757,
+        "end_line": 1757,
+        "type": "action_reference",
+        "doc": {
+            "description": "Fires after the query variable object is created, but before the actual query is run.",
+            "long_description": "<p>Note: If using conditional tags, use the method versions within the passed instance (e.g. $this-&gt;is_main_query() instead of is_main_query()). This is because the functions like is_main_query() test against the global $wp_query instance, not the passed one.</p>",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "2.0.0"
+                },
+                {
+                    "name": "param",
+                    "content": "The WP_Query instance (passed by reference).",
+                    "types": [
+                        "\\WP_Query"
+                    ],
+                    "variable": "$this"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-query.php"
+    },
+    {
         "name": "pre_get_search_form",
         "line": 210,
         "end_line": 210,
@@ -9153,6 +11243,81 @@
             ]
         },
         "file": "wp-includes/general-template.php"
+    },
+    {
+        "name": "pre_get_sites",
+        "line": 283,
+        "end_line": 283,
+        "type": "action_reference",
+        "doc": {
+            "description": "Fires before sites are retrieved.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "4.6.0"
+                },
+                {
+                    "name": "param",
+                    "content": "Current instance of WP_Site_Query (passed by reference).",
+                    "types": [
+                        "\\WP_Site_Query"
+                    ],
+                    "variable": "$this"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-site-query.php"
+    },
+    {
+        "name": "pre_get_terms",
+        "line": 317,
+        "end_line": 317,
+        "type": "action",
+        "doc": {
+            "description": "Fires before terms are retrieved.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "4.6.0"
+                },
+                {
+                    "name": "param",
+                    "content": "Current instance of WP_Term_Query.",
+                    "types": [
+                        "\\WP_Term_Query"
+                    ],
+                    "variable": "$this"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-term-query.php"
+    },
+    {
+        "name": "pre_get_users",
+        "line": 230,
+        "end_line": 230,
+        "type": "action",
+        "doc": {
+            "description": "Fires before the WP_User_Query has been parsed.",
+            "long_description": "<p>The passed WP_User_Query object contains the query variables, not yet passed into SQL.</p>",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "4.0.0"
+                },
+                {
+                    "name": "param",
+                    "content": "The current WP_User_Query instance,                            passed by reference.",
+                    "types": [
+                        "\\WP_User_Query"
+                    ],
+                    "variable": "$this"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-user-query.php"
     },
     {
         "name": "pre_network_site_new_created_user",
@@ -9352,6 +11517,43 @@
         "file": "wp-admin/includes/plugin.php"
     },
     {
+        "name": "pre_user_query",
+        "line": 582,
+        "end_line": 582,
+        "type": "action_reference",
+        "doc": {
+            "description": "Fires after the WP_User_Query has been parsed, and before the query is executed.",
+            "long_description": "<p>The passed WP_User_Query object contains SQL parts formed from parsing the given query.</p>",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "3.1.0"
+                },
+                {
+                    "name": "param",
+                    "content": "The current WP_User_Query instance,                            passed by reference.",
+                    "types": [
+                        "\\WP_User_Query"
+                    ],
+                    "variable": "$this"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-user-query.php"
+    },
+    {
+        "name": "pre_user_search",
+        "line": 552,
+        "end_line": 552,
+        "type": "action_reference",
+        "doc": {
+            "description": "",
+            "long_description": "",
+            "tags": []
+        },
+        "file": "wp-admin/includes/deprecated.php"
+    },
+    {
         "name": "preprocess_signup_form",
         "line": 970,
         "end_line": 970,
@@ -9367,6 +11569,23 @@
             ]
         },
         "file": "wp-signup.php"
+    },
+    {
+        "name": "print_default_editor_scripts",
+        "line": 940,
+        "end_line": 940,
+        "type": "action",
+        "doc": {
+            "description": "Fires when the editor scripts are loaded for later initialization, after all scripts and settings are printed.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "4.8.0"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-editor.php"
     },
     {
         "name": "print_media_templates",
@@ -9497,6 +11716,47 @@
             ]
         },
         "file": "wp-mail.php"
+    },
+    {
+        "name": "quick_edit_custom_box",
+        "line": 1888,
+        "end_line": 1888,
+        "type": "action",
+        "doc": {
+            "description": "Fires once for each column in Quick Edit mode.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "2.7.0"
+                },
+                {
+                    "name": "param",
+                    "content": "Name of the column to edit.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$column_name"
+                },
+                {
+                    "name": "param",
+                    "content": "The post type slug, or current screen name if this is a taxonomy list table.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$post_type"
+                },
+                {
+                    "name": "param",
+                    "content": "The taxonomy name, if any.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$taxonomy"
+                }
+            ]
+        },
+        "file": "wp-admin/includes/class-wp-posts-list-table.php"
     },
     {
         "name": "rdf_header",
@@ -9805,6 +12065,81 @@
         "file": "wp-includes/ms-functions.php"
     },
     {
+        "name": "remove_user_role",
+        "line": 578,
+        "end_line": 578,
+        "type": "action",
+        "doc": {
+            "description": "Fires immediately after a role as been removed from a user.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "4.3.0"
+                },
+                {
+                    "name": "param",
+                    "content": "The user ID.",
+                    "types": [
+                        "int"
+                    ],
+                    "variable": "$user_id"
+                },
+                {
+                    "name": "param",
+                    "content": "The removed role.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$role"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-user.php"
+    },
+    {
+        "name": "requests-{$hook}",
+        "line": 72,
+        "end_line": 72,
+        "type": "action_reference",
+        "doc": {
+            "description": "Transforms a native Request hook to a WordPress actions.",
+            "long_description": "<p>This action maps Requests internal hook to a native WordPress action.</p>",
+            "tags": [
+                {
+                    "name": "see",
+                    "content": "",
+                    "refers": "https://github.com/rmccue/Requests/blob/master/docs/hooks.md"
+                },
+                {
+                    "name": "param",
+                    "content": "Parameters from Requests internal hook.",
+                    "types": [
+                        "array"
+                    ],
+                    "variable": "$parameters"
+                },
+                {
+                    "name": "param",
+                    "content": "Request data in WP_Http format.",
+                    "types": [
+                        "array"
+                    ],
+                    "variable": "$request"
+                },
+                {
+                    "name": "param",
+                    "content": "URL to request.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$url"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-http-requests-hooks.php"
+    },
+    {
         "name": "resetpass_form",
         "line": 974,
         "end_line": 974,
@@ -9830,6 +12165,211 @@
         "file": "wp-login.php"
     },
     {
+        "name": "rest_after_insert_attachment",
+        "line": 159,
+        "end_line": 159,
+        "type": "action",
+        "doc": {
+            "description": "Fires after a single attachment is completely created or updated via the REST API.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "5.0.0"
+                },
+                {
+                    "name": "param",
+                    "content": "Inserted or updated attachment object.",
+                    "types": [
+                        "\\WP_Post"
+                    ],
+                    "variable": "$attachment"
+                },
+                {
+                    "name": "param",
+                    "content": "Request object.",
+                    "types": [
+                        "\\WP_REST_Request"
+                    ],
+                    "variable": "$request"
+                },
+                {
+                    "name": "param",
+                    "content": "True when creating an attachment, false when updating.",
+                    "types": [
+                        "bool"
+                    ],
+                    "variable": "$creating"
+                }
+            ]
+        },
+        "file": "wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php"
+    },
+    {
+        "name": "rest_after_insert_comment",
+        "line": 653,
+        "end_line": 653,
+        "type": "action",
+        "doc": {
+            "description": "Fires completely after a comment is created or updated via the REST API.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "5.0.0"
+                },
+                {
+                    "name": "param",
+                    "content": "Inserted or updated comment object.",
+                    "types": [
+                        "\\WP_Comment"
+                    ],
+                    "variable": "$comment"
+                },
+                {
+                    "name": "param",
+                    "content": "Request object.",
+                    "types": [
+                        "\\WP_REST_Request"
+                    ],
+                    "variable": "$request"
+                },
+                {
+                    "name": "param",
+                    "content": "True when creating a comment, false                                  when updating.",
+                    "types": [
+                        "bool"
+                    ],
+                    "variable": "$creating"
+                }
+            ]
+        },
+        "file": "wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php"
+    },
+    {
+        "name": "rest_after_insert_user",
+        "line": 579,
+        "end_line": 579,
+        "type": "action",
+        "doc": {
+            "description": "Fires after a user is completely created or updated via the REST API.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "5.0.0"
+                },
+                {
+                    "name": "param",
+                    "content": "Inserted or updated user object.",
+                    "types": [
+                        "\\WP_User"
+                    ],
+                    "variable": "$user"
+                },
+                {
+                    "name": "param",
+                    "content": "Request object.",
+                    "types": [
+                        "\\WP_REST_Request"
+                    ],
+                    "variable": "$request"
+                },
+                {
+                    "name": "param",
+                    "content": "True when creating a user, false when updating.",
+                    "types": [
+                        "bool"
+                    ],
+                    "variable": "$creating"
+                }
+            ]
+        },
+        "file": "wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php"
+    },
+    {
+        "name": "rest_after_insert_{$this->post_type}",
+        "line": 621,
+        "end_line": 621,
+        "type": "action",
+        "doc": {
+            "description": "Fires after a single post is completely created or updated via the REST API.",
+            "long_description": "<p>The dynamic portion of the hook name, <code>$this-&gt;post_type</code>, refers to the post type slug.</p>",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "5.0.0"
+                },
+                {
+                    "name": "param",
+                    "content": "Inserted or updated post object.",
+                    "types": [
+                        "\\WP_Post"
+                    ],
+                    "variable": "$post"
+                },
+                {
+                    "name": "param",
+                    "content": "Request object.",
+                    "types": [
+                        "\\WP_REST_Request"
+                    ],
+                    "variable": "$request"
+                },
+                {
+                    "name": "param",
+                    "content": "True when creating a post, false when updating.",
+                    "types": [
+                        "bool"
+                    ],
+                    "variable": "$creating"
+                }
+            ]
+        },
+        "file": "wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php"
+    },
+    {
+        "name": "rest_after_insert_{$this->taxonomy}",
+        "line": 484,
+        "end_line": 484,
+        "type": "action",
+        "doc": {
+            "description": "Fires after a single term is completely created or updated via the REST API.",
+            "long_description": "<p>The dynamic portion of the hook name, <code>$this-&gt;taxonomy</code>, refers to the taxonomy slug.</p>",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "5.0.0"
+                },
+                {
+                    "name": "param",
+                    "content": "Inserted or updated term object.",
+                    "types": [
+                        "\\WP_Term"
+                    ],
+                    "variable": "$term"
+                },
+                {
+                    "name": "param",
+                    "content": "Request object.",
+                    "types": [
+                        "\\WP_REST_Request"
+                    ],
+                    "variable": "$request"
+                },
+                {
+                    "name": "param",
+                    "content": "True when creating a term, false when updating.",
+                    "types": [
+                        "bool"
+                    ],
+                    "variable": "$creating"
+                }
+            ]
+        },
+        "file": "wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php"
+    },
+    {
         "name": "rest_api_init",
         "line": 471,
         "end_line": 471,
@@ -9853,6 +12393,556 @@
             ]
         },
         "file": "wp-includes/rest-api.php"
+    },
+    {
+        "name": "rest_delete_comment",
+        "line": 873,
+        "end_line": 873,
+        "type": "action",
+        "doc": {
+            "description": "Fires after a comment is deleted via the REST API.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "4.7.0"
+                },
+                {
+                    "name": "param",
+                    "content": "The deleted comment data.",
+                    "types": [
+                        "\\WP_Comment"
+                    ],
+                    "variable": "$comment"
+                },
+                {
+                    "name": "param",
+                    "content": "The response returned from the API.",
+                    "types": [
+                        "\\WP_REST_Response"
+                    ],
+                    "variable": "$response"
+                },
+                {
+                    "name": "param",
+                    "content": "The request sent to the API.",
+                    "types": [
+                        "\\WP_REST_Request"
+                    ],
+                    "variable": "$request"
+                }
+            ]
+        },
+        "file": "wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php"
+    },
+    {
+        "name": "rest_delete_revision",
+        "line": 439,
+        "end_line": 439,
+        "type": "action",
+        "doc": {
+            "description": "Fires after a revision is deleted via the REST API.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "4.7.0"
+                },
+                {
+                    "name": "param",
+                    "content": "The revision object (if it was deleted or moved to the trash successfully)                        or false (failure). If the revision was moved to the trash, $result represents                        its new state; if it was deleted, $result represents its state before deletion.",
+                    "types": [
+                        "\\(mixed)"
+                    ],
+                    "variable": "$result"
+                },
+                {
+                    "name": "param",
+                    "content": "The request sent to the API.",
+                    "types": [
+                        "\\WP_REST_Request"
+                    ],
+                    "variable": "$request"
+                }
+            ]
+        },
+        "file": "wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php"
+    },
+    {
+        "name": "rest_delete_user",
+        "line": 828,
+        "end_line": 828,
+        "type": "action",
+        "doc": {
+            "description": "Fires immediately after a user is deleted via the REST API.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "4.7.0"
+                },
+                {
+                    "name": "param",
+                    "content": "The user data.",
+                    "types": [
+                        "\\WP_User"
+                    ],
+                    "variable": "$user"
+                },
+                {
+                    "name": "param",
+                    "content": "The response returned from the API.",
+                    "types": [
+                        "\\WP_REST_Response"
+                    ],
+                    "variable": "$response"
+                },
+                {
+                    "name": "param",
+                    "content": "The request sent to the API.",
+                    "types": [
+                        "\\WP_REST_Request"
+                    ],
+                    "variable": "$request"
+                }
+            ]
+        },
+        "file": "wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php"
+    },
+    {
+        "name": "rest_delete_{$this->post_type}",
+        "line": 872,
+        "end_line": 872,
+        "type": "action",
+        "doc": {
+            "description": "Fires immediately after a single post is deleted or trashed via the REST API.",
+            "long_description": "<p>They dynamic portion of the hook name, <code>$this-&gt;post_type</code>, refers to the post type slug.</p>",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "4.7.0"
+                },
+                {
+                    "name": "param",
+                    "content": "The deleted or trashed post.",
+                    "types": [
+                        "object"
+                    ],
+                    "variable": "$post"
+                },
+                {
+                    "name": "param",
+                    "content": "The response data.",
+                    "types": [
+                        "\\WP_REST_Response"
+                    ],
+                    "variable": "$response"
+                },
+                {
+                    "name": "param",
+                    "content": "The request sent to the API.",
+                    "types": [
+                        "\\WP_REST_Request"
+                    ],
+                    "variable": "$request"
+                }
+            ]
+        },
+        "file": "wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php"
+    },
+    {
+        "name": "rest_delete_{$this->taxonomy}",
+        "line": 655,
+        "end_line": 655,
+        "type": "action",
+        "doc": {
+            "description": "Fires after a single term is deleted via the REST API.",
+            "long_description": "<p>The dynamic portion of the hook name, <code>$this-&gt;taxonomy</code>, refers to the taxonomy slug.</p>",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "4.7.0"
+                },
+                {
+                    "name": "param",
+                    "content": "The deleted term.",
+                    "types": [
+                        "\\WP_Term"
+                    ],
+                    "variable": "$term"
+                },
+                {
+                    "name": "param",
+                    "content": "The response data.",
+                    "types": [
+                        "\\WP_REST_Response"
+                    ],
+                    "variable": "$response"
+                },
+                {
+                    "name": "param",
+                    "content": "The request sent to the API.",
+                    "types": [
+                        "\\WP_REST_Request"
+                    ],
+                    "variable": "$request"
+                }
+            ]
+        },
+        "file": "wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php"
+    },
+    {
+        "name": "rest_insert_attachment",
+        "line": 263,
+        "end_line": 263,
+        "type": "action",
+        "doc": {
+            "description": "Fires after a single attachment is created or updated via the REST API.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "4.7.0"
+                },
+                {
+                    "name": "param",
+                    "content": "Inserted or updated attachment                                    object.",
+                    "types": [
+                        "\\WP_Post"
+                    ],
+                    "variable": "$attachment"
+                },
+                {
+                    "name": "param",
+                    "content": "The request sent to the API.",
+                    "types": [
+                        "\\WP_REST_Request"
+                    ],
+                    "variable": "$request"
+                },
+                {
+                    "name": "param",
+                    "content": "True when creating an attachment, false when updating.",
+                    "types": [
+                        "bool"
+                    ],
+                    "variable": "$creating"
+                }
+            ]
+        },
+        "file": "wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php"
+    },
+    {
+        "name": "rest_insert_comment",
+        "line": 622,
+        "end_line": 622,
+        "type": "action",
+        "doc": {
+            "description": "Fires after a comment is created or updated via the REST API.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "4.7.0"
+                },
+                {
+                    "name": "param",
+                    "content": "Inserted or updated comment object.",
+                    "types": [
+                        "\\WP_Comment"
+                    ],
+                    "variable": "$comment"
+                },
+                {
+                    "name": "param",
+                    "content": "Request object.",
+                    "types": [
+                        "\\WP_REST_Request"
+                    ],
+                    "variable": "$request"
+                },
+                {
+                    "name": "param",
+                    "content": "True when creating a comment, false                                  when updating.",
+                    "types": [
+                        "bool"
+                    ],
+                    "variable": "$creating"
+                }
+            ]
+        },
+        "file": "wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php"
+    },
+    {
+        "name": "rest_insert_user",
+        "line": 547,
+        "end_line": 547,
+        "type": "action",
+        "doc": {
+            "description": "Fires immediately after a user is created or updated via the REST API.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "4.7.0"
+                },
+                {
+                    "name": "param",
+                    "content": "Inserted or updated user object.",
+                    "types": [
+                        "\\WP_User"
+                    ],
+                    "variable": "$user"
+                },
+                {
+                    "name": "param",
+                    "content": "Request object.",
+                    "types": [
+                        "\\WP_REST_Request"
+                    ],
+                    "variable": "$request"
+                },
+                {
+                    "name": "param",
+                    "content": "True when creating a user, false when updating.",
+                    "types": [
+                        "bool"
+                    ],
+                    "variable": "$creating"
+                }
+            ]
+        },
+        "file": "wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php"
+    },
+    {
+        "name": "rest_insert_{$this->post_type}",
+        "line": 563,
+        "end_line": 563,
+        "type": "action",
+        "doc": {
+            "description": "Fires after a single post is created or updated via the REST API.",
+            "long_description": "<p>The dynamic portion of the hook name, <code>$this-&gt;post_type</code>, refers to the post type slug.</p>",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "4.7.0"
+                },
+                {
+                    "name": "param",
+                    "content": "Inserted or updated post object.",
+                    "types": [
+                        "\\WP_Post"
+                    ],
+                    "variable": "$post"
+                },
+                {
+                    "name": "param",
+                    "content": "Request object.",
+                    "types": [
+                        "\\WP_REST_Request"
+                    ],
+                    "variable": "$request"
+                },
+                {
+                    "name": "param",
+                    "content": "True when creating a post, false when updating.",
+                    "types": [
+                        "bool"
+                    ],
+                    "variable": "$creating"
+                }
+            ]
+        },
+        "file": "wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php"
+    },
+    {
+        "name": "rest_insert_{$this->taxonomy}",
+        "line": 454,
+        "end_line": 454,
+        "type": "action",
+        "doc": {
+            "description": "Fires after a single term is created or updated via the REST API.",
+            "long_description": "<p>The dynamic portion of the hook name, <code>$this-&gt;taxonomy</code>, refers to the taxonomy slug.</p>",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "4.7.0"
+                },
+                {
+                    "name": "param",
+                    "content": "Inserted or updated term object.",
+                    "types": [
+                        "\\WP_Term"
+                    ],
+                    "variable": "$term"
+                },
+                {
+                    "name": "param",
+                    "content": "Request object.",
+                    "types": [
+                        "\\WP_REST_Request"
+                    ],
+                    "variable": "$request"
+                },
+                {
+                    "name": "param",
+                    "content": "True when creating a term, false when updating.",
+                    "types": [
+                        "bool"
+                    ],
+                    "variable": "$creating"
+                }
+            ]
+        },
+        "file": "wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php"
+    },
+    {
+        "name": "restore_previous_locale",
+        "line": 129,
+        "end_line": 129,
+        "type": "action",
+        "doc": {
+            "description": "Fires when the locale is restored to the previous one.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "4.7.0"
+                },
+                {
+                    "name": "param",
+                    "content": "The new locale.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$locale"
+                },
+                {
+                    "name": "param",
+                    "content": "The previous locale.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$previous_locale"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-locale-switcher.php"
+    },
+    {
+        "name": "restrict_manage_comments",
+        "line": 409,
+        "end_line": 409,
+        "type": "action",
+        "doc": {
+            "description": "Fires just before the Filter submit button for comment types.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "3.5.0"
+                }
+            ]
+        },
+        "file": "wp-admin/includes/class-wp-comments-list-table.php"
+    },
+    {
+        "name": "restrict_manage_posts",
+        "line": 555,
+        "end_line": 555,
+        "type": "action",
+        "doc": {
+            "description": "Fires before the Filter button on the Posts and Pages list tables.",
+            "long_description": "<p>The Filter button allows sorting by date and/or category on the Posts list table, and sorting by date on the Pages list table.</p>",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "2.1.0"
+                },
+                {
+                    "name": "since",
+                    "content": "4.4.0",
+                    "description": "The <code>$post_type</code> parameter was added."
+                },
+                {
+                    "name": "since",
+                    "content": "4.6.0",
+                    "description": "The <code>$which</code> parameter was added."
+                },
+                {
+                    "name": "param",
+                    "content": "The post type slug.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$post_type"
+                },
+                {
+                    "name": "param",
+                    "content": "The location of the extra table nav markup:                          'top' or 'bottom' for WP_Posts_List_Table,                          'bar' for WP_Media_List_Table.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$which"
+                }
+            ]
+        },
+        "file": "wp-admin/includes/class-wp-posts-list-table.php"
+    },
+    {
+        "name": "restrict_manage_sites",
+        "line": 335,
+        "end_line": 335,
+        "type": "action",
+        "doc": {
+            "description": "Fires before the Filter button on the MS sites list table.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "5.3.0"
+                },
+                {
+                    "name": "param",
+                    "content": "The location of the extra table nav markup: 'top' or 'bottom'.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$which"
+                }
+            ]
+        },
+        "file": "wp-admin/includes/class-wp-ms-sites-list-table.php"
+    },
+    {
+        "name": "restrict_manage_users",
+        "line": 312,
+        "end_line": 312,
+        "type": "action",
+        "doc": {
+            "description": "Fires just before the closing div containing the bulk role-change controls in the Users list table.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "3.5.0"
+                },
+                {
+                    "name": "since",
+                    "content": "4.6.0",
+                    "description": "The <code>$which</code> parameter was added."
+                },
+                {
+                    "name": "param",
+                    "content": "The location of the extra table nav markup: 'top' or 'bottom'.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$which"
+                }
+            ]
+        },
+        "file": "wp-admin/includes/class-wp-users-list-table.php"
     },
     {
         "name": "retreive_password",
@@ -10236,6 +13326,31 @@
         "file": "wp-includes/post.php"
     },
     {
+        "name": "send_headers",
+        "line": 517,
+        "end_line": 517,
+        "type": "action_reference",
+        "doc": {
+            "description": "Fires once the requested HTTP headers for caching, content type, etc. have been sent.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "2.1.0"
+                },
+                {
+                    "name": "param",
+                    "content": "Current WordPress environment instance (passed by reference).",
+                    "types": [
+                        "\\WP"
+                    ],
+                    "variable": "$this"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp.php"
+    },
+    {
         "name": "set_auth_cookie",
         "line": 909,
         "end_line": 909,
@@ -10599,6 +13714,52 @@
             ]
         },
         "file": "wp-includes/option.php"
+    },
+    {
+        "name": "set_user_role",
+        "line": 622,
+        "end_line": 622,
+        "type": "action",
+        "doc": {
+            "description": "Fires after the user's role has changed.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "2.9.0"
+                },
+                {
+                    "name": "since",
+                    "content": "3.6.0",
+                    "description": "Added $old_roles to include an array of the user's previous roles."
+                },
+                {
+                    "name": "param",
+                    "content": "The user ID.",
+                    "types": [
+                        "int"
+                    ],
+                    "variable": "$user_id"
+                },
+                {
+                    "name": "param",
+                    "content": "The new role.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$role"
+                },
+                {
+                    "name": "param",
+                    "content": "An array of the user's previous roles.",
+                    "types": [
+                        "string[]"
+                    ],
+                    "variable": "$old_roles"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-user.php"
     },
     {
         "name": "setted_site_transient",
@@ -11016,6 +14177,56 @@
         "file": "wp-includes/taxonomy.php"
     },
     {
+        "name": "start_previewing_theme",
+        "line": 696,
+        "end_line": 696,
+        "type": "action",
+        "doc": {
+            "description": "Fires once the Customizer theme preview has started.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "3.4.0"
+                },
+                {
+                    "name": "param",
+                    "content": "WP_Customize_Manager instance.",
+                    "types": [
+                        "\\WP_Customize_Manager"
+                    ],
+                    "variable": "$this"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-customize-manager.php"
+    },
+    {
+        "name": "stop_previewing_theme",
+        "line": 734,
+        "end_line": 734,
+        "type": "action",
+        "doc": {
+            "description": "Fires once the Customizer theme preview has stopped.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "3.4.0"
+                },
+                {
+                    "name": "param",
+                    "content": "WP_Customize_Manager instance.",
+                    "types": [
+                        "\\WP_Customize_Manager"
+                    ],
+                    "variable": "$this"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-customize-manager.php"
+    },
+    {
         "name": "submitlink_box",
         "line": 1072,
         "end_line": 1072,
@@ -11117,6 +14328,31 @@
         "file": "wp-includes/ms-blogs.php"
     },
     {
+        "name": "switch_locale",
+        "line": 92,
+        "end_line": 92,
+        "type": "action",
+        "doc": {
+            "description": "Fires when the locale is switched.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "4.7.0"
+                },
+                {
+                    "name": "param",
+                    "content": "The new locale.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$locale"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-locale-switcher.php"
+    },
+    {
         "name": "switch_theme",
         "line": 815,
         "end_line": 815,
@@ -11178,6 +14414,44 @@
             ]
         },
         "file": "wp-includes/template-loader.php"
+    },
+    {
+        "name": "the_post",
+        "line": 4229,
+        "end_line": 4229,
+        "type": "action_reference",
+        "doc": {
+            "description": "Fires once the post data has been setup.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "2.8.0"
+                },
+                {
+                    "name": "since",
+                    "content": "4.1.0",
+                    "description": "Introduced <code>$this</code> parameter."
+                },
+                {
+                    "name": "param",
+                    "content": "The Post object (passed by reference).",
+                    "types": [
+                        "\\WP_Post"
+                    ],
+                    "variable": "$post"
+                },
+                {
+                    "name": "param",
+                    "content": "The current Query object (passed by reference).",
+                    "types": [
+                        "\\WP_Query"
+                    ],
+                    "variable": "$this"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-query.php"
     },
     {
         "name": "the_widget",
@@ -12486,6 +15760,49 @@
         "file": "wp-includes/meta.php"
     },
     {
+        "name": "upgrader_process_complete",
+        "line": 836,
+        "end_line": 836,
+        "type": "action",
+        "doc": {
+            "description": "Fires when the upgrader process is complete.",
+            "long_description": "<p>See also {@see 'upgrader_package_options'}.</p>",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "3.6.0"
+                },
+                {
+                    "name": "since",
+                    "content": "3.7.0",
+                    "description": "Added to WP_Upgrader::run()."
+                },
+                {
+                    "name": "since",
+                    "content": "4.6.0",
+                    "description": "<code>$translations</code> was added as a possible argument to <code>$hook_extra</code>."
+                },
+                {
+                    "name": "param",
+                    "content": "WP_Upgrader instance. In other contexts, $this, might be a                          Theme_Upgrader, Plugin_Upgrader, Core_Upgrade, or Language_Pack_Upgrader instance.",
+                    "types": [
+                        "\\WP_Upgrader"
+                    ],
+                    "variable": "$this"
+                },
+                {
+                    "name": "param",
+                    "content": "{     Array of bulk item update data.     @type string $action       Type of action. Default 'update'.     @type string $type         Type of update process. Accepts 'plugin', 'theme', 'translation', or 'core'.     @type bool   $bulk         Whether the update process is a bulk update. Default true.     @type array  $plugins      Array of the basename paths of the plugins' main files.     @type array  $themes       The theme slugs.     @type array  $translations {         Array of translations update data.         @type string $language The locale the translation is for.         @type string $type     Type of translation. Accepts 'plugin', 'theme', or 'core'.         @type string $slug     Text domain the translation is for. The slug of a theme/plugin or                                'default' for core translations.         @type string $version  The version of a theme, plugin, or core.     } }",
+                    "types": [
+                        "array"
+                    ],
+                    "variable": "$hook_extra"
+                }
+            ]
+        },
+        "file": "wp-admin/includes/class-wp-upgrader.php"
+    },
+    {
         "name": "upload_ui_over_quota",
         "line": 2092,
         "end_line": 2092,
@@ -12797,6 +16114,31 @@
         "file": "wp-includes/widgets.php"
     },
     {
+        "name": "wp",
+        "line": 742,
+        "end_line": 742,
+        "type": "action_reference",
+        "doc": {
+            "description": "Fires once the WordPress environment has been set up.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "2.1.0"
+                },
+                {
+                    "name": "param",
+                    "content": "Current WordPress environment instance (passed by reference).",
+                    "types": [
+                        "\\WP"
+                    ],
+                    "variable": "$this"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp.php"
+    },
+    {
         "name": "wp-mail.php",
         "line": 29,
         "end_line": 29,
@@ -13088,6 +16430,39 @@
         "file": "wp-includes/general-template.php"
     },
     {
+        "name": "wp_create_file_in_uploads",
+        "line": 831,
+        "end_line": 831,
+        "type": "action",
+        "doc": {
+            "description": "Fires after the header image is set or an error is returned.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "2.1.0"
+                },
+                {
+                    "name": "param",
+                    "content": "Path to the file.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$file"
+                },
+                {
+                    "name": "param",
+                    "content": "Attachment ID.",
+                    "types": [
+                        "int"
+                    ],
+                    "variable": "$attachment_id"
+                }
+            ]
+        },
+        "file": "wp-admin/includes/class-custom-image-header.php"
+    },
+    {
         "name": "wp_create_nav_menu",
         "line": 374,
         "end_line": 374,
@@ -13161,6 +16536,56 @@
             ]
         },
         "file": "wp-admin/includes/dashboard.php"
+    },
+    {
+        "name": "wp_default_scripts",
+        "line": 167,
+        "end_line": 167,
+        "type": "action_reference",
+        "doc": {
+            "description": "Fires when the WP_Scripts instance is initialized.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "2.6.0"
+                },
+                {
+                    "name": "param",
+                    "content": "WP_Scripts instance (passed by reference).",
+                    "types": [
+                        "\\WP_Scripts"
+                    ],
+                    "variable": "$this"
+                }
+            ]
+        },
+        "file": "wp-includes/class.wp-scripts.php"
+    },
+    {
+        "name": "wp_default_styles",
+        "line": 135,
+        "end_line": 135,
+        "type": "action_reference",
+        "doc": {
+            "description": "Fires when the WP_Styles instance is initialized.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "2.6.0"
+                },
+                {
+                    "name": "param",
+                    "content": "WP_Styles instance (passed by reference).",
+                    "types": [
+                        "\\WP_Styles"
+                    ],
+                    "variable": "$this"
+                }
+            ]
+        },
+        "file": "wp-includes/class.wp-styles.php"
     },
     {
         "name": "wp_delete_nav_menu",
@@ -13295,6 +16720,31 @@
             ]
         },
         "file": "wp-includes/general-template.php"
+    },
+    {
+        "name": "wp_enqueue_editor",
+        "line": 812,
+        "end_line": 818,
+        "type": "action",
+        "doc": {
+            "description": "Fires when scripts and styles are enqueued for the editor.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "3.9.0"
+                },
+                {
+                    "name": "param",
+                    "content": "An array containing boolean values whether TinyMCE                       and Quicktags are being loaded.",
+                    "types": [
+                        "array"
+                    ],
+                    "variable": "$to_load"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-editor.php"
     },
     {
         "name": "wp_enqueue_media",
@@ -13974,6 +17424,31 @@
         "file": "wp-includes/revision.php"
     },
     {
+        "name": "wp_roles_init",
+        "line": 300,
+        "end_line": 300,
+        "type": "action",
+        "doc": {
+            "description": "After the roles have been initialized, allow plugins to add their own roles.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "4.7.0"
+                },
+                {
+                    "name": "param",
+                    "content": "A reference to the WP_Roles object.",
+                    "types": [
+                        "\\WP_Roles"
+                    ],
+                    "variable": "$this"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-roles.php"
+    },
+    {
         "name": "wp_set_comment_status",
         "line": 2293,
         "end_line": 2293,
@@ -14006,6 +17481,31 @@
             ]
         },
         "file": "wp-includes/comment.php"
+    },
+    {
+        "name": "wp_tiny_mce_init",
+        "line": 1551,
+        "end_line": 1551,
+        "type": "action",
+        "doc": {
+            "description": "Fires after tinymce.js is loaded, but before any TinyMCE editor instances are created.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "3.9.0"
+                },
+                {
+                    "name": "param",
+                    "content": "TinyMCE settings array.",
+                    "types": [
+                        "array"
+                    ],
+                    "variable": "$mce_settings"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-editor.php"
     },
     {
         "name": "wp_trash_post",
@@ -14716,6 +18216,32 @@
         "file": "wp-admin/includes/dashboard.php"
     },
     {
+        "name": "wpmublogsaction",
+        "line": 554,
+        "end_line": 554,
+        "type": "action",
+        "doc": {
+            "description": "Fires inside the auxiliary 'Actions' column of the Sites list table.",
+            "long_description": "<p>By default this column is hidden unless something is hooked to the action.</p>",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "MU (3.0.0)",
+                    "description": "MU (3.0.0)"
+                },
+                {
+                    "name": "param",
+                    "content": "The site ID.",
+                    "types": [
+                        "int"
+                    ],
+                    "variable": "$blog_id"
+                }
+            ]
+        },
+        "file": "wp-admin/includes/class-wp-ms-sites-list-table.php"
+    },
+    {
         "name": "wpmueditblogaction",
         "line": 168,
         "end_line": 168,
@@ -14739,6 +18265,427 @@
             ]
         },
         "file": "wp-admin/network/site-settings.php"
+    },
+    {
+        "name": "xmlrpc_call",
+        "line": 687,
+        "end_line": 687,
+        "type": "action",
+        "doc": {
+            "description": "Fires after the XML-RPC user has been authenticated but before the rest of the method logic begins.",
+            "long_description": "<p>All built-in XML-RPC methods use the action xmlrpc_call, with a parameter equal to the method's name, e.g., wp.getUsersBlogs, wp.newPost, etc.</p>",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "2.5.0"
+                },
+                {
+                    "name": "param",
+                    "content": "The method name.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$name"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-xmlrpc-server.php"
+    },
+    {
+        "name": "xmlrpc_call_success_blogger_deletePost",
+        "line": 5206,
+        "end_line": 5206,
+        "type": "action",
+        "doc": {
+            "description": "Fires after a post has been successfully deleted via the XML-RPC Blogger API.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "3.4.0"
+                },
+                {
+                    "name": "param",
+                    "content": "ID of the deleted post.",
+                    "types": [
+                        "int"
+                    ],
+                    "variable": "$post_ID"
+                },
+                {
+                    "name": "param",
+                    "content": "An array of arguments to delete the post.",
+                    "types": [
+                        "array"
+                    ],
+                    "variable": "$args"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-xmlrpc-server.php"
+    },
+    {
+        "name": "xmlrpc_call_success_blogger_editPost",
+        "line": 5147,
+        "end_line": 5147,
+        "type": "action",
+        "doc": {
+            "description": "Fires after a post has been successfully updated via the XML-RPC Blogger API.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "3.4.0"
+                },
+                {
+                    "name": "param",
+                    "content": "ID of the updated post.",
+                    "types": [
+                        "int"
+                    ],
+                    "variable": "$post_ID"
+                },
+                {
+                    "name": "param",
+                    "content": "An array of arguments for the post to edit.",
+                    "types": [
+                        "array"
+                    ],
+                    "variable": "$args"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-xmlrpc-server.php"
+    },
+    {
+        "name": "xmlrpc_call_success_blogger_newPost",
+        "line": 5068,
+        "end_line": 5068,
+        "type": "action",
+        "doc": {
+            "description": "Fires after a new post has been successfully created via the XML-RPC Blogger API.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "3.4.0"
+                },
+                {
+                    "name": "param",
+                    "content": "ID of the new post.",
+                    "types": [
+                        "int"
+                    ],
+                    "variable": "$post_ID"
+                },
+                {
+                    "name": "param",
+                    "content": "An array of new post arguments.",
+                    "types": [
+                        "array"
+                    ],
+                    "variable": "$args"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-xmlrpc-server.php"
+    },
+    {
+        "name": "xmlrpc_call_success_mw_editPost",
+        "line": 5942,
+        "end_line": 5942,
+        "type": "action",
+        "doc": {
+            "description": "Fires after a post has been successfully updated via the XML-RPC MovableType API.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "3.4.0"
+                },
+                {
+                    "name": "param",
+                    "content": "ID of the updated post.",
+                    "types": [
+                        "int"
+                    ],
+                    "variable": "$post_ID"
+                },
+                {
+                    "name": "param",
+                    "content": "An array of arguments to update the post.",
+                    "types": [
+                        "array"
+                    ],
+                    "variable": "$args"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-xmlrpc-server.php"
+    },
+    {
+        "name": "xmlrpc_call_success_mw_newMediaObject",
+        "line": 6377,
+        "end_line": 6377,
+        "type": "action",
+        "doc": {
+            "description": "Fires after a new attachment has been added via the XML-RPC MovableType API.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "3.4.0"
+                },
+                {
+                    "name": "param",
+                    "content": "ID of the new attachment.",
+                    "types": [
+                        "int"
+                    ],
+                    "variable": "$id"
+                },
+                {
+                    "name": "param",
+                    "content": "An array of arguments to add the attachment.",
+                    "types": [
+                        "array"
+                    ],
+                    "variable": "$args"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-xmlrpc-server.php"
+    },
+    {
+        "name": "xmlrpc_call_success_mw_newPost",
+        "line": 5558,
+        "end_line": 5558,
+        "type": "action",
+        "doc": {
+            "description": "Fires after a new post has been successfully created via the XML-RPC MovableType API.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "3.4.0"
+                },
+                {
+                    "name": "param",
+                    "content": "ID of the new post.",
+                    "types": [
+                        "int"
+                    ],
+                    "variable": "$post_ID"
+                },
+                {
+                    "name": "param",
+                    "content": "An array of arguments to create the new post.",
+                    "types": [
+                        "array"
+                    ],
+                    "variable": "$args"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-xmlrpc-server.php"
+    },
+    {
+        "name": "xmlrpc_call_success_wp_deleteCategory",
+        "line": 3443,
+        "end_line": 3443,
+        "type": "action",
+        "doc": {
+            "description": "Fires after a category has been successfully deleted via XML-RPC.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "3.4.0"
+                },
+                {
+                    "name": "param",
+                    "content": "ID of the deleted category.",
+                    "types": [
+                        "int"
+                    ],
+                    "variable": "$category_id"
+                },
+                {
+                    "name": "param",
+                    "content": "An array of arguments to delete the category.",
+                    "types": [
+                        "array"
+                    ],
+                    "variable": "$args"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-xmlrpc-server.php"
+    },
+    {
+        "name": "xmlrpc_call_success_wp_deleteComment",
+        "line": 3690,
+        "end_line": 3690,
+        "type": "action",
+        "doc": {
+            "description": "Fires after a comment has been successfully deleted via XML-RPC.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "3.4.0"
+                },
+                {
+                    "name": "param",
+                    "content": "ID of the deleted comment.",
+                    "types": [
+                        "int"
+                    ],
+                    "variable": "$comment_ID"
+                },
+                {
+                    "name": "param",
+                    "content": "An array of arguments to delete the comment.",
+                    "types": [
+                        "array"
+                    ],
+                    "variable": "$args"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-xmlrpc-server.php"
+    },
+    {
+        "name": "xmlrpc_call_success_wp_deletePage",
+        "line": 3086,
+        "end_line": 3086,
+        "type": "action",
+        "doc": {
+            "description": "Fires after a page has been successfully deleted via XML-RPC.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "3.4.0"
+                },
+                {
+                    "name": "param",
+                    "content": "ID of the deleted page.",
+                    "types": [
+                        "int"
+                    ],
+                    "variable": "$page_id"
+                },
+                {
+                    "name": "param",
+                    "content": "An array of arguments to delete the page.",
+                    "types": [
+                        "array"
+                    ],
+                    "variable": "$args"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-xmlrpc-server.php"
+    },
+    {
+        "name": "xmlrpc_call_success_wp_editComment",
+        "line": 3802,
+        "end_line": 3802,
+        "type": "action",
+        "doc": {
+            "description": "Fires after a comment has been successfully updated via XML-RPC.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "3.4.0"
+                },
+                {
+                    "name": "param",
+                    "content": "ID of the updated comment.",
+                    "types": [
+                        "int"
+                    ],
+                    "variable": "$comment_ID"
+                },
+                {
+                    "name": "param",
+                    "content": "An array of arguments to update the comment.",
+                    "types": [
+                        "array"
+                    ],
+                    "variable": "$args"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-xmlrpc-server.php"
+    },
+    {
+        "name": "xmlrpc_call_success_wp_newCategory",
+        "line": 3393,
+        "end_line": 3393,
+        "type": "action",
+        "doc": {
+            "description": "Fires after a new category has been successfully created via XML-RPC.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "3.4.0"
+                },
+                {
+                    "name": "param",
+                    "content": "ID of the new category.",
+                    "types": [
+                        "int"
+                    ],
+                    "variable": "$cat_id"
+                },
+                {
+                    "name": "param",
+                    "content": "An array of new category arguments.",
+                    "types": [
+                        "array"
+                    ],
+                    "variable": "$args"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-xmlrpc-server.php"
+    },
+    {
+        "name": "xmlrpc_call_success_wp_newComment",
+        "line": 3939,
+        "end_line": 3939,
+        "type": "action",
+        "doc": {
+            "description": "Fires after a new comment has been successfully created via XML-RPC.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "3.4.0"
+                },
+                {
+                    "name": "param",
+                    "content": "ID of the new comment.",
+                    "types": [
+                        "int"
+                    ],
+                    "variable": "$comment_ID"
+                },
+                {
+                    "name": "param",
+                    "content": "An array of new comment arguments.",
+                    "types": [
+                        "array"
+                    ],
+                    "variable": "$args"
+                }
+            ]
+        },
+        "file": "wp-includes/class-wp-xmlrpc-server.php"
     },
     {
         "name": "xmlrpc_publish_post",
