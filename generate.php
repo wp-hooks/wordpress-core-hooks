@@ -36,7 +36,7 @@ function hooks_parse_files( $files, $root ) : array {
 		$output = array_merge( $output, $file_hooks );
 	}
 
-	$output = array_filter( $output, function( $hook ) {
+	$output = array_filter( $output, function( array $hook ) : bool {
 		if ( ! empty( $hook['doc'] ) && ! empty( $hook['doc']['description'] ) ) {
 			if ( 0 === strpos( $hook['doc']['description'], 'This filter is documented in ' ) ) {
 				return false;
@@ -59,5 +59,16 @@ function hooks_parse_files( $files, $root ) : array {
 }
 
 $output = hooks_parse_files( $files, 'vendor/wordpress/wordpress' );
-$json   = json_encode( $output, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES );
-$result = file_put_contents( 'hooks/all.json', $json );
+$result = file_put_contents( 'hooks/all.json', json_encode( $output, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES ) );
+
+$actions = array_filter( $output, function( array $hook ) : bool {
+	return in_array( $hook['type'], [ 'action', 'action_reference' ], true );
+} );
+
+$result = file_put_contents( 'hooks/actions.json', json_encode( $actions, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES ) );
+
+$filters = array_filter( $output, function( array $hook ) : bool {
+	return in_array( $hook['type'], [ 'filter', 'filter_reference' ], true );
+} );
+
+$result = file_put_contents( 'hooks/filters.json', json_encode( $filters, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES ) );
