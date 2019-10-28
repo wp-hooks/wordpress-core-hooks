@@ -6,7 +6,7 @@ WordPress actions and filters in machine-readable JSON format.
 
 ## Installation
 
-* As a Composer package: `composer require johnbillion/wp-hooks=dev-master`
+* As a Composer package: `composer require johnbillion/wp-hooks`
 * As an npm package: `npm install @johnbillion/wp-hooks`
 
 ## Actions and Filters
