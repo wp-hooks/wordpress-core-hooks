@@ -66,6 +66,21 @@ function hooks_parse_files( $files, $root ) : array {
 			}
 		}
 
+		// Special case hooks to ignore.
+		$ignore_hooks = [
+			'load-categories.php',
+			'load-edit-link-categories.php',
+			'load-edit-tags.php',
+			'load-page-new.php',
+			'load-page.php',
+			'option_enable_xmlrpc',
+			'pre_option_enable_xmlrpc',
+		];
+
+		if ( in_array( $hook['name'], $ignore_hooks, true ) ) {
+			return false;
+		}
+
 		return true;
 	} );
 
