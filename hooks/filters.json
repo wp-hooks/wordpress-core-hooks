@@ -41696,39 +41696,6 @@
     },
     {
         "name": "user_confirmed_action_email_content",
-        "line": 3140,
-        "end_line": 3140,
-        "type": "filter",
-        "doc": {
-            "description": "Filters the body of the user request confirmation email.",
-            "long_description": "<p>The email is sent to an administrator when an user request is confirmed. The following strings have a special meaning and will get replaced dynamically:</p> <h3>SITENAME###    The name of the site.</h3> <h3>USER_EMAIL###  The user email for the request.</h3> <h3>DESCRIPTION### Description of the action being performed so the user knows what the email is for.</h3> <h3>MANAGE_URL###  The URL to manage requests.</h3> <h3>SITEURL###     The URL to the site.</h3>",
-            "tags": [
-                {
-                    "name": "since",
-                    "content": "4.9.6"
-                },
-                {
-                    "name": "param",
-                    "content": "Text in the email.",
-                    "types": [
-                        "string"
-                    ],
-                    "variable": "$email_text"
-                },
-                {
-                    "name": "param",
-                    "content": "{     Data relating to the account action email.     @type WP_User_Request $request     User request object.     @type string          $user_email  The email address confirming a request     @type string          $description Description of the action being performed so the user knows what the email is for.     @type string          $manage_url  The link to click manage privacy requests of this type.     @type string          $sitename    The site name sending the mail.     @type string          $siteurl     The site URL sending the mail.     @type string          $admin_email The administrator email receiving the mail. }",
-                    "types": [
-                        "array"
-                    ],
-                    "variable": "$email_data"
-                }
-            ]
-        },
-        "file": "wp-includes/user.php"
-    },
-    {
-        "name": "user_confirmed_action_email_content",
         "line": 3316,
         "end_line": 3316,
         "type": "filter",
@@ -41751,6 +41718,39 @@
                 {
                     "name": "param",
                     "content": "{     Data relating to the account action email.     @type WP_User_Request $request            User request object.     @type string          $message_recipient  The address that the email will be sent to. Defaults                                               to the value of <code>$request-&gt;email</code>, but can be changed                                               by the <code>user_erasure_fulfillment_email_to</code> filter.     @type string          $privacy_policy_url Privacy policy URL.     @type string          $sitename           The site name sending the mail.     @type string          $siteurl            The site URL sending the mail. }",
+                    "types": [
+                        "array"
+                    ],
+                    "variable": "$email_data"
+                }
+            ]
+        },
+        "file": "wp-includes/user.php"
+    },
+    {
+        "name": "user_confirmed_action_email_content",
+        "line": 3140,
+        "end_line": 3140,
+        "type": "filter",
+        "doc": {
+            "description": "Filters the body of the user request confirmation email.",
+            "long_description": "<p>The email is sent to an administrator when an user request is confirmed. The following strings have a special meaning and will get replaced dynamically:</p> <h3>SITENAME###    The name of the site.</h3> <h3>USER_EMAIL###  The user email for the request.</h3> <h3>DESCRIPTION### Description of the action being performed so the user knows what the email is for.</h3> <h3>MANAGE_URL###  The URL to manage requests.</h3> <h3>SITEURL###     The URL to the site.</h3>",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "4.9.6"
+                },
+                {
+                    "name": "param",
+                    "content": "Text in the email.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$email_text"
+                },
+                {
+                    "name": "param",
+                    "content": "{     Data relating to the account action email.     @type WP_User_Request $request     User request object.     @type string          $user_email  The email address confirming a request     @type string          $description Description of the action being performed so the user knows what the email is for.     @type string          $manage_url  The link to click manage privacy requests of this type.     @type string          $sitename    The site name sending the mail.     @type string          $siteurl     The site URL sending the mail.     @type string          $admin_email The administrator email receiving the mail. }",
                     "types": [
                         "array"
                     ],
@@ -42922,18 +42922,6 @@
     },
     {
         "name": "widget_comments_args",
-        "line": 46,
-        "end_line": 53,
-        "type": "filter",
-        "doc": {
-            "description": "",
-            "long_description": "",
-            "tags": []
-        },
-        "file": "wp-includes/blocks/latest-comments.php"
-    },
-    {
-        "name": "widget_comments_args",
         "line": 103,
         "end_line": 111,
         "type": "filter",
@@ -42974,6 +42962,18 @@
             ]
         },
         "file": "wp-includes/widgets/class-wp-widget-recent-comments.php"
+    },
+    {
+        "name": "widget_comments_args",
+        "line": 46,
+        "end_line": 53,
+        "type": "filter",
+        "doc": {
+            "description": "",
+            "long_description": "",
+            "tags": []
+        },
+        "file": "wp-includes/blocks/latest-comments.php"
     },
     {
         "name": "widget_custom_html_content",
@@ -53412,27 +53412,6 @@
             ]
         },
         "file": "wp-includes/class-wp-rewrite.php"
-    },
-    {
-        "name": "{$tag}",
-        "line": 633,
-        "end_line": 633,
-        "type": "filter_reference",
-        "doc": {
-            "description": "",
-            "long_description": "",
-            "tags": [
-                {
-                    "name": "var",
-                    "content": "",
-                    "types": [
-                        "\\WP_Hook[]"
-                    ],
-                    "variable": "$wp_filter"
-                }
-            ]
-        },
-        "file": "wp-includes/plugin.php"
     },
     {
         "name": "{$taxonomy}_row_actions",

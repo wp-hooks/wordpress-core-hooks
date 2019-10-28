@@ -18715,18 +18715,6 @@
         "file": "wp-admin/admin.php"
     },
     {
-        "name": "{$tag}",
-        "line": 660,
-        "end_line": 660,
-        "type": "action_reference",
-        "doc": {
-            "description": "",
-            "long_description": "",
-            "tags": []
-        },
-        "file": "wp-includes/plugin.php"
-    },
-    {
         "name": "{$taxonomy}_add_form",
         "line": 569,
         "end_line": 569,
