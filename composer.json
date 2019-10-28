@@ -13,12 +13,19 @@
 		"sort-packages": true
 	},
     "scripts": {
-        "generate": "@php -f src/generate.php",
-        "validate-schema": "@php -f src/validate.php"
+        "generate": "@composer generate-from -- vendor/wordpress/wordpress",
+        "generate-from": "@php -f src/generate.php",
+        "validate-files": [
+            "@composer validate-from -- hooks/actions.json",
+            "@composer validate-from -- hooks/filters.json"
+        ],
+        "validate-from": "@php -f src/validate.php"
     },
     "scripts-descriptions": {
-        "generate": "Generates the hook files",
-        "validate-schema": "Validates a given file against the schema"
+        "generate": "Generates the hook files for WordPress nightly",
+        "generate-from": "Generates the hook files for a given source directory",
+        "validate-files": "Validates the generated files against the schema",
+        "validate-from": "Validates a given file against the schema"
     },
     "require-dev": {
         "php": ">=7",

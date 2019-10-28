@@ -4,7 +4,7 @@ namespace JohnBillion\WPHooks;
 
 require_once 'vendor/autoload.php';
 
-$files = \WP_Parser\get_wp_files( 'vendor/wordpress/wordpress' );
+$files = \WP_Parser\get_wp_files( $argv[1] );
 
 function hooks_parse_files( $files, $root ) : array {
 	$output = array();
@@ -62,7 +62,7 @@ function hooks_parse_files( $files, $root ) : array {
 	return $output;
 }
 
-$output = hooks_parse_files( $files, 'vendor/wordpress/wordpress' );
+$output = hooks_parse_files( $files, $argv[1] );
 
 $actions = array_values( array_filter( $output, function( array $hook ) : bool {
 	return in_array( $hook['type'], [ 'action', 'action_reference' ], true );
