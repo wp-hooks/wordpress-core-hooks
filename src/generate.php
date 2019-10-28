@@ -39,6 +39,16 @@ function hooks_parse_files( $files, $root ) : array {
 			}
 		}
 
+		foreach ( $file->getClasses() as $class ) {
+			foreach ( $class->getMethods() as $method ) {
+				if ( ! empty( $method->uses ) ) {
+					if ( ! empty( $method->uses['hooks'] ) ) {
+						$file_hooks = array_merge( $file_hooks, \WP_Parser\export_hooks( $method->uses['hooks'] ) );
+					}
+				}
+			}
+		}
+
 		foreach ( $file_hooks as & $hook ) {
 			$hook['file'] = $path;
 		}
