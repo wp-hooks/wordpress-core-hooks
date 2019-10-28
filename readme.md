@@ -14,4 +14,4 @@ WordPress actions and filters in machine-readable JSON format.
 ## Re-generating the Hooks
 
 * `composer install`
-* `php -f src/generate.php`
+* `composer generate`

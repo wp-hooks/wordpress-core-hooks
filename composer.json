@@ -6,9 +6,15 @@
     "authors": [
         {
             "name": "John Blackbourn",
-            "email": "johnbillion@gmail.com"
+            "homepage": "https://johnblackbourn.com/"
         }
     ],
+    "scripts": {
+        "generate": "@php -f src/generate.php"
+    },
+    "scripts-descriptions": {
+        "generate": "Generates the hook files"
+    },
     "require-dev": {
         "roots/wordpress": "dev-nightly",
         "oomphinc/composer-installers-extender": "^1.1",
