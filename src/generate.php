@@ -49,6 +49,12 @@ function hooks_parse_files( $files, $root ) : array {
 		return true;
 	} );
 
+	$output = array_map( function( array $hook ) : array {
+		unset( $hook['arguments'] );
+
+		return $hook;
+	}, $output );
+
 	usort( $output, function( array $a, array $b ) : int {
 		return strcmp( $a['name'], $b['name'] );
 	} );

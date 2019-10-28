@@ -9,7 +9,6 @@
 			"line",
 			"end_line",
 			"type",
-			"arguments",
 			"doc",
 			"file"
 		],
@@ -28,9 +27,6 @@
 				"examples": [
 					"action"
 				]
-			},
-			"arguments": {
-				"type": "array"
 			},
 			"doc": {
 				"type": "object",
