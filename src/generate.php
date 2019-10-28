@@ -56,8 +56,7 @@ function hooks_parse_files( $files, $root ) : array {
 	return $output;
 }
 
-$output = array_values( hooks_parse_files( $files, 'vendor/wordpress/wordpress' ) );
-$result = file_put_contents( 'hooks/all.json', json_encode( $output, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES ) );
+$output = hooks_parse_files( $files, 'vendor/wordpress/wordpress' );
 
 $actions = array_values( array_filter( $output, function( array $hook ) : bool {
 	return in_array( $hook['type'], [ 'action', 'action_reference' ], true );
