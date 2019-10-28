@@ -13,6 +13,7 @@
 		"sort-packages": true
 	},
     "scripts": {
+        "post-update-cmd": "rm -rf vendor/wordpress/wordpress/wp-content",
         "generate": "@composer generate-from -- vendor/wordpress/wordpress",
         "generate-from": "@php -f src/generate.php",
         "validate-files": [
