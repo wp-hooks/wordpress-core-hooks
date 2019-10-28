@@ -11,23 +11,29 @@ function hooks_parse_files( $files, $root ) : array {
 
 	foreach ( $files as $filename ) {
 		$file = new \WP_Parser\File_Reflector( $filename );
-
+		$file_hooks = [];
 		$path = ltrim( substr( $filename, strlen( $root ) ), DIRECTORY_SEPARATOR );
 		$file->setFilename( $path );
 
 		$file->process();
 
 		if ( ! empty( $file->uses['hooks'] ) ) {
-			$output = array_merge( $output, \WP_Parser\export_hooks( $file->uses['hooks'] ) );
+			$file_hooks = array_merge( $file_hooks, \WP_Parser\export_hooks( $file->uses['hooks'] ) );
 		}
 
 		foreach ( $file->getFunctions() as $function ) {
 			if ( ! empty( $function->uses ) ) {
 				if ( ! empty( $function->uses['hooks'] ) ) {
-					$output = array_merge( $output, \WP_Parser\export_hooks( $function->uses['hooks'] ) );
+					$file_hooks = array_merge( $file_hooks, \WP_Parser\export_hooks( $function->uses['hooks'] ) );
 				}
 			}
 		}
+
+		foreach ( $file_hooks as & $hook ) {
+			$hook['file'] = $path;
+		}
+
+		$output = array_merge( $output, $file_hooks );
 	}
 
 	$output = array_filter( $output, function( $hook ) {
