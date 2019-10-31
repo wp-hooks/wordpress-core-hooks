@@ -35,25 +35,21 @@ function hooks_parse_files( $files, $root ) : array {
 		$file->process();
 
 		if ( ! empty( $file->uses['hooks'] ) ) {
-			$file_hooks = array_merge( $file_hooks, \WP_Parser\export_hooks( $file->uses['hooks'] ) );
+			$file_hooks = array_merge( $file_hooks, export_hooks( $file->uses['hooks'], $path ) );
 		}
 
 		foreach ( $file->getFunctions() as $function ) {
 			if ( ! empty( $function->uses ) && ! empty( $function->uses['hooks'] ) ) {
-				$file_hooks = array_merge( $file_hooks, \WP_Parser\export_hooks( $function->uses['hooks'] ) );
+				$file_hooks = array_merge( $file_hooks, export_hooks( $function->uses['hooks'], $path ) );
 			}
 		}
 
 		foreach ( $file->getClasses() as $class ) {
 			foreach ( $class->getMethods() as $method ) {
 				if ( ! empty( $method->uses ) && ! empty( $method->uses['hooks'] ) ) {
-					$file_hooks = array_merge( $file_hooks, \WP_Parser\export_hooks( $method->uses['hooks'] ) );
+					$file_hooks = array_merge( $file_hooks, export_hooks( $method->uses['hooks'], $path ) );
 				}
 			}
-		}
-
-		foreach ( $file_hooks as & $hook ) {
-			$hook['file'] = $path;
 		}
 
 		$output = array_merge( $output, $file_hooks );
@@ -102,6 +98,40 @@ function hooks_parse_files( $files, $root ) : array {
 	} );
 
 	return $output;
+}
+
+/**
+ * @param Hook_Reflector[] $hooks Array of hook references.
+ * @param string           $path  The file path.
+ *
+ * @return array
+ */
+function export_hooks( array $hooks, string $path ) {
+	$out = array();
+
+	foreach ( $hooks as $hook ) {
+		$doc      = \WP_Parser\export_docblock( $hook );
+		$docblock = $hook->getDocBlock();
+
+		$doc['long_description_html'] = $doc['long_description'];
+
+		if ( $docblock ) {
+			$doc['long_description'] = \WP_Parser\fix_newlines( $docblock->getLongDescription() );
+		} else {
+			$doc['long_description'] = '';
+		}
+
+		$out[] = array(
+			'name'     => $hook->getName(),
+			'file'     => $path,
+			'line'     => $hook->getLineNumber(),
+			'end_line' => $hook->getNode()->getAttribute( 'endLine' ),
+			'type'     => $hook->getType(),
+			'doc'      => $doc,
+		);
+	}
+
+	return $out;
 }
 
 $output = hooks_parse_files( $files, $source_dir );
