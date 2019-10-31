@@ -39,19 +39,15 @@ function hooks_parse_files( $files, $root ) : array {
 		}
 
 		foreach ( $file->getFunctions() as $function ) {
-			if ( ! empty( $function->uses ) ) {
-				if ( ! empty( $function->uses['hooks'] ) ) {
-					$file_hooks = array_merge( $file_hooks, \WP_Parser\export_hooks( $function->uses['hooks'] ) );
-				}
+			if ( ! empty( $function->uses ) && ! empty( $function->uses['hooks'] ) ) {
+				$file_hooks = array_merge( $file_hooks, \WP_Parser\export_hooks( $function->uses['hooks'] ) );
 			}
 		}
 
 		foreach ( $file->getClasses() as $class ) {
 			foreach ( $class->getMethods() as $method ) {
-				if ( ! empty( $method->uses ) ) {
-					if ( ! empty( $method->uses['hooks'] ) ) {
-						$file_hooks = array_merge( $file_hooks, \WP_Parser\export_hooks( $method->uses['hooks'] ) );
-					}
+				if ( ! empty( $method->uses ) && ! empty( $method->uses['hooks'] ) ) {
+					$file_hooks = array_merge( $file_hooks, \WP_Parser\export_hooks( $method->uses['hooks'] ) );
 				}
 			}
 		}
