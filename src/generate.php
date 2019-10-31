@@ -14,7 +14,14 @@ if ( ! file_exists( $target_dir ) ) {
 	exit( 1 );
 }
 
+echo "Scanning for files...\n";
+
 $files = \WP_Parser\get_wp_files( $source_dir );
+
+printf(
+	"Found %d files. Parsing hooks...\n",
+	count( $files )
+);
 
 function hooks_parse_files( $files, $root ) : array {
 	$output = array();
@@ -116,3 +123,5 @@ $filters = array_values( array_filter( $output, function( array $hook ) : bool {
 } ) );
 
 $result = file_put_contents( $target_dir . '/filters.json', json_encode( $filters, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES ) );
+
+echo "Done\n";
