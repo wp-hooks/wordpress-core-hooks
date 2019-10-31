@@ -43,9 +43,7 @@ const filters = require('@johnbillion/wp-hooks/hooks/filters.json');
 
 // Search for actions matching a string:
 const search = 'menu';
-const results = actions.filter( function( hook ) {
-    return ( null !== hook.name.match( search ) );
-} );
+const results = actions.filter( hook => ( null !== hook.name.match( search ) ) );
 
 console.log(results);
 ```
