@@ -46901,6 +46901,11 @@
                     "content": "2.1.0"
                 },
                 {
+                    "name": "since",
+                    "content": "5.3.0",
+                    "description": "The <code>$context</code> parameter was added."
+                },
+                {
                     "name": "param",
                     "content": "An array of attachment meta data.",
                     "types": [
@@ -46915,6 +46920,14 @@
                         "int"
                     ],
                     "variable": "$attachment_id"
+                },
+                {
+                    "name": "param",
+                    "content": "Additional context. Can be 'create' when metadata was initially created for new attachment                              or 'update' when the metadata was updated.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$context"
                 }
             ],
             "long_description_html": ""

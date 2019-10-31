@@ -2899,8 +2899,12 @@
                     "content": "5.0.0"
                 },
                 {
-                    "name": "params",
-                    "content": "WP_Post $post The post that is being edited."
+                    "name": "param",
+                    "content": "The post that is being edited.",
+                    "types": [
+                        "\\WP_Post"
+                    ],
+                    "variable": "$post"
                 }
             ],
             "long_description_html": "<p>Hook into this action to print <code>&lt;input type=\"hidden\" ... /&gt;</code> fields, which will be POSTed back to the server when meta boxes are saved.</p>"
@@ -3617,7 +3621,7 @@
         "end_line": 2637,
         "type": "action",
         "doc": {
-            "description": "Fires at the bottom of the comment form, inside the closing </form> tag.",
+            "description": "Fires at the bottom of the comment form, inside the closing form tag.",
             "long_description": "",
             "tags": [
                 {
@@ -7825,7 +7829,7 @@
         "end_line": 29,
         "type": "action",
         "doc": {
-            "description": "Prints scripts or data in the embed template <head> tag.",
+            "description": "Prints scripts or data in the embed template head tag.",
             "long_description": "",
             "tags": [
                 {
@@ -16857,7 +16861,7 @@
         "end_line": 2911,
         "type": "action",
         "doc": {
-            "description": "Triggered after the opening <body> tag.",
+            "description": "Triggered after the opening body tag.",
             "long_description": "",
             "tags": [
                 {
