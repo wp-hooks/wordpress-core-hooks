@@ -6,43 +6,71 @@
 		"type": "object",
 		"required": [
 			"name",
+			"file",
 			"line",
 			"end_line",
 			"type",
-			"doc",
-			"file"
+			"doc"
 		],
 		"properties": {
 			"name": {
-				"type": "string"
+				"description": "The hook name",
+				"type": "string",
+				"examples": [
+					"attachment_fields_to_edit",
+					"update_site_option_{$option}",
+					"init"
+				]
+			},
+			"file": {
+				"description": "The relative name of the file containing the hook",
+				"type": "string",
+				"examples": [
+					"wp-admin/includes/menu.php"
+				]
 			},
 			"line": {
+				"description": "The line number that the hook starts on within its file",
 				"type": "integer"
 			},
 			"end_line": {
+				"description": "The line number that the hook ends on within its file",
 				"type": "integer"
 			},
 			"type": {
+				"description": "The hook type",
 				"type": "string",
-				"examples": [
-					"action"
+				"enum": [
+					"action",
+					"filter",
+					"action_reference",
+					"filter_reference"
 				]
 			},
 			"doc": {
+				"description": "The docblock information for the hook",
 				"type": "object",
 				"required": [
 					"description",
 					"long_description",
+					"long_description_html",
 					"tags"
 				],
 				"properties": {
 					"description": {
+						"description": "The short description as plain text",
 						"type": "string"
 					},
 					"long_description": {
+						"description": "The long description as markdown",
+						"type": "string"
+					},
+					"long_description_html": {
+						"description": "The long description as HTML",
 						"type": "string"
 					},
 					"tags": {
+						"description": "The docblock tags for the hook",
 						"type": "array",
 						"items": {
 							"type": "object",
@@ -52,24 +80,48 @@
 							],
 							"properties": {
 								"name": {
+									"description": "The tag name",
 									"type": "string",
-									"examples": [
-										"private"
+									"enum": [
+										"deprecated",
+										"global",
+										"ignore",
+										"link",
+										"param",
+										"private",
+										"return",
+										"see",
+										"since",
+										"todo"
 									]
 								},
 								"content": {
-									"type": "string"
+									"description": "The tag content",
+									"type": "string",
+									"examples": [
+										"Name of the network option.",
+										"5.2.0"
+									]
+								},
+								"types": {
+									"description": "Allowed types for parameter values, for @param tags",
+									"type": "array",
+									"items": {
+										"type": "string"
+									}
+								},
+								"variable": {
+									"description": "The name of the parameter variable, for @param tags",
+									"type": "string",
+									"examples": [
+										"$args",
+										"$option"
+									]
 								}
 							}
 						}
 					}
 				}
-			},
-			"file": {
-				"type": "string",
-				"examples": [
-					"wp-admin/includes/menu.php"
-				]
 			}
 		}
 	}
