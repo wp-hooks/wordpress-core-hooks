@@ -48,6 +48,12 @@ const results = actions.filter( hook => ( null !== hook.name.match( search ) ) )
 console.log(results);
 ```
 
+## TypeScript Interface
+
+```typescript
+import { Hook, Doc, Tag } from '@johnbillion/wp-hooks/interface';
+```
+
 ## Schema
 
 * The JSON schema can be found in [`schema.json`](schema.json).
