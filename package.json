@@ -11,6 +11,7 @@
   ],
   "files": [
     "hooks",
+    "interface",
     "readme.md",
     "schema.json"
   ],
