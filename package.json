@@ -20,5 +20,11 @@
   "bugs": {
     "url": "https://github.com/johnbillion/wp-hooks/issues"
   },
+  "dependencies": {
+    "json-schema-to-typescript": "^7.1"
+  },
+  "scripts": {
+    "generate-interfaces": "json2ts --input schema.json --output=interface/index.d.ts"
+  },
   "homepage": "https://github.com/johnbillion/wp-hooks#readme"
 }

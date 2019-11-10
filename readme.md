@@ -48,10 +48,12 @@ const results = actions.filter( hook => ( null !== hook.name.match( search ) ) )
 console.log(results);
 ```
 
-## TypeScript Interface
+## TypeScript Interfaces
+
+The TypeScript interfaces can be found in [`interface/index.d.ts`](interface/index.d.ts). Usage:
 
 ```typescript
-import { Hook, Doc, Tag } from '@johnbillion/wp-hooks/interface';
+import { Hooks, Hook, Doc, Tags, Tag } from '@johnbillion/wp-hooks/interface';
 ```
 
 ## Schema
@@ -69,3 +71,7 @@ The hook extraction component of the [WP Parser library](https://github.com/Word
 ## Validating the Hook Files
 
 `composer validate-files`
+
+## Regenerating the TypeScript Interfaces
+
+`npm run generate-interfaces`
