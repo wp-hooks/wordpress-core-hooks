@@ -185,8 +185,8 @@
     {
         "name": "add_ping",
         "file": "wp-includes/post.php",
-        "line": 4696,
-        "end_line": 4696,
+        "line": 4702,
+        "end_line": 4702,
         "type": "filter",
         "doc": {
             "description": "Filters the new ping URL to add for the given post.",
@@ -382,8 +382,8 @@
     {
         "name": "admin_email_check_interval",
         "file": "wp-login.php",
-        "line": 599,
-        "end_line": 599,
+        "line": 608,
+        "end_line": 608,
         "type": "filter",
         "doc": {
             "description": "Filters the interval for redirecting the user to the admin email confirmation screen.",
@@ -434,8 +434,8 @@
     {
         "name": "admin_memory_limit",
         "file": "wp-includes/functions.php",
-        "line": 6561,
-        "end_line": 6561,
+        "line": 6696,
+        "end_line": 6696,
         "type": "filter",
         "doc": {
             "description": "Filters the maximum memory limit available for administration screens.",
@@ -815,8 +815,8 @@
     {
         "name": "allow_empty_comment",
         "file": "wp-includes/comment.php",
-        "line": 3368,
-        "end_line": 3368,
+        "line": 3374,
+        "end_line": 3374,
         "type": "filter",
         "doc": {
             "description": "Filters whether an empty comment should be allowed.",
@@ -901,8 +901,8 @@
     {
         "name": "allow_password_reset",
         "file": "wp-includes/user.php",
-        "line": 2299,
-        "end_line": 2299,
+        "line": 2304,
+        "end_line": 2304,
         "type": "filter",
         "doc": {
             "description": "Filters whether to allow a password to be reset.",
@@ -1056,8 +1056,8 @@
     {
         "name": "allowed_redirect_hosts",
         "file": "wp-includes/pluggable.php",
-        "line": 1455,
-        "end_line": 1455,
+        "line": 1460,
+        "end_line": 1460,
         "type": "filter",
         "doc": {
             "description": "Filters the whitelist of hosts to redirect to.",
@@ -1090,8 +1090,8 @@
     {
         "name": "allowed_themes",
         "file": "wp-includes/class-wp-theme.php",
-        "line": 1476,
-        "end_line": 1476,
+        "line": 1474,
+        "end_line": 1474,
         "type": "filter",
         "doc": {
             "description": "Filters the array of themes allowed on the network.",
@@ -1344,8 +1344,8 @@
     {
         "name": "attachment_thumbnail_args",
         "file": "wp-admin/includes/image.php",
-        "line": 500,
-        "end_line": 500,
+        "line": 526,
+        "end_line": 526,
         "type": "filter",
         "doc": {
             "description": "Filters the parameters for the attachment thumbnail creation.",
@@ -1386,8 +1386,8 @@
     {
         "name": "attachment_url_to_postid",
         "file": "wp-includes/media.php",
-        "line": 4308,
-        "end_line": 4308,
+        "line": 4312,
+        "end_line": 4312,
         "type": "filter",
         "doc": {
             "description": "Filters an attachment id found by URL.",
@@ -2292,8 +2292,8 @@
     {
         "name": "big_image_size_threshold",
         "file": "wp-admin/includes/image.php",
-        "line": 243,
-        "end_line": 243,
+        "line": 268,
+        "end_line": 268,
         "type": "filter",
         "doc": {
             "description": "Filters the \"BIG image\" threshold value.",
@@ -2313,7 +2313,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Indexed array of the image width and height (in that order).",
+                    "content": "{     Indexed array of the image width and height in pixels.     @type int $0 The image width.     @type int $1 The image height. }",
                     "types": [
                         "array"
                     ],
@@ -2478,8 +2478,8 @@
     {
         "name": "block_local_requests",
         "file": "wp-includes/class-http.php",
-        "line": 870,
-        "end_line": 870,
+        "line": 876,
+        "end_line": 876,
         "type": "filter",
         "doc": {
             "description": "Filters whether to block local HTTP API requests.",
@@ -2564,8 +2564,8 @@
     {
         "name": "blog_redirect_404",
         "file": "wp-includes/ms-functions.php",
-        "line": 2052,
-        "end_line": 2052,
+        "line": 2077,
+        "end_line": 2077,
         "type": "filter",
         "doc": {
             "description": "Filters the redirect URL for 404s on the main site.",
@@ -2825,8 +2825,8 @@
     {
         "name": "can_add_user_to_blog",
         "file": "wp-includes/ms-functions.php",
-        "line": 179,
-        "end_line": 179,
+        "line": 184,
+        "end_line": 184,
         "type": "filter",
         "doc": {
             "description": "Filters whether a user should be added to a site.",
@@ -3073,45 +3073,6 @@
         }
     },
     {
-        "name": "category_link",
-        "file": "wp-includes/taxonomy.php",
-        "line": 4264,
-        "end_line": 4264,
-        "type": "filter",
-        "doc": {
-            "description": "Filters the category link.",
-            "long_description": "",
-            "tags": [
-                {
-                    "name": "since",
-                    "content": "1.5.0"
-                },
-                {
-                    "name": "deprecated",
-                    "content": "2.5.0",
-                    "description": "Use 'term_link' instead."
-                },
-                {
-                    "name": "param",
-                    "content": "Category link URL.",
-                    "types": [
-                        "string"
-                    ],
-                    "variable": "$termlink"
-                },
-                {
-                    "name": "param",
-                    "content": "Term ID.",
-                    "types": [
-                        "int"
-                    ],
-                    "variable": "$term_id"
-                }
-            ],
-            "long_description_html": ""
-        }
-    },
-    {
         "name": "category_list_link_attributes",
         "file": "wp-includes/class-walker-category.php",
         "line": 138,
@@ -3206,8 +3167,8 @@
     {
         "name": "check_password",
         "file": "wp-includes/pluggable.php",
-        "line": 2365,
-        "end_line": 2365,
+        "line": 2370,
+        "end_line": 2370,
         "type": "filter",
         "doc": {
             "description": "Filters whether the plaintext password matches the encrypted password.",
@@ -3299,8 +3260,8 @@
     {
         "name": "close_comments_for_post_types",
         "file": "wp-includes/comment.php",
-        "line": 3107,
-        "end_line": 3107,
+        "line": 3113,
+        "end_line": 3113,
         "type": "filter",
         "doc": {
             "description": "Filters the list of post types to automatically close comments for.",
@@ -4268,8 +4229,8 @@
     {
         "name": "comment_moderation_headers",
         "file": "wp-includes/pluggable.php",
-        "line": 1847,
-        "end_line": 1847,
+        "line": 1852,
+        "end_line": 1852,
         "type": "filter",
         "doc": {
             "description": "Filters the comment moderation email headers.",
@@ -4302,8 +4263,8 @@
     {
         "name": "comment_moderation_recipients",
         "file": "wp-includes/pluggable.php",
-        "line": 1817,
-        "end_line": 1817,
+        "line": 1822,
+        "end_line": 1822,
         "type": "filter",
         "doc": {
             "description": "Filters the list of recipients for comment moderation emails.",
@@ -4336,8 +4297,8 @@
     {
         "name": "comment_moderation_subject",
         "file": "wp-includes/pluggable.php",
-        "line": 1837,
-        "end_line": 1837,
+        "line": 1842,
+        "end_line": 1842,
         "type": "filter",
         "doc": {
             "description": "Filters the comment moderation email subject.",
@@ -4370,8 +4331,8 @@
     {
         "name": "comment_moderation_text",
         "file": "wp-includes/pluggable.php",
-        "line": 1827,
-        "end_line": 1827,
+        "line": 1832,
+        "end_line": 1832,
         "type": "filter",
         "doc": {
             "description": "Filters the comment moderation email text.",
@@ -4404,8 +4365,8 @@
     {
         "name": "comment_notification_headers",
         "file": "wp-includes/pluggable.php",
-        "line": 1672,
-        "end_line": 1672,
+        "line": 1677,
+        "end_line": 1677,
         "type": "filter",
         "doc": {
             "description": "Filters the comment notification email headers.",
@@ -4438,8 +4399,8 @@
     {
         "name": "comment_notification_notify_author",
         "file": "wp-includes/pluggable.php",
-        "line": 1528,
-        "end_line": 1528,
+        "line": 1533,
+        "end_line": 1533,
         "type": "filter",
         "doc": {
             "description": "Filters whether to notify comment authors of their comments on their own posts.",
@@ -4472,8 +4433,8 @@
     {
         "name": "comment_notification_recipients",
         "file": "wp-includes/pluggable.php",
-        "line": 1505,
-        "end_line": 1505,
+        "line": 1510,
+        "end_line": 1510,
         "type": "filter",
         "doc": {
             "description": "Filters the list of email addresses to receive a comment notification.",
@@ -4506,8 +4467,8 @@
     {
         "name": "comment_notification_subject",
         "file": "wp-includes/pluggable.php",
-        "line": 1662,
-        "end_line": 1662,
+        "line": 1667,
+        "end_line": 1667,
         "type": "filter",
         "doc": {
             "description": "Filters the comment notification email subject.",
@@ -4540,8 +4501,8 @@
     {
         "name": "comment_notification_text",
         "file": "wp-includes/pluggable.php",
-        "line": 1652,
-        "end_line": 1652,
+        "line": 1657,
+        "end_line": 1657,
         "type": "filter",
         "doc": {
             "description": "Filters the comment notification email text.",
@@ -4734,8 +4695,8 @@
     {
         "name": "comment_save_pre",
         "file": "wp-includes/comment.php",
-        "line": 2349,
-        "end_line": 2349,
+        "line": 2355,
+        "end_line": 2355,
         "type": "filter",
         "doc": {
             "description": "Filters the comment content before it is updated in the database.",
@@ -5342,92 +5303,6 @@
         }
     },
     {
-        "name": "contextual_help",
-        "file": "wp-admin/includes/class-wp-screen.php",
-        "line": 814,
-        "end_line": 814,
-        "type": "filter",
-        "doc": {
-            "description": "Filters the legacy contextual help text.",
-            "long_description": "",
-            "tags": [
-                {
-                    "name": "since",
-                    "content": "2.7.0"
-                },
-                {
-                    "name": "deprecated",
-                    "content": "3.3.0",
-                    "description": "Use get_current_screen()-&gt;add_help_tab() or                   get_current_screen()-&gt;remove_help_tab() instead."
-                },
-                {
-                    "name": "param",
-                    "content": "Help text that appears on the screen.",
-                    "types": [
-                        "string"
-                    ],
-                    "variable": "$old_help"
-                },
-                {
-                    "name": "param",
-                    "content": "Screen ID.",
-                    "types": [
-                        "string"
-                    ],
-                    "variable": "$screen_id"
-                },
-                {
-                    "name": "param",
-                    "content": "Current WP_Screen instance.",
-                    "types": [
-                        "\\WP_Screen"
-                    ],
-                    "variable": "$this"
-                }
-            ],
-            "long_description_html": ""
-        }
-    },
-    {
-        "name": "contextual_help_list",
-        "file": "wp-admin/includes/class-wp-screen.php",
-        "line": 799,
-        "end_line": 799,
-        "type": "filter",
-        "doc": {
-            "description": "Filters the legacy contextual help list.",
-            "long_description": "",
-            "tags": [
-                {
-                    "name": "since",
-                    "content": "2.7.0"
-                },
-                {
-                    "name": "deprecated",
-                    "content": "3.3.0",
-                    "description": "Use get_current_screen()-&gt;add_help_tab() or                   get_current_screen()-&gt;remove_help_tab() instead."
-                },
-                {
-                    "name": "param",
-                    "content": "Old contextual help.",
-                    "types": [
-                        "array"
-                    ],
-                    "variable": "$old_compat_help"
-                },
-                {
-                    "name": "param",
-                    "content": "Current WP_Screen instance.",
-                    "types": [
-                        "\\WP_Screen"
-                    ],
-                    "variable": "$this"
-                }
-            ],
-            "long_description_html": ""
-        }
-    },
-    {
         "name": "core_version_check_locale",
         "file": "wp-includes/update.php",
         "line": 66,
@@ -5615,8 +5490,8 @@
     {
         "name": "customize_allowed_urls",
         "file": "wp-includes/class-wp-customize-manager.php",
-        "line": 4589,
-        "end_line": 4589,
+        "line": 4588,
+        "end_line": 4588,
         "type": "filter",
         "doc": {
             "description": "Filters the list of URLs allowed to be clicked and followed in the Customizer preview.",
@@ -5641,8 +5516,8 @@
     {
         "name": "customize_changeset_branching",
         "file": "wp-includes/class-wp-customize-manager.php",
-        "line": 796,
-        "end_line": 796,
+        "line": 794,
+        "end_line": 794,
         "type": "filter",
         "doc": {
             "description": "Filters whether or not changeset branching is\u00a0allowed.",
@@ -5675,8 +5550,8 @@
     {
         "name": "customize_changeset_save_data",
         "file": "wp-includes/class-wp-customize-manager.php",
-        "line": 2875,
-        "end_line": 2875,
+        "line": 2873,
+        "end_line": 2873,
         "type": "filter",
         "doc": {
             "description": "Filters the settings' data that will be persisted into the changeset.",
@@ -5820,8 +5695,8 @@
     {
         "name": "customize_dynamic_setting_args",
         "file": "wp-includes/class-wp-customize-manager.php",
-        "line": 3756,
-        "end_line": 3756,
+        "line": 3755,
+        "end_line": 3755,
         "type": "filter",
         "doc": {
             "description": "Filters a dynamic setting's constructor args.",
@@ -5855,8 +5730,8 @@
     {
         "name": "customize_dynamic_setting_class",
         "file": "wp-includes/class-wp-customize-manager.php",
-        "line": 3770,
-        "end_line": 3770,
+        "line": 3769,
+        "end_line": 3769,
         "type": "filter",
         "doc": {
             "description": "Allow non-statically created settings to be constructed with custom WP_Customize_Setting subclass.",
@@ -5897,8 +5772,8 @@
     {
         "name": "customize_load_themes",
         "file": "wp-includes/class-wp-customize-manager.php",
-        "line": 5871,
-        "end_line": 5871,
+        "line": 5870,
+        "end_line": 5870,
         "type": "filter",
         "doc": {
             "description": "Filters the theme data loaded in the customizer.",
@@ -5954,8 +5829,8 @@
     {
         "name": "customize_loaded_components",
         "file": "wp-includes/class-wp-customize-manager.php",
-        "line": 352,
-        "end_line": 352,
+        "line": 350,
+        "end_line": 350,
         "type": "filter",
         "doc": {
             "description": "Filters the core Customizer components to load.",
@@ -6230,8 +6105,8 @@
     {
         "name": "customize_previewable_devices",
         "file": "wp-includes/class-wp-customize-manager.php",
-        "line": 4954,
-        "end_line": 4954,
+        "line": 4953,
+        "end_line": 4953,
         "type": "filter",
         "doc": {
             "description": "Filters the available devices to allow previewing in the Customizer.",
@@ -6261,8 +6136,8 @@
     {
         "name": "customize_refresh_nonces",
         "file": "wp-includes/class-wp-customize-manager.php",
-        "line": 4704,
-        "end_line": 4704,
+        "line": 4703,
+        "end_line": 4703,
         "type": "filter",
         "doc": {
             "description": "Filters nonces for Customizer.",
@@ -6337,8 +6212,8 @@
     {
         "name": "customize_sanitize_js_{$this->id}",
         "file": "wp-includes/class-wp-customize-setting.php",
-        "line": 785,
-        "end_line": 785,
+        "line": 784,
+        "end_line": 784,
         "type": "filter",
         "doc": {
             "description": "Filters a Customize setting value for use in JavaScript.",
@@ -6371,8 +6246,8 @@
     {
         "name": "customize_sanitize_{$this->id}",
         "file": "wp-includes/class-wp-customize-setting.php",
-        "line": 559,
-        "end_line": 559,
+        "line": 558,
+        "end_line": 558,
         "type": "filter",
         "doc": {
             "description": "Filters a Customize setting value in un-slashed form.",
@@ -6405,8 +6280,8 @@
     {
         "name": "customize_save_response",
         "file": "wp-includes/class-wp-customize-manager.php",
-        "line": 2582,
-        "end_line": 2582,
+        "line": 2580,
+        "end_line": 2580,
         "type": "filter",
         "doc": {
             "description": "Filters response data for a successful customize_save Ajax request.",
@@ -6473,8 +6348,8 @@
     {
         "name": "customize_validate_{$this->id}",
         "file": "wp-includes/class-wp-customize-setting.php",
-        "line": 595,
-        "end_line": 595,
+        "line": 594,
+        "end_line": 594,
         "type": "filter",
         "doc": {
             "description": "Validates a Customize setting value.",
@@ -6515,8 +6390,8 @@
     {
         "name": "customize_value_{$id_base}",
         "file": "wp-includes/class-wp-customize-setting.php",
-        "line": 751,
-        "end_line": 751,
+        "line": 750,
+        "end_line": 750,
         "type": "filter",
         "doc": {
             "description": "Filters a Customize setting value not handled as a theme_mod or option.",
@@ -7045,8 +6920,8 @@
     {
         "name": "dbdelta_create_queries",
         "file": "wp-admin/includes/upgrade.php",
-        "line": 2598,
-        "end_line": 2598,
+        "line": 2605,
+        "end_line": 2605,
         "type": "filter",
         "doc": {
             "description": "Filters the dbDelta SQL queries for creating tables and/or databases.",
@@ -7071,8 +6946,8 @@
     {
         "name": "dbdelta_insert_queries",
         "file": "wp-admin/includes/upgrade.php",
-        "line": 2609,
-        "end_line": 2609,
+        "line": 2616,
+        "end_line": 2616,
         "type": "filter",
         "doc": {
             "description": "Filters the dbDelta SQL queries for inserting or updating.",
@@ -7097,8 +6972,8 @@
     {
         "name": "dbdelta_queries",
         "file": "wp-admin/includes/upgrade.php",
-        "line": 2567,
-        "end_line": 2567,
+        "line": 2574,
+        "end_line": 2574,
         "type": "filter",
         "doc": {
             "description": "Filters the dbDelta SQL queries.",
@@ -7201,37 +7076,6 @@
                         "\\WP_Post"
                     ],
                     "variable": "$post"
-                }
-            ],
-            "long_description_html": ""
-        }
-    },
-    {
-        "name": "default_contextual_help",
-        "file": "wp-admin/includes/class-wp-screen.php",
-        "line": 828,
-        "end_line": 828,
-        "type": "filter",
-        "doc": {
-            "description": "Filters the default legacy contextual help text.",
-            "long_description": "",
-            "tags": [
-                {
-                    "name": "since",
-                    "content": "2.8.0"
-                },
-                {
-                    "name": "deprecated",
-                    "content": "3.3.0",
-                    "description": "Use get_current_screen()-&gt;add_help_tab() or                   get_current_screen()-&gt;remove_help_tab() instead."
-                },
-                {
-                    "name": "param",
-                    "content": "Default contextual help text.",
-                    "types": [
-                        "string"
-                    ],
-                    "variable": "$old_help_default"
                 }
             ],
             "long_description_html": ""
@@ -7347,9 +7191,9 @@
                 },
                 {
                     "name": "param",
-                    "content": "An array of meta boxes hidden by default.",
+                    "content": "An array of IDs of meta boxes hidden by default.",
                     "types": [
-                        "array"
+                        "string[]"
                     ],
                     "variable": "$hidden"
                 },
@@ -7660,8 +7504,8 @@
     {
         "name": "deprecated_argument_trigger_error",
         "file": "wp-includes/functions.php",
-        "line": 4792,
-        "end_line": 4792,
+        "line": 4860,
+        "end_line": 4860,
         "type": "filter",
         "doc": {
             "description": "Filters whether to trigger an error for deprecated arguments.",
@@ -7686,8 +7530,8 @@
     {
         "name": "deprecated_constructor_trigger_error",
         "file": "wp-includes/functions.php",
-        "line": 4637,
-        "end_line": 4637,
+        "line": 4668,
+        "end_line": 4668,
         "type": "filter",
         "doc": {
             "description": "Filters whether to trigger an error for deprecated functions.",
@@ -7712,8 +7556,8 @@
     {
         "name": "deprecated_file_trigger_error",
         "file": "wp-includes/functions.php",
-        "line": 4728,
-        "end_line": 4728,
+        "line": 4764,
+        "end_line": 4764,
         "type": "filter",
         "doc": {
             "description": "Filters whether to trigger an error for deprecated files.",
@@ -7764,8 +7608,8 @@
     {
         "name": "deprecated_hook_trigger_error",
         "file": "wp-includes/functions.php",
-        "line": 4851,
-        "end_line": 4851,
+        "line": 4950,
+        "end_line": 4950,
         "type": "filter",
         "doc": {
             "description": "Filters whether to trigger deprecated hook errors.",
@@ -7790,8 +7634,8 @@
     {
         "name": "determine_current_user",
         "file": "wp-includes/user.php",
-        "line": 2758,
-        "end_line": 2758,
+        "line": 2763,
+        "end_line": 2763,
         "type": "filter",
         "doc": {
             "description": "Filters the current user.",
@@ -8274,8 +8118,8 @@
     {
         "name": "doing_it_wrong_trigger_error",
         "file": "wp-includes/functions.php",
-        "line": 4903,
-        "end_line": 4903,
+        "line": 5018,
+        "end_line": 5018,
         "type": "filter",
         "doc": {
             "description": "Filters whether to trigger an error for _doing_it_wrong() calls.",
@@ -8329,8 +8173,8 @@
     {
         "name": "domain_exists",
         "file": "wp-includes/ms-functions.php",
-        "line": 1513,
-        "end_line": 1513,
+        "line": 1534,
+        "end_line": 1534,
         "type": "filter",
         "doc": {
             "description": "Filters whether a site name is taken.",
@@ -8689,8 +8533,8 @@
     {
         "name": "edit_post_{$field}",
         "file": "wp-includes/post.php",
-        "line": 2405,
-        "end_line": 2405,
+        "line": 2411,
+        "end_line": 2411,
         "type": "filter",
         "doc": {
             "description": "",
@@ -8906,8 +8750,8 @@
     {
         "name": "edit_user_{$field}",
         "file": "wp-includes/user.php",
-        "line": 1267,
-        "end_line": 1267,
+        "line": 1272,
+        "end_line": 1272,
         "type": "filter",
         "doc": {
             "description": "Filters a user field value in the 'edit' context.",
@@ -8940,8 +8784,8 @@
     {
         "name": "edit_{$field}",
         "file": "wp-includes/post.php",
-        "line": 2390,
-        "end_line": 2390,
+        "line": 2396,
+        "end_line": 2396,
         "type": "filter",
         "doc": {
             "description": "Filters the value of a specific post field to edit.",
@@ -9186,7 +9030,7 @@
         "end_line": 2028,
         "type": "filter",
         "doc": {
-            "description": "Filters the array of stylesheets applied to the editor.",
+            "description": "Filters the array of URLs of stylesheets applied to the editor.",
             "long_description": "",
             "tags": [
                 {
@@ -9195,9 +9039,9 @@
                 },
                 {
                     "name": "param",
-                    "content": "Array of stylesheets to be applied to the editor.",
+                    "content": "Array of URLs of stylesheets to be applied to the editor.",
                     "types": [
-                        "array"
+                        "string[]"
                     ],
                     "variable": "$stylesheets"
                 }
@@ -9208,8 +9052,8 @@
     {
         "name": "email_change_email",
         "file": "wp-includes/user.php",
-        "line": 2100,
-        "end_line": 2100,
+        "line": 2105,
+        "end_line": 2105,
         "type": "filter",
         "doc": {
             "description": "Filters the contents of the email sent when the user's email is changed.",
@@ -9276,8 +9120,8 @@
     {
         "name": "embed_defaults",
         "file": "wp-includes/embed.php",
-        "line": 83,
-        "end_line": 83,
+        "line": 92,
+        "end_line": 92,
         "type": "filter",
         "doc": {
             "description": "Filters the default array of embed dimensions.",
@@ -9289,7 +9133,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "An array of embed width and height values                     in pixels (in that order).",
+                    "content": "{     Indexed array of the embed width and height in pixels.     @type int $0 The embed width.     @type int $1 The embed height. }",
                     "types": [
                         "array"
                     ],
@@ -9314,7 +9158,7 @@
         "end_line": 186,
         "type": "filter",
         "doc": {
-            "description": "Filters the returned embed handler.",
+            "description": "Filters the returned embed HTML.",
             "long_description": "",
             "tags": [
                 {
@@ -9328,15 +9172,16 @@
                 },
                 {
                     "name": "param",
-                    "content": "The shortcode callback function to call.",
+                    "content": "The HTML result of the shortcode, or false on failure.",
                     "types": [
-                        "mixed"
+                        "string",
+                        "false"
                     ],
                     "variable": "$return"
                 },
                 {
                     "name": "param",
-                    "content": "The attempted embed URL.",
+                    "content": "The embed URL.",
                     "types": [
                         "string"
                     ],
@@ -9357,8 +9202,8 @@
     {
         "name": "embed_html",
         "file": "wp-includes/embed.php",
-        "line": 490,
-        "end_line": 490,
+        "line": 499,
+        "end_line": 499,
         "type": "filter",
         "doc": {
             "description": "Filters the embed HTML output for a given post.",
@@ -9497,7 +9342,8 @@
                     "name": "param",
                     "content": "The cached HTML result, stored in post meta.",
                     "types": [
-                        "mixed"
+                        "string",
+                        "false"
                     ],
                     "variable": "$cache"
                 },
@@ -9532,8 +9378,8 @@
     {
         "name": "embed_site_title_html",
         "file": "wp-includes/embed.php",
-        "line": 1192,
-        "end_line": 1192,
+        "line": 1201,
+        "end_line": 1201,
         "type": "filter",
         "doc": {
             "description": "Filters the site title HTML in the embed footer.",
@@ -9792,8 +9638,8 @@
     {
         "name": "enable_live_network_counts",
         "file": "wp-includes/ms-functions.php",
-        "line": 2352,
-        "end_line": 2352,
+        "line": 2377,
+        "end_line": 2377,
         "type": "filter",
         "doc": {
             "description": "Filters whether to update network site or user counts when a new site is created.",
@@ -9857,8 +9703,8 @@
     {
         "name": "enable_login_autofocus",
         "file": "wp-login.php",
-        "line": 1436,
-        "end_line": 1436,
+        "line": 1445,
+        "end_line": 1445,
         "type": "filter",
         "doc": {
             "description": "Filters whether to print the call to `wp_attempt_focus()` on the login screen.",
@@ -10387,8 +10233,8 @@
     {
         "name": "ext2type",
         "file": "wp-includes/functions.php",
-        "line": 3020,
-        "end_line": 3033,
+        "line": 3019,
+        "end_line": 3032,
         "type": "filter",
         "doc": {
             "description": "Filters file type based on the extension name.",
@@ -10405,9 +10251,9 @@
                 },
                 {
                     "name": "param",
-                    "content": "Multi-dimensional array with extensions for a default set                        of file types.",
+                    "content": "Multi-dimensional array of file extensions types keyed by the type of file.",
                     "types": [
-                        "array"
+                        "array[]"
                     ],
                     "variable": "$ext2type"
                 }
@@ -10418,8 +10264,8 @@
     {
         "name": "extra_{$context}_headers",
         "file": "wp-includes/functions.php",
-        "line": 5734,
-        "end_line": 5734,
+        "line": 5869,
+        "end_line": 5869,
         "type": "filter",
         "doc": {
             "description": "Filters extra file headers by context.",
@@ -10444,8 +10290,8 @@
     {
         "name": "fallback_intermediate_image_sizes",
         "file": "wp-admin/includes/image.php",
-        "line": 526,
-        "end_line": 526,
+        "line": 552,
+        "end_line": 552,
         "type": "filter",
         "doc": {
             "description": "Filters the image sizes generated for non-image mime types.",
@@ -10459,7 +10305,7 @@
                     "name": "param",
                     "content": "An array of image size names.",
                     "types": [
-                        "array"
+                        "string[]"
                     ],
                     "variable": "$fallback_sizes"
                 },
@@ -10598,8 +10444,8 @@
     {
         "name": "file_is_displayable_image",
         "file": "wp-admin/includes/image.php",
-        "line": 865,
-        "end_line": 865,
+        "line": 894,
+        "end_line": 894,
         "type": "filter",
         "doc": {
             "description": "Filters whether the current image is displayable in the browser.",
@@ -11170,8 +11016,8 @@
     {
         "name": "gallery_style",
         "file": "wp-includes/media.php",
-        "line": 2013,
-        "end_line": 2013,
+        "line": 2012,
+        "end_line": 2012,
         "type": "filter",
         "doc": {
             "description": "Filters the default gallery shortcode CSS styles.",
@@ -11214,9 +11060,9 @@
                 },
                 {
                     "name": "param",
-                    "content": "An array of object ancestors.",
+                    "content": "An array of IDs of object ancestors.",
                     "types": [
-                        "array"
+                        "int[]"
                     ],
                     "variable": "$ancestors"
                 },
@@ -11369,8 +11215,8 @@
     {
         "name": "get_attached_media",
         "file": "wp-includes/media.php",
-        "line": 4067,
-        "end_line": 4067,
+        "line": 4071,
+        "end_line": 4071,
         "type": "filter",
         "doc": {
             "description": "Filters the list of media attached to the given post.",
@@ -11411,8 +11257,8 @@
     {
         "name": "get_attached_media_args",
         "file": "wp-includes/media.php",
-        "line": 4054,
-        "end_line": 4054,
+        "line": 4058,
+        "end_line": 4058,
         "type": "filter",
         "doc": {
             "description": "Filters arguments used to retrieve media attached to the given post.",
@@ -11468,7 +11314,7 @@
                     "name": "param",
                     "content": "An array of available language codes.",
                     "types": [
-                        "array"
+                        "string[]"
                     ],
                     "variable": "$languages"
                 },
@@ -11487,8 +11333,8 @@
     {
         "name": "get_avatar",
         "file": "wp-includes/pluggable.php",
-        "line": 2690,
-        "end_line": 2690,
+        "line": 2695,
+        "end_line": 2695,
         "type": "filter",
         "doc": {
             "description": "Filters the avatar to retrieve.",
@@ -12974,8 +12820,8 @@
     {
         "name": "get_enclosed",
         "file": "wp-includes/post.php",
-        "line": 4736,
-        "end_line": 4736,
+        "line": 4742,
+        "end_line": 4742,
         "type": "filter",
         "doc": {
             "description": "Filters the list of enclosures already enclosed for the given post.",
@@ -13228,8 +13074,8 @@
     {
         "name": "get_lastpostdate",
         "file": "wp-includes/post.php",
-        "line": 6399,
-        "end_line": 6399,
+        "line": 6405,
+        "end_line": 6405,
         "type": "filter",
         "doc": {
             "description": "Filters the most recent time that a post on the site was published.",
@@ -13262,8 +13108,8 @@
     {
         "name": "get_lastpostmodified",
         "file": "wp-includes/post.php",
-        "line": 6451,
-        "end_line": 6451,
+        "line": 6457,
+        "end_line": 6457,
         "type": "filter",
         "doc": {
             "description": "Filters the most recent time that a post was modified.",
@@ -13296,8 +13142,8 @@
     {
         "name": "get_main_network_id",
         "file": "wp-includes/functions.php",
-        "line": 5286,
-        "end_line": 5286,
+        "line": 5421,
+        "end_line": 5421,
         "type": "filter",
         "doc": {
             "description": "Filters the main network ID.",
@@ -13584,8 +13430,8 @@
     {
         "name": "get_page_uri",
         "file": "wp-includes/post.php",
-        "line": 5148,
-        "end_line": 5148,
+        "line": 5154,
+        "end_line": 5154,
         "type": "filter",
         "doc": {
             "description": "Filters the URI for a page.",
@@ -13657,8 +13503,8 @@
     {
         "name": "get_pages",
         "file": "wp-includes/post.php",
-        "line": 5466,
-        "end_line": 5466,
+        "line": 5472,
+        "end_line": 5472,
         "type": "filter",
         "doc": {
             "description": "Filters the retrieved list of pages.",
@@ -13691,8 +13537,8 @@
     {
         "name": "get_post_galleries",
         "file": "wp-includes/media.php",
-        "line": 4178,
-        "end_line": 4178,
+        "line": 4182,
+        "end_line": 4182,
         "type": "filter",
         "doc": {
             "description": "Filters the list of all found galleries in the given post.",
@@ -13725,8 +13571,8 @@
     {
         "name": "get_post_gallery",
         "file": "wp-includes/media.php",
-        "line": 4203,
-        "end_line": 4203,
+        "line": 4207,
+        "end_line": 4207,
         "type": "filter",
         "doc": {
             "description": "Filters the first-found post gallery.",
@@ -13810,8 +13656,8 @@
     {
         "name": "get_post_status",
         "file": "wp-includes/post.php",
-        "line": 922,
-        "end_line": 922,
+        "line": 928,
+        "end_line": 928,
         "type": "filter",
         "doc": {
             "description": "Filters the post status.",
@@ -13886,8 +13732,8 @@
     {
         "name": "get_pung",
         "file": "wp-includes/post.php",
-        "line": 4765,
-        "end_line": 4765,
+        "line": 4771,
+        "end_line": 4771,
         "type": "filter",
         "doc": {
             "description": "Filters the list of already-pinged URLs for the given post.",
@@ -13912,8 +13758,8 @@
     {
         "name": "get_role_list",
         "file": "wp-admin/includes/class-wp-users-list-table.php",
-        "line": 639,
-        "end_line": 639,
+        "line": 638,
+        "end_line": 638,
         "type": "filter",
         "doc": {
             "description": "Filters the returned array of roles for a user.",
@@ -14280,8 +14126,8 @@
     {
         "name": "get_space_allowed",
         "file": "wp-includes/ms-functions.php",
-        "line": 2475,
-        "end_line": 2475,
+        "line": 2500,
+        "end_line": 2500,
         "type": "filter",
         "doc": {
             "description": "Filters the upload quota for the current site.",
@@ -15160,8 +15006,8 @@
     {
         "name": "get_to_ping",
         "file": "wp-includes/post.php",
-        "line": 4794,
-        "end_line": 4794,
+        "line": 4800,
+        "end_line": 4800,
         "type": "filter",
         "doc": {
             "description": "Filters the list of URLs yet to ping for the given post.",
@@ -15869,8 +15715,8 @@
     {
         "name": "global_terms_enabled",
         "file": "wp-includes/functions.php",
-        "line": 5316,
-        "end_line": 5316,
+        "line": 5451,
+        "end_line": 5451,
         "type": "filter",
         "doc": {
             "description": "Filters whether global terms are enabled.",
@@ -16387,9 +16233,9 @@
                 },
                 {
                     "name": "param",
-                    "content": "An array of hidden meta boxes.",
+                    "content": "An array of IDs of hidden meta boxes.",
                     "types": [
-                        "array"
+                        "string[]"
                     ],
                     "variable": "$hidden"
                 },
@@ -16468,8 +16314,8 @@
     {
         "name": "http_api_transports",
         "file": "wp-includes/class-http.php",
-        "line": 529,
-        "end_line": 529,
+        "line": 531,
+        "end_line": 531,
         "type": "filter",
         "doc": {
             "description": "Filters which HTTP transports are available and in what order.",
@@ -16807,8 +16653,8 @@
     {
         "name": "http_response",
         "file": "wp-includes/class-http.php",
-        "line": 445,
-        "end_line": 445,
+        "line": 446,
+        "end_line": 446,
         "type": "filter",
         "doc": {
             "description": "Filters the HTTP API response immediately before the response is returned.",
@@ -16888,8 +16734,8 @@
     {
         "name": "https_ssl_verify",
         "file": "wp-includes/class-http.php",
-        "line": 375,
-        "end_line": 375,
+        "line": 376,
+        "end_line": 376,
         "type": "filter",
         "doc": {
             "description": "Filters whether SSL should be verified for non-local requests.",
@@ -16977,8 +16823,8 @@
     {
         "name": "icon_dir",
         "file": "wp-includes/post.php",
-        "line": 6097,
-        "end_line": 6097,
+        "line": 6103,
+        "end_line": 6103,
         "type": "filter",
         "doc": {
             "description": "Filters the icon directory path.",
@@ -17003,8 +16849,8 @@
     {
         "name": "icon_dir_uri",
         "file": "wp-includes/post.php",
-        "line": 6106,
-        "end_line": 6106,
+        "line": 6112,
+        "end_line": 6112,
         "type": "filter",
         "doc": {
             "description": "Filters the icon directory URI.",
@@ -17029,8 +16875,8 @@
     {
         "name": "icon_dirs",
         "file": "wp-includes/post.php",
-        "line": 6115,
-        "end_line": 6115,
+        "line": 6121,
+        "end_line": 6121,
         "type": "filter",
         "doc": {
             "description": "Filters the array of icon directory URIs.",
@@ -17055,8 +16901,8 @@
     {
         "name": "iis7_supports_permalinks",
         "file": "wp-includes/functions.php",
-        "line": 5013,
-        "end_line": 5013,
+        "line": 5148,
+        "end_line": 5148,
         "type": "filter",
         "doc": {
             "description": "Filters whether IIS 7+ supports pretty permalinks.",
@@ -17107,8 +16953,8 @@
     {
         "name": "illegal_user_logins",
         "file": "wp-includes/user.php",
-        "line": 1580,
-        "end_line": 1580,
+        "line": 1585,
+        "end_line": 1585,
         "type": "filter",
         "doc": {
             "description": "Filters the list of blacklisted usernames.",
@@ -17242,49 +17088,10 @@
         }
     },
     {
-        "name": "image_edit_before_change",
-        "file": "wp-admin/includes/image-edit.php",
-        "line": 573,
-        "end_line": 573,
-        "type": "filter",
-        "doc": {
-            "description": "Filters the GD image resource before applying changes to the image.",
-            "long_description": "",
-            "tags": [
-                {
-                    "name": "since",
-                    "content": "2.9.0"
-                },
-                {
-                    "name": "deprecated",
-                    "content": "3.5.0",
-                    "description": "Use wp_image_editor_before_change instead."
-                },
-                {
-                    "name": "param",
-                    "content": "GD image resource.",
-                    "types": [
-                        "resource"
-                    ],
-                    "variable": "$image"
-                },
-                {
-                    "name": "param",
-                    "content": "Array of change operations.",
-                    "types": [
-                        "array"
-                    ],
-                    "variable": "$changes"
-                }
-            ],
-            "long_description_html": ""
-        }
-    },
-    {
         "name": "image_editor_default_mime_type",
         "file": "wp-includes/class-wp-image-editor.php",
-        "line": 326,
-        "end_line": 326,
+        "line": 331,
+        "end_line": 331,
         "type": "filter",
         "doc": {
             "description": "Filters default mime type prior to getting the file extension.",
@@ -17422,8 +17229,8 @@
     {
         "name": "image_memory_limit",
         "file": "wp-includes/functions.php",
-        "line": 6577,
-        "end_line": 6577,
+        "line": 6712,
+        "end_line": 6712,
         "type": "filter",
         "doc": {
             "description": "Filters the memory limit allocated for image manipulation.",
@@ -17517,45 +17324,6 @@
                 }
             ],
             "long_description_html": "<p>Passing a non-null value to the filter will effectively short-circuit image_resize_dimensions(), returning that value instead.</p>"
-        }
-    },
-    {
-        "name": "image_save_pre",
-        "file": "wp-admin/includes/image-edit.php",
-        "line": 295,
-        "end_line": 295,
-        "type": "filter",
-        "doc": {
-            "description": "Filters the GD image resource to be streamed to the browser.",
-            "long_description": "",
-            "tags": [
-                {
-                    "name": "since",
-                    "content": "2.9.0"
-                },
-                {
-                    "name": "deprecated",
-                    "content": "3.5.0",
-                    "description": "Use image_editor_save_pre instead."
-                },
-                {
-                    "name": "param",
-                    "content": "Image resource to be streamed.",
-                    "types": [
-                        "resource"
-                    ],
-                    "variable": "$image"
-                },
-                {
-                    "name": "param",
-                    "content": "The attachment post ID.",
-                    "types": [
-                        "int"
-                    ],
-                    "variable": "$attachment_id"
-                }
-            ],
-            "long_description_html": ""
         }
     },
     {
@@ -17746,8 +17514,8 @@
     {
         "name": "img_caption_shortcode",
         "file": "wp-includes/media.php",
-        "line": 1696,
-        "end_line": 1696,
+        "line": 1695,
+        "end_line": 1695,
         "type": "filter",
         "doc": {
             "description": "Filters the default caption shortcode output.",
@@ -17793,8 +17561,8 @@
     {
         "name": "img_caption_shortcode_width",
         "file": "wp-includes/media.php",
-        "line": 1762,
-        "end_line": 1762,
+        "line": 1761,
+        "end_line": 1761,
         "type": "filter",
         "doc": {
             "description": "Filters the width of an image's caption.",
@@ -17905,8 +17673,8 @@
     {
         "name": "incompatible_sql_modes",
         "file": "wp-includes/wp-db.php",
-        "line": 872,
-        "end_line": 872,
+        "line": 877,
+        "end_line": 877,
         "type": "filter",
         "doc": {
             "description": "Filters the list of incompatible SQL modes to exclude.",
@@ -17931,8 +17699,8 @@
     {
         "name": "insert_user_meta",
         "file": "wp-includes/user.php",
-        "line": 1836,
-        "end_line": 1836,
+        "line": 1841,
+        "end_line": 1841,
         "type": "filter",
         "doc": {
             "description": "Filters a user's meta values and keys immediately after the user is created or updated and before any user meta is inserted or updated.",
@@ -18269,9 +18037,9 @@
                 },
                 {
                     "name": "param",
-                    "content": "An array of intermediate image sizes. Defaults                             are 'thumbnail', 'medium', 'medium_large', 'large'.",
+                    "content": "An array of intermediate image size names. Defaults                                are 'thumbnail', 'medium', 'medium_large', 'large'.",
                     "types": [
-                        "array"
+                        "string[]"
                     ],
                     "variable": "$default_sizes"
                 }
@@ -18282,8 +18050,8 @@
     {
         "name": "intermediate_image_sizes_advanced",
         "file": "wp-admin/includes/image.php",
-        "line": 330,
-        "end_line": 330,
+        "line": 356,
+        "end_line": 356,
         "type": "filter",
         "doc": {
             "description": "Filters the image sizes automatically generated when uploading an image.",
@@ -18412,8 +18180,8 @@
     {
         "name": "is_email_address_unsafe",
         "file": "wp-includes/ms-functions.php",
-        "line": 425,
-        "end_line": 425,
+        "line": 430,
+        "end_line": 430,
         "type": "filter",
         "doc": {
             "description": "Filters whether an email address is unsafe.",
@@ -18567,8 +18335,8 @@
     {
         "name": "is_sticky",
         "file": "wp-includes/post.php",
-        "line": 2285,
-        "end_line": 2285,
+        "line": 2291,
+        "end_line": 2291,
         "type": "filter",
         "doc": {
             "description": "Filters whether a post is sticky.",
@@ -18635,8 +18403,8 @@
     {
         "name": "jpeg_quality",
         "file": "wp-includes/class-wp-image-editor.php",
-        "line": 255,
-        "end_line": 255,
+        "line": 260,
+        "end_line": 260,
         "type": "filter",
         "doc": {
             "description": "Filters the JPEG compression quality for backward-compatibility.",
@@ -18703,8 +18471,8 @@
     {
         "name": "kses_allowed_protocols",
         "file": "wp-includes/functions.php",
-        "line": 5997,
-        "end_line": 5997,
+        "line": 6132,
+        "end_line": 6132,
         "type": "filter",
         "doc": {
             "description": "Filters the list of protocols allowed in HTML attributes.",
@@ -19005,8 +18773,8 @@
     {
         "name": "load_default_embeds",
         "file": "wp-includes/embed.php",
-        "line": 188,
-        "end_line": 188,
+        "line": 197,
+        "end_line": 197,
         "type": "filter",
         "doc": {
             "description": "Filters whether to load the default embed handlers.",
@@ -19031,8 +18799,8 @@
     {
         "name": "load_default_widgets",
         "file": "wp-includes/functions.php",
-        "line": 4447,
-        "end_line": 4447,
+        "line": 4446,
+        "end_line": 4446,
         "type": "filter",
         "doc": {
             "description": "Filters whether to load the Widgets library.",
@@ -19057,8 +18825,8 @@
     {
         "name": "load_image_to_edit",
         "file": "wp-admin/includes/image.php",
-        "line": 908,
-        "end_line": 908,
+        "line": 937,
+        "end_line": 937,
         "type": "filter",
         "doc": {
             "description": "Filters the current image being loaded for editing.",
@@ -19099,8 +18867,8 @@
     {
         "name": "load_image_to_edit_attachmenturl",
         "file": "wp-admin/includes/image.php",
-        "line": 966,
-        "end_line": 966,
+        "line": 995,
+        "end_line": 995,
         "type": "filter",
         "doc": {
             "description": "Filters the image URL if not in the local filesystem.",
@@ -19141,8 +18909,8 @@
     {
         "name": "load_image_to_edit_filesystempath",
         "file": "wp-admin/includes/image.php",
-        "line": 951,
-        "end_line": 951,
+        "line": 980,
+        "end_line": 980,
         "type": "filter",
         "doc": {
             "description": "Filters the path to the current image.",
@@ -19183,8 +18951,8 @@
     {
         "name": "load_image_to_edit_path",
         "file": "wp-admin/includes/image.php",
-        "line": 978,
-        "end_line": 978,
+        "line": 1007,
+        "end_line": 1007,
         "type": "filter",
         "doc": {
             "description": "Filters the returned path or URL of the current image.",
@@ -19447,8 +19215,8 @@
     {
         "name": "log_query_custom_data",
         "file": "wp-includes/wp-db.php",
-        "line": 2075,
-        "end_line": 2075,
+        "line": 2080,
+        "end_line": 2080,
         "type": "filter",
         "doc": {
             "description": "Filters the custom query data being logged.",
@@ -19505,8 +19273,8 @@
     {
         "name": "login_body_class",
         "file": "wp-login.php",
-        "line": 189,
-        "end_line": 189,
+        "line": 195,
+        "end_line": 195,
         "type": "filter",
         "doc": {
             "description": "Filters the login page body classes.",
@@ -19539,8 +19307,8 @@
     {
         "name": "login_errors",
         "file": "wp-login.php",
-        "line": 251,
-        "end_line": 251,
+        "line": 257,
+        "end_line": 257,
         "type": "filter",
         "doc": {
             "description": "Filters the error messages displayed above the login form.",
@@ -19698,8 +19466,8 @@
     {
         "name": "login_headertext",
         "file": "wp-login.php",
-        "line": 159,
-        "end_line": 159,
+        "line": 165,
+        "end_line": 165,
         "type": "filter",
         "doc": {
             "description": "Filters the link text of the header logo above the login form.",
@@ -19724,8 +19492,8 @@
     {
         "name": "login_headerurl",
         "file": "wp-login.php",
-        "line": 130,
-        "end_line": 130,
+        "line": 136,
+        "end_line": 136,
         "type": "filter",
         "doc": {
             "description": "Filters link URL of the header logo above login form.",
@@ -19750,8 +19518,8 @@
     {
         "name": "login_link_separator",
         "file": "wp-login.php",
-        "line": 546,
-        "end_line": 546,
+        "line": 555,
+        "end_line": 555,
         "type": "filter",
         "doc": {
             "description": "Filters the separator used between login form navigation links.",
@@ -19776,8 +19544,8 @@
     {
         "name": "login_message",
         "file": "wp-login.php",
-        "line": 216,
-        "end_line": 216,
+        "line": 222,
+        "end_line": 222,
         "type": "filter",
         "doc": {
             "description": "Filters the message to display above the login form.",
@@ -19802,8 +19570,8 @@
     {
         "name": "login_messages",
         "file": "wp-login.php",
-        "line": 262,
-        "end_line": 262,
+        "line": 268,
+        "end_line": 268,
         "type": "filter",
         "doc": {
             "description": "Filters instructional messages displayed above the login form.",
@@ -19828,8 +19596,8 @@
     {
         "name": "login_redirect",
         "file": "wp-login.php",
-        "line": 1207,
-        "end_line": 1207,
+        "line": 1216,
+        "end_line": 1216,
         "type": "filter",
         "doc": {
             "description": "Filters the login redirect URL.",
@@ -19871,8 +19639,8 @@
     {
         "name": "login_title",
         "file": "wp-login.php",
-        "line": 80,
-        "end_line": 80,
+        "line": 86,
+        "end_line": 86,
         "type": "filter",
         "doc": {
             "description": "Filters the title tag content for login page.",
@@ -19978,8 +19746,8 @@
     {
         "name": "logout_redirect",
         "file": "wp-login.php",
-        "line": 771,
-        "end_line": 771,
+        "line": 780,
+        "end_line": 780,
         "type": "filter",
         "doc": {
             "description": "Filters the log out redirect URL.",
@@ -20054,8 +19822,8 @@
     {
         "name": "lostpassword_redirect",
         "file": "wp-login.php",
-        "line": 804,
-        "end_line": 804,
+        "line": 813,
+        "end_line": 813,
         "type": "filter",
         "doc": {
             "description": "Filters the URL redirected to after submitting the lostpassword/retrievepassword form.",
@@ -20352,8 +20120,8 @@
     {
         "name": "manage_users_custom_column",
         "file": "wp-admin/includes/class-wp-users-list-table.php",
-        "line": 583,
-        "end_line": 583,
+        "line": 582,
+        "end_line": 582,
         "type": "filter",
         "doc": {
             "description": "Filters the display output of custom columns in the Users list table.",
@@ -20514,8 +20282,8 @@
     {
         "name": "map_meta_cap",
         "file": "wp-includes/capabilities.php",
-        "line": 618,
-        "end_line": 618,
+        "line": 619,
+        "end_line": 619,
         "type": "filter",
         "doc": {
             "description": "Filters a user's capabilities depending on specific context and/or privilege.",
@@ -20564,8 +20332,8 @@
     {
         "name": "max_srcset_image_width",
         "file": "wp-includes/media.php",
-        "line": 1267,
-        "end_line": 1267,
+        "line": 1266,
+        "end_line": 1266,
         "type": "filter",
         "doc": {
             "description": "Filters the maximum image width to be included in a 'srcset' attribute.",
@@ -20598,8 +20366,8 @@
     {
         "name": "mce_buttons",
         "file": "wp-includes/class-wp-editor.php",
-        "line": 616,
-        "end_line": 616,
+        "line": 617,
+        "end_line": 617,
         "type": "filter",
         "doc": {
             "description": "Filters the first-row list of TinyMCE buttons (Visual tab).",
@@ -20615,7 +20383,7 @@
                     "types": [
                         "array"
                     ],
-                    "variable": "$buttons"
+                    "variable": "$mce_buttons"
                 },
                 {
                     "name": "param",
@@ -20632,8 +20400,8 @@
     {
         "name": "mce_buttons_2",
         "file": "wp-includes/class-wp-editor.php",
-        "line": 632,
-        "end_line": 632,
+        "line": 633,
+        "end_line": 633,
         "type": "filter",
         "doc": {
             "description": "Filters the second-row list of TinyMCE buttons (Visual tab).",
@@ -20649,7 +20417,7 @@
                     "types": [
                         "array"
                     ],
-                    "variable": "$buttons"
+                    "variable": "$mce_buttons_2"
                 },
                 {
                     "name": "param",
@@ -20666,8 +20434,8 @@
     {
         "name": "mce_buttons_3",
         "file": "wp-includes/class-wp-editor.php",
-        "line": 642,
-        "end_line": 642,
+        "line": 643,
+        "end_line": 643,
         "type": "filter",
         "doc": {
             "description": "Filters the third-row list of TinyMCE buttons (Visual tab).",
@@ -20683,7 +20451,7 @@
                     "types": [
                         "array"
                     ],
-                    "variable": "$buttons"
+                    "variable": "$mce_buttons_3"
                 },
                 {
                     "name": "param",
@@ -20700,8 +20468,8 @@
     {
         "name": "mce_buttons_4",
         "file": "wp-includes/class-wp-editor.php",
-        "line": 652,
-        "end_line": 652,
+        "line": 653,
+        "end_line": 653,
         "type": "filter",
         "doc": {
             "description": "Filters the fourth-row list of TinyMCE buttons (Visual tab).",
@@ -20717,7 +20485,7 @@
                     "types": [
                         "array"
                     ],
-                    "variable": "$buttons"
+                    "variable": "$mce_buttons_4"
                 },
                 {
                     "name": "param",
@@ -20810,41 +20578,10 @@
         }
     },
     {
-        "name": "media_buttons_context",
-        "file": "wp-admin/includes/media.php",
-        "line": 657,
-        "end_line": 657,
-        "type": "filter",
-        "doc": {
-            "description": "Filters the legacy (pre-3.5.0) media buttons.",
-            "long_description": "Use {@see 'media_buttons'} action instead.",
-            "tags": [
-                {
-                    "name": "since",
-                    "content": "2.5.0"
-                },
-                {
-                    "name": "deprecated",
-                    "content": "3.5.0",
-                    "description": "Use {@see 'media_buttons'} action instead."
-                },
-                {
-                    "name": "param",
-                    "content": "Media buttons context. Default empty.",
-                    "types": [
-                        "string"
-                    ],
-                    "variable": "$string"
-                }
-            ],
-            "long_description_html": "<p>Use {@see 'media_buttons'} action instead.</p>"
-        }
-    },
-    {
         "name": "media_embedded_in_content_allowed_types",
         "file": "wp-includes/media.php",
-        "line": 4090,
-        "end_line": 4090,
+        "line": 4094,
+        "end_line": 4094,
         "type": "filter",
         "doc": {
             "description": "Filters the embedded media types that are allowed to be returned from the content blob.",
@@ -20869,8 +20606,8 @@
     {
         "name": "media_library_months_with_files",
         "file": "wp-includes/media.php",
-        "line": 3761,
-        "end_line": 3761,
+        "line": 3765,
+        "end_line": 3765,
         "type": "filter",
         "doc": {
             "description": "Allows overriding the list of months displayed in the media library.",
@@ -20901,8 +20638,8 @@
     {
         "name": "media_library_show_audio_playlist",
         "file": "wp-includes/media.php",
-        "line": 3702,
-        "end_line": 3702,
+        "line": 3706,
+        "end_line": 3706,
         "type": "filter",
         "doc": {
             "description": "Allows showing or hiding the \"Create Audio Playlist\" button in the media library.",
@@ -20938,8 +20675,8 @@
     {
         "name": "media_library_show_video_playlist",
         "file": "wp-includes/media.php",
-        "line": 3732,
-        "end_line": 3732,
+        "line": 3736,
+        "end_line": 3736,
         "type": "filter",
         "doc": {
             "description": "Allows showing or hiding the \"Create Video Playlist\" button in the media library.",
@@ -21275,8 +21012,8 @@
     {
         "name": "media_view_settings",
         "file": "wp-includes/media.php",
-        "line": 3979,
-        "end_line": 3979,
+        "line": 3983,
+        "end_line": 3983,
         "type": "filter",
         "doc": {
             "description": "Filters the media view settings.",
@@ -21309,8 +21046,8 @@
     {
         "name": "media_view_strings",
         "file": "wp-includes/media.php",
-        "line": 3989,
-        "end_line": 3989,
+        "line": 3993,
+        "end_line": 3993,
         "type": "filter",
         "doc": {
             "description": "Filters the media view strings.",
@@ -21472,8 +21209,8 @@
     {
         "name": "minimum_site_name_length",
         "file": "wp-includes/ms-functions.php",
-        "line": 639,
-        "end_line": 639,
+        "line": 660,
+        "end_line": 660,
         "type": "filter",
         "doc": {
             "description": "Filters the minimum site name length required when validating a site signup.",
@@ -22436,8 +22173,8 @@
     {
         "name": "network_admin_email_change_email",
         "file": "wp-includes/ms-functions.php",
-        "line": 2777,
-        "end_line": 2777,
+        "line": 2802,
+        "end_line": 2802,
         "type": "filter",
         "doc": {
             "description": "Filters the contents of the email notification sent when the network admin email address is changed.",
@@ -22620,8 +22357,8 @@
     {
         "name": "network_allowed_themes",
         "file": "wp-includes/class-wp-theme.php",
-        "line": 1450,
-        "end_line": 1450,
+        "line": 1448,
+        "end_line": 1448,
         "type": "filter",
         "doc": {
             "description": "Filters the array of themes allowed on the network.",
@@ -22944,8 +22681,8 @@
     {
         "name": "new_network_admin_email_content",
         "file": "wp-includes/ms-functions.php",
-        "line": 2672,
-        "end_line": 2672,
+        "line": 2697,
+        "end_line": 2697,
         "type": "filter",
         "doc": {
             "description": "Filters the text of the email sent when a change of network admin email address is attempted.",
@@ -22978,8 +22715,8 @@
     {
         "name": "new_user_email_content",
         "file": "wp-includes/user.php",
-        "line": 2864,
-        "end_line": 2864,
+        "line": 2869,
+        "end_line": 2869,
         "type": "filter",
         "doc": {
             "description": "Filters the text of the email sent when a change of user email address is attempted.",
@@ -23018,8 +22755,8 @@
     {
         "name": "newblog_notify_siteadmin",
         "file": "wp-includes/ms-functions.php",
-        "line": 1407,
-        "end_line": 1407,
+        "line": 1428,
+        "end_line": 1428,
         "type": "filter",
         "doc": {
             "description": "Filters the message body of the new site activation email sent to the network administrator.",
@@ -23045,8 +22782,8 @@
     {
         "name": "newblogname",
         "file": "wp-includes/ms-functions.php",
-        "line": 666,
-        "end_line": 666,
+        "line": 687,
+        "end_line": 687,
         "type": "filter",
         "doc": {
             "description": "Filters the new site name during registration.",
@@ -23072,8 +22809,8 @@
     {
         "name": "newuser_notify_siteadmin",
         "file": "wp-includes/ms-functions.php",
-        "line": 1463,
-        "end_line": 1463,
+        "line": 1484,
+        "end_line": 1484,
         "type": "filter",
         "doc": {
             "description": "Filters the message body of the new user activation email sent to the network administrator.",
@@ -23366,8 +23103,8 @@
     {
         "name": "nonce_life",
         "file": "wp-includes/pluggable.php",
-        "line": 2072,
-        "end_line": 2072,
+        "line": 2077,
+        "end_line": 2077,
         "type": "filter",
         "doc": {
             "description": "Filters the lifespan of nonces in seconds.",
@@ -23392,8 +23129,8 @@
     {
         "name": "nonce_user_logged_out",
         "file": "wp-includes/pluggable.php",
-        "line": 2104,
-        "end_line": 2104,
+        "line": 2109,
+        "end_line": 2109,
         "type": "filter",
         "doc": {
             "description": "Filters whether the user who generated the nonce is logged out.",
@@ -23426,8 +23163,8 @@
     {
         "name": "notify_moderator",
         "file": "wp-includes/pluggable.php",
-        "line": 1713,
-        "end_line": 1713,
+        "line": 1718,
+        "end_line": 1718,
         "type": "filter",
         "doc": {
             "description": "Filters whether to send the site moderator email notifications, overriding the site setting.",
@@ -23460,8 +23197,8 @@
     {
         "name": "notify_post_author",
         "file": "wp-includes/comment.php",
-        "line": 2213,
-        "end_line": 2213,
+        "line": 2219,
+        "end_line": 2219,
         "type": "filter",
         "doc": {
             "description": "Filters whether to send the post author new comment notification emails, overriding the site setting.",
@@ -23609,8 +23346,8 @@
     {
         "name": "oembed_discovery_links",
         "file": "wp-includes/embed.php",
-        "line": 340,
-        "end_line": 340,
+        "line": 349,
+        "end_line": 349,
         "type": "filter",
         "doc": {
             "description": "Filters the oEmbed discovery links HTML.",
@@ -23635,8 +23372,8 @@
     {
         "name": "oembed_endpoint_url",
         "file": "wp-includes/embed.php",
-        "line": 418,
-        "end_line": 418,
+        "line": 427,
+        "end_line": 427,
         "type": "filter",
         "doc": {
             "description": "Filters the oEmbed endpoint URL.",
@@ -23724,8 +23461,8 @@
     {
         "name": "oembed_iframe_title_attribute",
         "file": "wp-includes/embed.php",
-        "line": 818,
-        "end_line": 818,
+        "line": 827,
+        "end_line": 827,
         "type": "filter",
         "doc": {
             "description": "Filters the title attribute of the given oEmbed HTML iframe.",
@@ -23800,8 +23537,8 @@
     {
         "name": "oembed_min_max_width",
         "file": "wp-includes/embed.php",
-        "line": 526,
-        "end_line": 532,
+        "line": 535,
+        "end_line": 541,
         "type": "filter",
         "doc": {
             "description": "Filters the allowed minimum and maximum widths for the oEmbed response.",
@@ -23930,8 +23667,8 @@
     {
         "name": "oembed_response_data",
         "file": "wp-includes/embed.php",
-        "line": 564,
-        "end_line": 564,
+        "line": 573,
+        "end_line": 573,
         "type": "filter",
         "doc": {
             "description": "Filters the oEmbed response data.",
@@ -24696,8 +24433,8 @@
     {
         "name": "password_change_email",
         "file": "wp-includes/user.php",
-        "line": 2042,
-        "end_line": 2042,
+        "line": 2047,
+        "end_line": 2047,
         "type": "filter",
         "doc": {
             "description": "Filters the contents of the email sent when the user's password is changed.",
@@ -24738,8 +24475,8 @@
     {
         "name": "password_hint",
         "file": "wp-includes/user.php",
-        "line": 2244,
-        "end_line": 2244,
+        "line": 2249,
+        "end_line": 2249,
         "type": "filter",
         "doc": {
             "description": "Filters the text describing the site's password complexity policy.",
@@ -24764,8 +24501,8 @@
     {
         "name": "password_reset_expiration",
         "file": "wp-includes/user.php",
-        "line": 2390,
-        "end_line": 2390,
+        "line": 2395,
+        "end_line": 2395,
         "type": "filter",
         "doc": {
             "description": "Filters the expiration time of password reset keys.",
@@ -24790,8 +24527,8 @@
     {
         "name": "password_reset_key_expired",
         "file": "wp-includes/user.php",
-        "line": 2428,
-        "end_line": 2428,
+        "line": 2433,
+        "end_line": 2433,
         "type": "filter",
         "doc": {
             "description": "Filters the return value of check_password_reset_key() when an old-style key is used.",
@@ -24890,8 +24627,8 @@
     {
         "name": "pingback_useragent",
         "file": "wp-includes/comment.php",
-        "line": 2877,
-        "end_line": 2877,
+        "line": 2883,
+        "end_line": 2883,
         "type": "filter",
         "doc": {
             "description": "Filters the user agent sent when pinging-back a URL.",
@@ -25435,8 +25172,8 @@
     {
         "name": "plupload_default_params",
         "file": "wp-includes/media.php",
-        "line": 3360,
-        "end_line": 3360,
+        "line": 3364,
+        "end_line": 3364,
         "type": "filter",
         "doc": {
             "description": "Filters the Plupload default parameters.",
@@ -25461,8 +25198,8 @@
     {
         "name": "plupload_default_settings",
         "file": "wp-includes/media.php",
-        "line": 3347,
-        "end_line": 3347,
+        "line": 3351,
+        "end_line": 3351,
         "type": "filter",
         "doc": {
             "description": "Filters the Plupload default settings.",
@@ -25894,8 +25631,8 @@
     {
         "name": "post_embed_url",
         "file": "wp-includes/embed.php",
-        "line": 382,
-        "end_line": 382,
+        "line": 391,
+        "end_line": 391,
         "type": "filter",
         "doc": {
             "description": "Filters the URL to embed a specific post.",
@@ -25954,8 +25691,8 @@
     {
         "name": "post_gallery",
         "file": "wp-includes/media.php",
-        "line": 1867,
-        "end_line": 1867,
+        "line": 1866,
+        "end_line": 1866,
         "type": "filter",
         "doc": {
             "description": "Filters the default gallery shortcode output.",
@@ -26158,8 +25895,8 @@
     {
         "name": "post_mime_types",
         "file": "wp-includes/post.php",
-        "line": 2800,
-        "end_line": 2800,
+        "line": 2806,
+        "end_line": 2806,
         "type": "filter",
         "doc": {
             "description": "Filters the default list of post mime types.",
@@ -26184,8 +25921,8 @@
     {
         "name": "post_password_expires",
         "file": "wp-login.php",
-        "line": 726,
-        "end_line": 726,
+        "line": 735,
+        "end_line": 735,
         "type": "filter",
         "doc": {
             "description": "Filters the life span of the post password cookie.",
@@ -26244,8 +25981,8 @@
     {
         "name": "post_playlist",
         "file": "wp-includes/media.php",
-        "line": 2198,
-        "end_line": 2198,
+        "line": 2197,
+        "end_line": 2197,
         "type": "filter",
         "doc": {
             "description": "Filters the playlist output.",
@@ -26552,8 +26289,8 @@
     {
         "name": "post_type_labels_{$post_type}",
         "file": "wp-includes/post.php",
-        "line": 1732,
-        "end_line": 1732,
+        "line": 1738,
+        "end_line": 1738,
         "type": "filter",
         "doc": {
             "description": "Filters the labels of a specific post type.",
@@ -26693,8 +26430,8 @@
     {
         "name": "post_{$field}",
         "file": "wp-includes/post.php",
-        "line": 2479,
-        "end_line": 2479,
+        "line": 2485,
+        "end_line": 2485,
         "type": "filter",
         "doc": {
             "description": "",
@@ -27814,8 +27551,8 @@
     {
         "name": "pre_comment_content",
         "file": "wp-includes/comment.php",
-        "line": 1989,
-        "end_line": 1989,
+        "line": 1995,
+        "end_line": 1995,
         "type": "filter",
         "doc": {
             "description": "Filters the comment content before it is set.",
@@ -27840,8 +27577,8 @@
     {
         "name": "pre_comment_user_agent",
         "file": "wp-includes/comment.php",
-        "line": 1979,
-        "end_line": 1979,
+        "line": 1985,
+        "end_line": 1985,
         "type": "filter",
         "doc": {
             "description": "Filters the comment author's browser user agent before it is set.",
@@ -27866,8 +27603,8 @@
     {
         "name": "pre_comment_user_ip",
         "file": "wp-includes/comment.php",
-        "line": 1997,
-        "end_line": 1997,
+        "line": 2003,
+        "end_line": 2003,
         "type": "filter",
         "doc": {
             "description": "Filters the comment author's IP address before it is set.",
@@ -27892,8 +27629,8 @@
     {
         "name": "pre_count_users",
         "file": "wp-includes/user.php",
-        "line": 889,
-        "end_line": 889,
+        "line": 894,
+        "end_line": 894,
         "type": "filter",
         "doc": {
             "description": "Filter the user count before queries are run. Return a non-null value to cause count_users() to return early.",
@@ -27936,8 +27673,8 @@
     {
         "name": "pre_delete_post",
         "file": "wp-includes/post.php",
-        "line": 2960,
-        "end_line": 2960,
+        "line": 2966,
+        "end_line": 2966,
         "type": "filter",
         "doc": {
             "description": "Filters whether a post deletion should take place.",
@@ -28093,8 +27830,8 @@
     {
         "name": "pre_get_avatar",
         "file": "wp-includes/pluggable.php",
-        "line": 2628,
-        "end_line": 2628,
+        "line": 2633,
+        "end_line": 2633,
         "type": "filter",
         "doc": {
             "description": "Filters whether to retrieve the avatar URL early.",
@@ -28213,8 +27950,8 @@
     {
         "name": "pre_get_col_charset",
         "file": "wp-includes/wp-db.php",
-        "line": 2817,
-        "end_line": 2817,
+        "line": 2822,
+        "end_line": 2822,
         "type": "filter",
         "doc": {
             "description": "Filters the column charset value before the DB is checked.",
@@ -28282,8 +28019,8 @@
     {
         "name": "pre_get_lastpostmodified",
         "file": "wp-includes/post.php",
-        "line": 6430,
-        "end_line": 6430,
+        "line": 6436,
+        "end_line": 6436,
         "type": "filter",
         "doc": {
             "description": "Pre-filter the return value of get_lastpostmodified() before the query is run.",
@@ -28613,8 +28350,8 @@
     {
         "name": "pre_get_space_used",
         "file": "wp-includes/ms-functions.php",
-        "line": 2441,
-        "end_line": 2441,
+        "line": 2466,
+        "end_line": 2466,
         "type": "filter",
         "doc": {
             "description": "Filters the amount of storage space used by the current site, in megabytes.",
@@ -28640,8 +28377,8 @@
     {
         "name": "pre_get_table_charset",
         "file": "wp-includes/wp-db.php",
-        "line": 2712,
-        "end_line": 2712,
+        "line": 2717,
+        "end_line": 2717,
         "type": "filter",
         "doc": {
             "description": "Filters the table charset value before the DB is checked.",
@@ -28675,8 +28412,8 @@
     {
         "name": "pre_handle_404",
         "file": "wp-includes/class-wp.php",
-        "line": 648,
-        "end_line": 648,
+        "line": 653,
+        "end_line": 653,
         "type": "filter",
         "doc": {
             "description": "Filters whether to short-circuit default header status handling.",
@@ -29123,8 +28860,8 @@
     {
         "name": "pre_post_{$field}",
         "file": "wp-includes/post.php",
-        "line": 2444,
-        "end_line": 2444,
+        "line": 2450,
+        "end_line": 2450,
         "type": "filter",
         "doc": {
             "description": "",
@@ -29659,8 +29396,8 @@
     {
         "name": "pre_trash_post",
         "file": "wp-includes/post.php",
-        "line": 3128,
-        "end_line": 3128,
+        "line": 3134,
+        "end_line": 3134,
         "type": "filter",
         "doc": {
             "description": "Filters whether a post trashing should take place.",
@@ -29781,8 +29518,8 @@
     {
         "name": "pre_untrash_post",
         "file": "wp-includes/post.php",
-        "line": 3197,
-        "end_line": 3197,
+        "line": 3203,
+        "end_line": 3203,
         "type": "filter",
         "doc": {
             "description": "Filters whether a post untrashing should take place.",
@@ -29996,8 +29733,8 @@
     {
         "name": "pre_user_description",
         "file": "wp-includes/user.php",
-        "line": 1739,
-        "end_line": 1739,
+        "line": 1744,
+        "end_line": 1744,
         "type": "filter",
         "doc": {
             "description": "Filters a user's description before the user is created or updated.",
@@ -30022,8 +29759,8 @@
     {
         "name": "pre_user_display_name",
         "file": "wp-includes/user.php",
-        "line": 1728,
-        "end_line": 1728,
+        "line": 1733,
+        "end_line": 1733,
         "type": "filter",
         "doc": {
             "description": "Filters a user's display name before the user is created or updated.",
@@ -30048,8 +29785,8 @@
     {
         "name": "pre_user_email",
         "file": "wp-includes/user.php",
-        "line": 1633,
-        "end_line": 1633,
+        "line": 1638,
+        "end_line": 1638,
         "type": "filter",
         "doc": {
             "description": "Filters a user's email before the user is created or updated.",
@@ -30074,8 +29811,8 @@
     {
         "name": "pre_user_first_name",
         "file": "wp-includes/user.php",
-        "line": 1691,
-        "end_line": 1691,
+        "line": 1696,
+        "end_line": 1696,
         "type": "filter",
         "doc": {
             "description": "Filters a user's first name before the user is created or updated.",
@@ -30100,8 +29837,8 @@
     {
         "name": "pre_user_id",
         "file": "wp-includes/comment.php",
-        "line": 1966,
-        "end_line": 1966,
+        "line": 1972,
+        "end_line": 1972,
         "type": "filter",
         "doc": {
             "description": "Filters the comment author's user id before it is set.",
@@ -30126,8 +29863,8 @@
     {
         "name": "pre_user_last_name",
         "file": "wp-includes/user.php",
-        "line": 1702,
-        "end_line": 1702,
+        "line": 1707,
+        "end_line": 1707,
         "type": "filter",
         "doc": {
             "description": "Filters a user's last name before the user is created or updated.",
@@ -30152,8 +29889,8 @@
     {
         "name": "pre_user_login",
         "file": "wp-includes/user.php",
-        "line": 1557,
-        "end_line": 1557,
+        "line": 1562,
+        "end_line": 1562,
         "type": "filter",
         "doc": {
             "description": "Filters a username after it has been sanitized.",
@@ -30178,8 +29915,8 @@
     {
         "name": "pre_user_nicename",
         "file": "wp-includes/user.php",
-        "line": 1608,
-        "end_line": 1608,
+        "line": 1613,
+        "end_line": 1613,
         "type": "filter",
         "doc": {
             "description": "Filters a user's nicename before the user is created or updated.",
@@ -30204,8 +29941,8 @@
     {
         "name": "pre_user_nickname",
         "file": "wp-includes/user.php",
-        "line": 1680,
-        "end_line": 1680,
+        "line": 1685,
+        "end_line": 1685,
         "type": "filter",
         "doc": {
             "description": "Filters a user's nickname before the user is created or updated.",
@@ -30230,8 +29967,8 @@
     {
         "name": "pre_user_url",
         "file": "wp-includes/user.php",
-        "line": 1656,
-        "end_line": 1656,
+        "line": 1661,
+        "end_line": 1661,
         "type": "filter",
         "doc": {
             "description": "Filters a user's URL before the user is created or updated.",
@@ -30256,8 +29993,8 @@
     {
         "name": "pre_user_{$field}",
         "file": "wp-includes/user.php",
-        "line": 1291,
-        "end_line": 1291,
+        "line": 1296,
+        "end_line": 1296,
         "type": "filter",
         "doc": {
             "description": "Filters the value of a user field in the 'db' context.",
@@ -30357,8 +30094,8 @@
     {
         "name": "pre_wp_unique_post_slug",
         "file": "wp-includes/post.php",
-        "line": 4312,
-        "end_line": 4312,
+        "line": 4318,
+        "end_line": 4318,
         "type": "filter",
         "doc": {
             "description": "Filters the post slug before it is generated to be unique.",
@@ -30424,8 +30161,8 @@
     {
         "name": "pre_wp_update_comment_count_now",
         "file": "wp-includes/comment.php",
-        "line": 2519,
-        "end_line": 2519,
+        "line": 2525,
+        "end_line": 2525,
         "type": "filter",
         "doc": {
             "description": "Filters a post's comment count before it is updated in the database.",
@@ -30467,8 +30204,8 @@
     {
         "name": "pre_{$field}",
         "file": "wp-includes/post.php",
-        "line": 2430,
-        "end_line": 2430,
+        "line": 2436,
+        "end_line": 2436,
         "type": "filter",
         "doc": {
             "description": "Filters the value of a specific post field before saving.",
@@ -30550,8 +30287,8 @@
     {
         "name": "preprocess_comment",
         "file": "wp-includes/comment.php",
-        "line": 2087,
-        "end_line": 2087,
+        "line": 2093,
+        "end_line": 2093,
         "type": "filter",
         "doc": {
             "description": "Filters a comment's data before it is sanitized and inserted into the database.",
@@ -31022,41 +30759,10 @@
         }
     },
     {
-        "name": "pub_priv_sql_capability",
-        "file": "wp-includes/post.php",
-        "line": 6329,
-        "end_line": 6329,
-        "type": "filter",
-        "doc": {
-            "description": "Filters the capability to read private posts for a custom post type when generating SQL for getting posts by author.",
-            "long_description": "",
-            "tags": [
-                {
-                    "name": "since",
-                    "content": "2.2.0"
-                },
-                {
-                    "name": "deprecated",
-                    "content": "3.2.0",
-                    "description": "The hook transitioned from \"somewhat useless\" to \"totally useless\"."
-                },
-                {
-                    "name": "param",
-                    "content": "Capability.",
-                    "types": [
-                        "string"
-                    ],
-                    "variable": "$cap"
-                }
-            ],
-            "long_description_html": ""
-        }
-    },
-    {
         "name": "query",
         "file": "wp-includes/wp-db.php",
-        "line": 1894,
-        "end_line": 1894,
+        "line": 1899,
+        "end_line": 1899,
         "type": "filter",
         "doc": {
             "description": "Filters the database query.",
@@ -31076,37 +30782,6 @@
                 }
             ],
             "long_description_html": "<p>Some queries are made before the plugins have been loaded, and thus cannot be filtered with this method.</p>"
-        }
-    },
-    {
-        "name": "query_string",
-        "file": "wp-includes/class-wp.php",
-        "line": 549,
-        "end_line": 549,
-        "type": "filter",
-        "doc": {
-            "description": "Filters the query string before parsing.",
-            "long_description": "",
-            "tags": [
-                {
-                    "name": "since",
-                    "content": "1.5.0"
-                },
-                {
-                    "name": "deprecated",
-                    "content": "2.1.0",
-                    "description": "Use 'query_vars' or 'request' filters instead."
-                },
-                {
-                    "name": "param",
-                    "content": "The query string to modify.",
-                    "types": [
-                        "string"
-                    ],
-                    "variable": "$query_string"
-                }
-            ],
-            "long_description_html": ""
         }
     },
     {
@@ -31245,8 +30920,8 @@
     {
         "name": "random_password",
         "file": "wp-includes/pluggable.php",
-        "line": 2424,
-        "end_line": 2424,
+        "line": 2429,
+        "end_line": 2429,
         "type": "filter",
         "doc": {
             "description": "Filters the randomly-generated password.",
@@ -31915,8 +31590,8 @@
     {
         "name": "registration_errors",
         "file": "wp-includes/user.php",
-        "line": 2545,
-        "end_line": 2545,
+        "line": 2550,
+        "end_line": 2550,
         "type": "filter",
         "doc": {
             "description": "Filters the errors encountered when a new user is being registered.",
@@ -31957,8 +31632,8 @@
     {
         "name": "registration_redirect",
         "file": "wp-login.php",
-        "line": 1051,
-        "end_line": 1051,
+        "line": 1060,
+        "end_line": 1060,
         "type": "filter",
         "doc": {
             "description": "Filters the registration redirect URL.",
@@ -32328,7 +32003,7 @@
                     "name": "param",
                     "content": "An array of int values that are the pixel sizes for avatars.                     Default <code>[ 24, 48, 96 ]</code>.",
                     "types": [
-                        "array"
+                        "int[]"
                     ],
                     "variable": "$sizes"
                 }
@@ -32438,8 +32113,8 @@
     {
         "name": "rest_dispatch_request",
         "file": "wp-includes/rest-api/class-wp-rest-server.php",
-        "line": 940,
-        "end_line": 940,
+        "line": 941,
+        "end_line": 941,
         "type": "filter",
         "doc": {
             "description": "Filters the REST dispatch request result.",
@@ -32493,8 +32168,8 @@
     {
         "name": "rest_endpoints",
         "file": "wp-includes/rest-api/class-wp-rest-server.php",
-        "line": 724,
-        "end_line": 724,
+        "line": 725,
+        "end_line": 725,
         "type": "filter",
         "doc": {
             "description": "Filters the array of available endpoints.",
@@ -32519,8 +32194,8 @@
     {
         "name": "rest_endpoints_description",
         "file": "wp-includes/rest-api/class-wp-rest-server.php",
-        "line": 1122,
-        "end_line": 1122,
+        "line": 1123,
+        "end_line": 1123,
         "type": "filter",
         "doc": {
             "description": "Filters the REST endpoint data.",
@@ -32545,8 +32220,8 @@
     {
         "name": "rest_envelope_response",
         "file": "wp-includes/rest-api/class-wp-rest-server.php",
-        "line": 640,
-        "end_line": 640,
+        "line": 641,
+        "end_line": 641,
         "type": "filter",
         "doc": {
             "description": "Filters the enveloped form of a response.",
@@ -32579,8 +32254,8 @@
     {
         "name": "rest_index",
         "file": "wp-includes/rest-api/class-wp-rest-server.php",
-        "line": 1051,
-        "end_line": 1051,
+        "line": 1052,
+        "end_line": 1052,
         "type": "filter",
         "doc": {
             "description": "Filters the API root index data.",
@@ -32605,8 +32280,8 @@
     {
         "name": "rest_jsonp_enabled",
         "file": "wp-includes/rest-api/class-wp-rest-server.php",
-        "line": 282,
-        "end_line": 282,
+        "line": 283,
+        "end_line": 283,
         "type": "filter",
         "doc": {
             "description": "Filters whether jsonp is enabled.",
@@ -32631,8 +32306,8 @@
     {
         "name": "rest_namespace_index",
         "file": "wp-includes/rest-api/class-wp-rest-server.php",
-        "line": 1093,
-        "end_line": 1093,
+        "line": 1094,
+        "end_line": 1094,
         "type": "filter",
         "doc": {
             "description": "Filters the namespace index data.",
@@ -32707,8 +32382,8 @@
     {
         "name": "rest_post_dispatch",
         "file": "wp-includes/rest-api/class-wp-rest-server.php",
-        "line": 352,
-        "end_line": 352,
+        "line": 353,
+        "end_line": 353,
         "type": "filter",
         "doc": {
             "description": "Filters the API response.",
@@ -32788,8 +32463,8 @@
     {
         "name": "rest_pre_dispatch",
         "file": "wp-includes/rest-api/class-wp-rest-server.php",
-        "line": 827,
-        "end_line": 827,
+        "line": 828,
+        "end_line": 828,
         "type": "filter",
         "doc": {
             "description": "Filters the pre-calculated result of a REST dispatch request.",
@@ -32830,8 +32505,8 @@
     {
         "name": "rest_pre_echo_response",
         "file": "wp-includes/rest-api/class-wp-rest-server.php",
-        "line": 402,
-        "end_line": 402,
+        "line": 403,
+        "end_line": 403,
         "type": "filter",
         "doc": {
             "description": "Filters the API response.",
@@ -32988,8 +32663,8 @@
     {
         "name": "rest_pre_insert_{$this->post_type}",
         "file": "wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php",
-        "line": 1135,
-        "end_line": 1135,
+        "line": 1139,
+        "end_line": 1139,
         "type": "filter",
         "doc": {
             "description": "Filters a post before it is inserted via the REST API.",
@@ -33056,8 +32731,8 @@
     {
         "name": "rest_pre_serve_request",
         "file": "wp-includes/rest-api/class-wp-rest-server.php",
-        "line": 380,
-        "end_line": 380,
+        "line": 381,
+        "end_line": 381,
         "type": "filter",
         "doc": {
             "description": "Filters whether the request has already been served.",
@@ -33534,8 +33209,8 @@
     {
         "name": "rest_prepare_{$this->post_type}",
         "file": "wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php",
-        "line": 1692,
-        "end_line": 1692,
+        "line": 1696,
+        "end_line": 1696,
         "type": "filter",
         "doc": {
             "description": "Filters the post data for a response.",
@@ -33652,8 +33327,8 @@
     {
         "name": "rest_query_var-{$key}",
         "file": "wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php",
-        "line": 900,
-        "end_line": 900,
+        "line": 904,
+        "end_line": 904,
         "type": "filter",
         "doc": {
             "description": "Filters the query_vars used in get_items() for the constructed query.",
@@ -33678,8 +33353,8 @@
     {
         "name": "rest_request_after_callbacks",
         "file": "wp-includes/rest-api/class-wp-rest-server.php",
-        "line": 970,
-        "end_line": 970,
+        "line": 971,
+        "end_line": 971,
         "type": "filter",
         "doc": {
             "description": "Filters the response immediately after executing any REST API callbacks.",
@@ -33721,8 +33396,8 @@
     {
         "name": "rest_request_before_callbacks",
         "file": "wp-includes/rest-api/class-wp-rest-server.php",
-        "line": 911,
-        "end_line": 911,
+        "line": 912,
+        "end_line": 912,
         "type": "filter",
         "doc": {
             "description": "Filters the response before executing any REST API callbacks.",
@@ -33764,8 +33439,8 @@
     {
         "name": "rest_request_from_url",
         "file": "wp-includes/rest-api/class-wp-rest-request.php",
-        "line": 1015,
-        "end_line": 1015,
+        "line": 1011,
+        "end_line": 1011,
         "type": "filter",
         "doc": {
             "description": "Filters the request generated from a URL.",
@@ -33799,8 +33474,8 @@
     {
         "name": "rest_request_parameter_order",
         "file": "wp-includes/rest-api/class-wp-rest-request.php",
-        "line": 376,
-        "end_line": 376,
+        "line": 372,
+        "end_line": 372,
         "type": "filter",
         "doc": {
             "description": "Filters the parameter order.",
@@ -33812,19 +33487,11 @@
                 },
                 {
                     "name": "param",
-                    "content": "{    An array of types to check, in order of priority.",
+                    "content": "Array of types to check, in order of priority.",
                     "types": [
-                        "array"
+                        "string[]"
                     ],
                     "variable": "$order"
-                },
-                {
-                    "name": "param",
-                    "content": "The type to check. }",
-                    "types": [
-                        "string"
-                    ],
-                    "variable": "$type"
                 },
                 {
                     "name": "param",
@@ -33867,8 +33534,8 @@
     {
         "name": "rest_route_data",
         "file": "wp-includes/rest-api/class-wp-rest-server.php",
-        "line": 1137,
-        "end_line": 1137,
+        "line": 1138,
+        "end_line": 1138,
         "type": "filter",
         "doc": {
             "description": "Filters the publicly-visible data for routes.",
@@ -33880,9 +33547,9 @@
                 },
                 {
                     "name": "param",
-                    "content": "Map of route to route data.",
+                    "content": "Route data to expose in indexes, keyed by route.",
                     "types": [
-                        "array"
+                        "array[]"
                     ],
                     "variable": "$available"
                 },
@@ -34094,8 +33761,8 @@
     {
         "name": "rest_{$this->post_type}_collection_params",
         "file": "wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php",
-        "line": 2580,
-        "end_line": 2580,
+        "line": 2592,
+        "end_line": 2592,
         "type": "filter",
         "doc": {
             "description": "Filter collection parameters for the posts controller.",
@@ -34167,8 +33834,8 @@
     {
         "name": "rest_{$this->post_type}_trashable",
         "file": "wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php",
-        "line": 819,
-        "end_line": 819,
+        "line": 823,
+        "end_line": 823,
         "type": "filter",
         "doc": {
             "description": "Filters whether a post is trashable.",
@@ -34274,8 +33941,8 @@
     {
         "name": "retrieve_password_message",
         "file": "wp-login.php",
-        "line": 447,
-        "end_line": 447,
+        "line": 456,
+        "end_line": 456,
         "type": "filter",
         "doc": {
             "description": "Filters the message body of the password reset mail.",
@@ -34329,8 +33996,8 @@
     {
         "name": "retrieve_password_title",
         "file": "wp-login.php",
-        "line": 432,
-        "end_line": 432,
+        "line": 441,
+        "end_line": 441,
         "type": "filter",
         "doc": {
             "description": "Filters the subject of the password reset email.",
@@ -34421,37 +34088,6 @@
                 }
             ],
             "long_description_html": "<p>Filters the options passed to wp_text_diff() when viewing a post revision.</p>"
-        }
-    },
-    {
-        "name": "rewrite_rules",
-        "file": "wp-includes/class-wp-rewrite.php",
-        "line": 1563,
-        "end_line": 1563,
-        "type": "filter",
-        "doc": {
-            "description": "Filters the list of rewrite rules formatted for output to an .htaccess file.",
-            "long_description": "",
-            "tags": [
-                {
-                    "name": "since",
-                    "content": "1.5.0"
-                },
-                {
-                    "name": "deprecated",
-                    "content": "1.5.0",
-                    "description": "Use the mod_rewrite_rules filter instead."
-                },
-                {
-                    "name": "param",
-                    "content": "mod_rewrite Rewrite rules formatted for .htaccess.",
-                    "types": [
-                        "string"
-                    ],
-                    "variable": "$rules"
-                }
-            ],
-            "long_description_html": ""
         }
     },
     {
@@ -34750,8 +34386,8 @@
     {
         "name": "salt",
         "file": "wp-includes/pluggable.php",
-        "line": 2217,
-        "end_line": 2217,
+        "line": 2222,
+        "end_line": 2222,
         "type": "filter",
         "doc": {
             "description": "Filters the WordPress salt.",
@@ -35356,8 +34992,8 @@
     {
         "name": "screen_layout_columns",
         "file": "wp-admin/includes/class-wp-screen.php",
-        "line": 925,
-        "end_line": 925,
+        "line": 940,
+        "end_line": 940,
         "type": "filter",
         "doc": {
             "description": "Filters the array of screen layout columns.",
@@ -35398,8 +35034,8 @@
     {
         "name": "screen_options_show_screen",
         "file": "wp-admin/includes/class-wp-screen.php",
-        "line": 1019,
-        "end_line": 1019,
+        "line": 1034,
+        "end_line": 1034,
         "type": "filter",
         "doc": {
             "description": "Filters whether to show the Screen Options tab.",
@@ -35432,8 +35068,8 @@
     {
         "name": "screen_options_show_submit",
         "file": "wp-admin/includes/class-wp-screen.php",
-        "line": 1075,
-        "end_line": 1075,
+        "line": 1090,
+        "end_line": 1090,
         "type": "filter",
         "doc": {
             "description": "Filters whether to show the Screen Options submit button.",
@@ -35466,8 +35102,8 @@
     {
         "name": "screen_settings",
         "file": "wp-admin/includes/class-wp-screen.php",
-        "line": 1004,
-        "end_line": 1004,
+        "line": 1019,
+        "end_line": 1019,
         "type": "filter",
         "doc": {
             "description": "Filters the screen settings text displayed in the Screen Options tab.",
@@ -36004,8 +35640,8 @@
     {
         "name": "send_email_change_email",
         "file": "wp-includes/user.php",
-        "line": 1978,
-        "end_line": 1978,
+        "line": 1983,
+        "end_line": 1983,
         "type": "filter",
         "doc": {
             "description": "Filters whether to send the email change email.",
@@ -36051,8 +35687,8 @@
     {
         "name": "send_network_admin_email_change_email",
         "file": "wp-includes/ms-functions.php",
-        "line": 2724,
-        "end_line": 2724,
+        "line": 2749,
+        "end_line": 2749,
         "type": "filter",
         "doc": {
             "description": "Filters whether to send the network admin email change notification email.",
@@ -36101,8 +35737,8 @@
     {
         "name": "send_password_change_email",
         "file": "wp-includes/user.php",
-        "line": 1963,
-        "end_line": 1963,
+        "line": 1968,
+        "end_line": 1968,
         "type": "filter",
         "doc": {
             "description": "Filters whether to send the password change email.",
@@ -36148,8 +35784,8 @@
     {
         "name": "send_site_admin_email_change_email",
         "file": "wp-includes/functions.php",
-        "line": 6734,
-        "end_line": 6734,
+        "line": 6869,
+        "end_line": 6869,
         "type": "filter",
         "doc": {
             "description": "Filters whether to send the site admin email change notification email.",
@@ -36306,8 +35942,8 @@
     {
         "name": "shake_error_codes",
         "file": "wp-login.php",
-        "line": 56,
-        "end_line": 56,
+        "line": 62,
+        "end_line": 62,
         "type": "filter",
         "doc": {
             "description": "Filters the error codes array for shaking the login form.",
@@ -36332,8 +35968,8 @@
     {
         "name": "shortcode_atts_{$shortcode}",
         "file": "wp-includes/shortcodes.php",
-        "line": 576,
-        "end_line": 576,
+        "line": 577,
+        "end_line": 577,
         "type": "filter",
         "doc": {
             "description": "Filters a shortcode's default attributes.",
@@ -36721,38 +36357,6 @@
         }
     },
     {
-        "name": "signup_create_blog_meta",
-        "file": "wp-signup.php",
-        "line": 460,
-        "end_line": 460,
-        "type": "filter",
-        "doc": {
-            "description": "Filters the new site meta variables.",
-            "long_description": "Use the {@see 'add_signup_meta'} filter instead.",
-            "tags": [
-                {
-                    "name": "since",
-                    "content": "MU (3.0.0)",
-                    "description": "MU (3.0.0)"
-                },
-                {
-                    "name": "deprecated",
-                    "content": "3.0.0",
-                    "description": "Use the {@see 'add_signup_meta'} filter instead."
-                },
-                {
-                    "name": "param",
-                    "content": "An array of default blog meta variables.",
-                    "types": [
-                        "array"
-                    ],
-                    "variable": "$blog_meta_defaults"
-                }
-            ],
-            "long_description_html": "<p>Use the {@see 'add_signup_meta'} filter instead.</p>"
-        }
-    },
-    {
         "name": "signup_get_available_languages",
         "file": "wp-signup.php",
         "line": 879,
@@ -36781,8 +36385,8 @@
     {
         "name": "signup_site_meta",
         "file": "wp-includes/ms-functions.php",
-        "line": 772,
-        "end_line": 772,
+        "line": 793,
+        "end_line": 793,
         "type": "filter",
         "doc": {
             "description": "Filters the metadata for a site signup.",
@@ -36881,8 +36485,8 @@
     {
         "name": "signup_user_meta",
         "file": "wp-includes/ms-functions.php",
-        "line": 838,
-        "end_line": 838,
+        "line": 859,
+        "end_line": 859,
         "type": "filter",
         "doc": {
             "description": "Filters the metadata for a user signup.",
@@ -37043,8 +36647,8 @@
     {
         "name": "site_admin_email_change_email",
         "file": "wp-includes/functions.php",
-        "line": 6787,
-        "end_line": 6787,
+        "line": 6922,
+        "end_line": 6922,
         "type": "filter",
         "doc": {
             "description": "Filters the contents of the email notification sent when the site admin email address is changed.",
@@ -37085,8 +36689,8 @@
     {
         "name": "site_allowed_themes",
         "file": "wp-includes/class-wp-theme.php",
-        "line": 1507,
-        "end_line": 1507,
+        "line": 1505,
+        "end_line": 1505,
         "type": "filter",
         "doc": {
             "description": "Filters the array of themes allowed on the site.",
@@ -37614,8 +37218,8 @@
     {
         "name": "smilies",
         "file": "wp-includes/functions.php",
-        "line": 4174,
-        "end_line": 4174,
+        "line": 4173,
+        "end_line": 4173,
         "type": "filter",
         "doc": {
             "description": "Filters all the smilies.",
@@ -37766,8 +37370,8 @@
     {
         "name": "strip_shortcodes_tagnames",
         "file": "wp-includes/shortcodes.php",
-        "line": 616,
-        "end_line": 616,
+        "line": 617,
+        "end_line": 617,
         "type": "filter",
         "doc": {
             "description": "Filters the list of shortcode tags to remove from the content.",
@@ -38038,8 +37642,8 @@
     {
         "name": "subdirectory_reserved_names",
         "file": "wp-includes/ms-functions.php",
-        "line": 2605,
-        "end_line": 2605,
+        "line": 2630,
+        "end_line": 2630,
         "type": "filter",
         "doc": {
             "description": "Filters reserved site names on a sub-directory Multisite installation.",
@@ -38229,146 +37833,6 @@
         }
     },
     {
-        "name": "tag_link",
-        "file": "wp-includes/taxonomy.php",
-        "line": 4252,
-        "end_line": 4252,
-        "type": "filter",
-        "doc": {
-            "description": "Filters the tag link.",
-            "long_description": "",
-            "tags": [
-                {
-                    "name": "since",
-                    "content": "2.3.0"
-                },
-                {
-                    "name": "deprecated",
-                    "content": "2.5.0",
-                    "description": "Use 'term_link' instead."
-                },
-                {
-                    "name": "param",
-                    "content": "Tag link URL.",
-                    "types": [
-                        "string"
-                    ],
-                    "variable": "$termlink"
-                },
-                {
-                    "name": "param",
-                    "content": "Term ID.",
-                    "types": [
-                        "int"
-                    ],
-                    "variable": "$term_id"
-                }
-            ],
-            "long_description_html": ""
-        }
-    },
-    {
-        "name": "tag_rewrite_rules",
-        "file": "wp-includes/class-wp-rewrite.php",
-        "line": 1414,
-        "end_line": 1414,
-        "type": "filter",
-        "doc": {
-            "description": "Filters rewrite rules used specifically for Tags.",
-            "long_description": "",
-            "tags": [
-                {
-                    "name": "since",
-                    "content": "2.3.0"
-                },
-                {
-                    "name": "deprecated",
-                    "content": "3.1.0",
-                    "description": "Use 'post_tag_rewrite_rules' instead"
-                },
-                {
-                    "name": "param",
-                    "content": "Array of rewrite rules generated for tags, keyed by their regex pattern.",
-                    "types": [
-                        "string[]"
-                    ],
-                    "variable": "$rules"
-                }
-            ],
-            "long_description_html": ""
-        }
-    },
-    {
-        "name": "tag_row_actions",
-        "file": "wp-admin/includes/class-wp-terms-list-table.php",
-        "line": 511,
-        "end_line": 511,
-        "type": "filter",
-        "doc": {
-            "description": "Filters the action links displayed for each term in the Tags list table.",
-            "long_description": "",
-            "tags": [
-                {
-                    "name": "since",
-                    "content": "2.8.0"
-                },
-                {
-                    "name": "deprecated",
-                    "content": "3.0.0",
-                    "description": "Use {$taxonomy}_row_actions instead."
-                },
-                {
-                    "name": "param",
-                    "content": "An array of action links to be displayed. Default                          'Edit', 'Quick Edit', 'Delete', and 'View'.",
-                    "types": [
-                        "string[]"
-                    ],
-                    "variable": "$actions"
-                },
-                {
-                    "name": "param",
-                    "content": "Term object.",
-                    "types": [
-                        "\\WP_Term"
-                    ],
-                    "variable": "$tag"
-                }
-            ],
-            "long_description_html": ""
-        }
-    },
-    {
-        "name": "tagsperpage",
-        "file": "wp-admin/includes/class-wp-terms-list-table.php",
-        "line": 100,
-        "end_line": 100,
-        "type": "filter",
-        "doc": {
-            "description": "Filters the number of terms displayed per page for the Tags list table.",
-            "long_description": "",
-            "tags": [
-                {
-                    "name": "since",
-                    "content": "2.7.0"
-                },
-                {
-                    "name": "deprecated",
-                    "content": "2.8.0",
-                    "description": "Use edit_tags_per_page instead."
-                },
-                {
-                    "name": "param",
-                    "content": "Number of tags to be displayed. Default 20.",
-                    "types": [
-                        "int"
-                    ],
-                    "variable": "$tags_per_page"
-                }
-            ],
-            "long_description_html": ""
-        }
-    },
-    {
         "name": "taxonomy_feed_link",
         "file": "wp-includes/link-template.php",
         "line": 916,
@@ -38491,8 +37955,8 @@
     {
         "name": "teeny_mce_before_init",
         "file": "wp-includes/class-wp-editor.php",
-        "line": 722,
-        "end_line": 722,
+        "line": 723,
+        "end_line": 723,
         "type": "filter",
         "doc": {
             "description": "Filters the teenyMCE config before init.",
@@ -38525,8 +37989,8 @@
     {
         "name": "teeny_mce_buttons",
         "file": "wp-includes/class-wp-editor.php",
-        "line": 589,
-        "end_line": 589,
+        "line": 590,
+        "end_line": 590,
         "type": "filter",
         "doc": {
             "description": "Filters the list of teenyMCE buttons (Text tab).",
@@ -38542,7 +38006,7 @@
                     "types": [
                         "array"
                     ],
-                    "variable": "$buttons"
+                    "variable": "$mce_buttons"
                 },
                 {
                     "name": "param",
@@ -39631,8 +39095,8 @@
     {
         "name": "the_excerpt_embed",
         "file": "wp-includes/embed.php",
-        "line": 956,
-        "end_line": 956,
+        "line": 965,
+        "end_line": 965,
         "type": "filter",
         "doc": {
             "description": "Filters the post excerpt for the embed template.",
@@ -40974,8 +40438,8 @@
     {
         "name": "theme_scandir_exclusions",
         "file": "wp-includes/class-wp-theme.php",
-        "line": 1320,
-        "end_line": 1320,
+        "line": 1318,
+        "end_line": 1318,
         "type": "filter",
         "doc": {
             "description": "Filters the array of excluded directories and files while scanning theme folder.",
@@ -41000,8 +40464,8 @@
     {
         "name": "theme_templates",
         "file": "wp-includes/class-wp-theme.php",
-        "line": 1257,
-        "end_line": 1257,
+        "line": 1256,
+        "end_line": 1256,
         "type": "filter",
         "doc": {
             "description": "Filters list of page templates for a theme.",
@@ -41013,7 +40477,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Array of page templates. Keys are filenames,                                     values are translated names.",
+                    "content": "Array of template header names keyed by the template file name.",
                     "types": [
                         "string[]"
                     ],
@@ -41051,8 +40515,8 @@
     {
         "name": "theme_{$post_type}_templates",
         "file": "wp-includes/class-wp-theme.php",
-        "line": 1274,
-        "end_line": 1274,
+        "line": 1272,
+        "end_line": 1272,
         "type": "filter",
         "doc": {
             "description": "Filters list of page templates for a theme.",
@@ -41074,7 +40538,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Array of page templates. Keys are filenames,                                     values are translated names.",
+                    "content": "Array of template header names keyed by the template file name.",
                     "types": [
                         "string[]"
                     ],
@@ -41317,8 +40781,8 @@
     {
         "name": "tiny_mce_before_init",
         "file": "wp-includes/class-wp-editor.php",
-        "line": 733,
-        "end_line": 733,
+        "line": 734,
+        "end_line": 734,
         "type": "filter",
         "doc": {
             "description": "Filters the TinyMCE config before init.",
@@ -41893,8 +41357,8 @@
     {
         "name": "update_welcome_email",
         "file": "wp-includes/ms-functions.php",
-        "line": 1600,
-        "end_line": 1600,
+        "line": 1621,
+        "end_line": 1621,
         "type": "filter",
         "doc": {
             "description": "Filters the content of the welcome email after site activation.",
@@ -41960,8 +41424,8 @@
     {
         "name": "update_welcome_subject",
         "file": "wp-includes/ms-functions.php",
-        "line": 1625,
-        "end_line": 1625,
+        "line": 1646,
+        "end_line": 1646,
         "type": "filter",
         "doc": {
             "description": "Filters the subject of the welcome email after site activation.",
@@ -41987,8 +41451,8 @@
     {
         "name": "update_welcome_user_email",
         "file": "wp-includes/ms-functions.php",
-        "line": 1687,
-        "end_line": 1687,
+        "line": 1708,
+        "end_line": 1708,
         "type": "filter",
         "doc": {
             "description": "Filters the content of the welcome email after user activation.",
@@ -42038,8 +41502,8 @@
     {
         "name": "update_welcome_user_subject",
         "file": "wp-includes/ms-functions.php",
-        "line": 1717,
-        "end_line": 1717,
+        "line": 1738,
+        "end_line": 1738,
         "type": "filter",
         "doc": {
             "description": "Filters the subject of the welcome email after user activation.",
@@ -42486,8 +41950,8 @@
     {
         "name": "upload_mimes",
         "file": "wp-includes/functions.php",
-        "line": 3065,
-        "end_line": 3065,
+        "line": 3064,
+        "end_line": 3064,
         "type": "filter",
         "doc": {
             "description": "Filters list of allowed mime types and file extensions.",
@@ -42579,8 +42043,8 @@
     {
         "name": "upload_size_limit",
         "file": "wp-includes/media.php",
-        "line": 3194,
-        "end_line": 3194,
+        "line": 3198,
+        "end_line": 3198,
         "type": "filter",
         "doc": {
             "description": "Filters the maximum upload size allowed in php.ini.",
@@ -42749,8 +42213,8 @@
     {
         "name": "use_default_gallery_style",
         "file": "wp-includes/media.php",
-        "line": 1978,
-        "end_line": 1978,
+        "line": 1977,
+        "end_line": 1977,
         "type": "filter",
         "doc": {
             "description": "Filters whether to print default gallery styles.",
@@ -42895,8 +42359,8 @@
     {
         "name": "user_confirmed_action_email_content",
         "file": "wp-includes/user.php",
-        "line": 3316,
-        "end_line": 3316,
+        "line": 3321,
+        "end_line": 3321,
         "type": "filter",
         "doc": {
             "description": "Filters the body of the data erasure fulfillment notification.",
@@ -42929,8 +42393,8 @@
     {
         "name": "user_confirmed_action_email_content",
         "file": "wp-includes/user.php",
-        "line": 3140,
-        "end_line": 3140,
+        "line": 3145,
+        "end_line": 3145,
         "type": "filter",
         "doc": {
             "description": "Filters the body of the user request confirmation email.",
@@ -42963,8 +42427,8 @@
     {
         "name": "user_contactmethods",
         "file": "wp-includes/user.php",
-        "line": 2209,
-        "end_line": 2209,
+        "line": 2214,
+        "end_line": 2214,
         "type": "filter",
         "doc": {
             "description": "Filters the user contact methods.",
@@ -42976,9 +42440,9 @@
                 },
                 {
                     "name": "param",
-                    "content": "Array of contact methods and their labels.",
+                    "content": "Array of contact method labels keyed by contact method.",
                     "types": [
-                        "array"
+                        "string[]"
                     ],
                     "variable": "$methods"
                 },
@@ -43047,8 +42511,8 @@
     {
         "name": "user_erasure_complete_email_subject",
         "file": "wp-includes/user.php",
-        "line": 3257,
-        "end_line": 3257,
+        "line": 3262,
+        "end_line": 3262,
         "type": "filter",
         "doc": {
             "description": "Filters the subject of the email sent when an erasure request is completed.",
@@ -43089,8 +42553,8 @@
     {
         "name": "user_erasure_fulfillment_email_to",
         "file": "wp-includes/user.php",
-        "line": 3222,
-        "end_line": 3222,
+        "line": 3227,
+        "end_line": 3227,
         "type": "filter",
         "doc": {
             "description": "Filters the recipient of the data erasure fulfillment notification.",
@@ -43217,8 +42681,8 @@
     {
         "name": "user_registration_email",
         "file": "wp-includes/user.php",
-        "line": 2487,
-        "end_line": 2487,
+        "line": 2492,
+        "end_line": 2492,
         "type": "filter",
         "doc": {
             "description": "Filters the email address of a user being registered.",
@@ -43243,8 +42707,8 @@
     {
         "name": "user_request_action_confirmed_message",
         "file": "wp-includes/user.php",
-        "line": 3366,
-        "end_line": 3366,
+        "line": 3371,
+        "end_line": 3371,
         "type": "filter",
         "doc": {
             "description": "Filters the message displayed to a user when they confirm a data request.",
@@ -43277,8 +42741,8 @@
     {
         "name": "user_request_action_description",
         "file": "wp-includes/user.php",
-        "line": 3464,
-        "end_line": 3464,
+        "line": 3469,
+        "end_line": 3469,
         "type": "filter",
         "doc": {
             "description": "Filters the user action description.",
@@ -43311,8 +42775,8 @@
     {
         "name": "user_request_action_email_content",
         "file": "wp-includes/user.php",
-        "line": 3553,
-        "end_line": 3553,
+        "line": 3558,
+        "end_line": 3558,
         "type": "filter",
         "doc": {
             "description": "Filters the text of the email sent when an account action is attempted.",
@@ -43345,8 +42809,8 @@
     {
         "name": "user_request_action_email_subject",
         "file": "wp-includes/user.php",
-        "line": 3582,
-        "end_line": 3582,
+        "line": 3587,
+        "end_line": 3587,
         "type": "filter",
         "doc": {
             "description": "Filters the subject of the email sent when an account action is attempted.",
@@ -43387,8 +42851,8 @@
     {
         "name": "user_request_confirmed_email_subject",
         "file": "wp-includes/user.php",
-        "line": 3174,
-        "end_line": 3174,
+        "line": 3179,
+        "end_line": 3179,
         "type": "filter",
         "doc": {
             "description": "Filters the subject of the user request confirmation email.",
@@ -43429,8 +42893,8 @@
     {
         "name": "user_request_confirmed_email_to",
         "file": "wp-includes/user.php",
-        "line": 3083,
-        "end_line": 3083,
+        "line": 3088,
+        "end_line": 3088,
         "type": "filter",
         "doc": {
             "description": "Filters the recipient of the data request confirmation notification.",
@@ -43463,8 +42927,8 @@
     {
         "name": "user_request_key_expiration",
         "file": "wp-includes/user.php",
-        "line": 3678,
-        "end_line": 3678,
+        "line": 3683,
+        "end_line": 3683,
         "type": "filter",
         "doc": {
             "description": "Filters the expiration time of confirm keys.",
@@ -43489,8 +42953,8 @@
     {
         "name": "user_row_actions",
         "file": "wp-admin/includes/class-wp-users-list-table.php",
-        "line": 484,
-        "end_line": 484,
+        "line": 483,
+        "end_line": 483,
         "type": "filter",
         "doc": {
             "description": "Filters the action links displayed under each user in the Users list table.",
@@ -43599,8 +43063,8 @@
     {
         "name": "user_{$field}",
         "file": "wp-includes/user.php",
-        "line": 1313,
-        "end_line": 1313,
+        "line": 1318,
+        "end_line": 1318,
         "type": "filter",
         "doc": {
             "description": "Filters the value of a user field in a standard context.",
@@ -43667,8 +43131,8 @@
     {
         "name": "username_exists",
         "file": "wp-includes/user.php",
-        "line": 1413,
-        "end_line": 1413,
+        "line": 1418,
+        "end_line": 1418,
         "type": "filter",
         "doc": {
             "description": "Filters whether the given username exists or not.",
@@ -43823,8 +43287,8 @@
     {
         "name": "validate_username",
         "file": "wp-includes/user.php",
-        "line": 1457,
-        "end_line": 1457,
+        "line": 1462,
+        "end_line": 1462,
         "type": "filter",
         "doc": {
             "description": "Filters whether the provided username is valid or not.",
@@ -43857,8 +43321,8 @@
     {
         "name": "view_mode_post_types",
         "file": "wp-admin/includes/class-wp-screen.php",
-        "line": 1296,
-        "end_line": 1296,
+        "line": 1311,
+        "end_line": 1311,
         "type": "filter",
         "doc": {
             "description": "Filters the post types that have different view mode options.",
@@ -44294,8 +43758,8 @@
     {
         "name": "widget_display_callback",
         "file": "wp-includes/class-wp-widget.php",
-        "line": 368,
-        "end_line": 368,
+        "line": 369,
+        "end_line": 369,
         "type": "filter",
         "doc": {
             "description": "Filters the settings for a particular widget instance.",
@@ -44336,8 +43800,8 @@
     {
         "name": "widget_form_callback",
         "file": "wp-includes/class-wp-widget.php",
-        "line": 514,
-        "end_line": 514,
+        "line": 515,
+        "end_line": 515,
         "type": "filter",
         "doc": {
             "description": "Filters the widget instance's settings before displaying the control form.",
@@ -44782,8 +44246,8 @@
     {
         "name": "widget_update_callback",
         "file": "wp-includes/class-wp-widget.php",
-        "line": 461,
-        "end_line": 461,
+        "line": 462,
+        "end_line": 462,
         "type": "filter",
         "doc": {
             "description": "Filters a widget's settings before saving.",
@@ -45067,8 +44531,8 @@
     {
         "name": "wp_anonymize_comment",
         "file": "wp-includes/comment.php",
-        "line": 3580,
-        "end_line": 3580,
+        "line": 3586,
+        "end_line": 3586,
         "type": "filter",
         "doc": {
             "description": "Filters whether to anonymize the comment.",
@@ -45110,8 +44574,8 @@
     {
         "name": "wp_audio_embed_handler",
         "file": "wp-includes/embed.php",
-        "line": 201,
-        "end_line": 201,
+        "line": 210,
+        "end_line": 210,
         "type": "filter",
         "doc": {
             "description": "Filters the audio embed handler callback.",
@@ -45136,8 +44600,8 @@
     {
         "name": "wp_audio_extensions",
         "file": "wp-includes/media.php",
-        "line": 2430,
-        "end_line": 2430,
+        "line": 2429,
+        "end_line": 2429,
         "type": "filter",
         "doc": {
             "description": "Filters the list of supported audio formats.",
@@ -45162,8 +44626,8 @@
     {
         "name": "wp_audio_shortcode",
         "file": "wp-includes/media.php",
-        "line": 2658,
-        "end_line": 2658,
+        "line": 2657,
+        "end_line": 2657,
         "type": "filter",
         "doc": {
             "description": "Filters the audio shortcode output.",
@@ -45220,8 +44684,8 @@
     {
         "name": "wp_audio_shortcode_class",
         "file": "wp-includes/media.php",
-        "line": 2594,
-        "end_line": 2594,
+        "line": 2593,
+        "end_line": 2593,
         "type": "filter",
         "doc": {
             "description": "Filters the class attribute for the audio shortcode output container.",
@@ -45259,8 +44723,8 @@
     {
         "name": "wp_audio_shortcode_library",
         "file": "wp-includes/media.php",
-        "line": 2578,
-        "end_line": 2578,
+        "line": 2577,
+        "end_line": 2577,
         "type": "filter",
         "doc": {
             "description": "Filters the media library used for the audio shortcode.",
@@ -45285,8 +44749,8 @@
     {
         "name": "wp_audio_shortcode_override",
         "file": "wp-includes/media.php",
-        "line": 2509,
-        "end_line": 2509,
+        "line": 2508,
+        "end_line": 2508,
         "type": "filter",
         "doc": {
             "description": "Filters the default audio shortcode output.",
@@ -45361,8 +44825,8 @@
     {
         "name": "wp_auth_check_load",
         "file": "wp-includes/functions.php",
-        "line": 6191,
-        "end_line": 6191,
+        "line": 6326,
+        "end_line": 6326,
         "type": "filter",
         "doc": {
             "description": "Filters whether to load the authentication check.",
@@ -45395,8 +44859,8 @@
     {
         "name": "wp_auth_check_same_domain",
         "file": "wp-includes/functions.php",
-        "line": 6217,
-        "end_line": 6217,
+        "line": 6352,
+        "end_line": 6352,
         "type": "filter",
         "doc": {
             "description": "Filters whether the authentication check originated at the same domain.",
@@ -45490,8 +44954,8 @@
     {
         "name": "wp_calculate_image_sizes",
         "file": "wp-includes/media.php",
-        "line": 1455,
-        "end_line": 1455,
+        "line": 1454,
+        "end_line": 1454,
         "type": "filter",
         "doc": {
             "description": "Filters the output of 'wp_calculate_image_sizes()'.",
@@ -45551,8 +45015,8 @@
     {
         "name": "wp_calculate_image_srcset",
         "file": "wp-includes/media.php",
-        "line": 1354,
-        "end_line": 1354,
+        "line": 1353,
+        "end_line": 1353,
         "type": "filter",
         "doc": {
             "description": "Filters an image's 'srcset' sources.",
@@ -45609,8 +45073,8 @@
     {
         "name": "wp_calculate_image_srcset_meta",
         "file": "wp-includes/media.php",
-        "line": 1195,
-        "end_line": 1195,
+        "line": 1194,
+        "end_line": 1194,
         "type": "filter",
         "doc": {
             "description": "Let plugins pre-filter the image meta to be able to fix inconsistencies in the stored data.",
@@ -45749,8 +45213,8 @@
     {
         "name": "wp_checkdate",
         "file": "wp-includes/functions.php",
-        "line": 6153,
-        "end_line": 6153,
+        "line": 6288,
+        "end_line": 6288,
         "type": "filter",
         "doc": {
             "description": "Filters whether the given date is valid for the Gregorian calendar.",
@@ -45914,8 +45378,8 @@
     {
         "name": "wp_count_attachments",
         "file": "wp-includes/post.php",
-        "line": 2696,
-        "end_line": 2696,
+        "line": 2702,
+        "end_line": 2702,
         "type": "filter",
         "doc": {
             "description": "Modify returned attachment counts by mime type.",
@@ -45983,8 +45447,8 @@
     {
         "name": "wp_count_posts",
         "file": "wp-includes/post.php",
-        "line": 2655,
-        "end_line": 2655,
+        "line": 2661,
+        "end_line": 2661,
         "type": "filter",
         "doc": {
             "description": "Modify returned post counts by status for the current post type.",
@@ -46127,8 +45591,8 @@
     {
         "name": "wp_delete_file",
         "file": "wp-includes/functions.php",
-        "line": 6416,
-        "end_line": 6416,
+        "line": 6551,
+        "end_line": 6551,
         "type": "filter",
         "doc": {
             "description": "Filters the path of the file to delete.",
@@ -46153,8 +45617,8 @@
     {
         "name": "wp_die_ajax_handler",
         "file": "wp-includes/functions.php",
-        "line": 3171,
-        "end_line": 3171,
+        "line": 3170,
+        "end_line": 3170,
         "type": "filter",
         "doc": {
             "description": "Filters the callback for killing WordPress execution for Ajax requests.",
@@ -46179,8 +45643,8 @@
     {
         "name": "wp_die_handler",
         "file": "wp-includes/functions.php",
-        "line": 3220,
-        "end_line": 3220,
+        "line": 3219,
+        "end_line": 3219,
         "type": "filter",
         "doc": {
             "description": "Filters the callback for killing WordPress execution for all non-Ajax, non-JSON, non-XML requests.",
@@ -46205,8 +45669,8 @@
     {
         "name": "wp_die_json_handler",
         "file": "wp-includes/functions.php",
-        "line": 3180,
-        "end_line": 3180,
+        "line": 3179,
+        "end_line": 3179,
         "type": "filter",
         "doc": {
             "description": "Filters the callback for killing WordPress execution for JSON requests.",
@@ -46231,8 +45695,8 @@
     {
         "name": "wp_die_jsonp_handler",
         "file": "wp-includes/functions.php",
-        "line": 3189,
-        "end_line": 3189,
+        "line": 3188,
+        "end_line": 3188,
         "type": "filter",
         "doc": {
             "description": "Filters the callback for killing WordPress execution for JSONP requests.",
@@ -46257,8 +45721,8 @@
     {
         "name": "wp_die_xml_handler",
         "file": "wp-includes/functions.php",
-        "line": 3211,
-        "end_line": 3211,
+        "line": 3210,
+        "end_line": 3210,
         "type": "filter",
         "doc": {
             "description": "Filters the callback for killing WordPress execution for XML requests.",
@@ -46283,8 +45747,8 @@
     {
         "name": "wp_die_xmlrpc_handler",
         "file": "wp-includes/functions.php",
-        "line": 3198,
-        "end_line": 3198,
+        "line": 3197,
+        "end_line": 3197,
         "type": "filter",
         "doc": {
             "description": "Filters the callback for killing WordPress execution for XML-RPC requests.",
@@ -46309,8 +45773,8 @@
     {
         "name": "wp_direct_php_update_url",
         "file": "wp-includes/functions.php",
-        "line": 7153,
-        "end_line": 7153,
+        "line": 7288,
+        "end_line": 7288,
         "type": "filter",
         "doc": {
             "description": "Filters the URL for directly updating the PHP version the site is running on from the host.",
@@ -46468,8 +45932,8 @@
     {
         "name": "wp_dropdown_users",
         "file": "wp-includes/user.php",
-        "line": 1209,
-        "end_line": 1209,
+        "line": 1214,
+        "end_line": 1214,
         "type": "filter",
         "doc": {
             "description": "Filters the wp_dropdown_users() HTML output.",
@@ -46494,8 +45958,8 @@
     {
         "name": "wp_dropdown_users_args",
         "file": "wp-includes/user.php",
-        "line": 1147,
-        "end_line": 1147,
+        "line": 1152,
+        "end_line": 1152,
         "type": "filter",
         "doc": {
             "description": "Filters the query arguments for the list of users in the dropdown.",
@@ -46601,8 +46065,8 @@
     {
         "name": "wp_editor_set_quality",
         "file": "wp-includes/class-wp-image-editor.php",
-        "line": 236,
-        "end_line": 236,
+        "line": 241,
+        "end_line": 241,
         "type": "filter",
         "doc": {
             "description": "Filters the default image compression quality setting.",
@@ -46674,8 +46138,8 @@
     {
         "name": "wp_embed_handler_audio",
         "file": "wp-includes/embed.php",
-        "line": 272,
-        "end_line": 272,
+        "line": 281,
+        "end_line": 281,
         "type": "filter",
         "doc": {
             "description": "Filters the audio embed output.",
@@ -46724,8 +46188,8 @@
     {
         "name": "wp_embed_handler_video",
         "file": "wp-includes/embed.php",
-        "line": 304,
-        "end_line": 304,
+        "line": 313,
+        "end_line": 313,
         "type": "filter",
         "doc": {
             "description": "Filters the video embed output.",
@@ -46774,8 +46238,8 @@
     {
         "name": "wp_embed_handler_youtube",
         "file": "wp-includes/embed.php",
-        "line": 245,
-        "end_line": 245,
+        "line": 254,
+        "end_line": 254,
         "type": "filter",
         "doc": {
             "description": "Filters the YoutTube embed output.",
@@ -46889,8 +46353,8 @@
     {
         "name": "wp_generate_attachment_metadata",
         "file": "wp-admin/includes/image.php",
-        "line": 584,
-        "end_line": 584,
+        "line": 613,
+        "end_line": 613,
         "type": "filter",
         "doc": {
             "description": "Filters the generated attachment meta data.",
@@ -47036,8 +46500,8 @@
     {
         "name": "wp_get_attachment_caption",
         "file": "wp-includes/post.php",
-        "line": 5895,
-        "end_line": 5895,
+        "line": 5901,
+        "end_line": 5901,
         "type": "filter",
         "doc": {
             "description": "Filters the attachment caption.",
@@ -47070,8 +46534,8 @@
     {
         "name": "wp_get_attachment_id3_keys",
         "file": "wp-includes/media.php",
-        "line": 2466,
-        "end_line": 2466,
+        "line": 2465,
+        "end_line": 2465,
         "type": "filter",
         "doc": {
             "description": "Filters the editable list of keys to look up data from an attachment's metadata.",
@@ -47289,8 +46753,8 @@
     {
         "name": "wp_get_attachment_metadata",
         "file": "wp-includes/post.php",
-        "line": 5759,
-        "end_line": 5759,
+        "line": 5765,
+        "end_line": 5765,
         "type": "filter",
         "doc": {
             "description": "Filters the attachment meta data.",
@@ -47324,8 +46788,8 @@
     {
         "name": "wp_get_attachment_thumb_file",
         "file": "wp-includes/post.php",
-        "line": 5931,
-        "end_line": 5931,
+        "line": 5937,
+        "end_line": 5937,
         "type": "filter",
         "doc": {
             "description": "Filters the attachment thumbnail file path.",
@@ -47358,8 +46822,8 @@
     {
         "name": "wp_get_attachment_thumb_url",
         "file": "wp-includes/post.php",
-        "line": 5977,
-        "end_line": 5977,
+        "line": 5983,
+        "end_line": 5983,
         "type": "filter",
         "doc": {
             "description": "Filters the attachment thumbnail URL.",
@@ -47392,8 +46856,8 @@
     {
         "name": "wp_get_attachment_url",
         "file": "wp-includes/post.php",
-        "line": 5857,
-        "end_line": 5857,
+        "line": 5863,
+        "end_line": 5863,
         "type": "filter",
         "doc": {
             "description": "Filters the attachment URL.",
@@ -47439,9 +46903,9 @@
                 },
                 {
                     "name": "param",
-                    "content": "Associative array <code>'field_name' =&gt; 'maximum length'</code>.",
+                    "content": "Array of maximum lengths keyed by field name.",
                     "types": [
-                        "array"
+                        "int[]"
                     ],
                     "variable": "$lengths"
                 }
@@ -47452,8 +46916,8 @@
     {
         "name": "wp_get_current_commenter",
         "file": "wp-includes/comment.php",
-        "line": 1814,
-        "end_line": 1814,
+        "line": 1820,
+        "end_line": 1820,
         "type": "filter",
         "doc": {
             "description": "Filters the current commenter's name, email, and URL.",
@@ -47465,7 +46929,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "{     An array of current commenter variables.     @type string $comment_author       The name of the author of the comment. Default empty.     @type string $comment_author_email The email address of the <code>$comment_author</code>. Default empty.     @type string $comment_author_url   The URL address of the <code>$comment_author</code>. Default empty. }",
+                    "content": "{     An array of current commenter variables.     @type string $comment_author       The name of the current commenter, or an empty string.     @type string $comment_author_email The email address of the current commenter, or an empty string.     @type string $comment_author_url   The URL address of the current commenter, or an empty string. }",
                     "types": [
                         "array"
                     ],
@@ -47567,8 +47031,8 @@
     {
         "name": "wp_get_missing_image_subsizes",
         "file": "wp-admin/includes/image.php",
-        "line": 124,
-        "end_line": 124,
+        "line": 136,
+        "end_line": 136,
         "type": "filter",
         "doc": {
             "description": "Filters the array of missing image sub-sizes for an uploaded image.",
@@ -47853,8 +47317,8 @@
     {
         "name": "wp_get_original_image_path",
         "file": "wp-includes/post.php",
-        "line": 7180,
-        "end_line": 7180,
+        "line": 7186,
+        "end_line": 7186,
         "type": "filter",
         "doc": {
             "description": "Filters the path to the original image.",
@@ -47887,8 +47351,8 @@
     {
         "name": "wp_get_original_image_url",
         "file": "wp-includes/post.php",
-        "line": 7222,
-        "end_line": 7222,
+        "line": 7228,
+        "end_line": 7228,
         "type": "filter",
         "doc": {
             "description": "Filters the URL to the original attachment image.",
@@ -48232,8 +47696,8 @@
     {
         "name": "wp_image_editors",
         "file": "wp-includes/media.php",
-        "line": 3272,
-        "end_line": 3272,
+        "line": 3276,
+        "end_line": 3276,
         "type": "filter",
         "doc": {
             "description": "Filters the list of image editing library classes.",
@@ -48258,8 +47722,8 @@
     {
         "name": "wp_image_maybe_exif_rotate",
         "file": "wp-includes/class-wp-image-editor.php",
-        "line": 414,
-        "end_line": 414,
+        "line": 419,
+        "end_line": 419,
         "type": "filter",
         "doc": {
             "description": "Filters the `$orientation` value to correct it before rotating or to prevemnt rotating the image.",
@@ -48376,8 +47840,8 @@
     {
         "name": "wp_insert_attachment_data",
         "file": "wp-includes/post.php",
-        "line": 3870,
-        "end_line": 3870,
+        "line": 3876,
+        "end_line": 3876,
         "type": "filter",
         "doc": {
             "description": "Filters attachment post data before it is updated in or added to the database.",
@@ -48410,8 +47874,8 @@
     {
         "name": "wp_insert_post_data",
         "file": "wp-includes/post.php",
-        "line": 3880,
-        "end_line": 3880,
+        "line": 3886,
+        "end_line": 3886,
         "type": "filter",
         "doc": {
             "description": "Filters slashed post data just before it is inserted into the database.",
@@ -48444,8 +47908,8 @@
     {
         "name": "wp_insert_post_empty_content",
         "file": "wp-includes/post.php",
-        "line": 3642,
-        "end_line": 3642,
+        "line": 3648,
+        "end_line": 3648,
         "type": "filter",
         "doc": {
             "description": "Filters whether the post should be considered \"empty\".",
@@ -48478,8 +47942,8 @@
     {
         "name": "wp_insert_post_parent",
         "file": "wp-includes/post.php",
-        "line": 3818,
-        "end_line": 3818,
+        "line": 3824,
+        "end_line": 3824,
         "type": "filter",
         "doc": {
             "description": "Filters the post parent -- used to check for and prevent hierarchy loops.",
@@ -48686,8 +48150,8 @@
     {
         "name": "wp_is_large_network",
         "file": "wp-includes/ms-functions.php",
-        "line": 2567,
-        "end_line": 2567,
+        "line": 2592,
+        "end_line": 2592,
         "type": "filter",
         "doc": {
             "description": "Filters whether the network is considered large.",
@@ -48849,9 +48313,9 @@
                 },
                 {
                     "name": "param",
-                    "content": "HTML attributes requiring validation as a URL.",
+                    "content": "HTML attribute names whose value contains a URL.",
                     "types": [
-                        "array"
+                        "string[]"
                     ],
                     "variable": "$uri_attributes"
                 }
@@ -48956,8 +48420,8 @@
     {
         "name": "wp_link_query",
         "file": "wp-includes/class-wp-editor.php",
-        "line": 1712,
-        "end_line": 1712,
+        "line": 1713,
+        "end_line": 1713,
         "type": "filter",
         "doc": {
             "description": "Filters the link query results.",
@@ -48995,8 +48459,8 @@
     {
         "name": "wp_link_query_args",
         "file": "wp-includes/class-wp-editor.php",
-        "line": 1667,
-        "end_line": 1667,
+        "line": 1668,
+        "end_line": 1668,
         "type": "filter",
         "doc": {
             "description": "Filters the link query arguments.",
@@ -49195,8 +48659,8 @@
     {
         "name": "wp_login_errors",
         "file": "wp-login.php",
-        "line": 1308,
-        "end_line": 1308,
+        "line": 1317,
+        "end_line": 1317,
         "type": "filter",
         "doc": {
             "description": "Filters the login page errors.",
@@ -49385,8 +48849,8 @@
     {
         "name": "wp_mce_translation",
         "file": "wp-includes/class-wp-editor.php",
-        "line": 1381,
-        "end_line": 1381,
+        "line": 1382,
+        "end_line": 1382,
         "type": "filter",
         "doc": {
             "description": "Filters translated strings prepared for TinyMCE.",
@@ -49419,8 +48883,8 @@
     {
         "name": "wp_mediaelement_fallback",
         "file": "wp-includes/media.php",
-        "line": 2411,
-        "end_line": 2411,
+        "line": 2410,
+        "end_line": 2410,
         "type": "filter",
         "doc": {
             "description": "Filters the Mediaelement fallback output for no-JS.",
@@ -49453,8 +48917,8 @@
     {
         "name": "wp_mime_type_icon",
         "file": "wp-includes/post.php",
-        "line": 6182,
-        "end_line": 6182,
+        "line": 6188,
+        "end_line": 6188,
         "type": "filter",
         "doc": {
             "description": "Filters the mime type icon.",
@@ -49755,8 +49219,8 @@
     {
         "name": "wp_new_user_notification_email",
         "file": "wp-includes/pluggable.php",
-        "line": 2038,
-        "end_line": 2038,
+        "line": 2043,
+        "end_line": 2043,
         "type": "filter",
         "doc": {
             "description": "Filters the contents of the new user notification email sent to the new user.",
@@ -49797,8 +49261,8 @@
     {
         "name": "wp_new_user_notification_email_admin",
         "file": "wp-includes/pluggable.php",
-        "line": 1981,
-        "end_line": 1981,
+        "line": 1986,
+        "end_line": 1986,
         "type": "filter",
         "doc": {
             "description": "Filters the contents of the new user notification email sent to the site admin.",
@@ -49961,8 +49425,8 @@
     {
         "name": "wp_password_change_notification_email",
         "file": "wp-includes/pluggable.php",
-        "line": 1903,
-        "end_line": 1903,
+        "line": 1908,
+        "end_line": 1908,
         "type": "filter",
         "doc": {
             "description": "Filters the contents of the password change notification email sent to the site admin.",
@@ -50113,8 +49577,8 @@
     {
         "name": "wp_pre_insert_user_data",
         "file": "wp-includes/user.php",
-        "line": 1789,
-        "end_line": 1789,
+        "line": 1794,
+        "end_line": 1794,
         "type": "filter",
         "doc": {
             "description": "Filters user data before the record is created or updated.",
@@ -50156,8 +49620,8 @@
     {
         "name": "wp_prepare_attachment_for_js",
         "file": "wp-includes/media.php",
-        "line": 3621,
-        "end_line": 3621,
+        "line": 3625,
+        "end_line": 3625,
         "type": "filter",
         "doc": {
             "description": "Filters the attachment data prepared for JavaScript.",
@@ -50267,8 +49731,8 @@
     {
         "name": "wp_privacy_anonymize_data",
         "file": "wp-includes/functions.php",
-        "line": 6921,
-        "end_line": 6921,
+        "line": 7056,
+        "end_line": 7056,
         "type": "filter",
         "doc": {
             "description": "Filters the anonymous data for each type.",
@@ -50309,8 +49773,8 @@
     {
         "name": "wp_privacy_export_expiration",
         "file": "wp-includes/functions.php",
-        "line": 7015,
-        "end_line": 7015,
+        "line": 7150,
+        "end_line": 7150,
         "type": "filter",
         "doc": {
             "description": "Filters the lifetime, in seconds, of a personal data export file.",
@@ -50335,8 +49799,8 @@
     {
         "name": "wp_privacy_exports_dir",
         "file": "wp-includes/functions.php",
-        "line": 6944,
-        "end_line": 6944,
+        "line": 7079,
+        "end_line": 7079,
         "type": "filter",
         "doc": {
             "description": "Filters the directory used to store personal data export files.",
@@ -50361,8 +49825,8 @@
     {
         "name": "wp_privacy_exports_url",
         "file": "wp-includes/functions.php",
-        "line": 6967,
-        "end_line": 6967,
+        "line": 7102,
+        "end_line": 7102,
         "type": "filter",
         "doc": {
             "description": "Filters the URL of the directory used to store personal data export files.",
@@ -50754,8 +50218,8 @@
     {
         "name": "wp_read_image_metadata",
         "file": "wp-admin/includes/image.php",
-        "line": 820,
-        "end_line": 820,
+        "line": 849,
+        "end_line": 849,
         "type": "filter",
         "doc": {
             "description": "Filters the array of meta data read from an image's exif data.",
@@ -50822,8 +50286,8 @@
     {
         "name": "wp_read_image_metadata_types",
         "file": "wp-admin/includes/image.php",
-        "line": 732,
-        "end_line": 732,
+        "line": 761,
+        "end_line": 761,
         "type": "filter",
         "doc": {
             "description": "Filters the image types to check for exif data.",
@@ -50898,8 +50362,8 @@
     {
         "name": "wp_redirect",
         "file": "wp-includes/pluggable.php",
-        "line": 1237,
-        "end_line": 1237,
+        "line": 1238,
+        "end_line": 1238,
         "type": "filter",
         "doc": {
             "description": "Filters the redirect location.",
@@ -50932,8 +50396,8 @@
     {
         "name": "wp_redirect_status",
         "file": "wp-includes/pluggable.php",
-        "line": 1247,
-        "end_line": 1247,
+        "line": 1248,
+        "end_line": 1248,
         "type": "filter",
         "doc": {
             "description": "Filters the redirect HTTP response status code to use.",
@@ -51128,8 +50592,8 @@
     {
         "name": "wp_safe_redirect_fallback",
         "file": "wp-includes/pluggable.php",
-        "line": 1378,
-        "end_line": 1378,
+        "line": 1383,
+        "end_line": 1383,
         "type": "filter",
         "doc": {
             "description": "Filters the redirect fallback URL for when the provided redirect is not safe (local).",
@@ -51172,69 +50636,6 @@
                 {
                     "name": "since",
                     "content": "3.5.0"
-                },
-                {
-                    "name": "param",
-                    "content": "Value to return instead of saving. Default null.",
-                    "types": [
-                        "mixed"
-                    ],
-                    "variable": "$override"
-                },
-                {
-                    "name": "param",
-                    "content": "Name of the file to be saved.",
-                    "types": [
-                        "string"
-                    ],
-                    "variable": "$filename"
-                },
-                {
-                    "name": "param",
-                    "content": "WP_Image_Editor instance.",
-                    "types": [
-                        "\\WP_Image_Editor"
-                    ],
-                    "variable": "$image"
-                },
-                {
-                    "name": "param",
-                    "content": "Image mime type.",
-                    "types": [
-                        "string"
-                    ],
-                    "variable": "$mime_type"
-                },
-                {
-                    "name": "param",
-                    "content": "Post ID.",
-                    "types": [
-                        "int"
-                    ],
-                    "variable": "$post_id"
-                }
-            ],
-            "long_description_html": "<p>Returning a non-null value will short-circuit the save method, returning that value instead.</p>"
-        }
-    },
-    {
-        "name": "wp_save_image_file",
-        "file": "wp-admin/includes/image-edit.php",
-        "line": 373,
-        "end_line": 373,
-        "type": "filter",
-        "doc": {
-            "description": "Filters whether to skip saving the image file.",
-            "long_description": "Returning a non-null value will short-circuit the save method, returning that value instead.",
-            "tags": [
-                {
-                    "name": "since",
-                    "content": "2.9.0"
-                },
-                {
-                    "name": "deprecated",
-                    "content": "3.5.0",
-                    "description": "Use wp_save_image_editor_file instead."
                 },
                 {
                     "name": "param",
@@ -51453,8 +50854,8 @@
     {
         "name": "wp_should_upgrade_global_tables",
         "file": "wp-admin/includes/upgrade.php",
-        "line": 3378,
-        "end_line": 3378,
+        "line": 3385,
+        "end_line": 3385,
         "type": "filter",
         "doc": {
             "description": "Filters if upgrade routines should be run on global tables.",
@@ -51570,8 +50971,8 @@
     {
         "name": "wp_signup_location",
         "file": "wp-login.php",
-        "line": 1012,
-        "end_line": 1012,
+        "line": 1021,
+        "end_line": 1021,
         "type": "filter",
         "doc": {
             "description": "Filters the Multisite sign up URL.",
@@ -52096,8 +51497,8 @@
     {
         "name": "wp_unique_post_slug",
         "file": "wp-includes/post.php",
-        "line": 4442,
-        "end_line": 4442,
+        "line": 4448,
+        "end_line": 4448,
         "type": "filter",
         "doc": {
             "description": "Filters the unique post slug.",
@@ -52162,8 +51563,8 @@
     {
         "name": "wp_unique_post_slug_is_bad_attachment_slug",
         "file": "wp-includes/post.php",
-        "line": 4339,
-        "end_line": 4339,
+        "line": 4345,
+        "end_line": 4345,
         "type": "filter",
         "doc": {
             "description": "Filters whether the post slug would make a bad attachment slug.",
@@ -52196,8 +51597,8 @@
     {
         "name": "wp_unique_post_slug_is_bad_flat_slug",
         "file": "wp-includes/post.php",
-        "line": 4419,
-        "end_line": 4419,
+        "line": 4425,
+        "end_line": 4425,
         "type": "filter",
         "doc": {
             "description": "Filters whether the post slug would be bad as a flat slug.",
@@ -52238,8 +51639,8 @@
     {
         "name": "wp_unique_post_slug_is_bad_hierarchical_slug",
         "file": "wp-includes/post.php",
-        "line": 4370,
-        "end_line": 4370,
+        "line": 4376,
+        "end_line": 4376,
         "type": "filter",
         "doc": {
             "description": "Filters whether the post slug would make a bad hierarchical post slug.",
@@ -52372,8 +51773,8 @@
     {
         "name": "wp_update_attachment_metadata",
         "file": "wp-includes/post.php",
-        "line": 5786,
-        "end_line": 5786,
+        "line": 5792,
+        "end_line": 5792,
         "type": "filter",
         "doc": {
             "description": "Filters the updated attachment meta data.",
@@ -52406,8 +51807,8 @@
     {
         "name": "wp_update_comment_data",
         "file": "wp-includes/comment.php",
-        "line": 2375,
-        "end_line": 2375,
+        "line": 2381,
+        "end_line": 2381,
         "type": "filter",
         "doc": {
             "description": "Filters the comment data immediately before it is updated in the database.",
@@ -52448,8 +51849,8 @@
     {
         "name": "wp_update_php_url",
         "file": "wp-includes/functions.php",
-        "line": 7056,
-        "end_line": 7056,
+        "line": 7191,
+        "end_line": 7191,
         "type": "filter",
         "doc": {
             "description": "Filters the URL to learn more about updating the PHP version the site is running on.",
@@ -52660,8 +52061,8 @@
     {
         "name": "wp_video_embed_handler",
         "file": "wp-includes/embed.php",
-        "line": 210,
-        "end_line": 210,
+        "line": 219,
+        "end_line": 219,
         "type": "filter",
         "doc": {
             "description": "Filters the video embed handler callback.",
@@ -52686,8 +52087,8 @@
     {
         "name": "wp_video_extensions",
         "file": "wp-includes/media.php",
-        "line": 2678,
-        "end_line": 2678,
+        "line": 2677,
+        "end_line": 2677,
         "type": "filter",
         "doc": {
             "description": "Filters the list of supported video formats.",
@@ -52712,8 +52113,8 @@
     {
         "name": "wp_video_shortcode",
         "file": "wp-includes/media.php",
-        "line": 2941,
-        "end_line": 2941,
+        "line": 2940,
+        "end_line": 2940,
         "type": "filter",
         "doc": {
             "description": "Filters the output of the video shortcode.",
@@ -52770,8 +52171,8 @@
     {
         "name": "wp_video_shortcode_class",
         "file": "wp-includes/media.php",
-        "line": 2862,
-        "end_line": 2862,
+        "line": 2861,
+        "end_line": 2861,
         "type": "filter",
         "doc": {
             "description": "Filters the class attribute for the video shortcode output container.",
@@ -52809,8 +52210,8 @@
     {
         "name": "wp_video_shortcode_library",
         "file": "wp-includes/media.php",
-        "line": 2828,
-        "end_line": 2828,
+        "line": 2827,
+        "end_line": 2827,
         "type": "filter",
         "doc": {
             "description": "Filters the media library used for the video shortcode.",
@@ -52835,8 +52236,8 @@
     {
         "name": "wp_video_shortcode_override",
         "file": "wp-includes/media.php",
-        "line": 2731,
-        "end_line": 2731,
+        "line": 2730,
+        "end_line": 2730,
         "type": "filter",
         "doc": {
             "description": "Filters the default video shortcode output.",
@@ -53039,8 +52440,8 @@
     {
         "name": "wpmu_signup_blog_notification",
         "file": "wp-includes/ms-functions.php",
-        "line": 906,
-        "end_line": 906,
+        "line": 927,
+        "end_line": 927,
         "type": "filter",
         "doc": {
             "description": "Filters whether to bypass the new site email notification.",
@@ -53115,8 +52516,8 @@
     {
         "name": "wpmu_signup_blog_notification_email",
         "file": "wp-includes/ms-functions.php",
-        "line": 945,
-        "end_line": 956,
+        "line": 966,
+        "end_line": 977,
         "type": "filter",
         "doc": {
             "description": "Filters the message content of the new blog notification email.",
@@ -53198,8 +52599,8 @@
     {
         "name": "wpmu_signup_blog_notification_subject",
         "file": "wp-includes/ms-functions.php",
-        "line": 977,
-        "end_line": 988,
+        "line": 998,
+        "end_line": 1009,
         "type": "filter",
         "doc": {
             "description": "Filters the subject of the new blog notification email.",
@@ -53281,8 +52682,8 @@
     {
         "name": "wpmu_signup_user_notification",
         "file": "wp-includes/ms-functions.php",
-        "line": 1035,
-        "end_line": 1035,
+        "line": 1056,
+        "end_line": 1056,
         "type": "filter",
         "doc": {
             "description": "Filters whether to bypass the email notification for new user sign-up.",
@@ -53332,8 +52733,8 @@
     {
         "name": "wpmu_signup_user_notification_email",
         "file": "wp-includes/ms-functions.php",
-        "line": 1063,
-        "end_line": 1071,
+        "line": 1084,
+        "end_line": 1092,
         "type": "filter",
         "doc": {
             "description": "Filters the content of the notification email for new user sign-up.",
@@ -53391,8 +52792,8 @@
     {
         "name": "wpmu_signup_user_notification_subject",
         "file": "wp-includes/ms-functions.php",
-        "line": 1087,
-        "end_line": 1095,
+        "line": 1108,
+        "end_line": 1116,
         "type": "filter",
         "doc": {
             "description": "Filters the subject of the notification email of new user signup.",
@@ -53477,8 +52878,8 @@
     {
         "name": "wpmu_validate_blog_signup",
         "file": "wp-includes/ms-functions.php",
-        "line": 735,
-        "end_line": 735,
+        "line": 756,
+        "end_line": 756,
         "type": "filter",
         "doc": {
             "description": "Filters site details and error messages following registration.",
@@ -53504,8 +52905,8 @@
     {
         "name": "wpmu_validate_user_signup",
         "file": "wp-includes/ms-functions.php",
-        "line": 570,
-        "end_line": 570,
+        "line": 582,
+        "end_line": 582,
         "type": "filter",
         "doc": {
             "description": "Filters the validated user registration details.",
@@ -53518,7 +52919,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "{     The array of user name, email and the error messages.     @type string   $user_name     Sanitized and unique username.     @type string   $orig_username Original username.     @type string   $user_email    User email address.     @type WP_Error $errors        WP_Error object containing any errors found. }",
+                    "content": "{     The array of user name, email, and the error messages.     @type string   $user_name     Sanitized and unique username.     @type string   $orig_username Original username.     @type string   $user_email    User email address.     @type WP_Error $errors        WP_Error object containing any errors found. }",
                     "types": [
                         "array"
                     ],
@@ -53531,8 +52932,8 @@
     {
         "name": "wpmu_welcome_notification",
         "file": "wp-includes/ms-functions.php",
-        "line": 1549,
-        "end_line": 1549,
+        "line": 1570,
+        "end_line": 1570,
         "type": "filter",
         "doc": {
             "description": "Filters whether to bypass the welcome email after site activation.",
@@ -53591,8 +52992,8 @@
     {
         "name": "wpmu_welcome_user_notification",
         "file": "wp-includes/ms-functions.php",
-        "line": 1665,
-        "end_line": 1665,
+        "line": 1686,
+        "end_line": 1686,
         "type": "filter",
         "doc": {
             "description": "Filters whether to bypass the welcome email after user activation.",
@@ -53794,8 +53195,8 @@
     {
         "name": "x_redirect_by",
         "file": "wp-includes/pluggable.php",
-        "line": 1270,
-        "end_line": 1270,
+        "line": 1275,
+        "end_line": 1275,
         "type": "filter",
         "doc": {
             "description": "Filters the X-Redirect-By header.",
@@ -54606,8 +54007,8 @@
     {
         "name": "{$adjacent}_image_link",
         "file": "wp-includes/media.php",
-        "line": 3037,
-        "end_line": 3037,
+        "line": 3036,
+        "end_line": 3036,
         "type": "filter",
         "doc": {
             "description": "Filters the adjacent image link.",
@@ -54745,8 +54146,8 @@
     {
         "name": "{$context}_memory_limit",
         "file": "wp-includes/functions.php",
-        "line": 6595,
-        "end_line": 6595,
+        "line": 6730,
+        "end_line": 6730,
         "type": "filter",
         "doc": {
             "description": "Filters the memory limit allocated for arbitrary contexts.",
@@ -54772,8 +54173,8 @@
     {
         "name": "{$field_no_prefix}_edit_pre",
         "file": "wp-includes/post.php",
-        "line": 2403,
-        "end_line": 2403,
+        "line": 2409,
+        "end_line": 2409,
         "type": "filter",
         "doc": {
             "description": "Filters the value of a specific post field to edit.",
@@ -54806,8 +54207,8 @@
     {
         "name": "{$field_no_prefix}_save_pre",
         "file": "wp-includes/post.php",
-        "line": 2442,
-        "end_line": 2442,
+        "line": 2448,
+        "end_line": 2448,
         "type": "filter",
         "doc": {
             "description": "Filters the value of a specific field before saving.",
@@ -54832,8 +54233,8 @@
     {
         "name": "{$field}",
         "file": "wp-includes/post.php",
-        "line": 2477,
-        "end_line": 2477,
+        "line": 2483,
+        "end_line": 2483,
         "type": "filter",
         "doc": {
             "description": "Filters the value of a specific post field for display.",
@@ -54874,8 +54275,8 @@
     {
         "name": "{$field}_pre",
         "file": "wp-includes/post.php",
-        "line": 2456,
-        "end_line": 2456,
+        "line": 2462,
+        "end_line": 2462,
         "type": "filter",
         "doc": {
             "description": "Filters the value of a specific post field before saving.",
