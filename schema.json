@@ -44,7 +44,7 @@
 			"type": {
 				"description": "The hook type",
 				"type": "string",
-				"enum": [
+				"examples": [
 					"action",
 					"filter",
 					"action_reference",
@@ -90,7 +90,7 @@
 								"name": {
 									"description": "The tag name",
 									"type": "string",
-									"enum": [
+									"examples": [
 										"deprecated",
 										"global",
 										"ignore",

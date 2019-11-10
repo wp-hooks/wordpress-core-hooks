@@ -37,7 +37,7 @@ export interface Hook {
   /**
    * The hook type
    */
-  type: "action" | "filter" | "action_reference" | "filter_reference";
+  type: string;
   doc: Doc;
   [k: string]: any;
 }
@@ -67,7 +67,7 @@ export interface Tag {
   /**
    * The tag name
    */
-  name: "deprecated" | "global" | "ignore" | "link" | "param" | "private" | "return" | "see" | "since" | "todo";
+  name: string;
   /**
    * The tag content
    */
