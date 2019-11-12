@@ -313,8 +313,8 @@
     {
         "name": "add_attachment",
         "file": "wp-includes/post.php",
-        "line": 4057,
-        "end_line": 4057,
+        "line": 4058,
+        "end_line": 4058,
         "type": "action",
         "doc": {
             "description": "Fires once an attachment has been added.",
@@ -875,8 +875,8 @@
     {
         "name": "added_existing_user",
         "file": "wp-includes/ms-functions.php",
-        "line": 2158,
-        "end_line": 2158,
+        "line": 2160,
+        "end_line": 2160,
         "type": "action",
         "doc": {
             "description": "Fires immediately after an existing user is added to a site.",
@@ -1696,8 +1696,8 @@
     {
         "name": "after_delete_post",
         "file": "wp-includes/post.php",
-        "line": 3064,
-        "end_line": 3064,
+        "line": 3065,
+        "end_line": 3065,
         "type": "action",
         "doc": {
             "description": "Fires after a post is deleted, at the conclusion of wp_delete_post().",
@@ -2051,8 +2051,8 @@
     {
         "name": "after_switch_theme",
         "file": "wp-includes/theme.php",
-        "line": 2964,
-        "end_line": 2964,
+        "line": 2965,
+        "end_line": 2965,
         "type": "action",
         "doc": {
             "description": "Fires on the first WP load after a theme switch if the old theme still exists.",
@@ -2361,8 +2361,8 @@
     {
         "name": "attachment_updated",
         "file": "wp-includes/post.php",
-        "line": 4047,
-        "end_line": 4047,
+        "line": 4048,
+        "end_line": 4048,
         "type": "action",
         "doc": {
             "description": "Fires once an existing attachment has been updated.",
@@ -2627,8 +2627,8 @@
     {
         "name": "before_delete_post",
         "file": "wp-includes/post.php",
-        "line": 2980,
-        "end_line": 2980,
+        "line": 2981,
+        "end_line": 2981,
         "type": "action",
         "doc": {
             "description": "Fires before a post is deleted, at the start of wp_delete_post().",
@@ -3034,8 +3034,8 @@
     {
         "name": "clean_attachment_cache",
         "file": "wp-includes/post.php",
-        "line": 6707,
-        "end_line": 6707,
+        "line": 6708,
+        "end_line": 6708,
         "type": "action",
         "doc": {
             "description": "Fires after the given attachment's cache is cleaned.",
@@ -3146,8 +3146,8 @@
     {
         "name": "clean_page_cache",
         "file": "wp-includes/post.php",
-        "line": 6595,
-        "end_line": 6595,
+        "line": 6596,
+        "end_line": 6596,
         "type": "action",
         "doc": {
             "description": "Fires immediately after the given page's cache is cleaned.",
@@ -3172,8 +3172,8 @@
     {
         "name": "clean_post_cache",
         "file": "wp-includes/post.php",
-        "line": 6583,
-        "end_line": 6583,
+        "line": 6584,
+        "end_line": 6584,
         "type": "action",
         "doc": {
             "description": "Fires immediately after the given post's cache is cleaned.",
@@ -4862,8 +4862,8 @@
     {
         "name": "deactivate_plugin",
         "file": "wp-admin/includes/plugin.php",
-        "line": 763,
-        "end_line": 763,
+        "line": 764,
+        "end_line": 764,
         "type": "action",
         "doc": {
             "description": "Fires before a plugin is deactivated.",
@@ -4883,7 +4883,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Whether the plugin is deactivated for all sites in the network                                     or just the current site. Multisite only. Default is false.",
+                    "content": "Whether the plugin is deactivated for all sites in the network                                     or just the current site. Multisite only. Default false.",
                     "types": [
                         "bool"
                     ],
@@ -4896,8 +4896,8 @@
     {
         "name": "deactivate_{$plugin}",
         "file": "wp-admin/includes/plugin.php",
-        "line": 802,
-        "end_line": 802,
+        "line": 803,
+        "end_line": 803,
         "type": "action",
         "doc": {
             "description": "Fires as a specific plugin is being deactivated.",
@@ -4909,7 +4909,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Whether the plugin is deactivated for all sites in the network                                   or just the current site. Multisite only. Default is false.",
+                    "content": "Whether the plugin is deactivated for all sites in the network                                   or just the current site. Multisite only. Default false.",
                     "types": [
                         "bool"
                     ],
@@ -4922,8 +4922,8 @@
     {
         "name": "deactivated_plugin",
         "file": "wp-admin/includes/plugin.php",
-        "line": 816,
-        "end_line": 816,
+        "line": 817,
+        "end_line": 817,
         "type": "action",
         "doc": {
             "description": "Fires after a plugin is deactivated.",
@@ -4943,7 +4943,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Whether the plugin is deactivated for all sites in the network.                                     or just the current site. Multisite only. Default false.",
+                    "content": "Whether the plugin is deactivated for all sites in the network                                     or just the current site. Multisite only. Default false.",
                     "types": [
                         "bool"
                     ],
@@ -4956,8 +4956,8 @@
     {
         "name": "delete_attachment",
         "file": "wp-includes/post.php",
-        "line": 5607,
-        "end_line": 5607,
+        "line": 5608,
+        "end_line": 5608,
         "type": "action",
         "doc": {
             "description": "Fires before an attachment is deleted, at the start of wp_delete_attachment().",
@@ -5099,8 +5099,8 @@
     {
         "name": "delete_plugin",
         "file": "wp-admin/includes/plugin.php",
-        "line": 954,
-        "end_line": 954,
+        "line": 956,
+        "end_line": 956,
         "type": "action",
         "doc": {
             "description": "Fires immediately before a plugin deletion attempt.",
@@ -5125,8 +5125,8 @@
     {
         "name": "delete_post",
         "file": "wp-includes/post.php",
-        "line": 3030,
-        "end_line": 3030,
+        "line": 3031,
+        "end_line": 3031,
         "type": "action",
         "doc": {
             "description": "Fires immediately before a post is deleted from the database.",
@@ -5786,8 +5786,8 @@
     {
         "name": "deleted_plugin",
         "file": "wp-admin/includes/plugin.php",
-        "line": 973,
-        "end_line": 973,
+        "line": 975,
+        "end_line": 975,
         "type": "action",
         "doc": {
             "description": "Fires immediately after a plugin deletion attempt.",
@@ -5820,8 +5820,8 @@
     {
         "name": "deleted_post",
         "file": "wp-includes/post.php",
-        "line": 3043,
-        "end_line": 3043,
+        "line": 3044,
+        "end_line": 3044,
         "type": "action",
         "doc": {
             "description": "Fires immediately after a post is deleted from the database.",
@@ -6596,8 +6596,8 @@
     {
         "name": "edit_attachment",
         "file": "wp-includes/post.php",
-        "line": 4035,
-        "end_line": 4035,
+        "line": 4036,
+        "end_line": 4036,
         "type": "action",
         "doc": {
             "description": "Fires once an existing attachment has been updated.",
@@ -6843,8 +6843,8 @@
     {
         "name": "edit_post",
         "file": "wp-includes/post.php",
-        "line": 4085,
-        "end_line": 4085,
+        "line": 4086,
+        "end_line": 4086,
         "type": "action",
         "doc": {
             "description": "Fires once an existing post has been updated.",
@@ -6877,8 +6877,8 @@
     {
         "name": "edit_post_{$post->post_type}",
         "file": "wp-includes/post.php",
-        "line": 4075,
-        "end_line": 4075,
+        "line": 4076,
+        "end_line": 4076,
         "type": "action",
         "doc": {
             "description": "Fires once an existing post has been updated.",
@@ -7452,8 +7452,8 @@
     {
         "name": "enqueue_block_assets",
         "file": "wp-includes/script-loader.php",
-        "line": 2854,
-        "end_line": 2854,
+        "line": 2853,
+        "end_line": 2853,
         "type": "action",
         "doc": {
             "description": "Fires after enqueuing block assets for both editor and front-end.",
@@ -10585,8 +10585,8 @@
     {
         "name": "post_stuck",
         "file": "wp-includes/post.php",
-        "line": 2528,
-        "end_line": 2528,
+        "line": 2529,
+        "end_line": 2529,
         "type": "action",
         "doc": {
             "description": "Fires once a post has been added to the sticky list.",
@@ -10700,8 +10700,8 @@
     {
         "name": "post_unstuck",
         "file": "wp-includes/post.php",
-        "line": 2569,
-        "end_line": 2569,
+        "line": 2570,
+        "end_line": 2570,
         "type": "action",
         "doc": {
             "description": "Fires once a post has been removed from the sticky list.",
@@ -10726,8 +10726,8 @@
     {
         "name": "post_updated",
         "file": "wp-includes/post.php",
-        "line": 4098,
-        "end_line": 4098,
+        "line": 4099,
+        "end_line": 4099,
         "type": "action",
         "doc": {
             "description": "Fires once an existing post has been updated.",
@@ -11277,8 +11277,8 @@
     {
         "name": "pre_post_update",
         "file": "wp-includes/post.php",
-        "line": 3900,
-        "end_line": 3900,
+        "line": 3901,
+        "end_line": 3901,
         "type": "action",
         "doc": {
             "description": "Fires immediately before an existing post is updated in the database.",
@@ -11377,8 +11377,8 @@
     {
         "name": "pre_uninstall_plugin",
         "file": "wp-admin/includes/plugin.php",
-        "line": 1198,
-        "end_line": 1198,
+        "line": 1200,
+        "end_line": 1200,
         "type": "action",
         "doc": {
             "description": "Fires in uninstall_plugin() immediately before the plugin is uninstalled.",
@@ -11785,8 +11785,8 @@
     {
         "name": "registered_post_type",
         "file": "wp-includes/post.php",
-        "line": 1444,
-        "end_line": 1444,
+        "line": 1445,
+        "end_line": 1445,
         "type": "action",
         "doc": {
             "description": "Fires after a post type is registered.",
@@ -12330,9 +12330,11 @@
                 },
                 {
                     "name": "param",
-                    "content": "The revision object (if it was deleted or moved to the trash successfully)                        or false (failure). If the revision was moved to the trash, $result represents                        its new state; if it was deleted, $result represents its state before deletion.",
+                    "content": "The revision object (if it was deleted or moved to the trash successfully)                                   or false or null (failure). If the revision was moved to the trash, $result represents                                   its new state; if it was deleted, $result represents its state before deletion.",
                     "types": [
-                        "\\(mixed)"
+                        "\\WP_Post",
+                        "false",
+                        "null"
                     ],
                     "variable": "$result"
                 },
@@ -13122,8 +13124,8 @@
     {
         "name": "save_post",
         "file": "wp-includes/post.php",
-        "line": 4124,
-        "end_line": 4124,
+        "line": 4125,
+        "end_line": 4125,
         "type": "action",
         "doc": {
             "description": "Fires once a post has been saved.",
@@ -13164,8 +13166,8 @@
     {
         "name": "save_post_{$post->post_type}",
         "file": "wp-includes/post.php",
-        "line": 4113,
-        "end_line": 4113,
+        "line": 4114,
+        "end_line": 4114,
         "type": "action",
         "doc": {
             "description": "Fires once a post has been saved.",
@@ -14264,8 +14266,8 @@
     {
         "name": "switch_theme",
         "file": "wp-includes/theme.php",
-        "line": 815,
-        "end_line": 815,
+        "line": 816,
+        "end_line": 816,
         "type": "action",
         "doc": {
             "description": "Fires after the theme is switched.",
@@ -14498,8 +14500,8 @@
     {
         "name": "transition_post_status",
         "file": "wp-includes/post.php",
-        "line": 4624,
-        "end_line": 4624,
+        "line": 4625,
+        "end_line": 4625,
         "type": "action",
         "doc": {
             "description": "Fires when a post is transitioned from one status to another.",
@@ -14579,8 +14581,8 @@
     {
         "name": "trash_post_comments",
         "file": "wp-includes/post.php",
-        "line": 3274,
-        "end_line": 3274,
+        "line": 3275,
+        "end_line": 3275,
         "type": "action",
         "doc": {
             "description": "Fires before comments are sent to the trash.",
@@ -14644,8 +14646,8 @@
     {
         "name": "trashed_post",
         "file": "wp-includes/post.php",
-        "line": 3171,
-        "end_line": 3171,
+        "line": 3172,
+        "end_line": 3172,
         "type": "action",
         "doc": {
             "description": "Fires after a post is sent to the trash.",
@@ -14670,8 +14672,8 @@
     {
         "name": "trashed_post_comments",
         "file": "wp-includes/post.php",
-        "line": 3301,
-        "end_line": 3301,
+        "line": 3302,
+        "end_line": 3302,
         "type": "action",
         "doc": {
             "description": "Fires after comments are sent to the trash.",
@@ -14731,8 +14733,8 @@
     {
         "name": "uninstall_{$file}",
         "file": "wp-admin/includes/plugin.php",
-        "line": 1233,
-        "end_line": 1233,
+        "line": 1235,
+        "end_line": 1235,
         "type": "action",
         "doc": {
             "description": "Fires in uninstall_plugin() once the plugin has been uninstalled.",
@@ -14801,8 +14803,8 @@
     {
         "name": "unregistered_post_type",
         "file": "wp-includes/post.php",
-        "line": 1490,
-        "end_line": 1490,
+        "line": 1491,
+        "end_line": 1491,
         "type": "action",
         "doc": {
             "description": "Fires after a post type was unregistered.",
@@ -15004,8 +15006,8 @@
     {
         "name": "untrash_post",
         "file": "wp-includes/post.php",
-        "line": 3215,
-        "end_line": 3215,
+        "line": 3216,
+        "end_line": 3216,
         "type": "action",
         "doc": {
             "description": "Fires before a post is restored from the trash.",
@@ -15030,8 +15032,8 @@
     {
         "name": "untrash_post_comments",
         "file": "wp-includes/post.php",
-        "line": 3339,
-        "end_line": 3339,
+        "line": 3340,
+        "end_line": 3340,
         "type": "action",
         "doc": {
             "description": "Fires before comments are restored for a post from the trash.",
@@ -15095,8 +15097,8 @@
     {
         "name": "untrashed_post",
         "file": "wp-includes/post.php",
-        "line": 3242,
-        "end_line": 3242,
+        "line": 3243,
+        "end_line": 3243,
         "type": "action",
         "doc": {
             "description": "Fires after a post is restored from the trash.",
@@ -15121,8 +15123,8 @@
     {
         "name": "untrashed_post_comments",
         "file": "wp-includes/post.php",
-        "line": 3367,
-        "end_line": 3367,
+        "line": 3368,
+        "end_line": 3368,
         "type": "action",
         "doc": {
             "description": "Fires after comments are restored for a post from the trash.",
@@ -16726,8 +16728,8 @@
     {
         "name": "wp_enqueue_scripts",
         "file": "wp-includes/script-loader.php",
-        "line": 2668,
-        "end_line": 2668,
+        "line": 2667,
+        "end_line": 2667,
         "type": "action",
         "doc": {
             "description": "Fires when scripts and styles are enqueued.",
@@ -16882,8 +16884,8 @@
     {
         "name": "wp_insert_post",
         "file": "wp-includes/post.php",
-        "line": 4135,
-        "end_line": 4135,
+        "line": 4136,
+        "end_line": 4136,
         "type": "action",
         "doc": {
             "description": "Fires once a post has been saved.",
@@ -17196,8 +17198,8 @@
     {
         "name": "wp_print_footer_scripts",
         "file": "wp-includes/script-loader.php",
-        "line": 2651,
-        "end_line": 2651,
+        "line": 2650,
+        "end_line": 2650,
         "type": "action",
         "doc": {
             "description": "Fires when footer scripts are printed.",
@@ -17499,8 +17501,8 @@
     {
         "name": "wp_trash_post",
         "file": "wp-includes/post.php",
-        "line": 3146,
-        "end_line": 3146,
+        "line": 3147,
+        "end_line": 3147,
         "type": "action",
         "doc": {
             "description": "Fires before a post is sent to the trash.",
@@ -18717,8 +18719,8 @@
     {
         "name": "xmlrpc_publish_post",
         "file": "wp-includes/post.php",
-        "line": 6802,
-        "end_line": 6802,
+        "line": 6803,
+        "end_line": 6803,
         "type": "action",
         "doc": {
             "description": "Fires when _publish_post_hook() is called during an XML-RPC request.",
@@ -18804,8 +18806,8 @@
     {
         "name": "{$new_status}_{$post->post_type}",
         "file": "wp-includes/post.php",
-        "line": 4657,
-        "end_line": 4657,
+        "line": 4658,
+        "end_line": 4658,
         "type": "action",
         "doc": {
             "description": "Fires when a post is transitioned from one status to another.",
@@ -18838,8 +18840,8 @@
     {
         "name": "{$old_status}_to_{$new_status}",
         "file": "wp-includes/post.php",
-        "line": 4636,
-        "end_line": 4636,
+        "line": 4637,
+        "end_line": 4637,
         "type": "action",
         "doc": {
             "description": "Fires when a post is transitioned from one status to another.",
