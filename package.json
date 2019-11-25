@@ -1,7 +1,7 @@
 {
   "name": "@johnbillion/wp-hooks",
   "version": "0.2.7",
-  "description": "WordPress actions and filters in machine-readable JSON format",
+  "description": "WordPress core actions and filters in machine-readable JSON format",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/johnbillion/wp-hooks.git"

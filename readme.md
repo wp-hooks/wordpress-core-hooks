@@ -1,6 +1,6 @@
 # wp-hooks
 
-WordPress actions and filters in machine-readable JSON format.
+WordPress core actions and filters in machine-readable JSON format.
 
 **Note:** This is still a work in progress. The code that generates the actions and filters data is not yet complete.
 
