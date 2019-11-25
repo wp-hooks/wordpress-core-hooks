@@ -12,8 +12,7 @@
   "files": [
     "hooks",
     "interface",
-    "readme.md",
-    "schema.json"
+    "readme.md"
   ],
   "author": "John Blackbourn",
   "license": "GPL-3.0-or-later",

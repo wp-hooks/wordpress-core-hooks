@@ -2,8 +2,6 @@
 
 WordPress core actions and filters in machine-readable JSON format.
 
-**Note:** This is still a work in progress. The code that generates the actions and filters data is not yet complete.
-
 ## Installation
 
 * As a Composer package: `composer require johnbillion/wp-hooks`
