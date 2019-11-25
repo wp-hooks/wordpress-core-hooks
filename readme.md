@@ -63,11 +63,3 @@ The JSON schema can be found in [`hooks/schema.json`](hooks/schema.json).
 ## Regenerating the Hook Files
 
 `composer generate`
-
-## Validating the Hook Files
-
-`composer validate-files`
-
-## Regenerating the TypeScript Interfaces
-
-`npm run generate-interfaces`
