@@ -13,49 +13,16 @@
 		"sort-packages": true
 	},
     "scripts": {
-        "post-update-cmd": [
-            "rm -f vendor/wordpress/wordpress/wp-admin/includes/deprecated.php",
-            "rm -f vendor/wordpress/wordpress/wp-includes/deprecated.php",
-            "rm -f vendor/wordpress/wordpress/wp-admin/includes/ms-deprecated.php",
-            "rm -f vendor/wordpress/wordpress/wp-includes/ms-deprecated.php",
-            "rm -rf vendor/wordpress/wordpress/wp-content",
-            "rm -rf vendor/wordpress/wordpress/wp-includes/ID3",
-            "rm -rf vendor/wordpress/wordpress/wp-includes/IXR",
-            "rm -rf vendor/wordpress/wordpress/wp-includes/pomo",
-            "rm -rf vendor/wordpress/wordpress/wp-includes/random_compat",
-            "rm -rf vendor/wordpress/wordpress/wp-includes/Requests",
-            "rm -rf vendor/wordpress/wordpress/wp-includes/SimplePie",
-            "rm -rf vendor/wordpress/wordpress/wp-includes/sodium_compat",
-            "rm -rf vendor/wordpress/wordpress/wp-includes/Text"
-        ],
-        "generate": "@composer generate-from -- vendor/wordpress/wordpress hooks",
-        "generate-from": "@php -f src/generate.php",
-        "validate-files": [
-            "@composer validate-from -- hooks/actions.json",
-            "@composer validate-from -- hooks/filters.json"
-        ],
-        "validate-from": "@php -f src/validate.php"
     },
     "scripts-descriptions": {
-        "generate": "Generates the hook files for WordPress nightly",
-        "generate-from": "Generates the hook files for a given source directory",
-        "validate-files": "Validates the generated files against the schema",
-        "validate-from": "Validates a given file against the schema"
     },
     "require-dev": {
         "php": ">=7",
         "oomphinc/composer-installers-extender": "^1.1",
-        "opis/json-schema": "^1",
-        "roots/wordpress": "dev-nightly",
-        "wordpress/phpdoc-parser": "dev-master"
+        "roots/wordpress": "dev-nightly"
     },
     "minimum-stability": "dev",
 	"extra": {
         "wordpress-install-dir": "vendor/wordpress/wordpress",
-        "installer-paths": {
-            "vendor/wordpress/{$name}/": [
-                "wordpress/phpdoc-parser"
-            ]
-        }
 	}
 }
