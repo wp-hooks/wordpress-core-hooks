@@ -13,15 +13,38 @@
 		"sort-packages": true
 	},
     "scripts": {
+        "generate": "wp-hooks-generator --input=vendor/wordpress/wordpress --output=hooks"
     },
     "scripts-descriptions": {
+        "generate": "Generates the hook files for WordPress nightly"
     },
     "require-dev": {
+        "johnbillion/wp-hooks-generator": "~0.3.0",
         "oomphinc/composer-installers-extender": "^1.1",
         "roots/wordpress": "dev-nightly"
     },
     "minimum-stability": "dev",
 	"extra": {
         "wordpress-install-dir": "vendor/wordpress/wordpress",
+        "installer-paths": {
+            "vendor/wordpress/{$name}/": [
+                "wordpress/phpdoc-parser"
+            ]
+        },
+        "wp-hooks-ignore": [
+            "wp-admin/includes/deprecated.php",
+            "wp-admin/includes/ms-deprecated.php",
+            "wp-content/",
+            "wp-includes/deprecated.php",
+            "wp-includes/ID3/",
+            "wp-includes/IXR/",
+            "wp-includes/ms-deprecated.php",
+            "wp-includes/pomo/",
+            "wp-includes/random_compat/",
+            "wp-includes/Requests/",
+            "wp-includes/SimplePie/",
+            "wp-includes/sodium_compat/",
+            "wp-includes/Text/"
+        ]
 	}
 }
