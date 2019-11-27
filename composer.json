@@ -9,9 +9,9 @@
             "homepage": "https://johnblackbourn.com/"
         }
     ],
-	"config": {
-		"sort-packages": true
-	},
+    "config": {
+        "sort-packages": true
+    },
     "scripts": {
         "generate": "wp-hooks-generator --input=vendor/wordpress/wordpress --output=hooks"
     },
@@ -24,7 +24,7 @@
         "roots/wordpress": "dev-nightly"
     },
     "minimum-stability": "dev",
-	"extra": {
+    "extra": {
         "wordpress-install-dir": "vendor/wordpress/wordpress",
         "wp-hooks": {
             "ignore-files": [
@@ -53,5 +53,5 @@
                 "{$tag}"
             ]
         }
-	}
+    }
 }
