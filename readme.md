@@ -60,6 +60,13 @@ import { Hooks, Hook, Doc, Tags, Tag } from '@johnbillion/wp-hooks/interface';
 
 The JSON schema can be found in [`hooks/schema.json`](hooks/schema.json).
 
+## What can I use this for?
+
+Anything that needs programmatic access to a list of available hooks, for example:
+
+* [Autocomplete WordPress action and filter names in VS Code](https://github.com/johnbillion/vscode-wordpress-hooks).
+* [Autocomplete WordPress action and filter names in Vim](https://github.com/Mte90/deoplete-wp-hooks).
+
 ## Regenerating the Hook Files
 
 `composer generate`
