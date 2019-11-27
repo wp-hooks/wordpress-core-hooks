@@ -2,6 +2,8 @@
 
 All the actions and filters from WordPress core in machine-readable JSON format.
 
+Last updated for WordPress 5.3.
+
 ## Installation
 
 * As a Composer package: `composer require johnbillion/wp-hooks`
