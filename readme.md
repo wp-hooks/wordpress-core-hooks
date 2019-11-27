@@ -1,6 +1,6 @@
-# wp-hooks
+# WordPress Hooks Reference
 
-WordPress core actions and filters in machine-readable JSON format.
+All the actions and filters from WordPress core in machine-readable JSON format.
 
 ## Installation
 

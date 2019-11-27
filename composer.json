@@ -1,6 +1,6 @@
 {
     "name": "johnbillion/wp-hooks",
-    "description": "WordPress core actions and filters in machine-readable JSON format.",
+    "description": "All the actions and filters from WordPress core in machine-readable JSON format.",
     "type": "library",
     "license": "GPL-3.0-or-later",
     "authors": [
@@ -16,7 +16,7 @@
         "generate": "wp-hooks-generator --input=vendor/wordpress/wordpress --output=hooks"
     },
     "scripts-descriptions": {
-        "generate": "Generates the hook files for WordPress nightly"
+        "generate": "Generates the hook files for WordPress core"
     },
     "require-dev": {
         "johnbillion/wp-hooks-generator": "~0.4.0",
