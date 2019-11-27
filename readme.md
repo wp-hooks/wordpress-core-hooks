@@ -61,3 +61,7 @@ The JSON schema can be found in [`hooks/schema.json`](hooks/schema.json).
 ## Regenerating the Hook Files
 
 `composer generate`
+
+## Hook Files for Plugins
+
+Do you want the same hook files for your favourite plugins? The hook files in this repo are generated using [wp-hooks-generator](https://github.com/johnbillion/wp-hooks-generator). It can generate hook files for WordPress plugins and themes as well as core.
