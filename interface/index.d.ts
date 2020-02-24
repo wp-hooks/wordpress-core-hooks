@@ -27,14 +27,6 @@ export interface Hook {
    */
   file: string;
   /**
-   * The line number that the hook starts on within its file
-   */
-  line: number;
-  /**
-   * The line number that the hook ends on within its file
-   */
-  end_line: number;
-  /**
    * The hook type
    */
   type: string;

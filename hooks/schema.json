@@ -11,8 +11,6 @@
 		"required": [
 			"name",
 			"file",
-			"line",
-			"end_line",
 			"type",
 			"doc"
 		],
@@ -32,14 +30,6 @@
 				"examples": [
 					"wp-admin/includes/menu.php"
 				]
-			},
-			"line": {
-				"description": "The line number that the hook starts on within its file",
-				"type": "integer"
-			},
-			"end_line": {
-				"description": "The line number that the hook ends on within its file",
-				"type": "integer"
 			},
 			"type": {
 				"description": "The hook type",
