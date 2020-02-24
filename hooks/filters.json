@@ -235,6 +235,48 @@
         }
     },
     {
+        "name": "add_trashed_suffix_to_trashed_posts",
+        "file": "wp-includes/post.php",
+        "line": 3855,
+        "end_line": 3855,
+        "type": "filter",
+        "doc": {
+            "description": "Filters whether or not to add a `__trashed` suffix to trashed posts that match the name of the updated post.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "5.4.0"
+                },
+                {
+                    "name": "param",
+                    "content": "Whether to attempt to add the suffix.",
+                    "types": [
+                        "bool"
+                    ],
+                    "variable": "$add_trashed_suffix"
+                },
+                {
+                    "name": "param",
+                    "content": "The name of the post being updated.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$post_name"
+                },
+                {
+                    "name": "param",
+                    "content": "Post ID.",
+                    "types": [
+                        "int"
+                    ],
+                    "variable": "$post_ID"
+                }
+            ],
+            "long_description_html": ""
+        }
+    },
+    {
         "name": "add_{$meta_type}_metadata",
         "file": "wp-includes/meta.php",
         "line": 72,
@@ -395,7 +437,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Interval time (in seconds).",
+                    "content": "Interval time (in seconds). Default is 6 months.",
                     "types": [
                         "int"
                     ],
@@ -403,6 +445,32 @@
                 }
             ],
             "long_description_html": "<p>If <code>0</code> (zero) is returned, the user will not be redirected.</p>"
+        }
+    },
+    {
+        "name": "admin_email_remind_interval",
+        "file": "wp-login.php",
+        "line": 591,
+        "end_line": 591,
+        "type": "filter",
+        "doc": {
+            "description": "Filters the interval for dismissing the admin email confirmation screen.",
+            "long_description": "If `0` (zero) is returned, the \"Remind me later\" link will not be displayed.",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "5.3.1"
+                },
+                {
+                    "name": "param",
+                    "content": "Interval time (in seconds). Default is 3 days.",
+                    "types": [
+                        "int"
+                    ],
+                    "variable": "$interval"
+                }
+            ],
+            "long_description_html": "<p>If <code>0</code> (zero) is returned, the \"Remind me later\" link will not be displayed.</p>"
         }
     },
     {
@@ -523,7 +591,7 @@
         "end_line": 1533,
         "type": "filter",
         "doc": {
-            "description": "Filters the size used to display the post thumbnail image in the 'Featured Image' meta box.",
+            "description": "Filters the size used to display the post thumbnail image in the 'Featured image' meta box.",
             "long_description": "Note: When a theme adds 'post-thumbnail' support, a special 'post-thumbnail' image size is registered, which differs from the 'thumbnail' image size managed via the Settings > Media screen. See the `$size` parameter description for more information on default values.",
             "tags": [
                 {
@@ -985,7 +1053,7 @@
                     "name": "param",
                     "content": "The post resource data.",
                     "types": [
-                        "object"
+                        "\\WP_Post"
                     ],
                     "variable": "$post"
                 }
@@ -4600,7 +4668,7 @@
                     "name": "param",
                     "content": "The object of the comment being replied.",
                     "types": [
-                        "object"
+                        "\\WP_Comment"
                     ],
                     "variable": "$comment"
                 },
@@ -7157,9 +7225,9 @@
                 },
                 {
                     "name": "param",
-                    "content": "An array of columns hidden by default.",
+                    "content": "Array of IDs of columns hidden by default.",
                     "types": [
-                        "array"
+                        "string[]"
                     ],
                     "variable": "$hidden"
                 },
@@ -8480,7 +8548,7 @@
                     "name": "param",
                     "content": "Current comment object.",
                     "types": [
-                        "object"
+                        "\\WP_Comment"
                     ],
                     "variable": "$comment"
                 }
@@ -9820,7 +9888,7 @@
         "type": "filter",
         "doc": {
             "description": "Filters whether to allow the debug mode check to occur.",
-            "long_description": "This filter runs before it can be used by plugins. It is designed for non-web run-times. Returning false causes the `WP_DEBUG` and related constants to not be checked and the default php values for errors will be used unless you take care to update them yourself.",
+            "long_description": "This filter runs before it can be used by plugins. It is designed for non-web run-times. Returning false causes the `WP_DEBUG` and related constants to not be checked and the default PHP values for errors will be used unless you take care to update them yourself.",
             "tags": [
                 {
                     "name": "since",
@@ -9835,7 +9903,7 @@
                     "variable": "$enable_debug_mode"
                 }
             ],
-            "long_description_html": "<p>This filter runs before it can be used by plugins. It is designed for non-web run-times. Returning false causes the <code>WP_DEBUG</code> and related constants to not be checked and the default php values for errors will be used unless you take care to update them yourself.</p>"
+            "long_description_html": "<p>This filter runs before it can be used by plugins. It is designed for non-web run-times. Returning false causes the <code>WP_DEBUG</code> and related constants to not be checked and the default PHP values for errors will be used unless you take care to update them yourself.</p>"
         }
     },
     {
@@ -10994,7 +11062,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Error object or status.",
+                    "content": "Whether the current request has failed to connect,                                   or an error object.",
                     "types": [
                         "bool",
                         "\\WP_Error"
@@ -12078,7 +12146,7 @@
                     "types": [
                         "string"
                     ],
-                    "variable": "$d"
+                    "variable": "$format"
                 },
                 {
                     "name": "param",
@@ -12275,7 +12343,7 @@
                     "types": [
                         "string"
                     ],
-                    "variable": "$d"
+                    "variable": "$format"
                 },
                 {
                     "name": "param",
@@ -12595,7 +12663,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Whether to bypass the trash and force deletion. Default false.",
+                    "content": "Whether to bypass the Trash and force deletion. Default false.",
                     "types": [
                         "bool"
                     ],
@@ -12867,15 +12935,16 @@
                 },
                 {
                     "name": "param",
-                    "content": "Date the last post or comment was modified in the query.",
+                    "content": "Date the last post or comment was modified in the query, in UTC.                                        False on failure.",
                     "types": [
-                        "string"
+                        "string",
+                        "false"
                     ],
                     "variable": "$max_modified_time"
                 },
                 {
                     "name": "param",
-                    "content": "The date format requested in get_feed_build_date.",
+                    "content": "The date format requested in get_feed_build_date().",
                     "types": [
                         "string"
                     ],
@@ -12985,7 +13054,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Alternate text.",
+                    "content": "Image description for the alt attribute.",
                     "types": [
                         "string"
                     ],
@@ -12993,7 +13062,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Attachment title.",
+                    "content": "Image description for the title attribute.",
                     "types": [
                         "string"
                     ],
@@ -13087,15 +13156,16 @@
                 },
                 {
                     "name": "param",
-                    "content": "Date the last post was published.",
+                    "content": "Date the last post was published. False on failure.",
                     "types": [
-                        "string"
+                        "string",
+                        "false"
                     ],
                     "variable": "$date"
                 },
                 {
                     "name": "param",
-                    "content": "Location to use for getting the post published date.                         See get_lastpostdate() for accepted <code>$timezone</code> values.",
+                    "content": "Location to use for getting the post published date.                               See get_lastpostdate() for accepted <code>$timezone</code> values.",
                     "types": [
                         "string"
                     ],
@@ -13121,15 +13191,16 @@
                 },
                 {
                     "name": "param",
-                    "content": "The most recent time that a post was modified, in 'Y-m-d H:i:s' format.",
+                    "content": "The most recent time that a post was modified, in 'Y-m-d H:i:s' format.                                       False on failure.",
                     "types": [
-                        "string"
+                        "string",
+                        "false"
                     ],
                     "variable": "$lastpostmodified"
                 },
                 {
                     "name": "param",
-                    "content": "Location to use for getting the post modified date.                                 See get_lastpostdate() for accepted <code>$timezone</code> values.",
+                    "content": "Location to use for getting the post modified date.                                       See get_lastpostdate() for accepted <code>$timezone</code> values.",
                     "types": [
                         "string"
                     ],
@@ -13635,11 +13706,11 @@
                 },
                 {
                     "name": "param",
-                    "content": "Format to use for retrieving the time the post was modified.                     Accepts 'G', 'U', or php date format. Default 'U'.",
+                    "content": "Format to use for retrieving the time the post was modified.                       Accepts 'G', 'U', or PHP date format. Default 'U'.",
                     "types": [
                         "string"
                     ],
-                    "variable": "$d"
+                    "variable": "$format"
                 },
                 {
                     "name": "param",
@@ -13711,11 +13782,11 @@
                 },
                 {
                     "name": "param",
-                    "content": "Format to use for retrieving the time the post was written.                     Accepts 'G', 'U', or php date format. Default 'U'.",
+                    "content": "Format to use for retrieving the time the post was written.                       Accepts 'G', 'U', or PHP date format. Default 'U'.",
                     "types": [
                         "string"
                     ],
-                    "variable": "$d"
+                    "variable": "$format"
                 },
                 {
                     "name": "param",
@@ -14598,7 +14669,7 @@
                     "types": [
                         "string"
                     ],
-                    "variable": "$d"
+                    "variable": "$format"
                 },
                 {
                     "name": "param",
@@ -14754,7 +14825,7 @@
                     "types": [
                         "string"
                     ],
-                    "variable": "$d"
+                    "variable": "$format"
                 },
                 {
                     "name": "param",
@@ -14799,11 +14870,11 @@
                 },
                 {
                     "name": "param",
-                    "content": "Format to use for retrieving the time the post was                               written. Accepts 'G', 'U', or php date format. Defaults                               to value specified in 'time_format' option.",
+                    "content": "Format to use for retrieving the time the post was                               written. Accepts 'G', 'U', or PHP date format. Defaults                               to value specified in 'time_format' option.",
                     "types": [
                         "string"
                     ],
-                    "variable": "$d"
+                    "variable": "$format"
                 },
                 {
                     "name": "param",
@@ -14950,11 +15021,11 @@
                 },
                 {
                     "name": "param",
-                    "content": "Format to use for retrieving the time the post was written.                              Accepts 'G', 'U', or php date format value specified                              in 'time_format' option. Default empty.",
+                    "content": "Format to use for retrieving the time the post was written.                              Accepts 'G', 'U', or PHP date format value specified                              in 'time_format' option. Default empty.",
                     "types": [
                         "string"
                     ],
-                    "variable": "$d"
+                    "variable": "$format"
                 },
                 {
                     "name": "param",
@@ -15815,7 +15886,7 @@
                     "types": [
                         "string"
                     ],
-                    "variable": "$redirect_url"
+                    "variable": "$sendback"
                 },
                 {
                     "name": "param",
@@ -15827,7 +15898,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "The items to take the action on.",
+                    "content": "The items to take the action on. Accepts an array of IDs of posts,                         comments, terms, links, plugins, attachments, or users.",
                     "types": [
                         "array"
                     ],
@@ -16191,9 +16262,9 @@
                 },
                 {
                     "name": "param",
-                    "content": "An array of hidden columns.",
+                    "content": "Array of IDs of hidden columns.",
                     "types": [
-                        "array"
+                        "string[]"
                     ],
                     "variable": "$hidden"
                 },
@@ -16595,7 +16666,7 @@
                     "name": "param",
                     "content": "Time in seconds until a request times out. Default 5.",
                     "types": [
-                        "int"
+                        "float"
                     ],
                     "variable": "$timeout_value"
                 },
@@ -19009,13 +19080,14 @@
                     "name": "param",
                     "content": "The relative path of the script. False if it could not be determined.",
                     "types": [
-                        "string"
+                        "string",
+                        "false"
                     ],
                     "variable": "$relative"
                 },
                 {
                     "name": "param",
-                    "content": "The full source url of the script.",
+                    "content": "The full source URL of the script.",
                     "types": [
                         "string"
                     ],
@@ -20378,6 +20450,11 @@
                     "content": "2.0.0"
                 },
                 {
+                    "name": "since",
+                    "content": "3.3.0",
+                    "description": "The <code>$editor_id</code> parameter was added."
+                },
+                {
                     "name": "param",
                     "content": "First-row list of buttons.",
                     "types": [
@@ -20387,7 +20464,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Unique editor identifier, e.g. 'content'.",
+                    "content": "Unique editor identifier, e.g. 'content'. Accepts 'classic-block'                            when called from block editor's Classic block.",
                     "types": [
                         "string"
                     ],
@@ -20412,6 +20489,11 @@
                     "content": "2.0.0"
                 },
                 {
+                    "name": "since",
+                    "content": "3.3.0",
+                    "description": "The <code>$editor_id</code> parameter was added."
+                },
+                {
                     "name": "param",
                     "content": "Second-row list of buttons.",
                     "types": [
@@ -20421,7 +20503,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Unique editor identifier, e.g. 'content'.",
+                    "content": "Unique editor identifier, e.g. 'content'. Accepts 'classic-block'                              when called from block editor's Classic block.",
                     "types": [
                         "string"
                     ],
@@ -20446,6 +20528,11 @@
                     "content": "2.0.0"
                 },
                 {
+                    "name": "since",
+                    "content": "3.3.0",
+                    "description": "The <code>$editor_id</code> parameter was added."
+                },
+                {
                     "name": "param",
                     "content": "Third-row list of buttons.",
                     "types": [
@@ -20455,7 +20542,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Unique editor identifier, e.g. 'content'.",
+                    "content": "Unique editor identifier, e.g. 'content'. Accepts 'classic-block'                              when called from block editor's Classic block.",
                     "types": [
                         "string"
                     ],
@@ -20480,6 +20567,11 @@
                     "content": "2.5.0"
                 },
                 {
+                    "name": "since",
+                    "content": "3.3.0",
+                    "description": "The <code>$editor_id</code> parameter was added."
+                },
+                {
                     "name": "param",
                     "content": "Fourth-row list of buttons.",
                     "types": [
@@ -20489,7 +20581,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Unique editor identifier, e.g. 'content'.",
+                    "content": "Unique editor identifier, e.g. 'content'. Accepts 'classic-block'                              when called from block editor's Classic block.",
                     "types": [
                         "string"
                     ],
@@ -20540,12 +20632,25 @@
                     "content": "2.5.0"
                 },
                 {
+                    "name": "since",
+                    "content": "5.3.0",
+                    "description": "The <code>$editor_id</code> parameter was added."
+                },
+                {
                     "name": "param",
                     "content": "Translations for external TinyMCE plugins.",
                     "types": [
                         "array"
                     ],
                     "variable": "$translations"
+                },
+                {
+                    "name": "param",
+                    "content": "Unique editor identifier, e.g. 'content'.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$editor_id"
                 }
             ],
             "long_description_html": "<p>The filter takes an associative array ('plugin_name' =&gt; 'path') where 'path' is the include path to the file.</p> <p>The language file should follow the same format as wp_mce_translation(), and should define a variable ($strings) that holds all translated strings.</p>"
@@ -20566,12 +20671,25 @@
                     "content": "2.5.0"
                 },
                 {
+                    "name": "since",
+                    "content": "5.3.0",
+                    "description": "The <code>$editor_id</code> parameter was added."
+                },
+                {
                     "name": "param",
                     "content": "An array of external TinyMCE plugins.",
                     "types": [
                         "array"
                     ],
                     "variable": "$external_plugins"
+                },
+                {
+                    "name": "param",
+                    "content": "Unique editor identifier, e.g. 'content'. Accepts 'classic-block'                                 when called from block editor's Classic block.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$editor_id"
                 }
             ],
             "long_description_html": "<p>The filter takes an associative array of external plugins for TinyMCE in the form 'plugin_name' =&gt; 'url'.</p> <p>The url should be absolute, and should include the js filename to be loaded. For example: 'myplugin' =&gt; '<a href=\"http://mysite.com/wp-content/plugins/myfolder/mce_plugin.js\">http://mysite.com/wp-content/plugins/myfolder/mce_plugin.js</a>'.</p> <p>If the external plugin adds a button, it should be added with one of the 'mce_buttons' filters.</p>"
@@ -21172,7 +21290,7 @@
                     "name": "param",
                     "content": "WP_Meta_Query object.",
                     "types": [
-                        "object"
+                        "\\WP_Meta_Query"
                     ],
                     "variable": "$this"
                 }
@@ -21316,9 +21434,9 @@
                 },
                 {
                     "name": "param",
-                    "content": "The months drop-down query results.",
+                    "content": "Array of the months drop-down query results.",
                     "types": [
-                        "object"
+                        "object[]"
                     ],
                     "variable": "$months"
                 },
@@ -21637,7 +21755,7 @@
                     "name": "param",
                     "content": "Context of the setting (global or site-specific). Default 'global'.",
                     "types": [
-                        "object"
+                        "string"
                     ],
                     "variable": "$context"
                 }
@@ -22077,11 +22195,12 @@
                 },
                 {
                     "name": "param",
-                    "content": "The current object to add a menu items                                meta box for.",
+                    "content": "The current object to add a menu items                                      meta box for.",
                     "types": [
-                        "object"
+                        "\\WP_Post_Type",
+                        "false"
                     ],
-                    "variable": "$meta_box_object"
+                    "variable": "$post_type"
                 }
             ],
             "long_description_html": "<p>If a falsey value is returned instead of an object, the menu items meta box for the current meta box object will not be added.</p>"
@@ -23581,7 +23700,7 @@
         "type": "filter",
         "doc": {
             "description": "Filters the list of whitelisted oEmbed providers.",
-            "long_description": "Since WordPress 4.4, oEmbed discovery is enabled for all users and allows embedding of sanitized iframes. The providers in this list are whitelisted, meaning they are trusted and allowed to embed any content, such as iframes, videos, JavaScript, and arbitrary HTML.\n Supported providers:\n |   Provider   |                     Flavor                |  Since  | | ------------ | ----------------------------------------- | ------- | | Dailymotion  | dailymotion.com                           | 2.9.0   | | Flickr       | flickr.com                                | 2.9.0   | | Hulu         | hulu.com                                  | 2.9.0   | | Scribd       | scribd.com                                | 2.9.0   | | Vimeo        | vimeo.com                                 | 2.9.0   | | WordPress.tv | wordpress.tv                              | 2.9.0   | | YouTube      | youtube.com/watch                         | 2.9.0   | | Crowdsignal  | polldaddy.com                             | 3.0.0   | | SmugMug      | smugmug.com                               | 3.0.0   | | YouTube      | youtu.be                                  | 3.0.0   | | Twitter      | twitter.com                               | 3.4.0   | | Instagram    | instagram.com                             | 3.5.0   | | Instagram    | instagr.am                                | 3.5.0   | | Slideshare   | slideshare.net                            | 3.5.0   | | SoundCloud   | soundcloud.com                            | 3.5.0   | | Dailymotion  | dai.ly                                    | 3.6.0   | | Flickr       | flic.kr                                   | 3.6.0   | | Spotify      | spotify.com                               | 3.6.0   | | Imgur        | imgur.com                                 | 3.9.0   | | Meetup.com   | meetup.com                                | 3.9.0   | | Meetup.com   | meetu.ps                                  | 3.9.0   | | Animoto      | animoto.com                               | 4.0.0   | | Animoto      | video214.com                              | 4.0.0   | | CollegeHumor | collegehumor.com                          | 4.0.0   | | Issuu        | issuu.com                                 | 4.0.0   | | Mixcloud     | mixcloud.com                              | 4.0.0   | | Crowdsignal  | poll.fm                                   | 4.0.0   | | TED          | ted.com                                   | 4.0.0   | | YouTube      | youtube.com/playlist                      | 4.0.0   | | Tumblr       | tumblr.com                                | 4.2.0   | | Kickstarter  | kickstarter.com                           | 4.2.0   | | Kickstarter  | kck.st                                    | 4.2.0   | | Cloudup      | cloudup.com                               | 4.3.0   | | ReverbNation | reverbnation.com                          | 4.4.0   | | VideoPress   | videopress.com                            | 4.4.0   | | Reddit       | reddit.com                                | 4.4.0   | | Speaker Deck | speakerdeck.com                           | 4.4.0   | | Twitter      | twitter.com/timelines                     | 4.5.0   | | Twitter      | twitter.com/moments                       | 4.5.0   | | Facebook     | facebook.com                              | 4.7.0   | | Twitter      | twitter.com/user                          | 4.7.0   | | Twitter      | twitter.com/likes                         | 4.7.0   | | Twitter      | twitter.com/lists                         | 4.7.0   | | Screencast   | screencast.com                            | 4.8.0   | | Amazon       | amazon.com (com.mx, com.br, ca)           | 4.9.0   | | Amazon       | amazon.de (fr, it, es, in, nl, ru, co.uk) | 4.9.0   | | Amazon       | amazon.co.jp (com.au)                     | 4.9.0   | | Amazon       | amazon.cn                                 | 4.9.0   | | Amazon       | a.co                                      | 4.9.0   | | Amazon       | amzn.to (eu, in, asia)                    | 4.9.0   | | Amazon       | z.cn                                      | 4.9.0   | | Someecards   | someecards.com                            | 4.9.0   | | Someecards   | some.ly                                   | 4.9.0   | | Crowdsignal  | survey.fm                                 | 5.1.0   | | Instagram TV | instagram.com                             | 5.1.0   | | Instagram TV | instagr.am                                | 5.1.0   |\n No longer supported providers:\n |   Provider   |        Flavor        |   Since   |  Removed  | | ------------ | -------------------- | --------- | --------- | | Qik          | qik.com              | 2.9.0     | 3.9.0     | | Viddler      | viddler.com          | 2.9.0     | 4.0.0     | | Revision3    | revision3.com        | 2.9.0     | 4.2.0     | | Blip         | blip.tv              | 2.9.0     | 4.4.0     | | Rdio         | rdio.com             | 3.6.0     | 4.4.1     | | Rdio         | rd.io                | 3.6.0     | 4.4.1     | | Vine         | vine.co              | 4.1.0     | 4.9.0     | | Photobucket  | photobucket.com      | 2.9.0     | 5.1.0     | | Funny or Die | funnyordie.com       | 3.0.0     | 5.1.0     |",
+            "long_description": "Since WordPress 4.4, oEmbed discovery is enabled for all users and allows embedding of sanitized iframes. The providers in this list are whitelisted, meaning they are trusted and allowed to embed any content, such as iframes, videos, JavaScript, and arbitrary HTML.\n Supported providers:\n |   Provider   |                     Flavor                |  Since  | | ------------ | ----------------------------------------- | ------- | | Dailymotion  | dailymotion.com                           | 2.9.0   | | Flickr       | flickr.com                                | 2.9.0   | | Hulu         | hulu.com                                  | 2.9.0   | | Scribd       | scribd.com                                | 2.9.0   | | Vimeo        | vimeo.com                                 | 2.9.0   | | WordPress.tv | wordpress.tv                              | 2.9.0   | | YouTube      | youtube.com/watch                         | 2.9.0   | | Crowdsignal  | polldaddy.com                             | 3.0.0   | | SmugMug      | smugmug.com                               | 3.0.0   | | YouTube      | youtu.be                                  | 3.0.0   | | Twitter      | twitter.com                               | 3.4.0   | | Instagram    | instagram.com                             | 3.5.0   | | Instagram    | instagr.am                                | 3.5.0   | | Slideshare   | slideshare.net                            | 3.5.0   | | SoundCloud   | soundcloud.com                            | 3.5.0   | | Dailymotion  | dai.ly                                    | 3.6.0   | | Flickr       | flic.kr                                   | 3.6.0   | | Spotify      | spotify.com                               | 3.6.0   | | Imgur        | imgur.com                                 | 3.9.0   | | Meetup.com   | meetup.com                                | 3.9.0   | | Meetup.com   | meetu.ps                                  | 3.9.0   | | Animoto      | animoto.com                               | 4.0.0   | | Animoto      | video214.com                              | 4.0.0   | | Issuu        | issuu.com                                 | 4.0.0   | | Mixcloud     | mixcloud.com                              | 4.0.0   | | Crowdsignal  | poll.fm                                   | 4.0.0   | | TED          | ted.com                                   | 4.0.0   | | YouTube      | youtube.com/playlist                      | 4.0.0   | | Tumblr       | tumblr.com                                | 4.2.0   | | Kickstarter  | kickstarter.com                           | 4.2.0   | | Kickstarter  | kck.st                                    | 4.2.0   | | Cloudup      | cloudup.com                               | 4.3.0   | | ReverbNation | reverbnation.com                          | 4.4.0   | | VideoPress   | videopress.com                            | 4.4.0   | | Reddit       | reddit.com                                | 4.4.0   | | Speaker Deck | speakerdeck.com                           | 4.4.0   | | Twitter      | twitter.com/timelines                     | 4.5.0   | | Twitter      | twitter.com/moments                       | 4.5.0   | | Facebook     | facebook.com                              | 4.7.0   | | Twitter      | twitter.com/user                          | 4.7.0   | | Twitter      | twitter.com/likes                         | 4.7.0   | | Twitter      | twitter.com/lists                         | 4.7.0   | | Screencast   | screencast.com                            | 4.8.0   | | Amazon       | amazon.com (com.mx, com.br, ca)           | 4.9.0   | | Amazon       | amazon.de (fr, it, es, in, nl, ru, co.uk) | 4.9.0   | | Amazon       | amazon.co.jp (com.au)                     | 4.9.0   | | Amazon       | amazon.cn                                 | 4.9.0   | | Amazon       | a.co                                      | 4.9.0   | | Amazon       | amzn.to (eu, in, asia)                    | 4.9.0   | | Amazon       | z.cn                                      | 4.9.0   | | Someecards   | someecards.com                            | 4.9.0   | | Someecards   | some.ly                                   | 4.9.0   | | Crowdsignal  | survey.fm                                 | 5.1.0   | | Instagram TV | instagram.com                             | 5.1.0   | | Instagram TV | instagr.am                                | 5.1.0   | | TikTok       | tiktok.com                                | 5.4.0   |\n No longer supported providers:\n |   Provider   |        Flavor        |   Since   |  Removed  | | ------------ | -------------------- | --------- | --------- | | Qik          | qik.com              | 2.9.0     | 3.9.0     | | Viddler      | viddler.com          | 2.9.0     | 4.0.0     | | Revision3    | revision3.com        | 2.9.0     | 4.2.0     | | Blip         | blip.tv              | 2.9.0     | 4.4.0     | | Rdio         | rdio.com             | 3.6.0     | 4.4.1     | | Rdio         | rd.io                | 3.6.0     | 4.4.1     | | Vine         | vine.co              | 4.1.0     | 4.9.0     | | Photobucket  | photobucket.com      | 2.9.0     | 5.1.0     | | Funny or Die | funnyordie.com       | 3.0.0     | 5.1.0     | | CollegeHumor | collegehumor.com     | 4.0.0     | 5.3.1     |",
             "tags": [
                 {
                     "name": "see",
@@ -23601,7 +23720,7 @@
                     "variable": "$providers"
                 }
             ],
-            "long_description_html": "<p>Since WordPress 4.4, oEmbed discovery is enabled for all users and allows embedding of sanitized iframes. The providers in this list are whitelisted, meaning they are trusted and allowed to embed any content, such as iframes, videos, JavaScript, and arbitrary HTML.</p> <p>Supported providers:</p> <table> <thead> <tr> <th>Provider</th> <th>Flavor</th> <th>Since</th> </tr> </thead> <tbody> <tr> <td>Dailymotion</td> <td>dailymotion.com</td> <td>2.9.0</td> </tr> <tr> <td>Flickr</td> <td>flickr.com</td> <td>2.9.0</td> </tr> <tr> <td>Hulu</td> <td>hulu.com</td> <td>2.9.0</td> </tr> <tr> <td>Scribd</td> <td>scribd.com</td> <td>2.9.0</td> </tr> <tr> <td>Vimeo</td> <td>vimeo.com</td> <td>2.9.0</td> </tr> <tr> <td>WordPress.tv</td> <td>wordpress.tv</td> <td>2.9.0</td> </tr> <tr> <td>YouTube</td> <td>youtube.com/watch</td> <td>2.9.0</td> </tr> <tr> <td>Crowdsignal</td> <td>polldaddy.com</td> <td>3.0.0</td> </tr> <tr> <td>SmugMug</td> <td>smugmug.com</td> <td>3.0.0</td> </tr> <tr> <td>YouTube</td> <td>youtu.be</td> <td>3.0.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com</td> <td>3.4.0</td> </tr> <tr> <td>Instagram</td> <td>instagram.com</td> <td>3.5.0</td> </tr> <tr> <td>Instagram</td> <td>instagr.am</td> <td>3.5.0</td> </tr> <tr> <td>Slideshare</td> <td>slideshare.net</td> <td>3.5.0</td> </tr> <tr> <td>SoundCloud</td> <td>soundcloud.com</td> <td>3.5.0</td> </tr> <tr> <td>Dailymotion</td> <td>dai.ly</td> <td>3.6.0</td> </tr> <tr> <td>Flickr</td> <td>flic.kr</td> <td>3.6.0</td> </tr> <tr> <td>Spotify</td> <td>spotify.com</td> <td>3.6.0</td> </tr> <tr> <td>Imgur</td> <td>imgur.com</td> <td>3.9.0</td> </tr> <tr> <td>Meetup.com</td> <td>meetup.com</td> <td>3.9.0</td> </tr> <tr> <td>Meetup.com</td> <td>meetu.ps</td> <td>3.9.0</td> </tr> <tr> <td>Animoto</td> <td>animoto.com</td> <td>4.0.0</td> </tr> <tr> <td>Animoto</td> <td>video214.com</td> <td>4.0.0</td> </tr> <tr> <td>CollegeHumor</td> <td>collegehumor.com</td> <td>4.0.0</td> </tr> <tr> <td>Issuu</td> <td>issuu.com</td> <td>4.0.0</td> </tr> <tr> <td>Mixcloud</td> <td>mixcloud.com</td> <td>4.0.0</td> </tr> <tr> <td>Crowdsignal</td> <td>poll.fm</td> <td>4.0.0</td> </tr> <tr> <td>TED</td> <td>ted.com</td> <td>4.0.0</td> </tr> <tr> <td>YouTube</td> <td>youtube.com/playlist</td> <td>4.0.0</td> </tr> <tr> <td>Tumblr</td> <td>tumblr.com</td> <td>4.2.0</td> </tr> <tr> <td>Kickstarter</td> <td>kickstarter.com</td> <td>4.2.0</td> </tr> <tr> <td>Kickstarter</td> <td>kck.st</td> <td>4.2.0</td> </tr> <tr> <td>Cloudup</td> <td>cloudup.com</td> <td>4.3.0</td> </tr> <tr> <td>ReverbNation</td> <td>reverbnation.com</td> <td>4.4.0</td> </tr> <tr> <td>VideoPress</td> <td>videopress.com</td> <td>4.4.0</td> </tr> <tr> <td>Reddit</td> <td>reddit.com</td> <td>4.4.0</td> </tr> <tr> <td>Speaker Deck</td> <td>speakerdeck.com</td> <td>4.4.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/timelines</td> <td>4.5.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/moments</td> <td>4.5.0</td> </tr> <tr> <td>Facebook</td> <td>facebook.com</td> <td>4.7.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/user</td> <td>4.7.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/likes</td> <td>4.7.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/lists</td> <td>4.7.0</td> </tr> <tr> <td>Screencast</td> <td>screencast.com</td> <td>4.8.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.com (com.mx, com.br, ca)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.de (fr, it, es, in, nl, ru, co.uk)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.co.jp (com.au)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.cn</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>a.co</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amzn.to (eu, in, asia)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>z.cn</td> <td>4.9.0</td> </tr> <tr> <td>Someecards</td> <td>someecards.com</td> <td>4.9.0</td> </tr> <tr> <td>Someecards</td> <td>some.ly</td> <td>4.9.0</td> </tr> <tr> <td>Crowdsignal</td> <td>survey.fm</td> <td>5.1.0</td> </tr> <tr> <td>Instagram TV</td> <td>instagram.com</td> <td>5.1.0</td> </tr> <tr> <td>Instagram TV</td> <td>instagr.am</td> <td>5.1.0</td> </tr> </tbody> </table> <p>No longer supported providers:</p> <table> <thead> <tr> <th>Provider</th> <th>Flavor</th> <th>Since</th> <th>Removed</th> </tr> </thead> <tbody> <tr> <td>Qik</td> <td>qik.com</td> <td>2.9.0</td> <td>3.9.0</td> </tr> <tr> <td>Viddler</td> <td>viddler.com</td> <td>2.9.0</td> <td>4.0.0</td> </tr> <tr> <td>Revision3</td> <td>revision3.com</td> <td>2.9.0</td> <td>4.2.0</td> </tr> <tr> <td>Blip</td> <td>blip.tv</td> <td>2.9.0</td> <td>4.4.0</td> </tr> <tr> <td>Rdio</td> <td>rdio.com</td> <td>3.6.0</td> <td>4.4.1</td> </tr> <tr> <td>Rdio</td> <td>rd.io</td> <td>3.6.0</td> <td>4.4.1</td> </tr> <tr> <td>Vine</td> <td>vine.co</td> <td>4.1.0</td> <td>4.9.0</td> </tr> <tr> <td>Photobucket</td> <td>photobucket.com</td> <td>2.9.0</td> <td>5.1.0</td> </tr> <tr> <td>Funny or Die</td> <td>funnyordie.com</td> <td>3.0.0</td> <td>5.1.0</td> </tr> </tbody> </table>"
+            "long_description_html": "<p>Since WordPress 4.4, oEmbed discovery is enabled for all users and allows embedding of sanitized iframes. The providers in this list are whitelisted, meaning they are trusted and allowed to embed any content, such as iframes, videos, JavaScript, and arbitrary HTML.</p> <p>Supported providers:</p> <table> <thead> <tr> <th>Provider</th> <th>Flavor</th> <th>Since</th> </tr> </thead> <tbody> <tr> <td>Dailymotion</td> <td>dailymotion.com</td> <td>2.9.0</td> </tr> <tr> <td>Flickr</td> <td>flickr.com</td> <td>2.9.0</td> </tr> <tr> <td>Hulu</td> <td>hulu.com</td> <td>2.9.0</td> </tr> <tr> <td>Scribd</td> <td>scribd.com</td> <td>2.9.0</td> </tr> <tr> <td>Vimeo</td> <td>vimeo.com</td> <td>2.9.0</td> </tr> <tr> <td>WordPress.tv</td> <td>wordpress.tv</td> <td>2.9.0</td> </tr> <tr> <td>YouTube</td> <td>youtube.com/watch</td> <td>2.9.0</td> </tr> <tr> <td>Crowdsignal</td> <td>polldaddy.com</td> <td>3.0.0</td> </tr> <tr> <td>SmugMug</td> <td>smugmug.com</td> <td>3.0.0</td> </tr> <tr> <td>YouTube</td> <td>youtu.be</td> <td>3.0.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com</td> <td>3.4.0</td> </tr> <tr> <td>Instagram</td> <td>instagram.com</td> <td>3.5.0</td> </tr> <tr> <td>Instagram</td> <td>instagr.am</td> <td>3.5.0</td> </tr> <tr> <td>Slideshare</td> <td>slideshare.net</td> <td>3.5.0</td> </tr> <tr> <td>SoundCloud</td> <td>soundcloud.com</td> <td>3.5.0</td> </tr> <tr> <td>Dailymotion</td> <td>dai.ly</td> <td>3.6.0</td> </tr> <tr> <td>Flickr</td> <td>flic.kr</td> <td>3.6.0</td> </tr> <tr> <td>Spotify</td> <td>spotify.com</td> <td>3.6.0</td> </tr> <tr> <td>Imgur</td> <td>imgur.com</td> <td>3.9.0</td> </tr> <tr> <td>Meetup.com</td> <td>meetup.com</td> <td>3.9.0</td> </tr> <tr> <td>Meetup.com</td> <td>meetu.ps</td> <td>3.9.0</td> </tr> <tr> <td>Animoto</td> <td>animoto.com</td> <td>4.0.0</td> </tr> <tr> <td>Animoto</td> <td>video214.com</td> <td>4.0.0</td> </tr> <tr> <td>Issuu</td> <td>issuu.com</td> <td>4.0.0</td> </tr> <tr> <td>Mixcloud</td> <td>mixcloud.com</td> <td>4.0.0</td> </tr> <tr> <td>Crowdsignal</td> <td>poll.fm</td> <td>4.0.0</td> </tr> <tr> <td>TED</td> <td>ted.com</td> <td>4.0.0</td> </tr> <tr> <td>YouTube</td> <td>youtube.com/playlist</td> <td>4.0.0</td> </tr> <tr> <td>Tumblr</td> <td>tumblr.com</td> <td>4.2.0</td> </tr> <tr> <td>Kickstarter</td> <td>kickstarter.com</td> <td>4.2.0</td> </tr> <tr> <td>Kickstarter</td> <td>kck.st</td> <td>4.2.0</td> </tr> <tr> <td>Cloudup</td> <td>cloudup.com</td> <td>4.3.0</td> </tr> <tr> <td>ReverbNation</td> <td>reverbnation.com</td> <td>4.4.0</td> </tr> <tr> <td>VideoPress</td> <td>videopress.com</td> <td>4.4.0</td> </tr> <tr> <td>Reddit</td> <td>reddit.com</td> <td>4.4.0</td> </tr> <tr> <td>Speaker Deck</td> <td>speakerdeck.com</td> <td>4.4.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/timelines</td> <td>4.5.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/moments</td> <td>4.5.0</td> </tr> <tr> <td>Facebook</td> <td>facebook.com</td> <td>4.7.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/user</td> <td>4.7.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/likes</td> <td>4.7.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/lists</td> <td>4.7.0</td> </tr> <tr> <td>Screencast</td> <td>screencast.com</td> <td>4.8.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.com (com.mx, com.br, ca)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.de (fr, it, es, in, nl, ru, co.uk)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.co.jp (com.au)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.cn</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>a.co</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amzn.to (eu, in, asia)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>z.cn</td> <td>4.9.0</td> </tr> <tr> <td>Someecards</td> <td>someecards.com</td> <td>4.9.0</td> </tr> <tr> <td>Someecards</td> <td>some.ly</td> <td>4.9.0</td> </tr> <tr> <td>Crowdsignal</td> <td>survey.fm</td> <td>5.1.0</td> </tr> <tr> <td>Instagram TV</td> <td>instagram.com</td> <td>5.1.0</td> </tr> <tr> <td>Instagram TV</td> <td>instagr.am</td> <td>5.1.0</td> </tr> <tr> <td>TikTok</td> <td>tiktok.com</td> <td>5.4.0</td> </tr> </tbody> </table> <p>No longer supported providers:</p> <table> <thead> <tr> <th>Provider</th> <th>Flavor</th> <th>Since</th> <th>Removed</th> </tr> </thead> <tbody> <tr> <td>Qik</td> <td>qik.com</td> <td>2.9.0</td> <td>3.9.0</td> </tr> <tr> <td>Viddler</td> <td>viddler.com</td> <td>2.9.0</td> <td>4.0.0</td> </tr> <tr> <td>Revision3</td> <td>revision3.com</td> <td>2.9.0</td> <td>4.2.0</td> </tr> <tr> <td>Blip</td> <td>blip.tv</td> <td>2.9.0</td> <td>4.4.0</td> </tr> <tr> <td>Rdio</td> <td>rdio.com</td> <td>3.6.0</td> <td>4.4.1</td> </tr> <tr> <td>Rdio</td> <td>rd.io</td> <td>3.6.0</td> <td>4.4.1</td> </tr> <tr> <td>Vine</td> <td>vine.co</td> <td>4.1.0</td> <td>4.9.0</td> </tr> <tr> <td>Photobucket</td> <td>photobucket.com</td> <td>2.9.0</td> <td>5.1.0</td> </tr> <tr> <td>Funny or Die</td> <td>funnyordie.com</td> <td>3.0.0</td> <td>5.1.0</td> </tr> <tr> <td>CollegeHumor</td> <td>collegehumor.com</td> <td>4.0.0</td> <td>5.3.1</td> </tr> </tbody> </table>"
         }
     },
     {
@@ -27459,11 +27578,11 @@
                 {
                     "name": "since",
                     "content": "4.9.0",
-                    "description": "Returning a WP_Error value from the filter will shortcircuit comment insertion and              allow skipping further processing."
+                    "description": "Returning a WP_Error value from the filter will shortcircuit comment insertion              and allow skipping further processing."
                 },
                 {
                     "name": "param",
-                    "content": "The approval status. Accepts 1, 0, 'spam' or WP_Error.",
+                    "content": "The approval status. Accepts 1, 0, 'spam', 'trash',                                         or WP_Error.",
                     "types": [
                         "int",
                         "string",
@@ -27655,7 +27774,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Default null.",
+                    "content": "The value to return instead. Default null to continue with the query.",
                     "types": [
                         "null",
                         "string"
@@ -27716,7 +27835,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Whether to bypass the trash.",
+                    "content": "Whether to bypass the Trash.",
                     "types": [
                         "bool"
                     ],
@@ -28123,7 +28242,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Network value to return by path.",
+                    "content": "Network value to return by path. Default null                                       to continue retrieving the network.",
                     "types": [
                         "null",
                         "bool",
@@ -28315,7 +28434,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Site value to return by path.",
+                    "content": "Site value to return by path. Default null                                     to continue retrieving the site.",
                     "types": [
                         "null",
                         "false",
@@ -28748,7 +28867,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "The UNSANITIZED (and potentially unsafe) HTML that should be used to embed. Default null.",
+                    "content": "The UNSANITIZED (and potentially unsafe) HTML that should be used to embed.                            Default null to continue retrieving the result.",
                     "types": [
                         "null",
                         "string"
@@ -30045,7 +30164,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "The value to return, if not null.",
+                    "content": "The value to return instead. Default null                           to continue with the check.",
                     "types": [
                         "bool",
                         "null"
@@ -30920,7 +31039,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "The unique editor ID, e.g. 'content'.",
+                    "content": "Unique editor identifier, e.g. 'content'.",
                     "types": [
                         "string"
                     ],
@@ -31307,7 +31426,7 @@
                     "name": "param",
                     "content": "The taxonomy object.",
                     "types": [
-                        "object"
+                        "\\WP_Taxonomy"
                     ],
                     "variable": "$tax"
                 }
@@ -31867,7 +31986,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Optional. Whether the current request has failed to connect,                                                    or an error object. Default false.",
+                    "content": "Whether the current request has failed to connect,                                                    or an error object.",
                     "types": [
                         "bool",
                         "\\WP_Error"
@@ -31884,7 +32003,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Whether to allow Group/World writable.                                                    Default false.",
+                    "content": "Whether to allow Group/World writable.",
                     "types": [
                         "bool"
                     ],
@@ -32097,7 +32216,7 @@
         "type": "filter",
         "doc": {
             "description": "Filters whether a comment can be trashed.",
-            "long_description": "Return false to disable trash support for the post.",
+            "long_description": "Return false to disable Trash support for the post.",
             "tags": [
                 {
                     "name": "since",
@@ -32120,7 +32239,7 @@
                     "variable": "$comment"
                 }
             ],
-            "long_description_html": "<p>Return false to disable trash support for the post.</p>"
+            "long_description_html": "<p>Return false to disable Trash support for the post.</p>"
         }
     },
     {
@@ -32993,9 +33112,9 @@
                     "name": "param",
                     "content": "The original post type object.",
                     "types": [
-                        "object"
+                        "\\WP_Post_Type"
                     ],
-                    "variable": "$item"
+                    "variable": "$post_type"
                 },
                 {
                     "name": "param",
@@ -33119,7 +33238,7 @@
                     "name": "param",
                     "content": "The original taxonomy object.",
                     "types": [
-                        "object"
+                        "\\WP_Taxonomy"
                     ],
                     "variable": "$item"
                 },
@@ -33203,7 +33322,7 @@
                     "name": "param",
                     "content": "User object used to create response.",
                     "types": [
-                        "object"
+                        "\\WP_User"
                     ],
                     "variable": "$user"
                 },
@@ -33287,7 +33406,7 @@
                     "name": "param",
                     "content": "The original term object.",
                     "types": [
-                        "object"
+                        "\\WP_Term"
                     ],
                     "variable": "$item"
                 },
@@ -33806,6 +33925,32 @@
         }
     },
     {
+        "name": "rest_{$this->post_type}_item_schema",
+        "file": "wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php",
+        "line": 2422,
+        "end_line": 2422,
+        "type": "filter",
+        "doc": {
+            "description": "Filter the post's schema.",
+            "long_description": "The dynamic portion of the filter, `$this->post_type`, refers to the post type slug for the controller.",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "5.4.0"
+                },
+                {
+                    "name": "param",
+                    "content": "Item schema data.",
+                    "types": [
+                        "array"
+                    ],
+                    "variable": "$schema"
+                }
+            ],
+            "long_description_html": "<p>The dynamic portion of the filter, <code>$this-&gt;post_type</code>, refers to the post type slug for the controller.</p>"
+        }
+    },
+    {
         "name": "rest_{$this->post_type}_query",
         "file": "wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php",
         "line": 268,
@@ -33852,7 +33997,7 @@
         "type": "filter",
         "doc": {
             "description": "Filters whether a post is trashable.",
-            "long_description": "The dynamic portion of the hook name, `$this->post_type`, refers to the post type slug.\n Pass false to disable trash support for the post.",
+            "long_description": "The dynamic portion of the hook name, `$this->post_type`, refers to the post type slug.\n Pass false to disable Trash support for the post.",
             "tags": [
                 {
                     "name": "since",
@@ -33875,7 +34020,7 @@
                     "variable": "$post"
                 }
             ],
-            "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;post_type</code>, refers to the post type slug.</p> <p>Pass false to disable trash support for the post.</p>"
+            "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;post_type</code>, refers to the post type slug.</p> <p>Pass false to disable Trash support for the post.</p>"
         }
     },
     {
@@ -34383,6 +34528,11 @@
                     "name": "since",
                     "content": "5.3.0",
                     "description": "Added support for <code>grid</code>, <code>flex</code> and <code>column</code> layout properties.              Extend <code>background-*</code> support of individual properties."
+                },
+                {
+                    "name": "since",
+                    "content": "5.3.1",
+                    "description": "Added support for gradient backgrounds."
                 },
                 {
                     "name": "param",
@@ -35985,7 +36135,7 @@
         "end_line": 577,
         "type": "filter",
         "doc": {
-            "description": "Filters a shortcode's default attributes.",
+            "description": "Filters shortcode attributes.",
             "long_description": "If the third parameter of the shortcode_atts() function is present then this filter is available. The third parameter, $shortcode, is the name of the shortcode.",
             "tags": [
                 {
@@ -36595,9 +36745,9 @@
                 },
                 {
                     "name": "param",
-                    "content": "The current queried object as returned by get_queried_object().",
+                    "content": "The current post.",
                     "types": [
-                        "object"
+                        "\\WP_Post"
                     ],
                     "variable": "$_post"
                 }
@@ -37980,6 +38130,11 @@
                     "content": "2.7.0"
                 },
                 {
+                    "name": "since",
+                    "content": "3.3.0",
+                    "description": "The <code>$editor_id</code> parameter was added."
+                },
+                {
                     "name": "param",
                     "content": "An array with teenyMCE config.",
                     "types": [
@@ -38014,6 +38169,11 @@
                     "content": "2.7.0"
                 },
                 {
+                    "name": "since",
+                    "content": "3.3.0",
+                    "description": "The <code>$editor_id</code> parameter was added."
+                },
+                {
                     "name": "param",
                     "content": "An array of teenyMCE buttons.",
                     "types": [
@@ -38046,6 +38206,11 @@
                 {
                     "name": "since",
                     "content": "2.7.0"
+                },
+                {
+                    "name": "since",
+                    "content": "3.3.0",
+                    "description": "The <code>$editor_id</code> parameter was added."
                 },
                 {
                     "name": "param",
@@ -38263,7 +38428,7 @@
                     "name": "param",
                     "content": "Term object.",
                     "types": [
-                        "object"
+                        "\\WP_Term"
                     ],
                     "variable": "$term"
                 },
@@ -38992,7 +39157,7 @@
                     "types": [
                         "string"
                     ],
-                    "variable": "$d"
+                    "variable": "$format"
                 },
                 {
                     "name": "param",
@@ -39386,7 +39551,7 @@
                     "types": [
                         "string"
                     ],
-                    "variable": "$d"
+                    "variable": "$format"
                 },
                 {
                     "name": "param",
@@ -39432,11 +39597,11 @@
                 },
                 {
                     "name": "param",
-                    "content": "The time format. Accepts 'G', 'U',                                      or php date format. Defaults to value                                      specified in 'time_format' option.",
+                    "content": "The time format. Accepts 'G', 'U',                                      or PHP date format. Defaults to value                                      specified in 'time_format' option.",
                     "types": [
                         "string"
                     ],
-                    "variable": "$d"
+                    "variable": "$format"
                 }
             ],
             "long_description_html": ""
@@ -39946,11 +40111,11 @@
                 },
                 {
                     "name": "param",
-                    "content": "The time format. Accepts 'G', 'U',                             or php date format.",
+                    "content": "The time format. Accepts 'G', 'U',                             or PHP date format.",
                     "types": [
                         "string"
                     ],
-                    "variable": "$d"
+                    "variable": "$format"
                 }
             ],
             "long_description_html": ""
@@ -40806,6 +40971,11 @@
                     "content": "2.5.0"
                 },
                 {
+                    "name": "since",
+                    "content": "3.3.0",
+                    "description": "The <code>$editor_id</code> parameter was added."
+                },
+                {
                     "name": "param",
                     "content": "An array with TinyMCE config.",
                     "types": [
@@ -40815,7 +40985,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Unique editor identifier, e.g. 'content'.",
+                    "content": "Unique editor identifier, e.g. 'content'. Accepts 'classic-block'                          when called from block editor's Classic block.",
                     "types": [
                         "string"
                     ],
@@ -40840,12 +41010,25 @@
                     "content": "3.3.0"
                 },
                 {
+                    "name": "since",
+                    "content": "5.3.0",
+                    "description": "The <code>$editor_id</code> parameter was added."
+                },
+                {
                     "name": "param",
                     "content": "An array of default TinyMCE plugins.",
                     "types": [
                         "array"
                     ],
                     "variable": "$plugins"
+                },
+                {
+                    "name": "param",
+                    "content": "Unique editor identifier, e.g. 'content'. Accepts 'classic-block'                          when called from block editor's Classic block.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$editor_id"
                 }
             ],
             "long_description_html": "<p>The filter specifies which of the default plugins included in WordPress should be added to the TinyMCE instance.</p>"
@@ -41700,9 +41883,10 @@
                 },
                 {
                     "name": "param",
-                    "content": "Whether the destination was cleared. true on success, WP_Error on failure",
+                    "content": "Whether the destination was cleared. true upon success, WP_Error on failure.",
                     "types": [
-                        "mixed"
+                        "true",
+                        "\\WP_Error"
                     ],
                     "variable": "$removed"
                 },
@@ -42522,6 +42706,65 @@
         }
     },
     {
+        "name": "user_erasure_complete_email_headers",
+        "file": "wp-includes/user.php",
+        "line": 3491,
+        "end_line": 3491,
+        "type": "filter",
+        "doc": {
+            "description": "Filters the headers of the data erasure fulfillment notification.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "5.4.0"
+                },
+                {
+                    "name": "param",
+                    "content": "The email headers.",
+                    "types": [
+                        "string",
+                        "array"
+                    ],
+                    "variable": "$headers"
+                },
+                {
+                    "name": "param",
+                    "content": "The email subject.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$subject"
+                },
+                {
+                    "name": "param",
+                    "content": "The email content.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$content"
+                },
+                {
+                    "name": "param",
+                    "content": "The request ID.",
+                    "types": [
+                        "int"
+                    ],
+                    "variable": "$request_id"
+                },
+                {
+                    "name": "param",
+                    "content": "{     Data relating to the account action email.     @type WP_User_Request $request            User request object.     @type string          $message_recipient  The address that the email will be sent to. Defaults                                               to the value of <code>$request-&gt;email</code>, but can be changed                                               by the <code>user_erasure_fulfillment_email_to</code> filter.     @type string          $privacy_policy_url Privacy policy URL.     @type string          $sitename           The site name sending the mail.     @type string          $siteurl            The site URL sending the mail. }",
+                    "types": [
+                        "array"
+                    ],
+                    "variable": "$email_data"
+                }
+            ],
+            "long_description_html": ""
+        }
+    },
+    {
         "name": "user_erasure_complete_email_subject",
         "file": "wp-includes/user.php",
         "line": 3262,
@@ -42820,6 +43063,65 @@
         }
     },
     {
+        "name": "user_request_action_email_headers",
+        "file": "wp-includes/user.php",
+        "line": 3777,
+        "end_line": 3777,
+        "type": "filter",
+        "doc": {
+            "description": "Filters the headers of the email sent when an account action is attempted.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "5.4.0"
+                },
+                {
+                    "name": "param",
+                    "content": "The email headers.",
+                    "types": [
+                        "string",
+                        "array"
+                    ],
+                    "variable": "$headers"
+                },
+                {
+                    "name": "param",
+                    "content": "The email subject.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$subject"
+                },
+                {
+                    "name": "param",
+                    "content": "The email content.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$content"
+                },
+                {
+                    "name": "param",
+                    "content": "The request ID.",
+                    "types": [
+                        "int"
+                    ],
+                    "variable": "$request_id"
+                },
+                {
+                    "name": "param",
+                    "content": "{     Data relating to the account action email.     @type WP_User_Request $request     User request object.     @type string          $email       The email address this is being sent to.     @type string          $description Description of the action being performed so the user knows what the email is for.     @type string          $confirm_url The link to click on to confirm the account action.     @type string          $sitename    The site name sending the mail.     @type string          $siteurl     The site URL sending the mail. }",
+                    "types": [
+                        "array"
+                    ],
+                    "variable": "$email_data"
+                }
+            ],
+            "long_description_html": ""
+        }
+    },
+    {
         "name": "user_request_action_email_subject",
         "file": "wp-includes/user.php",
         "line": 3587,
@@ -42852,6 +43154,65 @@
                 {
                     "name": "param",
                     "content": "{     Data relating to the account action email.     @type WP_User_Request $request     User request object.     @type string          $email       The email address this is being sent to.     @type string          $description Description of the action being performed so the user knows what the email is for.     @type string          $confirm_url The link to click on to confirm the account action.     @type string          $sitename    The site name sending the mail.     @type string          $siteurl     The site URL sending the mail. }",
+                    "types": [
+                        "array"
+                    ],
+                    "variable": "$email_data"
+                }
+            ],
+            "long_description_html": ""
+        }
+    },
+    {
+        "name": "user_request_confirmed_email_headers",
+        "file": "wp-includes/user.php",
+        "line": 3320,
+        "end_line": 3320,
+        "type": "filter",
+        "doc": {
+            "description": "Filters the headers of the user request confirmation email.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "5.4.0"
+                },
+                {
+                    "name": "param",
+                    "content": "The email headers.",
+                    "types": [
+                        "string",
+                        "array"
+                    ],
+                    "variable": "$headers"
+                },
+                {
+                    "name": "param",
+                    "content": "The email subject.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$subject"
+                },
+                {
+                    "name": "param",
+                    "content": "The email content.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$content"
+                },
+                {
+                    "name": "param",
+                    "content": "The request ID.",
+                    "types": [
+                        "int"
+                    ],
+                    "variable": "$request_id"
+                },
+                {
+                    "name": "param",
+                    "content": "{     Data relating to the account action email.     @type WP_User_Request $request     User request object.     @type string          $user_email  The email address confirming a request     @type string          $description Description of the action being performed so the user knows what the email is for.     @type string          $manage_url  The link to click manage privacy requests of this type.     @type string          $sitename    The site name sending the mail.     @type string          $siteurl     The site URL sending the mail.     @type string          $admin_email The administrator email receiving the mail. }",
                     "types": [
                         "array"
                     ],
@@ -43440,7 +43801,7 @@
         "end_line": 205,
         "type": "filter",
         "doc": {
-            "description": "Filters the options white list.",
+            "description": "Filters the options whitelist.",
             "long_description": "",
             "tags": [
                 {
@@ -43449,7 +43810,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "White list options.",
+                    "content": "The options whitelist.",
                     "types": [
                         "array"
                     ],
@@ -46138,7 +46499,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "ID for the current editor instance.",
+                    "content": "Unique editor identifier, e.g. 'content'. Accepts 'classic-block'                          when called from block editor's Classic block.",
                     "types": [
                         "string"
                     ],
@@ -46602,7 +46963,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Array of attribute values for the image markup, keyed by attribute name.",
+                    "content": "Array of attribute values for the image markup, keyed by attribute name.                                 See wp_get_attachment_image().",
                     "types": [
                         "string[]"
                     ],
@@ -48687,7 +49048,7 @@
                     "name": "param",
                     "content": "WP Error object.",
                     "types": [
-                        "object"
+                        "\\WP_Error"
                     ],
                     "variable": "$errors"
                 },
@@ -49742,6 +50103,48 @@
         }
     },
     {
+        "name": "wp_privacy_additional_user_profile_data",
+        "file": "wp-includes/user.php",
+        "line": 3027,
+        "end_line": 3027,
+        "type": "filter",
+        "doc": {
+            "description": "Filter to extend the user's profile data for the privacy exporter.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "5.4.0"
+                },
+                {
+                    "name": "param",
+                    "content": "{     An array of name-value pairs of additional user data items. Default empty array.     @type string $name  The user-facing name of an item name-value pair,e.g. 'IP Address'.     @type string $value The user-facing value of an item data pair, e.g. '50.60.70.0'. }",
+                    "types": [
+                        "array"
+                    ],
+                    "variable": "$additional_user_profile_data"
+                },
+                {
+                    "name": "param",
+                    "content": "The user whose data is being exported.",
+                    "types": [
+                        "\\WP_User"
+                    ],
+                    "variable": "$user"
+                },
+                {
+                    "name": "param",
+                    "content": "An array of reserved names. Any item in <code>$additional_user_data</code>                                 that uses one of these for its <code>name</code> will not be included in the export.",
+                    "types": [
+                        "string[]"
+                    ],
+                    "variable": "$reserved_names"
+                }
+            ],
+            "long_description_html": ""
+        }
+    },
+    {
         "name": "wp_privacy_anonymize_data",
         "file": "wp-includes/functions.php",
         "line": 7056,
@@ -49906,6 +50309,65 @@
                 }
             ],
             "long_description_html": "<p>The following strings have a special meaning and will get replaced dynamically:</p> <h3>EXPIRATION###         The date when the URL will be automatically deleted.</h3> <h3>LINK###               URL of the personal data export file for the user.</h3> <h3>SITENAME###           The name of the site.</h3> <h3>SITEURL###            The URL to the site.</h3>"
+        }
+    },
+    {
+        "name": "wp_privacy_personal_data_email_headers",
+        "file": "wp-admin/includes/privacy-tools.php",
+        "line": 686,
+        "end_line": 686,
+        "type": "filter",
+        "doc": {
+            "description": "Filters the headers of the email sent with a personal data export file.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "5.4.0"
+                },
+                {
+                    "name": "param",
+                    "content": "The email headers.",
+                    "types": [
+                        "string",
+                        "array"
+                    ],
+                    "variable": "$headers"
+                },
+                {
+                    "name": "param",
+                    "content": "The email subject.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$subject"
+                },
+                {
+                    "name": "param",
+                    "content": "The email content.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$content"
+                },
+                {
+                    "name": "param",
+                    "content": "The request ID.",
+                    "types": [
+                        "int"
+                    ],
+                    "variable": "$request_id"
+                },
+                {
+                    "name": "param",
+                    "content": "{     Data relating to the account action email.     @type WP_User_Request $request           User request object.     @type int             $expiration        The time in seconds until the export file expires.     @type string          $expiration_date   The localized date and time when the export file expires.     @type string          $message_recipient The address that the email will be sent to. Defaults                                              to the value of <code>$request-&gt;email</code>, but can be changed                                              by the <code>wp_privacy_personal_data_email_to</code> filter.     @type string          $export_file_url   The export file URL.     @type string          $sitename          The site name sending the mail.     @type string          $siteurl           The site URL sending the mail. }",
+                    "types": [
+                        "array"
+                    ],
+                    "variable": "$email_data"
+                }
+            ],
+            "long_description_html": ""
         }
     },
     {
@@ -50668,7 +51130,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "WP_Image_Editor instance.",
+                    "content": "The image editor instance.",
                     "types": [
                         "\\WP_Image_Editor"
                     ],
@@ -50676,7 +51138,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Image mime type.",
+                    "content": "The mime type of the image.",
                     "types": [
                         "string"
                     ],
@@ -50684,7 +51146,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Post ID.",
+                    "content": "Attachment post ID.",
                     "types": [
                         "int"
                     ],
@@ -51109,9 +51571,10 @@
                 },
                 {
                     "name": "param",
-                    "content": "HTML output of the tag cloud.",
+                    "content": "Tag cloud as a string or an array, depending on 'format' argument.",
                     "types": [
-                        "string"
+                        "string",
+                        "array"
                     ],
                     "variable": "$return"
                 },
