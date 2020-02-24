@@ -19,7 +19,7 @@
         "generate": "Generates the hook files for WordPress core"
     },
     "require-dev": {
-        "johnbillion/wp-hooks-generator": "~0.4.0",
+        "johnbillion/wp-hooks-generator": "~0.5.0",
         "oomphinc/composer-installers-extender": "^1.1",
         "roots/wordpress": "dev-nightly"
     },

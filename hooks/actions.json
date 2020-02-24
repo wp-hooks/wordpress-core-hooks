@@ -2,8 +2,6 @@
     {
         "name": "_admin_menu",
         "file": "wp-admin/includes/menu.php",
-        "line": 41,
-        "end_line": 41,
         "type": "action",
         "doc": {
             "description": "Fires before the administration menu loads in the admin.",
@@ -24,8 +22,6 @@
     {
         "name": "_core_updated_successfully",
         "file": "wp-admin/includes/update-core.php",
-        "line": 1290,
-        "end_line": 1290,
         "type": "action",
         "doc": {
             "description": "Fires after WordPress core has been successfully updated.",
@@ -50,8 +46,6 @@
     {
         "name": "_network_admin_menu",
         "file": "wp-admin/includes/menu.php",
-        "line": 19,
-        "end_line": 19,
         "type": "action",
         "doc": {
             "description": "Fires before the administration menu loads in the Network Admin.",
@@ -72,8 +66,6 @@
     {
         "name": "_user_admin_menu",
         "file": "wp-admin/includes/menu.php",
-        "line": 30,
-        "end_line": 30,
         "type": "action",
         "doc": {
             "description": "Fires before the administration menu loads in the User Admin.",
@@ -94,8 +86,6 @@
     {
         "name": "_wp_put_post_revision",
         "file": "wp-includes/revision.php",
-        "line": 329,
-        "end_line": 329,
         "type": "action",
         "doc": {
             "description": "Fires once a revision has been saved.",
@@ -120,8 +110,6 @@
     {
         "name": "activate_blog",
         "file": "wp-admin/network/sites.php",
-        "line": 261,
-        "end_line": 261,
         "type": "action",
         "doc": {
             "description": "Fires after a network site is activated.",
@@ -147,8 +135,6 @@
     {
         "name": "activate_header",
         "file": "wp-activate.php",
-        "line": 79,
-        "end_line": 79,
         "type": "action",
         "doc": {
             "description": "Fires before the Site Activation page is loaded.",
@@ -165,8 +151,6 @@
     {
         "name": "activate_plugin",
         "file": "wp-admin/includes/plugin.php",
-        "line": 666,
-        "end_line": 666,
         "type": "action",
         "doc": {
             "description": "Fires before a plugin is activated.",
@@ -199,8 +183,6 @@
     {
         "name": "activate_wp_head",
         "file": "wp-activate.php",
-        "line": 96,
-        "end_line": 96,
         "type": "action",
         "doc": {
             "description": "Fires before the Site Activation page is loaded.",
@@ -217,8 +199,6 @@
     {
         "name": "activate_{$plugin}",
         "file": "wp-admin/includes/plugin.php",
-        "line": 681,
-        "end_line": 681,
         "type": "action",
         "doc": {
             "description": "Fires as a specific plugin is being activated.",
@@ -243,8 +223,6 @@
     {
         "name": "activated_plugin",
         "file": "wp-admin/includes/plugin.php",
-        "line": 708,
-        "end_line": 708,
         "type": "action",
         "doc": {
             "description": "Fires after a plugin has been activated.",
@@ -277,8 +255,6 @@
     {
         "name": "activity_box_end",
         "file": "wp-admin/includes/dashboard.php",
-        "line": 387,
-        "end_line": 387,
         "type": "action",
         "doc": {
             "description": "Fires at the end of the 'At a Glance' dashboard widget.",
@@ -295,8 +271,6 @@
     {
         "name": "add_admin_bar_menus",
         "file": "wp-includes/class-wp-admin-bar.php",
-        "line": 637,
-        "end_line": 637,
         "type": "action",
         "doc": {
             "description": "Fires after menus are added to the menu bar.",
@@ -313,8 +287,6 @@
     {
         "name": "add_attachment",
         "file": "wp-includes/post.php",
-        "line": 4058,
-        "end_line": 4058,
         "type": "action",
         "doc": {
             "description": "Fires once an attachment has been added.",
@@ -339,8 +311,6 @@
     {
         "name": "add_inline_data",
         "file": "wp-admin/includes/template.php",
-        "line": 383,
-        "end_line": 383,
         "type": "action",
         "doc": {
             "description": "Fires after outputting the fields for the inline editor for posts and pages.",
@@ -373,8 +343,6 @@
     {
         "name": "add_link",
         "file": "wp-admin/includes/bookmark.php",
-        "line": 243,
-        "end_line": 243,
         "type": "action",
         "doc": {
             "description": "Fires after a link was added to the database.",
@@ -399,8 +367,6 @@
     {
         "name": "add_meta_boxes",
         "file": "wp-admin/includes/meta-boxes.php",
-        "line": 1549,
-        "end_line": 1549,
         "type": "action",
         "doc": {
             "description": "Fires after all built-in meta boxes have been added.",
@@ -433,8 +399,6 @@
     {
         "name": "add_meta_boxes_comment",
         "file": "wp-admin/edit-form-comment.php",
-        "line": 211,
-        "end_line": 211,
         "type": "action",
         "doc": {
             "description": "Fires when comment-specific meta boxes are added.",
@@ -459,8 +423,6 @@
     {
         "name": "add_meta_boxes_link",
         "file": "wp-admin/edit-link-form.php",
-        "line": 46,
-        "end_line": 46,
         "type": "action",
         "doc": {
             "description": "Fires when link-specific meta boxes are added.",
@@ -485,8 +447,6 @@
     {
         "name": "add_meta_boxes_{$post_type}",
         "file": "wp-admin/includes/meta-boxes.php",
-        "line": 1560,
-        "end_line": 1560,
         "type": "action",
         "doc": {
             "description": "Fires after all built-in meta boxes have been added, contextually for the given post type.",
@@ -511,8 +471,6 @@
     {
         "name": "add_option",
         "file": "wp-includes/option.php",
-        "line": 499,
-        "end_line": 499,
         "type": "action",
         "doc": {
             "description": "Fires before an option is added.",
@@ -545,8 +503,6 @@
     {
         "name": "add_option_{$option}",
         "file": "wp-includes/option.php",
-        "line": 534,
-        "end_line": 534,
         "type": "action",
         "doc": {
             "description": "Fires after a specific option has been added.",
@@ -584,8 +540,6 @@
     {
         "name": "add_site_option",
         "file": "wp-includes/option.php",
-        "line": 1450,
-        "end_line": 1450,
         "type": "action",
         "doc": {
             "description": "Fires after a network option has been successfully added.",
@@ -631,8 +585,6 @@
     {
         "name": "add_site_option_{$option}",
         "file": "wp-includes/option.php",
-        "line": 1438,
-        "end_line": 1438,
         "type": "action",
         "doc": {
             "description": "Fires after a specific network option has been successfully added.",
@@ -683,8 +635,6 @@
     {
         "name": "add_tag_form_fields",
         "file": "wp-admin/edit-tags.php",
-        "line": 509,
-        "end_line": 509,
         "type": "action",
         "doc": {
             "description": "Fires after the Add Tag form fields for non-hierarchical taxonomies.",
@@ -709,8 +659,6 @@
     {
         "name": "add_term_relationship",
         "file": "wp-includes/taxonomy.php",
-        "line": 2493,
-        "end_line": 2493,
         "type": "action",
         "doc": {
             "description": "Fires immediately before an object-term relationship is added.",
@@ -756,8 +704,6 @@
     {
         "name": "add_user_role",
         "file": "wp-includes/class-wp-user.php",
-        "line": 551,
-        "end_line": 551,
         "type": "action",
         "doc": {
             "description": "Fires immediately after the user has been given a new role.",
@@ -790,8 +736,6 @@
     {
         "name": "add_user_to_blog",
         "file": "wp-includes/ms-functions.php",
-        "line": 213,
-        "end_line": 213,
         "type": "action",
         "doc": {
             "description": "Fires immediately after a user is added to a site.",
@@ -833,8 +777,6 @@
     {
         "name": "add_{$meta_type}_meta",
         "file": "wp-includes/meta.php",
-        "line": 102,
-        "end_line": 102,
         "type": "action",
         "doc": {
             "description": "Fires immediately before meta of a specific type is added.",
@@ -875,8 +817,6 @@
     {
         "name": "added_existing_user",
         "file": "wp-includes/ms-functions.php",
-        "line": 2160,
-        "end_line": 2160,
         "type": "action",
         "doc": {
             "description": "Fires immediately after an existing user is added to a site.",
@@ -911,8 +851,6 @@
     {
         "name": "added_option",
         "file": "wp-includes/option.php",
-        "line": 544,
-        "end_line": 544,
         "type": "action",
         "doc": {
             "description": "Fires after an option has been added.",
@@ -945,8 +883,6 @@
     {
         "name": "added_term_relationship",
         "file": "wp-includes/taxonomy.php",
-        "line": 2512,
-        "end_line": 2512,
         "type": "action",
         "doc": {
             "description": "Fires immediately after an object-term relationship is added.",
@@ -992,8 +928,6 @@
     {
         "name": "added_{$meta_type}_meta",
         "file": "wp-includes/meta.php",
-        "line": 134,
-        "end_line": 134,
         "type": "action",
         "doc": {
             "description": "Fires immediately after meta of a specific type is added.",
@@ -1042,8 +976,6 @@
     {
         "name": "admin_action_{$action}",
         "file": "wp-admin/admin.php",
-        "line": 401,
-        "end_line": 401,
         "type": "action",
         "doc": {
             "description": "Fires when an 'action' request variable is sent.",
@@ -1060,8 +992,6 @@
     {
         "name": "admin_bar_init",
         "file": "wp-includes/class-wp-admin-bar.php",
-        "line": 81,
-        "end_line": 81,
         "type": "action",
         "doc": {
             "description": "Fires after WP_Admin_Bar is initialized.",
@@ -1078,8 +1008,6 @@
     {
         "name": "admin_bar_menu",
         "file": "wp-includes/admin-bar.php",
-        "line": 86,
-        "end_line": 86,
         "type": "action_reference",
         "doc": {
             "description": "Load all necessary admin bar items.",
@@ -1104,8 +1032,6 @@
     {
         "name": "admin_color_scheme_picker",
         "file": "wp-admin/user-edit.php",
-        "line": 309,
-        "end_line": 309,
         "type": "action",
         "doc": {
             "description": "Fires in the 'Admin Color Scheme' section of the user editing screen.",
@@ -1135,8 +1061,6 @@
     {
         "name": "admin_email_confirm",
         "file": "wp-login.php",
-        "line": 627,
-        "end_line": 627,
         "type": "action",
         "doc": {
             "description": "Fires before the admin email confirm form.",
@@ -1161,8 +1085,6 @@
     {
         "name": "admin_email_confirm_form",
         "file": "wp-login.php",
-        "line": 638,
-        "end_line": 638,
         "type": "action",
         "doc": {
             "description": "Fires inside the admin-email-confirm-form form tags, before the hidden fields.",
@@ -1179,8 +1101,6 @@
     {
         "name": "admin_enqueue_scripts",
         "file": "wp-admin/admin-header.php",
-        "line": 104,
-        "end_line": 104,
         "type": "action",
         "doc": {
             "description": "Enqueue scripts for all admin pages.",
@@ -1205,8 +1125,6 @@
     {
         "name": "admin_footer",
         "file": "wp-admin/admin-footer.php",
-        "line": 78,
-        "end_line": 78,
         "type": "action",
         "doc": {
             "description": "Prints scripts or data before the default footer scripts.",
@@ -1231,8 +1149,6 @@
     {
         "name": "admin_footer-{$hook_suffix}",
         "file": "wp-admin/admin-footer.php",
-        "line": 105,
-        "end_line": 105,
         "type": "action",
         "doc": {
             "description": "Prints scripts or data after the default footer scripts.",
@@ -1249,8 +1165,6 @@
     {
         "name": "admin_head",
         "file": "wp-admin/admin-header.php",
-        "line": 149,
-        "end_line": 149,
         "type": "action",
         "doc": {
             "description": "Fires in head section for all admin pages.",
@@ -1267,8 +1181,6 @@
     {
         "name": "admin_head-media-upload-popup",
         "file": "wp-admin/includes/media.php",
-        "line": 567,
-        "end_line": 567,
         "type": "action",
         "doc": {
             "description": "Fires when scripts enqueued for the admin header for the legacy (pre-3.5.0) media upload popup are printed.",
@@ -1285,8 +1197,6 @@
     {
         "name": "admin_head-{$hook_suffix}",
         "file": "wp-admin/admin-header.php",
-        "line": 142,
-        "end_line": 142,
         "type": "action",
         "doc": {
             "description": "Fires in head section for a specific admin page.",
@@ -1303,8 +1213,6 @@
     {
         "name": "admin_head_{$content_func}",
         "file": "wp-admin/includes/media.php",
-        "line": 584,
-        "end_line": 584,
         "type": "action",
         "doc": {
             "description": "Fires in the admin header for each specific form tab in the legacy (pre-3.5.0) media upload popup.",
@@ -1321,8 +1229,6 @@
     {
         "name": "admin_init",
         "file": "wp-admin/admin.php",
-        "line": 170,
-        "end_line": 170,
         "type": "action",
         "doc": {
             "description": "Fires as an admin screen or script is being initialized.",
@@ -1339,8 +1245,6 @@
     {
         "name": "admin_menu",
         "file": "wp-admin/includes/menu.php",
-        "line": 155,
-        "end_line": 155,
         "type": "action",
         "doc": {
             "description": "Fires before the administration menu loads in the admin.",
@@ -1365,8 +1269,6 @@
     {
         "name": "admin_notices",
         "file": "wp-admin/admin-header.php",
-        "line": 281,
-        "end_line": 281,
         "type": "action",
         "doc": {
             "description": "Prints admin screen notices.",
@@ -1383,8 +1285,6 @@
     {
         "name": "admin_page_access_denied",
         "file": "wp-admin/includes/menu.php",
-        "line": 348,
-        "end_line": 348,
         "type": "action",
         "doc": {
             "description": "Fires when access to an admin page is denied.",
@@ -1401,8 +1301,6 @@
     {
         "name": "admin_post",
         "file": "wp-admin/admin-post.php",
-        "line": 60,
-        "end_line": 60,
         "type": "action",
         "doc": {
             "description": "Fires on an authenticated admin post request where no action is supplied.",
@@ -1419,8 +1317,6 @@
     {
         "name": "admin_post_nopriv",
         "file": "wp-admin/admin-post.php",
-        "line": 41,
-        "end_line": 41,
         "type": "action",
         "doc": {
             "description": "Fires on a non-authenticated admin post request where no action is supplied.",
@@ -1437,8 +1333,6 @@
     {
         "name": "admin_post_nopriv_{$action}",
         "file": "wp-admin/admin-post.php",
-        "line": 51,
-        "end_line": 51,
         "type": "action",
         "doc": {
             "description": "Fires on a non-authenticated admin post request for the given action.",
@@ -1455,8 +1349,6 @@
     {
         "name": "admin_post_{$action}",
         "file": "wp-admin/admin-post.php",
-        "line": 70,
-        "end_line": 70,
         "type": "action",
         "doc": {
             "description": "Fires on an authenticated admin post request for the given action.",
@@ -1473,8 +1365,6 @@
     {
         "name": "admin_print_footer_scripts",
         "file": "wp-admin/admin-footer.php",
-        "line": 95,
-        "end_line": 95,
         "type": "action",
         "doc": {
             "description": "Prints any scripts and data queued for the footer.",
@@ -1491,8 +1381,6 @@
     {
         "name": "admin_print_footer_scripts-{$hook_suffix}",
         "file": "wp-admin/admin-footer.php",
-        "line": 88,
-        "end_line": 88,
         "type": "action",
         "doc": {
             "description": "Prints scripts and data queued for the footer.",
@@ -1509,8 +1397,6 @@
     {
         "name": "admin_print_scripts",
         "file": "wp-admin/admin-header.php",
-        "line": 132,
-        "end_line": 132,
         "type": "action",
         "doc": {
             "description": "Fires when scripts are printed for all admin pages.",
@@ -1527,8 +1413,6 @@
     {
         "name": "admin_print_scripts-media-upload-popup",
         "file": "wp-admin/includes/media.php",
-        "line": 556,
-        "end_line": 556,
         "type": "action",
         "doc": {
             "description": "Fires when admin scripts enqueued for the legacy (pre-3.5.0) media upload popup are printed.",
@@ -1545,8 +1429,6 @@
     {
         "name": "admin_print_scripts-{$hook_suffix}",
         "file": "wp-admin/admin-header.php",
-        "line": 125,
-        "end_line": 125,
         "type": "action",
         "doc": {
             "description": "Fires when scripts are printed for a specific admin page based on $hook_suffix.",
@@ -1563,8 +1445,6 @@
     {
         "name": "admin_print_styles",
         "file": "wp-admin/admin-header.php",
-        "line": 118,
-        "end_line": 118,
         "type": "action",
         "doc": {
             "description": "Fires when styles are printed for all admin pages.",
@@ -1581,8 +1461,6 @@
     {
         "name": "admin_print_styles-media-upload-popup",
         "file": "wp-admin/includes/media.php",
-        "line": 546,
-        "end_line": 546,
         "type": "action",
         "doc": {
             "description": "Fires when admin styles enqueued for the legacy (pre-3.5.0) media upload popup are printed.",
@@ -1599,8 +1477,6 @@
     {
         "name": "admin_print_styles-{$hook_suffix}",
         "file": "wp-admin/admin-header.php",
-        "line": 111,
-        "end_line": 111,
         "type": "action",
         "doc": {
             "description": "Fires when styles are printed for a specific admin page based on $hook_suffix.",
@@ -1617,8 +1493,6 @@
     {
         "name": "admin_xml_ns",
         "file": "wp-admin/includes/template.php",
-        "line": 2433,
-        "end_line": 2433,
         "type": "action",
         "doc": {
             "description": "Fires inside the HTML tag in the admin header.",
@@ -1635,8 +1509,6 @@
     {
         "name": "adminmenu",
         "file": "wp-admin/menu-header.php",
-        "line": 283,
-        "end_line": 283,
         "type": "action",
         "doc": {
             "description": "Fires after the admin menu has been output.",
@@ -1653,8 +1525,6 @@
     {
         "name": "after-{$taxonomy}-table",
         "file": "wp-admin/edit-tags.php",
-        "line": 637,
-        "end_line": 637,
         "type": "action",
         "doc": {
             "description": "Fires after the taxonomy list table.",
@@ -1679,8 +1549,6 @@
     {
         "name": "after_db_upgrade",
         "file": "wp-admin/admin.php",
-        "line": 47,
-        "end_line": 47,
         "type": "action",
         "doc": {
             "description": "Fires on the next page load after a successful DB upgrade.",
@@ -1697,8 +1565,6 @@
     {
         "name": "after_delete_post",
         "file": "wp-includes/post.php",
-        "line": 3065,
-        "end_line": 3065,
         "type": "action",
         "doc": {
             "description": "Fires after a post is deleted, at the conclusion of wp_delete_post().",
@@ -1728,8 +1594,6 @@
     {
         "name": "after_menu_locations_table",
         "file": "wp-admin/nav-menus.php",
-        "line": 762,
-        "end_line": 762,
         "type": "action",
         "doc": {
             "description": "Fires after the menu locations table is displayed.",
@@ -1746,8 +1610,6 @@
     {
         "name": "after_mu_upgrade",
         "file": "wp-admin/network/upgrade.php",
-        "line": 111,
-        "end_line": 111,
         "type": "action",
         "doc": {
             "description": "Fires after the Multisite DB upgrade for each site is complete.",
@@ -1774,8 +1636,6 @@
     {
         "name": "after_password_reset",
         "file": "wp-includes/user.php",
-        "line": 2469,
-        "end_line": 2469,
         "type": "action",
         "doc": {
             "description": "Fires after the user's password is reset.",
@@ -1808,8 +1668,6 @@
     {
         "name": "after_plugin_row",
         "file": "wp-admin/includes/class-wp-plugins-list-table.php",
-        "line": 998,
-        "end_line": 998,
         "type": "action",
         "doc": {
             "description": "Fires after each row in the Plugins list table.",
@@ -1850,8 +1708,6 @@
     {
         "name": "after_plugin_row_{$plugin_file}",
         "file": "wp-admin/includes/class-wp-plugins-list-table.php",
-        "line": 1014,
-        "end_line": 1014,
         "type": "action",
         "doc": {
             "description": "Fires after each specific row in the Plugins list table.",
@@ -1892,8 +1748,6 @@
     {
         "name": "after_setup_theme",
         "file": "wp-settings.php",
-        "line": 507,
-        "end_line": 507,
         "type": "action",
         "doc": {
             "description": "Fires after the theme is loaded.",
@@ -1910,8 +1764,6 @@
     {
         "name": "after_signup_form",
         "file": "wp-signup.php",
-        "line": 1010,
-        "end_line": 1010,
         "type": "action",
         "doc": {
             "description": "Fires after the sign-up forms, before wp_footer.",
@@ -1928,8 +1780,6 @@
     {
         "name": "after_signup_site",
         "file": "wp-includes/ms-functions.php",
-        "line": 822,
-        "end_line": 822,
         "type": "action",
         "doc": {
             "description": "Fires after site signup information has been written to the database.",
@@ -2002,8 +1852,6 @@
     {
         "name": "after_signup_user",
         "file": "wp-includes/ms-functions.php",
-        "line": 885,
-        "end_line": 885,
         "type": "action",
         "doc": {
             "description": "Fires after a user's signup information has been written to the database.",
@@ -2052,8 +1900,6 @@
     {
         "name": "after_switch_theme",
         "file": "wp-includes/theme.php",
-        "line": 2965,
-        "end_line": 2965,
         "type": "action",
         "doc": {
             "description": "Fires on the first WP load after a theme switch if the old theme still exists.",
@@ -2086,8 +1932,6 @@
     {
         "name": "after_theme_row",
         "file": "wp-admin/includes/class-wp-ms-themes-list-table.php",
-        "line": 780,
-        "end_line": 780,
         "type": "action",
         "doc": {
             "description": "Fires after each row in the Multisite themes list table.",
@@ -2128,8 +1972,6 @@
     {
         "name": "after_theme_row_{$stylesheet}",
         "file": "wp-admin/includes/class-wp-ms-themes-list-table.php",
-        "line": 795,
-        "end_line": 795,
         "type": "action",
         "doc": {
             "description": "Fires after each specific row in the Multisite themes list table.",
@@ -2170,8 +2012,6 @@
     {
         "name": "after_wp_tiny_mce",
         "file": "wp-includes/class-wp-editor.php",
-        "line": 1615,
-        "end_line": 1615,
         "type": "action",
         "doc": {
             "description": "Fires after any core TinyMCE editor instances are created.",
@@ -2196,8 +2036,6 @@
     {
         "name": "all_admin_notices",
         "file": "wp-admin/admin-header.php",
-        "line": 289,
-        "end_line": 289,
         "type": "action",
         "doc": {
             "description": "Prints generic admin screen notices.",
@@ -2214,8 +2052,6 @@
     {
         "name": "archive_blog",
         "file": "wp-includes/ms-site.php",
-        "line": 1217,
-        "end_line": 1217,
         "type": "action",
         "doc": {
             "description": "Fires when the 'archived' status is added to a site.",
@@ -2241,8 +2077,6 @@
     {
         "name": "atom_author",
         "file": "wp-includes/feed-atom.php",
-        "line": 63,
-        "end_line": 63,
         "type": "action",
         "doc": {
             "description": "Fires at the end of each Atom feed author entry.",
@@ -2259,8 +2093,6 @@
     {
         "name": "atom_comments_ns",
         "file": "wp-includes/feed-atom-comments.php",
-        "line": 27,
-        "end_line": 27,
         "type": "action",
         "doc": {
             "description": "Fires inside the feed tag in the Atom comment feed.",
@@ -2277,8 +2109,6 @@
     {
         "name": "atom_entry",
         "file": "wp-includes/feed-atom.php",
-        "line": 83,
-        "end_line": 83,
         "type": "action",
         "doc": {
             "description": "Fires at the end of each Atom feed item.",
@@ -2295,8 +2125,6 @@
     {
         "name": "atom_head",
         "file": "wp-includes/feed-atom.php",
-        "line": 45,
-        "end_line": 45,
         "type": "action",
         "doc": {
             "description": "Fires just before the first Atom feed entry.",
@@ -2313,8 +2141,6 @@
     {
         "name": "atom_ns",
         "file": "wp-includes/feed-atom.php",
-        "line": 27,
-        "end_line": 27,
         "type": "action",
         "doc": {
             "description": "Fires at end of the Atom feed root to add namespaces.",
@@ -2331,8 +2157,6 @@
     {
         "name": "attachment_submitbox_misc_actions",
         "file": "wp-admin/includes/meta-boxes.php",
-        "line": 408,
-        "end_line": 408,
         "type": "action",
         "doc": {
             "description": "Fires after the 'Uploaded on' section of the Save meta box in the attachment editing screen.",
@@ -2362,8 +2186,6 @@
     {
         "name": "attachment_updated",
         "file": "wp-includes/post.php",
-        "line": 4048,
-        "end_line": 4048,
         "type": "action",
         "doc": {
             "description": "Fires once an existing attachment has been updated.",
@@ -2404,8 +2226,6 @@
     {
         "name": "auth_cookie_bad_hash",
         "file": "wp-includes/pluggable.php",
-        "line": 673,
-        "end_line": 673,
         "type": "action",
         "doc": {
             "description": "Fires if a bad authentication cookie hash is encountered.",
@@ -2430,8 +2250,6 @@
     {
         "name": "auth_cookie_bad_session_token",
         "file": "wp-includes/pluggable.php",
-        "line": 686,
-        "end_line": 686,
         "type": "action",
         "doc": {
             "description": "Fires if a bad session token is encountered.",
@@ -2456,8 +2274,6 @@
     {
         "name": "auth_cookie_bad_username",
         "file": "wp-includes/pluggable.php",
-        "line": 653,
-        "end_line": 653,
         "type": "action",
         "doc": {
             "description": "Fires if a bad username is entered in the user authentication process.",
@@ -2482,8 +2298,6 @@
     {
         "name": "auth_cookie_expired",
         "file": "wp-includes/pluggable.php",
-        "line": 640,
-        "end_line": 640,
         "type": "action",
         "doc": {
             "description": "Fires once an authentication cookie has expired.",
@@ -2508,8 +2322,6 @@
     {
         "name": "auth_cookie_malformed",
         "file": "wp-includes/pluggable.php",
-        "line": 615,
-        "end_line": 615,
         "type": "action",
         "doc": {
             "description": "Fires if an authentication cookie is malformed.",
@@ -2542,8 +2354,6 @@
     {
         "name": "auth_cookie_valid",
         "file": "wp-includes/pluggable.php",
-        "line": 703,
-        "end_line": 703,
         "type": "action",
         "doc": {
             "description": "Fires once an authentication cookie has been validated.",
@@ -2576,8 +2386,6 @@
     {
         "name": "auth_redirect",
         "file": "wp-includes/pluggable.php",
-        "line": 1069,
-        "end_line": 1069,
         "type": "action",
         "doc": {
             "description": "Fires before the authentication redirect.",
@@ -2602,8 +2410,6 @@
     {
         "name": "automatic_updates_complete",
         "file": "wp-admin/includes/class-wp-automatic-updater.php",
-        "line": 509,
-        "end_line": 509,
         "type": "action",
         "doc": {
             "description": "Fires after all automatic updates have run.",
@@ -2628,8 +2434,6 @@
     {
         "name": "before_delete_post",
         "file": "wp-includes/post.php",
-        "line": 2981,
-        "end_line": 2981,
         "type": "action",
         "doc": {
             "description": "Fires before a post is deleted, at the start of wp_delete_post().",
@@ -2659,8 +2463,6 @@
     {
         "name": "before_signup_form",
         "file": "wp-signup.php",
-        "line": 86,
-        "end_line": 86,
         "type": "action",
         "doc": {
             "description": "Fires before the site sign-up form.",
@@ -2677,8 +2479,6 @@
     {
         "name": "before_signup_header",
         "file": "wp-signup.php",
-        "line": 50,
-        "end_line": 50,
         "type": "action",
         "doc": {
             "description": "Fires before the Site Signup page is loaded.",
@@ -2695,8 +2495,6 @@
     {
         "name": "before_wp_tiny_mce",
         "file": "wp-includes/class-wp-editor.php",
-        "line": 1513,
-        "end_line": 1513,
         "type": "action",
         "doc": {
             "description": "Fires immediately before the TinyMCE settings are printed.",
@@ -2721,8 +2519,6 @@
     {
         "name": "begin_fetch_post_thumbnail_html",
         "file": "wp-includes/post-thumbnail-template.php",
-        "line": 167,
-        "end_line": 167,
         "type": "action",
         "doc": {
             "description": "Fires before fetching the post thumbnail HTML.",
@@ -2764,8 +2560,6 @@
     {
         "name": "block_editor_meta_box_hidden_fields",
         "file": "wp-admin/includes/post.php",
-        "line": 2433,
-        "end_line": 2433,
         "type": "action",
         "doc": {
             "description": "Add hidden input fields to the meta box save form.",
@@ -2790,8 +2584,6 @@
     {
         "name": "blog_privacy_selector",
         "file": "wp-admin/options-reading.php",
-        "line": 200,
-        "end_line": 200,
         "type": "action",
         "doc": {
             "description": "Enable the legacy 'Site Visibility' privacy options.",
@@ -2808,8 +2600,6 @@
     {
         "name": "bulk_edit_custom_box",
         "file": "wp-admin/includes/class-wp-posts-list-table.php",
-        "line": 1876,
-        "end_line": 1876,
         "type": "action",
         "doc": {
             "description": "Fires once for each column in Bulk Edit mode.",
@@ -2842,8 +2632,6 @@
     {
         "name": "change_locale",
         "file": "wp-includes/class-wp-locale-switcher.php",
-        "line": 235,
-        "end_line": 235,
         "type": "action",
         "doc": {
             "description": "Fires when the locale is switched to or restored.",
@@ -2868,8 +2656,6 @@
     {
         "name": "check_admin_referer",
         "file": "wp-includes/pluggable.php",
-        "line": 1133,
-        "end_line": 1133,
         "type": "action",
         "doc": {
             "description": "Fires once the admin request has been validated or not.",
@@ -2903,8 +2689,6 @@
     {
         "name": "check_ajax_referer",
         "file": "wp-includes/pluggable.php",
-        "line": 1185,
-        "end_line": 1185,
         "type": "action",
         "doc": {
             "description": "Fires once the Ajax request has been validated or not.",
@@ -2938,8 +2722,6 @@
     {
         "name": "check_comment_flood",
         "file": "wp-includes/comment.php",
-        "line": 737,
-        "end_line": 743,
         "type": "action",
         "doc": {
             "description": "Fires immediately before a comment is marked approved.",
@@ -2993,8 +2775,6 @@
     {
         "name": "check_passwords",
         "file": "wp-admin/includes/user.php",
-        "line": 164,
-        "end_line": 164,
         "type": "action_reference",
         "doc": {
             "description": "Fires before the password and confirm password fields are checked for congruity.",
@@ -3035,8 +2815,6 @@
     {
         "name": "clean_attachment_cache",
         "file": "wp-includes/post.php",
-        "line": 6708,
-        "end_line": 6708,
         "type": "action",
         "doc": {
             "description": "Fires after the given attachment's cache is cleaned.",
@@ -3061,8 +2839,6 @@
     {
         "name": "clean_comment_cache",
         "file": "wp-includes/comment.php",
-        "line": 3030,
-        "end_line": 3030,
         "type": "action",
         "doc": {
             "description": "Fires immediately after a comment has been removed from the object cache.",
@@ -3087,8 +2863,6 @@
     {
         "name": "clean_network_cache",
         "file": "wp-includes/ms-network.php",
-        "line": 95,
-        "end_line": 95,
         "type": "action",
         "doc": {
             "description": "Fires immediately after a network has been removed from the object cache.",
@@ -3113,8 +2887,6 @@
     {
         "name": "clean_object_term_cache",
         "file": "wp-includes/taxonomy.php",
-        "line": 3211,
-        "end_line": 3211,
         "type": "action",
         "doc": {
             "description": "Fires after the object term cache has been cleaned.",
@@ -3147,8 +2919,6 @@
     {
         "name": "clean_page_cache",
         "file": "wp-includes/post.php",
-        "line": 6596,
-        "end_line": 6596,
         "type": "action",
         "doc": {
             "description": "Fires immediately after the given page's cache is cleaned.",
@@ -3173,8 +2943,6 @@
     {
         "name": "clean_post_cache",
         "file": "wp-includes/post.php",
-        "line": 6584,
-        "end_line": 6584,
         "type": "action",
         "doc": {
             "description": "Fires immediately after the given post's cache is cleaned.",
@@ -3207,8 +2975,6 @@
     {
         "name": "clean_site_cache",
         "file": "wp-includes/ms-site.php",
-        "line": 1021,
-        "end_line": 1021,
         "type": "action",
         "doc": {
             "description": "Fires immediately after a site has been removed from the object cache.",
@@ -3249,8 +3015,6 @@
     {
         "name": "clean_taxonomy_cache",
         "file": "wp-includes/taxonomy.php",
-        "line": 3304,
-        "end_line": 3304,
         "type": "action",
         "doc": {
             "description": "Fires after a taxonomy's caches have been cleaned.",
@@ -3275,8 +3039,6 @@
     {
         "name": "clean_term_cache",
         "file": "wp-includes/taxonomy.php",
-        "line": 3276,
-        "end_line": 3276,
         "type": "action",
         "doc": {
             "description": "Fires once after each taxonomy's term cache has been cleaned.",
@@ -3322,8 +3084,6 @@
     {
         "name": "clean_user_cache",
         "file": "wp-includes/user.php",
-        "line": 1387,
-        "end_line": 1387,
         "type": "action",
         "doc": {
             "description": "Fires immediately after the given user's cache is cleaned.",
@@ -3356,8 +3116,6 @@
     {
         "name": "clear_auth_cookie",
         "file": "wp-includes/pluggable.php",
-        "line": 960,
-        "end_line": 960,
         "type": "action",
         "doc": {
             "description": "Fires just before the authentication cookies are cleared.",
@@ -3374,8 +3132,6 @@
     {
         "name": "comment_atom_entry",
         "file": "wp-includes/feed-atom-comments.php",
-        "line": 131,
-        "end_line": 131,
         "type": "action",
         "doc": {
             "description": "Fires at the end of each Atom comment feed item.",
@@ -3408,8 +3164,6 @@
     {
         "name": "comment_closed",
         "file": "wp-includes/comment.php",
-        "line": 3260,
-        "end_line": 3260,
         "type": "action",
         "doc": {
             "description": "Fires when a comment is attempted on a post that has comments closed.",
@@ -3434,8 +3188,6 @@
     {
         "name": "comment_duplicate_trigger",
         "file": "wp-includes/comment.php",
-        "line": 701,
-        "end_line": 701,
         "type": "action",
         "doc": {
             "description": "Fires immediately after a duplicate comment is detected.",
@@ -3460,8 +3212,6 @@
     {
         "name": "comment_flood_trigger",
         "file": "wp-includes/comment.php",
-        "line": 915,
-        "end_line": 915,
         "type": "action",
         "doc": {
             "description": "Fires before the comment flood message is triggered.",
@@ -3494,8 +3244,6 @@
     {
         "name": "comment_form",
         "file": "wp-includes/comment-template.php",
-        "line": 2637,
-        "end_line": 2637,
         "type": "action",
         "doc": {
             "description": "Fires at the bottom of the comment form, inside the closing form tag.",
@@ -3520,8 +3268,6 @@
     {
         "name": "comment_form_after",
         "file": "wp-includes/comment-template.php",
-        "line": 2651,
-        "end_line": 2651,
         "type": "action",
         "doc": {
             "description": "Fires after the comment form.",
@@ -3538,8 +3284,6 @@
     {
         "name": "comment_form_after_fields",
         "file": "wp-includes/comment-template.php",
-        "line": 2588,
-        "end_line": 2588,
         "type": "action",
         "doc": {
             "description": "Fires after the comment fields in the comment form, excluding the textarea.",
@@ -3556,8 +3300,6 @@
     {
         "name": "comment_form_before",
         "file": "wp-includes/comment-template.php",
-        "line": 2449,
-        "end_line": 2449,
         "type": "action",
         "doc": {
             "description": "Fires before the comment form.",
@@ -3574,8 +3316,6 @@
     {
         "name": "comment_form_before_fields",
         "file": "wp-includes/comment-template.php",
-        "line": 2567,
-        "end_line": 2567,
         "type": "action",
         "doc": {
             "description": "Fires before the comment fields in the comment form, excluding the textarea.",
@@ -3592,8 +3332,6 @@
     {
         "name": "comment_form_comments_closed",
         "file": "wp-includes/comment-template.php",
-        "line": 2264,
-        "end_line": 2264,
         "type": "action",
         "doc": {
             "description": "Fires after the comment form if comments are closed.",
@@ -3610,8 +3348,6 @@
     {
         "name": "comment_form_logged_in_after",
         "file": "wp-includes/comment-template.php",
-        "line": 2517,
-        "end_line": 2517,
         "type": "action",
         "doc": {
             "description": "Fires after the is_user_logged_in() check in the comment form.",
@@ -3644,8 +3380,6 @@
     {
         "name": "comment_form_must_log_in_after",
         "file": "wp-includes/comment-template.php",
-        "line": 2473,
-        "end_line": 2473,
         "type": "action",
         "doc": {
             "description": "Fires after the HTML-formatted 'must log in after' message in the comment form.",
@@ -3662,8 +3396,6 @@
     {
         "name": "comment_form_top",
         "file": "wp-includes/comment-template.php",
-        "line": 2490,
-        "end_line": 2490,
         "type": "action",
         "doc": {
             "description": "Fires at the top of the comment form, inside the form tag.",
@@ -3680,8 +3412,6 @@
     {
         "name": "comment_id_not_found",
         "file": "wp-includes/comment.php",
-        "line": 3236,
-        "end_line": 3236,
         "type": "action",
         "doc": {
             "description": "Fires when a comment is attempted on a post that does not exist.",
@@ -3706,8 +3436,6 @@
     {
         "name": "comment_loop_start",
         "file": "wp-includes/class-wp-query.php",
-        "line": 3366,
-        "end_line": 3366,
         "type": "action",
         "doc": {
             "description": "Fires once the comment loop is started.",
@@ -3724,8 +3452,6 @@
     {
         "name": "comment_on_draft",
         "file": "wp-includes/comment.php",
-        "line": 3286,
-        "end_line": 3286,
         "type": "action",
         "doc": {
             "description": "Fires when a comment is attempted on a post in draft mode.",
@@ -3750,8 +3476,6 @@
     {
         "name": "comment_on_password_protected",
         "file": "wp-includes/comment.php",
-        "line": 3302,
-        "end_line": 3302,
         "type": "action",
         "doc": {
             "description": "Fires when a comment is attempted on a password-protected post.",
@@ -3776,8 +3500,6 @@
     {
         "name": "comment_on_trash",
         "file": "wp-includes/comment.php",
-        "line": 3273,
-        "end_line": 3273,
         "type": "action",
         "doc": {
             "description": "Fires when a comment is attempted on a trashed post.",
@@ -3802,8 +3524,6 @@
     {
         "name": "comment_post",
         "file": "wp-includes/comment.php",
-        "line": 2165,
-        "end_line": 2165,
         "type": "action",
         "doc": {
             "description": "Fires immediately after a comment is inserted into the database.",
@@ -3850,8 +3570,6 @@
     {
         "name": "comment_{$new_status}_{$comment->comment_type}",
         "file": "wp-includes/comment.php",
-        "line": 1748,
-        "end_line": 1748,
         "type": "action",
         "doc": {
             "description": "Fires when the status of a specific comment type is in transition.",
@@ -3884,8 +3602,6 @@
     {
         "name": "comment_{$old_status}_to_{$new_status}",
         "file": "wp-includes/comment.php",
-        "line": 1732,
-        "end_line": 1732,
         "type": "action",
         "doc": {
             "description": "Fires when the comment status is in transition from one specific status to another.",
@@ -3910,8 +3626,6 @@
     {
         "name": "commentrss2_item",
         "file": "wp-includes/feed-rss2-comments.php",
-        "line": 114,
-        "end_line": 114,
         "type": "action",
         "doc": {
             "description": "Fires at the end of each RSS2 comment feed item.",
@@ -3944,8 +3658,6 @@
     {
         "name": "comments_atom_head",
         "file": "wp-includes/feed-atom-comments.php",
-        "line": 67,
-        "end_line": 67,
         "type": "action",
         "doc": {
             "description": "Fires at the end of the Atom comment feed header.",
@@ -3962,8 +3674,6 @@
     {
         "name": "commentsrss2_head",
         "file": "wp-includes/feed-rss2-comments.php",
-        "line": 71,
-        "end_line": 71,
         "type": "action",
         "doc": {
             "description": "Fires at the end of the RSS2 comment feed header.",
@@ -3980,8 +3690,6 @@
     {
         "name": "core_upgrade_preamble",
         "file": "wp-admin/update-core.php",
-        "line": 781,
-        "end_line": 781,
         "type": "action",
         "doc": {
             "description": "Fires after the core, plugin, and theme update tables.",
@@ -3998,8 +3706,6 @@
     {
         "name": "create_term",
         "file": "wp-includes/taxonomy.php",
-        "line": 2348,
-        "end_line": 2348,
         "type": "action",
         "doc": {
             "description": "Fires immediately after a new term is created, before the term cache is cleaned.",
@@ -4040,8 +3746,6 @@
     {
         "name": "create_{$taxonomy}",
         "file": "wp-includes/taxonomy.php",
-        "line": 2361,
-        "end_line": 2361,
         "type": "action",
         "doc": {
             "description": "Fires after a new term is created for a specific taxonomy.",
@@ -4074,8 +3778,6 @@
     {
         "name": "created_term",
         "file": "wp-includes/taxonomy.php",
-        "line": 2384,
-        "end_line": 2384,
         "type": "action",
         "doc": {
             "description": "Fires after a new term is created, and after the term cache has been cleaned.",
@@ -4116,8 +3818,6 @@
     {
         "name": "created_{$taxonomy}",
         "file": "wp-includes/taxonomy.php",
-        "line": 2397,
-        "end_line": 2397,
         "type": "action",
         "doc": {
             "description": "Fires after a new term in a specific taxonomy is created, and after the term cache has been cleaned.",
@@ -4150,8 +3850,6 @@
     {
         "name": "current_screen",
         "file": "wp-admin/includes/class-wp-screen.php",
-        "line": 421,
-        "end_line": 421,
         "type": "action",
         "doc": {
             "description": "Fires after the current screen has been set.",
@@ -4176,8 +3874,6 @@
     {
         "name": "custom_header_options",
         "file": "wp-admin/includes/class-custom-image-header.php",
-        "line": 754,
-        "end_line": 754,
         "type": "action",
         "doc": {
             "description": "Fires just before the submit button in the custom header options form.",
@@ -4194,8 +3890,6 @@
     {
         "name": "customize_controls_enqueue_scripts",
         "file": "wp-admin/customize.php",
-        "line": 123,
-        "end_line": 123,
         "type": "action",
         "doc": {
             "description": "Enqueue Customizer control scripts.",
@@ -4212,8 +3906,6 @@
     {
         "name": "customize_controls_init",
         "file": "wp-admin/customize.php",
-        "line": 112,
-        "end_line": 112,
         "type": "action",
         "doc": {
             "description": "Fires when Customizer controls are initialized, before scripts are enqueued.",
@@ -4230,8 +3922,6 @@
     {
         "name": "customize_controls_print_footer_scripts",
         "file": "wp-admin/customize.php",
-        "line": 266,
-        "end_line": 266,
         "type": "action",
         "doc": {
             "description": "Prints templates, control scripts, and settings in the footer.",
@@ -4248,8 +3938,6 @@
     {
         "name": "customize_controls_print_scripts",
         "file": "wp-admin/customize.php",
-        "line": 173,
-        "end_line": 173,
         "type": "action",
         "doc": {
             "description": "Fires when Customizer control scripts are printed.",
@@ -4266,8 +3954,6 @@
     {
         "name": "customize_controls_print_styles",
         "file": "wp-admin/customize.php",
-        "line": 166,
-        "end_line": 166,
         "type": "action",
         "doc": {
             "description": "Fires when Customizer control styles are printed.",
@@ -4284,8 +3970,6 @@
     {
         "name": "customize_post_value_set",
         "file": "wp-includes/class-wp-customize-manager.php",
-        "line": 1872,
-        "end_line": 1872,
         "type": "action",
         "doc": {
             "description": "Announce when any setting's unsanitized post value has been set.",
@@ -4326,8 +4010,6 @@
     {
         "name": "customize_post_value_set_{$setting_id}",
         "file": "wp-includes/class-wp-customize-manager.php",
-        "line": 1856,
-        "end_line": 1856,
         "type": "action",
         "doc": {
             "description": "Announce when a specific setting's unsanitized post value has been set.",
@@ -4360,8 +4042,6 @@
     {
         "name": "customize_preview_init",
         "file": "wp-includes/class-wp-customize-manager.php",
-        "line": 1926,
-        "end_line": 1926,
         "type": "action",
         "doc": {
             "description": "Fires once the Customizer preview has initialized and JavaScript settings have been printed.",
@@ -4386,8 +4066,6 @@
     {
         "name": "customize_preview_{$this->id}",
         "file": "wp-includes/class-wp-customize-setting.php",
-        "line": 383,
-        "end_line": 383,
         "type": "action",
         "doc": {
             "description": "Fires when the WP_Customize_Setting::preview() method is called for settings not handled as theme_mods or options.",
@@ -4412,8 +4090,6 @@
     {
         "name": "customize_preview_{$this->type}",
         "file": "wp-includes/class-wp-customize-setting.php",
-        "line": 395,
-        "end_line": 395,
         "type": "action",
         "doc": {
             "description": "Fires when the WP_Customize_Setting::preview() method is called for settings not handled as theme_mods or options.",
@@ -4438,8 +4114,6 @@
     {
         "name": "customize_register",
         "file": "wp-includes/class-wp-customize-manager.php",
-        "line": 926,
-        "end_line": 926,
         "type": "action",
         "doc": {
             "description": "Fires once WordPress has loaded, allowing scripts and styles to be initialized.",
@@ -4464,8 +4138,6 @@
     {
         "name": "customize_render_control",
         "file": "wp-includes/class-wp-customize-control.php",
-        "line": 397,
-        "end_line": 397,
         "type": "action",
         "doc": {
             "description": "Fires just before the current Customizer control is rendered.",
@@ -4490,8 +4162,6 @@
     {
         "name": "customize_render_control_{$this->id}",
         "file": "wp-includes/class-wp-customize-control.php",
-        "line": 409,
-        "end_line": 409,
         "type": "action",
         "doc": {
             "description": "Fires just before a specific Customizer control is rendered.",
@@ -4516,8 +4186,6 @@
     {
         "name": "customize_render_panel",
         "file": "wp-includes/class-wp-customize-panel.php",
-        "line": 268,
-        "end_line": 268,
         "type": "action",
         "doc": {
             "description": "Fires before rendering a Customizer panel.",
@@ -4542,8 +4210,6 @@
     {
         "name": "customize_render_panel_{$this->id}",
         "file": "wp-includes/class-wp-customize-panel.php",
-        "line": 278,
-        "end_line": 278,
         "type": "action",
         "doc": {
             "description": "Fires before rendering a specific Customizer panel.",
@@ -4560,8 +4226,6 @@
     {
         "name": "customize_render_partials_after",
         "file": "wp-includes/customize/class-wp-customize-selective-refresh.php",
-        "line": 408,
-        "end_line": 408,
         "type": "action",
         "doc": {
             "description": "Fires immediately after partials are rendered.",
@@ -4594,8 +4258,6 @@
     {
         "name": "customize_render_partials_before",
         "file": "wp-includes/customize/class-wp-customize-selective-refresh.php",
-        "line": 359,
-        "end_line": 359,
         "type": "action",
         "doc": {
             "description": "Fires immediately before partials are rendered.",
@@ -4628,8 +4290,6 @@
     {
         "name": "customize_render_section",
         "file": "wp-includes/class-wp-customize-section.php",
-        "line": 286,
-        "end_line": 286,
         "type": "action",
         "doc": {
             "description": "Fires before rendering a Customizer section.",
@@ -4654,8 +4314,6 @@
     {
         "name": "customize_render_section_{$this->id}",
         "file": "wp-includes/class-wp-customize-section.php",
-        "line": 295,
-        "end_line": 295,
         "type": "action",
         "doc": {
             "description": "Fires before rendering a specific Customizer section.",
@@ -4672,8 +4330,6 @@
     {
         "name": "customize_save",
         "file": "wp-includes/class-wp-customize-manager.php",
-        "line": 3458,
-        "end_line": 3458,
         "type": "action",
         "doc": {
             "description": "Fires once the theme has switched in the Customizer, but before settings have been saved.",
@@ -4698,8 +4354,6 @@
     {
         "name": "customize_save_after",
         "file": "wp-includes/class-wp-customize-manager.php",
-        "line": 3511,
-        "end_line": 3511,
         "type": "action",
         "doc": {
             "description": "Fires after Customize settings have been saved.",
@@ -4724,8 +4378,6 @@
     {
         "name": "customize_save_validation_before",
         "file": "wp-includes/class-wp-customize-manager.php",
-        "line": 2748,
-        "end_line": 2748,
         "type": "action",
         "doc": {
             "description": "Fires before save validation happens.",
@@ -4750,8 +4402,6 @@
     {
         "name": "customize_save_{$id_base}",
         "file": "wp-includes/class-wp-customize-setting.php",
-        "line": 521,
-        "end_line": 521,
         "type": "action",
         "doc": {
             "description": "Fires when the WP_Customize_Setting::save() method is called.",
@@ -4776,8 +4426,6 @@
     {
         "name": "customize_update_{$this->type}",
         "file": "wp-includes/class-wp-customize-setting.php",
-        "line": 686,
-        "end_line": 686,
         "type": "action",
         "doc": {
             "description": "Fires when the WP_Customize_Setting::update() method is called for settings not handled as theme_mods or options.",
@@ -4810,8 +4458,6 @@
     {
         "name": "dbx_post_sidebar",
         "file": "wp-admin/edit-form-advanced.php",
-        "line": 712,
-        "end_line": 712,
         "type": "action",
         "doc": {
             "description": "Fires after all meta box sections have been output, before the closing #post-body div.",
@@ -4836,8 +4482,6 @@
     {
         "name": "deactivate_blog",
         "file": "wp-admin/network/sites.php",
-        "line": 272,
-        "end_line": 272,
         "type": "action",
         "doc": {
             "description": "Fires before a network site is deactivated.",
@@ -4863,8 +4507,6 @@
     {
         "name": "deactivate_plugin",
         "file": "wp-admin/includes/plugin.php",
-        "line": 764,
-        "end_line": 764,
         "type": "action",
         "doc": {
             "description": "Fires before a plugin is deactivated.",
@@ -4897,8 +4539,6 @@
     {
         "name": "deactivate_{$plugin}",
         "file": "wp-admin/includes/plugin.php",
-        "line": 803,
-        "end_line": 803,
         "type": "action",
         "doc": {
             "description": "Fires as a specific plugin is being deactivated.",
@@ -4923,8 +4563,6 @@
     {
         "name": "deactivated_plugin",
         "file": "wp-admin/includes/plugin.php",
-        "line": 817,
-        "end_line": 817,
         "type": "action",
         "doc": {
             "description": "Fires after a plugin is deactivated.",
@@ -4957,8 +4595,6 @@
     {
         "name": "delete_attachment",
         "file": "wp-includes/post.php",
-        "line": 5608,
-        "end_line": 5608,
         "type": "action",
         "doc": {
             "description": "Fires before an attachment is deleted, at the start of wp_delete_attachment().",
@@ -4983,8 +4619,6 @@
     {
         "name": "delete_comment",
         "file": "wp-includes/comment.php",
-        "line": 1401,
-        "end_line": 1401,
         "type": "action",
         "doc": {
             "description": "Fires immediately before a comment is deleted from the database.",
@@ -5022,8 +4656,6 @@
     {
         "name": "delete_link",
         "file": "wp-admin/includes/bookmark.php",
-        "line": 99,
-        "end_line": 99,
         "type": "action",
         "doc": {
             "description": "Fires before a link is deleted.",
@@ -5048,8 +4680,6 @@
     {
         "name": "delete_option",
         "file": "wp-includes/option.php",
-        "line": 581,
-        "end_line": 581,
         "type": "action",
         "doc": {
             "description": "Fires immediately before an option is deleted.",
@@ -5074,8 +4704,6 @@
     {
         "name": "delete_option_{$option}",
         "file": "wp-includes/option.php",
-        "line": 606,
-        "end_line": 606,
         "type": "action",
         "doc": {
             "description": "Fires after a specific option has been deleted.",
@@ -5100,8 +4728,6 @@
     {
         "name": "delete_plugin",
         "file": "wp-admin/includes/plugin.php",
-        "line": 956,
-        "end_line": 956,
         "type": "action",
         "doc": {
             "description": "Fires immediately before a plugin deletion attempt.",
@@ -5126,8 +4752,6 @@
     {
         "name": "delete_post",
         "file": "wp-includes/post.php",
-        "line": 3031,
-        "end_line": 3031,
         "type": "action",
         "doc": {
             "description": "Fires immediately before a post is deleted from the database.",
@@ -5152,8 +4776,6 @@
     {
         "name": "delete_postmeta",
         "file": "wp-includes/meta.php",
-        "line": 425,
-        "end_line": 425,
         "type": "action",
         "doc": {
             "description": "Fires immediately before deleting metadata for a post.",
@@ -5178,8 +4800,6 @@
     {
         "name": "delete_site_option",
         "file": "wp-includes/option.php",
-        "line": 1543,
-        "end_line": 1543,
         "type": "action",
         "doc": {
             "description": "Fires after a network option has been deleted.",
@@ -5217,8 +4837,6 @@
     {
         "name": "delete_site_option_{$option}",
         "file": "wp-includes/option.php",
-        "line": 1532,
-        "end_line": 1532,
         "type": "action",
         "doc": {
             "description": "Fires after a specific network option has been deleted.",
@@ -5261,8 +4879,6 @@
     {
         "name": "delete_site_transient_{$transient}",
         "file": "wp-includes/option.php",
-        "line": 1701,
-        "end_line": 1701,
         "type": "action",
         "doc": {
             "description": "Fires immediately before a specific site transient is deleted.",
@@ -5287,8 +4903,6 @@
     {
         "name": "delete_term",
         "file": "wp-includes/taxonomy.php",
-        "line": 1918,
-        "end_line": 1918,
         "type": "action",
         "doc": {
             "description": "Fires after a term is deleted from the database and the cache is cleaned.",
@@ -5350,8 +4964,6 @@
     {
         "name": "delete_term_relationships",
         "file": "wp-includes/taxonomy.php",
-        "line": 2652,
-        "end_line": 2652,
         "type": "action",
         "doc": {
             "description": "Fires immediately before an object-term relationship is deleted.",
@@ -5397,8 +5009,6 @@
     {
         "name": "delete_term_taxonomy",
         "file": "wp-includes/taxonomy.php",
-        "line": 1886,
-        "end_line": 1886,
         "type": "action",
         "doc": {
             "description": "Fires immediately before a term taxonomy ID is deleted.",
@@ -5423,8 +5033,6 @@
     {
         "name": "delete_transient_{$transient}",
         "file": "wp-includes/option.php",
-        "line": 640,
-        "end_line": 640,
         "type": "action",
         "doc": {
             "description": "Fires immediately before a specific transient is deleted.",
@@ -5449,8 +5057,6 @@
     {
         "name": "delete_user",
         "file": "wp-admin/includes/user.php",
-        "line": 367,
-        "end_line": 367,
         "type": "action",
         "doc": {
             "description": "Fires immediately before a user is deleted from the database.",
@@ -5484,8 +5090,6 @@
     {
         "name": "delete_user_form",
         "file": "wp-admin/users.php",
-        "line": 341,
-        "end_line": 341,
         "type": "action",
         "doc": {
             "description": "Fires at the end of the delete users form prior to the confirm button.",
@@ -5523,8 +5127,6 @@
     {
         "name": "delete_widget",
         "file": "wp-admin/widgets.php",
-        "line": 185,
-        "end_line": 185,
         "type": "action",
         "doc": {
             "description": "Fires immediately after a widget has been marked for deletion.",
@@ -5565,8 +5167,6 @@
     {
         "name": "delete_{$meta_type}_meta",
         "file": "wp-includes/meta.php",
-        "line": 414,
-        "end_line": 414,
         "type": "action",
         "doc": {
             "description": "Fires immediately before deleting metadata of a specific type.",
@@ -5615,8 +5215,6 @@
     {
         "name": "delete_{$meta_type}meta",
         "file": "wp-includes/meta.php",
-        "line": 838,
-        "end_line": 838,
         "type": "action",
         "doc": {
             "description": "Fires immediately before deleting post or comment metadata of a specific type.",
@@ -5641,8 +5239,6 @@
     {
         "name": "delete_{$taxonomy}",
         "file": "wp-includes/taxonomy.php",
-        "line": 1935,
-        "end_line": 1935,
         "type": "action",
         "doc": {
             "description": "Fires after a term in a specific taxonomy is deleted.",
@@ -5696,8 +5292,6 @@
     {
         "name": "deleted_comment",
         "file": "wp-includes/comment.php",
-        "line": 1429,
-        "end_line": 1429,
         "type": "action",
         "doc": {
             "description": "Fires immediately after a comment is deleted from the database.",
@@ -5735,8 +5329,6 @@
     {
         "name": "deleted_link",
         "file": "wp-admin/includes/bookmark.php",
-        "line": 112,
-        "end_line": 112,
         "type": "action",
         "doc": {
             "description": "Fires after a link has been deleted.",
@@ -5761,8 +5353,6 @@
     {
         "name": "deleted_option",
         "file": "wp-includes/option.php",
-        "line": 615,
-        "end_line": 615,
         "type": "action",
         "doc": {
             "description": "Fires after an option has been deleted.",
@@ -5787,8 +5377,6 @@
     {
         "name": "deleted_plugin",
         "file": "wp-admin/includes/plugin.php",
-        "line": 975,
-        "end_line": 975,
         "type": "action",
         "doc": {
             "description": "Fires immediately after a plugin deletion attempt.",
@@ -5821,8 +5409,6 @@
     {
         "name": "deleted_post",
         "file": "wp-includes/post.php",
-        "line": 3044,
-        "end_line": 3044,
         "type": "action",
         "doc": {
             "description": "Fires immediately after a post is deleted from the database.",
@@ -5847,8 +5433,6 @@
     {
         "name": "deleted_postmeta",
         "file": "wp-includes/meta.php",
-        "line": 468,
-        "end_line": 468,
         "type": "action",
         "doc": {
             "description": "Fires immediately after deleting metadata for a post.",
@@ -5873,8 +5457,6 @@
     {
         "name": "deleted_site_transient",
         "file": "wp-includes/option.php",
-        "line": 1722,
-        "end_line": 1722,
         "type": "action",
         "doc": {
             "description": "Fires after a transient is deleted.",
@@ -5899,8 +5481,6 @@
     {
         "name": "deleted_term_relationships",
         "file": "wp-includes/taxonomy.php",
-        "line": 2668,
-        "end_line": 2668,
         "type": "action",
         "doc": {
             "description": "Fires immediately after an object-term relationship is deleted.",
@@ -5946,8 +5526,6 @@
     {
         "name": "deleted_term_taxonomy",
         "file": "wp-includes/taxonomy.php",
-        "line": 1896,
-        "end_line": 1896,
         "type": "action",
         "doc": {
             "description": "Fires immediately after a term taxonomy ID is deleted.",
@@ -5972,8 +5550,6 @@
     {
         "name": "deleted_transient",
         "file": "wp-includes/option.php",
-        "line": 662,
-        "end_line": 662,
         "type": "action",
         "doc": {
             "description": "Fires after a transient is deleted.",
@@ -5998,8 +5574,6 @@
     {
         "name": "deleted_user",
         "file": "wp-admin/includes/user.php",
-        "line": 444,
-        "end_line": 444,
         "type": "action",
         "doc": {
             "description": "Fires immediately after a user is deleted from the database.",
@@ -6033,8 +5607,6 @@
     {
         "name": "deleted_{$meta_type}_meta",
         "file": "wp-includes/meta.php",
-        "line": 457,
-        "end_line": 457,
         "type": "action",
         "doc": {
             "description": "Fires immediately after deleting metadata of a specific type.",
@@ -6083,8 +5655,6 @@
     {
         "name": "deleted_{$meta_type}meta",
         "file": "wp-includes/meta.php",
-        "line": 862,
-        "end_line": 862,
         "type": "action",
         "doc": {
             "description": "Fires immediately after deleting post or comment metadata of a specific type.",
@@ -6109,8 +5679,6 @@
     {
         "name": "deprecated_argument_run",
         "file": "wp-includes/functions.php",
-        "line": 4851,
-        "end_line": 4851,
         "type": "action",
         "doc": {
             "description": "Fires when a deprecated argument is called.",
@@ -6151,8 +5719,6 @@
     {
         "name": "deprecated_constructor_run",
         "file": "wp-includes/functions.php",
-        "line": 4657,
-        "end_line": 4657,
         "type": "action",
         "doc": {
             "description": "Fires when a deprecated constructor is called.",
@@ -6198,8 +5764,6 @@
     {
         "name": "deprecated_file_included",
         "file": "wp-includes/functions.php",
-        "line": 4755,
-        "end_line": 4755,
         "type": "action",
         "doc": {
             "description": "Fires when a deprecated file is called.",
@@ -6248,8 +5812,6 @@
     {
         "name": "deprecated_function_run",
         "file": "wp-includes/functions.php",
-        "line": 4567,
-        "end_line": 4567,
         "type": "action",
         "doc": {
             "description": "Fires when a deprecated function is called.",
@@ -6290,8 +5852,6 @@
     {
         "name": "deprecated_hook_run",
         "file": "wp-includes/functions.php",
-        "line": 4940,
-        "end_line": 4940,
         "type": "action",
         "doc": {
             "description": "Fires when a deprecated hook is called.",
@@ -6340,8 +5900,6 @@
     {
         "name": "do_favicon",
         "file": "wp-includes/template-loader.php",
-        "line": 45,
-        "end_line": 45,
         "type": "action",
         "doc": {
             "description": "Fired when the template loader determines a favicon.ico request.",
@@ -6358,8 +5916,6 @@
     {
         "name": "do_faviconico",
         "file": "wp-includes/functions.php",
-        "line": 1668,
-        "end_line": 1668,
         "type": "action",
         "doc": {
             "description": "Fires when serving the favicon.ico file.",
@@ -6376,8 +5932,6 @@
     {
         "name": "do_feed_{$feed}",
         "file": "wp-includes/functions.php",
-        "line": 1538,
-        "end_line": 1538,
         "type": "action",
         "doc": {
             "description": "Fires once the given feed is loaded.",
@@ -6415,8 +5969,6 @@
     {
         "name": "do_meta_boxes",
         "file": "wp-admin/includes/meta-boxes.php",
-        "line": 1575,
-        "end_line": 1575,
         "type": "action",
         "doc": {
             "description": "Fires after meta boxes have been added.",
@@ -6459,8 +6011,6 @@
     {
         "name": "do_robots",
         "file": "wp-includes/template-loader.php",
-        "line": 37,
-        "end_line": 37,
         "type": "action",
         "doc": {
             "description": "Fired when the template loader determines a robots.txt request.",
@@ -6477,8 +6027,6 @@
     {
         "name": "do_robotstxt",
         "file": "wp-includes/functions.php",
-        "line": 1612,
-        "end_line": 1612,
         "type": "action",
         "doc": {
             "description": "Fires when displaying the robots.txt file.",
@@ -6495,8 +6043,6 @@
     {
         "name": "doing_it_wrong_run",
         "file": "wp-includes/functions.php",
-        "line": 5005,
-        "end_line": 5005,
         "type": "action",
         "doc": {
             "description": "Fires when the given function is being used incorrectly.",
@@ -6537,8 +6083,6 @@
     {
         "name": "dynamic_sidebar",
         "file": "wp-includes/widgets.php",
-        "line": 802,
-        "end_line": 802,
         "type": "action",
         "doc": {
             "description": "Fires before a widget's display callback is called.",
@@ -6563,8 +6107,6 @@
     {
         "name": "dynamic_sidebar_after",
         "file": "wp-includes/widgets.php",
-        "line": 822,
-        "end_line": 822,
         "type": "action",
         "doc": {
             "description": "Fires after widgets are rendered in a dynamic sidebar.",
@@ -6598,8 +6140,6 @@
     {
         "name": "dynamic_sidebar_before",
         "file": "wp-includes/widgets.php",
-        "line": 706,
-        "end_line": 706,
         "type": "action",
         "doc": {
             "description": "Fires before widgets are rendered in a dynamic sidebar.",
@@ -6633,8 +6173,6 @@
     {
         "name": "edit_attachment",
         "file": "wp-includes/post.php",
-        "line": 4036,
-        "end_line": 4036,
         "type": "action",
         "doc": {
             "description": "Fires once an existing attachment has been updated.",
@@ -6659,8 +6197,6 @@
     {
         "name": "edit_comment",
         "file": "wp-includes/comment.php",
-        "line": 2408,
-        "end_line": 2408,
         "type": "action",
         "doc": {
             "description": "Fires immediately after a comment is updated in the database.",
@@ -6698,8 +6234,6 @@
     {
         "name": "edit_form_advanced",
         "file": "wp-admin/edit-form-advanced.php",
-        "line": 696,
-        "end_line": 696,
         "type": "action",
         "doc": {
             "description": "Fires after 'normal' context meta boxes have been output for all post types other than 'page'.",
@@ -6724,8 +6258,6 @@
     {
         "name": "edit_form_after_editor",
         "file": "wp-admin/edit-form-advanced.php",
-        "line": 638,
-        "end_line": 638,
         "type": "action",
         "doc": {
             "description": "Fires after the content editor.",
@@ -6750,8 +6282,6 @@
     {
         "name": "edit_form_after_title",
         "file": "wp-admin/edit-form-advanced.php",
-        "line": 570,
-        "end_line": 570,
         "type": "action",
         "doc": {
             "description": "Fires after the title field.",
@@ -6776,8 +6306,6 @@
     {
         "name": "edit_form_before_permalink",
         "file": "wp-admin/edit-form-advanced.php",
-        "line": 526,
-        "end_line": 526,
         "type": "action",
         "doc": {
             "description": "Fires before the permalink field in the edit form.",
@@ -6802,8 +6330,6 @@
     {
         "name": "edit_form_top",
         "file": "wp-admin/edit-form-advanced.php",
-        "line": 494,
-        "end_line": 494,
         "type": "action",
         "doc": {
             "description": "Fires at the beginning of the edit form.",
@@ -6828,8 +6354,6 @@
     {
         "name": "edit_link",
         "file": "wp-admin/includes/bookmark.php",
-        "line": 234,
-        "end_line": 234,
         "type": "action",
         "doc": {
             "description": "Fires after a link was updated in the database.",
@@ -6854,8 +6378,6 @@
     {
         "name": "edit_page_form",
         "file": "wp-admin/edit-form-advanced.php",
-        "line": 687,
-        "end_line": 687,
         "type": "action",
         "doc": {
             "description": "Fires after 'normal' context meta boxes have been output for the 'page' post type.",
@@ -6880,8 +6402,6 @@
     {
         "name": "edit_post",
         "file": "wp-includes/post.php",
-        "line": 4086,
-        "end_line": 4086,
         "type": "action",
         "doc": {
             "description": "Fires once an existing post has been updated.",
@@ -6914,8 +6434,6 @@
     {
         "name": "edit_post_{$post->post_type}",
         "file": "wp-includes/post.php",
-        "line": 4076,
-        "end_line": 4076,
         "type": "action",
         "doc": {
             "description": "Fires once an existing post has been updated.",
@@ -6948,8 +6466,6 @@
     {
         "name": "edit_term",
         "file": "wp-includes/taxonomy.php",
-        "line": 3006,
-        "end_line": 3006,
         "type": "action",
         "doc": {
             "description": "Fires after a term has been updated, but before the term cache has been cleaned.",
@@ -6990,8 +6506,6 @@
     {
         "name": "edit_term_taxonomies",
         "file": "wp-includes/taxonomy.php",
-        "line": 1824,
-        "end_line": 1824,
         "type": "action",
         "doc": {
             "description": "Fires immediately before a term to delete's children are reassigned a parent.",
@@ -7016,8 +6530,6 @@
     {
         "name": "edit_term_taxonomy",
         "file": "wp-includes/taxonomy.php",
-        "line": 2983,
-        "end_line": 2983,
         "type": "action",
         "doc": {
             "description": "Fires immediate before a term-taxonomy relationship is updated.",
@@ -7050,8 +6562,6 @@
     {
         "name": "edit_terms",
         "file": "wp-includes/taxonomy.php",
-        "line": 2943,
-        "end_line": 2943,
         "type": "action",
         "doc": {
             "description": "Fires immediately before the given terms are edited.",
@@ -7084,8 +6594,6 @@
     {
         "name": "edit_user_created_user",
         "file": "wp-admin/includes/user.php",
-        "line": 242,
-        "end_line": 242,
         "type": "action",
         "doc": {
             "description": "Fires after a new user has been created.",
@@ -7118,8 +6626,6 @@
     {
         "name": "edit_user_profile",
         "file": "wp-admin/user-edit.php",
-        "line": 726,
-        "end_line": 726,
         "type": "action",
         "doc": {
             "description": "Fires after the 'About the User' settings table on the 'Edit User' screen.",
@@ -7144,8 +6650,6 @@
     {
         "name": "edit_user_profile_update",
         "file": "wp-admin/user-edit.php",
-        "line": 147,
-        "end_line": 147,
         "type": "action",
         "doc": {
             "description": "Fires before the page loads on the 'Edit User' screen.",
@@ -7170,8 +6674,6 @@
     {
         "name": "edit_{$taxonomy}",
         "file": "wp-includes/taxonomy.php",
-        "line": 3019,
-        "end_line": 3019,
         "type": "action",
         "doc": {
             "description": "Fires after a term in a specific taxonomy has been updated, but before the term cache has been cleaned.",
@@ -7204,8 +6706,6 @@
     {
         "name": "edited_term",
         "file": "wp-includes/taxonomy.php",
-        "line": 3035,
-        "end_line": 3035,
         "type": "action",
         "doc": {
             "description": "Fires after a term has been updated, and the term cache has been cleaned.",
@@ -7246,8 +6746,6 @@
     {
         "name": "edited_term_taxonomies",
         "file": "wp-includes/taxonomy.php",
-        "line": 1839,
-        "end_line": 1839,
         "type": "action",
         "doc": {
             "description": "Fires immediately after a term to delete's children are reassigned a parent.",
@@ -7272,8 +6770,6 @@
     {
         "name": "edited_term_taxonomy",
         "file": "wp-includes/taxonomy.php",
-        "line": 2995,
-        "end_line": 2995,
         "type": "action",
         "doc": {
             "description": "Fires immediately after a term-taxonomy relationship is updated.",
@@ -7306,8 +6802,6 @@
     {
         "name": "edited_terms",
         "file": "wp-includes/taxonomy.php",
-        "line": 2973,
-        "end_line": 2973,
         "type": "action",
         "doc": {
             "description": "Fires immediately after the given terms are edited.",
@@ -7340,8 +6834,6 @@
     {
         "name": "edited_{$taxonomy}",
         "file": "wp-includes/taxonomy.php",
-        "line": 3048,
-        "end_line": 3048,
         "type": "action",
         "doc": {
             "description": "Fires after a term for a specific taxonomy has been updated, and the term cache has been cleaned.",
@@ -7374,8 +6866,6 @@
     {
         "name": "embed_content",
         "file": "wp-includes/theme-compat/embed-content.php",
-        "line": 109,
-        "end_line": 109,
         "type": "action",
         "doc": {
             "description": "Prints additional content after the embed excerpt.",
@@ -7392,8 +6882,6 @@
     {
         "name": "embed_content_meta",
         "file": "wp-includes/theme-compat/embed-content.php",
-        "line": 122,
-        "end_line": 122,
         "type": "action",
         "doc": {
             "description": "Prints additional meta content in the embed template.",
@@ -7410,8 +6898,6 @@
     {
         "name": "embed_footer",
         "file": "wp-includes/theme-compat/footer-embed.php",
-        "line": 18,
-        "end_line": 18,
         "type": "action",
         "doc": {
             "description": "Prints scripts or data before the closing body tag in the embed template.",
@@ -7428,8 +6914,6 @@
     {
         "name": "embed_head",
         "file": "wp-includes/theme-compat/header-embed.php",
-        "line": 29,
-        "end_line": 29,
         "type": "action",
         "doc": {
             "description": "Prints scripts or data in the embed template head tag.",
@@ -7446,8 +6930,6 @@
     {
         "name": "end_fetch_post_thumbnail_html",
         "file": "wp-includes/post-thumbnail-template.php",
-        "line": 183,
-        "end_line": 183,
         "type": "action",
         "doc": {
             "description": "Fires after fetching the post thumbnail HTML.",
@@ -7489,8 +6971,6 @@
     {
         "name": "enqueue_block_assets",
         "file": "wp-includes/script-loader.php",
-        "line": 2853,
-        "end_line": 2853,
         "type": "action",
         "doc": {
             "description": "Fires after enqueuing block assets for both editor and front-end.",
@@ -7507,8 +6987,6 @@
     {
         "name": "enqueue_block_editor_assets",
         "file": "wp-admin/edit-form-blocks.php",
-        "line": 361,
-        "end_line": 361,
         "type": "action",
         "doc": {
             "description": "Fires after block assets have been enqueued for the editing interface.",
@@ -7525,8 +7003,6 @@
     {
         "name": "enqueue_embed_scripts",
         "file": "wp-includes/embed.php",
-        "line": 1004,
-        "end_line": 1004,
         "type": "action",
         "doc": {
             "description": "Fires when scripts and styles are enqueued for the embed iframe.",
@@ -7543,8 +7019,6 @@
     {
         "name": "export_filters",
         "file": "wp-admin/export.php",
-        "line": 317,
-        "end_line": 317,
         "type": "action",
         "doc": {
             "description": "Fires at the end of the export filters form.",
@@ -7561,8 +7035,6 @@
     {
         "name": "export_wp",
         "file": "wp-admin/includes/export.php",
-        "line": 76,
-        "end_line": 76,
         "type": "action",
         "doc": {
             "description": "Fires at the beginning of an export, before any headers are sent.",
@@ -7587,8 +7059,6 @@
     {
         "name": "generate_recovery_mode_key",
         "file": "wp-includes/class-wp-recovery-mode-key-service.php",
-        "line": 75,
-        "end_line": 75,
         "type": "action",
         "doc": {
             "description": "Fires when a recovery mode key is generated.",
@@ -7621,8 +7091,6 @@
     {
         "name": "generate_rewrite_rules",
         "file": "wp-includes/class-wp-rewrite.php",
-        "line": 1434,
-        "end_line": 1434,
         "type": "action_reference",
         "doc": {
             "description": "Fires after the rewrite rules are generated.",
@@ -7647,8 +7115,6 @@
     {
         "name": "get_footer",
         "file": "wp-includes/general-template.php",
-        "line": 66,
-        "end_line": 66,
         "type": "action",
         "doc": {
             "description": "Fires before the footer template file is loaded.",
@@ -7679,8 +7145,6 @@
     {
         "name": "get_header",
         "file": "wp-includes/general-template.php",
-        "line": 31,
-        "end_line": 31,
         "type": "action",
         "doc": {
             "description": "Fires before the header template file is loaded.",
@@ -7711,8 +7175,6 @@
     {
         "name": "get_sidebar",
         "file": "wp-includes/general-template.php",
-        "line": 101,
-        "end_line": 101,
         "type": "action",
         "doc": {
             "description": "Fires before the sidebar template file is loaded.",
@@ -7743,8 +7205,6 @@
     {
         "name": "get_template_part",
         "file": "wp-includes/general-template.php",
-        "line": 166,
-        "end_line": 166,
         "type": "action",
         "doc": {
             "description": "Fires before a template part is loaded.",
@@ -7785,8 +7245,6 @@
     {
         "name": "get_template_part_{$slug}",
         "file": "wp-includes/general-template.php",
-        "line": 147,
-        "end_line": 147,
         "type": "action",
         "doc": {
             "description": "Fires before the specified template part file is loaded.",
@@ -7820,8 +7278,6 @@
     {
         "name": "grant_super_admin",
         "file": "wp-includes/capabilities.php",
-        "line": 911,
-        "end_line": 911,
         "type": "action",
         "doc": {
             "description": "Fires before the user is granted Super Admin privileges.",
@@ -7846,8 +7302,6 @@
     {
         "name": "granted_super_admin",
         "file": "wp-includes/capabilities.php",
-        "line": 928,
-        "end_line": 928,
         "type": "action",
         "doc": {
             "description": "Fires after the user is granted Super Admin privileges.",
@@ -7872,8 +7326,6 @@
     {
         "name": "heartbeat_nopriv_tick",
         "file": "wp-admin/includes/ajax-actions.php",
-        "line": 67,
-        "end_line": 67,
         "type": "action",
         "doc": {
             "description": "Fires when Heartbeat ticks in no-privilege environments.",
@@ -7906,8 +7358,6 @@
     {
         "name": "heartbeat_tick",
         "file": "wp-admin/includes/ajax-actions.php",
-        "line": 3393,
-        "end_line": 3393,
         "type": "action",
         "doc": {
             "description": "Fires when Heartbeat ticks in logged-in environments.",
@@ -7940,8 +7390,6 @@
     {
         "name": "http_api_curl",
         "file": "wp-includes/class-wp-http-curl.php",
-        "line": 230,
-        "end_line": 230,
         "type": "action_reference",
         "doc": {
             "description": "Fires before the cURL request is executed.",
@@ -7982,8 +7430,6 @@
     {
         "name": "http_api_debug",
         "file": "wp-includes/class-http.php",
-        "line": 419,
-        "end_line": 419,
         "type": "action",
         "doc": {
             "description": "Fires after an HTTP API response is received and before the response is returned.",
@@ -8041,8 +7487,6 @@
     {
         "name": "in_admin_footer",
         "file": "wp-admin/admin-footer.php",
-        "line": 31,
-        "end_line": 31,
         "type": "action",
         "doc": {
             "description": "Fires after the opening tag for the admin footer.",
@@ -8059,8 +7503,6 @@
     {
         "name": "in_admin_header",
         "file": "wp-admin/admin-header.php",
-        "line": 245,
-        "end_line": 245,
         "type": "action",
         "doc": {
             "description": "Fires at the beginning of the content section in an admin page.",
@@ -8077,8 +7519,6 @@
     {
         "name": "in_plugin_update_message-{$file}",
         "file": "wp-admin/includes/update.php",
-        "line": 536,
-        "end_line": 536,
         "type": "action",
         "doc": {
             "description": "Fires at the end of the update message container in each row of the plugins list table.",
@@ -8111,8 +7551,6 @@
     {
         "name": "in_theme_update_message-{$theme_key}",
         "file": "wp-admin/includes/update.php",
-        "line": 684,
-        "end_line": 684,
         "type": "action",
         "doc": {
             "description": "Fires at the end of the update message container in each row of the themes list table.",
@@ -8145,8 +7583,6 @@
     {
         "name": "in_widget_form",
         "file": "wp-includes/class-wp-widget.php",
-        "line": 537,
-        "end_line": 537,
         "type": "action_reference",
         "doc": {
             "description": "Fires at the end of the widget control form.",
@@ -8187,8 +7623,6 @@
     {
         "name": "init",
         "file": "wp-settings.php",
-        "line": 523,
-        "end_line": 523,
         "type": "action",
         "doc": {
             "description": "Fires after WordPress has finished loading but before any headers are sent.",
@@ -8205,8 +7639,6 @@
     {
         "name": "install_plugins_pre_{$tab}",
         "file": "wp-admin/plugin-install.php",
-        "line": 70,
-        "end_line": 70,
         "type": "action",
         "doc": {
             "description": "Fires before each tab on the Install Plugins screen is loaded.",
@@ -8223,8 +7655,6 @@
     {
         "name": "install_plugins_table_header",
         "file": "wp-admin/includes/class-wp-plugin-install-list-table.php",
-        "line": 387,
-        "end_line": 387,
         "type": "action",
         "doc": {
             "description": "Fires before the Plugin Install table header pagination is displayed.",
@@ -8241,8 +7671,6 @@
     {
         "name": "install_plugins_{$tab}",
         "file": "wp-admin/plugin-install.php",
-        "line": 174,
-        "end_line": 174,
         "type": "action",
         "doc": {
             "description": "Fires after the plugins list table in each tab of the Install Plugins screen.",
@@ -8267,8 +7695,6 @@
     {
         "name": "install_themes_pre_{$tab}",
         "file": "wp-admin/theme-install.php",
-        "line": 91,
-        "end_line": 91,
         "type": "action",
         "doc": {
             "description": "Fires before each of the tabs are rendered on the Install Themes page.",
@@ -8285,8 +7711,6 @@
     {
         "name": "install_themes_table_header",
         "file": "wp-admin/includes/class-wp-theme-install-list-table.php",
-        "line": 207,
-        "end_line": 207,
         "type": "action",
         "doc": {
             "description": "Fires in the Install Themes list table header.",
@@ -8303,8 +7727,6 @@
     {
         "name": "install_themes_{$tab}",
         "file": "wp-admin/theme-install.php",
-        "line": 257,
-        "end_line": 257,
         "type": "action",
         "doc": {
             "description": "Fires at the top of each of the tabs on the Install Themes page.",
@@ -8329,8 +7751,6 @@
     {
         "name": "invite_user",
         "file": "wp-admin/user-new.php",
-        "line": 111,
-        "end_line": 111,
         "type": "action",
         "doc": {
             "description": "Fires immediately after a user is invited to join a site, but before the notification is sent.",
@@ -8371,8 +7791,6 @@
     {
         "name": "load-importer-{$importer}",
         "file": "wp-admin/admin.php",
-        "line": 318,
-        "end_line": 318,
         "type": "action",
         "doc": {
             "description": "Fires before an importer screen is loaded.",
@@ -8389,8 +7807,6 @@
     {
         "name": "load-widgets.php",
         "file": "wp-admin/includes/ajax-actions.php",
-        "line": 2280,
-        "end_line": 2280,
         "type": "action",
         "doc": {
             "description": "Fires early when editing the widgets displayed in sidebars.",
@@ -8407,8 +7823,6 @@
     {
         "name": "load-{$page_hook}",
         "file": "wp-admin/admin.php",
-        "line": 232,
-        "end_line": 232,
         "type": "action",
         "doc": {
             "description": "Fires before a particular screen is loaded.",
@@ -8430,8 +7844,6 @@
     {
         "name": "load-{$pagenow}",
         "file": "wp-admin/admin.php",
-        "line": 367,
-        "end_line": 367,
         "type": "action",
         "doc": {
             "description": "Fires before a particular screen is loaded.",
@@ -8448,8 +7860,6 @@
     {
         "name": "load-{$plugin_page}",
         "file": "wp-admin/admin.php",
-        "line": 277,
-        "end_line": 277,
         "type": "action",
         "doc": {
             "description": "Fires before a particular screen is loaded.",
@@ -8471,8 +7881,6 @@
     {
         "name": "load_feed_engine",
         "file": "wp-includes/rss.php",
-        "line": 27,
-        "end_line": 27,
         "type": "action",
         "doc": {
             "description": "Fires before MagpieRSS is loaded, to optionally replace it.",
@@ -8493,8 +7901,6 @@
     {
         "name": "load_textdomain",
         "file": "wp-includes/l10n.php",
-        "line": 657,
-        "end_line": 657,
         "type": "action",
         "doc": {
             "description": "Fires before the MO translation file is loaded.",
@@ -8527,8 +7933,6 @@
     {
         "name": "login_enqueue_scripts",
         "file": "wp-login.php",
-        "line": 118,
-        "end_line": 118,
         "type": "action",
         "doc": {
             "description": "Enqueue scripts and styles for the login page.",
@@ -8545,8 +7949,6 @@
     {
         "name": "login_footer",
         "file": "wp-login.php",
-        "line": 321,
-        "end_line": 321,
         "type": "action",
         "doc": {
             "description": "Fires in the login page footer.",
@@ -8563,8 +7965,6 @@
     {
         "name": "login_form",
         "file": "wp-login.php",
-        "line": 1363,
-        "end_line": 1363,
         "type": "action",
         "doc": {
             "description": "Fires following the 'Password' field in the login form.",
@@ -8581,8 +7981,6 @@
     {
         "name": "login_form_{$action}",
         "file": "wp-login.php",
-        "line": 543,
-        "end_line": 543,
         "type": "action",
         "doc": {
             "description": "Fires before a specified login form action.",
@@ -8599,8 +7997,6 @@
     {
         "name": "login_head",
         "file": "wp-login.php",
-        "line": 125,
-        "end_line": 125,
         "type": "action",
         "doc": {
             "description": "Fires in the login page header after scripts are enqueued.",
@@ -8617,8 +8013,6 @@
     {
         "name": "login_header",
         "file": "wp-login.php",
-        "line": 209,
-        "end_line": 209,
         "type": "action",
         "doc": {
             "description": "Fires in the login page header after the body tag is opened.",
@@ -8635,8 +8029,6 @@
     {
         "name": "login_init",
         "file": "wp-login.php",
-        "line": 532,
-        "end_line": 532,
         "type": "action",
         "doc": {
             "description": "Fires when the login form is initialized.",
@@ -8653,8 +8045,6 @@
     {
         "name": "loop_end",
         "file": "wp-includes/class-wp-query.php",
-        "line": 3305,
-        "end_line": 3305,
         "type": "action_reference",
         "doc": {
             "description": "Fires once the loop has ended.",
@@ -8679,8 +8069,6 @@
     {
         "name": "loop_no_results",
         "file": "wp-includes/class-wp-query.php",
-        "line": 3316,
-        "end_line": 3316,
         "type": "action",
         "doc": {
             "description": "Fires if no results are found in a post query.",
@@ -8705,8 +8093,6 @@
     {
         "name": "loop_start",
         "file": "wp-includes/class-wp-query.php",
-        "line": 3278,
-        "end_line": 3278,
         "type": "action_reference",
         "doc": {
             "description": "Fires once the loop is started.",
@@ -8731,8 +8117,6 @@
     {
         "name": "lost_password",
         "file": "wp-login.php",
-        "line": 824,
-        "end_line": 824,
         "type": "action",
         "doc": {
             "description": "Fires before the lost password form.",
@@ -8762,8 +8146,6 @@
     {
         "name": "lostpassword_form",
         "file": "wp-login.php",
-        "line": 848,
-        "end_line": 848,
         "type": "action",
         "doc": {
             "description": "Fires inside the lostpassword form tags, before the hidden fields.",
@@ -8780,8 +8162,6 @@
     {
         "name": "lostpassword_post",
         "file": "wp-login.php",
-        "line": 389,
-        "end_line": 389,
         "type": "action",
         "doc": {
             "description": "Fires before errors are returned from a password reset request.",
@@ -8825,8 +8205,6 @@
     {
         "name": "make_delete_blog",
         "file": "wp-includes/ms-site.php",
-        "line": 1241,
-        "end_line": 1241,
         "type": "action",
         "doc": {
             "description": "Fires when the 'deleted' status is added to a site.",
@@ -8851,8 +8229,6 @@
     {
         "name": "make_ham_blog",
         "file": "wp-includes/ms-site.php",
-        "line": 1179,
-        "end_line": 1179,
         "type": "action",
         "doc": {
             "description": "Fires when the 'spam' status is removed from a site.",
@@ -8878,8 +8254,6 @@
     {
         "name": "make_ham_user",
         "file": "wp-includes/user.php",
-        "line": 1891,
-        "end_line": 1891,
         "type": "action",
         "doc": {
             "description": "Fires after the user is marked as a HAM user. Opposite of SPAM.",
@@ -8904,8 +8278,6 @@
     {
         "name": "make_spam_blog",
         "file": "wp-includes/ms-site.php",
-        "line": 1169,
-        "end_line": 1169,
         "type": "action",
         "doc": {
             "description": "Fires when the 'spam' status is added to a site.",
@@ -8931,8 +8303,6 @@
     {
         "name": "make_spam_user",
         "file": "wp-includes/user.php",
-        "line": 1882,
-        "end_line": 1882,
         "type": "action",
         "doc": {
             "description": "Fires after the user is marked as a SPAM user.",
@@ -8957,8 +8327,6 @@
     {
         "name": "make_undelete_blog",
         "file": "wp-includes/ms-site.php",
-        "line": 1251,
-        "end_line": 1251,
         "type": "action",
         "doc": {
             "description": "Fires when the 'deleted' status is removed from a site.",
@@ -8983,8 +8351,6 @@
     {
         "name": "manage_comments_custom_column",
         "file": "wp-admin/includes/class-wp-comments-list-table.php",
-        "line": 946,
-        "end_line": 946,
         "type": "action",
         "doc": {
             "description": "Fires when the default column output is displayed for a single row.",
@@ -9017,8 +8383,6 @@
     {
         "name": "manage_comments_nav",
         "file": "wp-admin/includes/class-wp-comments-list-table.php",
-        "line": 425,
-        "end_line": 425,
         "type": "action",
         "doc": {
             "description": "Fires after the Filter submit button for comment types.",
@@ -9043,8 +8407,6 @@
     {
         "name": "manage_link_custom_column",
         "file": "wp-admin/includes/class-wp-links-list-table.php",
-        "line": 293,
-        "end_line": 293,
         "type": "action",
         "doc": {
             "description": "Fires for each registered custom link column.",
@@ -9077,8 +8439,6 @@
     {
         "name": "manage_media_custom_column",
         "file": "wp-admin/includes/class-wp-media-list-table.php",
-        "line": 610,
-        "end_line": 610,
         "type": "action",
         "doc": {
             "description": "Fires for each custom column in the Media list table.",
@@ -9111,8 +8471,6 @@
     {
         "name": "manage_pages_custom_column",
         "file": "wp-admin/includes/class-wp-posts-list-table.php",
-        "line": 1238,
-        "end_line": 1238,
         "type": "action",
         "doc": {
             "description": "Fires in each custom column on the Posts list table.",
@@ -9145,8 +8503,6 @@
     {
         "name": "manage_plugins_custom_column",
         "file": "wp-admin/includes/class-wp-plugins-list-table.php",
-        "line": 979,
-        "end_line": 979,
         "type": "action",
         "doc": {
             "description": "Fires inside each custom column of the Plugins list table.",
@@ -9187,8 +8543,6 @@
     {
         "name": "manage_posts_custom_column",
         "file": "wp-admin/includes/class-wp-posts-list-table.php",
-        "line": 1252,
-        "end_line": 1252,
         "type": "action",
         "doc": {
             "description": "Fires in each custom column in the Posts list table.",
@@ -9221,8 +8575,6 @@
     {
         "name": "manage_posts_extra_tablenav",
         "file": "wp-admin/includes/class-wp-posts-list-table.php",
-        "line": 579,
-        "end_line": 579,
         "type": "action",
         "doc": {
             "description": "Fires immediately following the closing \"actions\" div in the tablenav for the posts list table.",
@@ -9247,8 +8599,6 @@
     {
         "name": "manage_sites_custom_column",
         "file": "wp-admin/includes/class-wp-ms-sites-list-table.php",
-        "line": 575,
-        "end_line": 575,
         "type": "action",
         "doc": {
             "description": "Fires for each registered custom column in the Sites list table.",
@@ -9281,8 +8631,6 @@
     {
         "name": "manage_sites_extra_tablenav",
         "file": "wp-admin/includes/class-wp-ms-sites-list-table.php",
-        "line": 353,
-        "end_line": 353,
         "type": "action",
         "doc": {
             "description": "Fires immediately following the closing \"actions\" div in the tablenav for the MS sites list table.",
@@ -9307,8 +8655,6 @@
     {
         "name": "manage_themes_custom_column",
         "file": "wp-admin/includes/class-wp-ms-themes-list-table.php",
-        "line": 662,
-        "end_line": 662,
         "type": "action",
         "doc": {
             "description": "Fires inside each custom column of the Multisite themes list table.",
@@ -9349,8 +8695,6 @@
     {
         "name": "manage_users_extra_tablenav",
         "file": "wp-admin/includes/class-wp-users-list-table.php",
-        "line": 324,
-        "end_line": 324,
         "type": "action",
         "doc": {
             "description": "Fires immediately following the closing \"actions\" div in the tablenav for the users list table.",
@@ -9375,8 +8719,6 @@
     {
         "name": "manage_{$post->post_type}_posts_custom_column",
         "file": "wp-admin/includes/class-wp-posts-list-table.php",
-        "line": 1265,
-        "end_line": 1265,
         "type": "action",
         "doc": {
             "description": "Fires for each custom column of a specific post type in the Posts list table.",
@@ -9409,8 +8751,6 @@
     {
         "name": "mature_blog",
         "file": "wp-includes/ms-site.php",
-        "line": 1193,
-        "end_line": 1193,
         "type": "action",
         "doc": {
             "description": "Fires when the 'mature' status is added to a site.",
@@ -9435,8 +8775,6 @@
     {
         "name": "media_buttons",
         "file": "wp-includes/class-wp-editor.php",
-        "line": 235,
-        "end_line": 235,
         "type": "action",
         "doc": {
             "description": "Fires after the default media button(s) are displayed.",
@@ -9461,8 +8799,6 @@
     {
         "name": "media_upload_{$tab}",
         "file": "wp-admin/media-upload.php",
-        "line": 111,
-        "end_line": 111,
         "type": "action",
         "doc": {
             "description": "Fires inside limited and specific upload-tab views in the legacy (pre-3.5.0) media popup.",
@@ -9479,8 +8815,6 @@
     {
         "name": "media_upload_{$type}",
         "file": "wp-admin/media-upload.php",
-        "line": 99,
-        "end_line": 99,
         "type": "action",
         "doc": {
             "description": "Fires inside specific upload-type views in the legacy (pre-3.5.0) media popup based on the current tab.",
@@ -9497,8 +8831,6 @@
     {
         "name": "metadata_lazyloader_queued_objects",
         "file": "wp-includes/class-wp-metadata-lazyloader.php",
-        "line": 104,
-        "end_line": 104,
         "type": "action",
         "doc": {
             "description": "Fires after objects are added to the metadata lazy-load queue.",
@@ -9539,8 +8871,6 @@
     {
         "name": "ms_loaded",
         "file": "wp-includes/ms-settings.php",
-        "line": 123,
-        "end_line": 123,
         "type": "action",
         "doc": {
             "description": "Fires after the current site and network have been detected and loaded in multisite's bootstrap.",
@@ -9557,8 +8887,6 @@
     {
         "name": "ms_network_not_found",
         "file": "wp-includes/ms-load.php",
-        "line": 356,
-        "end_line": 356,
         "type": "action",
         "doc": {
             "description": "Fires when a network cannot be found based on the requested domain and path.",
@@ -9591,8 +8919,6 @@
     {
         "name": "ms_site_not_found",
         "file": "wp-includes/ms-load.php",
-        "line": 415,
-        "end_line": 415,
         "type": "action",
         "doc": {
             "description": "Fires when a network can be determined but a site cannot.",
@@ -9633,8 +8959,6 @@
     {
         "name": "mu_activity_box_end",
         "file": "wp-admin/includes/dashboard.php",
-        "line": 475,
-        "end_line": 475,
         "type": "action",
         "doc": {
             "description": "Fires at the end of the 'Right Now' widget in the Network Admin dashboard.",
@@ -9652,8 +8976,6 @@
     {
         "name": "mu_plugin_loaded",
         "file": "wp-settings.php",
-        "line": 300,
-        "end_line": 300,
         "type": "action",
         "doc": {
             "description": "Fires once a single must-use plugin has loaded.",
@@ -9678,8 +9000,6 @@
     {
         "name": "mu_rightnow_end",
         "file": "wp-admin/includes/dashboard.php",
-        "line": 468,
-        "end_line": 468,
         "type": "action",
         "doc": {
             "description": "Fires at the end of the 'Right Now' widget in the Network Admin dashboard.",
@@ -9697,8 +9017,6 @@
     {
         "name": "muplugins_loaded",
         "file": "wp-settings.php",
-        "line": 327,
-        "end_line": 327,
         "type": "action",
         "doc": {
             "description": "Fires once all must-use and network-activated plugins have loaded.",
@@ -9715,8 +9033,6 @@
     {
         "name": "myblogs_allblogs_options",
         "file": "wp-admin/my-sites.php",
-        "line": 92,
-        "end_line": 92,
         "type": "action",
         "doc": {
             "description": "Fires before the sites list on the My Sites screen.",
@@ -9733,8 +9049,6 @@
     {
         "name": "network_admin_edit_{$action}",
         "file": "wp-admin/network/edit.php",
-        "line": 38,
-        "end_line": 38,
         "type": "action",
         "doc": {
             "description": "Fires the requested handler action.",
@@ -9751,8 +9065,6 @@
     {
         "name": "network_admin_menu",
         "file": "wp-admin/includes/menu.php",
-        "line": 135,
-        "end_line": 135,
         "type": "action",
         "doc": {
             "description": "Fires before the administration menu loads in the Network Admin.",
@@ -9777,8 +9089,6 @@
     {
         "name": "network_admin_notices",
         "file": "wp-admin/admin-header.php",
-        "line": 267,
-        "end_line": 267,
         "type": "action",
         "doc": {
             "description": "Prints network admin screen notices.",
@@ -9795,8 +9105,6 @@
     {
         "name": "network_plugin_loaded",
         "file": "wp-settings.php",
-        "line": 317,
-        "end_line": 317,
         "type": "action",
         "doc": {
             "description": "Fires once a single network-activated plugin has loaded.",
@@ -9821,8 +9129,6 @@
     {
         "name": "network_site_new_created_user",
         "file": "wp-admin/network/site-new.php",
-        "line": 136,
-        "end_line": 136,
         "type": "action",
         "doc": {
             "description": "Fires after a new user has been created via the network site-new.php page.",
@@ -9847,8 +9153,6 @@
     {
         "name": "network_site_new_form",
         "file": "wp-admin/network/site-new.php",
-        "line": 296,
-        "end_line": 296,
         "type": "action",
         "doc": {
             "description": "Fires at the end of the new site form in network admin.",
@@ -9865,8 +9169,6 @@
     {
         "name": "network_site_users_after_list_table",
         "file": "wp-admin/network/site-users.php",
-        "line": 295,
-        "end_line": 295,
         "type": "action",
         "doc": {
             "description": "Fires after the list table on the Users screen in the Multisite Network Admin.",
@@ -9883,8 +9185,6 @@
     {
         "name": "network_site_users_created_user",
         "file": "wp-admin/network/site-users.php",
-        "line": 87,
-        "end_line": 87,
         "type": "action",
         "doc": {
             "description": "Fires after a user has been created via the network site-users.php page.",
@@ -9909,8 +9209,6 @@
     {
         "name": "network_user_new_created_user",
         "file": "wp-admin/network/user-new.php",
-        "line": 63,
-        "end_line": 63,
         "type": "action",
         "doc": {
             "description": "Fires after a new user has been created via the network user-new.php page.",
@@ -9935,8 +9233,6 @@
     {
         "name": "network_user_new_form",
         "file": "wp-admin/network/user-new.php",
-        "line": 143,
-        "end_line": 143,
         "type": "action",
         "doc": {
             "description": "Fires at the end of the new user form in network admin.",
@@ -9953,8 +9249,6 @@
     {
         "name": "opml_head",
         "file": "wp-links-opml.php",
-        "line": 43,
-        "end_line": 43,
         "type": "action",
         "doc": {
             "description": "Fires in the OPML header.",
@@ -9971,8 +9265,6 @@
     {
         "name": "page_attributes_meta_box_template",
         "file": "wp-admin/includes/meta-boxes.php",
-        "line": 961,
-        "end_line": 961,
         "type": "action",
         "doc": {
             "description": "Fires immediately after the label inside the 'Template' section of the 'Page Attributes' meta box.",
@@ -10005,8 +9297,6 @@
     {
         "name": "page_attributes_misc_attributes",
         "file": "wp-admin/includes/meta-boxes.php",
-        "line": 992,
-        "end_line": 992,
         "type": "action",
         "doc": {
             "description": "Fires before the help hint text in the 'Page Attributes' meta box.",
@@ -10031,8 +9321,6 @@
     {
         "name": "parse_comment_query",
         "file": "wp-includes/class-wp-comment-query.php",
-        "line": 328,
-        "end_line": 328,
         "type": "action_reference",
         "doc": {
             "description": "Fires after the comment query vars have been parsed.",
@@ -10057,8 +9345,6 @@
     {
         "name": "parse_network_query",
         "file": "wp-includes/class-wp-network-query.php",
-        "line": 163,
-        "end_line": 163,
         "type": "action_reference",
         "doc": {
             "description": "Fires after the network query vars have been parsed.",
@@ -10083,8 +9369,6 @@
     {
         "name": "parse_query",
         "file": "wp-includes/class-wp-query.php",
-        "line": 1069,
-        "end_line": 1069,
         "type": "action_reference",
         "doc": {
             "description": "Fires after the main query vars have been parsed.",
@@ -10109,8 +9393,6 @@
     {
         "name": "parse_request",
         "file": "wp-includes/class-wp.php",
-        "line": 387,
-        "end_line": 387,
         "type": "action_reference",
         "doc": {
             "description": "Fires once all query variables for the current request have been parsed.",
@@ -10135,8 +9417,6 @@
     {
         "name": "parse_site_query",
         "file": "wp-includes/class-wp-site-query.php",
-        "line": 239,
-        "end_line": 239,
         "type": "action_reference",
         "doc": {
             "description": "Fires after the site query vars have been parsed.",
@@ -10161,8 +9441,6 @@
     {
         "name": "parse_tax_query",
         "file": "wp-includes/class-wp-query.php",
-        "line": 1308,
-        "end_line": 1308,
         "type": "action",
         "doc": {
             "description": "Fires after taxonomy-related query vars have been parsed.",
@@ -10187,8 +9465,6 @@
     {
         "name": "parse_term_query",
         "file": "wp-includes/class-wp-term-query.php",
-        "line": 275,
-        "end_line": 275,
         "type": "action",
         "doc": {
             "description": "Fires after term query vars have been parsed.",
@@ -10213,8 +9489,6 @@
     {
         "name": "password_reset",
         "file": "wp-includes/user.php",
-        "line": 2456,
-        "end_line": 2456,
         "type": "action",
         "doc": {
             "description": "Fires before the user's password is reset.",
@@ -10247,8 +9521,6 @@
     {
         "name": "permalink_structure_changed",
         "file": "wp-includes/class-wp-rewrite.php",
-        "line": 1893,
-        "end_line": 1893,
         "type": "action",
         "doc": {
             "description": "Fires after the permalink structure is updated.",
@@ -10281,8 +9553,6 @@
     {
         "name": "personal_options",
         "file": "wp-admin/user-edit.php",
-        "line": 383,
-        "end_line": 383,
         "type": "action",
         "doc": {
             "description": "Fires at the end of the 'Personal Options' settings table on the user editing screen.",
@@ -10307,8 +9577,6 @@
     {
         "name": "personal_options_update",
         "file": "wp-admin/user-edit.php",
-        "line": 138,
-        "end_line": 138,
         "type": "action",
         "doc": {
             "description": "Fires before the page loads on the 'Your Profile' editing screen.",
@@ -10333,8 +9601,6 @@
     {
         "name": "phpmailer_init",
         "file": "wp-includes/pluggable.php",
-        "line": 484,
-        "end_line": 484,
         "type": "action_reference",
         "doc": {
             "description": "Fires after PHPMailer is initialized.",
@@ -10359,8 +9625,6 @@
     {
         "name": "pingback_post",
         "file": "wp-includes/class-wp-xmlrpc-server.php",
-        "line": 6973,
-        "end_line": 6973,
         "type": "action",
         "doc": {
             "description": "Fires after a post pingback has been sent.",
@@ -10385,8 +9649,6 @@
     {
         "name": "plugin_loaded",
         "file": "wp-settings.php",
-        "line": 369,
-        "end_line": 369,
         "type": "action",
         "doc": {
             "description": "Fires once a single activated plugin has loaded.",
@@ -10411,8 +9673,6 @@
     {
         "name": "plugins_loaded",
         "file": "wp-settings.php",
-        "line": 392,
-        "end_line": 392,
         "type": "action",
         "doc": {
             "description": "Fires once activated plugins have loaded.",
@@ -10429,8 +9689,6 @@
     {
         "name": "populate_options",
         "file": "wp-admin/includes/schema.php",
-        "line": 370,
-        "end_line": 370,
         "type": "action",
         "doc": {
             "description": "Fires before creating WordPress options and populating their default values.",
@@ -10447,8 +9705,6 @@
     {
         "name": "post-html-upload-ui",
         "file": "wp-admin/includes/media.php",
-        "line": 2227,
-        "end_line": 2227,
         "type": "action",
         "doc": {
             "description": "Fires after the upload button in the media upload interface.",
@@ -10465,8 +9721,6 @@
     {
         "name": "post-plupload-upload-ui",
         "file": "wp-admin/includes/media.php",
-        "line": 2200,
-        "end_line": 2200,
         "type": "action",
         "doc": {
             "description": "Fires after the upload interface loads.",
@@ -10488,8 +9742,6 @@
     {
         "name": "post-upload-ui",
         "file": "wp-admin/includes/media.php",
-        "line": 2247,
-        "end_line": 2247,
         "type": "action",
         "doc": {
             "description": "Fires on the post upload UI screen.",
@@ -10506,8 +9758,6 @@
     {
         "name": "post_action_{$action}",
         "file": "wp-admin/post.php",
-        "line": 348,
-        "end_line": 348,
         "type": "action",
         "doc": {
             "description": "Fires for a given custom post action request.",
@@ -10532,8 +9782,6 @@
     {
         "name": "post_comment_status_meta_box-options",
         "file": "wp-admin/includes/meta-boxes.php",
-        "line": 795,
-        "end_line": 795,
         "type": "action",
         "doc": {
             "description": "Fires at the end of the Discussion meta box on the post editing screen.",
@@ -10558,8 +9806,6 @@
     {
         "name": "post_edit_form_tag",
         "file": "wp-admin/edit-form-advanced.php",
-        "line": 457,
-        "end_line": 457,
         "type": "action",
         "doc": {
             "description": "Fires inside the post editor form tag.",
@@ -10584,8 +9830,6 @@
     {
         "name": "post_lock_lost_dialog",
         "file": "wp-admin/includes/post.php",
-        "line": 1779,
-        "end_line": 1779,
         "type": "action",
         "doc": {
             "description": "Fires inside the dialog displayed when a user has lost the post lock.",
@@ -10610,8 +9854,6 @@
     {
         "name": "post_locked_dialog",
         "file": "wp-admin/includes/post.php",
-        "line": 1742,
-        "end_line": 1742,
         "type": "action",
         "doc": {
             "description": "Fires inside the post locked dialog before the buttons are displayed.",
@@ -10649,8 +9891,6 @@
     {
         "name": "post_stuck",
         "file": "wp-includes/post.php",
-        "line": 2529,
-        "end_line": 2529,
         "type": "action",
         "doc": {
             "description": "Fires once a post has been added to the sticky list.",
@@ -10675,8 +9915,6 @@
     {
         "name": "post_submitbox_minor_actions",
         "file": "wp-admin/includes/meta-boxes.php",
-        "line": 83,
-        "end_line": 83,
         "type": "action",
         "doc": {
             "description": "Fires before the post time/date setting in the Publish meta box.",
@@ -10701,8 +9939,6 @@
     {
         "name": "post_submitbox_misc_actions",
         "file": "wp-admin/includes/meta-boxes.php",
-        "line": 292,
-        "end_line": 292,
         "type": "action",
         "doc": {
             "description": "Fires after the post time/date setting in the Publish meta box.",
@@ -10732,8 +9968,6 @@
     {
         "name": "post_submitbox_start",
         "file": "wp-admin/includes/meta-boxes.php",
-        "line": 309,
-        "end_line": 309,
         "type": "action",
         "doc": {
             "description": "Fires at the beginning of the publishing actions section of the Publish meta box.",
@@ -10764,8 +9998,6 @@
     {
         "name": "post_unstuck",
         "file": "wp-includes/post.php",
-        "line": 2570,
-        "end_line": 2570,
         "type": "action",
         "doc": {
             "description": "Fires once a post has been removed from the sticky list.",
@@ -10790,8 +10022,6 @@
     {
         "name": "post_updated",
         "file": "wp-includes/post.php",
-        "line": 4099,
-        "end_line": 4099,
         "type": "action",
         "doc": {
             "description": "Fires once an existing post has been updated.",
@@ -10832,8 +10062,6 @@
     {
         "name": "posts_selection",
         "file": "wp-includes/class-wp-query.php",
-        "line": 2771,
-        "end_line": 2771,
         "type": "action",
         "doc": {
             "description": "Fires to announce the query's current selection parameters.",
@@ -10858,8 +10086,6 @@
     {
         "name": "pre-html-upload-ui",
         "file": "wp-admin/includes/media.php",
-        "line": 2211,
-        "end_line": 2211,
         "type": "action",
         "doc": {
             "description": "Fires before the upload button in the media upload interface.",
@@ -10876,8 +10102,6 @@
     {
         "name": "pre-plupload-upload-ui",
         "file": "wp-admin/includes/media.php",
-        "line": 2183,
-        "end_line": 2183,
         "type": "action",
         "doc": {
             "description": "Fires before the upload interface loads.",
@@ -10899,8 +10123,6 @@
     {
         "name": "pre-upload-ui",
         "file": "wp-admin/includes/media.php",
-        "line": 2101,
-        "end_line": 2101,
         "type": "action",
         "doc": {
             "description": "Fires just before the legacy (pre-3.5.0) upload interface is loaded.",
@@ -10917,8 +10139,6 @@
     {
         "name": "pre_auto_update",
         "file": "wp-admin/includes/class-wp-automatic-updater.php",
-        "line": 313,
-        "end_line": 313,
         "type": "action",
         "doc": {
             "description": "Fires immediately prior to an auto-update.",
@@ -10959,8 +10179,6 @@
     {
         "name": "pre_comment_on_post",
         "file": "wp-includes/comment.php",
-        "line": 3315,
-        "end_line": 3315,
         "type": "action",
         "doc": {
             "description": "Fires before a comment is posted.",
@@ -10985,8 +10203,6 @@
     {
         "name": "pre_current_active_plugins",
         "file": "wp-admin/plugins.php",
-        "line": 618,
-        "end_line": 618,
         "type": "action",
         "doc": {
             "description": "Fires before the plugins list table is rendered.",
@@ -11011,8 +10227,6 @@
     {
         "name": "pre_delete_site_option_{$option}",
         "file": "wp-includes/option.php",
-        "line": 1497,
-        "end_line": 1497,
         "type": "action",
         "doc": {
             "description": "Fires immediately before a specific network option is deleted.",
@@ -11055,8 +10269,6 @@
     {
         "name": "pre_delete_term",
         "file": "wp-includes/taxonomy.php",
-        "line": 1804,
-        "end_line": 1804,
         "type": "action",
         "doc": {
             "description": "Fires when deleting a term, before any modifications are made to posts or terms.",
@@ -11089,8 +10301,6 @@
     {
         "name": "pre_get_comments",
         "file": "wp-includes/class-wp-comment-query.php",
-        "line": 374,
-        "end_line": 374,
         "type": "action_reference",
         "doc": {
             "description": "Fires before comments are retrieved.",
@@ -11115,8 +10325,6 @@
     {
         "name": "pre_get_networks",
         "file": "wp-includes/class-wp-network-query.php",
-        "line": 198,
-        "end_line": 198,
         "type": "action_reference",
         "doc": {
             "description": "Fires before networks are retrieved.",
@@ -11141,8 +10349,6 @@
     {
         "name": "pre_get_posts",
         "file": "wp-includes/class-wp-query.php",
-        "line": 1757,
-        "end_line": 1757,
         "type": "action_reference",
         "doc": {
             "description": "Fires after the query variable object is created, but before the actual query is run.",
@@ -11167,8 +10373,6 @@
     {
         "name": "pre_get_search_form",
         "file": "wp-includes/general-template.php",
-        "line": 210,
-        "end_line": 210,
         "type": "action",
         "doc": {
             "description": "Fires before the search form is retrieved, at the start of get_search_form().",
@@ -11195,8 +10399,6 @@
     {
         "name": "pre_get_sites",
         "file": "wp-includes/class-wp-site-query.php",
-        "line": 283,
-        "end_line": 283,
         "type": "action_reference",
         "doc": {
             "description": "Fires before sites are retrieved.",
@@ -11221,8 +10423,6 @@
     {
         "name": "pre_get_terms",
         "file": "wp-includes/class-wp-term-query.php",
-        "line": 317,
-        "end_line": 317,
         "type": "action",
         "doc": {
             "description": "Fires before terms are retrieved.",
@@ -11247,8 +10447,6 @@
     {
         "name": "pre_get_users",
         "file": "wp-includes/class-wp-user-query.php",
-        "line": 230,
-        "end_line": 230,
         "type": "action",
         "doc": {
             "description": "Fires before the WP_User_Query has been parsed.",
@@ -11273,8 +10471,6 @@
     {
         "name": "pre_network_site_new_created_user",
         "file": "wp-admin/network/site-new.php",
-        "line": 117,
-        "end_line": 117,
         "type": "action",
         "doc": {
             "description": "Fires immediately before a new user is created via the network site-new.php page.",
@@ -11299,8 +10495,6 @@
     {
         "name": "pre_ping",
         "file": "wp-includes/comment.php",
-        "line": 2858,
-        "end_line": 2858,
         "type": "action_reference",
         "doc": {
             "description": "Fires just before pinging back links found in a post.",
@@ -11341,8 +10535,6 @@
     {
         "name": "pre_post_update",
         "file": "wp-includes/post.php",
-        "line": 3901,
-        "end_line": 3901,
         "type": "action",
         "doc": {
             "description": "Fires immediately before an existing post is updated in the database.",
@@ -11375,8 +10567,6 @@
     {
         "name": "pre_trackback_post",
         "file": "wp-trackback.php",
-        "line": 110,
-        "end_line": 110,
         "type": "action",
         "doc": {
             "description": "Fires before the trackback is added to a post.",
@@ -11441,8 +10631,6 @@
     {
         "name": "pre_uninstall_plugin",
         "file": "wp-admin/includes/plugin.php",
-        "line": 1200,
-        "end_line": 1200,
         "type": "action",
         "doc": {
             "description": "Fires in uninstall_plugin() immediately before the plugin is uninstalled.",
@@ -11475,8 +10663,6 @@
     {
         "name": "pre_user_query",
         "file": "wp-includes/class-wp-user-query.php",
-        "line": 582,
-        "end_line": 582,
         "type": "action_reference",
         "doc": {
             "description": "Fires after the WP_User_Query has been parsed, and before the query is executed.",
@@ -11501,8 +10687,6 @@
     {
         "name": "preprocess_signup_form",
         "file": "wp-signup.php",
-        "line": 970,
-        "end_line": 970,
         "type": "action",
         "doc": {
             "description": "Fires when the site sign-up form is sent.",
@@ -11519,8 +10703,6 @@
     {
         "name": "print_default_editor_scripts",
         "file": "wp-includes/class-wp-editor.php",
-        "line": 941,
-        "end_line": 941,
         "type": "action",
         "doc": {
             "description": "Fires when the editor scripts are loaded for later initialization, after all scripts and settings are printed.",
@@ -11537,8 +10719,6 @@
     {
         "name": "print_media_templates",
         "file": "wp-includes/media-template.php",
-        "line": 1455,
-        "end_line": 1455,
         "type": "action",
         "doc": {
             "description": "Fires when the custom Backbone media templates are printed.",
@@ -11555,8 +10735,6 @@
     {
         "name": "profile_personal_options",
         "file": "wp-admin/user-edit.php",
-        "line": 398,
-        "end_line": 398,
         "type": "action",
         "doc": {
             "description": "Fires after the 'Personal Options' settings table on the 'Your Profile' editing screen.",
@@ -11581,8 +10759,6 @@
     {
         "name": "profile_update",
         "file": "wp-includes/user.php",
-        "line": 1871,
-        "end_line": 1871,
         "type": "action",
         "doc": {
             "description": "Fires immediately after an existing user is updated.",
@@ -11615,8 +10791,6 @@
     {
         "name": "publish_phone",
         "file": "wp-mail.php",
-        "line": 241,
-        "end_line": 241,
         "type": "action",
         "doc": {
             "description": "Fires after a post submitted by email is published.",
@@ -11641,8 +10815,6 @@
     {
         "name": "quick_edit_custom_box",
         "file": "wp-admin/includes/class-wp-posts-list-table.php",
-        "line": 1888,
-        "end_line": 1888,
         "type": "action",
         "doc": {
             "description": "Fires once for each column in Quick Edit mode.",
@@ -11683,8 +10855,6 @@
     {
         "name": "rdf_header",
         "file": "wp-includes/feed-rdf.php",
-        "line": 56,
-        "end_line": 56,
         "type": "action",
         "doc": {
             "description": "Fires at the end of the RDF feed header.",
@@ -11701,8 +10871,6 @@
     {
         "name": "rdf_item",
         "file": "wp-includes/feed-rdf.php",
-        "line": 92,
-        "end_line": 92,
         "type": "action",
         "doc": {
             "description": "Fires at the end of each RDF feed item.",
@@ -11719,8 +10887,6 @@
     {
         "name": "rdf_ns",
         "file": "wp-includes/feed-rdf.php",
-        "line": 29,
-        "end_line": 29,
         "type": "action",
         "doc": {
             "description": "Fires at the end of the feed root to add namespaces.",
@@ -11737,8 +10903,6 @@
     {
         "name": "register_form",
         "file": "wp-login.php",
-        "line": 1081,
-        "end_line": 1081,
         "type": "action",
         "doc": {
             "description": "Fires following the 'Email' field in the user registration form.",
@@ -11755,8 +10919,6 @@
     {
         "name": "register_new_user",
         "file": "wp-includes/user.php",
-        "line": 2579,
-        "end_line": 2579,
         "type": "action",
         "doc": {
             "description": "Fires after a new user registration has been recorded.",
@@ -11781,8 +10943,6 @@
     {
         "name": "register_post",
         "file": "wp-includes/user.php",
-        "line": 2532,
-        "end_line": 2532,
         "type": "action",
         "doc": {
             "description": "Fires when submitting registration form data, before the user is created.",
@@ -11823,8 +10983,6 @@
     {
         "name": "register_sidebar",
         "file": "wp-includes/widgets.php",
-        "line": 302,
-        "end_line": 302,
         "type": "action",
         "doc": {
             "description": "Fires once a sidebar has been registered.",
@@ -11849,8 +11007,6 @@
     {
         "name": "registered_post_type",
         "file": "wp-includes/post.php",
-        "line": 1445,
-        "end_line": 1445,
         "type": "action",
         "doc": {
             "description": "Fires after a post type is registered.",
@@ -11888,8 +11044,6 @@
     {
         "name": "registered_taxonomy",
         "file": "wp-includes/taxonomy.php",
-        "line": 443,
-        "end_line": 443,
         "type": "action",
         "doc": {
             "description": "Fires after a taxonomy is registered.",
@@ -11931,8 +11085,6 @@
     {
         "name": "registered_taxonomy_for_object_type",
         "file": "wp-includes/taxonomy.php",
-        "line": 635,
-        "end_line": 635,
         "type": "action",
         "doc": {
             "description": "Fires after a taxonomy is registered for an object type.",
@@ -11965,8 +11117,6 @@
     {
         "name": "remove_user_from_blog",
         "file": "wp-includes/ms-functions.php",
-        "line": 253,
-        "end_line": 253,
         "type": "action",
         "doc": {
             "description": "Fires before a user is removed from a site.",
@@ -12013,8 +11163,6 @@
     {
         "name": "remove_user_role",
         "file": "wp-includes/class-wp-user.php",
-        "line": 578,
-        "end_line": 578,
         "type": "action",
         "doc": {
             "description": "Fires immediately after a role as been removed from a user.",
@@ -12047,8 +11195,6 @@
     {
         "name": "requests-{$hook}",
         "file": "wp-includes/class-wp-http-requests-hooks.php",
-        "line": 72,
-        "end_line": 72,
         "type": "action_reference",
         "doc": {
             "description": "Transforms a native Request hook to a WordPress actions.",
@@ -12090,8 +11236,6 @@
     {
         "name": "resetpass_form",
         "file": "wp-login.php",
-        "line": 983,
-        "end_line": 983,
         "type": "action",
         "doc": {
             "description": "Fires following the 'Strength indicator' meter in the user password reset form.",
@@ -12116,8 +11260,6 @@
     {
         "name": "rest_after_insert_attachment",
         "file": "wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php",
-        "line": 159,
-        "end_line": 159,
         "type": "action",
         "doc": {
             "description": "Fires after a single attachment is completely created or updated via the REST API.",
@@ -12158,8 +11300,6 @@
     {
         "name": "rest_after_insert_comment",
         "file": "wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php",
-        "line": 653,
-        "end_line": 653,
         "type": "action",
         "doc": {
             "description": "Fires completely after a comment is created or updated via the REST API.",
@@ -12200,8 +11340,6 @@
     {
         "name": "rest_after_insert_user",
         "file": "wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php",
-        "line": 579,
-        "end_line": 579,
         "type": "action",
         "doc": {
             "description": "Fires after a user is completely created or updated via the REST API.",
@@ -12242,8 +11380,6 @@
     {
         "name": "rest_after_insert_{$this->post_type}",
         "file": "wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php",
-        "line": 625,
-        "end_line": 625,
         "type": "action",
         "doc": {
             "description": "Fires after a single post is completely created or updated via the REST API.",
@@ -12284,8 +11420,6 @@
     {
         "name": "rest_after_insert_{$this->taxonomy}",
         "file": "wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php",
-        "line": 484,
-        "end_line": 484,
         "type": "action",
         "doc": {
             "description": "Fires after a single term is completely created or updated via the REST API.",
@@ -12326,8 +11460,6 @@
     {
         "name": "rest_api_init",
         "file": "wp-includes/rest-api.php",
-        "line": 471,
-        "end_line": 471,
         "type": "action",
         "doc": {
             "description": "Fires when preparing to serve an API request.",
@@ -12352,8 +11484,6 @@
     {
         "name": "rest_delete_comment",
         "file": "wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php",
-        "line": 873,
-        "end_line": 873,
         "type": "action",
         "doc": {
             "description": "Fires after a comment is deleted via the REST API.",
@@ -12394,8 +11524,6 @@
     {
         "name": "rest_delete_revision",
         "file": "wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php",
-        "line": 439,
-        "end_line": 439,
         "type": "action",
         "doc": {
             "description": "Fires after a revision is deleted via the REST API.",
@@ -12430,8 +11558,6 @@
     {
         "name": "rest_delete_user",
         "file": "wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php",
-        "line": 828,
-        "end_line": 828,
         "type": "action",
         "doc": {
             "description": "Fires immediately after a user is deleted via the REST API.",
@@ -12472,8 +11598,6 @@
     {
         "name": "rest_delete_{$this->post_type}",
         "file": "wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php",
-        "line": 876,
-        "end_line": 876,
         "type": "action",
         "doc": {
             "description": "Fires immediately after a single post is deleted or trashed via the REST API.",
@@ -12514,8 +11638,6 @@
     {
         "name": "rest_delete_{$this->taxonomy}",
         "file": "wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php",
-        "line": 655,
-        "end_line": 655,
         "type": "action",
         "doc": {
             "description": "Fires after a single term is deleted via the REST API.",
@@ -12556,8 +11678,6 @@
     {
         "name": "rest_insert_attachment",
         "file": "wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php",
-        "line": 263,
-        "end_line": 263,
         "type": "action",
         "doc": {
             "description": "Fires after a single attachment is created or updated via the REST API.",
@@ -12598,8 +11718,6 @@
     {
         "name": "rest_insert_comment",
         "file": "wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php",
-        "line": 622,
-        "end_line": 622,
         "type": "action",
         "doc": {
             "description": "Fires after a comment is created or updated via the REST API.",
@@ -12640,8 +11758,6 @@
     {
         "name": "rest_insert_user",
         "file": "wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php",
-        "line": 547,
-        "end_line": 547,
         "type": "action",
         "doc": {
             "description": "Fires immediately after a user is created or updated via the REST API.",
@@ -12682,8 +11798,6 @@
     {
         "name": "rest_insert_{$this->post_type}",
         "file": "wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php",
-        "line": 567,
-        "end_line": 567,
         "type": "action",
         "doc": {
             "description": "Fires after a single post is created or updated via the REST API.",
@@ -12724,8 +11838,6 @@
     {
         "name": "rest_insert_{$this->taxonomy}",
         "file": "wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php",
-        "line": 454,
-        "end_line": 454,
         "type": "action",
         "doc": {
             "description": "Fires after a single term is created or updated via the REST API.",
@@ -12766,8 +11878,6 @@
     {
         "name": "restore_previous_locale",
         "file": "wp-includes/class-wp-locale-switcher.php",
-        "line": 129,
-        "end_line": 129,
         "type": "action",
         "doc": {
             "description": "Fires when the locale is restored to the previous one.",
@@ -12800,8 +11910,6 @@
     {
         "name": "restrict_manage_comments",
         "file": "wp-admin/includes/class-wp-comments-list-table.php",
-        "line": 409,
-        "end_line": 409,
         "type": "action",
         "doc": {
             "description": "Fires just before the Filter submit button for comment types.",
@@ -12818,8 +11926,6 @@
     {
         "name": "restrict_manage_posts",
         "file": "wp-admin/includes/class-wp-posts-list-table.php",
-        "line": 555,
-        "end_line": 555,
         "type": "action",
         "doc": {
             "description": "Fires before the Filter button on the Posts and Pages list tables.",
@@ -12862,8 +11968,6 @@
     {
         "name": "restrict_manage_sites",
         "file": "wp-admin/includes/class-wp-ms-sites-list-table.php",
-        "line": 335,
-        "end_line": 335,
         "type": "action",
         "doc": {
             "description": "Fires before the Filter button on the MS sites list table.",
@@ -12888,8 +11992,6 @@
     {
         "name": "restrict_manage_users",
         "file": "wp-admin/includes/class-wp-users-list-table.php",
-        "line": 312,
-        "end_line": 312,
         "type": "action",
         "doc": {
             "description": "Fires just before the closing div containing the bulk role-change controls in the Users list table.",
@@ -12919,8 +12021,6 @@
     {
         "name": "retrieve_password",
         "file": "wp-includes/user.php",
-        "line": 2289,
-        "end_line": 2289,
         "type": "action",
         "doc": {
             "description": "Fires before a new password is retrieved.",
@@ -12945,8 +12045,6 @@
     {
         "name": "retrieve_password_key",
         "file": "wp-includes/user.php",
-        "line": 2323,
-        "end_line": 2323,
         "type": "action",
         "doc": {
             "description": "Fires when a password reset key is generated.",
@@ -12979,8 +12077,6 @@
     {
         "name": "revoke_super_admin",
         "file": "wp-includes/capabilities.php",
-        "line": 958,
-        "end_line": 958,
         "type": "action",
         "doc": {
             "description": "Fires before the user's Super Admin privileges are revoked.",
@@ -13005,8 +12101,6 @@
     {
         "name": "revoked_super_admin",
         "file": "wp-includes/capabilities.php",
-        "line": 977,
-        "end_line": 977,
         "type": "action",
         "doc": {
             "description": "Fires after the user's Super Admin privileges are revoked.",
@@ -13031,8 +12125,6 @@
     {
         "name": "rightnow_end",
         "file": "wp-admin/includes/dashboard.php",
-        "line": 378,
-        "end_line": 378,
         "type": "action",
         "doc": {
             "description": "Fires at the end of the 'At a Glance' dashboard widget.",
@@ -13049,8 +12141,6 @@
     {
         "name": "rss2_comments_ns",
         "file": "wp-includes/feed-rss2-comments.php",
-        "line": 31,
-        "end_line": 31,
         "type": "action",
         "doc": {
             "description": "Fires at the end of the RSS root to add namespaces.",
@@ -13067,8 +12157,6 @@
     {
         "name": "rss2_head",
         "file": "wp-includes/feed-rss2.php",
-        "line": 83,
-        "end_line": 83,
         "type": "action",
         "doc": {
             "description": "Fires at the end of the RSS2 Feed Header.",
@@ -13085,8 +12173,6 @@
     {
         "name": "rss2_item",
         "file": "wp-includes/feed-rss2.php",
-        "line": 121,
-        "end_line": 121,
         "type": "action",
         "doc": {
             "description": "Fires at the end of each RSS2 feed item.",
@@ -13103,8 +12189,6 @@
     {
         "name": "rss2_ns",
         "file": "wp-includes/feed-rss2.php",
-        "line": 36,
-        "end_line": 36,
         "type": "action",
         "doc": {
             "description": "Fires at the end of the RSS root to add namespaces.",
@@ -13121,8 +12205,6 @@
     {
         "name": "rss_head",
         "file": "wp-includes/feed-rss.php",
-        "line": 27,
-        "end_line": 27,
         "type": "action",
         "doc": {
             "description": "Fires at the end of the RSS Feed Header.",
@@ -13139,8 +12221,6 @@
     {
         "name": "rss_item",
         "file": "wp-includes/feed-rss.php",
-        "line": 44,
-        "end_line": 44,
         "type": "action",
         "doc": {
             "description": "Fires at the end of each RSS feed item.",
@@ -13157,8 +12237,6 @@
     {
         "name": "rss_tag_pre",
         "file": "wp-includes/feed-rss2.php",
-        "line": 21,
-        "end_line": 21,
         "type": "action",
         "doc": {
             "description": "Fires between the xml and rss tags in a feed.",
@@ -13183,8 +12261,6 @@
     {
         "name": "sanitize_comment_cookies",
         "file": "wp-settings.php",
-        "line": 405,
-        "end_line": 405,
         "type": "action",
         "doc": {
             "description": "Fires when comment cookies are sanitized.",
@@ -13201,8 +12277,6 @@
     {
         "name": "save_post",
         "file": "wp-includes/post.php",
-        "line": 4125,
-        "end_line": 4125,
         "type": "action",
         "doc": {
             "description": "Fires once a post has been saved.",
@@ -13243,8 +12317,6 @@
     {
         "name": "save_post_{$post->post_type}",
         "file": "wp-includes/post.php",
-        "line": 4114,
-        "end_line": 4114,
         "type": "action",
         "doc": {
             "description": "Fires once a post has been saved.",
@@ -13285,8 +12357,6 @@
     {
         "name": "send_headers",
         "file": "wp-includes/class-wp.php",
-        "line": 517,
-        "end_line": 517,
         "type": "action_reference",
         "doc": {
             "description": "Fires once the requested HTTP headers for caching, content type, etc. have been sent.",
@@ -13311,8 +12381,6 @@
     {
         "name": "set_auth_cookie",
         "file": "wp-includes/pluggable.php",
-        "line": 909,
-        "end_line": 909,
         "type": "action",
         "doc": {
             "description": "Fires immediately before the authentication cookie is set.",
@@ -13382,8 +12450,6 @@
     {
         "name": "set_comment_cookies",
         "file": "wp-comments-post.php",
-        "line": 55,
-        "end_line": 55,
         "type": "action",
         "doc": {
             "description": "Perform other actions when comment cookies are set.",
@@ -13429,8 +12495,6 @@
     {
         "name": "set_current_user",
         "file": "wp-includes/pluggable.php",
-        "line": 47,
-        "end_line": 47,
         "type": "action",
         "doc": {
             "description": "Fires after the current user is set.",
@@ -13447,8 +12511,6 @@
     {
         "name": "set_logged_in_cookie",
         "file": "wp-includes/pluggable.php",
-        "line": 926,
-        "end_line": 926,
         "type": "action",
         "doc": {
             "description": "Fires immediately before the logged-in authentication cookie is set.",
@@ -13518,8 +12580,6 @@
     {
         "name": "set_object_terms",
         "file": "wp-includes/taxonomy.php",
-        "line": 2574,
-        "end_line": 2574,
         "type": "action",
         "doc": {
             "description": "Fires after an object's terms have been set.",
@@ -13584,8 +12644,6 @@
     {
         "name": "set_site_transient_{$transient}",
         "file": "wp-includes/option.php",
-        "line": 1877,
-        "end_line": 1877,
         "type": "action",
         "doc": {
             "description": "Fires after the value for a specific site transient has been set.",
@@ -13631,8 +12689,6 @@
     {
         "name": "set_transient_{$transient}",
         "file": "wp-includes/option.php",
-        "line": 833,
-        "end_line": 833,
         "type": "action",
         "doc": {
             "description": "Fires after the value for a specific transient has been set.",
@@ -13683,8 +12739,6 @@
     {
         "name": "set_user_role",
         "file": "wp-includes/class-wp-user.php",
-        "line": 622,
-        "end_line": 622,
         "type": "action",
         "doc": {
             "description": "Fires after the user's role has changed.",
@@ -13730,8 +12784,6 @@
     {
         "name": "setted_site_transient",
         "file": "wp-includes/option.php",
-        "line": 1888,
-        "end_line": 1888,
         "type": "action",
         "doc": {
             "description": "Fires after the value for a site transient has been set.",
@@ -13772,8 +12824,6 @@
     {
         "name": "setted_transient",
         "file": "wp-includes/option.php",
-        "line": 845,
-        "end_line": 845,
         "type": "action",
         "doc": {
             "description": "Fires after the value for a transient has been set.",
@@ -13819,8 +12869,6 @@
     {
         "name": "setup_theme",
         "file": "wp-settings.php",
-        "line": 461,
-        "end_line": 461,
         "type": "action",
         "doc": {
             "description": "Fires before the theme is loaded.",
@@ -13837,8 +12885,6 @@
     {
         "name": "show_user_profile",
         "file": "wp-admin/user-edit.php",
-        "line": 717,
-        "end_line": 717,
         "type": "action",
         "doc": {
             "description": "Fires after the 'About Yourself' settings table on the 'Your Profile' editing screen.",
@@ -13863,8 +12909,6 @@
     {
         "name": "shutdown",
         "file": "wp-includes/load.php",
-        "line": 947,
-        "end_line": 947,
         "type": "action",
         "doc": {
             "description": "Fires just before PHP shuts down execution.",
@@ -13881,8 +12925,6 @@
     {
         "name": "sidebar_admin_page",
         "file": "wp-admin/widgets.php",
-        "line": 574,
-        "end_line": 574,
         "type": "action",
         "doc": {
             "description": "Fires after the available widgets and sidebars have loaded, before the admin footer.",
@@ -13899,8 +12941,6 @@
     {
         "name": "sidebar_admin_setup",
         "file": "wp-admin/widgets.php",
-        "line": 47,
-        "end_line": 47,
         "type": "action",
         "doc": {
             "description": "Fires early before the Widgets administration screen loads, after scripts are enqueued.",
@@ -13917,8 +12957,6 @@
     {
         "name": "signup_blogform",
         "file": "wp-signup.php",
-        "line": 223,
-        "end_line": 223,
         "type": "action",
         "doc": {
             "description": "Fires after the site sign-up form.",
@@ -13943,8 +12981,6 @@
     {
         "name": "signup_extra_fields",
         "file": "wp-signup.php",
-        "line": 286,
-        "end_line": 286,
         "type": "action",
         "doc": {
             "description": "Fires at the end of the user registration form on the site sign-up form.",
@@ -13969,8 +13005,6 @@
     {
         "name": "signup_finished",
         "file": "wp-signup.php",
-        "line": 546,
-        "end_line": 546,
         "type": "action",
         "doc": {
             "description": "Fires when the site or user sign-up process is complete.",
@@ -13987,8 +13021,6 @@
     {
         "name": "signup_header",
         "file": "wp-signup.php",
-        "line": 28,
-        "end_line": 28,
         "type": "action",
         "doc": {
             "description": "Fires within the head section of the site sign-up screen.",
@@ -14005,8 +13037,6 @@
     {
         "name": "signup_hidden_fields",
         "file": "wp-signup.php",
-        "line": 386,
-        "end_line": 386,
         "type": "action",
         "doc": {
             "description": "Hidden sign-up form fields output when creating another site or user.",
@@ -14032,8 +13062,6 @@
     {
         "name": "spam_comment",
         "file": "wp-includes/comment.php",
-        "line": 1570,
-        "end_line": 1570,
         "type": "action",
         "doc": {
             "description": "Fires immediately before a comment is marked as Spam.",
@@ -14071,8 +13099,6 @@
     {
         "name": "spammed_comment",
         "file": "wp-includes/comment.php",
-        "line": 1586,
-        "end_line": 1586,
         "type": "action",
         "doc": {
             "description": "Fires immediately after a comment is marked as Spam.",
@@ -14110,8 +13136,6 @@
     {
         "name": "split_shared_term",
         "file": "wp-includes/taxonomy.php",
-        "line": 3904,
-        "end_line": 3904,
         "type": "action",
         "doc": {
             "description": "Fires after a previously shared taxonomy term is split into two separate terms.",
@@ -14160,8 +13184,6 @@
     {
         "name": "start_previewing_theme",
         "file": "wp-includes/class-wp-customize-manager.php",
-        "line": 694,
-        "end_line": 694,
         "type": "action",
         "doc": {
             "description": "Fires once the Customizer theme preview has started.",
@@ -14186,8 +13208,6 @@
     {
         "name": "stop_previewing_theme",
         "file": "wp-includes/class-wp-customize-manager.php",
-        "line": 732,
-        "end_line": 732,
         "type": "action",
         "doc": {
             "description": "Fires once the Customizer theme preview has stopped.",
@@ -14212,8 +13232,6 @@
     {
         "name": "submitlink_box",
         "file": "wp-admin/includes/meta-boxes.php",
-        "line": 1072,
-        "end_line": 1072,
         "type": "action",
         "doc": {
             "description": "Fires at the end of the Publish box in the Link editing screen.",
@@ -14230,8 +13248,6 @@
     {
         "name": "submitpage_box",
         "file": "wp-admin/edit-form-advanced.php",
-        "line": 655,
-        "end_line": 655,
         "type": "action",
         "doc": {
             "description": "Fires before meta boxes with 'side' context are output for the 'page' post type.",
@@ -14256,8 +13272,6 @@
     {
         "name": "submitpost_box",
         "file": "wp-admin/edit-form-advanced.php",
-        "line": 666,
-        "end_line": 666,
         "type": "action",
         "doc": {
             "description": "Fires before meta boxes with 'side' context are output for all post types other than 'page'.",
@@ -14282,8 +13296,6 @@
     {
         "name": "switch_blog",
         "file": "wp-includes/ms-blogs.php",
-        "line": 515,
-        "end_line": 515,
         "type": "action",
         "doc": {
             "description": "Fires when the blog is switched.",
@@ -14330,8 +13342,6 @@
     {
         "name": "switch_locale",
         "file": "wp-includes/class-wp-locale-switcher.php",
-        "line": 92,
-        "end_line": 92,
         "type": "action",
         "doc": {
             "description": "Fires when the locale is switched.",
@@ -14356,8 +13366,6 @@
     {
         "name": "switch_theme",
         "file": "wp-includes/theme.php",
-        "line": 816,
-        "end_line": 816,
         "type": "action",
         "doc": {
             "description": "Fires after the theme is switched.",
@@ -14403,8 +13411,6 @@
     {
         "name": "template_redirect",
         "file": "wp-includes/template-loader.php",
-        "line": 13,
-        "end_line": 13,
         "type": "action",
         "doc": {
             "description": "Fires before determining which template to load.",
@@ -14421,8 +13427,6 @@
     {
         "name": "the_post",
         "file": "wp-includes/class-wp-query.php",
-        "line": 4229,
-        "end_line": 4229,
         "type": "action_reference",
         "doc": {
             "description": "Fires once the post data has been setup.",
@@ -14460,8 +13464,6 @@
     {
         "name": "the_widget",
         "file": "wp-includes/widgets.php",
-        "line": 1183,
-        "end_line": 1183,
         "type": "action",
         "doc": {
             "description": "Fires before rendering the requested widget.",
@@ -14502,8 +13504,6 @@
     {
         "name": "tool_box",
         "file": "wp-admin/tools.php",
-        "line": 89,
-        "end_line": 89,
         "type": "action",
         "doc": {
             "description": "Fires at the end of the Tools Administration screen.",
@@ -14520,8 +13520,6 @@
     {
         "name": "trackback_post",
         "file": "wp-trackback.php",
-        "line": 150,
-        "end_line": 150,
         "type": "action",
         "doc": {
             "description": "Fires after a trackback is added to a post.",
@@ -14546,8 +13544,6 @@
     {
         "name": "transition_comment_status",
         "file": "wp-includes/comment.php",
-        "line": 1721,
-        "end_line": 1721,
         "type": "action",
         "doc": {
             "description": "Fires when the comment status is in transition.",
@@ -14590,8 +13586,6 @@
     {
         "name": "transition_post_status",
         "file": "wp-includes/post.php",
-        "line": 4625,
-        "end_line": 4625,
         "type": "action",
         "doc": {
             "description": "Fires when a post is transitioned from one status to another.",
@@ -14632,8 +13626,6 @@
     {
         "name": "trash_comment",
         "file": "wp-includes/comment.php",
-        "line": 1474,
-        "end_line": 1474,
         "type": "action",
         "doc": {
             "description": "Fires immediately before a comment is sent to the Trash.",
@@ -14671,8 +13663,6 @@
     {
         "name": "trash_post_comments",
         "file": "wp-includes/post.php",
-        "line": 3275,
-        "end_line": 3275,
         "type": "action",
         "doc": {
             "description": "Fires before comments are sent to the Trash.",
@@ -14697,8 +13687,6 @@
     {
         "name": "trashed_comment",
         "file": "wp-includes/comment.php",
-        "line": 1491,
-        "end_line": 1491,
         "type": "action",
         "doc": {
             "description": "Fires immediately after a comment is sent to Trash.",
@@ -14736,8 +13724,6 @@
     {
         "name": "trashed_post",
         "file": "wp-includes/post.php",
-        "line": 3172,
-        "end_line": 3172,
         "type": "action",
         "doc": {
             "description": "Fires after a post is sent to the Trash.",
@@ -14762,8 +13748,6 @@
     {
         "name": "trashed_post_comments",
         "file": "wp-includes/post.php",
-        "line": 3302,
-        "end_line": 3302,
         "type": "action",
         "doc": {
             "description": "Fires after comments are sent to the Trash.",
@@ -14796,8 +13780,6 @@
     {
         "name": "unarchive_blog",
         "file": "wp-includes/ms-site.php",
-        "line": 1227,
-        "end_line": 1227,
         "type": "action",
         "doc": {
             "description": "Fires when the 'archived' status is removed from a site.",
@@ -14823,8 +13805,6 @@
     {
         "name": "uninstall_{$file}",
         "file": "wp-admin/includes/plugin.php",
-        "line": 1235,
-        "end_line": 1235,
         "type": "action",
         "doc": {
             "description": "Fires in uninstall_plugin() once the plugin has been uninstalled.",
@@ -14841,8 +13821,6 @@
     {
         "name": "unload_textdomain",
         "file": "wp-includes/l10n.php",
-        "line": 728,
-        "end_line": 728,
         "type": "action",
         "doc": {
             "description": "Fires before the text domain is unloaded.",
@@ -14867,8 +13845,6 @@
     {
         "name": "unmature_blog",
         "file": "wp-includes/ms-site.php",
-        "line": 1203,
-        "end_line": 1203,
         "type": "action",
         "doc": {
             "description": "Fires when the 'mature' status is removed from a site.",
@@ -14893,8 +13869,6 @@
     {
         "name": "unregistered_post_type",
         "file": "wp-includes/post.php",
-        "line": 1491,
-        "end_line": 1491,
         "type": "action",
         "doc": {
             "description": "Fires after a post type was unregistered.",
@@ -14919,8 +13893,6 @@
     {
         "name": "unregistered_taxonomy",
         "file": "wp-includes/taxonomy.php",
-        "line": 486,
-        "end_line": 486,
         "type": "action",
         "doc": {
             "description": "Fires after a taxonomy is unregistered.",
@@ -14945,8 +13917,6 @@
     {
         "name": "unregistered_taxonomy_for_object_type",
         "file": "wp-includes/taxonomy.php",
-        "line": 677,
-        "end_line": 677,
         "type": "action",
         "doc": {
             "description": "Fires after a taxonomy is unregistered for an object type.",
@@ -14979,8 +13949,6 @@
     {
         "name": "unspam_comment",
         "file": "wp-includes/comment.php",
-        "line": 1616,
-        "end_line": 1616,
         "type": "action",
         "doc": {
             "description": "Fires immediately before a comment is unmarked as Spam.",
@@ -15018,8 +13986,6 @@
     {
         "name": "unspammed_comment",
         "file": "wp-includes/comment.php",
-        "line": 1635,
-        "end_line": 1635,
         "type": "action",
         "doc": {
             "description": "Fires immediately after a comment is unmarked as Spam.",
@@ -15057,8 +14023,6 @@
     {
         "name": "untrash_comment",
         "file": "wp-includes/comment.php",
-        "line": 1521,
-        "end_line": 1521,
         "type": "action",
         "doc": {
             "description": "Fires immediately before a comment is restored from the Trash.",
@@ -15096,8 +14060,6 @@
     {
         "name": "untrash_post",
         "file": "wp-includes/post.php",
-        "line": 3216,
-        "end_line": 3216,
         "type": "action",
         "doc": {
             "description": "Fires before a post is restored from the Trash.",
@@ -15122,8 +14084,6 @@
     {
         "name": "untrash_post_comments",
         "file": "wp-includes/post.php",
-        "line": 3340,
-        "end_line": 3340,
         "type": "action",
         "doc": {
             "description": "Fires before comments are restored for a post from the Trash.",
@@ -15148,8 +14108,6 @@
     {
         "name": "untrashed_comment",
         "file": "wp-includes/comment.php",
-        "line": 1540,
-        "end_line": 1540,
         "type": "action",
         "doc": {
             "description": "Fires immediately after a comment is restored from the Trash.",
@@ -15187,8 +14145,6 @@
     {
         "name": "untrashed_post",
         "file": "wp-includes/post.php",
-        "line": 3243,
-        "end_line": 3243,
         "type": "action",
         "doc": {
             "description": "Fires after a post is restored from the Trash.",
@@ -15213,8 +14169,6 @@
     {
         "name": "untrashed_post_comments",
         "file": "wp-includes/post.php",
-        "line": 3368,
-        "end_line": 3368,
         "type": "action",
         "doc": {
             "description": "Fires after comments are restored for a post from the Trash.",
@@ -15239,8 +14193,6 @@
     {
         "name": "update-core-custom_{$action}",
         "file": "wp-admin/update-core.php",
-        "line": 947,
-        "end_line": 947,
         "type": "action",
         "doc": {
             "description": "Fires for each custom update action on the WordPress Updates screen.",
@@ -15257,8 +14209,6 @@
     {
         "name": "update-custom_{$action}",
         "file": "wp-admin/update.php",
-        "line": 302,
-        "end_line": 302,
         "type": "action",
         "doc": {
             "description": "Fires when a custom plugin or theme update request is received.",
@@ -15275,8 +14225,6 @@
     {
         "name": "update_blog_public",
         "file": "wp-includes/ms-site.php",
-        "line": 1265,
-        "end_line": 1265,
         "type": "action",
         "doc": {
             "description": "Fires after the current blog's 'public' setting is updated.",
@@ -15310,8 +14258,6 @@
     {
         "name": "update_option",
         "file": "wp-includes/option.php",
-        "line": 378,
-        "end_line": 378,
         "type": "action",
         "doc": {
             "description": "Fires immediately before an option value is updated.",
@@ -15352,8 +14298,6 @@
     {
         "name": "update_option_{$option}",
         "file": "wp-includes/option.php",
-        "line": 421,
-        "end_line": 421,
         "type": "action",
         "doc": {
             "description": "Fires after the value of a specific option has been successfully updated.",
@@ -15399,8 +14343,6 @@
     {
         "name": "update_postmeta",
         "file": "wp-includes/meta.php",
-        "line": 264,
-        "end_line": 264,
         "type": "action",
         "doc": {
             "description": "Fires immediately before updating a post's metadata.",
@@ -15449,8 +14391,6 @@
     {
         "name": "update_site_option",
         "file": "wp-includes/option.php",
-        "line": 1674,
-        "end_line": 1674,
         "type": "action",
         "doc": {
             "description": "Fires after the value of a network option has been successfully updated.",
@@ -15504,8 +14444,6 @@
     {
         "name": "update_site_option_{$option}",
         "file": "wp-includes/option.php",
-        "line": 1661,
-        "end_line": 1661,
         "type": "action",
         "doc": {
             "description": "Fires after the value of a specific network option has been successfully updated.",
@@ -15564,8 +14502,6 @@
     {
         "name": "update_wpmu_options",
         "file": "wp-admin/network/settings.php",
-        "line": 132,
-        "end_line": 132,
         "type": "action",
         "doc": {
             "description": "Fires after the network options are updated.",
@@ -15583,8 +14519,6 @@
     {
         "name": "update_{$meta_type}_meta",
         "file": "wp-includes/meta.php",
-        "line": 250,
-        "end_line": 250,
         "type": "action",
         "doc": {
             "description": "Fires immediately before updating metadata of a specific type.",
@@ -15633,8 +14567,6 @@
     {
         "name": "updated_option",
         "file": "wp-includes/option.php",
-        "line": 432,
-        "end_line": 432,
         "type": "action",
         "doc": {
             "description": "Fires after the value of an option has been successfully updated.",
@@ -15675,8 +14607,6 @@
     {
         "name": "updated_postmeta",
         "file": "wp-includes/meta.php",
-        "line": 303,
-        "end_line": 303,
         "type": "action",
         "doc": {
             "description": "Fires immediately after updating a post's metadata.",
@@ -15725,8 +14655,6 @@
     {
         "name": "updated_{$meta_type}_meta",
         "file": "wp-includes/meta.php",
-        "line": 289,
-        "end_line": 289,
         "type": "action",
         "doc": {
             "description": "Fires immediately after updating metadata of a specific type.",
@@ -15775,8 +14703,6 @@
     {
         "name": "upgrader_process_complete",
         "file": "wp-admin/includes/class-wp-upgrader.php",
-        "line": 836,
-        "end_line": 836,
         "type": "action",
         "doc": {
             "description": "Fires when the upgrader process is complete.",
@@ -15819,8 +14745,6 @@
     {
         "name": "upload_ui_over_quota",
         "file": "wp-admin/includes/media.php",
-        "line": 2092,
-        "end_line": 2092,
         "type": "action",
         "doc": {
             "description": "Fires when an upload will exceed the defined upload space quota for a network site.",
@@ -15837,8 +14761,6 @@
     {
         "name": "user_admin_menu",
         "file": "wp-admin/includes/menu.php",
-        "line": 145,
-        "end_line": 145,
         "type": "action",
         "doc": {
             "description": "Fires before the administration menu loads in the User Admin.",
@@ -15863,8 +14785,6 @@
     {
         "name": "user_admin_notices",
         "file": "wp-admin/admin-header.php",
-        "line": 274,
-        "end_line": 274,
         "type": "action",
         "doc": {
             "description": "Prints user admin screen notices.",
@@ -15881,8 +14801,6 @@
     {
         "name": "user_edit_form_tag",
         "file": "wp-admin/user-edit.php",
-        "line": 244,
-        "end_line": 244,
         "type": "action",
         "doc": {
             "description": "Fires inside the your-profile form tag on the user editing screen.",
@@ -15899,8 +14817,6 @@
     {
         "name": "user_new_form",
         "file": "wp-admin/user-new.php",
-        "line": 444,
-        "end_line": 444,
         "type": "action",
         "doc": {
             "description": "Fires at the end of the new user form.",
@@ -15925,8 +14841,6 @@
     {
         "name": "user_new_form_tag",
         "file": "wp-admin/user-new.php",
-        "line": 404,
-        "end_line": 404,
         "type": "action",
         "doc": {
             "description": "Fires inside the adduser form tag.",
@@ -15943,8 +14857,6 @@
     {
         "name": "user_profile_update_errors",
         "file": "wp-admin/includes/user.php",
-        "line": 221,
-        "end_line": 221,
         "type": "action_reference",
         "doc": {
             "description": "Fires before user profile update errors are returned.",
@@ -15985,8 +14897,6 @@
     {
         "name": "user_register",
         "file": "wp-includes/user.php",
-        "line": 1902,
-        "end_line": 1902,
         "type": "action",
         "doc": {
             "description": "Fires immediately after a new user is registered.",
@@ -16011,8 +14921,6 @@
     {
         "name": "user_request_action_confirmed",
         "file": "wp-login.php",
-        "line": 1134,
-        "end_line": 1134,
         "type": "action",
         "doc": {
             "description": "Fires an action hook when the account action has been confirmed by the user.",
@@ -16037,8 +14945,6 @@
     {
         "name": "validate_password_reset",
         "file": "wp-login.php",
-        "line": 928,
-        "end_line": 928,
         "type": "action",
         "doc": {
             "description": "Fires before the password reset procedure is validated.",
@@ -16072,8 +14978,6 @@
     {
         "name": "welcome_panel",
         "file": "wp-admin/index.php",
-        "line": 142,
-        "end_line": 142,
         "type": "action",
         "doc": {
             "description": "Add content to the welcome panel on the admin dashboard.",
@@ -16090,8 +14994,6 @@
     {
         "name": "widgets.php",
         "file": "wp-admin/includes/ajax-actions.php",
-        "line": 2287,
-        "end_line": 2287,
         "type": "action",
         "doc": {
             "description": "Fires early when editing the widgets displayed in sidebars.",
@@ -16108,8 +15010,6 @@
     {
         "name": "widgets_admin_page",
         "file": "wp-admin/widgets.php",
-        "line": 430,
-        "end_line": 430,
         "type": "action",
         "doc": {
             "description": "Fires before the Widgets administration page content loads.",
@@ -16126,8 +15026,6 @@
     {
         "name": "widgets_init",
         "file": "wp-includes/widgets.php",
-        "line": 1765,
-        "end_line": 1765,
         "type": "action",
         "doc": {
             "description": "Fires after all default WordPress widgets have been registered.",
@@ -16144,8 +15042,6 @@
     {
         "name": "wp",
         "file": "wp-includes/class-wp.php",
-        "line": 747,
-        "end_line": 747,
         "type": "action_reference",
         "doc": {
             "description": "Fires once the WordPress environment has been set up.",
@@ -16170,8 +15066,6 @@
     {
         "name": "wp-mail.php",
         "file": "wp-mail.php",
-        "line": 29,
-        "end_line": 29,
         "type": "action",
         "doc": {
             "description": "Fires to allow a plugin to do a complete takeover of Post by Email.",
@@ -16188,8 +15082,6 @@
     {
         "name": "wp_add_nav_menu_item",
         "file": "wp-includes/nav-menu.php",
-        "line": 537,
-        "end_line": 537,
         "type": "action",
         "doc": {
             "description": "Fires immediately after a new navigation menu item has been added.",
@@ -16235,8 +15127,6 @@
     {
         "name": "wp_after_admin_bar_render",
         "file": "wp-includes/admin-bar.php",
-        "line": 102,
-        "end_line": 102,
         "type": "action",
         "doc": {
             "description": "Fires after the admin bar is rendered.",
@@ -16253,8 +15143,6 @@
     {
         "name": "wp_ajax_crop_image_pre_save",
         "file": "wp-admin/includes/ajax-actions.php",
-        "line": 3891,
-        "end_line": 3891,
         "type": "action",
         "doc": {
             "description": "Fires before a cropped image is saved.",
@@ -16295,8 +15183,6 @@
     {
         "name": "wp_ajax_nopriv_{$action}",
         "file": "wp-admin/admin-ajax.php",
-        "line": 190,
-        "end_line": 190,
         "type": "action",
         "doc": {
             "description": "Fires non-authenticated Ajax actions for logged-out users.",
@@ -16313,8 +15199,6 @@
     {
         "name": "wp_ajax_{$action}",
         "file": "wp-admin/admin-ajax.php",
-        "line": 175,
-        "end_line": 175,
         "type": "action",
         "doc": {
             "description": "Fires authenticated Ajax actions for logged-in users.",
@@ -16331,8 +15215,6 @@
     {
         "name": "wp_authenticate",
         "file": "wp-includes/user.php",
-        "line": 67,
-        "end_line": 67,
         "type": "action_reference",
         "doc": {
             "description": "Fires before the user is authenticated.",
@@ -16369,8 +15251,6 @@
     {
         "name": "wp_before_admin_bar_render",
         "file": "wp-includes/admin-bar.php",
-        "line": 93,
-        "end_line": 93,
         "type": "action",
         "doc": {
             "description": "Fires before the admin bar is rendered.",
@@ -16387,8 +15267,6 @@
     {
         "name": "wp_blacklist_check",
         "file": "wp-includes/comment.php",
-        "line": 1271,
-        "end_line": 1271,
         "type": "action",
         "doc": {
             "description": "Fires before the comment is tested for blacklisted characters or words.",
@@ -16453,8 +15331,6 @@
     {
         "name": "wp_body_open",
         "file": "wp-includes/general-template.php",
-        "line": 2911,
-        "end_line": 2911,
         "type": "action",
         "doc": {
             "description": "Triggered after the opening body tag.",
@@ -16471,8 +15347,6 @@
     {
         "name": "wp_create_file_in_uploads",
         "file": "wp-admin/includes/class-custom-image-header.php",
-        "line": 831,
-        "end_line": 831,
         "type": "action",
         "doc": {
             "description": "Fires after the header image is set or an error is returned.",
@@ -16505,8 +15379,6 @@
     {
         "name": "wp_create_nav_menu",
         "file": "wp-includes/nav-menu.php",
-        "line": 374,
-        "end_line": 374,
         "type": "action",
         "doc": {
             "description": "Fires after a navigation menu is successfully created.",
@@ -16539,8 +15411,6 @@
     {
         "name": "wp_creating_autosave",
         "file": "wp-admin/includes/post.php",
-        "line": 1845,
-        "end_line": 1845,
         "type": "action",
         "doc": {
             "description": "Fires before an autosave is stored.",
@@ -16565,8 +15435,6 @@
     {
         "name": "wp_dashboard_setup",
         "file": "wp-admin/includes/dashboard.php",
-        "line": 109,
-        "end_line": 109,
         "type": "action",
         "doc": {
             "description": "Fires after core widgets for the admin dashboard have been registered.",
@@ -16583,8 +15451,6 @@
     {
         "name": "wp_default_scripts",
         "file": "wp-includes/class.wp-scripts.php",
-        "line": 167,
-        "end_line": 167,
         "type": "action_reference",
         "doc": {
             "description": "Fires when the WP_Scripts instance is initialized.",
@@ -16609,8 +15475,6 @@
     {
         "name": "wp_default_styles",
         "file": "wp-includes/class.wp-styles.php",
-        "line": 135,
-        "end_line": 135,
         "type": "action_reference",
         "doc": {
             "description": "Fires when the WP_Styles instance is initialized.",
@@ -16635,8 +15499,6 @@
     {
         "name": "wp_delete_nav_menu",
         "file": "wp-includes/nav-menu.php",
-        "line": 297,
-        "end_line": 297,
         "type": "action",
         "doc": {
             "description": "Fires after a navigation menu has been successfully deleted.",
@@ -16661,8 +15523,6 @@
     {
         "name": "wp_delete_post_revision",
         "file": "wp-includes/revision.php",
-        "line": 449,
-        "end_line": 449,
         "type": "action",
         "doc": {
             "description": "Fires once a post revision has been deleted.",
@@ -16695,8 +15555,6 @@
     {
         "name": "wp_delete_site",
         "file": "wp-includes/ms-site.php",
-        "line": 274,
-        "end_line": 274,
         "type": "action",
         "doc": {
             "description": "Fires once a site has been deleted from the database.",
@@ -16721,8 +15579,6 @@
     {
         "name": "wp_edit_form_attachment_display",
         "file": "wp-admin/includes/media.php",
-        "line": 3157,
-        "end_line": 3157,
         "type": "action",
         "doc": {
             "description": "Fires when an attachment type can't be rendered in the edit form.",
@@ -16747,8 +15603,6 @@
     {
         "name": "wp_enqueue_code_editor",
         "file": "wp-includes/general-template.php",
-        "line": 3519,
-        "end_line": 3519,
         "type": "action",
         "doc": {
             "description": "Fires when scripts and styles are enqueued for the code editor.",
@@ -16773,8 +15627,6 @@
     {
         "name": "wp_enqueue_editor",
         "file": "wp-includes/class-wp-editor.php",
-        "line": 813,
-        "end_line": 819,
         "type": "action",
         "doc": {
             "description": "Fires when scripts and styles are enqueued for the editor.",
@@ -16799,8 +15651,6 @@
     {
         "name": "wp_enqueue_media",
         "file": "wp-includes/media.php",
-        "line": 4021,
-        "end_line": 4021,
         "type": "action",
         "doc": {
             "description": "Fires at the conclusion of wp_enqueue_media().",
@@ -16817,8 +15667,6 @@
     {
         "name": "wp_enqueue_scripts",
         "file": "wp-includes/script-loader.php",
-        "line": 2667,
-        "end_line": 2667,
         "type": "action",
         "doc": {
             "description": "Fires when scripts and styles are enqueued.",
@@ -16835,8 +15683,6 @@
     {
         "name": "wp_feed_options",
         "file": "wp-includes/feed.php",
-        "line": 774,
-        "end_line": 774,
         "type": "action_reference",
         "doc": {
             "description": "Fires just before processing the SimplePie feed object.",
@@ -16869,8 +15715,6 @@
     {
         "name": "wp_footer",
         "file": "wp-includes/general-template.php",
-        "line": 2895,
-        "end_line": 2895,
         "type": "action",
         "doc": {
             "description": "Prints scripts or data before the closing body tag on the front end.",
@@ -16887,8 +15731,6 @@
     {
         "name": "wp_head",
         "file": "wp-includes/general-template.php",
-        "line": 2879,
-        "end_line": 2879,
         "type": "action",
         "doc": {
             "description": "Prints scripts or data in the head tag on the front end.",
@@ -16905,8 +15747,6 @@
     {
         "name": "wp_initialize_site",
         "file": "wp-includes/ms-site.php",
-        "line": 103,
-        "end_line": 103,
         "type": "action",
         "doc": {
             "description": "Fires when a site's initialization routine should be executed.",
@@ -16939,8 +15779,6 @@
     {
         "name": "wp_insert_comment",
         "file": "wp-includes/comment.php",
-        "line": 1943,
-        "end_line": 1943,
         "type": "action",
         "doc": {
             "description": "Fires immediately after a comment is inserted into the database.",
@@ -16973,8 +15811,6 @@
     {
         "name": "wp_insert_post",
         "file": "wp-includes/post.php",
-        "line": 4136,
-        "end_line": 4136,
         "type": "action",
         "doc": {
             "description": "Fires once a post has been saved.",
@@ -17015,8 +15851,6 @@
     {
         "name": "wp_insert_site",
         "file": "wp-includes/ms-site.php",
-        "line": 87,
-        "end_line": 87,
         "type": "action",
         "doc": {
             "description": "Fires once a site has been inserted into the database.",
@@ -17041,8 +15875,6 @@
     {
         "name": "wp_install",
         "file": "wp-admin/includes/upgrade.php",
-        "line": 119,
-        "end_line": 119,
         "type": "action",
         "doc": {
             "description": "Fires after a site is fully installed.",
@@ -17067,8 +15899,6 @@
     {
         "name": "wp_loaded",
         "file": "wp-settings.php",
-        "line": 545,
-        "end_line": 545,
         "type": "action",
         "doc": {
             "description": "This hook is fired once WP, all plugins, and the theme are fully loaded and instantiated.",
@@ -17090,8 +15920,6 @@
     {
         "name": "wp_login",
         "file": "wp-includes/user.php",
-        "line": 110,
-        "end_line": 110,
         "type": "action",
         "doc": {
             "description": "Fires after the user has successfully logged in.",
@@ -17124,8 +15952,6 @@
     {
         "name": "wp_login_failed",
         "file": "wp-includes/pluggable.php",
-        "line": 558,
-        "end_line": 558,
         "type": "action",
         "doc": {
             "description": "Fires after a user login has failed.",
@@ -17168,8 +15994,6 @@
     {
         "name": "wp_logout",
         "file": "wp-includes/pluggable.php",
-        "line": 581,
-        "end_line": 581,
         "type": "action",
         "doc": {
             "description": "Fires after a user is logged-out.",
@@ -17186,8 +16010,6 @@
     {
         "name": "wp_mail_failed",
         "file": "wp-includes/pluggable.php",
-        "line": 502,
-        "end_line": 502,
         "type": "action",
         "doc": {
             "description": "Fires after a phpmailerException is caught.",
@@ -17212,8 +16034,6 @@
     {
         "name": "wp_maybe_auto_update",
         "file": "wp-includes/update.php",
-        "line": 242,
-        "end_line": 242,
         "type": "action",
         "doc": {
             "description": "Fires during wp_cron, starting the auto update process.",
@@ -17230,8 +16050,6 @@
     {
         "name": "wp_meta",
         "file": "wp-includes/general-template.php",
-        "line": 640,
-        "end_line": 640,
         "type": "action",
         "doc": {
             "description": "Fires before displaying echoed content in the sidebar.",
@@ -17248,8 +16066,6 @@
     {
         "name": "wp_nav_menu_item_custom_fields",
         "file": "wp-admin/includes/class-walker-nav-menu-edit.php",
-        "line": 242,
-        "end_line": 242,
         "type": "action",
         "doc": {
             "description": "Fires just before the move buttons of a nav menu item in the menu editor.",
@@ -17306,8 +16122,6 @@
     {
         "name": "wp_network_dashboard_setup",
         "file": "wp-admin/includes/dashboard.php",
-        "line": 75,
-        "end_line": 75,
         "type": "action",
         "doc": {
             "description": "Fires after core widgets for the Network Admin dashboard have been registered.",
@@ -17324,8 +16138,6 @@
     {
         "name": "wp_playlist_scripts",
         "file": "wp-includes/media.php",
-        "line": 2357,
-        "end_line": 2357,
         "type": "action",
         "doc": {
             "description": "Prints and enqueues playlist scripts, styles, and JavaScript templates.",
@@ -17358,8 +16170,6 @@
     {
         "name": "wp_print_footer_scripts",
         "file": "wp-includes/script-loader.php",
-        "line": 2650,
-        "end_line": 2650,
         "type": "action",
         "doc": {
             "description": "Fires when footer scripts are printed.",
@@ -17376,8 +16186,6 @@
     {
         "name": "wp_print_scripts",
         "file": "wp-includes/functions.wp-scripts.php",
-        "line": 76,
-        "end_line": 76,
         "type": "action",
         "doc": {
             "description": "Fires before scripts in the $handles queue are printed.",
@@ -17394,8 +16202,6 @@
     {
         "name": "wp_print_styles",
         "file": "wp-includes/functions.wp-styles.php",
-        "line": 53,
-        "end_line": 53,
         "type": "action",
         "doc": {
             "description": "Fires before styles in the $handles queue are printed.",
@@ -17412,8 +16218,6 @@
     {
         "name": "wp_privacy_personal_data_erased",
         "file": "wp-admin/includes/privacy-tools.php",
-        "line": 814,
-        "end_line": 814,
         "type": "action",
         "doc": {
             "description": "Fires immediately after a personal data erasure request has been marked completed.",
@@ -17438,8 +16242,6 @@
     {
         "name": "wp_privacy_personal_data_export_file",
         "file": "wp-admin/includes/privacy-tools.php",
-        "line": 717,
-        "end_line": 717,
         "type": "action",
         "doc": {
             "description": "Generate the export file from the collected, grouped personal data.",
@@ -17464,8 +16266,6 @@
     {
         "name": "wp_privacy_personal_data_export_file_created",
         "file": "wp-admin/includes/privacy-tools.php",
-        "line": 453,
-        "end_line": 453,
         "type": "action",
         "doc": {
             "description": "Fires right after all personal data has been written to the export file.",
@@ -17527,8 +16327,6 @@
     {
         "name": "wp_register_sidebar_widget",
         "file": "wp-includes/widgets.php",
-        "line": 404,
-        "end_line": 404,
         "type": "action",
         "doc": {
             "description": "Fires once for each registered widget.",
@@ -17553,8 +16351,6 @@
     {
         "name": "wp_restore_post_revision",
         "file": "wp-includes/revision.php",
-        "line": 418,
-        "end_line": 418,
         "type": "action",
         "doc": {
             "description": "Fires after a post revision has been restored.",
@@ -17587,8 +16383,6 @@
     {
         "name": "wp_roles_init",
         "file": "wp-includes/class-wp-roles.php",
-        "line": 300,
-        "end_line": 300,
         "type": "action",
         "doc": {
             "description": "After the roles have been initialized, allow plugins to add their own roles.",
@@ -17613,8 +16407,6 @@
     {
         "name": "wp_set_comment_status",
         "file": "wp-includes/comment.php",
-        "line": 2299,
-        "end_line": 2299,
         "type": "action",
         "doc": {
             "description": "Fires immediately before transitioning a comment's status from one to another in the database.",
@@ -17648,8 +16440,6 @@
     {
         "name": "wp_tiny_mce_init",
         "file": "wp-includes/class-wp-editor.php",
-        "line": 1552,
-        "end_line": 1552,
         "type": "action",
         "doc": {
             "description": "Fires after tinymce.js is loaded, but before any TinyMCE editor instances are created.",
@@ -17674,8 +16464,6 @@
     {
         "name": "wp_trash_post",
         "file": "wp-includes/post.php",
-        "line": 3147,
-        "end_line": 3147,
         "type": "action",
         "doc": {
             "description": "Fires before a post is sent to the Trash.",
@@ -17700,8 +16488,6 @@
     {
         "name": "wp_uninitialize_site",
         "file": "wp-includes/ms-site.php",
-        "line": 252,
-        "end_line": 252,
         "type": "action",
         "doc": {
             "description": "Fires when a site's uninitialization routine should be executed.",
@@ -17726,8 +16512,6 @@
     {
         "name": "wp_unregister_sidebar_widget",
         "file": "wp-includes/widgets.php",
-        "line": 476,
-        "end_line": 476,
         "type": "action",
         "doc": {
             "description": "Fires just before a widget is removed from a sidebar.",
@@ -17752,8 +16536,6 @@
     {
         "name": "wp_update_comment_count",
         "file": "wp-includes/comment.php",
-        "line": 2546,
-        "end_line": 2546,
         "type": "action",
         "doc": {
             "description": "Fires immediately after a post's comment count is updated in the database.",
@@ -17794,8 +16576,6 @@
     {
         "name": "wp_update_nav_menu",
         "file": "wp-includes/nav-menu.php",
-        "line": 401,
-        "end_line": 401,
         "type": "action",
         "doc": {
             "description": "Fires after a navigation menu has been successfully updated.",
@@ -17828,8 +16608,6 @@
     {
         "name": "wp_update_nav_menu_item",
         "file": "wp-includes/nav-menu.php",
-        "line": 589,
-        "end_line": 589,
         "type": "action",
         "doc": {
             "description": "Fires after a navigation menu item has been updated.",
@@ -17875,8 +16653,6 @@
     {
         "name": "wp_update_site",
         "file": "wp-includes/ms-site.php",
-        "line": 188,
-        "end_line": 188,
         "type": "action",
         "doc": {
             "description": "Fires once a site has been updated in the database.",
@@ -17909,8 +16685,6 @@
     {
         "name": "wp_upgrade",
         "file": "wp-admin/includes/upgrade.php",
-        "line": 674,
-        "end_line": 674,
         "type": "action",
         "doc": {
             "description": "Fires after a site is fully upgraded.",
@@ -17943,8 +16717,6 @@
     {
         "name": "wp_user_dashboard_setup",
         "file": "wp-admin/includes/dashboard.php",
-        "line": 92,
-        "end_line": 92,
         "type": "action",
         "doc": {
             "description": "Fires after core widgets for the User Admin dashboard have been registered.",
@@ -17961,8 +16733,6 @@
     {
         "name": "wp_validate_site_data",
         "file": "wp-includes/ms-site.php",
-        "line": 511,
-        "end_line": 511,
         "type": "action",
         "doc": {
             "description": "Fires when data should be validated for a site prior to inserting or updating in the database.",
@@ -18004,8 +16774,6 @@
     {
         "name": "wp_validate_site_deletion",
         "file": "wp-includes/ms-site.php",
-        "line": 228,
-        "end_line": 228,
         "type": "action",
         "doc": {
             "description": "Fires before a site should be deleted from the database.",
@@ -18038,8 +16806,6 @@
     {
         "name": "wp_verify_nonce_failed",
         "file": "wp-includes/pluggable.php",
-        "line": 2141,
-        "end_line": 2141,
         "type": "action",
         "doc": {
             "description": "Fires when nonce verification fails.",
@@ -18089,8 +16855,6 @@
     {
         "name": "wpmu_activate_blog",
         "file": "wp-includes/ms-functions.php",
-        "line": 1249,
-        "end_line": 1249,
         "type": "action",
         "doc": {
             "description": "Fires immediately after a site is activated.",
@@ -18148,8 +16912,6 @@
     {
         "name": "wpmu_activate_user",
         "file": "wp-includes/ms-functions.php",
-        "line": 1202,
-        "end_line": 1202,
         "type": "action",
         "doc": {
             "description": "Fires immediately after a new user is activated.",
@@ -18191,8 +16953,6 @@
     {
         "name": "wpmu_blog_updated",
         "file": "wp-includes/ms-blogs.php",
-        "line": 30,
-        "end_line": 30,
         "type": "action",
         "doc": {
             "description": "Fires after the blog details are updated.",
@@ -18218,8 +16978,6 @@
     {
         "name": "wpmu_delete_user",
         "file": "wp-admin/includes/ms.php",
-        "line": 166,
-        "end_line": 166,
         "type": "action",
         "doc": {
             "description": "Fires before a user is deleted from the network.",
@@ -18245,8 +17003,6 @@
     {
         "name": "wpmu_new_user",
         "file": "wp-includes/ms-functions.php",
-        "line": 1294,
-        "end_line": 1294,
         "type": "action",
         "doc": {
             "description": "Fires immediately after a new user is created.",
@@ -18272,8 +17028,6 @@
     {
         "name": "wpmu_options",
         "file": "wp-admin/network/settings.php",
-        "line": 483,
-        "end_line": 483,
         "type": "action",
         "doc": {
             "description": "Fires at the end of the Network Settings form, before the submit button.",
@@ -18291,8 +17045,6 @@
     {
         "name": "wpmu_update_blog_options",
         "file": "wp-admin/network/site-settings.php",
-        "line": 60,
-        "end_line": 60,
         "type": "action",
         "doc": {
             "description": "Fires after the site options are updated.",
@@ -18322,8 +17074,6 @@
     {
         "name": "wpmu_upgrade_page",
         "file": "wp-admin/network/upgrade.php",
-        "line": 149,
-        "end_line": 149,
         "type": "action",
         "doc": {
             "description": "Fires before the footer on the network upgrade screen.",
@@ -18341,8 +17091,6 @@
     {
         "name": "wpmu_upgrade_site",
         "file": "wp-admin/network/upgrade.php",
-        "line": 119,
-        "end_line": 119,
         "type": "action",
         "doc": {
             "description": "Fires after each site has been upgraded.",
@@ -18368,8 +17116,6 @@
     {
         "name": "wpmuadminedit",
         "file": "wp-admin/network/edit.php",
-        "line": 28,
-        "end_line": 28,
         "type": "action",
         "doc": {
             "description": "Fires just before the action handler in several Network Admin screens.",
@@ -18386,8 +17132,6 @@
     {
         "name": "wpmuadminresult",
         "file": "wp-admin/includes/dashboard.php",
-        "line": 444,
-        "end_line": 444,
         "type": "action",
         "doc": {
             "description": "Fires in the Network Admin 'Right Now' dashboard widget just before the user and site search form fields.",
@@ -18405,8 +17149,6 @@
     {
         "name": "wpmublogsaction",
         "file": "wp-admin/includes/class-wp-ms-sites-list-table.php",
-        "line": 554,
-        "end_line": 554,
         "type": "action",
         "doc": {
             "description": "Fires inside the auxiliary 'Actions' column of the Sites list table.",
@@ -18432,8 +17174,6 @@
     {
         "name": "wpmueditblogaction",
         "file": "wp-admin/network/site-settings.php",
-        "line": 168,
-        "end_line": 168,
         "type": "action",
         "doc": {
             "description": "Fires at the end of the Edit Site form, before the submit button.",
@@ -18458,8 +17198,6 @@
     {
         "name": "xmlrpc_call",
         "file": "wp-includes/class-wp-xmlrpc-server.php",
-        "line": 687,
-        "end_line": 687,
         "type": "action",
         "doc": {
             "description": "Fires after the XML-RPC user has been authenticated but before the rest of the method logic begins.",
@@ -18484,8 +17222,6 @@
     {
         "name": "xmlrpc_call_success_blogger_deletePost",
         "file": "wp-includes/class-wp-xmlrpc-server.php",
-        "line": 5206,
-        "end_line": 5206,
         "type": "action",
         "doc": {
             "description": "Fires after a post has been successfully deleted via the XML-RPC Blogger API.",
@@ -18518,8 +17254,6 @@
     {
         "name": "xmlrpc_call_success_blogger_editPost",
         "file": "wp-includes/class-wp-xmlrpc-server.php",
-        "line": 5147,
-        "end_line": 5147,
         "type": "action",
         "doc": {
             "description": "Fires after a post has been successfully updated via the XML-RPC Blogger API.",
@@ -18552,8 +17286,6 @@
     {
         "name": "xmlrpc_call_success_blogger_newPost",
         "file": "wp-includes/class-wp-xmlrpc-server.php",
-        "line": 5068,
-        "end_line": 5068,
         "type": "action",
         "doc": {
             "description": "Fires after a new post has been successfully created via the XML-RPC Blogger API.",
@@ -18586,8 +17318,6 @@
     {
         "name": "xmlrpc_call_success_mw_editPost",
         "file": "wp-includes/class-wp-xmlrpc-server.php",
-        "line": 5942,
-        "end_line": 5942,
         "type": "action",
         "doc": {
             "description": "Fires after a post has been successfully updated via the XML-RPC MovableType API.",
@@ -18620,8 +17350,6 @@
     {
         "name": "xmlrpc_call_success_mw_newMediaObject",
         "file": "wp-includes/class-wp-xmlrpc-server.php",
-        "line": 6377,
-        "end_line": 6377,
         "type": "action",
         "doc": {
             "description": "Fires after a new attachment has been added via the XML-RPC MovableType API.",
@@ -18654,8 +17382,6 @@
     {
         "name": "xmlrpc_call_success_mw_newPost",
         "file": "wp-includes/class-wp-xmlrpc-server.php",
-        "line": 5558,
-        "end_line": 5558,
         "type": "action",
         "doc": {
             "description": "Fires after a new post has been successfully created via the XML-RPC MovableType API.",
@@ -18688,8 +17414,6 @@
     {
         "name": "xmlrpc_call_success_wp_deleteCategory",
         "file": "wp-includes/class-wp-xmlrpc-server.php",
-        "line": 3443,
-        "end_line": 3443,
         "type": "action",
         "doc": {
             "description": "Fires after a category has been successfully deleted via XML-RPC.",
@@ -18722,8 +17446,6 @@
     {
         "name": "xmlrpc_call_success_wp_deleteComment",
         "file": "wp-includes/class-wp-xmlrpc-server.php",
-        "line": 3690,
-        "end_line": 3690,
         "type": "action",
         "doc": {
             "description": "Fires after a comment has been successfully deleted via XML-RPC.",
@@ -18756,8 +17478,6 @@
     {
         "name": "xmlrpc_call_success_wp_deletePage",
         "file": "wp-includes/class-wp-xmlrpc-server.php",
-        "line": 3086,
-        "end_line": 3086,
         "type": "action",
         "doc": {
             "description": "Fires after a page has been successfully deleted via XML-RPC.",
@@ -18790,8 +17510,6 @@
     {
         "name": "xmlrpc_call_success_wp_editComment",
         "file": "wp-includes/class-wp-xmlrpc-server.php",
-        "line": 3802,
-        "end_line": 3802,
         "type": "action",
         "doc": {
             "description": "Fires after a comment has been successfully updated via XML-RPC.",
@@ -18824,8 +17542,6 @@
     {
         "name": "xmlrpc_call_success_wp_newCategory",
         "file": "wp-includes/class-wp-xmlrpc-server.php",
-        "line": 3393,
-        "end_line": 3393,
         "type": "action",
         "doc": {
             "description": "Fires after a new category has been successfully created via XML-RPC.",
@@ -18858,8 +17574,6 @@
     {
         "name": "xmlrpc_call_success_wp_newComment",
         "file": "wp-includes/class-wp-xmlrpc-server.php",
-        "line": 3939,
-        "end_line": 3939,
         "type": "action",
         "doc": {
             "description": "Fires after a new comment has been successfully created via XML-RPC.",
@@ -18892,8 +17606,6 @@
     {
         "name": "xmlrpc_publish_post",
         "file": "wp-includes/post.php",
-        "line": 6803,
-        "end_line": 6803,
         "type": "action",
         "doc": {
             "description": "Fires when _publish_post_hook() is called during an XML-RPC request.",
@@ -18918,8 +17630,6 @@
     {
         "name": "xmlrpc_rsd_apis",
         "file": "xmlrpc.php",
-        "line": 54,
-        "end_line": 54,
         "type": "action",
         "doc": {
             "description": "Add additional APIs to the Really Simple Discovery (RSD) endpoint.",
@@ -18941,8 +17651,6 @@
     {
         "name": "{$hook}",
         "file": "wp-cron.php",
-        "line": 138,
-        "end_line": 138,
         "type": "action_reference",
         "doc": {
             "description": "Fires scheduled events.",
@@ -18979,8 +17687,6 @@
     {
         "name": "{$new_status}_{$post->post_type}",
         "file": "wp-includes/post.php",
-        "line": 4658,
-        "end_line": 4658,
         "type": "action",
         "doc": {
             "description": "Fires when a post is transitioned from one status to another.",
@@ -19013,8 +17719,6 @@
     {
         "name": "{$old_status}_to_{$new_status}",
         "file": "wp-includes/post.php",
-        "line": 4637,
-        "end_line": 4637,
         "type": "action",
         "doc": {
             "description": "Fires when a post is transitioned from one status to another.",
@@ -19039,8 +17743,6 @@
     {
         "name": "{$page_hook}",
         "file": "wp-admin/admin.php",
-        "line": 254,
-        "end_line": 254,
         "type": "action",
         "doc": {
             "description": "Used to call the registered callback for a plugin screen.",
@@ -19062,8 +17764,6 @@
     {
         "name": "{$taxonomy}_add_form",
         "file": "wp-admin/edit-tags.php",
-        "line": 569,
-        "end_line": 569,
         "type": "action",
         "doc": {
             "description": "Fires at the end of the Add Term form for all taxonomies.",
@@ -19088,8 +17788,6 @@
     {
         "name": "{$taxonomy}_add_form_fields",
         "file": "wp-admin/edit-tags.php",
-        "line": 521,
-        "end_line": 521,
         "type": "action",
         "doc": {
             "description": "Fires after the Add Term form fields.",
@@ -19114,8 +17812,6 @@
     {
         "name": "{$taxonomy}_edit_form",
         "file": "wp-admin/edit-tag-form.php",
-        "line": 269,
-        "end_line": 269,
         "type": "action",
         "doc": {
             "description": "Fires at the end of the Edit Term form for all taxonomies.",
@@ -19148,8 +17844,6 @@
     {
         "name": "{$taxonomy}_edit_form_fields",
         "file": "wp-admin/edit-tag-form.php",
-        "line": 237,
-        "end_line": 237,
         "type": "action",
         "doc": {
             "description": "Fires after the Edit Term form fields are displayed.",
@@ -19182,8 +17876,6 @@
     {
         "name": "{$taxonomy}_pre_add_form",
         "file": "wp-admin/edit-tags.php",
-        "line": 413,
-        "end_line": 413,
         "type": "action",
         "doc": {
             "description": "Fires before the Add Term form for all taxonomies.",
@@ -19208,8 +17900,6 @@
     {
         "name": "{$taxonomy}_pre_edit_form",
         "file": "wp-admin/edit-tag-form.php",
-        "line": 68,
-        "end_line": 68,
         "type": "action",
         "doc": {
             "description": "Fires before the Edit Term form for all taxonomies.",
@@ -19242,8 +17932,6 @@
     {
         "name": "{$taxonomy}_term_edit_form_tag",
         "file": "wp-admin/edit-tag-form.php",
-        "line": 101,
-        "end_line": 101,
         "type": "action",
         "doc": {
             "description": "Fires inside the Edit Term form tag.",
@@ -19260,8 +17948,6 @@
     {
         "name": "{$taxonomy}_term_edit_form_top",
         "file": "wp-admin/edit-tag-form.php",
-        "line": 123,
-        "end_line": 123,
         "type": "action",
         "doc": {
             "description": "Fires at the beginning of the Edit Term form.",
@@ -19294,8 +17980,6 @@
     {
         "name": "{$taxonomy}_term_new_form_tag",
         "file": "wp-admin/edit-tags.php",
-        "line": 427,
-        "end_line": 427,
         "type": "action",
         "doc": {
             "description": "Fires inside the Add Tag form tag.",
