@@ -283,7 +283,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Object ID.",
+                    "content": "ID of the object metadata is for.",
                     "types": [
                         "int"
                     ],
@@ -291,7 +291,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Meta key.",
+                    "content": "Metadata key.",
                     "types": [
                         "string"
                     ],
@@ -299,7 +299,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Meta value. Must be serializable if non-scalar.",
+                    "content": "Metadata value. Must be serializable if non-scalar.",
                     "types": [
                         "mixed"
                     ],
@@ -307,7 +307,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Whether the specified meta key should be unique                              for the object. Optional. Default false.",
+                    "content": "Whether the specified meta key should be unique for the object.",
                     "types": [
                         "bool"
                     ],
@@ -2527,7 +2527,7 @@
                     "name": "param",
                     "content": "Type of information requested.",
                     "types": [
-                        "mixed"
+                        "string"
                     ],
                     "variable": "$show"
                 }
@@ -2588,7 +2588,7 @@
                     "name": "param",
                     "content": "The URL returned by bloginfo().",
                     "types": [
-                        "mixed"
+                        "string"
                     ],
                     "variable": "$output"
                 },
@@ -2596,7 +2596,7 @@
                     "name": "param",
                     "content": "Type of information requested.",
                     "types": [
-                        "mixed"
+                        "string"
                     ],
                     "variable": "$show"
                 }
@@ -7066,7 +7066,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Object ID.",
+                    "content": "ID of the object metadata is for.",
                     "types": [
                         "int"
                     ],
@@ -7074,7 +7074,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Meta key.",
+                    "content": "Metadata key.",
                     "types": [
                         "string"
                     ],
@@ -7082,7 +7082,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Meta value. Must be serializable if non-scalar.",
+                    "content": "Metadata value. Must be serializable if non-scalar.",
                     "types": [
                         "mixed"
                     ],
@@ -11125,7 +11125,7 @@
                     "name": "param",
                     "content": "Comment data.",
                     "types": [
-                        "mixed"
+                        "\\WP_Comment"
                     ],
                     "variable": "$_comment"
                 }
@@ -14630,7 +14630,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Object ID.",
+                    "content": "ID of the object metadata is for.",
                     "types": [
                         "int"
                     ],
@@ -14638,7 +14638,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Meta key.",
+                    "content": "Metadata key.",
                     "types": [
                         "string"
                     ],
@@ -16165,7 +16165,7 @@
         "type": "filter",
         "doc": {
             "description": "Filters whether to preempt the output of image_downsize().",
-            "long_description": "Passing a truthy value to the filter will effectively short-circuit down-sizing the image, returning that value as output instead.",
+            "long_description": "Returning a truthy value from the filter will effectively short-circuit down-sizing the image, returning that value instead.",
             "tags": [
                 {
                     "name": "since",
@@ -16173,9 +16173,10 @@
                 },
                 {
                     "name": "param",
-                    "content": "Whether to short-circuit the image downsize. Default false.",
+                    "content": "Whether to short-circuit the image downsize.",
                     "types": [
-                        "bool"
+                        "bool",
+                        "array"
                     ],
                     "variable": "$downsize"
                 },
@@ -16189,7 +16190,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Size of image. Image size or array of width and height values (in that order).                               Default 'medium'.",
+                    "content": "Requested size of image. Image size name, or array of width                               and height values (in that order).",
                     "types": [
                         "array",
                         "string"
@@ -16197,7 +16198,7 @@
                     "variable": "$size"
                 }
             ],
-            "long_description_html": "<p>Passing a truthy value to the filter will effectively short-circuit down-sizing the image, returning that value as output instead.</p>"
+            "long_description_html": "<p>Returning a truthy value from the filter will effectively short-circuit down-sizing the image, returning that value instead.</p>"
         }
     },
     {
@@ -16793,7 +16794,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "{     Default meta values and keys for the user.     @type string   $nickname             The user's nickname. Default is the user's username.     @type string   $first_name           The user's first name.     @type string   $last_name            The user's last name.     @type string   $description          The user's description.     @type bool     $rich_editing         Whether to enable the rich-editor for the user. False if not empty.     @type bool     $syntax_highlighting  Whether to enable the rich code editor for the user. False if not empty.     @type bool     $comment_shortcuts    Whether to enable keyboard shortcuts for the user. Default false.     @type string   $admin_color          The color scheme for a user's admin screen. Default 'fresh'.     @type int|bool $use_ssl              Whether to force SSL on the user's admin area. 0|false if SSL is                                          not forced.     @type bool     $show_admin_bar_front Whether to show the admin bar on the front end for the user.                                          Default true.     @type string   $locale               User's locale. Default empty. }",
+                    "content": "{     Default meta values and keys for the user.     @type string   $nickname             The user's nickname. Default is the user's username.     @type string   $first_name           The user's first name.     @type string   $last_name            The user's last name.     @type string   $description          The user's description.     @type string   $rich_editing         Whether to enable the rich-editor for the user. Default 'true'.     @type string   $syntax_highlighting  Whether to enable the rich code editor for the user. Default 'true'.     @type string   $comment_shortcuts    Whether to enable keyboard shortcuts for the user. Default 'false'.     @type string   $admin_color          The color scheme for a user's admin screen. Default 'fresh'.     @type int|bool $use_ssl              Whether to force SSL on the user's admin area. 0|false if SSL                                          is not forced.     @type string   $show_admin_bar_front Whether to show the admin bar on the front end for the user.                                          Default 'true'.     @type string   $locale               User's locale. Default empty. }",
                     "types": [
                         "array"
                     ],
@@ -17358,7 +17359,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Meta key.",
+                    "content": "Metadata key.",
                     "types": [
                         "string"
                     ],
@@ -17366,10 +17367,9 @@
                 },
                 {
                     "name": "param",
-                    "content": "Type of object metadata is for (e.g., comment, post, term, or user).",
+                    "content": "Type of object metadata is for. Accepts 'post', 'comment', 'term', 'user',                          or any other object type with an associated meta table.",
                     "types": [
-                        "string",
-                        "null"
+                        "string"
                     ],
                     "variable": "$meta_type"
                 }
@@ -29758,7 +29758,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Object type.",
+                    "content": "Type of object metadata is for. Accepts 'post', 'comment', 'term', 'user',                            or any other object type with an associated meta table.",
                     "types": [
                         "string"
                     ],
@@ -30162,8 +30162,8 @@
         "file": "wp-admin/includes/file.php",
         "type": "filter",
         "doc": {
-            "description": "Filters the filesystem credentials form output.",
-            "long_description": "Returning anything other than an empty string will effectively short-circuit output of the filesystem credentials form, returning that value instead.",
+            "description": "Filters the filesystem credentials.",
+            "long_description": "Returning anything other than an empty string will effectively short-circuit output of the filesystem credentials form, returning that value instead.\n A filter should return true if no filesystem credentials are required, false if they are required but have not been provided, or an array of credentials if they are required and have been provided.",
             "tags": [
                 {
                     "name": "since",
@@ -30176,11 +30176,11 @@
                 },
                 {
                     "name": "param",
-                    "content": "Form output to return instead. Default empty.",
+                    "content": "Credentials to return instead. Default empty string.",
                     "types": [
                         "mixed"
                     ],
-                    "variable": "$output"
+                    "variable": "$credentials"
                 },
                 {
                     "name": "param",
@@ -30217,22 +30217,22 @@
                 },
                 {
                     "name": "param",
-                    "content": "Whether to allow Group/World writable.",
-                    "types": [
-                        "bool"
-                    ],
-                    "variable": "$allow_relaxed_file_ownership"
-                },
-                {
-                    "name": "param",
                     "content": "Extra POST fields.",
                     "types": [
                         "array"
                     ],
                     "variable": "$extra_fields"
+                },
+                {
+                    "name": "param",
+                    "content": "Whether to allow Group/World writable.",
+                    "types": [
+                        "bool"
+                    ],
+                    "variable": "$allow_relaxed_file_ownership"
                 }
             ],
-            "long_description_html": "<p>Returning anything other than an empty string will effectively short-circuit output of the filesystem credentials form, returning that value instead.</p>"
+            "long_description_html": "<p>Returning anything other than an empty string will effectively short-circuit output of the filesystem credentials form, returning that value instead.</p> <p>A filter should return true if no filesystem credentials are required, false if they are required but have not been provided, or an array of credentials if they are required and have been provided.</p>"
         }
     },
     {
@@ -33098,7 +33098,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Meta value to sanitize.",
+                    "content": "Metadata value to sanitize.",
                     "types": [
                         "mixed"
                     ],
@@ -33106,7 +33106,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Meta key.",
+                    "content": "Metadata key.",
                     "types": [
                         "string"
                     ],
@@ -33114,7 +33114,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Object type.",
+                    "content": "Type of object metadata is for. Accepts 'post', 'comment', 'term', 'user',                            or any other object type with an associated meta table.",
                     "types": [
                         "string"
                     ],
@@ -33138,7 +33138,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Meta value to sanitize.",
+                    "content": "Metadata value to sanitize.",
                     "types": [
                         "mixed"
                     ],
@@ -33146,7 +33146,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Meta key.",
+                    "content": "Metadata key.",
                     "types": [
                         "string"
                     ],
@@ -33154,7 +33154,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Object type.",
+                    "content": "Type of object metadata is for. Accepts 'post', 'comment', 'term', 'user',                               or any other object type with an associated meta table.",
                     "types": [
                         "string"
                     ],
@@ -33553,7 +33553,7 @@
         "file": "wp-includes/pluggable.php",
         "type": "filter",
         "doc": {
-            "description": "Filters whether the connection is secure.",
+            "description": "Filters whether the auth cookie should only be sent over HTTPS.",
             "long_description": "",
             "tags": [
                 {
@@ -33562,7 +33562,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Whether the connection is secure.",
+                    "content": "Whether the cookie should only be sent over HTTPS.",
                     "types": [
                         "bool"
                     ],
@@ -33609,7 +33609,7 @@
         "file": "wp-includes/pluggable.php",
         "type": "filter",
         "doc": {
-            "description": "Filters whether to use a secure cookie when logged-in.",
+            "description": "Filters whether the logged in cookie should only be sent over HTTPS.",
             "long_description": "",
             "tags": [
                 {
@@ -33618,7 +33618,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Whether to use a secure cookie when logged-in.",
+                    "content": "Whether the logged in cookie should only be sent over HTTPS.",
                     "types": [
                         "bool"
                     ],
@@ -33634,7 +33634,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Whether the connection is secure.",
+                    "content": "Whether the auth cookie should only be sent over HTTPS.",
                     "types": [
                         "bool"
                     ],
@@ -39419,7 +39419,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Object ID.",
+                    "content": "ID of the object metadata is for.",
                     "types": [
                         "int"
                     ],
@@ -39427,7 +39427,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Meta key.",
+                    "content": "Metadata key.",
                     "types": [
                         "string"
                     ],
@@ -39435,7 +39435,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Meta value. Must be serializable if non-scalar.",
+                    "content": "Metadata value. Must be serializable if non-scalar.",
                     "types": [
                         "mixed"
                     ],
@@ -39443,7 +39443,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Optional. If specified, only update existing                              metadata entries with the specified value.                              Otherwise, update all entries.",
+                    "content": "Optional. If specified, only update existing metadata entries                              with this value. Otherwise, update all entries.",
                     "types": [
                         "mixed"
                     ],
@@ -44387,7 +44387,7 @@
         "file": "wp-includes/media.php",
         "type": "filter",
         "doc": {
-            "description": "Filters the image src result.",
+            "description": "Filters the attachment image source result.",
             "long_description": "",
             "tags": [
                 {
@@ -44396,7 +44396,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Either array with src, width &amp; height, icon src, or false.",
+                    "content": "{     Array of image data, or boolean false if no image is available.     @type string $0 Image source URL.     @type int    $1 Image width in pixels.     @type int    $2 Image height in pixels. }",
                     "types": [
                         "array",
                         "false"
@@ -44413,16 +44413,16 @@
                 },
                 {
                     "name": "param",
-                    "content": "Size of image. Image size or array of width and height values                                    (in that order). Default 'thumbnail'.",
+                    "content": "Requested size of image. Image size name, or array of width                                    and height values (in that order).",
                     "types": [
                         "string",
-                        "array"
+                        "int[]"
                     ],
                     "variable": "$size"
                 },
                 {
                     "name": "param",
-                    "content": "Whether the image should be treated as an icon. Default false.",
+                    "content": "Whether the image should be treated as an icon.",
                     "types": [
                         "bool"
                     ],
@@ -48282,7 +48282,8 @@
                     "name": "param",
                     "content": "Value to return instead of saving. Default null.",
                     "types": [
-                        "mixed"
+                        "bool",
+                        "null"
                     ],
                     "variable": "$override"
                 },
@@ -49558,7 +49559,7 @@
         "type": "filter",
         "doc": {
             "description": "Filters whether to treat the upload bits as an error.",
-            "long_description": "Passing a non-array to the filter will effectively short-circuit preparing the upload bits, returning that value instead.",
+            "long_description": "Returning a non-array from the filter will effectively short-circuit preparing the upload bits, returning that value instead. An error message should be returned as a string.",
             "tags": [
                 {
                     "name": "since",
@@ -49566,14 +49567,15 @@
                 },
                 {
                     "name": "param",
-                    "content": "An array of upload bits data, or a non-array error to return.",
+                    "content": "An array of upload bits data, or error message to return.",
                     "types": [
-                        "mixed"
+                        "array",
+                        "string"
                     ],
                     "variable": "$upload_bits_error"
                 }
             ],
-            "long_description_html": "<p>Passing a non-array to the filter will effectively short-circuit preparing the upload bits, returning that value instead.</p>"
+            "long_description_html": "<p>Returning a non-array from the filter will effectively short-circuit preparing the upload bits, returning that value instead. An error message should be returned as a string.</p>"
         }
     },
     {

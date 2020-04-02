@@ -788,7 +788,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Object ID.",
+                    "content": "ID of the object metadata is for.",
                     "types": [
                         "int"
                     ],
@@ -796,7 +796,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Meta key.",
+                    "content": "Metadata key.",
                     "types": [
                         "string"
                     ],
@@ -804,7 +804,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Meta value.",
+                    "content": "Metadata value. Serialized if non-scalar.",
                     "types": [
                         "mixed"
                     ],
@@ -947,7 +947,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Object ID.",
+                    "content": "ID of the object metadata is for.",
                     "types": [
                         "int"
                     ],
@@ -955,7 +955,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Meta key.",
+                    "content": "Metadata key.",
                     "types": [
                         "string"
                     ],
@@ -963,7 +963,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Meta value.",
+                    "content": "Metadata value. Serialized if non-scalar.",
                     "types": [
                         "mixed"
                     ],
@@ -5186,7 +5186,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Object ID.",
+                    "content": "ID of the object metadata is for.",
                     "types": [
                         "int"
                     ],
@@ -5194,7 +5194,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Meta key.",
+                    "content": "Metadata key.",
                     "types": [
                         "string"
                     ],
@@ -5202,7 +5202,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Meta value.",
+                    "content": "Metadata value. Serialized if non-scalar.",
                     "types": [
                         "mixed"
                     ],
@@ -5626,7 +5626,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Object ID.",
+                    "content": "ID of the object metadata is for.",
                     "types": [
                         "int"
                     ],
@@ -5634,7 +5634,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Meta key.",
+                    "content": "Metadata key.",
                     "types": [
                         "string"
                     ],
@@ -5642,7 +5642,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Meta value.",
+                    "content": "Metadata value. Serialized if non-scalar.",
                     "types": [
                         "mixed"
                     ],
@@ -14370,7 +14370,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Meta key.",
+                    "content": "Metadata key.",
                     "types": [
                         "string"
                     ],
@@ -14378,7 +14378,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Meta value. This will be a PHP-serialized string representation of the value if                           the value is an array, an object, or itself a PHP-serialized string.",
+                    "content": "Metadata value. This will be a PHP-serialized string representation of the value                           if the value is an array, an object, or itself a PHP-serialized string.",
                     "types": [
                         "mixed"
                     ],
@@ -14538,7 +14538,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Object ID.",
+                    "content": "ID of the object metadata is for.",
                     "types": [
                         "int"
                     ],
@@ -14546,7 +14546,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Meta key.",
+                    "content": "Metadata key.",
                     "types": [
                         "string"
                     ],
@@ -14554,7 +14554,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Meta value.",
+                    "content": "Metadata value. Serialized if non-scalar.",
                     "types": [
                         "mixed"
                     ],
@@ -14634,7 +14634,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Meta key.",
+                    "content": "Metadata key.",
                     "types": [
                         "string"
                     ],
@@ -14642,7 +14642,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Meta value. This will be a PHP-serialized string representation of the value if                           the value is an array, an object, or itself a PHP-serialized string.",
+                    "content": "Metadata value. This will be a PHP-serialized string representation of the value                           if the value is an array, an object, or itself a PHP-serialized string.",
                     "types": [
                         "mixed"
                     ],
@@ -14674,7 +14674,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Object ID.",
+                    "content": "ID of the object metadata is for.",
                     "types": [
                         "int"
                     ],
@@ -14682,7 +14682,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Meta key.",
+                    "content": "Metadata key.",
                     "types": [
                         "string"
                     ],
@@ -14690,7 +14690,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Meta value.",
+                    "content": "Metadata value. Serialized if non-scalar.",
                     "types": [
                         "mixed"
                     ],
@@ -15702,9 +15702,10 @@
                 },
                 {
                     "name": "param",
-                    "content": "URL of feed to retrieve. If an array of URLs, the feeds are merged.",
+                    "content": "URL of feed or array of URLs of feeds to retrieve.",
                     "types": [
-                        "mixed"
+                        "string",
+                        "string[]"
                     ],
                     "variable": "$url"
                 }
@@ -16117,6 +16118,22 @@
                 }
             ],
             "long_description_html": ""
+        }
+    },
+    {
+        "name": "wp_nav_menu_item_custom_fields_customize_template",
+        "file": "wp-includes/customize/class-wp-customize-nav-menu-item-control.php",
+        "type": "action",
+        "doc": {
+            "description": "Fires at the end of the form field template for nav menu items in the customizer.",
+            "long_description": "Additional fields can be rendered here and managed in JavaScript.",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "5.4.0"
+                }
+            ],
+            "long_description_html": "<p>Additional fields can be rendered here and managed in JavaScript.</p>"
         }
     },
     {
