@@ -170,7 +170,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Whether to enable the plugin for all sites in the network                             or just the current site. Multisite only. Default is false.",
+                    "content": "Whether to enable the plugin for all sites in the network                             or just the current site. Multisite only. Default false.",
                     "types": [
                         "bool"
                     ],
@@ -210,7 +210,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Whether to enable the plugin for all sites in the network                           or just the current site. Multisite only. Default is false.",
+                    "content": "Whether to enable the plugin for all sites in the network                           or just the current site. Multisite only. Default false.",
                     "types": [
                         "bool"
                     ],
@@ -242,7 +242,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Whether to enable the plugin for all sites in the network                             or just the current site. Multisite only. Default is false.",
+                    "content": "Whether to enable the plugin for all sites in the network                             or just the current site. Multisite only. Default false.",
                     "types": [
                         "bool"
                     ],
@@ -1575,6 +1575,11 @@
                     "content": "3.2.0"
                 },
                 {
+                    "name": "since",
+                    "content": "5.5.0",
+                    "description": "Added the <code>$post</code> parameter."
+                },
+                {
                     "name": "see",
                     "content": "",
                     "refers": "wp_delete_post()"
@@ -1586,6 +1591,14 @@
                         "int"
                     ],
                     "variable": "$postid"
+                },
+                {
+                    "name": "param",
+                    "content": "Post object.",
+                    "types": [
+                        "\\WP_Post"
+                    ],
+                    "variable": "$post"
                 }
             ],
             "long_description_html": ""
@@ -1695,7 +1708,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Status of the plugin. Defaults are 'All', 'Active',                            'Inactive', 'Recently Activated', 'Upgrade', 'Must-Use',                            'Drop-ins', 'Search', 'Paused'.",
+                    "content": "Status filter currently applied to the plugin list. Possible                            values are: 'all', 'active', 'inactive', 'recently_activated',                            'upgrade', 'mustuse', 'dropins', 'search', 'paused',                            'auto-update-enabled', 'auto-update-disabled'.",
                     "types": [
                         "string"
                     ],
@@ -1735,7 +1748,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Status of the plugin. Defaults are 'All', 'Active',                            'Inactive', 'Recently Activated', 'Upgrade', 'Must-Use',                            'Drop-ins', 'Search', 'Paused'.",
+                    "content": "Status filter currently applied to the plugin list. Possible                            values are: 'all', 'active', 'inactive', 'recently_activated',                            'upgrade', 'mustuse', 'dropins', 'search', 'paused',                            'auto-update-enabled', 'auto-update-disabled'.",
                     "types": [
                         "string"
                     ],
@@ -2444,6 +2457,11 @@
                     "content": "3.2.0"
                 },
                 {
+                    "name": "since",
+                    "content": "5.5.0",
+                    "description": "Added the <code>$post</code> parameter."
+                },
+                {
                     "name": "see",
                     "content": "",
                     "refers": "wp_delete_post()"
@@ -2455,6 +2473,14 @@
                         "int"
                     ],
                     "variable": "$postid"
+                },
+                {
+                    "name": "param",
+                    "content": "Post object.",
+                    "types": [
+                        "\\WP_Post"
+                    ],
+                    "variable": "$post"
                 }
             ],
             "long_description_html": ""
@@ -2586,15 +2612,15 @@
         "file": "wp-admin/options-reading.php",
         "type": "action",
         "doc": {
-            "description": "Enable the legacy 'Site Visibility' privacy options.",
-            "long_description": "By default the privacy options form displays a single checkbox to 'discourage' search engines from indexing the site. Hooking to this action serves a dual purpose: 1. Disable the single checkbox in favor of a multiple-choice list of radio buttons. 2. Open the door to adding additional radio button choices to the list.\n Hooking to this action also converts the 'Search Engine Visibility' heading to the more open-ended 'Site Visibility' heading.",
+            "description": "Enable the legacy 'Site visibility' privacy options.",
+            "long_description": "By default the privacy options form displays a single checkbox to 'discourage' search engines from indexing the site. Hooking to this action serves a dual purpose: 1. Disable the single checkbox in favor of a multiple-choice list of radio buttons. 2. Open the door to adding additional radio button choices to the list.\n Hooking to this action also converts the 'Search engine visibility' heading to the more open-ended 'Site visibility' heading.",
             "tags": [
                 {
                     "name": "since",
                     "content": "2.1.0"
                 }
             ],
-            "long_description_html": "<p>By default the privacy options form displays a single checkbox to 'discourage' search engines from indexing the site. Hooking to this action serves a dual purpose:</p> <ol> <li>Disable the single checkbox in favor of a multiple-choice list of radio buttons.</li> <li>Open the door to adding additional radio button choices to the list.</li> </ol> <p>Hooking to this action also converts the 'Search Engine Visibility' heading to the more open-ended 'Site Visibility' heading.</p>"
+            "long_description_html": "<p>By default the privacy options form displays a single checkbox to 'discourage' search engines from indexing the site. Hooking to this action serves a dual purpose:</p> <ol> <li>Disable the single checkbox in favor of a multiple-choice list of radio buttons.</li> <li>Open the door to adding additional radio button choices to the list.</li> </ol> <p>Hooking to this action also converts the 'Search engine visibility' heading to the more open-ended 'Site visibility' heading.</p>"
         }
     },
     {
@@ -2737,6 +2763,11 @@
                     "description": "The <code>$avoid_die</code> parameter was added."
                 },
                 {
+                    "name": "since",
+                    "content": "5.5.0",
+                    "description": "The <code>$avoid_die</code> parameter was renamed to <code>$wp_error</code>."
+                },
+                {
                     "name": "param",
                     "content": "Comment author's IP address.",
                     "types": [
@@ -2762,11 +2793,11 @@
                 },
                 {
                     "name": "param",
-                    "content": "Whether to prevent executing wp_die()                                     or die() if a comment flood is occurring.",
+                    "content": "Whether to return a WP_Error object instead of executing                                     wp_die() or die() if a comment flood is occurring.",
                     "types": [
                         "bool"
                     ],
-                    "variable": "$avoid_die"
+                    "variable": "$wp_error"
                 }
             ],
             "long_description_html": "<p>Allows checking for comment flooding.</p>"
@@ -4605,12 +4636,25 @@
                     "content": "2.0.0"
                 },
                 {
+                    "name": "since",
+                    "content": "5.5.0",
+                    "description": "Added the <code>$post</code> parameter."
+                },
+                {
                     "name": "param",
                     "content": "Attachment ID.",
                     "types": [
                         "int"
                     ],
                     "variable": "$post_id"
+                },
+                {
+                    "name": "param",
+                    "content": "Post object.",
+                    "types": [
+                        "\\WP_Post"
+                    ],
+                    "variable": "$post"
                 }
             ],
             "long_description_html": ""
@@ -4762,12 +4806,25 @@
                     "content": "1.2.0"
                 },
                 {
+                    "name": "since",
+                    "content": "5.5.0",
+                    "description": "Added the <code>$post</code> parameter."
+                },
+                {
                     "name": "param",
                     "content": "Post ID.",
                     "types": [
                         "int"
                     ],
                     "variable": "$postid"
+                },
+                {
+                    "name": "param",
+                    "content": "Post object.",
+                    "types": [
+                        "\\WP_Post"
+                    ],
+                    "variable": "$post"
                 }
             ],
             "long_description_html": ""
@@ -5067,6 +5124,11 @@
                     "content": "2.0.0"
                 },
                 {
+                    "name": "since",
+                    "content": "5.5.0",
+                    "description": "Added the <code>$user</code> parameter."
+                },
+                {
                     "name": "param",
                     "content": "ID of the user to delete.",
                     "types": [
@@ -5082,6 +5144,14 @@
                         "null"
                     ],
                     "variable": "$reassign"
+                },
+                {
+                    "name": "param",
+                    "content": "WP_User object of the user to delete.",
+                    "types": [
+                        "\\WP_User"
+                    ],
+                    "variable": "$user"
                 }
             ],
             "long_description_html": ""
@@ -5419,12 +5489,25 @@
                     "content": "2.2.0"
                 },
                 {
+                    "name": "since",
+                    "content": "5.5.0",
+                    "description": "Added the <code>$post</code> parameter."
+                },
+                {
                     "name": "param",
                     "content": "Post ID.",
                     "types": [
                         "int"
                     ],
                     "variable": "$postid"
+                },
+                {
+                    "name": "param",
+                    "content": "Post object.",
+                    "types": [
+                        "\\WP_Post"
+                    ],
+                    "variable": "$post"
                 }
             ],
             "long_description_html": ""
@@ -5584,6 +5667,11 @@
                     "content": "2.9.0"
                 },
                 {
+                    "name": "since",
+                    "content": "5.5.0",
+                    "description": "Added the <code>$user</code> parameter."
+                },
+                {
                     "name": "param",
                     "content": "ID of the deleted user.",
                     "types": [
@@ -5599,6 +5687,14 @@
                         "null"
                     ],
                     "variable": "$reassign"
+                },
+                {
+                    "name": "param",
+                    "content": "WP_User object of the deleted user.",
+                    "types": [
+                        "\\WP_User"
+                    ],
+                    "variable": "$user"
                 }
             ],
             "long_description_html": ""
@@ -7127,16 +7223,29 @@
                 {
                     "name": "since",
                     "content": "2.8.0",
-                    "description": "$name parameter added."
+                    "description": "The <code>$name</code> parameter was added."
+                },
+                {
+                    "name": "since",
+                    "content": "5.5.0",
+                    "description": "The <code>$args</code> parameter was added."
                 },
                 {
                     "name": "param",
-                    "content": "Name of the specific footer file to use. null for the default footer.",
+                    "content": "Name of the specific footer file to use. Null for the default footer.",
                     "types": [
                         "string",
                         "null"
                     ],
                     "variable": "$name"
+                },
+                {
+                    "name": "param",
+                    "content": "Additional arguments passed to the footer template.",
+                    "types": [
+                        "array"
+                    ],
+                    "variable": "$args"
                 }
             ],
             "long_description_html": ""
@@ -7157,16 +7266,29 @@
                 {
                     "name": "since",
                     "content": "2.8.0",
-                    "description": "$name parameter added."
+                    "description": "The <code>$name</code> parameter was added."
+                },
+                {
+                    "name": "since",
+                    "content": "5.5.0",
+                    "description": "The <code>$args</code> parameter was added."
                 },
                 {
                     "name": "param",
-                    "content": "Name of the specific header file to use. null for the default header.",
+                    "content": "Name of the specific header file to use. Null for the default header.",
                     "types": [
                         "string",
                         "null"
                     ],
                     "variable": "$name"
+                },
+                {
+                    "name": "param",
+                    "content": "Additional arguments passed to the header template.",
+                    "types": [
+                        "array"
+                    ],
+                    "variable": "$args"
                 }
             ],
             "long_description_html": ""
@@ -7187,16 +7309,29 @@
                 {
                     "name": "since",
                     "content": "2.8.0",
-                    "description": "$name parameter added."
+                    "description": "The <code>$name</code> parameter was added."
+                },
+                {
+                    "name": "since",
+                    "content": "5.5.0",
+                    "description": "The <code>$args</code> parameter was added."
                 },
                 {
                     "name": "param",
-                    "content": "Name of the specific sidebar file to use. null for the default sidebar.",
+                    "content": "Name of the specific sidebar file to use. Null for the default sidebar.",
                     "types": [
                         "string",
                         "null"
                     ],
                     "variable": "$name"
+                },
+                {
+                    "name": "param",
+                    "content": "Additional arguments passed to the sidebar template.",
+                    "types": [
+                        "array"
+                    ],
+                    "variable": "$args"
                 }
             ],
             "long_description_html": ""
@@ -7213,6 +7348,11 @@
                 {
                     "name": "since",
                     "content": "5.2.0"
+                },
+                {
+                    "name": "since",
+                    "content": "5.5.0",
+                    "description": "The <code>$args</code> parameter was added."
                 },
                 {
                     "name": "param",
@@ -7237,6 +7377,14 @@
                         "string[]"
                     ],
                     "variable": "$templates"
+                },
+                {
+                    "name": "param",
+                    "content": "Additional arguments passed to the template.",
+                    "types": [
+                        "array"
+                    ],
+                    "variable": "$args"
                 }
             ],
             "long_description_html": ""
@@ -7255,6 +7403,11 @@
                     "content": "3.0.0"
                 },
                 {
+                    "name": "since",
+                    "content": "5.5.0",
+                    "description": "The <code>$args</code> parameter was added."
+                },
+                {
                     "name": "param",
                     "content": "The slug name for the generic template.",
                     "types": [
@@ -7270,6 +7423,14 @@
                         "null"
                     ],
                     "variable": "$name"
+                },
+                {
+                    "name": "param",
+                    "content": "Additional arguments passed to the template.",
+                    "types": [
+                        "array"
+                    ],
+                    "variable": "$args"
                 }
             ],
             "long_description_html": "<p>The dynamic portion of the hook name, <code>$slug</code>, refers to the slug name for the generic template part.</p>"
@@ -7345,7 +7506,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "The screen id.",
+                    "content": "The screen ID.",
                     "types": [
                         "string"
                     ],
@@ -7377,7 +7538,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "The screen id.",
+                    "content": "The screen ID.",
                     "types": [
                         "string"
                     ],
@@ -8183,7 +8344,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "A WP_Error object containing any errors generated                         by using invalid credentials.",
+                    "content": "A WP_Error object containing any errors generated                                 by using invalid credentials.",
                     "types": [
                         "\\WP_Error"
                     ],
@@ -8196,7 +8357,7 @@
                         "\\WP_User",
                         "false"
                     ],
-                    "variable": ""
+                    "variable": "$user_data"
                 }
             ],
             "long_description_html": ""
@@ -9579,7 +9740,7 @@
         "file": "wp-admin/user-edit.php",
         "type": "action",
         "doc": {
-            "description": "Fires before the page loads on the 'Your Profile' editing screen.",
+            "description": "Fires before the page loads on the 'Profile' editing screen.",
             "long_description": "The action only fires if the current user is editing their own profile.",
             "tags": [
                 {
@@ -10388,9 +10549,22 @@
                     "content": "3.6.0"
                 },
                 {
+                    "name": "since",
+                    "content": "5.5.0",
+                    "description": "The <code>$args</code> parameter was added."
+                },
+                {
                     "name": "link",
                     "content": "<a href=\"https://core.trac.wordpress.org/ticket/19321\">https://core.trac.wordpress.org/ticket/19321</a>",
                     "link": "https://core.trac.wordpress.org/ticket/19321"
+                },
+                {
+                    "name": "param",
+                    "content": "The array of arguments for building the search form.",
+                    "types": [
+                        "array"
+                    ],
+                    "variable": "$args"
                 }
             ],
             "long_description_html": ""
@@ -10737,7 +10911,7 @@
         "file": "wp-admin/user-edit.php",
         "type": "action",
         "doc": {
-            "description": "Fires after the 'Personal Options' settings table on the 'Your Profile' editing screen.",
+            "description": "Fires after the 'Personal Options' settings table on the 'Profile' editing screen.",
             "long_description": "The action only fires if the current user is editing their own profile.",
             "tags": [
                 {
@@ -10975,6 +11149,46 @@
                         "\\WP_Error"
                     ],
                     "variable": "$errors"
+                }
+            ],
+            "long_description_html": ""
+        }
+    },
+    {
+        "name": "register_setting",
+        "file": "wp-includes/option.php",
+        "type": "action",
+        "doc": {
+            "description": "Fires immediately before the setting is registered but after its filters are in place.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "5.5.0"
+                },
+                {
+                    "name": "param",
+                    "content": "Setting group.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$option_group"
+                },
+                {
+                    "name": "param",
+                    "content": "Setting name.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$option_name"
+                },
+                {
+                    "name": "param",
+                    "content": "Array of setting registration arguments.",
+                    "types": [
+                        "array"
+                    ],
+                    "variable": "$args"
                 }
             ],
             "long_description_html": ""
@@ -12304,7 +12518,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Whether this is an existing post being updated or not.",
+                    "content": "Whether this is an existing post being updated.",
                     "types": [
                         "bool"
                     ],
@@ -12344,7 +12558,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Whether this is an existing post being updated or not.",
+                    "content": "Whether this is an existing post being updated.",
                     "types": [
                         "bool"
                     ],
@@ -12352,6 +12566,94 @@
                 }
             ],
             "long_description_html": "<p>The dynamic portion of the hook name, <code>$post-&gt;post_type</code>, refers to the post type slug.</p>"
+        }
+    },
+    {
+        "name": "saved_term",
+        "file": "wp-includes/taxonomy.php",
+        "type": "action",
+        "doc": {
+            "description": "Fires after a term has been saved, and the term cache has been cleared.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "5.5.0"
+                },
+                {
+                    "name": "param",
+                    "content": "Term ID.",
+                    "types": [
+                        "int"
+                    ],
+                    "variable": "$term_id"
+                },
+                {
+                    "name": "param",
+                    "content": "Term taxonomy ID.",
+                    "types": [
+                        "int"
+                    ],
+                    "variable": "$tt_id"
+                },
+                {
+                    "name": "param",
+                    "content": "Taxonomy slug.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$taxonomy"
+                },
+                {
+                    "name": "param",
+                    "content": "Whether this is an existing term being updated.",
+                    "types": [
+                        "bool"
+                    ],
+                    "variable": "$update"
+                }
+            ],
+            "long_description_html": ""
+        }
+    },
+    {
+        "name": "saved_{$taxonomy}",
+        "file": "wp-includes/taxonomy.php",
+        "type": "action",
+        "doc": {
+            "description": "Fires after a term in a specific taxonomy has been saved, and the term cache has been cleared.",
+            "long_description": "The dynamic portion of the hook name, `$taxonomy`, refers to the taxonomy slug.",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "5.5.0"
+                },
+                {
+                    "name": "param",
+                    "content": "Term ID.",
+                    "types": [
+                        "int"
+                    ],
+                    "variable": "$term_id"
+                },
+                {
+                    "name": "param",
+                    "content": "Term taxonomy ID.",
+                    "types": [
+                        "int"
+                    ],
+                    "variable": "$tt_id"
+                },
+                {
+                    "name": "param",
+                    "content": "Whether this is an existing term being updated.",
+                    "types": [
+                        "bool"
+                    ],
+                    "variable": "$update"
+                }
+            ],
+            "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the taxonomy slug.</p>"
         }
     },
     {
@@ -12371,6 +12673,30 @@
                     "content": "Current WordPress environment instance (passed by reference).",
                     "types": [
                         "\\WP"
+                    ],
+                    "variable": "$this"
+                }
+            ],
+            "long_description_html": ""
+        }
+    },
+    {
+        "name": "set_404",
+        "file": "wp-includes/class-wp-query.php",
+        "type": "action_reference",
+        "doc": {
+            "description": "Fires after a 404 is triggered.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "5.5.0"
+                },
+                {
+                    "name": "param",
+                    "content": "The WP_Query instance (passed by reference).",
+                    "types": [
+                        "\\WP_Query"
                     ],
                     "variable": "$this"
                 }
@@ -12887,7 +13213,7 @@
         "file": "wp-admin/user-edit.php",
         "type": "action",
         "doc": {
-            "description": "Fires after the 'About Yourself' settings table on the 'Your Profile' editing screen.",
+            "description": "Fires after the 'About Yourself' settings table on the 'Profile' editing screen.",
             "long_description": "The action only fires if the current user is editing their own profile.",
             "tags": [
                 {
@@ -13429,7 +13755,7 @@
         "file": "wp-includes/class-wp-query.php",
         "type": "action_reference",
         "doc": {
-            "description": "Fires once the post data has been setup.",
+            "description": "Fires once the post data has been set up.",
             "long_description": "",
             "tags": [
                 {
@@ -13861,6 +14187,38 @@
                         "int"
                     ],
                     "variable": "$site_id"
+                }
+            ],
+            "long_description_html": ""
+        }
+    },
+    {
+        "name": "unregister_setting",
+        "file": "wp-includes/option.php",
+        "type": "action",
+        "doc": {
+            "description": "Fires immediately before the setting is unregistered and after its filters have been removed.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "5.5.0"
+                },
+                {
+                    "name": "param",
+                    "content": "Setting group.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$option_group"
+                },
+                {
+                    "name": "param",
+                    "content": "Setting name.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$option_name"
                 }
             ],
             "long_description_html": ""
@@ -15265,16 +15623,16 @@
         }
     },
     {
-        "name": "wp_blacklist_check",
+        "name": "wp_blocklist_check",
         "file": "wp-includes/comment.php",
         "type": "action",
         "doc": {
-            "description": "Fires before the comment is tested for blacklisted characters or words.",
+            "description": "Fires before the comment is tested for disallowed characters or words.",
             "long_description": "",
             "tags": [
                 {
                     "name": "since",
-                    "content": "1.5.0"
+                    "content": "5.5.0"
                 },
                 {
                     "name": "param",
@@ -15839,7 +16197,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Whether this is an existing post being updated or not.",
+                    "content": "Whether this is an existing post being updated.",
                     "types": [
                         "bool"
                     ],
@@ -15997,12 +16355,25 @@
         "file": "wp-includes/pluggable.php",
         "type": "action",
         "doc": {
-            "description": "Fires after a user is logged-out.",
+            "description": "Fires after a user is logged out.",
             "long_description": "",
             "tags": [
                 {
                     "name": "since",
                     "content": "1.5.0"
+                },
+                {
+                    "name": "since",
+                    "content": "5.5.0",
+                    "description": "Added the <code>$user_id</code> parameter."
+                },
+                {
+                    "name": "param",
+                    "content": "ID of the user that was logged out.",
+                    "types": [
+                        "int"
+                    ],
+                    "variable": "$user_id"
                 }
             ],
             "long_description_html": ""
@@ -16013,7 +16384,7 @@
         "file": "wp-includes/pluggable.php",
         "type": "action",
         "doc": {
-            "description": "Fires after a phpmailerException is caught.",
+            "description": "Fires after a PHPMailer\\PHPMailer\\Exception is caught.",
             "long_description": "",
             "tags": [
                 {
@@ -16022,7 +16393,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "A WP_Error object with the phpmailerException message, and an array                        containing the mail recipient, subject, message, headers, and attachments.",
+                    "content": "A WP_Error object with the PHPMailer\\PHPMailer\\Exception message, and an array                        containing the mail recipient, subject, message, headers, and attachments.",
                     "types": [
                         "\\WP_Error"
                     ],
@@ -16037,12 +16408,52 @@
         "file": "wp-includes/update.php",
         "type": "action",
         "doc": {
-            "description": "Fires during wp_cron, starting the auto update process.",
+            "description": "Fires during wp_cron, starting the auto-update process.",
             "long_description": "",
             "tags": [
                 {
                     "name": "since",
                     "content": "3.9.0"
+                }
+            ],
+            "long_description_html": ""
+        }
+    },
+    {
+        "name": "wp_media_attach_action",
+        "file": "wp-admin/includes/media.php",
+        "type": "action",
+        "doc": {
+            "description": "Fires when media is attached or detached from a post.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "5.5.0"
+                },
+                {
+                    "name": "param",
+                    "content": "Attach/detach action. Accepts 'attach' or 'detach'.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$action"
+                },
+                {
+                    "name": "param",
+                    "content": "The attachment ID.",
+                    "types": [
+                        "int"
+                    ],
+                    "variable": "$attachment_id"
+                },
+                {
+                    "name": "param",
+                    "content": "Attachment parent ID.",
+                    "types": [
+                        "int"
+                    ],
+                    "variable": "$parent_id"
                 }
             ],
             "long_description_html": ""
@@ -16452,6 +16863,30 @@
                 }
             ],
             "long_description_html": ""
+        }
+    },
+    {
+        "name": "wp_sitemaps_init",
+        "file": "wp-includes/sitemaps.php",
+        "type": "action",
+        "doc": {
+            "description": "Fires when initializing the Sitemaps object.",
+            "long_description": "Additional sitemaps should be registered on this hook.",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "5.5.0"
+                },
+                {
+                    "name": "param",
+                    "content": "Sitemaps object.",
+                    "types": [
+                        "\\WP_Sitemaps"
+                    ],
+                    "variable": "$wp_sitemaps"
+                }
+            ],
+            "long_description_html": "<p>Additional sitemaps should be registered on this hook.</p>"
         }
     },
     {
@@ -17006,12 +17441,25 @@
                     "description": "MU (3.0.0)"
                 },
                 {
+                    "name": "since",
+                    "content": "5.5.0",
+                    "description": "Added the <code>$user</code> parameter."
+                },
+                {
                     "name": "param",
                     "content": "ID of the user about to be deleted from the network.",
                     "types": [
                         "int"
                     ],
                     "variable": "$id"
+                },
+                {
+                    "name": "param",
+                    "content": "WP_User object of the user about to be deleted from the network.",
+                    "types": [
+                        "\\WP_User"
+                    ],
+                    "variable": "$user"
                 }
             ],
             "long_description_html": ""
