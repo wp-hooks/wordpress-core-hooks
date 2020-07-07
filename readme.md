@@ -69,6 +69,12 @@ Anything that needs programmatic access to a list of available hooks, for exampl
 
 ## Regenerating the Hook Files
 
+Install the dependencies:
+
+`npm i && composer i`
+
+Then run:
+
 `composer generate`
 
 ## Hook Files for Plugins
