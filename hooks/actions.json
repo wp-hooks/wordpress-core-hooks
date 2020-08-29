@@ -780,7 +780,7 @@
         "type": "action",
         "doc": {
             "description": "Fires immediately before meta of a specific type is added.",
-            "long_description": "The dynamic portion of the hook, `$meta_type`, refers to the meta object type (comment, post, term, or user).",
+            "long_description": "The dynamic portion of the hook, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).",
             "tags": [
                 {
                     "name": "since",
@@ -811,7 +811,7 @@
                     "variable": "$_meta_value"
                 }
             ],
-            "long_description_html": "<p>The dynamic portion of the hook, <code>$meta_type</code>, refers to the meta object type (comment, post, term, or user).</p>"
+            "long_description_html": "<p>The dynamic portion of the hook, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).</p>"
         }
     },
     {
@@ -931,7 +931,7 @@
         "type": "action",
         "doc": {
             "description": "Fires immediately after meta of a specific type is added.",
-            "long_description": "The dynamic portion of the hook, `$meta_type`, refers to the meta object type (comment, post, term, or user).",
+            "long_description": "The dynamic portion of the hook, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).",
             "tags": [
                 {
                     "name": "since",
@@ -970,7 +970,7 @@
                     "variable": "$_meta_value"
                 }
             ],
-            "long_description_html": "<p>The dynamic portion of the hook, <code>$meta_type</code>, refers to the meta object type (comment, post, term, or user).</p>"
+            "long_description_html": "<p>The dynamic portion of the hook, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).</p>"
         }
     },
     {
@@ -1691,6 +1691,11 @@
                     "content": "2.3.0"
                 },
                 {
+                    "name": "since",
+                    "content": "5.5.0",
+                    "description": "Added 'auto-update-enabled' and 'auto-update-disabled' to possible values for <code>$status</code>."
+                },
+                {
                     "name": "param",
                     "content": "Path to the plugin file relative to the plugins directory.",
                     "types": [
@@ -1729,6 +1734,11 @@
                 {
                     "name": "since",
                     "content": "2.7.0"
+                },
+                {
+                    "name": "since",
+                    "content": "5.5.0",
+                    "description": "Added 'auto-update-enabled' and 'auto-update-disabled' to possible values for <code>$status</code>."
                 },
                 {
                     "name": "param",
@@ -3672,7 +3682,7 @@
                     "types": [
                         "int"
                     ],
-                    "variable": "$comment->comment_ID"
+                    "variable": "$comment_ID"
                 },
                 {
                     "name": "param",
@@ -3680,7 +3690,7 @@
                     "types": [
                         "int"
                     ],
-                    "variable": "$comment_post->ID"
+                    "variable": "$ID"
                 }
             ],
             "long_description_html": ""
@@ -3740,7 +3750,7 @@
         "type": "action",
         "doc": {
             "description": "Fires immediately after a new term is created, before the term cache is cleaned.",
-            "long_description": "",
+            "long_description": "The {@see 'create_$taxonomy'} hook is also available for targeting a specific taxonomy.",
             "tags": [
                 {
                     "name": "since",
@@ -3771,7 +3781,7 @@
                     "variable": "$taxonomy"
                 }
             ],
-            "long_description_html": ""
+            "long_description_html": "<p>The {@see 'create_$taxonomy'} hook is also available for targeting a specific taxonomy.</p>"
         }
     },
     {
@@ -3812,7 +3822,7 @@
         "type": "action",
         "doc": {
             "description": "Fires after a new term is created, and after the term cache has been cleaned.",
-            "long_description": "",
+            "long_description": "The {@see 'created_$taxonomy'} hook is also available for targeting a specific taxonomy.",
             "tags": [
                 {
                     "name": "since",
@@ -3843,7 +3853,7 @@
                     "variable": "$taxonomy"
                 }
             ],
-            "long_description_html": ""
+            "long_description_html": "<p>The {@see 'created_$taxonomy'} hook is also available for targeting a specific taxonomy.</p>"
         }
     },
     {
@@ -3929,6 +3939,22 @@
                 {
                     "name": "since",
                     "content": "3.4.0"
+                }
+            ],
+            "long_description_html": ""
+        }
+    },
+    {
+        "name": "customize_controls_head",
+        "file": "wp-admin/customize.php",
+        "type": "action",
+        "doc": {
+            "description": "Fires in head section of Customizer controls.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "5.5.0"
                 }
             ],
             "long_description_html": ""
@@ -5240,7 +5266,7 @@
         "type": "action",
         "doc": {
             "description": "Fires immediately before deleting metadata of a specific type.",
-            "long_description": "The dynamic portion of the hook, `$meta_type`, refers to the meta object type (comment, post, term, or user).",
+            "long_description": "The dynamic portion of the hook, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).",
             "tags": [
                 {
                     "name": "since",
@@ -5279,7 +5305,7 @@
                     "variable": "$_meta_value"
                 }
             ],
-            "long_description_html": "<p>The dynamic portion of the hook, <code>$meta_type</code>, refers to the meta object type (comment, post, term, or user).</p>"
+            "long_description_html": "<p>The dynamic portion of the hook, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).</p>"
         }
     },
     {
@@ -5706,7 +5732,7 @@
         "type": "action",
         "doc": {
             "description": "Fires immediately after deleting metadata of a specific type.",
-            "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (comment, post, term, or user).",
+            "long_description": "The dynamic portion of the hook, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).",
             "tags": [
                 {
                     "name": "since",
@@ -5745,7 +5771,7 @@
                     "variable": "$_meta_value"
                 }
             ],
-            "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (comment, post, term, or user).</p>"
+            "long_description_html": "<p>The dynamic portion of the hook, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).</p>"
         }
     },
     {
@@ -6190,7 +6216,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "{     An associative array of widget arguments.     @type string $name                Name of the widget.     @type string $id                  Widget ID.     @type array|callable $callback    When the hook is fired on the front end, $callback is an array                                       containing the widget object. Fired on the back end, $callback                                       is 'wp_widget_control', see $_callback.     @type array          $params      An associative array of multi-widget arguments.     @type string         $classname   CSS class applied to the widget container.     @type string         $description The widget description.     @type array          $_callback   When the hook is fired on the back end, $_callback is populated                                       with an array containing the widget object, see $callback. }",
+                    "content": "{     An associative array of widget arguments.     @type string   $name        Name of the widget.     @type string   $id          Widget ID.     @type callable $callback    When the hook is fired on the front end, $callback is an array                                 containing the widget object. Fired on the back end, $callback                                 is 'wp_widget_control', see $_callback.     @type array    $params      An associative array of multi-widget arguments.     @type string   $classname   CSS class applied to the widget container.     @type string   $description The widget description.     @type array    $_callback   When the hook is fired on the back end, $_callback is populated                                 with an array containing the widget object, see $callback. }",
                     "types": [
                         "array"
                     ],
@@ -8535,7 +8561,7 @@
                     "types": [
                         "int"
                     ],
-                    "variable": "$comment->comment_ID"
+                    "variable": "$comment_ID"
                 }
             ],
             "long_description_html": ""
@@ -12574,7 +12600,7 @@
         "type": "action",
         "doc": {
             "description": "Fires after a term has been saved, and the term cache has been cleared.",
-            "long_description": "",
+            "long_description": "The {@see 'saved_$taxonomy'} hook is also available for targeting a specific taxonomy.",
             "tags": [
                 {
                     "name": "since",
@@ -12613,7 +12639,7 @@
                     "variable": "$update"
                 }
             ],
-            "long_description_html": ""
+            "long_description_html": "<p>The {@see 'saved_$taxonomy'} hook is also available for targeting a specific taxonomy.</p>"
         }
     },
     {
@@ -12810,7 +12836,7 @@
                     "name": "param",
                     "content": "Comment author's consent to store cookies.",
                     "types": [
-                        "boolean"
+                        "bool"
                     ],
                     "variable": "$cookies_consent"
                 }
@@ -14880,7 +14906,7 @@
         "type": "action",
         "doc": {
             "description": "Fires immediately before updating metadata of a specific type.",
-            "long_description": "The dynamic portion of the hook, `$meta_type`, refers to the meta object type (comment, post, term, or user).",
+            "long_description": "The dynamic portion of the hook, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).",
             "tags": [
                 {
                     "name": "since",
@@ -14919,7 +14945,7 @@
                     "variable": "$_meta_value"
                 }
             ],
-            "long_description_html": "<p>The dynamic portion of the hook, <code>$meta_type</code>, refers to the meta object type (comment, post, term, or user).</p>"
+            "long_description_html": "<p>The dynamic portion of the hook, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).</p>"
         }
     },
     {
@@ -15016,7 +15042,7 @@
         "type": "action",
         "doc": {
             "description": "Fires immediately after updating metadata of a specific type.",
-            "long_description": "The dynamic portion of the hook, `$meta_type`, refers to the meta object type (comment, post, term, or user).",
+            "long_description": "The dynamic portion of the hook, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).",
             "tags": [
                 {
                     "name": "since",
@@ -15055,7 +15081,87 @@
                     "variable": "$_meta_value"
                 }
             ],
-            "long_description_html": "<p>The dynamic portion of the hook, <code>$meta_type</code>, refers to the meta object type (comment, post, term, or user).</p>"
+            "long_description_html": "<p>The dynamic portion of the hook, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).</p>"
+        }
+    },
+    {
+        "name": "upgrader_overwrote_package",
+        "file": "wp-admin/includes/class-theme-upgrader.php",
+        "type": "action",
+        "doc": {
+            "description": "Fires when the upgrader has successfully overwritten a currently installed plugin or theme with an uploaded zip package.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "5.5.0"
+                },
+                {
+                    "name": "param",
+                    "content": "The package file.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$package"
+                },
+                {
+                    "name": "param",
+                    "content": "The new theme data.",
+                    "types": [
+                        "array"
+                    ],
+                    "variable": "$new_theme_data"
+                },
+                {
+                    "name": "param",
+                    "content": "The package type (plugin or theme).",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$package_type"
+                }
+            ],
+            "long_description_html": ""
+        }
+    },
+    {
+        "name": "upgrader_overwrote_package",
+        "file": "wp-admin/includes/class-plugin-upgrader.php",
+        "type": "action",
+        "doc": {
+            "description": "Fires when the upgrader has successfully overwritten a currently installed plugin or theme with an uploaded zip package.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "5.5.0"
+                },
+                {
+                    "name": "param",
+                    "content": "The package file.",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$package"
+                },
+                {
+                    "name": "param",
+                    "content": "The new plugin data.",
+                    "types": [
+                        "array"
+                    ],
+                    "variable": "$new_plugin_data"
+                },
+                {
+                    "name": "param",
+                    "content": "The package type (plugin or theme).",
+                    "types": [
+                        "string"
+                    ],
+                    "variable": "$package_type"
+                }
+            ],
+            "long_description_html": ""
         }
     },
     {
@@ -15623,7 +15729,23 @@
         }
     },
     {
-        "name": "wp_blocklist_check",
+        "name": "wp_body_open",
+        "file": "wp-includes/general-template.php",
+        "type": "action",
+        "doc": {
+            "description": "Triggered after the opening body tag.",
+            "long_description": "",
+            "tags": [
+                {
+                    "name": "since",
+                    "content": "5.2.0"
+                }
+            ],
+            "long_description_html": ""
+        }
+    },
+    {
+        "name": "wp_check_comment_disallowed_list",
         "file": "wp-includes/comment.php",
         "type": "action",
         "doc": {
@@ -15681,22 +15803,6 @@
                         "string"
                     ],
                     "variable": "$user_agent"
-                }
-            ],
-            "long_description_html": ""
-        }
-    },
-    {
-        "name": "wp_body_open",
-        "file": "wp-includes/general-template.php",
-        "type": "action",
-        "doc": {
-            "description": "Triggered after the opening body tag.",
-            "long_description": "",
-            "tags": [
-                {
-                    "name": "since",
-                    "content": "5.2.0"
                 }
             ],
             "long_description_html": ""
