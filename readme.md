@@ -38,12 +38,12 @@ var_dump( $results );
 
 ```js
 // Get hooks as array of objects:
-const actions = require('@johnbillion/wp-hooks/hooks/actions.json');
-const filters = require('@johnbillion/wp-hooks/hooks/filters.json');
+const actions = require('@johnbillion/wp-hooks/hooks/actions.json').hooks;
+const filters = require('@johnbillion/wp-hooks/hooks/filters.json').hooks;
 
 // Search for actions matching a string:
 const search = 'menu';
-const results = actions.hooks.filter( hook => ( null !== hook.name.match( search ) ) );
+const results = actions.filter( hook => ( null !== hook.name.match( search ) ) );
 
 console.log(results);
 ```
