@@ -15,6 +15,16 @@ export type Tags = Tag[];
 export type Hooks = Hook[];
 
 /**
+ * The container for the list of hooks
+ */
+export interface HooksContainer {
+  /**
+   * The JSON schema to verify a hook document against
+   */
+  $schema: string;
+  hooks: Hooks;
+}
+/**
  * The hook representation
  */
 export interface Hook {
@@ -31,7 +41,6 @@ export interface Hook {
    */
   type: string;
   doc: Doc;
-  [k: string]: any;
 }
 /**
  * The docblock information for the hook
@@ -50,7 +59,6 @@ export interface Doc {
    */
   long_description_html: string;
   tags: Tags;
-  [k: string]: any;
 }
 /**
  * The docblock tags information for the hook
@@ -73,8 +81,15 @@ export interface Tag {
    */
   variable?: string;
   /**
+   * A link to more information, for @link tags
+   */
+  link?: string;
+  /**
+   * Related function to refer to, for @see tags
+   */
+  refers?: string;
+  /**
    * This is only used for @since 3.0.0 MU tags
    */
   description?: string;
-  [k: string]: any;
 }
