@@ -378,7 +378,7 @@
         "file": "wp-admin/includes/class-wp-comments-list-table.php",
         "type": "filter",
         "doc": {
-            "description": "Filters the comment types dropdown menu.",
+            "description": "Filters the comment types shown in the drop-down menu on the Comments list table.",
             "long_description": "",
             "tags": [
                 {
@@ -387,7 +387,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "An array of comment types. Accepts 'Comments', 'Pings'.",
+                    "content": "Array of comment type labels keyed by their name.",
                     "types": [
                         "string[]"
                     ],
@@ -556,7 +556,7 @@
         "type": "filter",
         "doc": {
             "description": "Filters the size used to display the post thumbnail image in the 'Featured image' meta box.",
-            "long_description": "Note: When a theme adds 'post-thumbnail' support, a special 'post-thumbnail' image size is registered, which differs from the 'thumbnail' image size managed via the Settings > Media screen. See the `$size` parameter description for more information on default values.",
+            "long_description": "Note: When a theme adds 'post-thumbnail' support, a special 'post-thumbnail' image size is registered, which differs from the 'thumbnail' image size managed via the Settings > Media screen.",
             "tags": [
                 {
                     "name": "since",
@@ -564,10 +564,10 @@
                 },
                 {
                     "name": "param",
-                    "content": "Post thumbnail image size to display in the meta box. Accepts any valid                                   image size, or an array of width and height values in pixels (in that order).                                   If the 'post-thumbnail' size is set, default is 'post-thumbnail'. Otherwise,                                   default is an array with 266 as both the height and width values.",
+                    "content": "Requested image size. Can be any registered image size name, or                                   an array of width and height values in pixels (in that order).",
                     "types": [
                         "string",
-                        "array"
+                        "int[]"
                     ],
                     "variable": "$size"
                 },
@@ -588,7 +588,7 @@
                     "variable": "$post"
                 }
             ],
-            "long_description_html": "<p>Note: When a theme adds 'post-thumbnail' support, a special 'post-thumbnail' image size is registered, which differs from the 'thumbnail' image size managed via the Settings &gt; Media screen. See the <code>$size</code> parameter description for more information on default values.</p>"
+            "long_description_html": "<p>Note: When a theme adds 'post-thumbnail' support, a special 'post-thumbnail' image size is registered, which differs from the 'thumbnail' image size managed via the Settings &gt; Media screen.</p>"
         }
     },
     {
@@ -2109,7 +2109,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "True if plugins notifications are enabled, false otherwise.",
+                    "content": "True if plugin update notifications are enabled, false otherwise.",
                     "types": [
                         "bool"
                     ],
@@ -2133,7 +2133,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "True if notifications are enabled, false otherwise.",
+                    "content": "True if theme update notifications are enabled, false otherwise.",
                     "types": [
                         "bool"
                     ],
@@ -2277,7 +2277,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Whether a VCS checkout was discovered at $context                        or ABSPATH, or anywhere higher.",
+                    "content": "Whether a VCS checkout was discovered at <code>$context</code>                        or ABSPATH, or anywhere higher.",
                     "types": [
                         "bool"
                     ],
@@ -2817,8 +2817,8 @@
         "file": "wp-admin/includes/class-wp-list-table.php",
         "type": "filter",
         "doc": {
-            "description": "Filters the list table bulk actions drop-down.",
-            "long_description": "The dynamic portion of the hook name, `$this->screen->id`, refers to the ID of the current screen, usually a string.",
+            "description": "Filters the items in the bulk actions menu of the list table.",
+            "long_description": "The dynamic portion of the hook name, `$this->screen->id`, refers to the ID of the current screen.",
             "tags": [
                 {
                     "name": "since",
@@ -2833,7 +2833,7 @@
                     "variable": "$actions"
                 }
             ],
-            "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;screen-&gt;id</code>, refers to the ID of the current screen, usually a string.</p>"
+            "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;screen-&gt;id</code>, refers to the ID of the current screen.</p>"
         }
     },
     {
@@ -3010,7 +3010,7 @@
                     "name": "param",
                     "content": "An array of CSS classes to be applied to each list item.",
                     "types": [
-                        "array"
+                        "string[]"
                     ],
                     "variable": "$css_classes"
                 },
@@ -3018,7 +3018,7 @@
                     "name": "param",
                     "content": "Category data object.",
                     "types": [
-                        "object"
+                        "\\WP_Term"
                     ],
                     "variable": "$category"
                 },
@@ -3066,7 +3066,7 @@
                     "name": "param",
                     "content": "Category object.",
                     "types": [
-                        "object"
+                        "\\WP_Term"
                     ],
                     "variable": "$category"
                 }
@@ -5079,7 +5079,7 @@
         "type": "filter_reference",
         "doc": {
             "description": "Filters the comments data before the query takes place.",
-            "long_description": "Return a non-null value to bypass WordPress's default comment queries.\n The expected return type from this filter depends on the value passed in the request query_vars. When `$this->query_vars['count']` is set, the filter should return the comment count as an int. When `'ids' === $this->query_vars['fields']`, the filter should return an array of comment IDs. Otherwise the filter should return an array of WP_Comment objects.",
+            "long_description": "Return a non-null value to bypass WordPress' default comment queries.\n The expected return type from this filter depends on the value passed in the request query vars: - When `$this->query_vars['count']` is set, the filter should return   the comment count as an integer. - When `'ids' === $this->query_vars['fields']`, the filter should return   an array of comment IDs. - Otherwise the filter should return an array of WP_Comment objects.\n Note that if the filter returns an array of comment data, it will be assigned to the `comments` property of the current WP_Comment_Query instance.\n Filtering functions that require pagination information are encouraged to set the `found_comments` and `max_num_pages` properties of the WP_Comment_Query object, passed to the filter by reference. If WP_Comment_Query does not perform a database query, it will not have enough information to generate these values itself.",
             "tags": [
                 {
                     "name": "since",
@@ -5104,7 +5104,7 @@
                     "variable": "$this"
                 }
             ],
-            "long_description_html": "<p>Return a non-null value to bypass WordPress's default comment queries.</p> <p>The expected return type from this filter depends on the value passed in the request query_vars. When <code>$this-&gt;query_vars['count']</code> is set, the filter should return the comment count as an int. When <code>'ids' === $this-&gt;query_vars['fields']</code>, the filter should return an array of comment IDs. Otherwise the filter should return an array of WP_Comment objects.</p>"
+            "long_description_html": "<p>Return a non-null value to bypass WordPress' default comment queries.</p> <p>The expected return type from this filter depends on the value passed in the request query vars:</p> <ul> <li>When <code>$this-&gt;query_vars['count']</code> is set, the filter should return the comment count as an integer.</li> <li>When <code>'ids' === $this-&gt;query_vars['fields']</code>, the filter should return an array of comment IDs.</li> <li>Otherwise the filter should return an array of WP_Comment objects.</li> </ul> <p>Note that if the filter returns an array of comment data, it will be assigned to the <code>comments</code> property of the current WP_Comment_Query instance.</p> <p>Filtering functions that require pagination information are encouraged to set the <code>found_comments</code> and <code>max_num_pages</code> properties of the WP_Comment_Query object, passed to the filter by reference. If WP_Comment_Query does not perform a database query, it will not have enough information to generate these values itself.</p>"
         }
     },
     {
@@ -7290,7 +7290,7 @@
         "file": "wp-admin/ms-delete-site.php",
         "type": "filter",
         "doc": {
-            "description": "Filters the email content sent when a site in a Multisite network is deleted.",
+            "description": "Filters the text for the email sent to the site admin when a request to delete a site in a Multisite network is submitted.",
             "long_description": "",
             "tags": [
                 {
@@ -7299,7 +7299,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "The email content that will be sent to the user who deleted a site in a Multisite network.",
+                    "content": "The email text.",
                     "types": [
                         "string"
                     ],
@@ -8792,7 +8792,7 @@
         "file": "wp-admin/edit-tag-form.php",
         "type": "filter",
         "doc": {
-            "description": "Filters the editable slug.",
+            "description": "Filters the editable slug for a post or term.",
             "long_description": "Note: This is a multi-use hook in that it is leveraged both for editable post URIs and term slugs.",
             "tags": [
                 {
@@ -8814,7 +8814,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Term or WP_Post object.",
+                    "content": "Term or post object.",
                     "types": [
                         "\\WP_Term",
                         "\\WP_Post"
@@ -8847,16 +8847,16 @@
                 },
                 {
                     "name": "param",
-                    "content": "Size of what the result image should be.",
+                    "content": "Requested image size. Can be any registered image size name, or                               an array of width and height values in pixels (in that order).",
                     "types": [
                         "string",
-                        "array"
+                        "int[]"
                     ],
                     "variable": "$size"
                 },
                 {
                     "name": "param",
-                    "content": "The context the image is being resized for.                                     Possible values are 'display' (like in a theme)                                     or 'edit' (like inserting into an editor).",
+                    "content": "The context the image is being resized for.                               Possible values are 'display' (like in a theme)                               or 'edit' (like inserting into an editor).",
                     "types": [
                         "string"
                     ],
@@ -8904,7 +8904,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "{            Used to build wp_mail().            @type string $to      The intended recipients.            @type string $subject The subject of the email.            @type string $message The content of the email.                The following strings have a special meaning and will get replaced dynamically:                - ###USERNAME###    The current user's username.                - ###ADMIN_EMAIL### The admin email in case this was unexpected.                - ###NEW_EMAIL###   The new email address.                - ###EMAIL###       The old email address.                - ###SITENAME###    The name of the site.                - ###SITEURL###     The URL to the site.            @type string $headers Headers.        }",
+                    "content": "{     Used to build wp_mail().     @type string $to      The intended recipients.     @type string $subject The subject of the email.     @type string $message The content of the email.         The following strings have a special meaning and will get replaced dynamically:         - ###USERNAME###    The current user's username.         - ###ADMIN_EMAIL### The admin email in case this was unexpected.         - ###NEW_EMAIL###   The new email address.         - ###EMAIL###       The old email address.         - ###SITENAME###    The name of the site.         - ###SITEURL###     The URL to the site.     @type string $headers Headers. }",
                     "types": [
                         "array"
                     ],
@@ -11296,7 +11296,7 @@
                     "name": "param",
                     "content": "An array of site objects belonging to the user.",
                     "types": [
-                        "array"
+                        "object[]"
                     ],
                     "variable": "$sites"
                 },
@@ -11310,7 +11310,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Whether the returned sites array should contain all sites, including                       those marked 'deleted', 'archived', or 'spam'. Default false.",
+                    "content": "Whether the returned sites array should contain all sites, including                          those marked 'deleted', 'archived', or 'spam'. Default false.",
                     "types": [
                         "bool"
                     ],
@@ -11778,7 +11778,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "The format of the date.",
+                    "content": "PHP date format.",
                     "types": [
                         "string"
                     ],
@@ -11967,7 +11967,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Date format.",
+                    "content": "PHP date format.",
                     "types": [
                         "string"
                     ],
@@ -12708,10 +12708,10 @@
                 },
                 {
                     "name": "param",
-                    "content": "Size of image. Image size or array of width and height values (in that order).                            Default 'medium'.",
+                    "content": "Requested image size. Can be any registered image size name, or                            an array of width and height values in pixels (in that order).",
                     "types": [
                         "string",
-                        "array"
+                        "int[]"
                     ],
                     "variable": "$size"
                 }
@@ -12757,10 +12757,10 @@
                 },
                 {
                     "name": "param",
-                    "content": "Size of image. Image size or array of width and height values (in that order).                            Default 'medium'.",
+                    "content": "Requested image size. Can be any registered image size name, or                            an array of width and height values in pixels (in that order).",
                     "types": [
                         "string",
-                        "array"
+                        "int[]"
                     ],
                     "variable": "$size"
                 }
@@ -13900,7 +13900,7 @@
         "type": "filter",
         "doc": {
             "description": "Filters a taxonomy term object.",
-            "long_description": "",
+            "long_description": "The {@see 'get_$taxonomy'} hook is also available for targeting a specific taxonomy.",
             "tags": [
                 {
                     "name": "since",
@@ -13928,7 +13928,7 @@
                     "variable": "$taxonomy"
                 }
             ],
-            "long_description_html": ""
+            "long_description_html": "<p>The {@see 'get_$taxonomy'} hook is also available for targeting a specific taxonomy.</p>"
         }
     },
     {
@@ -14327,7 +14327,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "PHP date format. Defaults to 'date_format' option                              if not specified.",
+                    "content": "PHP date format.",
                     "types": [
                         "string"
                     ],
@@ -14469,13 +14469,13 @@
                     "content": "The formatted date or false if no post is found.",
                     "types": [
                         "string",
-                        "bool"
+                        "false"
                     ],
                     "variable": "$the_time"
                 },
                 {
                     "name": "param",
-                    "content": "PHP date format. Defaults to value specified in                               'date_format' option.",
+                    "content": "PHP date format.",
                     "types": [
                         "string"
                     ],
@@ -14516,13 +14516,13 @@
                     "content": "The formatted time or false if no post is found.",
                     "types": [
                         "string",
-                        "bool"
+                        "false"
                     ],
                     "variable": "$the_time"
                 },
                 {
                     "name": "param",
-                    "content": "Format to use for retrieving the time the post was                               written. Accepts 'G', 'U', or PHP date format. Defaults                               to value specified in 'time_format' option.",
+                    "content": "Format to use for retrieving the time the post                               was modified. Accepts 'G', 'U', or PHP date format.",
                     "types": [
                         "string"
                     ],
@@ -14592,9 +14592,11 @@
                 },
                 {
                     "name": "param",
-                    "content": "An array of tags for the given post.",
+                    "content": "Array of WP_Term objects on success, false if there are no terms                                        or the post does not exist, WP_Error on failure.",
                     "types": [
-                        "\\WP_Term[]"
+                        "\\WP_Term[]",
+                        "false",
+                        "\\WP_Error"
                     ],
                     "variable": "$terms"
                 }
@@ -14665,7 +14667,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Format to use for retrieving the time the post was written.                              Accepts 'G', 'U', or PHP date format value specified                              in 'time_format' option. Default empty.",
+                    "content": "Format to use for retrieving the time the post                              was written. Accepts 'G', 'U', or PHP date format.",
                     "types": [
                         "string"
                     ],
@@ -15720,10 +15722,10 @@
                 },
                 {
                     "name": "param",
-                    "content": "Post thumbnail ID or empty string.",
+                    "content": "Post thumbnail ID or false if the post does not exist.",
                     "types": [
                         "int",
-                        "string"
+                        "false"
                     ],
                     "variable": "$thumbnail_id"
                 }
@@ -16780,10 +16782,10 @@
                 },
                 {
                     "name": "param",
-                    "content": "Requested size of image. Image size name, or array of width                               and height values (in that order).",
+                    "content": "Requested image size. Can be any registered image size name, or                               an array of width and height values in pixels (in that order).",
                     "types": [
-                        "array",
-                        "string"
+                        "string",
+                        "int[]"
                     ],
                     "variable": "$size"
                 }
@@ -16879,7 +16881,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "The post_id of the image attachment",
+                    "content": "The ID of the image attachment.",
                     "types": [
                         "int"
                     ],
@@ -16887,10 +16889,10 @@
                 },
                 {
                     "name": "param",
-                    "content": "Registered image size or flat array of initially-requested height and width                              dimensions (in that order).",
+                    "content": "Requested image size. Can be any registered image size name, or                              an array of width and height values in pixels (in that order).",
                     "types": [
                         "string",
-                        "array"
+                        "int[]"
                     ],
                     "variable": "$size"
                 }
@@ -17080,10 +17082,10 @@
                 },
                 {
                     "name": "param",
-                    "content": "Size of image. Image size or array of width and height values                              (in that order). Default 'medium'.",
+                    "content": "Requested image size. Can be any registered image size name, or                              an array of width and height values in pixels (in that order).",
                     "types": [
                         "string",
-                        "array"
+                        "int[]"
                     ],
                     "variable": "$size"
                 },
@@ -18604,7 +18606,8 @@
                     "name": "param",
                     "content": "Current image.",
                     "types": [
-                        "resource"
+                        "resource",
+                        "\\GdImage"
                     ],
                     "variable": "$image"
                 },
@@ -18612,15 +18615,16 @@
                     "name": "param",
                     "content": "Attachment ID.",
                     "types": [
-                        "string"
+                        "int"
                     ],
                     "variable": "$attachment_id"
                 },
                 {
                     "name": "param",
-                    "content": "Image size.",
+                    "content": "Requested image size. Can be any registered image size name, or                                        an array of width and height values in pixels (in that order).",
                     "types": [
-                        "string"
+                        "string",
+                        "int[]"
                     ],
                     "variable": "$size"
                 }
@@ -18633,8 +18637,8 @@
         "file": "wp-admin/includes/image.php",
         "type": "filter",
         "doc": {
-            "description": "Filters the image URL if not in the local filesystem.",
-            "long_description": "The filter is only evaluated if fopen is enabled on the server.",
+            "description": "Filters the path to an attachment's URL when editing the image.",
+            "long_description": "The filter is only evaluated if the file isn't stored locally and `allow_url_fopen` is enabled on the server.",
             "tags": [
                 {
                     "name": "since",
@@ -18652,20 +18656,21 @@
                     "name": "param",
                     "content": "Attachment ID.",
                     "types": [
-                        "string"
+                        "int"
                     ],
                     "variable": "$attachment_id"
                 },
                 {
                     "name": "param",
-                    "content": "Size of the image.",
+                    "content": "Requested image size. Can be any registered image size name, or                                    an array of width and height values in pixels (in that order).",
                     "types": [
-                        "string"
+                        "string",
+                        "int[]"
                     ],
                     "variable": "$size"
                 }
             ],
-            "long_description_html": "<p>The filter is only evaluated if fopen is enabled on the server.</p>"
+            "long_description_html": "<p>The filter is only evaluated if the file isn't stored locally and <code>allow_url_fopen</code> is enabled on the server.</p>"
         }
     },
     {
@@ -18673,7 +18678,7 @@
         "file": "wp-admin/includes/image.php",
         "type": "filter",
         "doc": {
-            "description": "Filters the path to the current image.",
+            "description": "Filters the path to an attachment's file when editing the image.",
             "long_description": "The filter is evaluated for all image sizes except 'full'.",
             "tags": [
                 {
@@ -18692,15 +18697,16 @@
                     "name": "param",
                     "content": "Attachment ID.",
                     "types": [
-                        "string"
+                        "int"
                     ],
                     "variable": "$attachment_id"
                 },
                 {
                     "name": "param",
-                    "content": "Size of the image.",
+                    "content": "Requested image size. Can be any registered image size name, or                                    an array of width and height values in pixels (in that order).",
                     "types": [
-                        "string"
+                        "string",
+                        "int[]"
                     ],
                     "variable": "$size"
                 }
@@ -18733,15 +18739,16 @@
                     "name": "param",
                     "content": "Attachment ID.",
                     "types": [
-                        "string"
+                        "int"
                     ],
                     "variable": "$attachment_id"
                 },
                 {
                     "name": "param",
-                    "content": "Size of the image.",
+                    "content": "Requested image size. Can be any registered image size name, or                                    an array of width and height values in pixels (in that order).",
                     "types": [
-                        "string"
+                        "string",
+                        "int[]"
                     ],
                     "variable": "$size"
                 }
@@ -19937,7 +19944,7 @@
         "type": "filter",
         "doc": {
             "description": "Filters the list table sortable columns for a specific screen.",
-            "long_description": "The dynamic portion of the hook name, `$this->screen->id`, refers to the ID of the current screen, usually a string.",
+            "long_description": "The dynamic portion of the hook name, `$this->screen->id`, refers to the ID of the current screen.",
             "tags": [
                 {
                     "name": "since",
@@ -19952,7 +19959,7 @@
                     "variable": "$sortable_columns"
                 }
             ],
-            "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;screen-&gt;id</code>, refers to the ID of the current screen, usually a string.</p>"
+            "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;screen-&gt;id</code>, refers to the ID of the current screen.</p>"
         }
     },
     {
@@ -20617,7 +20624,7 @@
                     "types": [
                         "string"
                     ],
-                    "variable": "$type"
+                    "variable": "$tab"
                 }
             ],
             "long_description_html": ""
@@ -21865,7 +21872,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "{            Used to build wp_mail().            @type string $to      The intended recipient.            @type string $subject The subject of the email.            @type string $message The content of the email.                The following strings have a special meaning and will get replaced dynamically:                - ###OLD_EMAIL### The old network admin email address.                - ###NEW_EMAIL### The new network admin email address.                - ###SITENAME###  The name of the network.                - ###SITEURL###   The URL to the site.            @type string $headers Headers.        }",
+                    "content": "{     Used to build wp_mail().     @type string $to      The intended recipient.     @type string $subject The subject of the email.     @type string $message The content of the email.         The following strings have a special meaning and will get replaced dynamically:         - ###OLD_EMAIL### The old network admin email address.         - ###NEW_EMAIL### The new network admin email address.         - ###SITENAME###  The name of the network.         - ###SITEURL###   The URL to the site.     @type string $headers Headers. }",
                     "types": [
                         "array"
                     ],
@@ -22268,7 +22275,7 @@
         "type": "filter_reference",
         "doc": {
             "description": "Filters the network data before the query takes place.",
-            "long_description": "Return a non-null value to bypass WordPress's default network queries.\n The expected return type from this filter depends on the value passed in the request query_vars. When `$this->query_vars['count']` is set, the filter should return the network count as an int. When `'ids' === $this->query_vars['fields']`, the filter should return an array of network IDs. Otherwise the filter should return an array of WP_Network objects.",
+            "long_description": "Return a non-null value to bypass WordPress' default network queries.\n The expected return type from this filter depends on the value passed in the request query vars: - When `$this->query_vars['count']` is set, the filter should return   the network count as an integer. - When `'ids' === $this->query_vars['fields']`, the filter should return   an array of network IDs. - Otherwise the filter should return an array of WP_Network objects.",
             "tags": [
                 {
                     "name": "since",
@@ -22279,6 +22286,7 @@
                     "content": "Return an array of network data to short-circuit WP's network query,                                       the network count as an integer if <code>$this-&gt;query_vars['count']</code> is set,                                       or null to allow WP to run its normal queries.",
                     "types": [
                         "array",
+                        "int",
                         "null"
                     ],
                     "variable": "$network_data"
@@ -22292,7 +22300,7 @@
                     "variable": "$this"
                 }
             ],
-            "long_description_html": "<p>Return a non-null value to bypass WordPress's default network queries.</p> <p>The expected return type from this filter depends on the value passed in the request query_vars. When <code>$this-&gt;query_vars['count']</code> is set, the filter should return the network count as an int. When <code>'ids' === $this-&gt;query_vars['fields']</code>, the filter should return an array of network IDs. Otherwise the filter should return an array of WP_Network objects.</p>"
+            "long_description_html": "<p>Return a non-null value to bypass WordPress' default network queries.</p> <p>The expected return type from this filter depends on the value passed in the request query vars:</p> <ul> <li>When <code>$this-&gt;query_vars['count']</code> is set, the filter should return the network count as an integer.</li> <li>When <code>'ids' === $this-&gt;query_vars['fields']</code>, the filter should return an array of network IDs.</li> <li>Otherwise the filter should return an array of WP_Network objects.</li> </ul>"
         }
     },
     {
@@ -24136,7 +24144,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "{            Used to build wp_mail().            @type string $to      The intended recipients. Add emails in a comma separated string.            @type string $subject The subject of the email.            @type string $message The content of the email.                The following strings have a special meaning and will get replaced dynamically:                - ###USERNAME###    The current user's username.                - ###ADMIN_EMAIL### The admin email in case this was unexpected.                - ###EMAIL###       The user's email address.                - ###SITENAME###    The name of the site.                - ###SITEURL###     The URL to the site.            @type string $headers Headers. Add headers in a newline (\\r\\n) separated string.        }",
+                    "content": "{     Used to build wp_mail().     @type string $to      The intended recipients. Add emails in a comma separated string.     @type string $subject The subject of the email.     @type string $message The content of the email.         The following strings have a special meaning and will get replaced dynamically:         - ###USERNAME###    The current user's username.         - ###ADMIN_EMAIL### The admin email in case this was unexpected.         - ###EMAIL###       The user's email address.         - ###SITENAME###    The name of the site.         - ###SITEURL###     The URL to the site.     @type string $headers Headers. Add headers in a newline (\\r\\n) separated string. }",
                     "types": [
                         "array"
                     ],
@@ -25836,16 +25844,16 @@
                     "name": "param",
                     "content": "The post thumbnail ID.",
                     "types": [
-                        "string"
+                        "int"
                     ],
                     "variable": "$post_thumbnail_id"
                 },
                 {
                     "name": "param",
-                    "content": "The post thumbnail size. Image size or array of width and height                                        values (in that order). Default 'post-thumbnail'.",
+                    "content": "Requested image size. Can be any registered image size name, or                                        an array of width and height values in pixels (in that order).",
                     "types": [
                         "string",
-                        "array"
+                        "int[]"
                     ],
                     "variable": "$size"
                 },
@@ -25880,10 +25888,10 @@
                 },
                 {
                     "name": "param",
-                    "content": "The post thumbnail size. Image size or array of width and height                              values (in that order). Default 'post-thumbnail'.",
+                    "content": "Requested image size. Can be any registered image size name, or                              an array of width and height values in pixels (in that order).",
                     "types": [
                         "string",
-                        "array"
+                        "int[]"
                     ],
                     "variable": "$size"
                 },
@@ -26642,7 +26650,7 @@
         "type": "filter_reference",
         "doc": {
             "description": "Filters the posts array before the query takes place.",
-            "long_description": "Return a non-null value to bypass WordPress's default post queries.\n Filtering functions that require pagination information are encouraged to set the `found_posts` and `max_num_pages` properties of the WP_Query object, passed to the filter by reference. If WP_Query does not perform a database query, it will not have enough information to generate these values itself.",
+            "long_description": "Return a non-null value to bypass WordPress' default post queries.\n Filtering functions that require pagination information are encouraged to set the `found_posts` and `max_num_pages` properties of the WP_Query object, passed to the filter by reference. If WP_Query does not perform a database query, it will not have enough information to generate these values itself.",
             "tags": [
                 {
                     "name": "since",
@@ -26666,7 +26674,7 @@
                     "variable": "$this"
                 }
             ],
-            "long_description_html": "<p>Return a non-null value to bypass WordPress's default post queries.</p> <p>Filtering functions that require pagination information are encouraged to set the <code>found_posts</code> and <code>max_num_pages</code> properties of the WP_Query object, passed to the filter by reference. If WP_Query does not perform a database query, it will not have enough information to generate these values itself.</p>"
+            "long_description_html": "<p>Return a non-null value to bypass WordPress' default post queries.</p> <p>Filtering functions that require pagination information are encouraged to set the <code>found_posts</code> and <code>max_num_pages</code> properties of the WP_Query object, passed to the filter by reference. If WP_Query does not perform a database query, it will not have enough information to generate these values itself.</p>"
         }
     },
     {
@@ -27575,7 +27583,7 @@
                     "content": "An array of site objects of which the user is a member.",
                     "types": [
                         "null",
-                        "array"
+                        "object[]"
                     ],
                     "variable": "$sites"
                 },
@@ -27589,7 +27597,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Whether the returned array should contain all sites, including                            those marked 'deleted', 'archived', or 'spam'. Default false.",
+                    "content": "Whether the returned array should contain all sites, including                               those marked 'deleted', 'archived', or 'spam'. Default false.",
                     "types": [
                         "bool"
                     ],
@@ -33679,7 +33687,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Default mail message.",
+                    "content": "Email message.",
                     "types": [
                         "string"
                     ],
@@ -33732,7 +33740,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Default email title.",
+                    "content": "Email subject.",
                     "types": [
                         "string"
                     ],
@@ -36331,7 +36339,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "{            Used to build wp_mail().            @type string $to      The intended recipient.            @type string $subject The subject of the email.            @type string $message The content of the email.                The following strings have a special meaning and will get replaced dynamically:                - ###OLD_EMAIL### The old site admin email address.                - ###NEW_EMAIL### The new site admin email address.                - ###SITENAME###  The name of the site.                - ###SITEURL###   The URL to the site.            @type string $headers Headers.        }",
+                    "content": "{     Used to build wp_mail().     @type string $to      The intended recipient.     @type string $subject The subject of the email.     @type string $message The content of the email.         The following strings have a special meaning and will get replaced dynamically:         - ###OLD_EMAIL### The old site admin email address.         - ###NEW_EMAIL### The new site admin email address.         - ###SITENAME###  The name of the site.         - ###SITEURL###   The URL to the site.     @type string $headers Headers. }",
                     "types": [
                         "array"
                     ],
@@ -36693,7 +36701,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "{     An associative array, where the <code>$test_type</code> is either <code>direct</code> or     <code>async</code>, to declare if the test should run via Ajax calls after page load.     @type array $identifier {         <code>$identifier</code> should be a unique identifier for the test that should run.         Plugins and themes are encouraged to prefix test identifiers with their slug         to avoid any collisions between tests.         @type string $label A friendly label for your test to identify it by.         @type mixed  $test  A callable to perform a direct test, or a string Ajax action to be called                             to perform an async test.     } }",
+                    "content": "{     An associative array, where the <code>$test_type</code> is either <code>direct</code> or     <code>async</code>, to declare if the test should run via Ajax calls after page load.     @type array $identifier {         <code>$identifier</code> should be a unique identifier for the test that should run.         Plugins and themes are encouraged to prefix test identifiers with their slug         to avoid any collisions between tests.         @type string   $label             A friendly label for your test to identify it by.         @type mixed    $test              A callable to perform a direct test, or a string AJAX action                                           to be called to perform an async test.         @type boolean  $has_rest          Optional. Denote if <code>$test</code> has a REST API endpoint.         @type boolean  $skip_cron         Whether to skip this test when running as cron.         @type callable $async_direct_test A manner of directly calling the test marked as asynchronous,                                           as the scheduled event can not authenticate, and endpoints                                           may require authentication.     } }",
                     "types": [
                         "array"
                     ],
@@ -36828,7 +36836,7 @@
         "type": "filter_reference",
         "doc": {
             "description": "Filters the site data before the get_sites query takes place.",
-            "long_description": "Return a non-null value to bypass WordPress's default site queries.\n The expected return type from this filter depends on the value passed in the request query_vars: When `$this->query_vars['count']` is set, the filter should return the site count as an int. When `'ids' === $this->query_vars['fields']`, the filter should return an array of site IDs. Otherwise the filter should return an array of WP_Site objects.",
+            "long_description": "Return a non-null value to bypass WordPress' default site queries.\n The expected return type from this filter depends on the value passed in the request query vars: - When `$this->query_vars['count']` is set, the filter should return   the site count as an integer. - When `'ids' === $this->query_vars['fields']`, the filter should return   an array of site IDs. - Otherwise the filter should return an array of WP_Site objects.",
             "tags": [
                 {
                     "name": "since",
@@ -36853,7 +36861,7 @@
                     "variable": "$this"
                 }
             ],
-            "long_description_html": "<p>Return a non-null value to bypass WordPress's default site queries.</p> <p>The expected return type from this filter depends on the value passed in the request query_vars: When <code>$this-&gt;query_vars['count']</code> is set, the filter should return the site count as an int. When <code>'ids' === $this-&gt;query_vars['fields']</code>, the filter should return an array of site IDs. Otherwise the filter should return an array of WP_Site objects.</p>"
+            "long_description_html": "<p>Return a non-null value to bypass WordPress' default site queries.</p> <p>The expected return type from this filter depends on the value passed in the request query vars:</p> <ul> <li>When <code>$this-&gt;query_vars['count']</code> is set, the filter should return the site count as an integer.</li> <li>When <code>'ids' === $this-&gt;query_vars['fields']</code>, the filter should return an array of site IDs.</li> <li>Otherwise the filter should return an array of WP_Site objects.</li> </ul>"
         }
     },
     {
@@ -38223,7 +38231,7 @@
         "type": "filter_reference",
         "doc": {
             "description": "Filters the terms array before the query takes place.",
-            "long_description": "Return a non-null value to bypass WordPress's default term queries.",
+            "long_description": "Return a non-null value to bypass WordPress' default term queries.",
             "tags": [
                 {
                     "name": "since",
@@ -38247,7 +38255,7 @@
                     "variable": "$this"
                 }
             ],
-            "long_description_html": "<p>Return a non-null value to bypass WordPress's default term queries.</p>"
+            "long_description_html": "<p>Return a non-null value to bypass WordPress' default term queries.</p>"
         }
     },
     {
@@ -38640,7 +38648,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "PHP date format. Defaults to 'date_format' option                         if not specified.",
+                    "content": "PHP date format.",
                     "types": [
                         "string"
                     ],
@@ -39002,15 +39010,16 @@
                 },
                 {
                     "name": "param",
-                    "content": "The last modified date.",
+                    "content": "The last modified date or false if no post is found.",
                     "types": [
-                        "string"
+                        "string",
+                        "false"
                     ],
                     "variable": "$the_modified_date"
                 },
                 {
                     "name": "param",
-                    "content": "PHP date format. Defaults to 'date_format' option                                  if not specified.",
+                    "content": "PHP date format.",
                     "types": [
                         "string"
                     ],
@@ -39050,15 +39059,16 @@
                 },
                 {
                     "name": "param",
-                    "content": "The formatted time.",
+                    "content": "The formatted time or false if no post is found.",
                     "types": [
-                        "string"
+                        "string",
+                        "false"
                     ],
                     "variable": "$get_the_modified_time"
                 },
                 {
                     "name": "param",
-                    "content": "The time format. Accepts 'G', 'U',                                      or PHP date format. Defaults to value                                      specified in 'time_format' option.",
+                    "content": "Format to use for retrieving the time the post                                            was modified. Accepts 'G', 'U', or PHP date format.",
                     "types": [
                         "string"
                     ],
@@ -39544,7 +39554,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "The time format. Accepts 'G', 'U',                             or PHP date format.",
+                    "content": "Format to use for retrieving the time the post                             was written. Accepts 'G', 'U', or PHP date format.",
                     "types": [
                         "string"
                     ],
@@ -41034,7 +41044,7 @@
         "file": "wp-includes/ms-functions.php",
         "type": "filter",
         "doc": {
-            "description": "Filters the content of the welcome email after site activation.",
+            "description": "Filters the content of the welcome email sent to the site administrator after site activation.",
             "long_description": "Content should be formatted for transmission via wp_mail().",
             "tags": [
                 {
@@ -41052,7 +41062,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Blog ID.",
+                    "content": "Site ID.",
                     "types": [
                         "int"
                     ],
@@ -41060,7 +41070,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "User ID.",
+                    "content": "User ID of the site administrator.",
                     "types": [
                         "int"
                     ],
@@ -41068,7 +41078,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "User password.",
+                    "content": "User password, or \"N/A\" if the user account is not new.",
                     "types": [
                         "string"
                     ],
@@ -41099,7 +41109,7 @@
         "file": "wp-includes/ms-functions.php",
         "type": "filter",
         "doc": {
-            "description": "Filters the subject of the welcome email after site activation.",
+            "description": "Filters the subject of the welcome email sent to the site administrator after site activation.",
             "long_description": "",
             "tags": [
                 {
@@ -42897,7 +42907,7 @@
         "file": "wp-includes/user.php",
         "type": "filter",
         "doc": {
-            "description": "Filters whether the given username exists or not.",
+            "description": "Filters whether the given username exists.",
             "long_description": "",
             "tags": [
                 {
@@ -42906,7 +42916,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "The user's ID on success, and false on failure.",
+                    "content": "The user ID associated with the username,                            or false if the username does not exist.",
                     "types": [
                         "int",
                         "false"
@@ -42915,7 +42925,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Username to check.",
+                    "content": "The username to check for existence.",
                     "types": [
                         "string"
                     ],
@@ -42987,7 +42997,7 @@
         "type": "filter_reference",
         "doc": {
             "description": "Filters the users array before the query takes place.",
-            "long_description": "Return a non-null value to bypass WordPress's default user queries. Filtering functions that require pagination information are encouraged to set the `total_users` property of the WP_User_Query object, passed to the filter by reference. If WP_User_Query does not perform a database query, it will not have enough information to generate these values itself.",
+            "long_description": "Return a non-null value to bypass WordPress' default user queries.\n Filtering functions that require pagination information are encouraged to set the `total_users` property of the WP_User_Query object, passed to the filter by reference. If WP_User_Query does not perform a database query, it will not have enough information to generate these values itself.",
             "tags": [
                 {
                     "name": "since",
@@ -43011,7 +43021,7 @@
                     "variable": "$this"
                 }
             ],
-            "long_description_html": "<p>Return a non-null value to bypass WordPress's default user queries. Filtering functions that require pagination information are encouraged to set the <code>total_users</code> property of the WP_User_Query object, passed to the filter by reference. If WP_User_Query does not perform a database query, it will not have enough information to generate these values itself.</p>"
+            "long_description_html": "<p>Return a non-null value to bypass WordPress' default user queries.</p> <p>Filtering functions that require pagination information are encouraged to set the <code>total_users</code> property of the WP_User_Query object, passed to the filter by reference. If WP_User_Query does not perform a database query, it will not have enough information to generate these values itself.</p>"
         }
     },
     {
@@ -43043,7 +43053,7 @@
         "file": "wp-includes/user.php",
         "type": "filter",
         "doc": {
-            "description": "Filters whether the provided username is valid or not.",
+            "description": "Filters whether the provided username is valid.",
             "long_description": "",
             "tags": [
                 {
@@ -44591,10 +44601,10 @@
                 },
                 {
                     "name": "param",
-                    "content": "Requested size. Image size or array of width and height values                                    in pixels (in that order).",
+                    "content": "Requested image size. Can be any registered image size name, or                                    an array of width and height values in pixels (in that order).",
                     "types": [
-                        "array",
-                        "string"
+                        "string",
+                        "int[]"
                     ],
                     "variable": "$size"
                 },
@@ -46173,10 +46183,10 @@
                 },
                 {
                     "name": "param",
-                    "content": "Requested size. Image size or array of width and height values                                 (in that order). Default 'thumbnail'.",
+                    "content": "Requested image size. Can be any registered image size name, or                                 an array of width and height values in pixels (in that order).",
                     "types": [
                         "string",
-                        "array"
+                        "int[]"
                     ],
                     "variable": "$size"
                 }
@@ -46215,7 +46225,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Requested size of image. Image size name, or array of width                                    and height values (in that order).",
+                    "content": "Requested image size. Can be any registered image size name, or                                    an array of width and height values in pixels (in that order).",
                     "types": [
                         "string",
                         "int[]"
@@ -46269,10 +46279,10 @@
                 },
                 {
                     "name": "param",
-                    "content": "Size of the image. Image size or array of width and height values (in that order).                                Default 'thumbnail'.",
+                    "content": "Requested image size. Can be any registered image size name, or                                an array of width and height values in pixels (in that order).",
                     "types": [
                         "string",
-                        "array"
+                        "int[]"
                     ],
                     "variable": "$size"
                 },
@@ -46286,7 +46296,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Whether to include an icon. Default false.",
+                    "content": "Whether to include an icon.",
                     "types": [
                         "bool"
                     ],
@@ -46294,7 +46304,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "If string, will be link text. Default false.",
+                    "content": "If string, will be link text.",
                     "types": [
                         "string",
                         "bool"
@@ -46303,7 +46313,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Array or string of attributes. Default empty.",
+                    "content": "Array or string of attributes.",
                     "types": [
                         "array",
                         "string"
@@ -49272,7 +49282,7 @@
         "type": "filter",
         "doc": {
             "description": "Filters user data before the record is created or updated.",
-            "long_description": "It only includes data in the wp_users table wp_user, not any user metadata.",
+            "long_description": "It only includes data in the users table, not any user metadata.",
             "tags": [
                 {
                     "name": "since",
@@ -49304,7 +49314,7 @@
                     "variable": "$id"
                 }
             ],
-            "long_description_html": "<p>It only includes data in the wp_users table wp_user, not any user metadata.</p>"
+            "long_description_html": "<p>It only includes data in the users table, not any user metadata.</p>"
         }
     },
     {
@@ -49321,7 +49331,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Array of prepared attachment data.",
+                    "content": "Array of prepared attachment data. @see wp_prepare_attachment_for_js().",
                     "types": [
                         "array"
                     ],
@@ -53331,7 +53341,7 @@
         "file": "wp-includes/ms-functions.php",
         "type": "filter",
         "doc": {
-            "description": "Filters whether to bypass the welcome email after site activation.",
+            "description": "Filters whether to bypass the welcome email sent to the site administrator after site activation.",
             "long_description": "Returning false disables the welcome email.",
             "tags": [
                 {
@@ -53341,7 +53351,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "Blog ID.",
+                    "content": "Site ID.",
                     "types": [
                         "int",
                         "bool"
@@ -53350,7 +53360,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "User ID.",
+                    "content": "User ID of the site administrator.",
                     "types": [
                         "int"
                     ],
@@ -53358,7 +53368,7 @@
                 },
                 {
                     "name": "param",
-                    "content": "User password.",
+                    "content": "User password, or \"N/A\" if the user account is not new.",
                     "types": [
                         "string"
                     ],
@@ -53985,7 +53995,7 @@
                     "name": "param",
                     "content": "Media item object.",
                     "types": [
-                        "object"
+                        "\\WP_Post"
                     ],
                     "variable": "$media_item"
                 },
@@ -54371,9 +54381,10 @@
                 },
                 {
                     "name": "param",
-                    "content": "Image size.",
+                    "content": "Requested image size. Can be any registered image size name, or                              an array of width and height values in pixels (in that order).",
                     "types": [
-                        "string"
+                        "string",
+                        "int[]"
                     ],
                     "variable": "$size"
                 },

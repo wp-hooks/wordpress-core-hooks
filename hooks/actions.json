@@ -2576,16 +2576,16 @@
                     "name": "param",
                     "content": "The post thumbnail ID.",
                     "types": [
-                        "string"
+                        "int"
                     ],
                     "variable": "$post_thumbnail_id"
                 },
                 {
                     "name": "param",
-                    "content": "The post thumbnail size. Image size or array of width                                        and height values (in that order). Default 'post-thumbnail'.",
+                    "content": "Requested image size. Can be any registered image size name, or                                        an array of width and height values in pixels (in that order).",
                     "types": [
                         "string",
-                        "array"
+                        "int[]"
                     ],
                     "variable": "$size"
                 }
@@ -4989,7 +4989,7 @@
         "type": "action",
         "doc": {
             "description": "Fires after a term is deleted from the database and the cache is cleaned.",
-            "long_description": "",
+            "long_description": "The {@see 'delete_$taxonomy'} hook is also available for targeting a specific taxonomy.",
             "tags": [
                 {
                     "name": "since",
@@ -5026,9 +5026,9 @@
                 },
                 {
                     "name": "param",
-                    "content": "Copy of the already-deleted term, in the form specified                              by the parent function. WP_Error otherwise.",
+                    "content": "Copy of the already-deleted term.",
                     "types": [
-                        "mixed"
+                        "\\WP_Term"
                     ],
                     "variable": "$deleted_term"
                 },
@@ -5041,7 +5041,7 @@
                     "variable": "$object_ids"
                 }
             ],
-            "long_description_html": ""
+            "long_description_html": "<p>The {@see 'delete_$taxonomy'} hook is also available for targeting a specific taxonomy.</p>"
         }
     },
     {
@@ -5367,9 +5367,9 @@
                 },
                 {
                     "name": "param",
-                    "content": "Copy of the already-deleted term, in the form specified                              by the parent function. WP_Error otherwise.",
+                    "content": "Copy of the already-deleted term.",
                     "types": [
-                        "mixed"
+                        "\\WP_Term"
                     ],
                     "variable": "$deleted_term"
                 },
@@ -6591,7 +6591,7 @@
         "type": "action",
         "doc": {
             "description": "Fires after a term has been updated, but before the term cache has been cleaned.",
-            "long_description": "",
+            "long_description": "The {@see 'edit_$taxonomy'} hook is also available for targeting a specific taxonomy.",
             "tags": [
                 {
                     "name": "since",
@@ -6622,7 +6622,7 @@
                     "variable": "$taxonomy"
                 }
             ],
-            "long_description_html": ""
+            "long_description_html": "<p>The {@see 'edit_$taxonomy'} hook is also available for targeting a specific taxonomy.</p>"
         }
     },
     {
@@ -6678,7 +6678,7 @@
                     "variable": "$taxonomy"
                 }
             ],
-            "long_description_html": ""
+            "long_description_html": "<p>The {@see 'edit_$taxonomy'} hook is also available for targeting a specific taxonomy.</p>"
         }
     },
     {
@@ -6710,7 +6710,7 @@
                     "variable": "$taxonomy"
                 }
             ],
-            "long_description_html": ""
+            "long_description_html": "<p>The {@see 'edit_$taxonomy'} hook is also available for targeting a specific taxonomy.</p>"
         }
     },
     {
@@ -6831,7 +6831,7 @@
         "type": "action",
         "doc": {
             "description": "Fires after a term has been updated, and the term cache has been cleaned.",
-            "long_description": "",
+            "long_description": "The {@see 'edited_$taxonomy'} hook is also available for targeting a specific taxonomy.",
             "tags": [
                 {
                     "name": "since",
@@ -6862,7 +6862,7 @@
                     "variable": "$taxonomy"
                 }
             ],
-            "long_description_html": ""
+            "long_description_html": "<p>The {@see 'edited_$taxonomy'} hook is also available for targeting a specific taxonomy.</p>"
         }
     },
     {
@@ -6918,7 +6918,7 @@
                     "variable": "$taxonomy"
                 }
             ],
-            "long_description_html": ""
+            "long_description_html": "<p>The {@see 'edited_$taxonomy'} hook is also available for targeting a specific taxonomy.</p>"
         }
     },
     {
@@ -6926,7 +6926,7 @@
         "file": "wp-includes/taxonomy.php",
         "type": "action",
         "doc": {
-            "description": "Fires immediately after the given terms are edited.",
+            "description": "Fires immediately after a term is updated in the database, but before its term-taxonomy relationship is updated.",
             "long_description": "",
             "tags": [
                 {
@@ -6950,7 +6950,7 @@
                     "variable": "$taxonomy"
                 }
             ],
-            "long_description_html": ""
+            "long_description_html": "<p>The {@see 'edited_$taxonomy'} hook is also available for targeting a specific taxonomy.</p>"
         }
     },
     {
@@ -7073,16 +7073,16 @@
                     "name": "param",
                     "content": "The post thumbnail ID.",
                     "types": [
-                        "string"
+                        "int"
                     ],
                     "variable": "$post_thumbnail_id"
                 },
                 {
                     "name": "param",
-                    "content": "The post thumbnail size. Image size or array of width                                        and height values (in that order). Default 'post-thumbnail'.",
+                    "content": "Requested image size. Can be any registered image size name, or                                        an array of width and height values in pixels (in that order).",
                     "types": [
                         "string",
-                        "array"
+                        "int[]"
                     ],
                     "variable": "$size"
                 }
@@ -7940,7 +7940,7 @@
         "file": "wp-admin/user-new.php",
         "type": "action",
         "doc": {
-            "description": "Fires immediately after a user is invited to join a site, but before the notification is sent.",
+            "description": "Fires immediately after an existing user is invited to join the site, but before the notification is sent.",
             "long_description": "",
             "tags": [
                 {
@@ -9119,7 +9119,7 @@
                     "name": "param",
                     "content": "The network that had been determined.",
                     "types": [
-                        "object"
+                        "\\WP_Network"
                     ],
                     "variable": "$current_site"
                 },
@@ -13335,7 +13335,7 @@
         "file": "wp-signup.php",
         "type": "action",
         "doc": {
-            "description": "Fires at the end of the user registration form on the site sign-up form.",
+            "description": "Fires at the end of the new user account registration form.",
             "long_description": "",
             "tags": [
                 {
@@ -16943,7 +16943,7 @@
         "file": "wp-includes/comment.php",
         "type": "action",
         "doc": {
-            "description": "Fires immediately before transitioning a comment's status from one to another in the database.",
+            "description": "Fires immediately after transitioning a comment's status from one to another in the database and removing the comment from the object cache, but prior to all status transition hooks.",
             "long_description": "",
             "tags": [
                 {
@@ -18293,7 +18293,7 @@
         "type": "action",
         "doc": {
             "description": "Fires when a post is transitioned from one status to another.",
-            "long_description": "The dynamic portions of the hook name, `$new_status` and `$old status`, refer to the old and new post statuses, respectively.",
+            "long_description": "The dynamic portions of the hook name, `$new_status` and `$old_status`, refer to the old and new post statuses, respectively.",
             "tags": [
                 {
                     "name": "since",
@@ -18308,7 +18308,7 @@
                     "variable": "$post"
                 }
             ],
-            "long_description_html": "<p>The dynamic portions of the hook name, <code>$new_status</code> and <code>$old status</code>, refer to the old and new post statuses, respectively.</p>"
+            "long_description_html": "<p>The dynamic portions of the hook name, <code>$new_status</code> and <code>$old_status</code>, refer to the old and new post statuses, respectively.</p>"
         }
     },
     {
