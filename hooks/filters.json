@@ -1,4 +1,6 @@
-[
+{
+"$schema": "https://raw.githubusercontent.com/johnbillion/wp-hooks-generator/0.6.1/schema.json",
+"hooks": [
     {
         "name": "_get_page_link",
         "file": "wp-includes/link-template.php",
@@ -54908,3 +54910,4 @@
         }
     }
 ]
+}

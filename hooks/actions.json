@@ -1,4 +1,6 @@
-[
+    {
+    "$schema": "https://raw.githubusercontent.com/johnbillion/wp-hooks-generator/0.6.1/schema.json",
+    "hooks": [
     {
         "name": "_admin_menu",
         "file": "wp-admin/includes/menu.php",
@@ -18564,4 +18566,5 @@
             "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the taxonomy slug.</p>"
         }
     }
-]
+    ]
+    }

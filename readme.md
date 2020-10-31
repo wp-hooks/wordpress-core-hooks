@@ -22,8 +22,8 @@ $actions_json = file_get_contents( 'vendor/johnbillion/wp-hooks/hooks/actions.js
 $filters_json = file_get_contents( 'vendor/johnbillion/wp-hooks/hooks/filters.json' );
 
 // Get hooks as PHP:
-$actions = json_decode( $actions_json, true );
-$filters = json_decode( $filters_json, true );
+$actions = json_decode( $actions_json, true )['hooks'];
+$filters = json_decode( $filters_json, true )['hooks'];
 
 // Search for filters matching a string:
 $search = 'permalink';
@@ -43,7 +43,7 @@ const filters = require('@johnbillion/wp-hooks/hooks/filters.json');
 
 // Search for actions matching a string:
 const search = 'menu';
-const results = actions.filter( hook => ( null !== hook.name.match( search ) ) );
+const results = actions.hooks.filter( hook => ( null !== hook.name.match( search ) ) );
 
 console.log(results);
 ```
