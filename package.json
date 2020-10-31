@@ -20,7 +20,7 @@
     "url": "https://github.com/johnbillion/wp-hooks/issues"
   },
   "homepage": "https://github.com/johnbillion/wp-hooks#readme",
-  "dependencies": {
+  "devDependencies": {
     "ajv-cli": "^3.3.0"
   },
   "scripts": {
