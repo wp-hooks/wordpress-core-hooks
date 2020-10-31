@@ -19,5 +19,12 @@
   "bugs": {
     "url": "https://github.com/johnbillion/wp-hooks/issues"
   },
-  "homepage": "https://github.com/johnbillion/wp-hooks#readme"
+  "homepage": "https://github.com/johnbillion/wp-hooks#readme",
+  "dependencies": {
+    "ajv-cli": "^3.3.0"
+  },
+  "scripts": {
+    "validate:actions": "ajv validate -s hooks/schema.json -d hooks/actions.json",
+    "validate:filters": "ajv validate -s hooks/schema.json -d hooks/filters.json"
+  }
 }
