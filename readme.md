@@ -56,6 +56,13 @@ The TypeScript interfaces can be found in [`interface/index.d.ts`](interface/ind
 import { Hooks, Hook, Doc, Tags, Tag } from '@johnbillion/wp-hooks/interface';
 ```
 
+## Importing in TypeScript
+
+```typescript
+import { hooks as actions } from '@johnbillion/wp-hooks/hooks/actions.json';
+import { hooks as filters } from '@johnbillion/wp-hooks/hooks/filters.json';
+```
+
 ## JSON Schema
 
 The JSON schema can be found in [`hooks/schema.json`](hooks/schema.json).
