@@ -1,4 +1,4 @@
-// Psalm
+// wp-hooks
 {"name":"_core_updated_successfully","types":["string"]}
 {"name":"_get_page_link","types":["string","int"]}
 {"name":"_wp_post_revision_fields","types":["array","array"]}
@@ -40,11 +40,11 @@
 {"name":"admin_memory_limit","types":["int|string"]}
 {"name":"admin_menu","types":["string"]}
 {"name":"admin_post_thumbnail_html","types":["string","int","int|null"]}
-{"name":"admin_post_thumbnail_size","types":["array|string","int","WP_Post"]}
+{"name":"admin_post_thumbnail_size","types":["int[]|string","int","WP_Post"]}
 {"name":"admin_referrer_policy","types":["string"]}
 {"name":"admin_title","types":["string","string"]}
 {"name":"admin_url","types":["string","string","int|null"]}
-{"name":"after_delete_post","types":["int"]}
+{"name":"after_delete_post","types":["int","WP_Post"]}
 {"name":"after_mu_upgrade","types":["array|WP_Error"]}
 {"name":"after_password_reset","types":["WP_User","string"]}
 {"name":"after_plugin_row","types":["string","array","string"]}
@@ -60,7 +60,7 @@
 {"name":"allow_dev_auto_core_updates","types":["bool"]}
 {"name":"allow_empty_comment","types":["bool","array"]}
 {"name":"allow_major_auto_core_updates","types":["bool"]}
-{"name":"allow_password_reset","types":["bool"]}
+{"name":"allow_password_reset","types":["bool","int"]}
 {"name":"allow_subdirectory_install","types":["bool"]}
 {"name":"allowed_block_types","types":["array|bool","WP_Post"]}
 {"name":"allowed_http_origin","types":["string","string"]}
@@ -105,9 +105,9 @@
 {"name":"automatic_updates_send_debug_email","types":["bool"]}
 {"name":"available_permalink_structure_tags","types":["string[]"]}
 {"name":"avatar_defaults","types":["string[]"]}
-{"name":"before_delete_post","types":["int"]}
+{"name":"before_delete_post","types":["int","WP_Post"]}
 {"name":"before_wp_tiny_mce","types":["array"]}
-{"name":"begin_fetch_post_thumbnail_html","types":["int","string","array|string"]}
+{"name":"begin_fetch_post_thumbnail_html","types":["int","int","int[]|string"]}
 {"name":"big_image_size_threshold","types":["int","array","string","int"]}
 {"name":"block_categories","types":["array[]","WP_Post"]}
 {"name":"block_editor_meta_box_hidden_fields","types":["WP_Post"]}
@@ -124,11 +124,11 @@
 {"name":"browse-happy-notice","types":["string","array"]}
 {"name":"bulk_edit_custom_box","types":["string","string"]}
 {"name":"bulk_post_updated_messages","types":["array[]","int[]"]}
-{"name":"can_add_user_to_blog","types":["bool|WP_Error","int","string","int"]}
+{"name":"can_add_user_to_blog","types":["true|WP_Error","int","string","int"]}
 {"name":"can_edit_network","types":["bool","int"]}
 {"name":"cancel_comment_reply_link","types":["string","string","string"]}
-{"name":"category_css_class","types":["array","object","int","array"]}
-{"name":"category_description","types":["string","object"]}
+{"name":"category_css_class","types":["string[]","WP_Term","int","array"]}
+{"name":"category_description","types":["string","WP_Term"]}
 {"name":"category_feed_link","types":["string","string"]}
 {"name":"category_link","types":["string","int"]}
 {"name":"category_list_link_attributes","types":["array","WP_Term","int","array","int"]}
@@ -291,32 +291,32 @@
 {"name":"default_hidden_meta_boxes","types":["string[]","WP_Screen"]}
 {"name":"default_page_template_title","types":["string","string"]}
 {"name":"default_title","types":["string","WP_Post"]}
-{"name":"delete_attachment","types":["int"]}
+{"name":"delete_attachment","types":["int","WP_Post"]}
 {"name":"delete_comment","types":["int","WP_Comment"]}
 {"name":"delete_link","types":["int"]}
 {"name":"delete_option","types":["string"]}
 {"name":"delete_plugin","types":["string"]}
-{"name":"delete_post","types":["int"]}
+{"name":"delete_post","types":["int","WP_Post"]}
 {"name":"delete_postmeta","types":["string[]"]}
 {"name":"delete_site_email_content","types":["string"]}
 {"name":"delete_site_option","types":["string","int"]}
 {"name":"delete_term_relationships","types":["int","array","string"]}
 {"name":"delete_term_taxonomy","types":["int"]}
-{"name":"delete_term","types":["int","int","string","mixed","array"]}
+{"name":"delete_term","types":["int","int","string","WP_Term","array"]}
 {"name":"delete_user_form","types":["WP_User","int[]"]}
-{"name":"delete_user","types":["int","int|null"]}
+{"name":"delete_user","types":["int","int|null","WP_User"]}
 {"name":"delete_widget","types":["string","string","string"]}
 {"name":"deleted_comment","types":["int","WP_Comment"]}
 {"name":"deleted_link","types":["int"]}
 {"name":"deleted_option","types":["string"]}
 {"name":"deleted_plugin","types":["string","bool"]}
-{"name":"deleted_post","types":["int"]}
+{"name":"deleted_post","types":["int","WP_Post"]}
 {"name":"deleted_postmeta","types":["string[]"]}
 {"name":"deleted_site_transient","types":["string"]}
 {"name":"deleted_term_relationships","types":["int","array","string"]}
 {"name":"deleted_term_taxonomy","types":["int"]}
 {"name":"deleted_transient","types":["string"]}
-{"name":"deleted_user","types":["int","int|null"]}
+{"name":"deleted_user","types":["int","int|null","WP_User"]}
 {"name":"deprecated_argument_run","types":["string","string","string"]}
 {"name":"deprecated_argument_trigger_error","types":["bool"]}
 {"name":"deprecated_constructor_run","types":["string","string","string"]}
@@ -331,12 +331,12 @@
 {"name":"determine_locale","types":["string"]}
 {"name":"disable_captions","types":["bool"]}
 {"name":"disable_categories_dropdown","types":["bool","string"]}
-{"name":"disable_formats_dropdown","types":["bool"]}
+{"name":"disable_formats_dropdown","types":["bool","string"]}
 {"name":"disable_months_dropdown","types":["bool","string"]}
 {"name":"display_media_states","types":["string[]","WP_Post"]}
 {"name":"display_post_states","types":["string[]","WP_Post"]}
 {"name":"display_site_states","types":["array","WP_Site"]}
-{"name":"do_meta_boxes","types":["string","string","object|string"]}
+{"name":"do_meta_boxes","types":["string","string","WP_Post|object|string"]}
 {"name":"do_mu_upgrade","types":["bool"]}
 {"name":"do_parse_request","types":["bool","WP","array|string"]}
 {"name":"do_shortcode_tag","types":["string","string","array|string","array"]}
@@ -387,7 +387,7 @@
 {"name":"edited_term_taxonomy","types":["int","string"]}
 {"name":"edited_term","types":["int","int","string"]}
 {"name":"edited_terms","types":["int","string"]}
-{"name":"editor_max_image_size","types":["int[]","array|string","string"]}
+{"name":"editor_max_image_size","types":["int[]","int[]|string","string"]}
 {"name":"editor_stylesheets","types":["string[]"]}
 {"name":"email_change_email","types":["array","array","array"]}
 {"name":"embed_cache_oembed_types","types":["string[]"]}
@@ -414,7 +414,7 @@
 {"name":"enable_update_services_configuration","types":["bool"]}
 {"name":"enable_wp_debug_mode_checks","types":["bool"]}
 {"name":"enclosure_links","types":["string[]","int"]}
-{"name":"end_fetch_post_thumbnail_html","types":["int","string","array|string"]}
+{"name":"end_fetch_post_thumbnail_html","types":["int","int","int[]|string"]}
 {"name":"enter_title_here","types":["string","WP_Post"]}
 {"name":"esc_html","types":["string","string"]}
 {"name":"esc_textarea","types":["string","string"]}
@@ -452,7 +452,7 @@
 {"name":"generate_rewrite_rules","types":["WP_Rewrite"]}
 {"name":"get_ancestors","types":["int[]","int","string","string"]}
 {"name":"get_archives_link","types":["string","string","string","string","string","string","bool"]}
-{"name":"get_attached_file","types":["string","int"]}
+{"name":"get_attached_file","types":["false|string","int"]}
 {"name":"get_attached_media_args","types":["array","string","WP_Post"]}
 {"name":"get_attached_media","types":["WP_Post[]","string","WP_Post"]}
 {"name":"get_available_languages","types":["string[]","string"]}
@@ -461,7 +461,7 @@
 {"name":"get_avatar_url","types":["string","mixed","array"]}
 {"name":"get_avatar","types":["string","mixed","int","string","string","array"]}
 {"name":"get_bloginfo_rss","types":["string","string"]}
-{"name":"get_blogs_of_user","types":["array","int","bool"]}
+{"name":"get_blogs_of_user","types":["object[]","int","bool"]}
 {"name":"get_bookmarks","types":["array","array"]}
 {"name":"get_calendar","types":["string"]}
 {"name":"get_canonical_url","types":["string","WP_Post"]}
@@ -495,14 +495,14 @@
 {"name":"get_edit_user_link","types":["string","int"]}
 {"name":"get_enclosed","types":["string[]","int"]}
 {"name":"get_feed_build_date","types":["false|string","string"]}
-{"name":"get_footer","types":["null|string"]}
+{"name":"get_footer","types":["null|string","array"]}
 {"name":"get_header_image_tag","types":["string","object","array"]}
 {"name":"get_header_video_url","types":["string"]}
-{"name":"get_header","types":["null|string"]}
-{"name":"get_image_tag_class","types":["string","int","string","array|string"]}
-{"name":"get_image_tag","types":["string","int","string","string","string","array|string"]}
-{"name":"get_lastpostdate","types":["false|string","string"]}
-{"name":"get_lastpostmodified","types":["false|string","string"]}
+{"name":"get_header","types":["null|string","array"]}
+{"name":"get_image_tag_class","types":["string","int","string","int[]|string"]}
+{"name":"get_image_tag","types":["string","int","string","string","string","int[]|string"]}
+{"name":"get_lastpostdate","types":["false|string","string","string"]}
+{"name":"get_lastpostmodified","types":["false|string","string","string"]}
 {"name":"get_main_network_id","types":["int"]}
 {"name":"get_media_item_args","types":["array"]}
 {"name":"get_meta_sql","types":["array","array","string","string","string","object"]}
@@ -522,15 +522,15 @@
 {"name":"get_sample_permalink_html","types":["string","int","string","string","WP_Post"]}
 {"name":"get_sample_permalink","types":["array","int","string","string","WP_Post"]}
 {"name":"get_schedule","types":["bool|string","string","array"]}
-{"name":"get_search_form","types":["string"]}
+{"name":"get_search_form","types":["string","array"]}
 {"name":"get_search_query","types":["mixed"]}
 {"name":"get_shortlink","types":["string","int","string","bool"]}
-{"name":"get_sidebar","types":["null|string"]}
+{"name":"get_sidebar","types":["null|string","array"]}
 {"name":"get_site_icon_url","types":["string","int","int"]}
 {"name":"get_site","types":["WP_Site"]}
 {"name":"get_space_allowed","types":["int"]}
-{"name":"get_tags","types":["int|WP_Term[]","array"]}
-{"name":"get_template_part","types":["string","string","string[]"]}
+{"name":"get_tags","types":["int|WP_Error|WP_Term[]","array"]}
+{"name":"get_template_part","types":["string","string","string[]","array"]}
 {"name":"get_term","types":["WP_Term","string"]}
 {"name":"get_terms_args","types":["array","string[]"]}
 {"name":"get_terms_defaults","types":["array","string[]"]}
@@ -538,15 +538,16 @@
 {"name":"get_terms_orderby","types":["string","array","string[]"]}
 {"name":"get_terms","types":["array","array","array","WP_Term_Query"]}
 {"name":"get_the_archive_description","types":["string"]}
-{"name":"get_the_archive_title","types":["string"]}
+{"name":"get_the_archive_title_prefix","types":["string"]}
+{"name":"get_the_archive_title","types":["string","string","string"]}
 {"name":"get_the_categories","types":["WP_Term[]","false|int"]}
 {"name":"get_the_date","types":["string","string","int|WP_Post"]}
 {"name":"get_the_excerpt","types":["string","WP_Post"]}
 {"name":"get_the_guid","types":["string","int"]}
-{"name":"get_the_modified_date","types":["bool|string","string","WP_Post|null"]}
-{"name":"get_the_modified_time","types":["bool|string","string","WP_Post|null"]}
+{"name":"get_the_modified_date","types":["false|string","string","WP_Post|null"]}
+{"name":"get_the_modified_time","types":["false|string","string","WP_Post|null"]}
 {"name":"get_the_post_type_description","types":["string","WP_Post_Type"]}
-{"name":"get_the_tags","types":["WP_Term[]"]}
+{"name":"get_the_tags","types":["WP_Term[]|false|WP_Error"]}
 {"name":"get_the_terms","types":["WP_Error|WP_Term[]","int","string"]}
 {"name":"get_the_time","types":["string","string","int|WP_Post"]}
 {"name":"get_theme_starter_content","types":["array","array"]}
@@ -565,7 +566,7 @@
 {"name":"grant_super_admin","types":["int"]}
 {"name":"granted_super_admin","types":["int"]}
 {"name":"has_nav_menu","types":["bool","string"]}
-{"name":"has_post_thumbnail","types":["bool","int|WP_Post|null","int|string"]}
+{"name":"has_post_thumbnail","types":["bool","int|WP_Post|null","false|int"]}
 {"name":"header_video_settings","types":["array"]}
 {"name":"heartbeat_nopriv_received","types":["array","array","string"]}
 {"name":"heartbeat_nopriv_send","types":["array","string"]}
@@ -593,23 +594,22 @@
 {"name":"https_ssl_verify","types":["bool","string"]}
 {"name":"human_time_diff","types":["string","int","int","int"]}
 {"name":"icon_dir_uri","types":["string"]}
-{"name":"icon_dir","types":["int","bool"]} // !
-{"name":"icon_dir","types":["string"]} // !
+{"name":"icon_dir","types":["string"]}
 {"name":"icon_dirs","types":["string[]"]}
 {"name":"iis7_supports_permalinks","types":["bool"]}
 {"name":"iis7_url_rewrite_rules","types":["string"]}
 {"name":"illegal_user_logins","types":["array"]}
 {"name":"image_add_caption_shortcode","types":["string","string"]}
 {"name":"image_add_caption_text","types":["string","int"]}
-{"name":"image_downsize","types":["array|bool","int","array|string"]}
+{"name":"image_downsize","types":["array|bool","int","int[]|string"]}
 {"name":"image_editor_default_mime_type","types":["string"]}
 {"name":"image_editor_save_pre","types":["WP_Image_Editor","int"]}
-{"name":"image_get_intermediate_size","types":["array","int","array|string"]}
+{"name":"image_get_intermediate_size","types":["array","int","int[]|string"]}
 {"name":"image_make_intermediate_size","types":["string"]}
 {"name":"image_memory_limit","types":["int|string"]}
 {"name":"image_resize_dimensions","types":["mixed|null","int","int","int","int","array|bool"]}
 {"name":"image_send_to_editor_url","types":["string","string","string","string"]}
-{"name":"image_send_to_editor","types":["string","int","string","string","string","string","array|string","string"]}
+{"name":"image_send_to_editor","types":["string","int","string","string","string","string","int[]|string","string"]}
 {"name":"image_size_names_choose","types":["string[]"]}
 {"name":"image_strip_meta","types":["bool"]}
 {"name":"img_caption_shortcode_width","types":["int","array","string"]}
@@ -651,10 +651,10 @@
 {"name":"list_terms_exclusions","types":["string","array","string[]"]}
 {"name":"load_default_embeds","types":["bool"]}
 {"name":"load_default_widgets","types":["bool"]}
-{"name":"load_image_to_edit_attachmenturl","types":["string","string","string"]}
-{"name":"load_image_to_edit_filesystempath","types":["string","string","string"]}
-{"name":"load_image_to_edit_path","types":["bool|string","string","string"]}
-{"name":"load_image_to_edit","types":["resource","string","string"]}
+{"name":"load_image_to_edit_attachmenturl","types":["string","int","int[]|string"]}
+{"name":"load_image_to_edit_filesystempath","types":["string","int","int[]|string"]}
+{"name":"load_image_to_edit_path","types":["bool|string","int","int[]|string"]}
+{"name":"load_image_to_edit","types":["resource|GdImage","int","int[]|string"]}
 {"name":"load_script_textdomain_relative_path","types":["false|string","string"]}
 {"name":"load_script_translation_file","types":["false|string","string","string"]}
 {"name":"load_script_translations","types":["string","string","string","string"]}
@@ -684,7 +684,7 @@
 {"name":"loop_no_results","types":["WP_Query"]}
 {"name":"loop_start","types":["WP_Query"]}
 {"name":"lost_password","types":["WP_Error"]}
-{"name":"lostpassword_post","types":["WP_Error"]}
+{"name":"lostpassword_post","types":["WP_Error","WP_User|false"]}
 {"name":"lostpassword_redirect","types":["string"]}
 {"name":"lostpassword_url","types":["string","string"]}
 {"name":"make_clickable_rel","types":["string","string"]}
@@ -694,7 +694,7 @@
 {"name":"make_spam_blog","types":["int"]}
 {"name":"make_spam_user","types":["int"]}
 {"name":"make_undelete_blog","types":["int"]}
-{"name":"manage_comments_custom_column","types":["string"]}
+{"name":"manage_comments_custom_column","types":["string","int"]}
 {"name":"manage_comments_nav","types":["string"]}
 {"name":"manage_link_custom_column","types":["string","int"]}
 {"name":"manage_media_columns","types":["string[]","bool"]}
@@ -749,7 +749,7 @@
 {"name":"months_dropdown_results","types":["object[]","string"]}
 {"name":"ms_network_not_found","types":["string","string"]}
 {"name":"ms_site_check","types":["bool|null"]}
-{"name":"ms_site_not_found","types":["object","string","string"]}
+{"name":"ms_site_not_found","types":["WP_Network","string","string"]}
 {"name":"ms_sites_list_table_query_args","types":["array"]}
 {"name":"ms_user_list_site_actions","types":["string[]","int"]}
 {"name":"ms_user_list_site_class","types":["string[]","int","int","WP_User"]}
@@ -783,7 +783,7 @@
 {"name":"network_site_users_created_user","types":["int"]}
 {"name":"network_user_new_created_user","types":["int"]}
 {"name":"networks_clauses","types":["string[]","WP_Network_Query"]}
-{"name":"networks_pre_query","types":["array|null","WP_Network_Query"]}
+{"name":"networks_pre_query","types":["array|int|null","WP_Network_Query"]}
 {"name":"new_admin_email_content","types":["string","array"]}
 {"name":"new_network_admin_email_content","types":["string","array"]}
 {"name":"new_user_email_content","types":["string","array"]}
@@ -861,7 +861,7 @@
 {"name":"plugin_locale","types":["string","string"]}
 {"name":"plugin_row_meta","types":["string[]","string","array","string"]}
 {"name":"plugins_api_args","types":["object","string"]}
-{"name":"plugins_api_result","types":["object","string","object"]}
+{"name":"plugins_api_result","types":["object|WP_Error","string","object"]}
 {"name":"plugins_api","types":["array|false|object","string","object"]}
 {"name":"plugins_update_check_locales","types":["array"]}
 {"name":"plugins_url","types":["string","string","string"]}
@@ -899,8 +899,8 @@
 {"name":"post_submitbox_minor_actions","types":["WP_Post"]}
 {"name":"post_submitbox_misc_actions","types":["WP_Post"]}
 {"name":"post_submitbox_start","types":["WP_Post|null"]}
-{"name":"post_thumbnail_html","types":["string","int","string","array|string","string"]}
-{"name":"post_thumbnail_size","types":["array|string","int"]}
+{"name":"post_thumbnail_html","types":["string","int","int","int[]|string","string"]}
+{"name":"post_thumbnail_size","types":["int[]|string","int"]}
 {"name":"post_type_archive_feed_link","types":["string","string"]}
 {"name":"post_type_archive_link","types":["string","string"]}
 {"name":"post_type_archive_title","types":["string","string"]}
@@ -955,7 +955,7 @@
 {"name":"pre_ent2ncr","types":["null|string","string"]}
 {"name":"pre_get_avatar_data","types":["array","mixed"]}
 {"name":"pre_get_avatar","types":["null|string","mixed","array"]}
-{"name":"pre_get_blogs_of_user","types":["array|null","int","bool"]}
+{"name":"pre_get_blogs_of_user","types":["null|object[]","int","bool"]}
 {"name":"pre_get_col_charset","types":["null|string","string","string"]}
 {"name":"pre_get_comments","types":["WP_Comment_Query"]}
 {"name":"pre_get_document_title","types":["string"]}
@@ -966,7 +966,7 @@
 {"name":"pre_get_posts","types":["WP_Query"]}
 {"name":"pre_get_ready_cron_jobs","types":["array|null"]}
 {"name":"pre_get_scheduled_event","types":["false|null|object","string","array","int|null"]}
-{"name":"pre_get_shortlink","types":["bool|string","int","string","bool"]}
+{"name":"pre_get_shortlink","types":["false|string","int","string","bool"]}
 {"name":"pre_get_site_by_path","types":["false|null|WP_Site","string","string","int|null","string[]"]}
 {"name":"pre_get_sites","types":["WP_Site_Query"]}
 {"name":"pre_get_space_used","types":["false|int"]}
@@ -1119,8 +1119,8 @@
 {"name":"rest_prepare_theme","types":["WP_REST_Response","WP_Theme","WP_REST_Request"]}
 {"name":"rest_prepare_user","types":["WP_REST_Response","WP_User","WP_REST_Request"]}
 {"name":"rest_preprocess_comment","types":["array","WP_REST_Request"]}
-{"name":"rest_request_after_callbacks","types":["WP_Error|WP_HTTP_Response","array","WP_REST_Request"]}
-{"name":"rest_request_before_callbacks","types":["WP_Error|WP_HTTP_Response","array","WP_REST_Request"]}
+{"name":"rest_request_after_callbacks","types":["mixed|WP_Error|WP_HTTP_Response|WP_Rest_Response","array","WP_REST_Request"]}
+{"name":"rest_request_before_callbacks","types":["mixed|WP_Error|WP_HTTP_Response|WP_Rest_Response","array","WP_REST_Request"]}
 {"name":"rest_request_from_url","types":["WP_REST_Request|false","string"]}
 {"name":"rest_request_parameter_order","types":["string[]","WP_REST_Request"]}
 {"name":"rest_response_link_curies","types":["array"]}
@@ -1142,7 +1142,7 @@
 {"name":"revision_text_diff_options","types":["array","string","WP_Post","WP_Post"]}
 {"name":"revoke_super_admin","types":["int"]}
 {"name":"revoked_super_admin","types":["int"]}
-{"name":"rewrite_rules","types":["string"]}
+{"name":"rewrite_rules_array","types":["string[]"]}
 {"name":"robots_txt","types":["string","bool"]}
 {"name":"role_has_cap","types":["bool[]","string","string"]}
 {"name":"root_rewrite_rules","types":["string[]"]}
@@ -1165,7 +1165,7 @@
 {"name":"sanitize_trackback_urls","types":["string","string"]}
 {"name":"sanitize_user","types":["string","string","bool"]}
 {"name":"save_post","types":["int","WP_Post","bool"]}
-{"name":"schedule_event","types":["stdClass"]}
+{"name":"schedule_event","types":["stdClass|false"]}
 {"name":"screen_layout_columns","types":["array","string","WP_Screen"]}
 {"name":"screen_options_show_screen","types":["bool","WP_Screen"]}
 {"name":"screen_options_show_submit","types":["bool","WP_Screen"]}
@@ -1174,7 +1174,7 @@
 {"name":"script_loader_tag","types":["string","string","string"]}
 {"name":"search_feed_link","types":["string","string","string"]}
 {"name":"search_form_args","types":["array"]}
-{"name":"search_form_format","types":["string"]}
+{"name":"search_form_format","types":["string","array"]}
 {"name":"search_link","types":["string","string"]}
 {"name":"search_rewrite_rules","types":["string[]"]}
 {"name":"secure_auth_cookie","types":["bool","int"]}
@@ -1197,7 +1197,7 @@
 {"name":"set_object_terms","types":["int","array","array","string","bool","array"]}
 {"name":"set_url_scheme","types":["string","string","null|string"]}
 {"name":"set_user_role","types":["int","string","string[]"]}
-{"name":"set-screen-option","types":["bool","string","int"]}
+{"name":"set-screen-option","types":["mixed","string","int"]}
 {"name":"setted_site_transient","types":["string","mixed","int"]}
 {"name":"setted_transient","types":["string","mixed","int"]}
 {"name":"shake_error_codes","types":["array"]}
@@ -1233,7 +1233,7 @@
 {"name":"site_icon_meta_tags","types":["string[]"]}
 {"name":"site_search_columns","types":["string[]","string","WP_Site_Query"]}
 {"name":"site_status_test_php_modules","types":["array"]}
-{"name":"site_status_test_result","types":["array","string","string","array","string","string","string","string","string"]}
+{"name":"site_status_test_result","types":["array"]}
 {"name":"site_status_tests","types":["array"]}
 {"name":"site_url","types":["string","string","null|string","int|null"]}
 {"name":"sites_clauses","types":["string[]","WP_Site_Query"]}
@@ -1304,8 +1304,8 @@
 {"name":"the_generator","types":["string","string"]}
 {"name":"the_guid","types":["string","int"]}
 {"name":"the_meta_key","types":["string","string","string"]}
-{"name":"the_modified_date","types":["string","string","string","string"]}
-{"name":"the_modified_time","types":["string","string"]}
+{"name":"the_modified_date","types":["false|string","string","string","string"]}
+{"name":"the_modified_time","types":["false|string","string"]}
 {"name":"the_networks","types":["WP_Network[]","WP_Network_Query"]}
 {"name":"the_password_form","types":["string"]}
 {"name":"the_permalink_rss","types":["string"]}
@@ -1322,10 +1322,7 @@
 {"name":"the_terms","types":["string","string","string","string","string"]}
 {"name":"the_time","types":["string","string"]}
 {"name":"the_title_rss","types":["string"]}
-{"name":"the_title","types":["string","bool","string","bool"]}// !
-{"name":"the_title","types":["string","int"]} // !
-{"name":"the_title","types":["string","string","string","string","int","string"]} // !
-{"name":"the_title","types":["string"]} // !
+{"name":"the_title","types":["string","int"]}
 {"name":"the_weekday_date","types":["string","string","string"]}
 {"name":"the_weekday","types":["string"]}
 {"name":"the_widget","types":["string","array","array"]}
@@ -1340,7 +1337,7 @@
 {"name":"theme_scandir_exclusions","types":["string[]"]}
 {"name":"theme_templates","types":["string[]","WP_Theme","WP_Post|null","string"]}
 {"name":"themes_api_args","types":["object","string"]}
-{"name":"themes_api_result","types":["array|object","string","object"]}
+{"name":"themes_api_result","types":["array|object|WP_Error","string","object"]}
 {"name":"themes_api","types":["array|false|object","string","object"]}
 {"name":"themes_update_check_locales","types":["array"]}
 {"name":"thread_comments_depth_max","types":["int"]}
@@ -1351,7 +1348,7 @@
 {"name":"trackback_url","types":["string"]}
 {"name":"transition_comment_status","types":["int|string","int|string","WP_Comment"]}
 {"name":"transition_post_status","types":["string","string","WP_Post"]}
-{"name":"translations_api_result","types":["object","string","object"]}
+{"name":"translations_api_result","types":["object|WP_Error","string","object"]}
 {"name":"translations_api","types":["array|bool","string","object"]}
 {"name":"trash_comment","types":["int","WP_Comment"]}
 {"name":"trash_post_comments","types":["int"]}
@@ -1397,7 +1394,7 @@
 {"name":"upgrader_clear_destination","types":["true|WP_Error","string","string","array"]}
 {"name":"upgrader_package_options","types":["array"]}
 {"name":"upgrader_post_install","types":["bool","array","array"]}
-{"name":"upgrader_pre_download","types":["bool","string","WP_Upgrader"]}
+{"name":"upgrader_pre_download","types":["bool","string","WP_Upgrader","array"]}
 {"name":"upgrader_pre_install","types":["bool|WP_Error","array"]}
 {"name":"upgrader_process_complete","types":["WP_Upgrader","array"]}
 {"name":"upgrader_source_selection","types":["string","string","WP_Upgrader","array"]}
@@ -1455,8 +1452,7 @@
 {"name":"widget_archives_dropdown_args","types":["array","array"]}
 {"name":"widget_categories_args","types":["array","array"]}
 {"name":"widget_categories_dropdown_args","types":["array","array"]}
-{"name":"widget_comments_args","types":["array","array"]} // !
-{"name":"widget_comments_args","types":["array"]} // !
+{"name":"widget_comments_args","types":["array","array"]}
 {"name":"widget_custom_html_content","types":["string","array","WP_Widget_Custom_HTML"]}
 {"name":"widget_customizer_setting_args","types":["array","string"]}
 {"name":"widget_display_callback","types":["array","WP_Widget","array"]}
@@ -1490,7 +1486,7 @@
 {"name":"wp_authenticate_user","types":["WP_Error|WP_User","string"]}
 {"name":"wp_authenticate","types":["string","string"]}
 {"name":"wp_cache_themes_persistently","types":["bool","string"]}
-{"name":"wp_calculate_image_sizes","types":["string","array|string","null|string","array|null","int"]}
+{"name":"wp_calculate_image_sizes","types":["string","int[]|string","null|string","array|null","int"]}
 {"name":"wp_calculate_image_srcset_meta","types":["array","int[]","string","int"]}
 {"name":"wp_calculate_image_srcset","types":["array","array","string","array","int"]}
 {"name":"wp_check_filetype_and_ext","types":["array","string","string","string[]","bool|string"]}
@@ -1546,9 +1542,9 @@
 {"name":"wp_generator_type","types":["string"]}
 {"name":"wp_get_attachment_caption","types":["string","int"]}
 {"name":"wp_get_attachment_id3_keys","types":["array","WP_Post","string"]}
-{"name":"wp_get_attachment_image_attributes","types":["string[]","WP_Post","array|string"]}
+{"name":"wp_get_attachment_image_attributes","types":["array","WP_Post","int[]|string"]}
 {"name":"wp_get_attachment_image_src","types":["array|false","int","int[]|string","bool"]}
-{"name":"wp_get_attachment_link","types":["string","int","array|string","bool","bool","bool|string","array|string"]}
+{"name":"wp_get_attachment_link","types":["string","int","int[]|string","bool","bool","bool|string","array|string"]}
 {"name":"wp_get_attachment_metadata","types":["array|bool","int"]}
 {"name":"wp_get_attachment_thumb_file","types":["string","int"]}
 {"name":"wp_get_attachment_thumb_url","types":["string","int"]}
@@ -1712,7 +1708,7 @@
 {"name":"wp_unregister_sidebar_widget","types":["int"]}
 {"name":"wp_update_attachment_metadata","types":["array","int"]}
 {"name":"wp_update_comment_count","types":["int","int","int"]}
-{"name":"wp_update_comment_data","types":["array","array","array"]}
+{"name":"wp_update_comment_data","types":["array|WP_Error","array","array"]}
 {"name":"wp_update_nav_menu_item","types":["int","int","array"]}
 {"name":"wp_update_nav_menu","types":["int","array"]}
 {"name":"wp_update_php_url","types":["string"]}
@@ -1739,8 +1735,8 @@
 {"name":"wpmu_active_signup","types":["string"]}
 {"name":"wpmu_blog_updated","types":["int"]}
 {"name":"wpmu_blogs_columns","types":["string[]"]}
-{"name":"wpmu_delete_blog_upload_dir","types":["int"]}
-{"name":"wpmu_delete_user","types":["int"]}
+{"name":"wpmu_delete_blog_upload_dir","types":["string","int"]}
+{"name":"wpmu_delete_user","types":["int","WP_User"]}
 {"name":"wpmu_drop_tables","types":["string[]","int"]}
 {"name":"wpmu_new_user","types":["int"]}
 {"name":"wpmu_signup_blog_notification_email","types":["string","string","string","string","string","string","string","array"]}
@@ -1788,7 +1784,7 @@
 {"name":"xmlrpc_methods","types":["string[]"]}
 {"name":"xmlrpc_pingback_error","types":["IXR_Error"]}
 {"name":"xmlrpc_prepare_comment","types":["array","WP_Comment"]}
-{"name":"xmlrpc_prepare_media_item","types":["array","object","string"]}
+{"name":"xmlrpc_prepare_media_item","types":["array","WP_Post","string"]}
 {"name":"xmlrpc_prepare_page","types":["array","WP_Post"]}
 {"name":"xmlrpc_prepare_post_type","types":["array","WP_Post_Type"]}
 {"name":"xmlrpc_prepare_post","types":["array","array","array"]}
