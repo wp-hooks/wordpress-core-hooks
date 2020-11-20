@@ -2110,12 +2110,25 @@
                         "content": "5.5.0"
                     },
                     {
+                        "name": "since",
+                        "content": "5.5.1",
+                        "description": "Added the <code>$update_results</code> parameter."
+                    },
+                    {
                         "name": "param",
                         "content": "True if plugin update notifications are enabled, false otherwise.",
                         "types": [
                             "bool"
                         ],
                         "variable": "$enabled"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The results of plugins update tasks.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$update_results"
                     }
                 ],
                 "long_description_html": ""
@@ -2134,12 +2147,25 @@
                         "content": "5.5.0"
                     },
                     {
+                        "name": "since",
+                        "content": "5.5.1",
+                        "description": "Added the <code>$update_results</code> parameter."
+                    },
+                    {
                         "name": "param",
                         "content": "True if theme update notifications are enabled, false otherwise.",
                         "types": [
                             "bool"
                         ],
                         "variable": "$enabled"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The results of theme update tasks.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$update_results"
                     }
                 ],
                 "long_description_html": ""
@@ -2158,10 +2184,16 @@
                         "content": "3.7.0"
                     },
                     {
+                        "name": "since",
+                        "content": "5.5.0",
+                        "description": "The <code>$update</code> parameter accepts the value of null."
+                    },
+                    {
                         "name": "param",
-                        "content": "Whether to update.",
+                        "content": "Whether to update. The value of null is internally used                          to detect whether nothing has hooked into this filter.",
                         "types": [
-                            "bool"
+                            "bool",
+                            "null"
                         ],
                         "variable": "$update"
                     },
@@ -7748,6 +7780,11 @@
                         "name": "since",
                         "content": "3.6.0",
                         "description": "Added the <code>$post</code> parameter."
+                    },
+                    {
+                        "name": "since",
+                        "content": "5.5.0",
+                        "description": "Also applied in the Customizer context. If any admin functions              are used within the filter, their existence should be checked              with <code>function_exists()</code> before being used."
                     },
                     {
                         "name": "param",
