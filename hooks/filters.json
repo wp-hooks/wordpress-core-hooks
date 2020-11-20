@@ -8443,17 +8443,6 @@
             }
         },
         {
-            "name": "edit_post_{$field}",
-            "file": "wp-includes/post.php",
-            "type": "filter",
-            "doc": {
-                "description": "",
-                "long_description": "",
-                "tags": [],
-                "long_description_html": ""
-            }
-        },
-        {
             "name": "edit_posts_per_page",
             "file": "wp-admin/includes/post.php",
             "type": "filter",
@@ -26176,17 +26165,6 @@
             }
         },
         {
-            "name": "post_{$field}",
-            "file": "wp-includes/post.php",
-            "type": "filter",
-            "doc": {
-                "description": "",
-                "long_description": "",
-                "tags": [],
-                "long_description_html": ""
-            }
-        },
-        {
             "name": "postbox_classes_{$screen_id}_{$box_id}",
             "file": "wp-admin/includes/post.php",
             "type": "filter",
@@ -28511,17 +28489,6 @@
                     }
                 ],
                 "long_description_html": "<p>Only applies to posts with post_type of 'post'.</p>"
-            }
-        },
-        {
-            "name": "pre_post_{$field}",
-            "file": "wp-includes/post.php",
-            "type": "filter",
-            "doc": {
-                "description": "",
-                "long_description": "",
-                "tags": [],
-                "long_description_html": ""
             }
         },
         {

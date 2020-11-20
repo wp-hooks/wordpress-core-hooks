@@ -48,6 +48,9 @@
                 "load-page-new.php",
                 "load-page.php",
                 "option_enable_xmlrpc",
+                "edit_post_{$field}",
+                "pre_post_{$field}",
+                "post_{$field}",
                 "pre_option_enable_xmlrpc",
                 "{$tag}"
             ]
