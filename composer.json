@@ -33,7 +33,6 @@
                 "wp-content/",
                 "wp-includes/deprecated.php",
                 "wp-includes/ID3/",
-                "wp-includes/IXR/",
                 "wp-includes/ms-deprecated.php",
                 "wp-includes/pomo/",
                 "wp-includes/random_compat/",

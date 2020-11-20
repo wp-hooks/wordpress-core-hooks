@@ -53704,6 +53704,30 @@
             }
         },
         {
+            "name": "xmlrpc_chunk_parsing_size",
+            "file": "wp-includes/IXR/class-IXR-message.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the chunk size that can be used to parse an XML-RPC response message.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "4.4.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Chunk size to parse in bytes.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$chunk_size"
+                    }
+                ],
+                "long_description_html": ""
+            }
+        },
+        {
             "name": "xmlrpc_default_post_fields",
             "file": "wp-includes/class-wp-xmlrpc-server.php",
             "type": "filter",
@@ -53858,6 +53882,30 @@
                             "string"
                         ],
                         "variable": "$method"
+                    }
+                ],
+                "long_description_html": ""
+            }
+        },
+        {
+            "name": "xmlrpc_element_limit",
+            "file": "wp-includes/IXR/class-IXR-message.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the number of elements to parse in an XML-RPC response.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "4.0.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Default elements limit.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$element_limit"
                     }
                 ],
                 "long_description_html": ""
