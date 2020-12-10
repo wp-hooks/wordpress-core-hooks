@@ -86,13 +86,16 @@ Then run:
 
 Some scripts are available for checking the data:
 
-* Check everything:  
-  `npm run check`
-* Validate the generated actions and filters JSON files:  
-  `npm run validate`
-* Check for duplicate hook names:  
-  `check:duplicate-actions`  
-  `check:duplicate-filters`
+* Check everything:
+  - `npm run check`
+* Validate the generated actions and filters JSON files:
+  - `npm run validate`
+* Check for duplicate hook names:
+  - `check:duplicate-actions`
+  - `check:duplicate-filters`
+* Find hooks with missing `@since` tags:
+  - `jq '.hooks[] | . as $d | .doc .tags | map(.name) | select( contains(["since"]) | not ) | $d' hooks/filters.json`
+  - `jq '.hooks[] | . as $d | .doc .tags | map(.name) | select( contains(["since"]) | not ) | $d' hooks/actions.json`
 
 ## Hook Files for Plugins
 
