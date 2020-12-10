@@ -1549,6 +1549,22 @@
             }
         },
         {
+            "name": "after_core_auto_updates_settings",
+            "file": "wp-admin/update-core.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires after the major core auto-update settings.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.6.0"
+                    }
+                ],
+                "long_description_html": ""
+            }
+        },
+        {
             "name": "after_db_upgrade",
             "file": "wp-admin/admin.php",
             "type": "action",
@@ -2069,6 +2085,62 @@
                     {
                         "name": "since",
                         "content": "3.1.0"
+                    }
+                ],
+                "long_description_html": ""
+            }
+        },
+        {
+            "name": "application_password_did_authenticate",
+            "file": "wp-includes/user.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires after an application password was used for authentication.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.6.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The user who was authenticated.",
+                        "types": [
+                            "\\WP_User"
+                        ],
+                        "variable": "$user"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The application password used.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$item"
+                    }
+                ],
+                "long_description_html": ""
+            }
+        },
+        {
+            "name": "application_password_failed_authentication",
+            "file": "wp-includes/user.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires when an application password failed to authenticate the user.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.6.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The authentication error.",
+                        "types": [
+                            "\\WP_Error"
+                        ],
+                        "variable": "$error"
                     }
                 ],
                 "long_description_html": ""
@@ -6022,6 +6094,22 @@
             }
         },
         {
+            "name": "do_all_pings",
+            "file": "wp-includes/comment.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires immediately after the `do_pings` event to hook services individually.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.6.0"
+                    }
+                ],
+                "long_description_html": ""
+            }
+        },
+        {
             "name": "do_favicon",
             "file": "wp-includes/template-loader.php",
             "type": "action",
@@ -7978,6 +8066,30 @@
             }
         },
         {
+            "name": "is_wp_error_instance",
+            "file": "wp-includes/load.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires when `is_wp_error()` is called and its parameter is an instance of `WP_Error`.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.6.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The error object passed to <code>is_wp_error()</code>.",
+                        "types": [
+                            "\\WP_Error"
+                        ],
+                        "variable": "$thing"
+                    }
+                ],
+                "long_description_html": ""
+            }
+        },
+        {
             "name": "load-importer-{$importer}",
             "file": "wp-admin/admin.php",
             "type": "action",
@@ -8582,12 +8694,25 @@
                         "content": "2.5.0"
                     },
                     {
+                        "name": "since",
+                        "content": "5.6.0",
+                        "description": "The <code>$which</code> parameter was added."
+                    },
+                    {
                         "name": "param",
                         "content": "The comment status name. Default 'All'.",
                         "types": [
                             "string"
                         ],
                         "variable": "$comment_status"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The location of the extra table nav markup: 'top' or 'bottom'.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$which"
                     }
                 ],
                 "long_description_html": ""
@@ -8935,6 +9060,62 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$post-&gt;post_type</code>, refers to the post type.</p>"
+            }
+        },
+        {
+            "name": "manage_{$this->screen->id}_custom_column",
+            "file": "wp-admin/includes/class-wp-application-passwords-list-table.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires for each custom column in the Application Passwords list table.",
+                "long_description": "Custom columns are registered using the {@see 'manage_application-passwords-user_columns'} filter.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.6.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Name of the custom column.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$column_name"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The application password item.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$item"
+                    }
+                ],
+                "long_description_html": "<p>Custom columns are registered using the {@see 'manage_application-passwords-user_columns'} filter.</p>"
+            }
+        },
+        {
+            "name": "manage_{$this->screen->id}_custom_column_js_template",
+            "file": "wp-admin/includes/class-wp-application-passwords-list-table.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires in the JavaScript row template for each custom column in the Application Passwords list table.",
+                "long_description": "Custom columns are registered using the {@see 'manage_application-passwords-user_columns'} filter.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.6.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Name of the custom column.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$column_name"
+                    }
+                ],
+                "long_description_html": "<p>Custom columns are registered using the {@see 'manage_application-passwords-user_columns'} filter.</p>"
             }
         },
         {
@@ -9310,6 +9491,30 @@
                             "string"
                         ],
                         "variable": "$network_plugin"
+                    }
+                ],
+                "long_description_html": ""
+            }
+        },
+        {
+            "name": "network_site_info_form",
+            "file": "wp-admin/network/site-info.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires at the end of the site info form in network admin.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.6.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The site ID.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$id"
                     }
                 ],
                 "long_description_html": ""
@@ -10625,7 +10830,7 @@
         {
             "name": "pre_get_terms",
             "file": "wp-includes/class-wp-term-query.php",
-            "type": "action",
+            "type": "action_reference",
             "doc": {
                 "description": "Fires before terms are retrieved.",
                 "long_description": "",
@@ -10636,7 +10841,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Current instance of WP_Term_Query.",
+                        "content": "Current instance of WP_Term_Query (passed by reference).",
                         "types": [
                             "\\WP_Term_Query"
                         ],
@@ -10649,7 +10854,7 @@
         {
             "name": "pre_get_users",
             "file": "wp-includes/class-wp-user-query.php",
-            "type": "action",
+            "type": "action_reference",
             "doc": {
                 "description": "Fires before the WP_User_Query has been parsed.",
                 "long_description": "The passed WP_User_Query object contains the query variables, not yet passed into SQL.",
@@ -10660,7 +10865,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The current WP_User_Query instance,                            passed by reference.",
+                        "content": "Current instance of WP_User_Query (passed by reference).",
                         "types": [
                             "\\WP_User_Query"
                         ],
@@ -10876,7 +11081,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The current WP_User_Query instance,                            passed by reference.",
+                        "content": "Current instance of WP_User_Query (passed by reference).",
                         "types": [
                             "\\WP_User_Query"
                         ],
@@ -11500,6 +11705,46 @@
             }
         },
         {
+            "name": "rest_after_insert_application_password",
+            "file": "wp-includes/rest-api/endpoints/class-wp-rest-application-passwords-controller.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires after a single application password is completely created or updated via the REST API.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.6.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Inserted or updated password item.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$item"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Request object.",
+                        "types": [
+                            "\\WP_REST_Request"
+                        ],
+                        "variable": "$request"
+                    },
+                    {
+                        "name": "param",
+                        "content": "True when creating an application password, false when updating.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$creating"
+                    }
+                ],
+                "long_description_html": ""
+            }
+        },
+        {
             "name": "rest_after_insert_attachment",
             "file": "wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php",
             "type": "action",
@@ -11704,7 +11949,7 @@
             "file": "wp-includes/rest-api.php",
             "type": "action",
             "doc": {
-                "description": "Fires when preparing to serve an API request.",
+                "description": "Fires when preparing to serve a REST API request.",
                 "long_description": "Endpoint objects should be created and register their hooks on this action rather than another action to ensure they're only loaded when needed.",
                 "tags": [
                     {
@@ -14456,12 +14701,25 @@
                         "content": "2.9.0"
                     },
                     {
+                        "name": "since",
+                        "content": "5.6.0",
+                        "description": "The <code>$previous_status</code> parameter was added."
+                    },
+                    {
                         "name": "param",
                         "content": "Post ID.",
                         "types": [
                             "int"
                         ],
                         "variable": "$post_id"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The status of the post at the point where it was trashed.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$previous_status"
                     }
                 ],
                 "long_description_html": ""
@@ -14541,12 +14799,25 @@
                         "content": "2.9.0"
                     },
                     {
+                        "name": "since",
+                        "content": "5.6.0",
+                        "description": "The <code>$previous_status</code> parameter was added."
+                    },
+                    {
                         "name": "param",
                         "content": "Post ID.",
                         "types": [
                             "int"
                         ],
                         "variable": "$post_id"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The status of the post at the point where it was trashed.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$previous_status"
                     }
                 ],
                 "long_description_html": ""
@@ -15607,6 +15878,55 @@
             }
         },
         {
+            "name": "wp_after_insert_post",
+            "file": "wp-includes/post.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires once a post, its terms and meta data has been saved.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.6.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Post ID.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$post_id"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Post object.",
+                        "types": [
+                            "\\WP_Post"
+                        ],
+                        "variable": "$post"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether this is an existing post being updated.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$update"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Null for new posts, the WP_Post object prior                                  to the update for updated posts.",
+                        "types": [
+                            "null",
+                            "\\WP_Post"
+                        ],
+                        "variable": "$post_before"
+                    }
+                ],
+                "long_description_html": ""
+            }
+        },
+        {
             "name": "wp_ajax_crop_image_pre_save",
             "file": "wp-admin/includes/ajax-actions.php",
             "type": "action",
@@ -15715,6 +16035,126 @@
             }
         },
         {
+            "name": "wp_authenticate_application_password_errors",
+            "file": "wp-includes/user.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires when an application password has been successfully checked as valid.",
+                "long_description": "This allows for plugins to add additional constraints to prevent an application password from being used.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.6.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The error object.",
+                        "types": [
+                            "\\WP_Error"
+                        ],
+                        "variable": "$error"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The user authenticating.",
+                        "types": [
+                            "\\WP_User"
+                        ],
+                        "variable": "$user"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The details about the application password.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$item"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The raw supplied password.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$password"
+                    }
+                ],
+                "long_description_html": "<p>This allows for plugins to add additional constraints to prevent an application password from being used.</p>"
+            }
+        },
+        {
+            "name": "wp_authorize_application_password_form",
+            "file": "wp-admin/authorize-application.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires in the Authorize Application Password form before the submit buttons.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.6.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "{     The array of request data. All arguments are optional and may be empty.     @type string $app_name    The suggested name of the application.     @type string $success_url The url the user will be redirected to after approving the application.     @type string $reject_url  The url the user will be redirected to after rejecting the application. }",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$request"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The user authorizing the application.",
+                        "types": [
+                            "\\WP_User"
+                        ],
+                        "variable": "$user"
+                    }
+                ],
+                "long_description_html": ""
+            }
+        },
+        {
+            "name": "wp_authorize_application_password_request_errors",
+            "file": "wp-admin/includes/user.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires before application password errors are returned.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.6.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The error object.",
+                        "types": [
+                            "\\WP_Error"
+                        ],
+                        "variable": "$error"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The array of request data.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$request"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The user authorizing the application.",
+                        "types": [
+                            "\\WP_User"
+                        ],
+                        "variable": "$user"
+                    }
+                ],
+                "long_description_html": ""
+            }
+        },
+        {
             "name": "wp_before_admin_bar_render",
             "file": "wp-includes/admin-bar.php",
             "type": "action",
@@ -15805,6 +16245,78 @@
                             "string"
                         ],
                         "variable": "$user_agent"
+                    }
+                ],
+                "long_description_html": ""
+            }
+        },
+        {
+            "name": "wp_create_application_password",
+            "file": "wp-includes/class-wp-application-passwords.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires when an application password is created.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.6.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The user ID.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$user_id"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The details about the created password.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$new_item"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The unhashed generated app password.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$new_password"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Information used to create the application password.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$args"
+                    }
+                ],
+                "long_description_html": ""
+            }
+        },
+        {
+            "name": "wp_create_application_password_form",
+            "file": "wp-admin/user-edit.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires in the create Application Passwords form.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.6.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The current WP_User object.",
+                        "types": [
+                            "\\WP_User"
+                        ],
+                        "variable": "$profileuser"
                     }
                 ],
                 "long_description_html": ""
@@ -15957,6 +16469,38 @@
                             "\\WP_Styles"
                         ],
                         "variable": "$this"
+                    }
+                ],
+                "long_description_html": ""
+            }
+        },
+        {
+            "name": "wp_delete_application_password",
+            "file": "wp-includes/class-wp-application-passwords.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires when an application password is deleted.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.6.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The user ID.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$user_id"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The data about the application password.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$item"
                     }
                 ],
                 "long_description_html": ""
@@ -16141,6 +16685,55 @@
                     {
                         "name": "since",
                         "content": "2.8.0"
+                    }
+                ],
+                "long_description_html": ""
+            }
+        },
+        {
+            "name": "wp_error_added",
+            "file": "wp-includes/class-wp-error.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires when an error is added to a WP_Error object.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.6.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Error code.",
+                        "types": [
+                            "string",
+                            "int"
+                        ],
+                        "variable": "$code"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Error message.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$message"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Error data. Might be empty.",
+                        "types": [
+                            "mixed"
+                        ],
+                        "variable": "$data"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The WP_Error object.",
+                        "types": [
+                            "\\WP_Error"
+                        ],
+                        "variable": "$wp_error"
                     }
                 ],
                 "long_description_html": ""
@@ -17088,6 +17681,46 @@
                             "int"
                         ],
                         "variable": "$id"
+                    }
+                ],
+                "long_description_html": ""
+            }
+        },
+        {
+            "name": "wp_update_application_password",
+            "file": "wp-includes/class-wp-application-passwords.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires when an application password is updated.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.6.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The user ID.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$user_id"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The updated app password details.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$item"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The information to update.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$update"
                     }
                 ],
                 "long_description_html": ""
