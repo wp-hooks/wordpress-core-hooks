@@ -15359,46 +15359,6 @@
         },
         {
             "name": "upgrader_overwrote_package",
-            "file": "wp-admin/includes/class-theme-upgrader.php",
-            "type": "action",
-            "doc": {
-                "description": "Fires when the upgrader has successfully overwritten a currently installed plugin or theme with an uploaded zip package.",
-                "long_description": "",
-                "tags": [
-                    {
-                        "name": "since",
-                        "content": "5.5.0"
-                    },
-                    {
-                        "name": "param",
-                        "content": "The package file.",
-                        "types": [
-                            "string"
-                        ],
-                        "variable": "$package"
-                    },
-                    {
-                        "name": "param",
-                        "content": "The new theme data.",
-                        "types": [
-                            "array"
-                        ],
-                        "variable": "$new_theme_data"
-                    },
-                    {
-                        "name": "param",
-                        "content": "The package type (plugin or theme).",
-                        "types": [
-                            "string"
-                        ],
-                        "variable": "$package_type"
-                    }
-                ],
-                "long_description_html": ""
-            }
-        },
-        {
-            "name": "upgrader_overwrote_package",
             "file": "wp-admin/includes/class-plugin-upgrader.php",
             "type": "action",
             "doc": {
@@ -15419,11 +15379,11 @@
                     },
                     {
                         "name": "param",
-                        "content": "The new plugin data.",
+                        "content": "The new plugin or theme data.",
                         "types": [
                             "array"
                         ],
-                        "variable": "$new_plugin_data"
+                        "variable": "$data"
                     },
                     {
                         "name": "param",
