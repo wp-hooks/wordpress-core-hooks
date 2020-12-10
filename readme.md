@@ -84,6 +84,16 @@ Then run:
 
 `composer generate`
 
+Some scripts are available for checking the data:
+
+* Check everything:  
+  `npm run check`
+* Validate the generated actions and filters JSON files:  
+  `npm run validate`
+* Check for duplicate hook names:  
+  `check:duplicate-actions`  
+  `check:duplicate-filters`
+
 ## Hook Files for Plugins
 
 Do you want the same hook files for your favourite plugins? The hook files in this repo are generated using [wp-hooks-generator](https://github.com/johnbillion/wp-hooks-generator). It can generate hook files for WordPress plugins and themes as well as core.

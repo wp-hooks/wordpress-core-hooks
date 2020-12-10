@@ -24,9 +24,9 @@
     "ajv-cli": "^3.3.0"
   },
   "scripts": {
-    "check": "npm run validate:actions && npm run validate:filters && npm run check:actions && npm run check:filters",
-    "check:actions": "bash -c \" diff <(jq '.hooks | map(.name) | sort' hooks/actions.json) <(jq '.hooks | map(.name) | unique | sort' hooks/actions.json)\"",
-    "check:filters": "bash -c \" diff <(jq '.hooks | map(.name) | sort' hooks/filters.json) <(jq '.hooks | map(.name) | unique | sort' hooks/filters.json)\"",
+    "check": "npm run validate:actions && npm run validate:filters && npm run check:duplicate-actions && npm run check:duplicate-filters",
+    "check:duplicate-actions": "bash -c \" diff <(jq '.hooks | map(.name) | sort' hooks/actions.json) <(jq '.hooks | map(.name) | unique | sort' hooks/actions.json)\"",
+    "check:duplicate-filters": "bash -c \" diff <(jq '.hooks | map(.name) | sort' hooks/filters.json) <(jq '.hooks | map(.name) | unique | sort' hooks/filters.json)\"",
     "validate:actions": "ajv validate -s hooks/schema.json -d hooks/actions.json",
     "validate:filters": "ajv validate -s hooks/schema.json -d hooks/filters.json"
   }
