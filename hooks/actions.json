@@ -6306,11 +6306,11 @@
                     },
                     {
                         "name": "param",
-                        "content": "{     An associative array of widget arguments.     @type string   $name        Name of the widget.     @type string   $id          Widget ID.     @type callable $callback    When the hook is fired on the front end, $callback is an array                                 containing the widget object. Fired on the back end, $callback                                 is 'wp_widget_control', see $_callback.     @type array    $params      An associative array of multi-widget arguments.     @type string   $classname   CSS class applied to the widget container.     @type string   $description The widget description.     @type array    $_callback   When the hook is fired on the back end, $_callback is populated                                 with an array containing the widget object, see $callback. }",
+                        "content": "{     An associative array of widget arguments.     @type string   $name        Name of the widget.     @type string   $id          Widget ID.     @type callable $callback    When the hook is fired on the front end, <code>$callback</code> is an array                                 containing the widget object. Fired on the back end, <code>$callback</code>                                 is 'wp_widget_control', see <code>$_callback</code>.     @type array    $params      An associative array of multi-widget arguments.     @type string   $classname   CSS class applied to the widget container.     @type string   $description The widget description.     @type array    $_callback   When the hook is fired on the back end, <code>$_callback</code> is populated                                 with an array containing the widget object, see <code>$callback</code>. }",
                         "types": [
                             "array"
                         ],
-                        "variable": "$widget_id"
+                        "variable": "$widget"
                     }
                 ],
                 "long_description_html": "<p>Note: The action fires on both the front end and back end, including for widgets in the Inactive Widgets sidebar on the Widgets screen.</p> <p>The action is not fired for empty sidebars.</p>"
@@ -7875,7 +7875,7 @@
                         "types": [
                             "\\WP_Widget"
                         ],
-                        "variable": "$this"
+                        "variable": "$widget"
                     },
                     {
                         "name": "param",
@@ -8361,7 +8361,7 @@
                         "types": [
                             "\\WP_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": ""
@@ -8385,7 +8385,7 @@
                         "types": [
                             "\\WP_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": ""
@@ -8409,7 +8409,7 @@
                         "types": [
                             "\\WP_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": ""
@@ -8462,7 +8462,7 @@
         },
         {
             "name": "lostpassword_post",
-            "file": "wp-login.php",
+            "file": "wp-includes/user.php",
             "type": "action",
             "doc": {
                 "description": "Fires before errors are returned from a password reset request.",
@@ -9778,7 +9778,7 @@
                         "types": [
                             "\\WP_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": ""
@@ -9850,7 +9850,7 @@
                         "types": [
                             "\\WP_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": ""
@@ -10758,7 +10758,7 @@
                         "types": [
                             "\\WP_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": "<p>Note: If using conditional tags, use the method versions within the passed instance (e.g. $this-&gt;is_main_query() instead of is_main_query()). This is because the functions like is_main_query() test against the global $wp_query instance, not the passed one.</p>"
@@ -10793,7 +10793,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The array of arguments for building the search form.",
+                        "content": "The array of arguments for building the search form.                    See get_search_form() for information on accepted arguments.",
                         "types": [
                             "array"
                         ],
@@ -10869,7 +10869,7 @@
                         "types": [
                             "\\WP_User_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": "<p>The passed WP_User_Query object contains the query variables, not yet passed into SQL.</p>"
@@ -11085,7 +11085,7 @@
                         "types": [
                             "\\WP_User_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": "<p>The passed WP_User_Query object contains SQL parts formed from parsing the given query.</p>"
@@ -11644,13 +11644,17 @@
             "file": "wp-includes/class-wp-http-requests-hooks.php",
             "type": "action_reference",
             "doc": {
-                "description": "Transforms a native Request hook to a WordPress actions.",
+                "description": "Transforms a native Request hook to a WordPress action.",
                 "long_description": "This action maps Requests internal hook to a native WordPress action.",
                 "tags": [
                     {
                         "name": "see",
                         "content": "",
                         "refers": "https://github.com/rmccue/Requests/blob/master/docs/hooks.md"
+                    },
+                    {
+                        "name": "since",
+                        "content": "4.7.0"
                     },
                     {
                         "name": "param",
@@ -12971,7 +12975,7 @@
                         "types": [
                             "\\WP_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": ""
@@ -14038,7 +14042,7 @@
                     {
                         "name": "since",
                         "content": "4.1.0",
-                        "description": "Introduced <code>$this</code> parameter."
+                        "description": "Introduced <code>$query</code> parameter."
                     },
                     {
                         "name": "param",
@@ -14054,7 +14058,7 @@
                         "types": [
                             "\\WP_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": ""
@@ -15387,7 +15391,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The package type (plugin or theme).",
+                        "content": "The package type ('plugin' or 'theme').",
                         "types": [
                             "string"
                         ],
@@ -16072,6 +16076,51 @@
                     }
                 ],
                 "long_description_html": ""
+            }
+        },
+        {
+            "name": "wp_authorize_application_password_form_approved_no_js",
+            "file": "wp-admin/authorize-application.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires in the Authorize Application Password new password section in the no-JS version.",
+                "long_description": "In most cases, this should be used in combination with the {@see 'wp_application_passwords_approve_app_request_success'} action to ensure that both the JS and no-JS variants are handled.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.6.0"
+                    },
+                    {
+                        "name": "since",
+                        "content": "5.6.1",
+                        "description": "Corrected action name and signature."
+                    },
+                    {
+                        "name": "param",
+                        "content": "The newly generated application password.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$new_password"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The array of request data. All arguments are optional and may be empty.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$request"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The user authorizing the application.",
+                        "types": [
+                            "\\WP_User"
+                        ],
+                        "variable": "$user"
+                    }
+                ],
+                "long_description_html": "<p>In most cases, this should be used in combination with the {@see 'wp_application_passwords_approve_app_request_success'} action to ensure that both the JS and no-JS variants are handled.</p>"
             }
         },
         {
@@ -17515,10 +17564,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "Current comment status. Possible values include                                    'hold', 'approve', 'spam', 'trash', or false.",
+                        "content": "Current comment status. Possible values include                               'hold', '0', 'approve', '1', 'spam', and 'trash'.",
                         "types": [
-                            "string",
-                            "bool"
+                            "string"
                         ],
                         "variable": "$comment_status"
                     }
@@ -18374,12 +18422,34 @@
                         "content": "2.5.0"
                     },
                     {
+                        "name": "since",
+                        "content": "5.7.0",
+                        "description": "Added the <code>$args</code> and <code>$server</code> parameters."
+                    },
+                    {
                         "name": "param",
                         "content": "The method name.",
                         "types": [
                             "string"
                         ],
                         "variable": "$name"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The escaped arguments passed to the method.",
+                        "types": [
+                            "array",
+                            "string"
+                        ],
+                        "variable": "$args"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The XML-RPC server instance.",
+                        "types": [
+                            "\\wp_xmlrpc_server"
+                        ],
+                        "variable": "$server"
                     }
                 ],
                 "long_description_html": "<p>All built-in XML-RPC methods use the action xmlrpc_call, with a parameter equal to the method's name, e.g., wp.getUsersBlogs, wp.newPost, etc.</p>"

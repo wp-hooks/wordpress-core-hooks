@@ -2519,6 +2519,10 @@
                 "long_description": "",
                 "tags": [
                     {
+                        "name": "since",
+                        "content": "5.6.0"
+                    },
+                    {
                         "name": "param",
                         "content": "The current applied classname.",
                         "types": [
@@ -2677,6 +2681,62 @@
                             "string"
                         ],
                         "variable": "$parser_class"
+                    }
+                ],
+                "long_description_html": ""
+            }
+        },
+        {
+            "name": "block_type_metadata",
+            "file": "wp-includes/blocks.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the metadata provided for registering a block type.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.7.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Metadata for registering a block type.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$metadata"
+                    }
+                ],
+                "long_description_html": ""
+            }
+        },
+        {
+            "name": "block_type_metadata_settings",
+            "file": "wp-includes/blocks.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the settings determined from the block type metadata.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.7.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Array of determined settings for registering a block type.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$settings"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Metadata provided for registering a block type.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$metadata"
                     }
                 ],
                 "long_description_html": ""
@@ -3533,9 +3593,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "A comma-separated list of additional classes added to the list.",
+                        "content": "An array of additional classes added to the list.",
                         "types": [
-                            "string"
+                            "string[]"
                         ],
                         "variable": "$class"
                     },
@@ -3796,7 +3856,7 @@
                         "types": [
                             "\\WP_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": ""
@@ -3828,7 +3888,7 @@
                         "types": [
                             "\\WP_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": ""
@@ -3860,7 +3920,7 @@
                         "types": [
                             "\\WP_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": ""
@@ -3892,7 +3952,7 @@
                         "types": [
                             "\\WP_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": ""
@@ -3924,7 +3984,7 @@
                         "types": [
                             "\\WP_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": ""
@@ -4990,7 +5050,7 @@
                         "types": [
                             "\\WP_Comment_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": ""
@@ -5202,7 +5262,7 @@
                         "types": [
                             "\\WP_Comment_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": "<p>Return a non-null value to bypass WordPress' default comment queries.</p> <p>The expected return type from this filter depends on the value passed in the request query vars:</p> <ul> <li>When <code>$this-&gt;query_vars['count']</code> is set, the filter should return the comment count as an integer.</li> <li>When <code>'ids' === $this-&gt;query_vars['fields']</code>, the filter should return an array of comment IDs.</li> <li>Otherwise the filter should return an array of WP_Comment objects.</li> </ul> <p>Note that if the filter returns an array of comment data, it will be assigned to the <code>comments</code> property of the current WP_Comment_Query instance.</p> <p>Filtering functions that require pagination information are encouraged to set the <code>found_comments</code> and <code>max_num_pages</code> properties of the WP_Comment_Query object, passed to the filter by reference. If WP_Comment_Query does not perform a database query, it will not have enough information to generate these values itself.</p>"
@@ -6221,7 +6281,7 @@
                         "types": [
                             "\\WP_Customize_Selective_Refresh"
                         ],
-                        "variable": "$this"
+                        "variable": "$refresh"
                     },
                     {
                         "name": "param",
@@ -6261,7 +6321,7 @@
                         "types": [
                             "\\WP_Customize_Setting"
                         ],
-                        "variable": "$this"
+                        "variable": "$setting"
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;id</code>, refers to the setting ID.</p>"
@@ -6397,7 +6457,7 @@
                         "types": [
                             "\\WP_Customize_Setting"
                         ],
-                        "variable": "$this"
+                        "variable": "$setting"
                     }
                 ],
                 "long_description_html": "<p>Plugins should amend the <code>$validity</code> object via its <code>WP_Error::add()</code> method.</p> <p>The dynamic portion of the hook name, <code>$this-&gt;ID</code>, refers to the setting ID.</p>"
@@ -6434,7 +6494,7 @@
                         "types": [
                             "\\WP_Customize_Setting"
                         ],
-                        "variable": "$this"
+                        "variable": "$setting"
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$id_base</code>, refers to the base slug of the setting name, initialized from <code>$this-&gt;id_data['base']</code>.</p> <p>For settings handled as theme_mods or options, see those corresponding functions for available hooks.</p>"
@@ -7666,7 +7726,7 @@
                         "content": "User ID if one has been determined, false otherwise.",
                         "types": [
                             "int",
-                            "bool"
+                            "false"
                         ],
                         "variable": "$user_id"
                     }
@@ -9127,7 +9187,7 @@
                         "name": "param",
                         "content": "{     Indexed array of the embed width and height in pixels.     @type int $0 The embed width.     @type int $1 The embed height. }",
                         "types": [
-                            "array"
+                            "int[]"
                         ],
                         "variable": "$size"
                     },
@@ -9770,7 +9830,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters whether to allow the debug mode check to occur.",
-                "long_description": "This filter runs before it can be used by plugins. It is designed for non-web run-times. Returning false causes the `WP_DEBUG` and related constants to not be checked and the default PHP values for errors will be used unless you take care to update them yourself.",
+                "long_description": "This filter runs before it can be used by plugins. It is designed for non-web run-times. Returning false causes the `WP_DEBUG` and related constants to not be checked and the default PHP values for errors will be used unless you take care to update them yourself.\n To use this filter you must define a `$wp_filter` global before WordPress loads, usually in `wp-config.php`.\n Example:\n     $GLOBALS['wp_filter'] = array(         'enable_wp_debug_mode_checks' => array(             10 => array(                 array(                     'accepted_args' => 0,                     'function'      => function() {                         return false;                     },                 ),             ),         ),     );",
                 "tags": [
                     {
                         "name": "since",
@@ -9785,7 +9845,7 @@
                         "variable": "$enable_debug_mode"
                     }
                 ],
-                "long_description_html": "<p>This filter runs before it can be used by plugins. It is designed for non-web run-times. Returning false causes the <code>WP_DEBUG</code> and related constants to not be checked and the default PHP values for errors will be used unless you take care to update them yourself.</p>"
+                "long_description_html": "<p>This filter runs before it can be used by plugins. It is designed for non-web run-times. Returning false causes the <code>WP_DEBUG</code> and related constants to not be checked and the default PHP values for errors will be used unless you take care to update them yourself.</p> <p>To use this filter you must define a <code>$wp_filter</code> global before WordPress loads, usually in <code>wp-config.php</code>.</p> <p>Example:</p> <pre><code>$GLOBALS['wp_filter'] = array(\n    'enable_wp_debug_mode_checks' =&gt; array(\n        10 =&gt; array(\n            array(\n                'accepted_args' =&gt; 0,\n                'function'      =&gt; function() {\n                    return false;\n                },\n            ),\n        ),\n    ),\n);</code></pre>"
             }
         },
         {
@@ -10752,7 +10812,7 @@
                         "types": [
                             "\\WP_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": ""
@@ -10784,7 +10844,7 @@
                         "types": [
                             "\\WP_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": ""
@@ -10857,7 +10917,7 @@
                         "types": [
                             "\\WP_User_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": ""
@@ -13548,6 +13608,11 @@
                         "content": "4.4.0"
                     },
                     {
+                        "name": "since",
+                        "content": "5.7.0",
+                        "description": "The attachment post type is now passed through this filter."
+                    },
+                    {
                         "name": "param",
                         "content": "The post status.",
                         "types": [
@@ -13797,7 +13862,7 @@
                         "content": "Schedule for the hook. False if not found.",
                         "types": [
                             "string",
-                            "bool"
+                            "false"
                         ],
                         "variable": "$schedule"
                     },
@@ -13811,7 +13876,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Optional. Arguments to pass to the hook's callback function.",
+                        "content": "Arguments to pass to the hook's callback function.",
                         "types": [
                             "array"
                         ],
@@ -13848,7 +13913,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The array of arguments for building the search form.",
+                        "content": "The array of arguments for building the search form.                     See get_search_form() for information on accepted arguments.",
                         "types": [
                             "array"
                         ],
@@ -15076,9 +15141,10 @@
                     },
                     {
                         "name": "param",
-                        "content": "Array of excluded term IDs.",
+                        "content": "Array of excluded term IDs. Empty string if none were provided.",
                         "types": [
-                            "array"
+                            "array",
+                            "string"
                         ],
                         "variable": "$excluded_terms"
                     }
@@ -18901,7 +18967,8 @@
                         "name": "param",
                         "content": "Current image URL.",
                         "types": [
-                            "string"
+                            "string",
+                            "false"
                         ],
                         "variable": "$image_url"
                     },
@@ -18984,7 +19051,7 @@
                         "content": "File path or URL to current image, or false.",
                         "types": [
                             "string",
-                            "bool"
+                            "false"
                         ],
                         "variable": "$filepath"
                     },
@@ -19224,8 +19291,8 @@
             "file": "wp-includes/wp-db.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the custom query data being logged.",
-                "long_description": "Caution should be used when modifying any of this data, it is recommended that any additional information you need to store about a query be added as a new associative entry to the fourth element $query_data.",
+                "description": "Filters the custom data to log alongside a query.",
+                "long_description": "Caution should be used when modifying any of this data, it is recommended that any additional information you need to store about a query be added as a new associative array element.",
                 "tags": [
                     {
                         "name": "since",
@@ -19272,7 +19339,7 @@
                         "variable": "$query_start"
                     }
                 ],
-                "long_description_html": "<p>Caution should be used when modifying any of this data, it is recommended that any additional information you need to store about a query be added as a new associative entry to the fourth element $query_data.</p>"
+                "long_description_html": "<p>Caution should be used when modifying any of this data, it is recommended that any additional information you need to store about a query be added as a new associative array element.</p>"
             }
         },
         {
@@ -19618,6 +19685,30 @@
             }
         },
         {
+            "name": "login_site_html_link",
+            "file": "wp-login.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filter the \"Go to site\" link displayed in the login page footer.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.7.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "HTML link to the home URL of the current site.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$link"
+                    }
+                ],
+                "long_description_html": ""
+            }
+        },
+        {
             "name": "login_title",
             "file": "wp-login.php",
             "type": "filter",
@@ -19792,7 +19883,7 @@
         },
         {
             "name": "lostpassword_errors",
-            "file": "wp-login.php",
+            "file": "wp-includes/user.php",
             "type": "filter",
             "doc": {
                 "description": "Filters the errors encountered on a password reset request.",
@@ -19877,6 +19968,39 @@
                     }
                 ],
                 "long_description_html": ""
+            }
+        },
+        {
+            "name": "lostpassword_user_data",
+            "file": "wp-includes/user.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the user data during a password reset request.",
+                "long_description": "Allows, for example, custom validation using data other than username or email address.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.7.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "WP_User object if found, false if the user does not exist.",
+                        "types": [
+                            "\\WP_User",
+                            "false"
+                        ],
+                        "variable": "$user_data"
+                    },
+                    {
+                        "name": "param",
+                        "content": "A WP_Error object containing any errors generated                                 by using invalid credentials.",
+                        "types": [
+                            "\\WP_Error"
+                        ],
+                        "variable": "$errors"
+                    }
+                ],
+                "long_description_html": "<p>Allows, for example, custom validation using data other than username or email address.</p>"
             }
         },
         {
@@ -20260,7 +20384,7 @@
             "file": "wp-includes/capabilities.php",
             "type": "filter",
             "doc": {
-                "description": "Filters a user's capabilities depending on specific context and/or privilege.",
+                "description": "Filters the primitive capabilities required of the given user to satisfy the capability being checked.",
                 "long_description": "",
                 "tags": [
                     {
@@ -20269,7 +20393,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Array of the user's capabilities.",
+                        "content": "Primitive capabilities required of the user.",
                         "types": [
                             "string[]"
                         ],
@@ -20277,7 +20401,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Capability name.",
+                        "content": "Capability being checked.",
                         "types": [
                             "string"
                         ],
@@ -20293,7 +20417,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Adds the context to the cap. Typically the object ID.",
+                        "content": "Adds context to the capability check, typically                          starting with an object ID.",
                         "types": [
                             "array"
                         ],
@@ -21116,7 +21240,7 @@
                         "content": "Table alias, or false if none was found.",
                         "types": [
                             "string",
-                            "bool"
+                            "false"
                         ],
                         "variable": "$alias"
                     },
@@ -22516,7 +22640,7 @@
                         "types": [
                             "\\WP_Network_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": ""
@@ -22555,7 +22679,7 @@
                         "types": [
                             "\\WP_Network_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": "<p>Return a non-null value to bypass WordPress' default network queries.</p> <p>The expected return type from this filter depends on the value passed in the request query vars:</p> <ul> <li>When <code>$this-&gt;query_vars['count']</code> is set, the filter should return the network count as an integer.</li> <li>When <code>'ids' === $this-&gt;query_vars['fields']</code>, the filter should return an array of network IDs.</li> <li>Otherwise the filter should return an array of WP_Network objects.</li> </ul> <p>Note that if the filter returns an array of network data, it will be assigned to the <code>networks</code> property of the current WP_Network_Query instance.</p> <p>Filtering functions that require pagination information are encouraged to set the <code>found_networks</code> and <code>max_num_pages</code> properties of the WP_Network_Query object, passed to the filter by reference. If WP_Network_Query does not perform a database query, it will not have enough information to generate these values itself.</p>"
@@ -24341,6 +24465,38 @@
             }
         },
         {
+            "name": "paginate_links_output",
+            "file": "wp-includes/general-template.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the HTML output of paginated links for archives.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.7.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "HTML output.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$r"
+                    },
+                    {
+                        "name": "param",
+                        "content": "An array of arguments. See paginate_links()                     for information on accepted arguments.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$args"
+                    }
+                ],
+                "long_description_html": ""
+            }
+        },
+        {
             "name": "parent_file",
             "file": "wp-admin/menu-header.php",
             "type": "filter",
@@ -25812,7 +25968,7 @@
                         "types": [
                             "\\WP_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": ""
@@ -25844,7 +26000,7 @@
                         "types": [
                             "\\WP_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": "<p>For use by caching plugins.</p>"
@@ -26542,7 +26698,7 @@
                         "types": [
                             "\\WP_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": "<p>Covers the WHERE, GROUP BY, JOIN, ORDER BY, DISTINCT, fields (SELECT), and LIMITS clauses.</p>"
@@ -26574,7 +26730,7 @@
                         "types": [
                             "\\WP_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": "<p>For use by caching plugins.</p> <p>Covers the WHERE, GROUP BY, JOIN, ORDER BY, DISTINCT, fields (SELECT), and LIMITS clauses.</p>"
@@ -26606,7 +26762,7 @@
                         "types": [
                             "\\WP_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": ""
@@ -26638,7 +26794,7 @@
                         "types": [
                             "\\WP_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": "<p>For use by caching plugins.</p>"
@@ -26670,7 +26826,7 @@
                         "types": [
                             "\\WP_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": ""
@@ -26702,7 +26858,7 @@
                         "types": [
                             "\\WP_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": "<p>For use by caching plugins.</p>"
@@ -26734,7 +26890,7 @@
                         "types": [
                             "\\WP_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": ""
@@ -26766,7 +26922,7 @@
                         "types": [
                             "\\WP_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": "<p>For use by caching plugins.</p>"
@@ -26798,7 +26954,7 @@
                         "types": [
                             "\\WP_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": ""
@@ -26830,7 +26986,7 @@
                         "types": [
                             "\\WP_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": "<p>Specifically for manipulating paging queries.</p>"
@@ -26862,7 +27018,7 @@
                         "types": [
                             "\\WP_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": "<p>For use by caching plugins.</p>"
@@ -26894,7 +27050,7 @@
                         "types": [
                             "\\WP_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": ""
@@ -26926,7 +27082,7 @@
                         "types": [
                             "\\WP_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": "<p>For use by caching plugins.</p>"
@@ -26946,9 +27102,10 @@
                     },
                     {
                         "name": "param",
-                        "content": "Return an array of post data to short-circuit WP's query,                          or null to allow WP to run its normal queries.",
+                        "content": "Return an array of post data to short-circuit WP's query,                                    or null to allow WP to run its normal queries.",
                         "types": [
-                            "array",
+                            "\\WP_Post[]",
+                            "int[]",
                             "null"
                         ],
                         "variable": "$posts"
@@ -26959,7 +27116,7 @@
                         "types": [
                             "\\WP_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": "<p>Return a non-null value to bypass WordPress' default post queries.</p> <p>Filtering functions that require pagination information are encouraged to set the <code>found_posts</code> and <code>max_num_pages</code> properties of the WP_Query object, passed to the filter by reference. If WP_Query does not perform a database query, it will not have enough information to generate these values itself.</p>"
@@ -26991,7 +27148,7 @@
                         "types": [
                             "\\WP_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": ""
@@ -27023,7 +27180,7 @@
                         "types": [
                             "\\WP_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": ""
@@ -27055,7 +27212,7 @@
                         "types": [
                             "\\WP_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": ""
@@ -27087,7 +27244,7 @@
                         "types": [
                             "\\WP_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": ""
@@ -27119,7 +27276,7 @@
                         "types": [
                             "\\WP_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": ""
@@ -27151,7 +27308,7 @@
                         "types": [
                             "\\WP_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": ""
@@ -27183,7 +27340,7 @@
                         "types": [
                             "\\WP_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": "<p>Specifically for manipulating paging queries.</p>"
@@ -27215,7 +27372,7 @@
                         "types": [
                             "\\WP_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": "<p>For use by caching plugins.</p>"
@@ -27337,12 +27494,18 @@
                         "content": "5.1.0"
                     },
                     {
+                        "name": "since",
+                        "content": "5.7.0",
+                        "description": "The <code>$wp_error</code> parameter was added, and a <code>WP_Error</code> object can now be returned."
+                    },
+                    {
                         "name": "param",
                         "content": "Value to return instead. Default null to continue unscheduling the event.",
                         "types": [
                             "null",
                             "int",
-                            "false"
+                            "false",
+                            "\\WP_Error"
                         ],
                         "variable": "$pre"
                     },
@@ -27361,6 +27524,14 @@
                             "array"
                         ],
                         "variable": "$args"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether to return a WP_Error on failure.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$wp_error"
                     }
                 ],
                 "long_description_html": "<p>Returning a non-null value will short-circuit the normal unscheduling process, causing the function to return the filtered value instead.</p> <p>For plugins replacing wp-cron, return the number of events successfully unscheduled (zero if no events were registered with the hook) or false if unscheduling one or more events fails.</p>"
@@ -28051,7 +28222,7 @@
                         "content": "Network value to return by path. Default null                                       to continue retrieving the network.",
                         "types": [
                             "null",
-                            "bool",
+                            "false",
                             "\\WP_Network"
                         ],
                         "variable": "$network"
@@ -28584,6 +28755,39 @@
             }
         },
         {
+            "name": "pre_months_dropdown_query",
+            "file": "wp-admin/includes/class-wp-list-table.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters to short-circuit performing the months dropdown query.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.7.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "'Months' drop-down results. Default false.",
+                        "types": [
+                            "object[]",
+                            "false"
+                        ],
+                        "variable": "$months"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The post type.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$post_type"
+                    }
+                ],
+                "long_description_html": ""
+            }
+        },
+        {
             "name": "pre_move_uploaded_file",
             "file": "wp-admin/includes/file.php",
             "type": "filter",
@@ -28933,11 +29137,17 @@
                         "content": "5.1.0"
                     },
                     {
+                        "name": "since",
+                        "content": "5.7.0",
+                        "description": "The <code>$wp_error</code> parameter was added, and a <code>WP_Error</code> object can now be returned."
+                    },
+                    {
                         "name": "param",
                         "content": "Value to return instead. Default null to continue adding the event.",
                         "types": [
                             "null",
-                            "bool"
+                            "bool",
+                            "\\WP_Error"
                         ],
                         "variable": "$pre"
                     },
@@ -28948,6 +29158,14 @@
                             "\\stdClass"
                         ],
                         "variable": "$event"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether to return a WP_Error on failure.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$wp_error"
                     }
                 ],
                 "long_description_html": "<p>Returning a non-null value will short-circuit the normal rescheduling process, causing the function to return the filtered value instead.</p> <p>For plugins replacing wp-cron, return true if the event was successfully rescheduled, false if not.</p>"
@@ -28959,18 +29177,24 @@
             "type": "filter",
             "doc": {
                 "description": "Filter to preflight or hijack scheduling an event.",
-                "long_description": "Returning a non-null value will short-circuit adding the event to the cron array, causing the function to return the filtered value instead.\n Both single events and recurring events are passed through this filter; single events have `$event->schedule` as false, whereas recurring events have this set to a recurrence from wp_get_schedules(). Recurring events also have the integer recurrence interval set as `$event->interval`.\n For plugins replacing wp-cron, it is recommended you check for an identical event within ten minutes and apply the {@see 'schedule_event'} filter to check if another plugin has disallowed the event before scheduling.\n Return true if the event was scheduled, false if not.",
+                "long_description": "Returning a non-null value will short-circuit adding the event to the cron array, causing the function to return the filtered value instead.\n Both single events and recurring events are passed through this filter; single events have `$event->schedule` as false, whereas recurring events have this set to a recurrence from wp_get_schedules(). Recurring events also have the integer recurrence interval set as `$event->interval`.\n For plugins replacing wp-cron, it is recommended you check for an identical event within ten minutes and apply the {@see 'schedule_event'} filter to check if another plugin has disallowed the event before scheduling.\n Return true if the event was scheduled, false or a WP_Error if not.",
                 "tags": [
                     {
                         "name": "since",
                         "content": "5.1.0"
                     },
                     {
+                        "name": "since",
+                        "content": "5.7.0",
+                        "description": "The <code>$wp_error</code> parameter was added, and a <code>WP_Error</code> object can now be returned."
+                    },
+                    {
                         "name": "param",
                         "content": "Value to return instead. Default null to continue adding the event.",
                         "types": [
                             "null",
-                            "bool"
+                            "bool",
+                            "\\WP_Error"
                         ],
                         "variable": "$pre"
                     },
@@ -28981,9 +29205,17 @@
                             "\\stdClass"
                         ],
                         "variable": "$event"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether to return a WP_Error on failure.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$wp_error"
                     }
                 ],
-                "long_description_html": "<p>Returning a non-null value will short-circuit adding the event to the cron array, causing the function to return the filtered value instead.</p> <p>Both single events and recurring events are passed through this filter; single events have <code>$event-&gt;schedule</code> as false, whereas recurring events have this set to a recurrence from wp_get_schedules(). Recurring events also have the integer recurrence interval set as <code>$event-&gt;interval</code>.</p> <p>For plugins replacing wp-cron, it is recommended you check for an identical event within ten minutes and apply the {@see 'schedule_event'} filter to check if another plugin has disallowed the event before scheduling.</p> <p>Return true if the event was scheduled, false if not.</p>"
+                "long_description_html": "<p>Returning a non-null value will short-circuit adding the event to the cron array, causing the function to return the filtered value instead.</p> <p>Both single events and recurring events are passed through this filter; single events have <code>$event-&gt;schedule</code> as false, whereas recurring events have this set to a recurrence from wp_get_schedules(). Recurring events also have the integer recurrence interval set as <code>$event-&gt;interval</code>.</p> <p>For plugins replacing wp-cron, it is recommended you check for an identical event within ten minutes and apply the {@see 'schedule_event'} filter to check if another plugin has disallowed the event before scheduling.</p> <p>Return true if the event was scheduled, false or a WP_Error if not.</p>"
             }
         },
         {
@@ -29357,11 +29589,17 @@
                         "content": "5.1.0"
                     },
                     {
+                        "name": "since",
+                        "content": "5.7.0",
+                        "description": "The <code>$wp_error</code> parameter was added, and a <code>WP_Error</code> object can now be returned."
+                    },
+                    {
                         "name": "param",
                         "content": "Value to return instead. Default null to continue unscheduling the event.",
                         "types": [
                             "null",
-                            "bool"
+                            "bool",
+                            "\\WP_Error"
                         ],
                         "variable": "$pre"
                     },
@@ -29388,6 +29626,14 @@
                             "array"
                         ],
                         "variable": "$args"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether to return a WP_Error on failure.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$wp_error"
                     }
                 ],
                 "long_description_html": "<p>Returning a non-null value will short-circuit the normal unscheduling process, causing the function to return the filtered value instead.</p> <p>For plugins replacing wp-cron, return true if the event was successfully unscheduled, false if not.</p>"
@@ -29406,12 +29652,18 @@
                         "content": "5.1.0"
                     },
                     {
+                        "name": "since",
+                        "content": "5.7.0",
+                        "description": "The <code>$wp_error</code> parameter was added, and a <code>WP_Error</code> object can now be returned."
+                    },
+                    {
                         "name": "param",
                         "content": "Value to return instead. Default null to continue unscheduling the hook.",
                         "types": [
                             "null",
                             "int",
-                            "false"
+                            "false",
+                            "\\WP_Error"
                         ],
                         "variable": "$pre"
                     },
@@ -29422,6 +29674,14 @@
                             "string"
                         ],
                         "variable": "$hook"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether to return a WP_Error on failure.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$wp_error"
                     }
                 ],
                 "long_description_html": "<p>Returning a non-null value will short-circuit the normal unscheduling process, causing the function to return the filtered value instead.</p> <p>For plugins replacing wp-cron, return the number of events successfully unscheduled (zero if no events were registered with the hook) or false if unscheduling one or more events fails.</p>"
@@ -29943,6 +30203,39 @@
             }
         },
         {
+            "name": "pre_wp_mail",
+            "file": "wp-includes/pluggable.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters whether to preempt sending an email.",
+                "long_description": "Returning a non-null value will short-circuit {@see wp_mail()}, returning that value instead. A boolean return value should be used to indicate whether the email was successfully sent.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.7.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Short-circuit return value.",
+                        "types": [
+                            "null",
+                            "bool"
+                        ],
+                        "variable": "$return"
+                    },
+                    {
+                        "name": "param",
+                        "content": "{     Array of the <code>wp_mail()</code> arguments.     @type string|string[] $to          Array or comma-separated list of email addresses to send message.     @type string          $subject     Email subject.     @type string          $message     Message contents.     @type string|string[] $headers     Additional headers.     @type string|string[] $attachments Paths to files to attach. }",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$atts"
+                    }
+                ],
+                "long_description_html": "<p>Returning a non-null value will short-circuit {@see wp_mail()}, returning that value instead. A boolean return value should be used to indicate whether the email was successfully sent.</p>"
+            }
+        },
+        {
             "name": "pre_wp_nav_menu",
             "file": "wp-includes/nav-menu-template.php",
             "type": "filter",
@@ -30125,6 +30418,31 @@
                     }
                 ],
                 "long_description_html": ""
+            }
+        },
+        {
+            "name": "pre_wp_update_https_detection_errors",
+            "file": "wp-includes/https-detection.php",
+            "type": "filter",
+            "doc": {
+                "description": "Short-circuits the process of detecting errors related to HTTPS support.",
+                "long_description": "Returning a `WP_Error` from the filter will effectively short-circuit the default logic of trying a remote request to the site over HTTPS, storing the errors array from the returned `WP_Error` instead.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.7.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Error object to short-circuit detection,                           or null to continue with the default behavior.",
+                        "types": [
+                            "null",
+                            "\\WP_Error"
+                        ],
+                        "variable": "$pre"
+                    }
+                ],
+                "long_description_html": "<p>Returning a <code>WP_Error</code> from the filter will effectively short-circuit the default logic of trying a remote request to the site over HTTPS, storing the errors array from the returned <code>WP_Error</code> instead.</p>"
             }
         },
         {
@@ -31362,7 +31680,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Array of arguments for registering a post type.",
+                        "content": "Array of arguments for registering a post type.                          See the register_post_type() function for accepted arguments.",
                         "types": [
                             "array"
                         ],
@@ -31471,7 +31789,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Array of arguments for registering a taxonomy.",
+                        "content": "Array of arguments for registering a taxonomy.                              See the register_taxonomy() function for accepted arguments.",
                         "types": [
                             "array"
                         ],
@@ -31590,7 +31908,7 @@
             "file": "wp-includes/functions.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the list of query variables to remove.",
+                "description": "Filters the list of query variable names to remove.",
                 "long_description": "",
                 "tags": [
                     {
@@ -31599,7 +31917,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "An array of query variables to remove from a URL.",
+                        "content": "An array of query variable names to remove from a URL.",
                         "types": [
                             "string[]"
                         ],
@@ -31703,6 +32021,38 @@
                     }
                 ],
                 "long_description_html": ""
+            }
+        },
+        {
+            "name": "render_block_{$this->name}",
+            "file": "wp-includes/class-wp-block.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the content of a single block.",
+                "long_description": "The dynamic portion of the hook name, `$name`, refers to the block name, e.g. \"core/paragraph\".",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.7.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The block content about to be appended.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$block_content"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The full block, including name and attributes.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$block"
+                    }
+                ],
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$name</code>, refers to the block name, e.g. \"core/paragraph\".</p>"
             }
         },
         {
@@ -31876,7 +32226,7 @@
             "file": "wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php",
             "type": "filter",
             "doc": {
-                "description": "Filters whether comments can be created without authentication.",
+                "description": "Filters whether comments can be created via the REST API without authentication.",
                 "long_description": "Enables creating comments for anonymous users.",
                 "tags": [
                     {
@@ -31908,7 +32258,7 @@
             "file": "wp-includes/rest-api/class-wp-rest-server.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the list of request headers that are allowed for CORS requests.",
+                "description": "Filters the list of request headers that are allowed for REST API CORS requests.",
                 "long_description": "The allowed headers are passed to the browser to specify which headers can be passed to the REST API. By default, we allow the Content-* headers needed to upload files to the media endpoints. As well as the Authorization and Nonce headers for allowing authentication.",
                 "tags": [
                     {
@@ -31917,7 +32267,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The list of headers to allow.",
+                        "content": "The list of request headers to allow.",
                         "types": [
                             "string[]"
                         ],
@@ -31932,7 +32282,7 @@
             "file": "wp-includes/rest-api/class-wp-rest-server.php",
             "type": "filter",
             "doc": {
-                "description": "Filters REST authentication errors.",
+                "description": "Filters REST API authentication errors.",
                 "long_description": "This is used to pass a WP_Error from an authentication method back to the API.\n Authentication methods should check first if they're being used, as multiple authentication methods can be enabled on a site (cookies, HTTP basic auth, OAuth). If the authentication method hooked in is not actually being attempted, null should be returned to indicate another authentication method should check instead. Similarly, callbacks should ensure the value is `null` before checking for errors.\n A WP_Error instance can be returned if an error occurs, and this should match the format used by API methods internally (that is, the `status` data should be used). A callback can return `true` to indicate that the authentication method was used, and it succeeded.",
                 "tags": [
                     {
@@ -31982,7 +32332,7 @@
             "file": "wp-includes/rest-api/endpoints/class-wp-rest-block-directory-controller.php",
             "type": "filter",
             "doc": {
-                "description": "Filters collection parameters for the block directory controller.",
+                "description": "Filters REST API collection parameters for the block directory controller.",
                 "long_description": "",
                 "tags": [
                     {
@@ -32006,7 +32356,7 @@
             "file": "wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php",
             "type": "filter",
             "doc": {
-                "description": "Filters collection parameters for the comments controller.",
+                "description": "Filters REST API collection parameters for the comments controller.",
                 "long_description": "This filter registers the collection parameter, but does not map the collection parameter to an internal WP_Comment_Query parameter. Use the `rest_comment_query` filter to set WP_Comment_Query parameters.",
                 "tags": [
                     {
@@ -32067,8 +32417,8 @@
             "file": "wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php",
             "type": "filter",
             "doc": {
-                "description": "Filters whether a comment can be trashed.",
-                "long_description": "Return false to disable Trash support for the post.",
+                "description": "Filters whether a comment can be trashed via the REST API.",
+                "long_description": "Return false to disable trash support for the comment.",
                 "tags": [
                     {
                         "name": "since",
@@ -32076,7 +32426,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Whether the post type support trashing.",
+                        "content": "Whether the comment supports trashing.",
                         "types": [
                             "bool"
                         ],
@@ -32086,12 +32436,12 @@
                         "name": "param",
                         "content": "The comment object being considered for trashing support.",
                         "types": [
-                            "\\WP_Post"
+                            "\\WP_Comment"
                         ],
                         "variable": "$comment"
                     }
                 ],
-                "long_description_html": "<p>Return false to disable Trash support for the post.</p>"
+                "long_description_html": "<p>Return false to disable trash support for the comment.</p>"
             }
         },
         {
@@ -32099,7 +32449,7 @@
             "file": "wp-includes/rest-api/class-wp-rest-server.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the REST dispatch request result.",
+                "description": "Filters the REST API dispatch request result.",
                 "long_description": "Allow plugins to override dispatching the request.",
                 "tags": [
                     {
@@ -32152,7 +32502,7 @@
             "file": "wp-includes/rest-api/class-wp-rest-server.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the array of available endpoints.",
+                "description": "Filters the array of available REST API endpoints.",
                 "long_description": "",
                 "tags": [
                     {
@@ -32176,7 +32526,7 @@
             "file": "wp-includes/rest-api/class-wp-rest-server.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the REST endpoint data.",
+                "description": "Filters the REST API endpoint data.",
                 "long_description": "",
                 "tags": [
                     {
@@ -32200,7 +32550,7 @@
             "file": "wp-includes/rest-api/class-wp-rest-server.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the enveloped form of a response.",
+                "description": "Filters the enveloped form of a REST API response.",
                 "long_description": "",
                 "tags": [
                     {
@@ -32209,7 +32559,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Envelope data.",
+                        "content": "{     Envelope data.     @type array $body    Response data.     @type int   $status  The 3-digit HTTP status code.     @type array $headers Map of header name to header value. }",
                         "types": [
                             "array"
                         ],
@@ -32232,7 +32582,7 @@
             "file": "wp-includes/rest-api/class-wp-rest-server.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the list of response headers that are exposed to CORS requests.",
+                "description": "Filters the list of response headers that are exposed to REST API CORS requests.",
                 "long_description": "",
                 "tags": [
                     {
@@ -32241,7 +32591,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The list of headers to expose.",
+                        "content": "The list of response headers to expose.",
                         "types": [
                             "string[]"
                         ],
@@ -32256,9 +32606,13 @@
             "file": "wp-includes/rest-api/class-wp-rest-server.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the maximum number of requests that can be included in a batch.",
+                "description": "Filters the maximum number of REST API requests that can be included in a batch.",
                 "long_description": "",
                 "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.6.0"
+                    },
                     {
                         "name": "param",
                         "content": "The maximum size.",
@@ -32300,7 +32654,7 @@
             "file": "wp-includes/rest-api/class-wp-rest-server.php",
             "type": "filter",
             "doc": {
-                "description": "Filters whether jsonp is enabled.",
+                "description": "Filters whether JSONP is enabled for the REST API.",
                 "long_description": "",
                 "tags": [
                     {
@@ -32309,7 +32663,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Whether jsonp is enabled. Default true.",
+                        "content": "Whether JSONP is enabled. Default true.",
                         "types": [
                             "bool"
                         ],
@@ -32324,7 +32678,7 @@
             "file": "wp-includes/rest-api/class-wp-rest-server.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the namespace index data.",
+                "description": "Filters the REST API namespace index data.",
                 "long_description": "This typically is just the route data for the namespace, but you can add any data you'd like here.",
                 "tags": [
                     {
@@ -32422,7 +32776,7 @@
                         "types": [
                             "\\WP_REST_Server"
                         ],
-                        "variable": "$this"
+                        "variable": "$server"
                     },
                     {
                         "name": "param",
@@ -32441,7 +32795,7 @@
             "file": "wp-includes/rest-api/search/class-wp-rest-post-format-search-handler.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the query arguments for a search request.",
+                "description": "Filters the query arguments for a REST API search request.",
                 "long_description": "Enables adding extra arguments or setting defaults for a post format search request.",
                 "tags": [
                     {
@@ -32473,7 +32827,7 @@
             "file": "wp-includes/rest-api/search/class-wp-rest-post-search-handler.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the query arguments for a search request.",
+                "description": "Filters the query arguments for a REST API search request.",
                 "long_description": "Enables adding extra arguments or setting defaults for a post search request.",
                 "tags": [
                     {
@@ -32505,7 +32859,7 @@
             "file": "wp-includes/rest-api/class-wp-rest-server.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the pre-calculated result of a REST dispatch request.",
+                "description": "Filters the pre-calculated result of a REST API dispatch request.",
                 "long_description": "Allow hijacking the request before dispatching by returning a non-empty. The returned value will be used to serve the request instead.",
                 "tags": [
                     {
@@ -32526,7 +32880,7 @@
                         "types": [
                             "\\WP_REST_Server"
                         ],
-                        "variable": "$this"
+                        "variable": "$server"
                     },
                     {
                         "name": "param",
@@ -32566,7 +32920,7 @@
                         "types": [
                             "\\WP_REST_Server"
                         ],
-                        "variable": "$this"
+                        "variable": "$server"
                     },
                     {
                         "name": "param",
@@ -32828,7 +33182,7 @@
                         "types": [
                             "\\WP_REST_Server"
                         ],
-                        "variable": "$this"
+                        "variable": "$server"
                     }
                 ],
                 "long_description_html": "<p>Allow sending the request manually - by returning true, the API result will not be sent to the client.</p>"
@@ -32839,7 +33193,7 @@
             "file": "wp-includes/rest-api/endpoints/class-wp-rest-settings-controller.php",
             "type": "filter",
             "doc": {
-                "description": "Filters whether to preempt a setting value update.",
+                "description": "Filters whether to preempt a setting value update via the REST API.",
                 "long_description": "Allows hijacking the setting update logic and overriding the built-in behavior by returning true.",
                 "tags": [
                     {
@@ -33087,7 +33441,7 @@
             "file": "wp-includes/rest-api/endpoints/class-wp-rest-plugins-controller.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the plugin data for a response.",
+                "description": "Filters plugin data for a REST API response.",
                 "long_description": "",
                 "tags": [
                     {
@@ -33207,7 +33561,7 @@
             "file": "wp-includes/rest-api/endpoints/class-wp-rest-post-statuses-controller.php",
             "type": "filter",
             "doc": {
-                "description": "Filters a status returned from the REST API.",
+                "description": "Filters a post status returned from the REST API.",
                 "long_description": "Allows modification of the status data right before it is returned.",
                 "tags": [
                     {
@@ -33224,7 +33578,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The original status object.",
+                        "content": "The original post status object.",
                         "types": [
                             "object"
                         ],
@@ -33367,8 +33721,8 @@
             "file": "wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the post data for a response.",
-                "long_description": "The dynamic portion of the hook name, `$this->post_type`, refers to the post type slug.",
+                "description": "Filters the post data for a REST API response.",
+                "long_description": "The dynamic portion of the hook name, `$this->post_type`, refers to the post type slug.\n Possible filter names include:\n  - `rest_prepare_post`  - `rest_prepare_page`  - `rest_prepare_attachment`",
                 "tags": [
                     {
                         "name": "since",
@@ -33399,7 +33753,7 @@
                         "variable": "$request"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;post_type</code>, refers to the post type slug.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;post_type</code>, refers to the post type slug.</p> <p>Possible filter names include:</p> <ul> <li><code>rest_prepare_post</code></li> <li><code>rest_prepare_page</code></li> <li><code>rest_prepare_attachment</code></li> </ul>"
             }
         },
         {
@@ -33407,8 +33761,8 @@
             "file": "wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php",
             "type": "filter",
             "doc": {
-                "description": "Filters a term item returned from the REST API.",
-                "long_description": "The dynamic portion of the hook name, `$this->taxonomy`, refers to the taxonomy slug.\n Allows modification of the term data right before it is returned.",
+                "description": "Filters the term data for a REST API response.",
+                "long_description": "The dynamic portion of the hook name, `$this->taxonomy`, refers to the taxonomy slug.\n Possible filter names include:\n  - `rest_prepare_category`  - `rest_prepare_post_tag`\n Allows modification of the term data right before it is returned.",
                 "tags": [
                     {
                         "name": "since",
@@ -33439,7 +33793,7 @@
                         "variable": "$request"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;taxonomy</code>, refers to the taxonomy slug.</p> <p>Allows modification of the term data right before it is returned.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;taxonomy</code>, refers to the taxonomy slug.</p> <p>Possible filter names include:</p> <ul> <li><code>rest_prepare_category</code></li> <li><code>rest_prepare_post_tag</code></li> </ul> <p>Allows modification of the term data right before it is returned.</p>"
             }
         },
         {
@@ -33447,7 +33801,7 @@
             "file": "wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php",
             "type": "filter",
             "doc": {
-                "description": "Filters a comment after it is prepared for the database.",
+                "description": "Filters a comment added via the REST API after it is prepared for insertion into the database.",
                 "long_description": "Allows modification of the comment right after it is prepared for the database.",
                 "tags": [
                     {
@@ -33536,7 +33890,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Result to send to the client. Usually a WP_REST_Response or WP_Error.",
+                        "content": "Result to send to the client.                                                                   Usually a WP_REST_Response or WP_Error.",
                         "types": [
                             "\\WP_REST_Response",
                             "\\WP_HTTP_Response",
@@ -33579,7 +33933,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Result to send to the client. Usually a WP_REST_Response or WP_Error.",
+                        "content": "Result to send to the client.                                                                   Usually a WP_REST_Response or WP_Error.",
                         "types": [
                             "\\WP_REST_Response",
                             "\\WP_HTTP_Response",
@@ -33613,7 +33967,7 @@
             "file": "wp-includes/rest-api/class-wp-rest-request.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the request generated from a URL.",
+                "description": "Filters the REST API request generated from a URL.",
                 "long_description": "",
                 "tags": [
                     {
@@ -33646,8 +34000,8 @@
             "file": "wp-includes/rest-api/class-wp-rest-request.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the parameter order.",
-                "long_description": "The order affects which parameters are checked when using get_param() and family. This acts similarly to PHP's `request_order` setting.",
+                "description": "Filters the parameter priority order for a REST API request.",
+                "long_description": "The order affects which parameters are checked when using WP_REST_Request::get_param() and family. This acts similarly to PHP's `request_order` setting.",
                 "tags": [
                     {
                         "name": "since",
@@ -33670,7 +34024,7 @@
                         "variable": "$this"
                     }
                 ],
-                "long_description_html": "<p>The order affects which parameters are checked when using get_param() and family. This acts similarly to PHP's <code>request_order</code> setting.</p>"
+                "long_description_html": "<p>The order affects which parameters are checked when using WP_REST_Request::get_param() and family. This acts similarly to PHP's <code>request_order</code> setting.</p>"
             }
         },
         {
@@ -33702,7 +34056,7 @@
             "file": "wp-includes/rest-api/class-wp-rest-server.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the publicly-visible data for routes.",
+                "description": "Filters the publicly-visible data for REST API routes.",
                 "long_description": "This data is exposed on indexes and can be used by clients or developers to investigate the site and find out how to use it. It acts as a form of self-documentation.",
                 "tags": [
                     {
@@ -33798,7 +34152,7 @@
             "file": "wp-includes/rest-api/class-wp-rest-server.php",
             "type": "filter",
             "doc": {
-                "description": "Send nocache headers on authenticated requests.",
+                "description": "Filters whether to send nocache headers on a REST API request.",
                 "long_description": "",
                 "tags": [
                     {
@@ -33822,9 +34176,13 @@
             "file": "wp-includes/rest-api/search/class-wp-rest-term-search-handler.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the query arguments for a search request.",
+                "description": "Filters the query arguments for a REST API search request.",
                 "long_description": "Enables adding extra arguments or setting defaults for a term search request.",
                 "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.6.0"
+                    },
                     {
                         "name": "param",
                         "content": "Key value array of query var to query value.",
@@ -33850,7 +34208,7 @@
             "file": "wp-includes/rest-api/endpoints/class-wp-rest-themes-controller.php",
             "type": "filter",
             "doc": {
-                "description": "Filters collection parameters for the themes controller.",
+                "description": "Filters REST API collection parameters for the themes controller.",
                 "long_description": "",
                 "tags": [
                     {
@@ -33901,7 +34259,8 @@
                         "name": "param",
                         "content": "Blog ID.",
                         "types": [
-                            "int"
+                            "int",
+                            "null"
                         ],
                         "variable": "$blog_id"
                     },
@@ -33946,7 +34305,7 @@
             "file": "wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php",
             "type": "filter",
             "doc": {
-                "description": "Filters collection parameters for the users controller.",
+                "description": "Filters REST API collection parameters for the users controller.",
                 "long_description": "This filter registers the collection parameter, but does not map the collection parameter to an internal WP_User_Query parameter.  Use the `rest_user_query` filter to set WP_User_Query arguments.",
                 "tags": [
                     {
@@ -33992,7 +34351,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The current request.",
+                        "content": "The REST API request.",
                         "types": [
                             "\\WP_REST_Request"
                         ],
@@ -34063,12 +34422,17 @@
             "file": "wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the query arguments for a request.",
-                "long_description": "Enables adding extra arguments or setting defaults for a post collection request.",
+                "description": "Filters WP_Query arguments when querying users via the REST API.",
+                "long_description": "The dynamic portion of the hook name, `$this->post_type`, refers to the post type slug.\n Possible filter names include:\n  - `rest_post_query`  - `rest_page_query`  - `rest_attachment_query`\n Enables adding extra arguments or setting defaults for a post collection request.",
                 "tags": [
                     {
                         "name": "since",
                         "content": "4.7.0"
+                    },
+                    {
+                        "name": "since",
+                        "content": "5.7.0",
+                        "description": "Moved after the <code>tax_query</code> query arg is generated."
                     },
                     {
                         "name": "link",
@@ -34077,7 +34441,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Key value array of query var to query value.",
+                        "content": "Array of arguments to be passed to WP_Query.",
                         "types": [
                             "array"
                         ],
@@ -34085,14 +34449,14 @@
                     },
                     {
                         "name": "param",
-                        "content": "The request used.",
+                        "content": "The REST API request.",
                         "types": [
                             "\\WP_REST_Request"
                         ],
                         "variable": "$request"
                     }
                 ],
-                "long_description_html": "<p>Enables adding extra arguments or setting defaults for a post collection request.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;post_type</code>, refers to the post type slug.</p> <p>Possible filter names include:</p> <ul> <li><code>rest_post_query</code></li> <li><code>rest_page_query</code></li> <li><code>rest_attachment_query</code></li> </ul> <p>Enables adding extra arguments or setting defaults for a post collection request.</p>"
             }
         },
         {
@@ -34164,7 +34528,7 @@
             "file": "wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the query arguments before passing them to get_terms().",
+                "description": "Filters get_terms() arguments when querying users via the REST API.",
                 "long_description": "The dynamic portion of the hook name, `$this->taxonomy`, refers to the taxonomy slug.\n Enables adding extra arguments or setting defaults for a terms collection request.",
                 "tags": [
                     {
@@ -34186,7 +34550,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The current request.",
+                        "content": "The REST API request.",
                         "types": [
                             "\\WP_REST_Request"
                         ],
@@ -34198,7 +34562,7 @@
         },
         {
             "name": "retrieve_password_message",
-            "file": "wp-login.php",
+            "file": "wp-includes/user.php",
             "type": "filter",
             "doc": {
                 "description": "Filters the message body of the password reset mail.",
@@ -34251,7 +34615,7 @@
         },
         {
             "name": "retrieve_password_title",
-            "file": "wp-login.php",
+            "file": "wp-includes/user.php",
             "type": "filter",
             "doc": {
                 "description": "Filters the subject of the password reset email.",
@@ -35263,7 +35627,7 @@
                         "types": [
                             "\\WP_Screen"
                         ],
-                        "variable": "$this"
+                        "variable": "$screen"
                     }
                 ],
                 "long_description_html": "<p>This hook provides back-compat for plugins using the back-compat Filters instead of add_screen_option().</p>"
@@ -35327,7 +35691,7 @@
                         "types": [
                             "\\WP_Screen"
                         ],
-                        "variable": "$this"
+                        "variable": "$screen"
                     }
                 ],
                 "long_description_html": ""
@@ -35491,7 +35855,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The array of arguments for building the search form.",
+                        "content": "The array of arguments for building the search form.                    See get_search_form() for information on accepted arguments.",
                         "types": [
                             "array"
                         ],
@@ -35528,7 +35892,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The array of arguments for building the search form.",
+                        "content": "The array of arguments for building the search form.                       See get_search_form() for information on accepted arguments.",
                         "types": [
                             "array"
                         ],
@@ -37252,7 +37616,7 @@
                         "types": [
                             "\\WP_Site_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": "<p>The default columns include 'domain' and 'path.</p>"
@@ -37453,7 +37817,7 @@
                         "types": [
                             "\\WP_Site_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": ""
@@ -37492,7 +37856,7 @@
                         "types": [
                             "\\WP_Site_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": "<p>Return a non-null value to bypass WordPress' default site queries.</p> <p>The expected return type from this filter depends on the value passed in the request query vars:</p> <ul> <li>When <code>$this-&gt;query_vars['count']</code> is set, the filter should return the site count as an integer.</li> <li>When <code>'ids' === $this-&gt;query_vars['fields']</code>, the filter should return an array of site IDs.</li> <li>Otherwise the filter should return an array of WP_Site objects.</li> </ul> <p>Note that if the filter returns an array of site data, it will be assigned to the <code>sites</code> property of the current WP_Site_Query instance.</p> <p>Filtering functions that require pagination information are encouraged to set the <code>found_sites</code> and <code>max_num_pages</code> properties of the WP_Site_Query object, passed to the filter by reference. If WP_Site_Query does not perform a database query, it will not have enough information to generate these values itself.</p>"
@@ -37588,7 +37952,7 @@
                         "types": [
                             "\\WP_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": "<p>Splitting the query will cause it to fetch just the IDs of the found posts (and then individually fetch each post by ID), rather than fetching every complete row at once. One massive result vs. many small results.</p>"
@@ -38886,7 +39250,7 @@
                         "types": [
                             "\\WP_Term_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": "<p>Return a non-null value to bypass WordPress' default term queries.</p>"
@@ -39142,7 +39506,7 @@
                         "types": [
                             "\\WP_Comment_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": ""
@@ -39738,7 +40102,7 @@
                         "types": [
                             "\\WP_Network_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": ""
@@ -39880,7 +40244,7 @@
                         "types": [
                             "\\WP_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": ""
@@ -39912,7 +40276,7 @@
                         "types": [
                             "\\WP_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": ""
@@ -40048,7 +40412,7 @@
                         "types": [
                             "\\WP_Site_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": ""
@@ -40225,6 +40589,30 @@
                             "int"
                         ],
                         "variable": "$id"
+                    }
+                ],
+                "long_description_html": ""
+            }
+        },
+        {
+            "name": "the_title_export",
+            "file": "wp-admin/includes/export.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the post title used for WXR exports.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.7.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Title of the current post.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$post_title"
                     }
                 ],
                 "long_description_html": ""
@@ -40816,7 +41204,7 @@
                         "types": [
                             "\\WP_Theme"
                         ],
-                        "variable": "$this"
+                        "variable": "$theme"
                     },
                     {
                         "name": "param",
@@ -40875,7 +41263,7 @@
                         "types": [
                             "\\WP_Theme"
                         ],
-                        "variable": "$this"
+                        "variable": "$theme"
                     },
                     {
                         "name": "param",
@@ -41266,8 +41654,8 @@
                         "name": "param",
                         "content": "The result object. Default false.",
                         "types": [
-                            "bool",
-                            "array"
+                            "false",
+                            "object"
                         ],
                         "variable": "$result"
                     },
@@ -41588,6 +41976,38 @@
                             "string"
                         ],
                         "variable": "$plugin"
+                    }
+                ],
+                "long_description_html": ""
+            }
+        },
+        {
+            "name": "update_post_term_count_statuses",
+            "file": "wp-includes/taxonomy.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the post statuses for updating the term count.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.7.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "List of post statuses to include in the count. Default is 'publish'.",
+                        "types": [
+                            "string[]"
+                        ],
+                        "variable": "$post_statuses"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Current taxonomy object.",
+                        "types": [
+                            "\\WP_Taxonomy"
+                        ],
+                        "variable": "$taxonomy"
                     }
                 ],
                 "long_description_html": ""
@@ -41936,7 +42356,7 @@
                         "content": "Meta key, if provided.",
                         "types": [
                             "string",
-                            "bool"
+                            "false"
                         ],
                         "variable": "$meta_key"
                     }
@@ -42012,6 +42432,39 @@
                             "string"
                         ],
                         "variable": "$remote_destination"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Extra arguments passed to hooked filters.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$hook_extra"
+                    }
+                ],
+                "long_description_html": ""
+            }
+        },
+        {
+            "name": "upgrader_install_package_result",
+            "file": "wp-admin/includes/class-wp-upgrader.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the result of WP_Upgrader::install_package().",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.7.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Result from WP_Upgrader::install_package().",
+                        "types": [
+                            "array",
+                            "\\WP_Error"
+                        ],
+                        "variable": "$result"
                     },
                     {
                         "name": "param",
@@ -42128,7 +42581,7 @@
                         "types": [
                             "\\WP_Upgrader"
                         ],
-                        "variable": "$this"
+                        "variable": "$upgrader"
                     },
                     {
                         "name": "param",
@@ -42214,7 +42667,7 @@
                         "types": [
                             "\\WP_Upgrader"
                         ],
-                        "variable": "$this"
+                        "variable": "$upgrader"
                     },
                     {
                         "name": "param",
@@ -43434,7 +43887,7 @@
                         "types": [
                             "\\WP_User_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": "<p>The default columns depend on the search term, and include 'ID', 'user_login', 'user_email', 'user_url', 'user_nicename', and 'display_name'.</p>"
@@ -43639,7 +44092,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Return an array of user data to short-circuit WP's user query                            or null to allow WP to run its normal queries.",
+                        "content": "Return an array of user data to short-circuit WP's user query                               or null to allow WP to run its normal queries.",
                         "types": [
                             "array",
                             "null"
@@ -43652,7 +44105,7 @@
                         "types": [
                             "\\WP_User_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": "<p>Return a non-null value to bypass WordPress' default user queries.</p> <p>Filtering functions that require pagination information are encouraged to set the <code>total_users</code> property of the WP_User_Query object, passed to the filter by reference. If WP_User_Query does not perform a database query, it will not have enough information to generate these values itself.</p>"
@@ -43744,7 +44197,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the list of available list table views.",
-                "long_description": "The dynamic portion of the hook name, `$this->screen->id`, refers to the ID of the current screen, usually a string.",
+                "long_description": "The dynamic portion of the hook name, `$this->screen->id`, refers to the ID of the current screen.",
                 "tags": [
                     {
                         "name": "since",
@@ -43759,7 +44212,7 @@
                         "variable": "$views"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;screen-&gt;id</code>, refers to the ID of the current screen, usually a string.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;screen-&gt;id</code>, refers to the ID of the current screen.</p>"
             }
         },
         {
@@ -44049,7 +44502,7 @@
                         "types": [
                             "\\WP_Widget_Custom_HTML"
                         ],
-                        "variable": "$this"
+                        "variable": "$widget"
                     }
                 ],
                 "long_description_html": ""
@@ -44118,7 +44571,7 @@
                         "types": [
                             "\\WP_Widget"
                         ],
-                        "variable": "$this"
+                        "variable": "$widget"
                     },
                     {
                         "name": "param",
@@ -44158,7 +44611,7 @@
                         "types": [
                             "\\WP_Widget"
                         ],
-                        "variable": "$this"
+                        "variable": "$widget"
                     }
                 ],
                 "long_description_html": "<p>Returning false effectively short-circuits display of the control form.</p>"
@@ -44442,12 +44895,12 @@
                     {
                         "name": "since",
                         "content": "4.4.0",
-                        "description": "Added the <code>$this</code> parameter."
+                        "description": "Added the <code>$widget</code> parameter."
                     },
                     {
                         "name": "since",
                         "content": "4.8.1",
-                        "description": "The <code>$this</code> param may now be a <code>WP_Widget_Custom_HTML</code> object in addition to a <code>WP_Widget_Text</code> object."
+                        "description": "The <code>$widget</code> param may now be a <code>WP_Widget_Custom_HTML</code> object in addition to a <code>WP_Widget_Text</code> object."
                     },
                     {
                         "name": "param",
@@ -44467,12 +44920,12 @@
                     },
                     {
                         "name": "param",
-                        "content": "Current Text widget instance.",
+                        "content": "Current text or HTML widget instance.",
                         "types": [
                             "\\WP_Widget_Text",
                             "\\WP_Widget_Custom_HTML"
                         ],
-                        "variable": "$this"
+                        "variable": "$widget"
                     }
                 ],
                 "long_description_html": ""
@@ -44512,7 +44965,7 @@
                         "types": [
                             "\\WP_Widget_Text"
                         ],
-                        "variable": "$this"
+                        "variable": "$widget"
                     }
                 ],
                 "long_description_html": "<p>By default a subset of the_content filters are applied, including wpautop and wptexturize.</p>"
@@ -44600,7 +45053,7 @@
                         "types": [
                             "\\WP_Widget"
                         ],
-                        "variable": "$this"
+                        "variable": "$widget"
                     }
                 ],
                 "long_description_html": "<p>Returning false will effectively short-circuit the widget's ability to update settings.</p>"
@@ -44640,7 +45093,7 @@
                         "types": [
                             "\\WP_Widget_Media"
                         ],
-                        "variable": "$this"
+                        "variable": "$widget"
                     }
                 ],
                 "long_description_html": ""
@@ -44672,7 +45125,7 @@
                         "types": [
                             "\\WP_Widget_Media"
                         ],
-                        "variable": "$this"
+                        "variable": "$widget"
                     }
                 ],
                 "long_description_html": ""
@@ -45400,7 +45853,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The name of the file (may differ from $file due to                                               $file being in a tmp directory).",
+                        "content": "The name of the file (may differ from $file due to                                                $file being in a tmp directory).",
                         "types": [
                             "string"
                         ],
@@ -45419,7 +45872,7 @@
                         "content": "The actual mime type or false if the type cannot be determined.",
                         "types": [
                             "string",
-                            "bool"
+                            "false"
                         ],
                         "variable": "$real_mime"
                     }
@@ -45622,7 +46075,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "An object containing the attachment counts by                          mime type.",
+                        "content": "An object containing the attachment counts by                                   mime type.",
                         "types": [
                             "object"
                         ],
@@ -45630,9 +46083,10 @@
                     },
                     {
                         "name": "param",
-                        "content": "The mime type pattern used to filter the attachments                          counted.",
+                        "content": "Array or comma-separated list of MIME patterns.",
                         "types": [
-                            "string"
+                            "string",
+                            "string[]"
                         ],
                         "variable": "$mime_type"
                     }
@@ -46002,6 +46456,30 @@
             }
         },
         {
+            "name": "wp_direct_update_https_url",
+            "file": "wp-includes/functions.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the URL for directly updating the PHP version the site is running on from the host.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.7.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "URL for directly updating PHP.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$direct_update_url"
+                    }
+                ],
+                "long_description_html": ""
+            }
+        },
+        {
             "name": "wp_doing_ajax",
             "file": "wp-includes/load.php",
             "type": "filter",
@@ -46108,7 +46586,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The parsed arguments array.",
+                        "content": "The parsed arguments array. See wp_dropdown_pages()                               for information on accepted arguments.",
                         "types": [
                             "array"
                         ],
@@ -46629,9 +47107,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "String containing the generated HTML tag cloud output                             or an array of tag links if the 'format' argument                             equals 'array'.",
+                        "content": "String containing the generated HTML tag cloud output                                or an array of tag links if the 'format' argument                                equals 'array'.",
                         "types": [
-                            "array",
+                            "string[]",
                             "string"
                         ],
                         "variable": "$return"
@@ -46670,9 +47148,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "An array of term data for term used to generate the tag cloud.",
+                        "content": "An array of term data arrays for terms used to generate the tag cloud.",
                         "types": [
-                            "array"
+                            "array[]"
                         ],
                         "variable": "$tags_data"
                     }
@@ -46987,7 +47465,7 @@
                         "content": "If string, will be link text.",
                         "types": [
                             "string",
-                            "bool"
+                            "false"
                         ],
                         "variable": "$text"
                     },
@@ -47018,10 +47496,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "Array of meta data for the given attachment, or false                                  if the object does not exist.",
+                        "content": "Array of meta data for the given attachment.",
                         "types": [
-                            "array",
-                            "bool"
+                            "array"
                         ],
                         "variable": "$data"
                     },
@@ -47208,59 +47685,6 @@
                             "string"
                         ],
                         "variable": "$stylesheet"
-                    }
-                ],
-                "long_description_html": ""
-            }
-        },
-        {
-            "name": "wp_get_default_privacy_policy_content",
-            "file": "wp-admin/includes/class-wp-privacy-policy-content.php",
-            "type": "filter",
-            "doc": {
-                "description": "Filters the default content suggested for inclusion in a privacy policy.",
-                "long_description": "",
-                "tags": [
-                    {
-                        "name": "since",
-                        "content": "4.9.6"
-                    },
-                    {
-                        "name": "since",
-                        "content": "5.0.0",
-                        "description": "Added the <code>$strings</code>, <code>$description</code>, and <code>$blocks</code> parameters."
-                    },
-                    {
-                        "name": "param",
-                        "content": "The default policy content.",
-                        "types": [
-                            "string"
-                        ],
-                        "variable": "$content"
-                    },
-                    {
-                        "name": "param",
-                        "content": "An array of privacy policy content strings.",
-                        "types": [
-                            "string[]"
-                        ],
-                        "variable": "$strings"
-                    },
-                    {
-                        "name": "param",
-                        "content": "Whether policy descriptions should be included.",
-                        "types": [
-                            "bool"
-                        ],
-                        "variable": "$description"
-                    },
-                    {
-                        "name": "param",
-                        "content": "Whether the content should be formatted for the block editor.",
-                        "types": [
-                            "bool"
-                        ],
-                        "variable": "$blocks"
                     }
                 ],
                 "long_description_html": ""
@@ -47761,7 +48185,7 @@
                         "types": [
                             "\\WP"
                         ],
-                        "variable": "$this"
+                        "variable": "$wp"
                     }
                 ],
                 "long_description_html": ""
@@ -47861,6 +48285,47 @@
                     }
                 ],
                 "long_description_html": ""
+            }
+        },
+        {
+            "name": "wp_iframe_tag_add_loading_attr",
+            "file": "wp-includes/media.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the `loading` attribute value to add to an iframe. Default `lazy`.",
+                "long_description": "Returning `false` or an empty string will not add the attribute. Returning `true` will add the default value.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.7.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The <code>loading</code> attribute value. Returning a falsey value will result in                             the attribute being omitted for the iframe. Default 'lazy'.",
+                        "types": [
+                            "string",
+                            "bool"
+                        ],
+                        "variable": "$value"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The HTML <code>iframe</code> tag to be filtered.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$iframe"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Additional context about how the function was called or where the iframe tag is.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$context"
+                    }
+                ],
+                "long_description_html": "<p>Returning <code>false</code> or an empty string will not add the attribute. Returning <code>true</code> will add the default value.</p>"
             }
         },
         {
@@ -48040,11 +48505,60 @@
             }
         },
         {
+            "name": "wp_image_src_get_dimensions",
+            "file": "wp-includes/media.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the 'wp_image_src_get_dimensions' value.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.7.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Array with first element being the width                                   and second element being the height, or                                   false if dimensions could not be determined.",
+                        "types": [
+                            "array",
+                            "false"
+                        ],
+                        "variable": "$dimensions"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The image source file.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$image_src"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The image meta data as returned by                                   'wp_get_attachment_metadata()'.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$image_meta"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The image attachment ID. Default 0.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$attachment_id"
+                    }
+                ],
+                "long_description_html": ""
+            }
+        },
+        {
             "name": "wp_img_tag_add_loading_attr",
             "file": "wp-includes/media.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the `loading` attribute value. Default `lazy`.",
+                "description": "Filters the `loading` attribute value to add to an image. Default `lazy`.",
                 "long_description": "Returning `false` or an empty string will not add the attribute. Returning `true` will add the default value.",
                 "tags": [
                     {
@@ -48211,6 +48725,30 @@
                             "\\WP_Network"
                         ],
                         "variable": "$network"
+                    }
+                ],
+                "long_description_html": ""
+            }
+        },
+        {
+            "name": "wp_inline_script_attributes",
+            "file": "wp-includes/script-loader.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters attributes to be added to a script tag.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.7.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Key-value pairs representing <code>&lt;script&gt;</code> tag attributes.                          Only the attribute name is added to the <code>&lt;script&gt;</code> tag for                          entries with a boolean value, and that are true.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$attributes"
                     }
                 ],
                 "long_description_html": ""
@@ -48765,6 +49303,38 @@
             }
         },
         {
+            "name": "wp_is_site_protected_by_basic_auth",
+            "file": "wp-includes/load.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters whether a site is protected by HTTP Basic Auth.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.6.1"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether the site is protected by Basic Auth.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$is_protected"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The context to check for protection. One of 'login', 'admin', or 'front'.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$context"
+                    }
+                ],
+                "long_description_html": ""
+            }
+        },
+        {
             "name": "wp_kses_allowed_html",
             "file": "wp-includes/kses.php",
             "type": "filter",
@@ -48883,7 +49453,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "An array of arguments.",
+                        "content": "An array of arguments. See wp_link_pages()                       for information on accepted arguments.",
                         "types": [
                             "array"
                         ],
@@ -48907,7 +49477,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "An array of arguments for page links for paginated posts.",
+                        "content": "An array of page link arguments. See wp_link_pages()                           for information on accepted arguments.",
                         "types": [
                             "array"
                         ],
@@ -49061,7 +49631,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "An array of taxonomy-listing arguments.",
+                        "content": "An array of taxonomy-listing arguments. See wp_list_categories()                       for information on accepted arguments.",
                         "types": [
                             "array"
                         ],
@@ -49132,7 +49702,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "An array of page-listing arguments.",
+                        "content": "An array of page-listing arguments. See wp_list_pages()                               for information on accepted arguments.",
                         "types": [
                             "array"
                         ],
@@ -49172,6 +49742,38 @@
                     }
                 ],
                 "long_description_html": ""
+            }
+        },
+        {
+            "name": "wp_list_table_show_post_checkbox",
+            "file": "wp-admin/includes/class-wp-posts-list-table.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters whether to show the bulk edit checkbox for a post in its list table.",
+                "long_description": "By default the checkbox is only shown if the current user can edit the post.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.7.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether to show the checkbox.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$show"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The current WP_Post object.",
+                        "types": [
+                            "\\WP_Post"
+                        ],
+                        "variable": "$post"
+                    }
+                ],
+                "long_description_html": "<p>By default the checkbox is only shown if the current user can edit the post.</p>"
             }
         },
         {
@@ -49220,7 +49822,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "A compacted array of wp_mail() arguments, including the \"to\" email,                    subject, message, headers, and attachments values.",
+                        "content": "{     Array of the <code>wp_mail()</code> arguments.     @type string|string[] $to          Array or comma-separated list of email addresses to send message.     @type string          $subject     Email subject.     @type string          $message     Message contents.     @type string|string[] $headers     Additional headers.     @type string|string[] $attachments Paths to files to attach. }",
                         "types": [
                             "array"
                         ],
@@ -49861,7 +50463,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "An array of arguments.",
+                        "content": "An array of arguments. See wp_page_menu()                     for information on accepted arguments.",
                         "types": [
                             "array"
                         ],
@@ -49890,7 +50492,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "An array of page menu arguments.",
+                        "content": "An array of page menu arguments. See wp_page_menu()                    for information on accepted arguments.",
                         "types": [
                             "array"
                         ],
@@ -51137,6 +51739,30 @@
             }
         },
         {
+            "name": "wp_robots",
+            "file": "wp-includes/robots-template.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the directives to be included in the 'robots' meta tag.",
+                "long_description": "The meta tag will only be included as necessary.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.7.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Associative array of directives. Every key must be the name of the directive, and the                      corresponding value must either be a string to provide as value for the directive or a                      boolean <code>true</code> if it is a boolean directive, i.e. without a value.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$robots"
+                    }
+                ],
+                "long_description_html": "<p>The meta tag will only be included as necessary.</p>"
+            }
+        },
+        {
             "name": "wp_safe_redirect_fallback",
             "file": "wp-includes/pluggable.php",
             "type": "filter",
@@ -51306,6 +51932,30 @@
             }
         },
         {
+            "name": "wp_script_attributes",
+            "file": "wp-includes/script-loader.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters attributes to be added to a script tag.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.7.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Key-value pairs representing <code>&lt;script&gt;</code> tag attributes.                          Only the attribute name is added to the <code>&lt;script&gt;</code> tag for                          entries with a boolean value, and that are true.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$attributes"
+                    }
+                ],
+                "long_description_html": ""
+            }
+        },
+        {
             "name": "wp_search_stopwords",
             "file": "wp-includes/class-wp-query.php",
             "type": "filter",
@@ -51386,6 +52036,30 @@
             }
         },
         {
+            "name": "wp_should_replace_insecure_home_url",
+            "file": "wp-includes/https-migration.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters whether WordPress should replace old HTTP URLs to the site with their HTTPS counterpart.",
+                "long_description": "If a WordPress site had its URL changed from HTTP to HTTPS, by default this will return `true`. This filter can be used to disable that behavior, e.g. after having replaced URLs manually in the database.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.7.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether insecure HTTP URLs to the site should be replaced.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$should_replace_insecure_home_url"
+                    }
+                ],
+                "long_description_html": "<p>If a WordPress site had its URL changed from HTTP to HTTPS, by default this will return <code>true</code>. This filter can be used to disable that behavior, e.g. after having replaced URLs manually in the database.</p>"
+            }
+        },
+        {
             "name": "wp_should_upgrade_global_tables",
             "file": "wp-admin/includes/upgrade.php",
             "type": "filter",
@@ -51393,6 +52067,10 @@
                 "description": "Filters if upgrade routines should be run on global tables.",
                 "long_description": "",
                 "tags": [
+                    {
+                        "name": "since",
+                        "content": "4.3.0"
+                    },
                     {
                         "name": "param",
                         "content": "Whether to run the upgrade routines on global tables.",
@@ -52364,13 +53042,13 @@
                         "content": "Tag cloud as a string or an array, depending on 'format' argument.",
                         "types": [
                             "string",
-                            "array"
+                            "string[]"
                         ],
                         "variable": "$return"
                     },
                     {
                         "name": "param",
-                        "content": "An array of tag cloud arguments.",
+                        "content": "An array of tag cloud arguments. See wp_tag_cloud()                                for information on accepted arguments.",
                         "types": [
                             "array"
                         ],
@@ -53147,6 +53825,30 @@
             }
         },
         {
+            "name": "wp_update_https_url",
+            "file": "wp-includes/functions.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the URL to learn more about updating the HTTPS version the site is running on.",
+                "long_description": "Providing an empty string is not allowed and will result in the default URL being used. Furthermore the page the URL links to should preferably be localized in the site language.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.7.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "URL to learn more about updating HTTPS.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$update_url"
+                    }
+                ],
+                "long_description_html": "<p>Providing an empty string is not allowed and will result in the default URL being used. Furthermore the page the URL links to should preferably be localized in the site language.</p>"
+            }
+        },
+        {
             "name": "wp_update_php_url",
             "file": "wp-includes/functions.php",
             "type": "filter",
@@ -53719,10 +54421,10 @@
                     },
                     {
                         "name": "param",
-                        "content": "Site domain.",
+                        "content": "Site domain, or false to prevent the email from sending.",
                         "types": [
                             "string",
-                            "bool"
+                            "false"
                         ],
                         "variable": "$domain"
                     },
@@ -54193,10 +54895,10 @@
                     },
                     {
                         "name": "param",
-                        "content": "Site ID.",
+                        "content": "Site ID, or false to prevent the email from sending.",
                         "types": [
                             "int",
-                            "bool"
+                            "false"
                         ],
                         "variable": "$blog_id"
                     },
@@ -54765,7 +55467,7 @@
                         "name": "param",
                         "content": "The XML-RPC error message.",
                         "types": [
-                            "string"
+                            "\\IXR_Error"
                         ],
                         "variable": "$error"
                     },
@@ -55212,12 +55914,45 @@
             }
         },
         {
+            "name": "{$action}_overrides",
+            "file": "wp-admin/includes/file.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the override parameters for a file before it is uploaded to WordPress.",
+                "long_description": "The dynamic portion of the hook name, `$action`, refers to the post action. Possible filter names include:\n  - `wp_handle_sideload_overrides`  - `wp_handle_upload_overrides`",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.7.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "An array of override parameters for this file. Boolean false if none are                               provided. @see _wp_handle_upload().",
+                        "types": [
+                            "array",
+                            "false"
+                        ],
+                        "variable": "$overrides"
+                    },
+                    {
+                        "name": "param",
+                        "content": "An array of data for the file. Reference to a single element of <code>$_FILES</code>.",
+                        "types": [
+                            "string[]"
+                        ],
+                        "variable": "$file"
+                    }
+                ],
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$action</code>, refers to the post action. Possible filter names include:</p> <ul> <li><code>wp_handle_sideload_overrides</code></li> <li><code>wp_handle_upload_overrides</code></li> </ul>"
+            }
+        },
+        {
             "name": "{$action}_prefilter",
             "file": "wp-admin/includes/file.php",
             "type": "filter",
             "doc": {
                 "description": "Filters the data for a file before it is uploaded to WordPress.",
-                "long_description": "The dynamic portion of the hook name, `$action`, refers to the post action.",
+                "long_description": "The dynamic portion of the hook name, `$action`, refers to the post action. Possible filter names include:\n  - `wp_handle_sideload_prefilter`  - `wp_handle_upload_prefilter`",
                 "tags": [
                     {
                         "name": "since",
@@ -55231,14 +55966,14 @@
                     },
                     {
                         "name": "param",
-                        "content": "An array of data for a single file.",
+                        "content": "An array of data for the file. Reference to a single element of <code>$_FILES</code>.",
                         "types": [
                             "string[]"
                         ],
                         "variable": "$file"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$action</code>, refers to the post action.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$action</code>, refers to the post action. Possible filter names include:</p> <ul> <li><code>wp_handle_sideload_prefilter</code></li> <li><code>wp_handle_upload_prefilter</code></li> </ul>"
             }
         },
         {
@@ -55486,7 +56221,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Context for how to sanitize the field. Possible                        values include 'edit', 'display',                        'attribute' and 'js'.",
+                        "content": "Context for how to sanitize the field.                        Accepts 'raw', 'edit', 'db', 'display',                        'attribute', or 'js'. Default 'display'.",
                         "types": [
                             "string"
                         ],
