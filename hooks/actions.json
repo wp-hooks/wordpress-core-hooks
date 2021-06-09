@@ -19119,42 +19119,6 @@
             }
         },
         {
-            "name": "{$hook}",
-            "file": "wp-cron.php",
-            "type": "action_reference",
-            "doc": {
-                "description": "Fires scheduled events.",
-                "long_description": "",
-                "tags": [
-                    {
-                        "name": "ignore",
-                        "content": ""
-                    },
-                    {
-                        "name": "since",
-                        "content": "2.1.0"
-                    },
-                    {
-                        "name": "param",
-                        "content": "Name of the hook that was scheduled to be fired.",
-                        "types": [
-                            "string"
-                        ],
-                        "variable": "$hook"
-                    },
-                    {
-                        "name": "param",
-                        "content": "The arguments to be passed to the hook.",
-                        "types": [
-                            "array"
-                        ],
-                        "variable": "$args"
-                    }
-                ],
-                "long_description_html": ""
-            }
-        },
-        {
             "name": "{$new_status}_{$post->post_type}",
             "file": "wp-includes/post.php",
             "type": "action",

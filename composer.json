@@ -52,7 +52,8 @@
                 "pre_post_{$field}",
                 "post_{$field}",
                 "pre_option_enable_xmlrpc",
-                "{$tag}"
+                "{$hook}",
+                "{$hook_name}"
             ]
         }
     },
