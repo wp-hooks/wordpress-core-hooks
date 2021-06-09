@@ -100,3 +100,15 @@ Some scripts are available for checking the data:
 ## Hook Files for Plugins
 
 Do you want the same hook files for your favourite plugins? The hook files in this repo are generated using [wp-hooks-generator](https://github.com/johnbillion/wp-hooks-generator). It can generate hook files for WordPress plugins and themes as well as core.
+
+## Sponsors
+
+Development of this library is sponsored by:
+
+[![Automattic](assets/gh/automattic.png)](https://automattic.com)
+
+Plus all my kind sponsors on GitHub:
+
+[![Sponsors](assets/gh/everyone.png)](https://github.com/sponsors/johnbillion)
+
+[Click here to find out about supporting this library and my other WordPress development tools and plugins](https://github.com/sponsors/johnbillion).

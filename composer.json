@@ -55,5 +55,11 @@
                 "{$tag}"
             ]
         }
-    }
+    },
+    "funding": [
+        {
+            "type": "github",
+            "url": "https://github.com/sponsors/johnbillion"
+        }
+    ]
 }
