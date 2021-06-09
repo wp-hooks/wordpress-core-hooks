@@ -39,7 +39,7 @@
             "type": "filter",
             "doc": {
                 "description": "Contextually filter a post revision field.",
-                "long_description": "The dynamic portion of the hook name, `$field`, corresponds to each of the post fields of the revision object being iterated over in a foreach statement.",
+                "long_description": "The dynamic portion of the hook name, `$field`, corresponds to a name of a field of the revision object.\n Possible hook names include:\n  - `_wp_post_revision_field_post_title`  - `_wp_post_revision_field_post_content`  - `_wp_post_revision_field_post_excerpt`",
                 "tags": [
                     {
                         "name": "since",
@@ -78,7 +78,7 @@
                         "variable": "$context"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$field</code>, corresponds to each of the post fields of the revision object being iterated over in a foreach statement.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$field</code>, corresponds to a name of a field of the revision object.</p> <p>Possible hook names include:</p> <ul> <li><code>_wp_post_revision_field_post_title</code></li> <li><code>_wp_post_revision_field_post_content</code></li> <li><code>_wp_post_revision_field_post_excerpt</code></li> </ul>"
             }
         },
         {
@@ -672,6 +672,11 @@
                         "content": "2.8.0"
                     },
                     {
+                        "name": "since",
+                        "content": "5.8.0",
+                        "description": "The <code>$scheme</code> parameter was added."
+                    },
+                    {
                         "name": "param",
                         "content": "The complete admin area URL including scheme and path.",
                         "types": [
@@ -695,6 +700,15 @@
                             "null"
                         ],
                         "variable": "$blog_id"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The scheme to use. Accepts 'http', 'https',                             'admin', or null. Default 'admin', which obeys force_ssl_admin() and is_ssl().",
+                        "types": [
+                            "string",
+                            "null"
+                        ],
+                        "variable": "$scheme"
                     }
                 ],
                 "long_description_html": ""
@@ -991,20 +1005,20 @@
             }
         },
         {
-            "name": "allowed_block_types",
-            "file": "wp-admin/edit-form-blocks.php",
+            "name": "allowed_block_types_all",
+            "file": "wp-includes/block-editor.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the allowed block types for the editor, defaulting to true (all block types supported).",
+                "description": "Filters the allowed block types for all editor types, defaulting to `true` (all registered block types supported).",
                 "long_description": "",
                 "tags": [
                     {
                         "name": "since",
-                        "content": "5.0.0"
+                        "content": "5.8.0"
                     },
                     {
                         "name": "param",
-                        "content": "Array of block type slugs, or                                        boolean to enable/disable all.",
+                        "content": "Array of block type slugs, or                                                      boolean to enable/disable all.",
                         "types": [
                             "bool",
                             "array"
@@ -1013,11 +1027,11 @@
                     },
                     {
                         "name": "param",
-                        "content": "The post resource data.",
+                        "content": "The current block editor context.",
                         "types": [
-                            "\\WP_Post"
+                            "\\WP_Block_Editor_Context"
                         ],
-                        "variable": "$post"
+                        "variable": "$block_editor_context"
                     }
                 ],
                 "long_description_html": ""
@@ -1222,7 +1236,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the returned ID of an uploaded attachment.",
-                "long_description": "The dynamic portion of the hook name, `$type`, refers to the attachment type, such as 'image', 'audio', 'video', 'file', etc.",
+                "long_description": "The dynamic portion of the hook name, `$type`, refers to the attachment type.\n Possible hook names include:\n  - `async_upload_audio`  - `async_upload_file`  - `async_upload_image`  - `async_upload_video`",
                 "tags": [
                     {
                         "name": "since",
@@ -1237,7 +1251,7 @@
                         "variable": "$id"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$type</code>, refers to the attachment type, such as 'image', 'audio', 'video', 'file', etc.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$type</code>, refers to the attachment type.</p> <p>Possible hook names include:</p> <ul> <li><code>async_upload_audio</code></li> <li><code>async_upload_file</code></li> <li><code>async_upload_image</code></li> <li><code>async_upload_video</code></li> </ul>"
             }
         },
         {
@@ -2206,7 +2220,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters whether to automatically update core, a plugin, a theme, or a language.",
-                "long_description": "The dynamic portion of the hook name, `$type`, refers to the type of update being checked. Potential hook names include:\n  - `auto_update_core`  - `auto_update_plugin`  - `auto_update_theme`  - `auto_update_translation`\n Generally speaking, plugins, themes, and major core versions are not updated by default, while translations and minor and development versions for core are updated by default.\n See the {@see 'allow_dev_auto_core_updates'}, {@see 'allow_minor_auto_core_updates'}, and {@see 'allow_major_auto_core_updates'} filters for a more straightforward way to adjust core updates.",
+                "long_description": "The dynamic portion of the hook name, `$type`, refers to the type of update being checked.\n Possible hook names include:\n  - `auto_update_core`  - `auto_update_plugin`  - `auto_update_theme`  - `auto_update_translation`\n Generally speaking, plugins, themes, and major core versions are not updated by default, while translations and minor and development versions for core are updated by default.\n See the {@see 'allow_dev_auto_core_updates'}, {@see 'allow_minor_auto_core_updates'}, and {@see 'allow_major_auto_core_updates'} filters for a more straightforward way to adjust core updates.",
                 "tags": [
                     {
                         "name": "since",
@@ -2235,7 +2249,7 @@
                         "variable": "$item"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$type</code>, refers to the type of update being checked. Potential hook names include:</p> <ul> <li><code>auto_update_core</code></li> <li><code>auto_update_plugin</code></li> <li><code>auto_update_theme</code></li> <li><code>auto_update_translation</code></li> </ul> <p>Generally speaking, plugins, themes, and major core versions are not updated by default, while translations and minor and development versions for core are updated by default.</p> <p>See the {@see 'allow_dev_auto_core_updates'}, {@see 'allow_minor_auto_core_updates'}, and {@see 'allow_major_auto_core_updates'} filters for a more straightforward way to adjust core updates.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$type</code>, refers to the type of update being checked.</p> <p>Possible hook names include:</p> <ul> <li><code>auto_update_core</code></li> <li><code>auto_update_plugin</code></li> <li><code>auto_update_theme</code></li> <li><code>auto_update_translation</code></li> </ul> <p>Generally speaking, plugins, themes, and major core versions are not updated by default, while translations and minor and development versions for core are updated by default.</p> <p>See the {@see 'allow_dev_auto_core_updates'}, {@see 'allow_minor_auto_core_updates'}, and {@see 'allow_major_auto_core_updates'} filters for a more straightforward way to adjust core updates.</p>"
             }
         },
         {
@@ -2479,32 +2493,32 @@
             }
         },
         {
-            "name": "block_categories",
-            "file": "wp-admin/includes/post.php",
+            "name": "block_categories_all",
+            "file": "wp-includes/block-editor.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the default array of block categories.",
+                "description": "Filters the default array of categories for block types.",
                 "long_description": "",
                 "tags": [
                     {
                         "name": "since",
-                        "content": "5.0.0"
+                        "content": "5.8.0"
                     },
                     {
                         "name": "param",
-                        "content": "Array of block categories.",
+                        "content": "Array of categories for block types.",
                         "types": [
                             "array[]"
                         ],
-                        "variable": "$default_categories"
+                        "variable": "$block_categories"
                     },
                     {
                         "name": "param",
-                        "content": "Post being loaded.",
+                        "content": "The current block editor context.",
                         "types": [
-                            "\\WP_Post"
+                            "\\WP_Block_Editor_Context"
                         ],
-                        "variable": "$post"
+                        "variable": "$block_editor_context"
                     }
                 ],
                 "long_description_html": ""
@@ -2575,16 +2589,16 @@
             }
         },
         {
-            "name": "block_editor_preload_paths",
-            "file": "wp-admin/edit-form-blocks.php",
+            "name": "block_editor_rest_api_preload_paths",
+            "file": "wp-includes/block-editor.php",
             "type": "filter",
             "doc": {
-                "description": "Preload common data by specifying an array of REST API paths that will be preloaded.",
-                "long_description": "Filters the array of paths that will be preloaded.",
+                "description": "Filters the array of REST API paths that will be used to preloaded common data to use with the block editor.",
+                "long_description": "",
                 "tags": [
                     {
                         "name": "since",
-                        "content": "5.0.0"
+                        "content": "5.8.0"
                     },
                     {
                         "name": "param",
@@ -2593,30 +2607,22 @@
                             "string[]"
                         ],
                         "variable": "$preload_paths"
-                    },
-                    {
-                        "name": "param",
-                        "content": "Post being edited.",
-                        "types": [
-                            "\\WP_Post"
-                        ],
-                        "variable": "$post"
                     }
                 ],
-                "long_description_html": "<p>Filters the array of paths that will be preloaded.</p>"
+                "long_description_html": ""
             }
         },
         {
-            "name": "block_editor_settings",
-            "file": "wp-admin/edit-form-blocks.php",
+            "name": "block_editor_settings_all",
+            "file": "wp-includes/block-editor.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the settings to pass to the block editor.",
+                "description": "Filters the settings to pass to the block editor for all editor type.",
                 "long_description": "",
                 "tags": [
                     {
                         "name": "since",
-                        "content": "5.0.0"
+                        "content": "5.8.0"
                     },
                     {
                         "name": "param",
@@ -2628,11 +2634,11 @@
                     },
                     {
                         "name": "param",
-                        "content": "Post being edited.",
+                        "content": "The current block editor context.",
                         "types": [
-                            "\\WP_Post"
+                            "\\WP_Block_Editor_Context"
                         ],
-                        "variable": "$post"
+                        "variable": "$block_editor_context"
                     }
                 ],
                 "long_description_html": ""
@@ -8134,6 +8140,30 @@
             }
         },
         {
+            "name": "document_title",
+            "file": "wp-includes/general-template.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the document title.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.8.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Document title.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$title"
+                    }
+                ],
+                "long_description_html": ""
+            }
+        },
+        {
             "name": "document_title_parts",
             "file": "wp-includes/general-template.php",
             "type": "filter",
@@ -8860,7 +8890,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the number of items per page to show for a specific 'per_page' type.",
-                "long_description": "The dynamic portion of the hook name, `$post_type`, refers to the post type.\n Some examples of filter hooks generated here include: 'edit_attachment_per_page', 'edit_post_per_page', 'edit_page_per_page', etc.",
+                "long_description": "The dynamic portion of the hook name, `$post_type`, refers to the post type.\n Possible hook names include:\n  - `edit_post_per_page`  - `edit_page_per_page`  - `edit_attachment_per_page`",
                 "tags": [
                     {
                         "name": "since",
@@ -8875,7 +8905,7 @@
                         "variable": "$posts_per_page"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$post_type</code>, refers to the post type.</p> <p>Some examples of filter hooks generated here include: 'edit_attachment_per_page', 'edit_post_per_page', 'edit_page_per_page', etc.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$post_type</code>, refers to the post type.</p> <p>Possible hook names include:</p> <ul> <li><code>edit_post_per_page</code></li> <li><code>edit_page_per_page</code></li> <li><code>edit_attachment_per_page</code></li> </ul>"
             }
         },
         {
@@ -9718,6 +9748,30 @@
                     }
                 ],
                 "long_description_html": "<p>This filter runs before it can be used by plugins. It is designed for non-web run-times. If false is returned, advanced-cache.php will never be loaded.</p>"
+            }
+        },
+        {
+            "name": "enable_loading_object_cache_dropin",
+            "file": "wp-includes/load.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters whether to enable loading of the objectcache.php drop-in.",
+                "long_description": "This filter runs before it can be used by plugins. It is designed for non-web run-times. If false is returned, object-cache.php will never be loaded.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.8.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether to enable loading object-cache.php (if present).                                    Default true.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$enable_object_cache"
+                    }
+                ],
+                "long_description_html": "<p>This filter runs before it can be used by plugins. It is designed for non-web run-times. If false is returned, object-cache.php will never be loaded.</p>"
             }
         },
         {
@@ -14612,7 +14666,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the HTML for the retrieved generator type.",
-                "long_description": "The dynamic portion of the hook name, `$type`, refers to the generator type.",
+                "long_description": "The dynamic portion of the hook name, `$type`, refers to the generator type.\n Possible hook names include:\n  - `get_the_generator_atom`  - `get_the_generator_comment`  - `get_the_generator_export`  - `get_the_generator_html`  - `get_the_generator_rdf`  - `get_the_generator_rss2`  - `get_the_generator_xhtml`",
                 "tags": [
                     {
                         "name": "since",
@@ -14635,7 +14689,7 @@
                         "variable": "$type"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$type</code>, refers to the generator type.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$type</code>, refers to the generator type.</p> <p>Possible hook names include:</p> <ul> <li><code>get_the_generator_atom</code></li> <li><code>get_the_generator_comment</code></li> <li><code>get_the_generator_export</code></li> <li><code>get_the_generator_html</code></li> <li><code>get_the_generator_rdf</code></li> <li><code>get_the_generator_rss2</code></li> <li><code>get_the_generator_xhtml</code></li> </ul>"
             }
         },
         {
@@ -15133,7 +15187,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the IDs of terms excluded from adjacent post queries.",
-                "long_description": "The dynamic portion of the hook name, `$adjacent`, refers to the type of adjacency, 'next' or 'previous'.",
+                "long_description": "The dynamic portion of the hook name, `$adjacent`, refers to the type of adjacency, 'next' or 'previous'.\n Possible hook names include:\n  - `get_next_post_excluded_terms`  - `get_previous_post_excluded_terms`",
                 "tags": [
                     {
                         "name": "since",
@@ -15149,7 +15203,7 @@
                         "variable": "$excluded_terms"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$adjacent</code>, refers to the type of adjacency, 'next' or 'previous'.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$adjacent</code>, refers to the type of adjacency, 'next' or 'previous'.</p> <p>Possible hook names include:</p> <ul> <li><code>get_next_post_excluded_terms</code></li> <li><code>get_previous_post_excluded_terms</code></li> </ul>"
             }
         },
         {
@@ -15158,7 +15212,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the JOIN clause in the SQL for an adjacent post query.",
-                "long_description": "The dynamic portion of the hook name, `$adjacent`, refers to the type of adjacency, 'next' or 'previous'.",
+                "long_description": "The dynamic portion of the hook name, `$adjacent`, refers to the type of adjacency, 'next' or 'previous'.\n Possible hook names include:\n  - `get_next_post_join`  - `get_previous_post_join`",
                 "tags": [
                     {
                         "name": "since",
@@ -15210,7 +15264,7 @@
                         "variable": "$post"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$adjacent</code>, refers to the type of adjacency, 'next' or 'previous'.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$adjacent</code>, refers to the type of adjacency, 'next' or 'previous'.</p> <p>Possible hook names include:</p> <ul> <li><code>get_next_post_join</code></li> <li><code>get_previous_post_join</code></li> </ul>"
             }
         },
         {
@@ -15219,7 +15273,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the ORDER BY clause in the SQL for an adjacent post query.",
-                "long_description": "The dynamic portion of the hook name, `$adjacent`, refers to the type of adjacency, 'next' or 'previous'.",
+                "long_description": "The dynamic portion of the hook name, `$adjacent`, refers to the type of adjacency, 'next' or 'previous'.\n Possible hook names include:\n  - `get_next_post_sort`  - `get_previous_post_sort`",
                 "tags": [
                     {
                         "name": "since",
@@ -15260,7 +15314,7 @@
                         "variable": "$order"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$adjacent</code>, refers to the type of adjacency, 'next' or 'previous'.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$adjacent</code>, refers to the type of adjacency, 'next' or 'previous'.</p> <p>Possible hook names include:</p> <ul> <li><code>get_next_post_sort</code></li> <li><code>get_previous_post_sort</code></li> </ul>"
             }
         },
         {
@@ -15269,7 +15323,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the WHERE clause in the SQL for an adjacent post query.",
-                "long_description": "The dynamic portion of the hook name, `$adjacent`, refers to the type of adjacency, 'next' or 'previous'.",
+                "long_description": "The dynamic portion of the hook name, `$adjacent`, refers to the type of adjacency, 'next' or 'previous'.\n Possible hook names include:\n  - `get_next_post_where`  - `get_previous_post_where`",
                 "tags": [
                     {
                         "name": "since",
@@ -15321,7 +15375,7 @@
                         "variable": "$post"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$adjacent</code>, refers to the type of adjacency, 'next' or 'previous'.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$adjacent</code>, refers to the type of adjacency, 'next' or 'previous'.</p> <p>Possible hook names include:</p> <ul> <li><code>get_next_post_where</code></li> <li><code>get_previous_post_where</code></li> </ul>"
             }
         },
         {
@@ -17049,6 +17103,51 @@
             }
         },
         {
+            "name": "image_editor_output_format",
+            "file": "wp-includes/class-wp-image-editor.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the image editor output format mapping.",
+                "long_description": "Enables filtering the mime type used to save images. By default, the mapping array is empty, so the mime type matches the source image.",
+                "tags": [
+                    {
+                        "name": "see",
+                        "content": "",
+                        "refers": "WP_Image_Editor::get_output_format()"
+                    },
+                    {
+                        "name": "since",
+                        "content": "5.8.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "{     An array of mime type mappings. Maps a source mime type to a new     destination mime type. Default empty array.     @type array $mime_type The source mime type {         @type string $mime_type The new mime type.     }",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$output_format"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Path to the image.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$filename"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The source image mime type. }",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$mime_type"
+                    }
+                ],
+                "long_description_html": "<p>Enables filtering the mime type used to save images. By default, the mapping array is empty, so the mime type matches the source image.</p>"
+            }
+        },
+        {
             "name": "image_editor_save_pre",
             "file": "wp-admin/includes/image-edit.php",
             "type": "filter",
@@ -17600,6 +17699,11 @@
                         "content": "2.8.0"
                     },
                     {
+                        "name": "since",
+                        "content": "5.8.0",
+                        "description": "The <code>$scheme</code> parameter was added."
+                    },
+                    {
                         "name": "param",
                         "content": "The complete URL to the includes directory including scheme and path.",
                         "types": [
@@ -17609,11 +17713,20 @@
                     },
                     {
                         "name": "param",
-                        "content": "Path relative to the URL to the wp-includes directory. Blank string                     if no path is specified.",
+                        "content": "Path relative to the URL to the wp-includes directory. Blank string                            if no path is specified.",
                         "types": [
                             "string"
                         ],
                         "variable": "$path"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Scheme to give the includes URL context. Accepts                            'http', 'https', 'relative', or null. Default null.",
+                        "types": [
+                            "string",
+                            "null"
+                        ],
+                        "variable": "$scheme"
                     }
                 ],
                 "long_description_html": ""
@@ -17656,6 +17769,11 @@
                         "content": "4.4.0"
                     },
                     {
+                        "name": "since",
+                        "content": "5.8.0",
+                        "description": "The $userdata parameter was added."
+                    },
+                    {
                         "name": "param",
                         "content": "{     Default meta values and keys for the user.     @type string   $nickname             The user's nickname. Default is the user's username.     @type string   $first_name           The user's first name.     @type string   $last_name            The user's last name.     @type string   $description          The user's description.     @type string   $rich_editing         Whether to enable the rich-editor for the user. Default 'true'.     @type string   $syntax_highlighting  Whether to enable the rich code editor for the user. Default 'true'.     @type string   $comment_shortcuts    Whether to enable keyboard shortcuts for the user. Default 'false'.     @type string   $admin_color          The color scheme for a user's admin screen. Default 'fresh'.     @type int|bool $use_ssl              Whether to force SSL on the user's admin area. 0|false if SSL                                          is not forced.     @type string   $show_admin_bar_front Whether to show the admin bar on the front end for the user.                                          Default 'true'.     @type string   $locale               User's locale. Default empty. }",
                         "types": [
@@ -17678,6 +17796,14 @@
                             "bool"
                         ],
                         "variable": "$update"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The raw array of data passed to wp_insert_user().",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$userdata"
                     }
                 ],
                 "long_description_html": "<p>Does not include contact methods. These are added using <code>wp_get_user_contact_methods( $user )</code>.</p>"
@@ -17865,7 +17991,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters API request arguments for each Add Plugins screen tab.",
-                "long_description": "The dynamic portion of the hook name, `$tab`, refers to the plugin install tabs. Default tabs include 'featured', 'popular', 'recommended', 'favorites', and 'upload'.",
+                "long_description": "The dynamic portion of the hook name, `$tab`, refers to the plugin install tabs.\n Possible hook names include:\n  - `install_plugins_table_api_args_favorites`  - `install_plugins_table_api_args_featured`  - `install_plugins_table_api_args_popular`  - `install_plugins_table_api_args_recommended`  - `install_plugins_table_api_args_upload`",
                 "tags": [
                     {
                         "name": "since",
@@ -17881,7 +18007,7 @@
                         "variable": "$args"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$tab</code>, refers to the plugin install tabs. Default tabs include 'featured', 'popular', 'recommended', 'favorites', and 'upload'.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$tab</code>, refers to the plugin install tabs.</p> <p>Possible hook names include:</p> <ul> <li><code>install_plugins_table_api_args_favorites</code></li> <li><code>install_plugins_table_api_args_featured</code></li> <li><code>install_plugins_table_api_args_popular</code></li> <li><code>install_plugins_table_api_args_recommended</code></li> <li><code>install_plugins_table_api_args_upload</code></li> </ul>"
             }
         },
         {
@@ -18066,7 +18192,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters API request arguments for each Install Themes screen tab.",
-                "long_description": "The dynamic portion of the hook name, `$tab`, refers to the theme install tabs. Default tabs are 'dashboard', 'search', 'upload', 'featured', 'new', and 'updated'.",
+                "long_description": "The dynamic portion of the hook name, `$tab`, refers to the theme install tab.\n Possible hook names include:\n  - `install_themes_table_api_args_dashboard`  - `install_themes_table_api_args_featured`  - `install_themes_table_api_args_new`  - `install_themes_table_api_args_search`  - `install_themes_table_api_args_updated`  - `install_themes_table_api_args_upload`",
                 "tags": [
                     {
                         "name": "since",
@@ -18082,7 +18208,7 @@
                         "variable": "$args"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$tab</code>, refers to the theme install tabs. Default tabs are 'dashboard', 'search', 'upload', 'featured', 'new', and 'updated'.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$tab</code>, refers to the theme install tab.</p> <p>Possible hook names include:</p> <ul> <li><code>install_themes_table_api_args_dashboard</code></li> <li><code>install_themes_table_api_args_featured</code></li> <li><code>install_themes_table_api_args_new</code></li> <li><code>install_themes_table_api_args_search</code></li> <li><code>install_themes_table_api_args_updated</code></li> <li><code>install_themes_table_api_args_upload</code></li> </ul>"
             }
         },
         {
@@ -20201,7 +20327,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the taxonomy columns in the Posts list table.",
-                "long_description": "The dynamic portion of the hook name, `$post_type`, refers to the post type slug.",
+                "long_description": "The dynamic portion of the hook name, `$post_type`, refers to the post type slug.\n Possible hook names include:\n  - `manage_taxonomies_for_post_columns`  - `manage_taxonomies_for_page_columns`",
                 "tags": [
                     {
                         "name": "since",
@@ -20224,7 +20350,7 @@
                         "variable": "$post_type"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$post_type</code>, refers to the post type slug.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$post_type</code>, refers to the post type slug.</p> <p>Possible hook names include:</p> <ul> <li><code>manage_taxonomies_for_post_columns</code></li> <li><code>manage_taxonomies_for_page_columns</code></li> </ul>"
             }
         },
         {
@@ -20273,7 +20399,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the columns displayed in the Posts list table for a specific post type.",
-                "long_description": "The dynamic portion of the hook name, `$post_type`, refers to the post type slug.",
+                "long_description": "The dynamic portion of the hook name, `$post_type`, refers to the post type slug.\n Possible hook names include:\n  - `manage_post_posts_columns`  - `manage_page_posts_columns`",
                 "tags": [
                     {
                         "name": "since",
@@ -20288,7 +20414,7 @@
                         "variable": "$post_columns"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$post_type</code>, refers to the post type slug.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$post_type</code>, refers to the post type slug.</p> <p>Possible hook names include:</p> <ul> <li><code>manage_post_posts_columns</code></li> <li><code>manage_page_posts_columns</code></li> </ul>"
             }
         },
         {
@@ -20345,7 +20471,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the displayed columns in the terms list table.",
-                "long_description": "The dynamic portion of the hook name, `$this->screen->taxonomy`, refers to the slug of the current taxonomy.",
+                "long_description": "The dynamic portion of the hook name, `$this->screen->taxonomy`, refers to the slug of the current taxonomy.\n Possible hook names include:\n  - `manage_category_custom_column`  - `manage_post_tag_custom_column`",
                 "tags": [
                     {
                         "name": "since",
@@ -20376,7 +20502,7 @@
                         "variable": "$term_id"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;screen-&gt;taxonomy</code>, refers to the slug of the current taxonomy.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;screen-&gt;taxonomy</code>, refers to the slug of the current taxonomy.</p> <p>Possible hook names include:</p> <ul> <li><code>manage_category_custom_column</code></li> <li><code>manage_post_tag_custom_column</code></li> </ul>"
             }
         },
         {
@@ -20724,6 +20850,30 @@
                             "string[]"
                         ],
                         "variable": "$allowed_media_types"
+                    }
+                ],
+                "long_description_html": ""
+            }
+        },
+        {
+            "name": "media_library_infinite_scrolling",
+            "file": "wp-includes/media.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters whether the Media Library grid has infinite scrolling. Default `false`.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.8.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The filtered value, defaults to <code>false</code>.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$value"
                     }
                 ],
                 "long_description_html": ""
@@ -21957,7 +22107,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the posts displayed in the 'View All' tab of the current post type's menu items meta box.",
-                "long_description": "The dynamic portion of the hook name, `$post_type_name`, refers to the slug of the current post type.",
+                "long_description": "The dynamic portion of the hook name, `$post_type_name`, refers to the slug of the current post type.\n Possible hook names include:\n  - `nav_menu_items_post`  - `nav_menu_items_page`",
                 "tags": [
                     {
                         "name": "since",
@@ -21998,7 +22148,7 @@
                         "variable": "$post_type"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$post_type_name</code>, refers to the slug of the current post type.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$post_type_name</code>, refers to the slug of the current post type.</p> <p>Possible hook names include:</p> <ul> <li><code>nav_menu_items_post</code></li> <li><code>nav_menu_items_page</code></li> </ul>"
             }
         },
         {
@@ -22007,7 +22157,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the posts displayed in the 'Most Recent' tab of the current post type's menu items meta box.",
-                "long_description": "The dynamic portion of the hook name, `$post_type_name`, refers to the post type name.",
+                "long_description": "The dynamic portion of the hook name, `$post_type_name`, refers to the post type name.\n Possible hook names include:\n  - `nav_menu_items_post_recent`  - `nav_menu_items_page_recent`",
                 "tags": [
                     {
                         "name": "since",
@@ -22051,7 +22201,7 @@
                         "variable": "$recent_args"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$post_type_name</code>, refers to the post type name.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$post_type_name</code>, refers to the post type name.</p> <p>Possible hook names include:</p> <ul> <li><code>nav_menu_items_post_recent</code></li> <li><code>nav_menu_items_page_recent</code></li> </ul>"
             }
         },
         {
@@ -22073,7 +22223,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "{     The HTML attributes applied to the menu item's <code>&lt;a&gt;</code> element, empty strings are ignored.     @type string $title        Title attribute.     @type string $target       Target attribute.     @type string $rel          The rel attribute.     @type string $href         The href attribute.     @type string $aria_current The aria-current attribute. }",
+                        "content": "{     The HTML attributes applied to the menu item's <code>&lt;a&gt;</code> element, empty strings are ignored.     @type string $title        Title attribute.     @type string $target       Target attribute.     @type string $rel          The rel attribute.     @type string $href         The href attribute.     @type string $aria-current The aria-current attribute. }",
                         "types": [
                             "array"
                         ],
@@ -22392,6 +22542,11 @@
                         "content": "3.0.0"
                     },
                     {
+                        "name": "since",
+                        "content": "5.8.0",
+                        "description": "The <code>$scheme</code> parameter was added."
+                    },
+                    {
                         "name": "param",
                         "content": "The complete network admin URL including scheme and path.",
                         "types": [
@@ -22401,11 +22556,20 @@
                     },
                     {
                         "name": "param",
-                        "content": "Path relative to the network admin URL. Blank string if                     no path is specified.",
+                        "content": "Path relative to the network admin URL. Blank string if                            no path is specified.",
                         "types": [
                             "string"
                         ],
                         "variable": "$path"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The scheme to use. Accepts 'http', 'https',                            'admin', or null. Default is 'admin', which obeys force_ssl_admin() and is_ssl().",
+                        "types": [
+                            "string",
+                            "null"
+                        ],
+                        "variable": "$scheme"
                     }
                 ],
                 "long_description_html": ""
@@ -24342,7 +24506,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "{     The HTML attributes applied to the menu item's <code>&lt;a&gt;</code> element, empty strings are ignored.     @type string $href         The href attribute.     @type string $aria_current The aria-current attribute. }",
+                        "content": "{     The HTML attributes applied to the menu item's <code>&lt;a&gt;</code> element, empty strings are ignored.     @type string $href         The href attribute.     @type string $aria-current The aria-current attribute. }",
                         "types": [
                             "array"
                         ],
@@ -26156,7 +26320,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Post data.",
+                        "content": "Post object.",
                         "types": [
                             "\\WP_Post"
                         ],
@@ -26464,7 +26628,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the labels of a specific post type.",
-                "long_description": "The dynamic portion of the hook name, `$post_type`, refers to the post type slug.",
+                "long_description": "The dynamic portion of the hook name, `$post_type`, refers to the post type slug.\n Possible hook names include:\n  - `post_type_labels_post`  - `post_type_labels_page`  - `post_type_labels_attachment`",
                 "tags": [
                     {
                         "name": "since",
@@ -26484,7 +26648,7 @@
                         "variable": "$labels"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$post_type</code>, refers to the post type slug.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$post_type</code>, refers to the post type slug.</p> <p>Possible hook names include:</p> <ul> <li><code>post_type_labels_post</code></li> <li><code>post_type_labels_page</code></li> <li><code>post_type_labels_attachment</code></li> </ul>"
             }
         },
         {
@@ -29447,7 +29611,7 @@
             "file": "wp-includes/taxonomy.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the permalink structure for a terms before token replacement occurs.",
+                "description": "Filters the permalink structure for a term before token replacement occurs.",
                 "long_description": "",
                 "tags": [
                     {
@@ -32746,6 +32910,30 @@
             }
         },
         {
+            "name": "rest_pattern_directory_collection_params",
+            "file": "wp-includes/rest-api/endpoints/class-wp-rest-pattern-directory-controller.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filter collection parameters for the pattern directory controller.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.8.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "JSON Schema-formatted collection parameters.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$query_params"
+                    }
+                ],
+                "long_description_html": ""
+            }
+        },
+        {
             "name": "rest_post_dispatch",
             "file": "wp-includes/rest-api/class-wp-rest-server.php",
             "type": "filter",
@@ -33082,7 +33270,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters a post before it is inserted via the REST API.",
-                "long_description": "The dynamic portion of the hook name, `$this->post_type`, refers to the post type slug.",
+                "long_description": "The dynamic portion of the hook name, `$this->post_type`, refers to the post type slug.\n Possible hook names include:\n  - `rest_pre_insert_post`  - `rest_pre_insert_page`  - `rest_pre_insert_attachment`",
                 "tags": [
                     {
                         "name": "since",
@@ -33105,7 +33293,7 @@
                         "variable": "$request"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;post_type</code>, refers to the post type slug.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;post_type</code>, refers to the post type slug.</p> <p>Possible hook names include:</p> <ul> <li><code>rest_pre_insert_post</code></li> <li><code>rest_pre_insert_page</code></li> <li><code>rest_pre_insert_attachment</code></li> </ul>"
             }
         },
         {
@@ -33114,7 +33302,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters term data before inserting term via the REST API.",
-                "long_description": "The dynamic portion of the hook name, `$this->taxonomy`, refers to the taxonomy slug.",
+                "long_description": "The dynamic portion of the hook name, `$this->taxonomy`, refers to the taxonomy slug.\n Possible hook names include:\n  - `rest_pre_insert_category`  - `rest_pre_insert_post_tag`",
                 "tags": [
                     {
                         "name": "since",
@@ -33137,7 +33325,7 @@
                         "variable": "$request"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;taxonomy</code>, refers to the taxonomy slug.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;taxonomy</code>, refers to the taxonomy slug.</p> <p>Possible hook names include:</p> <ul> <li><code>rest_pre_insert_category</code></li> <li><code>rest_pre_insert_post_tag</code></li> </ul>"
             }
         },
         {
@@ -33357,6 +33545,46 @@
             }
         },
         {
+            "name": "rest_prepare_block_pattern",
+            "file": "wp-includes/rest-api/endpoints/class-wp-rest-pattern-directory-controller.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the REST API response for a pattern.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.8.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The response object.",
+                        "types": [
+                            "\\WP_REST_Response"
+                        ],
+                        "variable": "$response"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The unprepared pattern.",
+                        "types": [
+                            "object"
+                        ],
+                        "variable": "$raw_pattern"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The request object.",
+                        "types": [
+                            "\\WP_REST_Request"
+                        ],
+                        "variable": "$request"
+                    }
+                ],
+                "long_description_html": ""
+            }
+        },
+        {
             "name": "rest_prepare_block_type",
             "file": "wp-includes/rest-api/endpoints/class-wp-rest-block-types-controller.php",
             "type": "filter",
@@ -33557,6 +33785,46 @@
             }
         },
         {
+            "name": "rest_prepare_sidebar",
+            "file": "wp-includes/rest-api/endpoints/class-wp-rest-sidebars-controller.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the REST API response for a sidebar.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.8.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The response object.",
+                        "types": [
+                            "\\WP_REST_Response"
+                        ],
+                        "variable": "$response"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The raw sidebar data.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$raw_sidebar"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The request object.",
+                        "types": [
+                            "\\WP_REST_Request"
+                        ],
+                        "variable": "$request"
+                    }
+                ],
+                "long_description_html": ""
+            }
+        },
+        {
             "name": "rest_prepare_status",
             "file": "wp-includes/rest-api/endpoints/class-wp-rest-post-statuses-controller.php",
             "type": "filter",
@@ -33717,12 +33985,92 @@
             }
         },
         {
+            "name": "rest_prepare_widget",
+            "file": "wp-includes/rest-api/endpoints/class-wp-rest-widgets-controller.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the REST API response for a widget.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.8.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The response object.",
+                        "types": [
+                            "\\WP_REST_Response"
+                        ],
+                        "variable": "$response"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The registered widget data.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$widget"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Request used to generate the response.",
+                        "types": [
+                            "\\WP_REST_Request"
+                        ],
+                        "variable": "$request"
+                    }
+                ],
+                "long_description_html": ""
+            }
+        },
+        {
+            "name": "rest_prepare_widget_type",
+            "file": "wp-includes/rest-api/endpoints/class-wp-rest-widget-types-controller.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the REST API response for a widget type.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.8.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The response object.",
+                        "types": [
+                            "\\WP_REST_Response"
+                        ],
+                        "variable": "$response"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The array of widget data.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$widget_type"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The request object.",
+                        "types": [
+                            "\\WP_REST_Request"
+                        ],
+                        "variable": "$request"
+                    }
+                ],
+                "long_description_html": ""
+            }
+        },
+        {
             "name": "rest_prepare_{$this->post_type}",
             "file": "wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php",
             "type": "filter",
             "doc": {
                 "description": "Filters the post data for a REST API response.",
-                "long_description": "The dynamic portion of the hook name, `$this->post_type`, refers to the post type slug.\n Possible filter names include:\n  - `rest_prepare_post`  - `rest_prepare_page`  - `rest_prepare_attachment`",
+                "long_description": "The dynamic portion of the hook name, `$this->post_type`, refers to the post type slug.\n Possible hook names include:\n  - `rest_prepare_post`  - `rest_prepare_page`  - `rest_prepare_attachment`",
                 "tags": [
                     {
                         "name": "since",
@@ -33753,7 +34101,7 @@
                         "variable": "$request"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;post_type</code>, refers to the post type slug.</p> <p>Possible filter names include:</p> <ul> <li><code>rest_prepare_post</code></li> <li><code>rest_prepare_page</code></li> <li><code>rest_prepare_attachment</code></li> </ul>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;post_type</code>, refers to the post type slug.</p> <p>Possible hook names include:</p> <ul> <li><code>rest_prepare_post</code></li> <li><code>rest_prepare_page</code></li> <li><code>rest_prepare_attachment</code></li> </ul>"
             }
         },
         {
@@ -33762,7 +34110,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the term data for a REST API response.",
-                "long_description": "The dynamic portion of the hook name, `$this->taxonomy`, refers to the taxonomy slug.\n Possible filter names include:\n  - `rest_prepare_category`  - `rest_prepare_post_tag`\n Allows modification of the term data right before it is returned.",
+                "long_description": "The dynamic portion of the hook name, `$this->taxonomy`, refers to the taxonomy slug.\n Possible hook names include:\n  - `rest_prepare_category`  - `rest_prepare_post_tag`\n Allows modification of the term data right before it is returned.",
                 "tags": [
                     {
                         "name": "since",
@@ -33793,7 +34141,7 @@
                         "variable": "$request"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;taxonomy</code>, refers to the taxonomy slug.</p> <p>Possible filter names include:</p> <ul> <li><code>rest_prepare_category</code></li> <li><code>rest_prepare_post_tag</code></li> </ul> <p>Allows modification of the term data right before it is returned.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;taxonomy</code>, refers to the taxonomy slug.</p> <p>Possible hook names include:</p> <ul> <li><code>rest_prepare_category</code></li> <li><code>rest_prepare_post_tag</code></li> </ul> <p>Allows modification of the term data right before it is returned.</p>"
             }
         },
         {
@@ -34423,7 +34771,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters WP_Query arguments when querying users via the REST API.",
-                "long_description": "The dynamic portion of the hook name, `$this->post_type`, refers to the post type slug.\n Possible filter names include:\n  - `rest_post_query`  - `rest_page_query`  - `rest_attachment_query`\n Enables adding extra arguments or setting defaults for a post collection request.",
+                "long_description": "The dynamic portion of the hook name, `$this->post_type`, refers to the post type slug.\n Possible hook names include:\n  - `rest_post_query`  - `rest_page_query`  - `rest_attachment_query`\n Enables adding extra arguments or setting defaults for a post collection request.",
                 "tags": [
                     {
                         "name": "since",
@@ -34456,7 +34804,7 @@
                         "variable": "$request"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;post_type</code>, refers to the post type slug.</p> <p>Possible filter names include:</p> <ul> <li><code>rest_post_query</code></li> <li><code>rest_page_query</code></li> <li><code>rest_attachment_query</code></li> </ul> <p>Enables adding extra arguments or setting defaults for a post collection request.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;post_type</code>, refers to the post type slug.</p> <p>Possible hook names include:</p> <ul> <li><code>rest_post_query</code></li> <li><code>rest_page_query</code></li> <li><code>rest_attachment_query</code></li> </ul> <p>Enables adding extra arguments or setting defaults for a post collection request.</p>"
             }
         },
         {
@@ -34465,7 +34813,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters whether a post is trashable.",
-                "long_description": "The dynamic portion of the hook name, `$this->post_type`, refers to the post type slug.\n Pass false to disable Trash support for the post.",
+                "long_description": "The dynamic portion of the hook name, `$this->post_type`, refers to the post type slug.\n Possible hook names include:\n  - `rest_post_trashable`  - `rest_page_trashable`  - `rest_attachment_trashable`\n Pass false to disable Trash support for the post.",
                 "tags": [
                     {
                         "name": "since",
@@ -34488,7 +34836,7 @@
                         "variable": "$post"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;post_type</code>, refers to the post type slug.</p> <p>Pass false to disable Trash support for the post.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;post_type</code>, refers to the post type slug.</p> <p>Possible hook names include:</p> <ul> <li><code>rest_post_trashable</code></li> <li><code>rest_page_trashable</code></li> <li><code>rest_attachment_trashable</code></li> </ul> <p>Pass false to disable Trash support for the post.</p>"
             }
         },
         {
@@ -34529,7 +34877,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters get_terms() arguments when querying users via the REST API.",
-                "long_description": "The dynamic portion of the hook name, `$this->taxonomy`, refers to the taxonomy slug.\n Enables adding extra arguments or setting defaults for a terms collection request.",
+                "long_description": "The dynamic portion of the hook name, `$this->taxonomy`, refers to the taxonomy slug.\n Possible hook names include:\n  - `rest_category_query`  - `rest_post_tag_query`\n Enables adding extra arguments or setting defaults for a terms collection request.",
                 "tags": [
                     {
                         "name": "since",
@@ -34557,7 +34905,7 @@
                         "variable": "$request"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;taxonomy</code>, refers to the taxonomy slug.</p> <p>Enables adding extra arguments or setting defaults for a terms collection request.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;taxonomy</code>, refers to the taxonomy slug.</p> <p>Possible hook names include:</p> <ul> <li><code>rest_category_query</code></li> <li><code>rest_post_tag_query</code></li> </ul> <p>Enables adding extra arguments or setting defaults for a terms collection request.</p>"
             }
         },
         {
@@ -34973,6 +35321,16 @@
                         "name": "since",
                         "content": "5.3.1",
                         "description": "Added support for gradient backgrounds."
+                    },
+                    {
+                        "name": "since",
+                        "content": "5.7.1",
+                        "description": "Added support for <code>object-position</code>."
+                    },
+                    {
+                        "name": "since",
+                        "content": "5.8.0",
+                        "description": "Added support for <code>calc()</code> and <code>var()</code> values."
                     },
                     {
                         "name": "param",
@@ -36696,6 +37054,54 @@
             }
         },
         {
+            "name": "should_load_remote_block_patterns",
+            "file": "wp-includes/block-patterns.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filter to disable remote block patterns.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.8.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$should_load_remote"
+                    }
+                ],
+                "long_description_html": ""
+            }
+        },
+        {
+            "name": "should_load_separate_core_block_assets",
+            "file": "wp-includes/script-loader.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the flag that decides whether separate scripts and styles will be loaded for core blocks on-render.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.8.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether separate assets will be loaded.                                   Default false.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$load_separate_assets"
+                    }
+                ],
+                "long_description_html": ""
+            }
+        },
+        {
             "name": "show_admin_bar",
             "file": "wp-includes/admin-bar.php",
             "type": "filter",
@@ -37023,11 +37429,11 @@
                     },
                     {
                         "name": "param",
-                        "content": "Available languages.",
+                        "content": "Array of available language codes. Language codes are formed by                            stripping the .mo extension from the language file names.",
                         "types": [
-                            "array"
+                            "string[]"
                         ],
-                        "variable": "$available_languages"
+                        "variable": "$languages"
                     }
                 ],
                 "long_description_html": "<p>Passing an empty array to this hook will disable output of the setting on the signup form, and the default language will be used when creating the site.</p> <p>Languages not already installed will be stripped.</p>"
@@ -37416,6 +37822,30 @@
                     }
                 ],
                 "long_description_html": ""
+            }
+        },
+        {
+            "name": "site_health_navigation_tabs",
+            "file": "wp-admin/site-health.php",
+            "type": "filter",
+            "doc": {
+                "description": "An associated array of extra tabs for the Site Health navigation bar.",
+                "long_description": "Add a custom page to the Site Health screen, based on a tab slug and label. The label you provide will also be used as part of the site title.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.8.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "An associated array of tab slugs and their label.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$tabs"
+                    }
+                ],
+                "long_description_html": "<p>Add a custom page to the Site Health screen, based on a tab slug and label. The label you provide will also be used as part of the site title.</p>"
             }
         },
         {
@@ -38122,7 +38552,7 @@
                         "types": [
                             "string"
                         ],
-                        "variable": "$html"
+                        "variable": "$tag"
                     },
                     {
                         "name": "param",
@@ -38147,6 +38577,30 @@
                             "string"
                         ],
                         "variable": "$media"
+                    }
+                ],
+                "long_description_html": ""
+            }
+        },
+        {
+            "name": "styles_inline_size_limit",
+            "file": "wp-includes/script-loader.php",
+            "type": "filter",
+            "doc": {
+                "description": "The maximum size of inlined styles in bytes.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.8.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The file-size threshold, in bytes. Defaults to 20000.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$total_inline_limit"
                     }
                 ],
                 "long_description_html": ""
@@ -38599,7 +39053,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the labels of a specific taxonomy.",
-                "long_description": "The dynamic portion of the hook name, `$taxonomy`, refers to the taxonomy slug.",
+                "long_description": "The dynamic portion of the hook name, `$taxonomy`, refers to the taxonomy slug.\n Possible hook names include:\n  - `taxonomy_labels_category`  - `taxonomy_labels_post_tag`",
                 "tags": [
                     {
                         "name": "since",
@@ -38619,7 +39073,7 @@
                         "variable": "$labels"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the taxonomy slug.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the taxonomy slug.</p> <p>Possible hook names include:</p> <ul> <li><code>taxonomy_labels_category</code></li> <li><code>taxonomy_labels_post_tag</code></li> </ul>"
             }
         },
         {
@@ -40121,12 +40575,25 @@
                         "content": "2.7.0"
                     },
                     {
+                        "name": "since",
+                        "content": "5.8.0",
+                        "description": "Added the <code>$post</code> parameter."
+                    },
+                    {
                         "name": "param",
                         "content": "The password form HTML output.",
                         "types": [
                             "string"
                         ],
                         "variable": "$output"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Post object.",
+                        "types": [
+                            "\\WP_Post"
+                        ],
+                        "variable": "$post"
                     }
                 ],
                 "long_description_html": "<p>If modifying the password field, please note that the core database schema limits the password field to 20 characters regardless of the value of the size attribute in the form input.</p>"
@@ -41233,7 +41700,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters list of page templates for a theme.",
-                "long_description": "The dynamic portion of the hook name, `$post_type`, refers to the post type.",
+                "long_description": "The dynamic portion of the hook name, `$post_type`, refers to the post type.\n Possible hook names include:\n  - `theme_post_templates`  - `theme_page_templates`  - `theme_attachment_templates`",
                 "tags": [
                     {
                         "name": "since",
@@ -41283,7 +41750,7 @@
                         "variable": "$post_type"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$post_type</code>, refers to the post type.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$post_type</code>, refers to the post type.</p> <p>Possible hook names include:</p> <ul> <li><code>theme_post_templates</code></li> <li><code>theme_page_templates</code></li> <li><code>theme_attachment_templates</code></li> </ul>"
             }
         },
         {
@@ -41979,6 +42446,55 @@
                     }
                 ],
                 "long_description_html": ""
+            }
+        },
+        {
+            "name": "update_plugins_{$hostname}",
+            "file": "wp-includes/update.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the update response for a given plugin hostname.",
+                "long_description": "The dynamic portion of the hook name, `$hostname`, refers to the hostname of the URI specified in the `Update URI` header field.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.8.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "{     The plugin update data with the latest details. Default false.     @type string $id           Optional. ID of the plugin for update purposes, should be a URI                                specified in the <code>Update URI</code> header field.     @type string $slug         Slug of the plugin.     @type string $version      The version of the plugin.     @type string $url          The URL for details of the plugin.     @type string $package      Optional. The update ZIP for the plugin.     @type string $tested       Optional. The version of WordPress the plugin is tested against.     @type string $requires_php Optional. The version of PHP which the plugin requires.     @type bool   $autoupdate   Optional. Whether the plugin should automatically update.     @type array  $icons        Optional. Array of plugin icons.     @type array  $banners      Optional. Array of plugin banners.     @type array  $banners_rtl  Optional. Array of plugin RTL banners.     @type array  $translations {         Optional. List of translation updates for the plugin.         @type string $language   The language the translation update is for.         @type string $version    The version of the plugin this translation is for.                                  This is not the version of the language file.         @type string $updated    The update timestamp of the translation file.                                  Should be a date in the <code>YYYY-MM-DD HH:MM:SS</code> format.         @type string $package    The ZIP location containing the translation update.         @type string $autoupdate Whether the translation should be automatically installed.     } }",
+                        "types": [
+                            "array",
+                            "false"
+                        ],
+                        "variable": "$update"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Plugin headers.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$plugin_data"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Plugin filename.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$plugin_file"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Installed locales to look translations for.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$locales"
+                    }
+                ],
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$hostname</code>, refers to the hostname of the URI specified in the <code>Update URI</code> header field.</p>"
             }
         },
         {
@@ -43033,6 +43549,30 @@
             }
         },
         {
+            "name": "use_widgets_block_editor",
+            "file": "wp-includes/widgets.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters whether or not to use the block editor to manage widgets.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.8.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether or not to use the block editor to manage widgets.",
+                        "types": [
+                            "boolean"
+                        ],
+                        "variable": "$use_widgets_block_editor"
+                    }
+                ],
+                "long_description_html": ""
+            }
+        },
+        {
             "name": "user_admin_url",
             "file": "wp-includes/link-template.php",
             "type": "filter",
@@ -43045,6 +43585,11 @@
                         "content": "3.1.0"
                     },
                     {
+                        "name": "since",
+                        "content": "5.8.0",
+                        "description": "The <code>$scheme</code> parameter was added."
+                    },
+                    {
                         "name": "param",
                         "content": "The complete URL including scheme and path.",
                         "types": [
@@ -43054,11 +43599,20 @@
                     },
                     {
                         "name": "param",
-                        "content": "Path relative to the URL. Blank string if                     no path is specified.",
+                        "content": "Path relative to the URL. Blank string if                            no path is specified.",
                         "types": [
                             "string"
                         ],
                         "variable": "$path"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The scheme to use. Accepts 'http', 'https',                            'admin', or null. Default is 'admin', which obeys force_ssl_admin() and is_ssl().",
+                        "types": [
+                            "string",
+                            "null"
+                        ],
+                        "variable": "$scheme"
                     }
                 ],
                 "long_description_html": ""
@@ -43093,38 +43647,6 @@
             "file": "wp-includes/user.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the body of the data erasure fulfillment notification.",
-                "long_description": "The email is sent to a user when a their data erasure request is fulfilled by an administrator.\n The following strings have a special meaning and will get replaced dynamically:\n ###SITENAME###           The name of the site. ###PRIVACY_POLICY_URL### Privacy policy page URL. ###SITEURL###            The URL to the site.",
-                "tags": [
-                    {
-                        "name": "since",
-                        "content": "4.9.6"
-                    },
-                    {
-                        "name": "param",
-                        "content": "Text in the email.",
-                        "types": [
-                            "string"
-                        ],
-                        "variable": "$email_text"
-                    },
-                    {
-                        "name": "param",
-                        "content": "{     Data relating to the account action email.     @type WP_User_Request $request            User request object.     @type string          $message_recipient  The address that the email will be sent to. Defaults                                               to the value of <code>$request-&gt;email</code>, but can be changed                                               by the <code>user_erasure_fulfillment_email_to</code> filter.     @type string          $privacy_policy_url Privacy policy URL.     @type string          $sitename           The site name sending the mail.     @type string          $siteurl            The site URL sending the mail. }",
-                        "types": [
-                            "array"
-                        ],
-                        "variable": "$email_data"
-                    }
-                ],
-                "long_description_html": "<p>The email is sent to a user when a their data erasure request is fulfilled by an administrator.</p> <p>The following strings have a special meaning and will get replaced dynamically:</p> <h3>SITENAME###           The name of the site.</h3> <h3>PRIVACY_POLICY_URL### Privacy policy page URL.</h3> <h3>SITEURL###            The URL to the site.</h3>"
-            }
-        },
-        {
-            "name": "user_confirmed_action_email_content",
-            "file": "wp-includes/user.php",
-            "type": "filter",
-            "doc": {
                 "description": "Filters the body of the user request confirmation email.",
                 "long_description": "The email is sent to an administrator when an user request is confirmed. The following strings have a special meaning and will get replaced dynamically:\n ###SITENAME###    The name of the site. ###USER_EMAIL###  The user email for the request. ###DESCRIPTION### Description of the action being performed so the user knows what the email is for. ###MANAGE_URL###  The URL to manage requests. ###SITEURL###     The URL to the site.",
                 "tags": [
@@ -43150,6 +43672,38 @@
                     }
                 ],
                 "long_description_html": "<p>The email is sent to an administrator when an user request is confirmed. The following strings have a special meaning and will get replaced dynamically:</p> <h3>SITENAME###    The name of the site.</h3> <h3>USER_EMAIL###  The user email for the request.</h3> <h3>DESCRIPTION### Description of the action being performed so the user knows what the email is for.</h3> <h3>MANAGE_URL###  The URL to manage requests.</h3> <h3>SITEURL###     The URL to the site.</h3>"
+            }
+        },
+        {
+            "name": "user_confirmed_action_email_content",
+            "file": "wp-includes/user.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the body of the data erasure fulfillment notification.",
+                "long_description": "The email is sent to a user when a their data erasure request is fulfilled by an administrator.\n The following strings have a special meaning and will get replaced dynamically:\n ###SITENAME###           The name of the site. ###PRIVACY_POLICY_URL### Privacy policy page URL. ###SITEURL###            The URL to the site.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "4.9.6"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Text in the email.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$email_text"
+                    },
+                    {
+                        "name": "param",
+                        "content": "{     Data relating to the account action email.     @type WP_User_Request $request            User request object.     @type string          $message_recipient  The address that the email will be sent to. Defaults                                               to the value of <code>$request-&gt;email</code>, but can be changed                                               by the <code>user_erasure_fulfillment_email_to</code> filter.     @type string          $privacy_policy_url Privacy policy URL.     @type string          $sitename           The site name sending the mail.     @type string          $siteurl            The site URL sending the mail. }",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$email_data"
+                    }
+                ],
+                "long_description_html": "<p>The email is sent to a user when a their data erasure request is fulfilled by an administrator.</p> <p>The following strings have a special meaning and will get replaced dynamically:</p> <h3>SITENAME###           The name of the site.</h3> <h3>PRIVACY_POLICY_URL### Privacy policy page URL.</h3> <h3>SITEURL###            The URL to the site.</h3>"
             }
         },
         {
@@ -44348,6 +44902,78 @@
             }
         },
         {
+            "name": "widget_block_content",
+            "file": "wp-includes/widgets/class-wp-widget-block.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the content of the Block widget before output.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.8.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The widget content.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$content"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Array of settings for the current widget.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$instance"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Current Block widget instance.",
+                        "types": [
+                            "\\WP_Widget_Block"
+                        ],
+                        "variable": "$widget"
+                    }
+                ],
+                "long_description_html": ""
+            }
+        },
+        {
+            "name": "widget_block_dynamic_classname",
+            "file": "wp-includes/widgets/class-wp-widget-block.php",
+            "type": "filter",
+            "doc": {
+                "description": "The classname used in the block widget's container HTML.",
+                "long_description": "This can be set according to the name of the block contained by the block widget.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.8.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The classname to be used in the block widget's container HTML, e.g. 'widget_block widget_text'.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$classname"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The name of the block contained by the block widget, e.g. 'core/paragraph'.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$block_name"
+                    }
+                ],
+                "long_description_html": "<p>This can be set according to the name of the block contained by the block widget.</p>"
+            }
+        },
+        {
             "name": "widget_categories_args",
             "file": "wp-includes/widgets/class-wp-widget-categories.php",
             "type": "filter",
@@ -45009,6 +45635,30 @@
                     }
                 ],
                 "long_description_html": ""
+            }
+        },
+        {
+            "name": "widget_types_to_hide_from_legacy_widget_block",
+            "file": "wp-includes/block-editor.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the list of widget-type IDs that should **not** be offered by the Legacy Widget block.",
+                "long_description": "Returning an empty array will make all widgets available.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.8.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "An array of excluded widget-type IDs.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$widgets"
+                    }
+                ],
+                "long_description_html": "<p>Returning an empty array will make all widgets available.</p>"
             }
         },
         {
@@ -45958,7 +46608,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "{     Args passed when calling <code>get_code_editor_settings()</code>.     @type string   $type       The MIME type of the file to be edited.     @type string   $file       Filename being edited.     @type WP_Theme $theme      Theme being edited when on theme editor.     @type string   $plugin     Plugin being edited when on plugin editor.     @type array    $codemirror Additional CodeMirror setting overrides.     @type array    $csslint    CSSLint rule overrides.     @type array    $jshint     JSHint rule overrides.     @type array    $htmlhint   JSHint rule overrides. }",
+                        "content": "{     Args passed when calling <code>get_code_editor_settings()</code>.     @type string   $type       The MIME type of the file to be edited.     @type string   $file       Filename being edited.     @type WP_Theme $theme      Theme being edited when on theme editor.     @type string   $plugin     Plugin being edited when on plugin editor.     @type array    $codemirror Additional CodeMirror setting overrides.     @type array    $csslint    CSSLint rule overrides.     @type array    $jshint     JSHint rule overrides.     @type array    $htmlhint   HTMLHint rule overrides. }",
                         "types": [
                             "array"
                         ],
@@ -47417,7 +48067,7 @@
                     {
                         "name": "since",
                         "content": "5.1.0",
-                        "description": "Added the $attr parameter."
+                        "description": "Added the <code>$attr</code> parameter."
                     },
                     {
                         "name": "param",
@@ -50683,6 +51333,11 @@
                         "content": "4.9.0"
                     },
                     {
+                        "name": "since",
+                        "content": "5.8.0",
+                        "description": "The $userdata parameter was added."
+                    },
+                    {
                         "name": "param",
                         "content": "{     Values and keys for the user.     @type string $user_login      The user's login. Only included if $update == false     @type string $user_pass       The user's password.     @type string $user_email      The user's email.     @type string $user_url        The user's url.     @type string $user_nicename   The user's nice name. Defaults to a URL-safe version of user's login     @type string $display_name    The user's display name.     @type string $user_registered MySQL timestamp describing the moment when the user registered. Defaults to                                   the current UTC timestamp. }",
                         "types": [
@@ -50706,6 +51361,14 @@
                             "null"
                         ],
                         "variable": "$id"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The raw array of data passed to wp_insert_user().",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$userdata"
                     }
                 ],
                 "long_description_html": "<p>It only includes data in the users table, not any user metadata.</p>"
@@ -51639,8 +52302,13 @@
                         "content": "4.6.0"
                     },
                     {
+                        "name": "since",
+                        "content": "4.7.0",
+                        "description": "The <code>$urls</code> parameter accepts arrays of specific HTML attributes              as its child elements."
+                    },
+                    {
                         "name": "param",
-                        "content": "URLs to print for resource hints.",
+                        "content": "{     Array of resources and their attributes, or URLs to print for resource hints.     @type array|string ...$0 {         Array of resource attributes, or a URL string.         @type string $href        URL to include in resource hints. Required.         @type string $as          How the browser should treat the resource                                   (<code>script</code>, <code>style</code>, <code>image</code>, <code>document</code>, etc).         @type string $crossorigin Indicates the CORS policy of the specified resource.         @type float  $pr          Expected probability that the resource hint will be used.         @type string $type        Type of the resource (<code>text/html</code>, <code>text/css</code>, etc).     } }",
                         "types": [
                             "array"
                         ],
@@ -51648,7 +52316,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The relation type the URLs are printed for, e.g. 'preconnect' or 'prerender'.",
+                        "content": "The relation type the URLs are printed for,                              e.g. 'preconnect' or 'prerender'.",
                         "types": [
                             "string"
                         ],
@@ -54292,6 +54960,38 @@
             }
         },
         {
+            "name": "wp_{$post->post_type}_revisions_to_keep",
+            "file": "wp-includes/revision.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the number of revisions to save for the given post by its post type.",
+                "long_description": "Overrides both the value of WP_POST_REVISIONS and the {@see 'wp_revisions_to_keep'} filter.\n The dynamic portion of the hook name, `$post->post_type`, refers to the post type slug.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.8.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Number of revisions to store.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$num"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Post object.",
+                        "types": [
+                            "\\WP_Post"
+                        ],
+                        "variable": "$post"
+                    }
+                ],
+                "long_description_html": "<p>Overrides both the value of WP_POST_REVISIONS and the {@see 'wp_revisions_to_keep'} filter.</p> <p>The dynamic portion of the hook name, <code>$post-&gt;post_type</code>, refers to the post type slug.</p>"
+            }
+        },
+        {
             "name": "wpmu_active_signup",
             "file": "wp-signup.php",
             "type": "filter",
@@ -54992,8 +55692,13 @@
                         "content": "5.0.0"
                     },
                     {
+                        "name": "since",
+                        "content": "5.8.0",
+                        "description": "Changed the default placeholder text."
+                    },
+                    {
                         "name": "param",
-                        "content": "Placeholder text. Default 'Start writing or type / to choose a block'.",
+                        "content": "Placeholder text. Default 'Type / to choose a block'.",
                         "types": [
                             "string"
                         ],
@@ -55445,7 +56150,7 @@
                         "types": [
                             "bool"
                         ],
-                        "variable": "$enabled"
+                        "variable": "$is_enabled"
                     }
                 ],
                 "long_description_html": "<p>Contrary to the way it's named, this filter does not control whether XML-RPC is <em>fully</em> enabled, rather, it only controls whether XML-RPC methods requiring authentication - such as for publishing purposes - are enabled.</p> <p>Further, the filter does not control whether pingbacks or other custom endpoints that don't require authentication are enabled. This behavior is expected, and due to how parity was matched with the <code>enable_xmlrpc</code> UI option the filter replaced when it was introduced in 3.5.</p> <p>To disable XML-RPC methods that require authentication, use:</p> <pre><code>add_filter( 'xmlrpc_enabled', '__return_false' );</code></pre> <p>For more granular control over all XML-RPC methods and requests, see the {@see 'xmlrpc_methods'} and {@see 'xmlrpc_element_limit'} hooks.</p>"
@@ -55919,7 +56624,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the override parameters for a file before it is uploaded to WordPress.",
-                "long_description": "The dynamic portion of the hook name, `$action`, refers to the post action. Possible filter names include:\n  - `wp_handle_sideload_overrides`  - `wp_handle_upload_overrides`",
+                "long_description": "The dynamic portion of the hook name, `$action`, refers to the post action.\n Possible hook names include:\n  - `wp_handle_sideload_overrides`  - `wp_handle_upload_overrides`",
                 "tags": [
                     {
                         "name": "since",
@@ -55943,7 +56648,7 @@
                         "variable": "$file"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$action</code>, refers to the post action. Possible filter names include:</p> <ul> <li><code>wp_handle_sideload_overrides</code></li> <li><code>wp_handle_upload_overrides</code></li> </ul>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$action</code>, refers to the post action.</p> <p>Possible hook names include:</p> <ul> <li><code>wp_handle_sideload_overrides</code></li> <li><code>wp_handle_upload_overrides</code></li> </ul>"
             }
         },
         {
@@ -55952,7 +56657,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the data for a file before it is uploaded to WordPress.",
-                "long_description": "The dynamic portion of the hook name, `$action`, refers to the post action. Possible filter names include:\n  - `wp_handle_sideload_prefilter`  - `wp_handle_upload_prefilter`",
+                "long_description": "The dynamic portion of the hook name, `$action`, refers to the post action.\n Possible hook names include:\n  - `wp_handle_sideload_prefilter`  - `wp_handle_upload_prefilter`",
                 "tags": [
                     {
                         "name": "since",
@@ -55973,7 +56678,7 @@
                         "variable": "$file"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$action</code>, refers to the post action. Possible filter names include:</p> <ul> <li><code>wp_handle_sideload_prefilter</code></li> <li><code>wp_handle_upload_prefilter</code></li> </ul>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$action</code>, refers to the post action.</p> <p>Possible hook names include:</p> <ul> <li><code>wp_handle_sideload_prefilter</code></li> <li><code>wp_handle_upload_prefilter</code></li> </ul>"
             }
         },
         {
@@ -55982,7 +56687,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the adjacent image link.",
-                "long_description": "The dynamic portion of the hook name, `$adjacent`, refers to the type of adjacency, either 'next', or 'previous'.",
+                "long_description": "The dynamic portion of the hook name, `$adjacent`, refers to the type of adjacency, either 'next', or 'previous'.\n Possible hook names include:\n  - `next_image_link`  - `previous_image_link`",
                 "tags": [
                     {
                         "name": "since",
@@ -56022,7 +56727,7 @@
                         "variable": "$text"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$adjacent</code>, refers to the type of adjacency, either 'next', or 'previous'.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$adjacent</code>, refers to the type of adjacency, either 'next', or 'previous'.</p> <p>Possible hook names include:</p> <ul> <li><code>next_image_link</code></li> <li><code>previous_image_link</code></li> </ul>"
             }
         },
         {
@@ -56031,7 +56736,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the adjacent post link.",
-                "long_description": "The dynamic portion of the hook name, `$adjacent`, refers to the type of adjacency, 'next' or 'previous'.",
+                "long_description": "The dynamic portion of the hook name, `$adjacent`, refers to the type of adjacency, 'next' or 'previous'.\n Possible hook names include:\n  - `next_post_link`  - `previous_post_link`",
                 "tags": [
                     {
                         "name": "since",
@@ -56083,7 +56788,7 @@
                         "variable": "$adjacent"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$adjacent</code>, refers to the type of adjacency, 'next' or 'previous'.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$adjacent</code>, refers to the type of adjacency, 'next' or 'previous'.</p> <p>Possible hook names include:</p> <ul> <li><code>next_post_link</code></li> <li><code>previous_post_link</code></li> </ul>"
             }
         },
         {
@@ -56092,7 +56797,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the adjacent post relational link.",
-                "long_description": "The dynamic portion of the hook name, `$adjacent`, refers to the type of adjacency, 'next' or 'previous'.",
+                "long_description": "The dynamic portion of the hook name, `$adjacent`, refers to the type of adjacency, 'next' or 'previous'.\n Possible hook names include:\n  - `next_post_rel_link`  - `previous_post_rel_link`",
                 "tags": [
                     {
                         "name": "since",
@@ -56107,7 +56812,7 @@
                         "variable": "$link"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$adjacent</code>, refers to the type of adjacency, 'next' or 'previous'.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$adjacent</code>, refers to the type of adjacency, 'next' or 'previous'.</p> <p>Possible hook names include:</p> <ul> <li><code>next_post_rel_link</code></li> <li><code>previous_post_rel_link</code></li> </ul>"
             }
         },
         {
@@ -56309,7 +57014,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the action links displayed for each term in the terms list table.",
-                "long_description": "The dynamic portion of the hook name, `$taxonomy`, refers to the taxonomy slug.",
+                "long_description": "The dynamic portion of the hook name, `$taxonomy`, refers to the taxonomy slug.\n Possible hook names include:\n  - `category_row_actions`  - `post_tag_row_actions`",
                 "tags": [
                     {
                         "name": "since",
@@ -56332,7 +57037,7 @@
                         "variable": "$tag"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the taxonomy slug.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the taxonomy slug.</p> <p>Possible hook names include:</p> <ul> <li><code>category_row_actions</code></li> <li><code>post_tag_row_actions</code></li> </ul>"
             }
         },
         {
@@ -56405,7 +57110,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the URL sent to the editor for a specific media type.",
-                "long_description": "The dynamic portion of the hook name, `$type`, refers to the type of media being sent.",
+                "long_description": "The dynamic portion of the hook name, `$type`, refers to the type of media being sent.\n Possible hook names include:\n  - `audio_send_to_editor_url`  - `file_send_to_editor_url`  - `video_send_to_editor_url`",
                 "tags": [
                     {
                         "name": "since",
@@ -56436,7 +57141,7 @@
                         "variable": "$title"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$type</code>, refers to the type of media being sent.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$type</code>, refers to the type of media being sent.</p> <p>Possible hook names include:</p> <ul> <li><code>audio_send_to_editor_url</code></li> <li><code>file_send_to_editor_url</code></li> <li><code>video_send_to_editor_url</code></li> </ul>"
             }
         },
         {
@@ -56445,7 +57150,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the path of the queried template by type.",
-                "long_description": "The dynamic portion of the hook name, `$type`, refers to the filename -- minus the file extension and any non-alphanumeric characters delimiting words -- of the file to load. This hook also applies to various types of files loaded as part of the Template Hierarchy.\n Possible values for `$type` include: 'index', '404', 'archive', 'author', 'category', 'tag', 'taxonomy', 'date', 'embed', 'home', 'frontpage', 'privacypolicy', 'page', 'paged', 'search', 'single', 'singular', and 'attachment'.",
+                "long_description": "The dynamic portion of the hook name, `$type`, refers to the filename -- minus the file extension and any non-alphanumeric characters delimiting words -- of the file to load. This hook also applies to various types of files loaded as part of the Template Hierarchy.\n Possible hook names include:\n  - `404_template`  - `archive_template`  - `attachment_template`  - `author_template`  - `category_template`  - `date_template`  - `embed_template`  - `frontpage_template`  - `home_template`  - `index_template`  - `page_template`  - `paged_template`  - `privacypolicy_template`  - `search_template`  - `single_template`  - `singular_template`  - `tag_template`  - `taxonomy_template`",
                 "tags": [
                     {
                         "name": "since",
@@ -56476,12 +57181,12 @@
                         "name": "param",
                         "content": "A list of template candidates, in descending order of priority.",
                         "types": [
-                            "array"
+                            "string[]"
                         ],
                         "variable": "$templates"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$type</code>, refers to the filename -- minus the file extension and any non-alphanumeric characters delimiting words -- of the file to load. This hook also applies to various types of files loaded as part of the Template Hierarchy.</p> <p>Possible values for <code>$type</code> include: 'index', '404', 'archive', 'author', 'category', 'tag', 'taxonomy', 'date', 'embed', 'home', 'frontpage', 'privacypolicy', 'page', 'paged', 'search', 'single', 'singular', and 'attachment'.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$type</code>, refers to the filename -- minus the file extension and any non-alphanumeric characters delimiting words -- of the file to load. This hook also applies to various types of files loaded as part of the Template Hierarchy.</p> <p>Possible hook names include:</p> <ul> <li><code>404_template</code></li> <li><code>archive_template</code></li> <li><code>attachment_template</code></li> <li><code>author_template</code></li> <li><code>category_template</code></li> <li><code>date_template</code></li> <li><code>embed_template</code></li> <li><code>frontpage_template</code></li> <li><code>home_template</code></li> <li><code>index_template</code></li> <li><code>page_template</code></li> <li><code>paged_template</code></li> <li><code>privacypolicy_template</code></li> <li><code>search_template</code></li> <li><code>single_template</code></li> <li><code>singular_template</code></li> <li><code>tag_template</code></li> <li><code>taxonomy_template</code></li> </ul>"
             }
         },
         {
@@ -56490,7 +57195,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the list of template filenames that are searched for when retrieving a template to use.",
-                "long_description": "The last element in the array should always be the fallback template for this query type.\n Possible values for `$type` include: 'index', '404', 'archive', 'author', 'category', 'tag', 'taxonomy', 'date', 'embed', 'home', 'frontpage', 'privacypolicy', 'page', 'paged', 'search', 'single', 'singular', and 'attachment'.",
+                "long_description": "The dynamic portion of the hook name, `$type`, refers to the filename -- minus the file extension and any non-alphanumeric characters delimiting words -- of the file to load. The last element in the array should always be the fallback template for this query type.\n Possible hook names include:\n  - `404_template_hierarchy`  - `archive_template_hierarchy`  - `attachment_template_hierarchy`  - `author_template_hierarchy`  - `category_template_hierarchy`  - `date_template_hierarchy`  - `embed_template_hierarchy`  - `frontpage_template_hierarchy`  - `home_template_hierarchy`  - `index_template_hierarchy`  - `page_template_hierarchy`  - `paged_template_hierarchy`  - `privacypolicy_template_hierarchy`  - `search_template_hierarchy`  - `single_template_hierarchy`  - `singular_template_hierarchy`  - `tag_template_hierarchy`  - `taxonomy_template_hierarchy`",
                 "tags": [
                     {
                         "name": "since",
@@ -56500,12 +57205,12 @@
                         "name": "param",
                         "content": "A list of template candidates, in descending order of priority.",
                         "types": [
-                            "array"
+                            "string[]"
                         ],
                         "variable": "$templates"
                     }
                 ],
-                "long_description_html": "<p>The last element in the array should always be the fallback template for this query type.</p> <p>Possible values for <code>$type</code> include: 'index', '404', 'archive', 'author', 'category', 'tag', 'taxonomy', 'date', 'embed', 'home', 'frontpage', 'privacypolicy', 'page', 'paged', 'search', 'single', 'singular', and 'attachment'.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$type</code>, refers to the filename -- minus the file extension and any non-alphanumeric characters delimiting words -- of the file to load. The last element in the array should always be the fallback template for this query type.</p> <p>Possible hook names include:</p> <ul> <li><code>404_template_hierarchy</code></li> <li><code>archive_template_hierarchy</code></li> <li><code>attachment_template_hierarchy</code></li> <li><code>author_template_hierarchy</code></li> <li><code>category_template_hierarchy</code></li> <li><code>date_template_hierarchy</code></li> <li><code>embed_template_hierarchy</code></li> <li><code>frontpage_template_hierarchy</code></li> <li><code>home_template_hierarchy</code></li> <li><code>index_template_hierarchy</code></li> <li><code>page_template_hierarchy</code></li> <li><code>paged_template_hierarchy</code></li> <li><code>privacypolicy_template_hierarchy</code></li> <li><code>search_template_hierarchy</code></li> <li><code>single_template_hierarchy</code></li> <li><code>singular_template_hierarchy</code></li> <li><code>tag_template_hierarchy</code></li> <li><code>taxonomy_template_hierarchy</code></li> </ul>"
             }
         },
         {
@@ -56514,7 +57219,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the upload iframe source URL for a specific media type.",
-                "long_description": "The dynamic portion of the hook name, `$type`, refers to the type of media uploaded.",
+                "long_description": "The dynamic portion of the hook name, `$type`, refers to the type of media uploaded.\n Possible hook names include:\n  - `image_upload_iframe_src`  - `media_upload_iframe_src`",
                 "tags": [
                     {
                         "name": "since",
@@ -56522,14 +57227,14 @@
                     },
                     {
                         "name": "param",
-                        "content": "The upload iframe source URL by type.",
+                        "content": "The upload iframe source URL.",
                         "types": [
                             "string"
                         ],
                         "variable": "$upload_iframe_src"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$type</code>, refers to the type of media uploaded.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$type</code>, refers to the type of media uploaded.</p> <p>Possible hook names include:</p> <ul> <li><code>image_upload_iframe_src</code></li> <li><code>media_upload_iframe_src</code></li> </ul>"
             }
         }
     ]

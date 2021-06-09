@@ -1530,7 +1530,7 @@
             "type": "action",
             "doc": {
                 "description": "Fires after the taxonomy list table.",
-                "long_description": "The dynamic portion of the hook name, `$taxonomy`, refers to the taxonomy slug.",
+                "long_description": "The dynamic portion of the hook name, `$taxonomy`, refers to the taxonomy slug.\n Possible hook names include:\n  - `after-category-table`  - `after-post_tag-table`",
                 "tags": [
                     {
                         "name": "since",
@@ -1545,7 +1545,7 @@
                         "variable": "$taxonomy"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the taxonomy slug.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the taxonomy slug.</p> <p>Possible hook names include:</p> <ul> <li><code>after-category-table</code></li> <li><code>after-post_tag-table</code></li> </ul>"
             }
         },
         {
@@ -3864,7 +3864,7 @@
             "type": "action",
             "doc": {
                 "description": "Fires after a new term is created for a specific taxonomy.",
-                "long_description": "The dynamic portion of the hook name, `$taxonomy`, refers to the slug of the taxonomy the term was created for.",
+                "long_description": "The dynamic portion of the hook name, `$taxonomy`, refers to the slug of the taxonomy the term was created for.\n Possible hook names include:\n  - `create_category`  - `create_post_tag`",
                 "tags": [
                     {
                         "name": "since",
@@ -3887,7 +3887,7 @@
                         "variable": "$tt_id"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the slug of the taxonomy the term was created for.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the slug of the taxonomy the term was created for.</p> <p>Possible hook names include:</p> <ul> <li><code>create_category</code></li> <li><code>create_post_tag</code></li> </ul>"
             }
         },
         {
@@ -3936,7 +3936,7 @@
             "type": "action",
             "doc": {
                 "description": "Fires after a new term in a specific taxonomy is created, and after the term cache has been cleaned.",
-                "long_description": "The dynamic portion of the hook name, `$taxonomy`, refers to the taxonomy slug.",
+                "long_description": "The dynamic portion of the hook name, `$taxonomy`, refers to the taxonomy slug.\n Possible hook names include:\n  - `created_category`  - `created_post_tag`",
                 "tags": [
                     {
                         "name": "since",
@@ -3959,7 +3959,7 @@
                         "variable": "$tt_id"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the taxonomy slug.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the taxonomy slug.</p> <p>Possible hook names include:</p> <ul> <li><code>created_category</code></li> <li><code>created_post_tag</code></li> </ul>"
             }
         },
         {
@@ -5188,6 +5188,30 @@
             }
         },
         {
+            "name": "delete_theme",
+            "file": "wp-admin/includes/theme.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires immediately before a theme deletion attempt.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.8.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Stylesheet of the theme to delete.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$stylesheet"
+                    }
+                ],
+                "long_description_html": ""
+            }
+        },
+        {
             "name": "delete_transient_{$transient}",
             "file": "wp-includes/option.php",
             "type": "action",
@@ -5296,7 +5320,7 @@
         },
         {
             "name": "delete_widget",
-            "file": "wp-admin/widgets.php",
+            "file": "wp-admin/widgets-form.php",
             "type": "action",
             "doc": {
                 "description": "Fires immediately after a widget has been marked for deletion.",
@@ -5412,7 +5436,7 @@
             "type": "action",
             "doc": {
                 "description": "Fires after a term in a specific taxonomy is deleted.",
-                "long_description": "The dynamic portion of the hook name, `$taxonomy`, refers to the specific taxonomy the term belonged to.",
+                "long_description": "The dynamic portion of the hook name, `$taxonomy`, refers to the specific taxonomy the term belonged to.\n Possible hook names include:\n  - `delete_category`  - `delete_post_tag`",
                 "tags": [
                     {
                         "name": "since",
@@ -5456,7 +5480,7 @@
                         "variable": "$object_ids"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the specific taxonomy the term belonged to.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the specific taxonomy the term belonged to.</p> <p>Possible hook names include:</p> <ul> <li><code>delete_category</code></li> <li><code>delete_post_tag</code></li> </ul>"
             }
         },
         {
@@ -5725,6 +5749,38 @@
                             "int"
                         ],
                         "variable": "$tt_id"
+                    }
+                ],
+                "long_description_html": ""
+            }
+        },
+        {
+            "name": "deleted_theme",
+            "file": "wp-admin/includes/theme.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires immediately after a theme deletion attempt.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.8.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Stylesheet of the theme to delete.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$stylesheet"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether the theme deletion was successful.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$deleted"
                     }
                 ],
                 "long_description_html": ""
@@ -6147,7 +6203,7 @@
             "type": "action",
             "doc": {
                 "description": "Fires once the given feed is loaded.",
-                "long_description": "The dynamic portion of the hook name, `$feed`, refers to the feed template name. Possible values include: 'rdf', 'rss', 'rss2', and 'atom'.",
+                "long_description": "The dynamic portion of the hook name, `$feed`, refers to the feed template name.\n Possible hook names include:\n  - `do_feed_atom`  - `do_feed_rdf`  - `do_feed_rss`  - `do_feed_rss2`",
                 "tags": [
                     {
                         "name": "since",
@@ -6175,7 +6231,7 @@
                         "variable": "$feed"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$feed</code>, refers to the feed template name. Possible values include: 'rdf', 'rss', 'rss2', and 'atom'.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$feed</code>, refers to the feed template name.</p> <p>Possible hook names include:</p> <ul> <li><code>do_feed_atom</code></li> <li><code>do_feed_rdf</code></li> <li><code>do_feed_rss</code></li> <li><code>do_feed_rss2</code></li> </ul>"
             }
         },
         {
@@ -6889,7 +6945,7 @@
             "type": "action",
             "doc": {
                 "description": "Fires after a term in a specific taxonomy has been updated, but before the term cache has been cleaned.",
-                "long_description": "The dynamic portion of the hook name, `$taxonomy`, refers to the taxonomy slug.",
+                "long_description": "The dynamic portion of the hook name, `$taxonomy`, refers to the taxonomy slug.\n Possible hook names include:\n  - `edit_category`  - `edit_post_tag`",
                 "tags": [
                     {
                         "name": "since",
@@ -6912,7 +6968,7 @@
                         "variable": "$tt_id"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the taxonomy slug.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the taxonomy slug.</p> <p>Possible hook names include:</p> <ul> <li><code>edit_category</code></li> <li><code>edit_post_tag</code></li> </ul>"
             }
         },
         {
@@ -7049,7 +7105,7 @@
             "type": "action",
             "doc": {
                 "description": "Fires after a term for a specific taxonomy has been updated, and the term cache has been cleaned.",
-                "long_description": "The dynamic portion of the hook name, `$taxonomy`, refers to the taxonomy slug.",
+                "long_description": "The dynamic portion of the hook name, `$taxonomy`, refers to the taxonomy slug.\n Possible hook names include:\n  - `edited_category`  - `edited_post_tag`",
                 "tags": [
                     {
                         "name": "since",
@@ -7072,7 +7128,7 @@
                         "variable": "$tt_id"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the taxonomy slug.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the taxonomy slug.</p> <p>Possible hook names include:</p> <ul> <li><code>edited_category</code></li> <li><code>edited_post_tag</code></li> </ul>"
             }
         },
         {
@@ -7975,14 +8031,14 @@
             "type": "action",
             "doc": {
                 "description": "Fires before each of the tabs are rendered on the Install Themes page.",
-                "long_description": "The dynamic portion of the hook name, `$tab`, refers to the current theme installation tab. Possible values are 'dashboard', 'search', 'upload', 'featured', 'new', or 'updated'.",
+                "long_description": "The dynamic portion of the hook name, `$tab`, refers to the current theme installation tab.\n Possible hook names include:\n  - `install_themes_pre_dashboard`  - `install_themes_pre_featured`  - `install_themes_pre_new`  - `install_themes_pre_search`  - `install_themes_pre_updated`  - `install_themes_pre_upload`",
                 "tags": [
                     {
                         "name": "since",
                         "content": "2.8.0"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$tab</code>, refers to the current theme installation tab. Possible values are 'dashboard', 'search', 'upload', 'featured', 'new', or 'updated'.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$tab</code>, refers to the current theme installation tab.</p> <p>Possible hook names include:</p> <ul> <li><code>install_themes_pre_dashboard</code></li> <li><code>install_themes_pre_featured</code></li> <li><code>install_themes_pre_new</code></li> <li><code>install_themes_pre_search</code></li> <li><code>install_themes_pre_updated</code></li> <li><code>install_themes_pre_upload</code></li> </ul>"
             }
         },
         {
@@ -8007,7 +8063,7 @@
             "type": "action",
             "doc": {
                 "description": "Fires at the top of each of the tabs on the Install Themes page.",
-                "long_description": "The dynamic portion of the hook name, `$tab`, refers to the current theme installation tab. Possible values are 'dashboard', 'search', 'upload', 'featured', 'new', or 'updated'.",
+                "long_description": "The dynamic portion of the hook name, `$tab`, refers to the current theme installation tab.\n Possible hook names include:\n  - `install_themes_dashboard`  - `install_themes_featured`  - `install_themes_new`  - `install_themes_search`  - `install_themes_updated`  - `install_themes_upload`",
                 "tags": [
                     {
                         "name": "since",
@@ -8022,7 +8078,7 @@
                         "variable": "$paged"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$tab</code>, refers to the current theme installation tab. Possible values are 'dashboard', 'search', 'upload', 'featured', 'new', or 'updated'.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$tab</code>, refers to the current theme installation tab.</p> <p>Possible hook names include:</p> <ul> <li><code>install_themes_dashboard</code></li> <li><code>install_themes_featured</code></li> <li><code>install_themes_new</code></li> <li><code>install_themes_search</code></li> <li><code>install_themes_updated</code></li> <li><code>install_themes_upload</code></li> </ul>"
             }
         },
         {
@@ -8285,14 +8341,14 @@
             "type": "action",
             "doc": {
                 "description": "Fires before a specified login form action.",
-                "long_description": "The dynamic portion of the hook name, `$action`, refers to the action that brought the visitor to the login form. Actions include 'postpass', 'logout', 'lostpassword', etc.",
+                "long_description": "The dynamic portion of the hook name, `$action`, refers to the action that brought the visitor to the login form.\n Possible hook names include:\n  - 'login_form_checkemail'  - 'login_form_confirm_admin_email'  - 'login_form_confirmaction'  - 'login_form_entered_recovery_mode'  - 'login_form_login'  - 'login_form_logout'  - 'login_form_lostpassword'  - 'login_form_postpass'  - 'login_form_register'  - 'login_form_resetpass'  - 'login_form_retrievepassword'  - 'login_form_rp'",
                 "tags": [
                     {
                         "name": "since",
                         "content": "2.8.0"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$action</code>, refers to the action that brought the visitor to the login form. Actions include 'postpass', 'logout', 'lostpassword', etc.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$action</code>, refers to the action that brought the visitor to the login form.</p> <p>Possible hook names include:</p> <ul> <li>'login_form_checkemail'</li> <li>'login_form_confirm_admin_email'</li> <li>'login_form_confirmaction'</li> <li>'login_form_entered_recovery_mode'</li> <li>'login_form_login'</li> <li>'login_form_logout'</li> <li>'login_form_lostpassword'</li> <li>'login_form_postpass'</li> <li>'login_form_register'</li> <li>'login_form_resetpass'</li> <li>'login_form_retrievepassword'</li> <li>'login_form_rp'</li> </ul>"
             }
         },
         {
@@ -8675,7 +8731,7 @@
                         "types": [
                             "int"
                         ],
-                        "variable": "$comment_ID"
+                        "variable": "$comment_id"
                     }
                 ],
                 "long_description_html": ""
@@ -9036,7 +9092,7 @@
             "type": "action",
             "doc": {
                 "description": "Fires for each custom column of a specific post type in the Posts list table.",
-                "long_description": "The dynamic portion of the hook name, `$post->post_type`, refers to the post type.",
+                "long_description": "The dynamic portion of the hook name, `$post->post_type`, refers to the post type.\n Possible hook names include:\n  - `manage_post_posts_custom_column`  - `manage_page_posts_custom_column`",
                 "tags": [
                     {
                         "name": "since",
@@ -9059,7 +9115,7 @@
                         "variable": "$post_id"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$post-&gt;post_type</code>, refers to the post type.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$post-&gt;post_type</code>, refers to the post type.</p> <p>Possible hook names include:</p> <ul> <li><code>manage_post_posts_custom_column</code></li> <li><code>manage_page_posts_custom_column</code></li> </ul>"
             }
         },
         {
@@ -9188,14 +9244,14 @@
             "type": "action",
             "doc": {
                 "description": "Fires inside specific upload-type views in the legacy (pre-3.5.0) media popup based on the current tab.",
-                "long_description": "The dynamic portion of the hook name, `$type`, refers to the specific media upload type. Possible values include 'image', 'audio', 'video', 'file', etc.\n The hook only fires if the current `$tab` is 'type' (From Computer), 'type_url' (From URL), or, if the tab does not exist (i.e., has not been registered via the {@see 'media_upload_tabs'} filter.",
+                "long_description": "The dynamic portion of the hook name, `$type`, refers to the specific media upload type.\n The hook only fires if the current `$tab` is 'type' (From Computer), 'type_url' (From URL), or, if the tab does not exist (i.e., has not been registered via the {@see 'media_upload_tabs'} filter.\n Possible hook names include:\n  - `media_upload_audio`  - `media_upload_file`  - `media_upload_image`  - `media_upload_video`",
                 "tags": [
                     {
                         "name": "since",
                         "content": "2.5.0"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$type</code>, refers to the specific media upload type. Possible values include 'image', 'audio', 'video', 'file', etc.</p> <p>The hook only fires if the current <code>$tab</code> is 'type' (From Computer), 'type_url' (From URL), or, if the tab does not exist (i.e., has not been registered via the {@see 'media_upload_tabs'} filter.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$type</code>, refers to the specific media upload type.</p> <p>The hook only fires if the current <code>$tab</code> is 'type' (From Computer), 'type_url' (From URL), or, if the tab does not exist (i.e., has not been registered via the {@see 'media_upload_tabs'} filter.</p> <p>Possible hook names include:</p> <ul> <li><code>media_upload_audio</code></li> <li><code>media_upload_file</code></li> <li><code>media_upload_image</code></li> <li><code>media_upload_video</code></li> </ul>"
             }
         },
         {
@@ -11176,6 +11232,11 @@
                         "content": "2.0.0"
                     },
                     {
+                        "name": "since",
+                        "content": "5.8.0",
+                        "description": "The $userdata parameter was added."
+                    },
+                    {
                         "name": "param",
                         "content": "User ID.",
                         "types": [
@@ -11190,6 +11251,14 @@
                             "\\WP_User"
                         ],
                         "variable": "$old_user_data"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The raw array of data passed to wp_insert_user().",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$userdata"
                     }
                 ],
                 "long_description_html": ""
@@ -11874,7 +11943,7 @@
             "type": "action",
             "doc": {
                 "description": "Fires after a single post is completely created or updated via the REST API.",
-                "long_description": "The dynamic portion of the hook name, `$this->post_type`, refers to the post type slug.",
+                "long_description": "The dynamic portion of the hook name, `$this->post_type`, refers to the post type slug.\n Possible hook names include:\n  - `rest_after_insert_post`  - `rest_after_insert_page`  - `rest_after_insert_attachment`",
                 "tags": [
                     {
                         "name": "since",
@@ -11905,7 +11974,7 @@
                         "variable": "$creating"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;post_type</code>, refers to the post type slug.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;post_type</code>, refers to the post type slug.</p> <p>Possible hook names include:</p> <ul> <li><code>rest_after_insert_post</code></li> <li><code>rest_after_insert_page</code></li> <li><code>rest_after_insert_attachment</code></li> </ul>"
             }
         },
         {
@@ -11914,7 +11983,7 @@
             "type": "action",
             "doc": {
                 "description": "Fires after a single term is completely created or updated via the REST API.",
-                "long_description": "The dynamic portion of the hook name, `$this->taxonomy`, refers to the taxonomy slug.",
+                "long_description": "The dynamic portion of the hook name, `$this->taxonomy`, refers to the taxonomy slug.\n Possible hook names include:\n  - `rest_after_insert_category`  - `rest_after_insert_post_tag`",
                 "tags": [
                     {
                         "name": "since",
@@ -11945,7 +12014,55 @@
                         "variable": "$creating"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;taxonomy</code>, refers to the taxonomy slug.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;taxonomy</code>, refers to the taxonomy slug.</p> <p>Possible hook names include:</p> <ul> <li><code>rest_after_insert_category</code></li> <li><code>rest_after_insert_post_tag</code></li> </ul>"
+            }
+        },
+        {
+            "name": "rest_after_save_widget",
+            "file": "wp-includes/rest-api/endpoints/class-wp-rest-widgets-controller.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires after a widget is created or updated via the REST API.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.8.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "ID of the widget being saved.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$id"
+                    },
+                    {
+                        "name": "param",
+                        "content": "ID of the sidebar containing the widget being saved.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$sidebar_id"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Request object.",
+                        "types": [
+                            "\\WP_REST_Request"
+                        ],
+                        "variable": "$request"
+                    },
+                    {
+                        "name": "param",
+                        "content": "True when creating a widget, false when updating.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$creating"
+                    }
+                ],
+                "long_description_html": ""
             }
         },
         {
@@ -12087,6 +12204,54 @@
             }
         },
         {
+            "name": "rest_delete_widget",
+            "file": "wp-includes/rest-api/endpoints/class-wp-rest-widgets-controller.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires after a widget is deleted via the REST API.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.8.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "ID of the widget marked for deletion.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$widget_id"
+                    },
+                    {
+                        "name": "param",
+                        "content": "ID of the sidebar the widget was deleted from.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$sidebar_id"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The response data.",
+                        "types": [
+                            "\\WP_REST_Response"
+                        ],
+                        "variable": "$response"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The request sent to the API.",
+                        "types": [
+                            "\\WP_REST_Request"
+                        ],
+                        "variable": "$request"
+                    }
+                ],
+                "long_description_html": ""
+            }
+        },
+        {
             "name": "rest_delete_{$this->post_type}",
             "file": "wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php",
             "type": "action",
@@ -12132,7 +12297,7 @@
             "type": "action",
             "doc": {
                 "description": "Fires after a single term is deleted via the REST API.",
-                "long_description": "The dynamic portion of the hook name, `$this->taxonomy`, refers to the taxonomy slug.",
+                "long_description": "The dynamic portion of the hook name, `$this->taxonomy`, refers to the taxonomy slug.\n Possible hook names include:\n  - `rest_delete_category`  - `rest_delete_post_tag`",
                 "tags": [
                     {
                         "name": "since",
@@ -12163,7 +12328,7 @@
                         "variable": "$request"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;taxonomy</code>, refers to the taxonomy slug.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;taxonomy</code>, refers to the taxonomy slug.</p> <p>Possible hook names include:</p> <ul> <li><code>rest_delete_category</code></li> <li><code>rest_delete_post_tag</code></li> </ul>"
             }
         },
         {
@@ -12292,7 +12457,7 @@
             "type": "action",
             "doc": {
                 "description": "Fires after a single post is created or updated via the REST API.",
-                "long_description": "The dynamic portion of the hook name, `$this->post_type`, refers to the post type slug.",
+                "long_description": "The dynamic portion of the hook name, `$this->post_type`, refers to the post type slug.\n Possible hook names include:\n  - `rest_insert_post`  - `rest_insert_page`  - `rest_insert_attachment`",
                 "tags": [
                     {
                         "name": "since",
@@ -12323,7 +12488,7 @@
                         "variable": "$creating"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;post_type</code>, refers to the post type slug.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;post_type</code>, refers to the post type slug.</p> <p>Possible hook names include:</p> <ul> <li><code>rest_insert_post</code></li> <li><code>rest_insert_page</code></li> <li><code>rest_insert_attachment</code></li> </ul>"
             }
         },
         {
@@ -12332,7 +12497,7 @@
             "type": "action",
             "doc": {
                 "description": "Fires after a single term is created or updated via the REST API.",
-                "long_description": "The dynamic portion of the hook name, `$this->taxonomy`, refers to the taxonomy slug.",
+                "long_description": "The dynamic portion of the hook name, `$this->taxonomy`, refers to the taxonomy slug.\n Possible hook names include:\n  - `rest_insert_category`  - `rest_insert_post_tag`",
                 "tags": [
                     {
                         "name": "since",
@@ -12363,7 +12528,39 @@
                         "variable": "$creating"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;taxonomy</code>, refers to the taxonomy slug.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;taxonomy</code>, refers to the taxonomy slug.</p> <p>Possible hook names include:</p> <ul> <li><code>rest_insert_category</code></li> <li><code>rest_insert_post_tag</code></li> </ul>"
+            }
+        },
+        {
+            "name": "rest_save_sidebar",
+            "file": "wp-includes/rest-api/endpoints/class-wp-rest-sidebars-controller.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires after a sidebar is updated via the REST API.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.8.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The updated sidebar.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$sidebar"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Request object.",
+                        "types": [
+                            "\\WP_REST_Request"
+                        ],
+                        "variable": "$request"
+                    }
+                ],
+                "long_description_html": ""
             }
         },
         {
@@ -12899,7 +13096,7 @@
             "type": "action",
             "doc": {
                 "description": "Fires after a term in a specific taxonomy has been saved, and the term cache has been cleared.",
-                "long_description": "The dynamic portion of the hook name, `$taxonomy`, refers to the taxonomy slug.",
+                "long_description": "The dynamic portion of the hook name, `$taxonomy`, refers to the taxonomy slug.\n Possible hook names include:\n  - `saved_category`  - `saved_post_tag`",
                 "tags": [
                     {
                         "name": "since",
@@ -12930,7 +13127,7 @@
                         "variable": "$update"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the taxonomy slug.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the taxonomy slug.</p> <p>Possible hook names include:</p> <ul> <li><code>saved_category</code></li> <li><code>saved_post_tag</code></li> </ul>"
             }
         },
         {
@@ -13202,7 +13399,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "An array of object terms.",
+                        "content": "An array of object term IDs or slugs.",
                         "types": [
                             "array"
                         ],
@@ -13527,7 +13724,7 @@
         },
         {
             "name": "sidebar_admin_page",
-            "file": "wp-admin/widgets.php",
+            "file": "wp-admin/widgets-form.php",
             "type": "action",
             "doc": {
                 "description": "Fires after the available widgets and sidebars have loaded, before the admin footer.",
@@ -13543,7 +13740,7 @@
         },
         {
             "name": "sidebar_admin_setup",
-            "file": "wp-admin/widgets.php",
+            "file": "wp-admin/widgets-form.php",
             "type": "action",
             "doc": {
                 "description": "Fires early before the Widgets administration screen loads, after scripts are enqueued.",
@@ -13660,6 +13857,30 @@
                     }
                 ],
                 "long_description_html": ""
+            }
+        },
+        {
+            "name": "site_health_tab_content",
+            "file": "wp-admin/site-health.php",
+            "type": "action",
+            "doc": {
+                "description": "Output content of a custom Site Health tab.",
+                "long_description": "This action fires right after the Site Health header, and users are still subject to the capability checks for the Site Health page to view any custom tabs and their contents.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.8.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The slug of the tab that was requested.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$tab"
+                    }
+                ],
+                "long_description_html": "<p>This action fires right after the Site Health header, and users are still subject to the capability checks for the Site Health page to view any custom tabs and their contents.</p>"
             }
         },
         {
@@ -15608,12 +15829,25 @@
                         "content": "1.5.0"
                     },
                     {
+                        "name": "since",
+                        "content": "5.8.0",
+                        "description": "The $userdata parameter was added."
+                    },
+                    {
                         "name": "param",
                         "content": "User ID.",
                         "types": [
                             "int"
                         ],
                         "variable": "$user_id"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The raw array of data passed to wp_insert_user().",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$userdata"
                     }
                 ],
                 "long_description_html": ""
@@ -15710,7 +15944,7 @@
         },
         {
             "name": "widgets_admin_page",
-            "file": "wp-admin/widgets.php",
+            "file": "wp-admin/widgets-form.php",
             "type": "action",
             "doc": {
                 "description": "Fires before the Widgets administration page content loads.",
@@ -18926,7 +19160,7 @@
             "type": "action",
             "doc": {
                 "description": "Fires when a post is transitioned from one status to another.",
-                "long_description": "The dynamic portions of the hook name, `$new_status` and `$post->post_type`, refer to the new post status and post type, respectively.\n Please note: When this action is hooked using a particular post status (like 'publish', as `publish_{$post->post_type}`), it will fire both when a post is first transitioned to that status from something else, as well as upon subsequent post updates (old and new status are both the same).\n Therefore, if you are looking to only fire a callback when a post is first transitioned to a status, use the {@see 'transition_post_status'} hook instead.",
+                "long_description": "The dynamic portions of the hook name, `$new_status` and `$post->post_type`, refer to the new post status and post type, respectively.\n Possible hook names include:\n  - `draft_post`  - `future_post`  - `pending_post`  - `private_post`  - `publish_post`  - `trash_post`  - `draft_page`  - `future_page`  - `pending_page`  - `private_page`  - `publish_page`  - `trash_page`  - `publish_attachment`  - `trash_attachment`\n Please note: When this action is hooked using a particular post status (like 'publish', as `publish_{$post->post_type}`), it will fire both when a post is first transitioned to that status from something else, as well as upon subsequent post updates (old and new status are both the same).\n Therefore, if you are looking to only fire a callback when a post is first transitioned to a status, use the {@see 'transition_post_status'} hook instead.",
                 "tags": [
                     {
                         "name": "since",
@@ -18949,7 +19183,7 @@
                         "variable": "$post"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portions of the hook name, <code>$new_status</code> and <code>$post-&gt;post_type</code>, refer to the new post status and post type, respectively.</p> <p>Please note: When this action is hooked using a particular post status (like 'publish', as <code>publish_{$post-&gt;post_type}</code>), it will fire both when a post is first transitioned to that status from something else, as well as upon subsequent post updates (old and new status are both the same).</p> <p>Therefore, if you are looking to only fire a callback when a post is first transitioned to a status, use the {@see 'transition_post_status'} hook instead.</p>"
+                "long_description_html": "<p>The dynamic portions of the hook name, <code>$new_status</code> and <code>$post-&gt;post_type</code>, refer to the new post status and post type, respectively.</p> <p>Possible hook names include:</p> <ul> <li><code>draft_post</code></li> <li><code>future_post</code></li> <li><code>pending_post</code></li> <li><code>private_post</code></li> <li><code>publish_post</code></li> <li><code>trash_post</code></li> <li><code>draft_page</code></li> <li><code>future_page</code></li> <li><code>pending_page</code></li> <li><code>private_page</code></li> <li><code>publish_page</code></li> <li><code>trash_page</code></li> <li><code>publish_attachment</code></li> <li><code>trash_attachment</code></li> </ul> <p>Please note: When this action is hooked using a particular post status (like 'publish', as <code>publish_{$post-&gt;post_type}</code>), it will fire both when a post is first transitioned to that status from something else, as well as upon subsequent post updates (old and new status are both the same).</p> <p>Therefore, if you are looking to only fire a callback when a post is first transitioned to a status, use the {@see 'transition_post_status'} hook instead.</p>"
             }
         },
         {
@@ -19003,7 +19237,7 @@
             "type": "action",
             "doc": {
                 "description": "Fires at the end of the Add Term form for all taxonomies.",
-                "long_description": "The dynamic portion of the hook name, `$taxonomy`, refers to the taxonomy slug.",
+                "long_description": "The dynamic portion of the hook name, `$taxonomy`, refers to the taxonomy slug.\n Possible hook names include:\n  - `category_add_form`  - `post_tag_add_form`",
                 "tags": [
                     {
                         "name": "since",
@@ -19018,7 +19252,7 @@
                         "variable": "$taxonomy"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the taxonomy slug.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the taxonomy slug.</p> <p>Possible hook names include:</p> <ul> <li><code>category_add_form</code></li> <li><code>post_tag_add_form</code></li> </ul>"
             }
         },
         {
@@ -19027,7 +19261,7 @@
             "type": "action",
             "doc": {
                 "description": "Fires after the Add Term form fields.",
-                "long_description": "The dynamic portion of the hook name, `$taxonomy`, refers to the taxonomy slug.",
+                "long_description": "The dynamic portion of the hook name, `$taxonomy`, refers to the taxonomy slug.\n Possible hook names include:\n  - `category_add_form_fields`  - `post_tag_add_form_fields`",
                 "tags": [
                     {
                         "name": "since",
@@ -19042,7 +19276,7 @@
                         "variable": "$taxonomy"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the taxonomy slug.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the taxonomy slug.</p> <p>Possible hook names include:</p> <ul> <li><code>category_add_form_fields</code></li> <li><code>post_tag_add_form_fields</code></li> </ul>"
             }
         },
         {
@@ -19051,7 +19285,7 @@
             "type": "action",
             "doc": {
                 "description": "Fires at the end of the Edit Term form for all taxonomies.",
-                "long_description": "The dynamic portion of the hook name, `$taxonomy`, refers to the taxonomy slug.",
+                "long_description": "The dynamic portion of the hook name, `$taxonomy`, refers to the taxonomy slug.\n Possible hook names include:\n  - `category_edit_form`  - `post_tag_edit_form`",
                 "tags": [
                     {
                         "name": "since",
@@ -19074,7 +19308,7 @@
                         "variable": "$taxonomy"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the taxonomy slug.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the taxonomy slug.</p> <p>Possible hook names include:</p> <ul> <li><code>category_edit_form</code></li> <li><code>post_tag_edit_form</code></li> </ul>"
             }
         },
         {
@@ -19083,7 +19317,7 @@
             "type": "action",
             "doc": {
                 "description": "Fires after the Edit Term form fields are displayed.",
-                "long_description": "The dynamic portion of the hook name, `$taxonomy`, refers to the taxonomy slug.",
+                "long_description": "The dynamic portion of the hook name, `$taxonomy`, refers to the taxonomy slug.\n Possible hook names include:\n  - `category_edit_form_fields`  - `post_tag_edit_form_fields`",
                 "tags": [
                     {
                         "name": "since",
@@ -19106,7 +19340,7 @@
                         "variable": "$taxonomy"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the taxonomy slug.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the taxonomy slug.</p> <p>Possible hook names include:</p> <ul> <li><code>category_edit_form_fields</code></li> <li><code>post_tag_edit_form_fields</code></li> </ul>"
             }
         },
         {
@@ -19115,7 +19349,7 @@
             "type": "action",
             "doc": {
                 "description": "Fires before the Add Term form for all taxonomies.",
-                "long_description": "The dynamic portion of the hook name, `$taxonomy`, refers to the taxonomy slug.",
+                "long_description": "The dynamic portion of the hook name, `$taxonomy`, refers to the taxonomy slug.\n Possible hook names include:\n  - `category_pre_add_form`  - `post_tag_pre_add_form`",
                 "tags": [
                     {
                         "name": "since",
@@ -19130,7 +19364,7 @@
                         "variable": "$taxonomy"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the taxonomy slug.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the taxonomy slug.</p> <p>Possible hook names include:</p> <ul> <li><code>category_pre_add_form</code></li> <li><code>post_tag_pre_add_form</code></li> </ul>"
             }
         },
         {
@@ -19139,7 +19373,7 @@
             "type": "action",
             "doc": {
                 "description": "Fires before the Edit Term form for all taxonomies.",
-                "long_description": "The dynamic portion of the hook name, `$taxonomy`, refers to the taxonomy slug.",
+                "long_description": "The dynamic portion of the hook name, `$taxonomy`, refers to the taxonomy slug.\n Possible hook names include:\n  - `category_pre_edit_form`  - `post_tag_pre_edit_form`",
                 "tags": [
                     {
                         "name": "since",
@@ -19162,7 +19396,7 @@
                         "variable": "$taxonomy"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the taxonomy slug.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the taxonomy slug.</p> <p>Possible hook names include:</p> <ul> <li><code>category_pre_edit_form</code></li> <li><code>post_tag_pre_edit_form</code></li> </ul>"
             }
         },
         {
@@ -19171,14 +19405,14 @@
             "type": "action",
             "doc": {
                 "description": "Fires inside the Edit Term form tag.",
-                "long_description": "The dynamic portion of the hook name, `$taxonomy`, refers to the taxonomy slug.",
+                "long_description": "The dynamic portion of the hook name, `$taxonomy`, refers to the taxonomy slug.\n Possible hook names include:\n  - `category_term_edit_form_tag`  - `post_tag_term_edit_form_tag`",
                 "tags": [
                     {
                         "name": "since",
                         "content": "3.7.0"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the taxonomy slug.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the taxonomy slug.</p> <p>Possible hook names include:</p> <ul> <li><code>category_term_edit_form_tag</code></li> <li><code>post_tag_term_edit_form_tag</code></li> </ul>"
             }
         },
         {
@@ -19187,7 +19421,7 @@
             "type": "action",
             "doc": {
                 "description": "Fires at the beginning of the Edit Term form.",
-                "long_description": "At this point, the required hidden fields and nonces have already been output.\n The dynamic portion of the hook name, `$taxonomy`, refers to the taxonomy slug.",
+                "long_description": "At this point, the required hidden fields and nonces have already been output.\n The dynamic portion of the hook name, `$taxonomy`, refers to the taxonomy slug.\n Possible hook names include:\n  - `category_term_edit_form_top`  - `post_tag_term_edit_form_top`",
                 "tags": [
                     {
                         "name": "since",
@@ -19210,7 +19444,7 @@
                         "variable": "$taxonomy"
                     }
                 ],
-                "long_description_html": "<p>At this point, the required hidden fields and nonces have already been output.</p> <p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the taxonomy slug.</p>"
+                "long_description_html": "<p>At this point, the required hidden fields and nonces have already been output.</p> <p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the taxonomy slug.</p> <p>Possible hook names include:</p> <ul> <li><code>category_term_edit_form_top</code></li> <li><code>post_tag_term_edit_form_top</code></li> </ul>"
             }
         },
         {
@@ -19219,14 +19453,14 @@
             "type": "action",
             "doc": {
                 "description": "Fires inside the Add Tag form tag.",
-                "long_description": "The dynamic portion of the hook name, `$taxonomy`, refers to the taxonomy slug.",
+                "long_description": "The dynamic portion of the hook name, `$taxonomy`, refers to the taxonomy slug.\n Possible hook names include:\n  - `category_term_new_form_tag`  - `post_tag_term_new_form_tag`",
                 "tags": [
                     {
                         "name": "since",
                         "content": "3.7.0"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the taxonomy slug.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the taxonomy slug.</p> <p>Possible hook names include:</p> <ul> <li><code>category_term_new_form_tag</code></li> <li><code>post_tag_term_new_form_tag</code></li> </ul>"
             }
         }
     ]
