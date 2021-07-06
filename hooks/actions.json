@@ -15920,7 +15920,7 @@
         },
         {
             "name": "welcome_panel",
-            "file": "wp-admin/index.php",
+            "file": "wp-admin/_index.php",
             "type": "action",
             "doc": {
                 "description": "Add content to the welcome panel on the admin dashboard.",
