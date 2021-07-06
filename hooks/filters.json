@@ -268,7 +268,7 @@
             "type": "filter",
             "doc": {
                 "description": "Short-circuits adding metadata of a specific type.",
-                "long_description": "The dynamic portion of the hook, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.",
+                "long_description": "The dynamic portion of the hook, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible hook names include:\n  - `add_post_metadata`  - `add_comment_metadata`  - `add_term_metadata`  - `add_user_metadata`",
                 "tags": [
                     {
                         "name": "since",
@@ -316,7 +316,7 @@
                         "variable": "$unique"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.</p> <p>Possible hook names include:</p> <ul> <li><code>add_post_metadata</code></li> <li><code>add_comment_metadata</code></li> <li><code>add_term_metadata</code></li> <li><code>add_user_metadata</code></li> </ul>"
             }
         },
         {
@@ -1009,7 +1009,7 @@
             "file": "wp-includes/block-editor.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the allowed block types for all editor types, defaulting to `true` (all registered block types supported).",
+                "description": "Filters the allowed block types for all editor types.",
                 "long_description": "",
                 "tags": [
                     {
@@ -1018,7 +1018,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Array of block type slugs, or                                                      boolean to enable/disable all.",
+                        "content": "Array of block type slugs, or boolean to enable/disable all.                                                      Default true (all registered block types supported).",
                         "types": [
                             "bool",
                             "array"
@@ -1978,7 +1978,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters rewrite rules used for author archives.",
-                "long_description": "Likely author archives would include /author/author-name/, as well as pagination and feed paths for author archives.",
+                "long_description": "Likely author archives would include `/author/author-name/`, as well as pagination and feed paths for author archives.",
                 "tags": [
                     {
                         "name": "since",
@@ -1993,7 +1993,7 @@
                         "variable": "$author_rewrite"
                     }
                 ],
-                "long_description_html": "<p>Likely author archives would include /author/author-name/, as well as pagination and feed paths for author archives.</p>"
+                "long_description_html": "<p>Likely author archives would include <code>/author/author-name/</code>, as well as pagination and feed paths for author archives.</p>"
             }
         },
         {
@@ -2593,7 +2593,7 @@
             "file": "wp-includes/block-editor.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the array of REST API paths that will be used to preloaded common data to use with the block editor.",
+                "description": "Filters the array of REST API paths that will be used to preloaded common data for the block editor.",
                 "long_description": "",
                 "tags": [
                     {
@@ -4138,7 +4138,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters a comment form field for display.",
-                "long_description": "The dynamic portion of the filter hook, `$name`, refers to the name of the comment form field. Such as 'author', 'email', or 'url'.",
+                "long_description": "The dynamic portion of the filter hook, `$name`, refers to the name of the comment form field.\n Possible hook names include:\n  - `comment_form_field_comment`  - `comment_form_field_author`  - `comment_form_field_email`  - `comment_form_field_url`  - `comment_form_field_cookies`",
                 "tags": [
                     {
                         "name": "since",
@@ -4153,7 +4153,7 @@
                         "variable": "$field"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the filter hook, <code>$name</code>, refers to the name of the comment form field. Such as 'author', 'email', or 'url'.</p>"
+                "long_description_html": "<p>The dynamic portion of the filter hook, <code>$name</code>, refers to the name of the comment form field.</p> <p>Possible hook names include:</p> <ul> <li><code>comment_form_field_comment</code></li> <li><code>comment_form_field_author</code></li> <li><code>comment_form_field_email</code></li> <li><code>comment_form_field_url</code></li> <li><code>comment_form_field_cookies</code></li> </ul>"
             }
         },
         {
@@ -5280,7 +5280,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters rewrite rules used for comment feed archives.",
-                "long_description": "Likely comments feed archives include /comments/feed/, and /comments/feed/atom/.",
+                "long_description": "Likely comments feed archives include `/comments/feed/` and `/comments/feed/atom/`.",
                 "tags": [
                     {
                         "name": "since",
@@ -5295,7 +5295,7 @@
                         "variable": "$comments_rewrite"
                     }
                 ],
-                "long_description_html": "<p>Likely comments feed archives include /comments/feed/, and /comments/feed/atom/.</p>"
+                "long_description_html": "<p>Likely comments feed archives include <code>/comments/feed/</code> and <code>/comments/feed/atom/</code>.</p>"
             }
         },
         {
@@ -6899,7 +6899,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters rewrite rules used for date archives.",
-                "long_description": "Likely date archives would include /yyyy/, /yyyy/mm/, and /yyyy/mm/dd/.",
+                "long_description": "Likely date archives would include `/yyyy/`, `/yyyy/mm/`, and `/yyyy/mm/dd/`.",
                 "tags": [
                     {
                         "name": "since",
@@ -6914,7 +6914,7 @@
                         "variable": "$date_rewrite"
                     }
                 ],
-                "long_description_html": "<p>Likely date archives would include /yyyy/, /yyyy/mm/, and /yyyy/mm/dd/.</p>"
+                "long_description_html": "<p>Likely date archives would include <code>/yyyy/</code>, <code>/yyyy/mm/</code>, and <code>/yyyy/mm/dd/</code>.</p>"
             }
         },
         {
@@ -7511,7 +7511,7 @@
             "type": "filter",
             "doc": {
                 "description": "Short-circuits deleting metadata of a specific type.",
-                "long_description": "The dynamic portion of the hook, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.",
+                "long_description": "The dynamic portion of the hook, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible hook names include:\n  - `delete_post_metadata`  - `delete_comment_metadata`  - `delete_term_metadata`  - `delete_user_metadata`",
                 "tags": [
                     {
                         "name": "since",
@@ -7559,7 +7559,7 @@
                         "variable": "$delete_all"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.</p> <p>Possible hook names include:</p> <ul> <li><code>delete_post_metadata</code></li> <li><code>delete_comment_metadata</code></li> <li><code>delete_term_metadata</code></li> <li><code>delete_user_metadata</code></li> </ul>"
             }
         },
         {
@@ -7568,7 +7568,7 @@
             "type": "filter",
             "doc": {
                 "description": "Short-circuits deleting metadata of a specific type by meta ID.",
-                "long_description": "The dynamic portion of the hook, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.",
+                "long_description": "The dynamic portion of the hook, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible hook names include:\n  - `delete_post_metadata_by_mid`  - `delete_comment_metadata_by_mid`  - `delete_term_metadata_by_mid`  - `delete_user_metadata_by_mid`",
                 "tags": [
                     {
                         "name": "since",
@@ -7592,7 +7592,7 @@
                         "variable": "$meta_id"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.</p> <p>Possible hook names include:</p> <ul> <li><code>delete_post_metadata_by_mid</code></li> <li><code>delete_comment_metadata_by_mid</code></li> <li><code>delete_term_metadata_by_mid</code></li> <li><code>delete_user_metadata_by_mid</code></li> </ul>"
             }
         },
         {
@@ -9755,7 +9755,7 @@
             "file": "wp-includes/load.php",
             "type": "filter",
             "doc": {
-                "description": "Filters whether to enable loading of the objectcache.php drop-in.",
+                "description": "Filters whether to enable loading of the object-cache.php drop-in.",
                 "long_description": "This filter runs before it can be used by plugins. It is designed for non-web run-times. If false is returned, object-cache.php will never be loaded.",
                 "tags": [
                     {
@@ -9764,7 +9764,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Whether to enable loading object-cache.php (if present).                                    Default true.",
+                        "content": "Whether to enable loading object-cache.php (if present).                                  Default true.",
                         "types": [
                             "bool"
                         ],
@@ -11386,7 +11386,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "URL for the default image or a default type. Accepts '404', 'retro', 'monsterid',                            'wavatar', 'indenticon', 'mystery', 'mm', 'mysteryman', 'blank', or 'gravatar_default'.                            Default is the value of the 'avatar_default' option, with a fallback of 'mystery'.",
+                        "content": "URL for the default image or a default type. Accepts '404', 'retro', 'monsterid',                            'wavatar', 'indenticon', 'mystery', 'mm', 'mysteryman', 'blank', or 'gravatar_default'.",
                         "types": [
                             "string"
                         ],
@@ -11394,7 +11394,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Alternative text to use in the avatar image tag. Default empty.",
+                        "content": "Alternative text to use in the avatar image tag.",
                         "types": [
                             "string"
                         ],
@@ -11841,7 +11841,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The comment author's IP address.",
+                        "content": "The comment author's IP address, or an empty string if it's not available.",
                         "types": [
                             "string"
                         ],
@@ -13278,7 +13278,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the object subtype identifier for a non-standard object type.",
-                "long_description": "The dynamic portion of the hook, `$object_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).",
+                "long_description": "The dynamic portion of the hook, `$object_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).\n Possible hook names include:\n  - `get_object_subtype_post`  - `get_object_subtype_comment`  - `get_object_subtype_term`  - `get_object_subtype_user`",
                 "tags": [
                     {
                         "name": "since",
@@ -13301,7 +13301,7 @@
                         "variable": "$object_id"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook, <code>$object_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).</p>"
+                "long_description_html": "<p>The dynamic portion of the hook, <code>$object_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).</p> <p>Possible hook names include:</p> <ul> <li><code>get_object_subtype_post</code></li> <li><code>get_object_subtype_comment</code></li> <li><code>get_object_subtype_term</code></li> <li><code>get_object_subtype_user</code></li> </ul>"
             }
         },
         {
@@ -15445,7 +15445,7 @@
             "type": "filter",
             "doc": {
                 "description": "Short-circuits the return value when fetching a meta field by meta ID.",
-                "long_description": "The dynamic portion of the hook, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.",
+                "long_description": "The dynamic portion of the hook, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible hook names include:\n  - `get_post_metadata_by_mid`  - `get_comment_metadata_by_mid`  - `get_term_metadata_by_mid`  - `get_user_metadata_by_mid`",
                 "tags": [
                     {
                         "name": "since",
@@ -15469,7 +15469,7 @@
                         "variable": "$meta_id"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.</p> <p>Possible hook names include:</p> <ul> <li><code>get_post_metadata_by_mid</code></li> <li><code>get_comment_metadata_by_mid</code></li> <li><code>get_term_metadata_by_mid</code></li> <li><code>get_user_metadata_by_mid</code></li> </ul>"
             }
         },
         {
@@ -15478,7 +15478,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters a taxonomy term object.",
-                "long_description": "The dynamic portion of the filter name, `$taxonomy`, refers to the slug of the term's taxonomy.",
+                "long_description": "The dynamic portion of the filter name, `$taxonomy`, refers to the slug of the term's taxonomy.\n Possible hook names include:\n  - `get_category`  - `get_post_tag`",
                 "tags": [
                     {
                         "name": "since",
@@ -15506,7 +15506,7 @@
                         "variable": "$taxonomy"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the filter name, <code>$taxonomy</code>, refers to the slug of the term's taxonomy.</p>"
+                "long_description_html": "<p>The dynamic portion of the filter name, <code>$taxonomy</code>, refers to the slug of the term's taxonomy.</p> <p>Possible hook names include:</p> <ul> <li><code>get_category</code></li> <li><code>get_post_tag</code></li> </ul>"
             }
         },
         {
@@ -17121,9 +17121,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "{     An array of mime type mappings. Maps a source mime type to a new     destination mime type. Default empty array.     @type array $mime_type The source mime type {         @type string $mime_type The new mime type.     }",
+                        "content": "{     An array of mime type mappings. Maps a source mime type to a new     destination mime type. Default empty array.     @type string ...$0 The new mime type. }",
                         "types": [
-                            "array"
+                            "string[]"
                         ],
                         "variable": "$output_format"
                     },
@@ -20869,11 +20869,11 @@
                     },
                     {
                         "name": "param",
-                        "content": "The filtered value, defaults to <code>false</code>.",
+                        "content": "Whether the Media Library grid has infinite scrolling.",
                         "types": [
                             "bool"
                         ],
-                        "variable": "$value"
+                        "variable": "$infinite"
                     }
                 ],
                 "long_description_html": ""
@@ -28973,9 +28973,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "An array of data for a single file.",
+                        "content": "{     Reference to a single element from <code>$_FILES</code>.     @type string $name     The original name of the file on the client machine.     @type string $type     The mime type of the file, if the browser provided this information.     @type string $tmp_name The temporary filename of the file in which the uploaded file was stored on the server.     @type int    $size     The size, in bytes, of the uploaded file.     @type int    $error    The error code associated with this file upload. }",
                         "types": [
-                            "string[]"
+                            "array"
                         ],
                         "variable": "$file"
                     },
@@ -32544,7 +32544,7 @@
             "file": "wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php",
             "type": "filter",
             "doc": {
-                "description": "Filters arguments, before passing to WP_Comment_Query, when querying comments via the REST API.",
+                "description": "Filters WP_Comment_Query arguments when querying comments via the REST API.",
                 "long_description": "",
                 "tags": [
                     {
@@ -32566,7 +32566,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The current request.",
+                        "content": "The REST API request.",
                         "types": [
                             "\\WP_REST_Request"
                         ],
@@ -34747,7 +34747,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the post's schema.",
-                "long_description": "The dynamic portion of the filter, `$this->post_type`, refers to the post type slug for the controller.",
+                "long_description": "The dynamic portion of the filter, `$this->post_type`, refers to the post type slug for the controller.\n Possible hook names include:\n  - `rest_post_item_schema`  - `rest_page_item_schema`  - `rest_attachment_item_schema`",
                 "tags": [
                     {
                         "name": "since",
@@ -34762,7 +34762,7 @@
                         "variable": "$schema"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the filter, <code>$this-&gt;post_type</code>, refers to the post type slug for the controller.</p>"
+                "long_description_html": "<p>The dynamic portion of the filter, <code>$this-&gt;post_type</code>, refers to the post type slug for the controller.</p> <p>Possible hook names include:</p> <ul> <li><code>rest_post_item_schema</code></li> <li><code>rest_page_item_schema</code></li> <li><code>rest_attachment_item_schema</code></li> </ul>"
             }
         },
         {
@@ -34770,7 +34770,7 @@
             "file": "wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php",
             "type": "filter",
             "doc": {
-                "description": "Filters WP_Query arguments when querying users via the REST API.",
+                "description": "Filters WP_Query arguments when querying posts via the REST API.",
                 "long_description": "The dynamic portion of the hook name, `$this->post_type`, refers to the post type slug.\n Possible hook names include:\n  - `rest_post_query`  - `rest_page_query`  - `rest_attachment_query`\n Enables adding extra arguments or setting defaults for a post collection request.",
                 "tags": [
                     {
@@ -34789,7 +34789,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Array of arguments to be passed to WP_Query.",
+                        "content": "Array of arguments for WP_Query.",
                         "types": [
                             "array"
                         ],
@@ -34876,7 +34876,7 @@
             "file": "wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php",
             "type": "filter",
             "doc": {
-                "description": "Filters get_terms() arguments when querying users via the REST API.",
+                "description": "Filters get_terms() arguments when querying terms via the REST API.",
                 "long_description": "The dynamic portion of the hook name, `$this->taxonomy`, refers to the taxonomy slug.\n Possible hook names include:\n  - `rest_category_query`  - `rest_post_tag_query`\n Enables adding extra arguments or setting defaults for a terms collection request.",
                 "tags": [
                     {
@@ -34890,7 +34890,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Array of arguments to be                                       passed to get_terms().",
+                        "content": "Array of arguments for get_terms().",
                         "types": [
                             "array"
                         ],
@@ -35156,7 +35156,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters rewrite rules used for root-level archives.",
-                "long_description": "Likely root-level archives would include pagination rules for the homepage as well as site-wide post feeds (e.g. /feed/, and /feed/atom/).",
+                "long_description": "Likely root-level archives would include pagination rules for the homepage as well as site-wide post feeds (e.g. `/feed/`, and `/feed/atom/`).",
                 "tags": [
                     {
                         "name": "since",
@@ -35171,7 +35171,7 @@
                         "variable": "$root_rewrite"
                     }
                 ],
-                "long_description_html": "<p>Likely root-level archives would include pagination rules for the homepage as well as site-wide post feeds (e.g. /feed/, and /feed/atom/).</p>"
+                "long_description_html": "<p>Likely root-level archives would include pagination rules for the homepage as well as site-wide post feeds (e.g. <code>/feed/</code>, and <code>/feed/atom/</code>).</p>"
             }
         },
         {
@@ -36298,7 +36298,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters rewrite rules used for search archives.",
-                "long_description": "Likely search-related archives include /search/search+query/ as well as pagination and feed paths for a search.",
+                "long_description": "Likely search-related archives include `/search/search+query/` as well as pagination and feed paths for a search.",
                 "tags": [
                     {
                         "name": "since",
@@ -36313,7 +36313,7 @@
                         "variable": "$search_rewrite"
                     }
                 ],
-                "long_description_html": "<p>Likely search-related archives include /search/search+query/ as well as pagination and feed paths for a search.</p>"
+                "long_description_html": "<p>Likely search-related archives include <code>/search/search+query/</code> as well as pagination and feed paths for a search.</p>"
             }
         },
         {
@@ -37082,8 +37082,8 @@
             "file": "wp-includes/script-loader.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the flag that decides whether separate scripts and styles will be loaded for core blocks on-render.",
-                "long_description": "",
+                "description": "Filters whether block styles should be loaded separately.",
+                "long_description": "Returning false loads all core block assets, regardless of whether they are rendered in a page or not. Returning true loads core block assets only when they are rendered.",
                 "tags": [
                     {
                         "name": "since",
@@ -37091,14 +37091,14 @@
                     },
                     {
                         "name": "param",
-                        "content": "Whether separate assets will be loaded.                                   Default false.",
+                        "content": "Whether separate assets will be loaded.                                   Default false (all block assets are loaded, even when not used).",
                         "types": [
                             "bool"
                         ],
                         "variable": "$load_separate_assets"
                     }
                 ],
-                "long_description_html": ""
+                "long_description_html": "<p>Returning false loads all core block assets, regardless of whether they are rendered in a page or not. Returning true loads core block assets only when they are rendered.</p>"
             }
         },
         {
@@ -38111,7 +38111,7 @@
             "type": "filter",
             "doc": {
                 "description": "Add or modify which site status tests are run on a site.",
-                "long_description": "The site health is determined by a set of tests based on best practices from both the WordPress Hosting Team, but also web standards in general.\n Some sites may not have the same requirements, for example the automatic update checks may be handled by a host, and are therefore disabled in core. Or maybe you want to introduce a new test, is caching enabled/disabled/stale for example.\n Tests may be added either as direct, or asynchronous ones. Any test that may require some time to complete should run asynchronously, to avoid extended loading periods within wp-admin.",
+                "long_description": "The site health is determined by a set of tests based on best practices from both the WordPress Hosting Team and web standards in general.\n Some sites may not have the same requirements, for example the automatic update checks may be handled by a host, and are therefore disabled in core. Or maybe you want to introduce a new test, is caching enabled/disabled/stale for example.\n Tests may be added either as direct, or asynchronous ones. Any test that may require some time to complete should run asynchronously, to avoid extended loading periods within wp-admin.",
                 "tags": [
                     {
                         "name": "since",
@@ -38120,18 +38120,18 @@
                     {
                         "name": "since",
                         "content": "5.6.0",
-                        "description": "Added the <code>async_direct_test</code> array key.              Added the <code>skip_cron</code> array key."
+                        "description": "Added the <code>async_direct_test</code> array key for asynchronous tests.              Added the <code>skip_cron</code> array key for all tests."
                     },
                     {
                         "name": "param",
-                        "content": "{     An associative array, where the <code>$test_type</code> is either <code>direct</code> or     <code>async</code>, to declare if the test should run via Ajax calls after page load.     @type array $identifier {         <code>$identifier</code> should be a unique identifier for the test that should run.         Plugins and themes are encouraged to prefix test identifiers with their slug         to avoid any collisions between tests.         @type string   $label             A friendly label for your test to identify it by.         @type mixed    $test              A callable to perform a direct test, or a string AJAX action                                           to be called to perform an async test.         @type boolean  $has_rest          Optional. Denote if <code>$test</code> has a REST API endpoint.         @type boolean  $skip_cron         Whether to skip this test when running as cron.         @type callable $async_direct_test A manner of directly calling the test marked as asynchronous,                                           as the scheduled event can not authenticate, and endpoints                                           may require authentication.     } }",
+                        "content": "{     An associative array of direct and asynchronous tests.     @type array[] $direct {         An array of direct tests.         @type array ...$identifier {             <code>$identifier</code> should be a unique identifier for the test. Plugins and themes are encouraged to             prefix test identifiers with their slug to avoid collisions between tests.             @type string   $label     The friendly label to identify the test.             @type callable $test      The callback function that runs the test and returns its result.             @type bool     $skip_cron Whether to skip this test when running as cron.         }     }     @type array[] $async {         An array of asynchronous tests.         @type array ...$identifier {             <code>$identifier</code> should be a unique identifier for the test. Plugins and themes are encouraged to             prefix test identifiers with their slug to avoid collisions between tests.             @type string   $label             The friendly label to identify the test.             @type string   $test              An admin-ajax.php action to be called to perform the test, or                                               if <code>$has_rest</code> is true, a URL to a REST API endpoint to perform                                               the test.             @type bool     $has_rest          Whether the <code>$test</code> property points to a REST API endpoint.             @type bool     $skip_cron         Whether to skip this test when running as cron.             @type callable $async_direct_test A manner of directly calling the test marked as asynchronous,                                               as the scheduled event can not authenticate, and endpoints                                               may require authentication.         }     } }",
                         "types": [
-                            "array"
+                            "array[]"
                         ],
-                        "variable": "$test_type"
+                        "variable": "$tests"
                     }
                 ],
-                "long_description_html": "<p>The site health is determined by a set of tests based on best practices from both the WordPress Hosting Team, but also web standards in general.</p> <p>Some sites may not have the same requirements, for example the automatic update checks may be handled by a host, and are therefore disabled in core. Or maybe you want to introduce a new test, is caching enabled/disabled/stale for example.</p> <p>Tests may be added either as direct, or asynchronous ones. Any test that may require some time to complete should run asynchronously, to avoid extended loading periods within wp-admin.</p>"
+                "long_description_html": "<p>The site health is determined by a set of tests based on best practices from both the WordPress Hosting Team and web standards in general.</p> <p>Some sites may not have the same requirements, for example the automatic update checks may be handled by a host, and are therefore disabled in core. Or maybe you want to introduce a new test, is caching enabled/disabled/stale for example.</p> <p>Tests may be added either as direct, or asynchronous ones. Any test that may require some time to complete should run asynchronously, to avoid extended loading periods within wp-admin.</p>"
             }
         },
         {
@@ -38596,7 +38596,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The file-size threshold, in bytes. Defaults to 20000.",
+                        "content": "The file-size threshold, in bytes. Default 20000.",
                         "types": [
                             "int"
                         ],
@@ -39438,7 +39438,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the term links for a given taxonomy.",
-                "long_description": "The dynamic portion of the filter name, `$taxonomy`, refers to the taxonomy slug.",
+                "long_description": "The dynamic portion of the filter name, `$taxonomy`, refers to the taxonomy slug.\n Possible hook names include:\n  - `term_links-category`  - `term_links-post_tag`  - `term_links-post_format`",
                 "tags": [
                     {
                         "name": "since",
@@ -39453,7 +39453,7 @@
                         "variable": "$links"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the filter name, <code>$taxonomy</code>, refers to the taxonomy slug.</p>"
+                "long_description_html": "<p>The dynamic portion of the filter name, <code>$taxonomy</code>, refers to the taxonomy slug.</p> <p>Possible hook names include:</p> <ul> <li><code>term_links-category</code></li> <li><code>term_links-post_tag</code></li> <li><code>term_links-post_format</code></li> </ul>"
             }
         },
         {
@@ -42779,7 +42779,7 @@
             "type": "filter",
             "doc": {
                 "description": "Short-circuits updating metadata of a specific type.",
-                "long_description": "The dynamic portion of the hook, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.",
+                "long_description": "The dynamic portion of the hook, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible hook names include:\n  - `update_post_metadata`  - `update_comment_metadata`  - `update_term_metadata`  - `update_user_metadata`",
                 "tags": [
                     {
                         "name": "since",
@@ -42827,7 +42827,7 @@
                         "variable": "$prev_value"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.</p> <p>Possible hook names include:</p> <ul> <li><code>update_post_metadata</code></li> <li><code>update_comment_metadata</code></li> <li><code>update_term_metadata</code></li> <li><code>update_user_metadata</code></li> </ul>"
             }
         },
         {
@@ -42836,7 +42836,7 @@
             "type": "filter",
             "doc": {
                 "description": "Short-circuits updating metadata of a specific type by meta ID.",
-                "long_description": "The dynamic portion of the hook, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.",
+                "long_description": "The dynamic portion of the hook, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible hook names include:\n  - `update_post_metadata_by_mid`  - `update_comment_metadata_by_mid`  - `update_term_metadata_by_mid`  - `update_user_metadata_by_mid`",
                 "tags": [
                     {
                         "name": "since",
@@ -42877,7 +42877,7 @@
                         "variable": "$meta_key"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.</p> <p>Possible hook names include:</p> <ul> <li><code>update_post_metadata_by_mid</code></li> <li><code>update_comment_metadata_by_mid</code></li> <li><code>update_term_metadata_by_mid</code></li> <li><code>update_user_metadata_by_mid</code></li> </ul>"
             }
         },
         {
@@ -42886,7 +42886,7 @@
             "type": "filter",
             "doc": {
                 "description": "Short-circuits updating the metadata cache of a specific type.",
-                "long_description": "The dynamic portion of the hook, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.",
+                "long_description": "The dynamic portion of the hook, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible hook names include:\n  - `update_post_metadata_cache`  - `update_comment_metadata_cache`  - `update_term_metadata_cache`  - `update_user_metadata_cache`",
                 "tags": [
                     {
                         "name": "since",
@@ -42909,7 +42909,7 @@
                         "variable": "$object_ids"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.</p> <p>Possible hook names include:</p> <ul> <li><code>update_post_metadata_cache</code></li> <li><code>update_comment_metadata_cache</code></li> <li><code>update_term_metadata_cache</code></li> <li><code>update_user_metadata_cache</code></li> </ul>"
             }
         },
         {
@@ -43117,7 +43117,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the install response before the installation has started.",
-                "long_description": "Returning a truthy value, or one that could be evaluated as a WP_Error will effectively short-circuit the installation, returning that value instead.",
+                "long_description": "Returning a value that could be evaluated as a `WP_Error` will effectively short-circuit the installation, returning that value instead.",
                 "tags": [
                     {
                         "name": "since",
@@ -43141,7 +43141,7 @@
                         "variable": "$hook_extra"
                     }
                 ],
-                "long_description_html": "<p>Returning a truthy value, or one that could be evaluated as a WP_Error will effectively short-circuit the installation, returning that value instead.</p>"
+                "long_description_html": "<p>Returning a value that could be evaluated as a <code>WP_Error</code> will effectively short-circuit the installation, returning that value instead.</p>"
             }
         },
         {
@@ -43553,7 +43553,7 @@
             "file": "wp-includes/widgets.php",
             "type": "filter",
             "doc": {
-                "description": "Filters whether or not to use the block editor to manage widgets.",
+                "description": "Filters whether to use the block editor to manage widgets.",
                 "long_description": "",
                 "tags": [
                     {
@@ -43562,9 +43562,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "Whether or not to use the block editor to manage widgets.",
+                        "content": "Whether to use the block editor to manage widgets.",
                         "types": [
-                            "boolean"
+                            "bool"
                         ],
                         "variable": "$use_widgets_block_editor"
                     }
@@ -43728,9 +43728,10 @@
                     },
                     {
                         "name": "param",
-                        "content": "WP_User object.",
+                        "content": "WP_User object or null if none was provided.",
                         "types": [
-                            "\\WP_User"
+                            "\\WP_User",
+                            "null"
                         ],
                         "variable": "$user"
                     }
@@ -44525,7 +44526,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters a user contactmethod label.",
-                "long_description": "The dynamic portion of the filter hook, `$name`, refers to each of the keys in the contactmethods array.",
+                "long_description": "The dynamic portion of the filter hook, `$name`, refers to each of the keys in the contact methods array.",
                 "tags": [
                     {
                         "name": "since",
@@ -44533,14 +44534,14 @@
                     },
                     {
                         "name": "param",
-                        "content": "The translatable label for the contactmethod.",
+                        "content": "The translatable label for the contact method.",
                         "types": [
                             "string"
                         ],
                         "variable": "$desc"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the filter hook, <code>$name</code>, refers to each of the keys in the contactmethods array.</p>"
+                "long_description_html": "<p>The dynamic portion of the filter hook, <code>$name</code>, refers to each of the keys in the contact methods array.</p>"
             }
         },
         {
@@ -44955,7 +44956,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The classname to be used in the block widget's container HTML, e.g. 'widget_block widget_text'.",
+                        "content": "The classname to be used in the block widget's container HTML,                           e.g. 'widget_block widget_text'.",
                         "types": [
                             "string"
                         ],
@@ -44963,7 +44964,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The name of the block contained by the block widget, e.g. 'core/paragraph'.",
+                        "content": "The name of the block contained by the block widget,                           e.g. 'core/paragraph'.",
                         "types": [
                             "string"
                         ],
@@ -45653,7 +45654,7 @@
                         "name": "param",
                         "content": "An array of excluded widget-type IDs.",
                         "types": [
-                            "array"
+                            "string[]"
                         ],
                         "variable": "$widgets"
                     }
@@ -49989,7 +49990,7 @@
             "file": "wp-includes/kses.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the HTML that is allowed for a given context.",
+                "description": "Filters the HTML tags that are allowed for a given context.",
                 "long_description": "",
                 "tags": [
                     {
@@ -54965,7 +54966,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the number of revisions to save for the given post by its post type.",
-                "long_description": "Overrides both the value of WP_POST_REVISIONS and the {@see 'wp_revisions_to_keep'} filter.\n The dynamic portion of the hook name, `$post->post_type`, refers to the post type slug.",
+                "long_description": "Overrides both the value of WP_POST_REVISIONS and the {@see 'wp_revisions_to_keep'} filter.\n The dynamic portion of the hook name, `$post->post_type`, refers to the post type slug.\n Possible hook names include:\n  - `wp_post_revisions_to_keep`  - `wp_page_revisions_to_keep`",
                 "tags": [
                     {
                         "name": "since",
@@ -54988,7 +54989,7 @@
                         "variable": "$post"
                     }
                 ],
-                "long_description_html": "<p>Overrides both the value of WP_POST_REVISIONS and the {@see 'wp_revisions_to_keep'} filter.</p> <p>The dynamic portion of the hook name, <code>$post-&gt;post_type</code>, refers to the post type slug.</p>"
+                "long_description_html": "<p>Overrides both the value of WP_POST_REVISIONS and the {@see 'wp_revisions_to_keep'} filter.</p> <p>The dynamic portion of the hook name, <code>$post-&gt;post_type</code>, refers to the post type slug.</p> <p>Possible hook names include:</p> <ul> <li><code>wp_post_revisions_to_keep</code></li> <li><code>wp_page_revisions_to_keep</code></li> </ul>"
             }
         },
         {
@@ -56641,9 +56642,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "An array of data for the file. Reference to a single element of <code>$_FILES</code>.",
+                        "content": "{     Reference to a single element from <code>$_FILES</code>.     @type string $name     The original name of the file on the client machine.     @type string $type     The mime type of the file, if the browser provided this information.     @type string $tmp_name The temporary filename of the file in which the uploaded file was stored on the server.     @type int    $size     The size, in bytes, of the uploaded file.     @type int    $error    The error code associated with this file upload. }",
                         "types": [
-                            "string[]"
+                            "array"
                         ],
                         "variable": "$file"
                     }
@@ -56671,9 +56672,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "An array of data for the file. Reference to a single element of <code>$_FILES</code>.",
+                        "content": "{     Reference to a single element from <code>$_FILES</code>.     @type string $name     The original name of the file on the client machine.     @type string $type     The mime type of the file, if the browser provided this information.     @type string $tmp_name The temporary filename of the file in which the uploaded file was stored on the server.     @type int    $size     The size, in bytes, of the uploaded file.     @type int    $error    The error code associated with this file upload. }",
                         "types": [
-                            "string[]"
+                            "array"
                         ],
                         "variable": "$file"
                     }
@@ -56990,7 +56991,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters rewrite rules used for individual permastructs.",
-                "long_description": "The dynamic portion of the hook name, `$permastructname`, refers to the name of the registered permastruct, e.g. 'post_tag' (tags), 'category' (categories), etc.",
+                "long_description": "The dynamic portion of the hook name, `$permastructname`, refers to the name of the registered permastruct.\n Possible hook names include:\n  - `category_rewrite_rules`  - `post_format_rewrite_rules`  - `post_tag_rewrite_rules`",
                 "tags": [
                     {
                         "name": "since",
@@ -57005,7 +57006,7 @@
                         "variable": "$rules"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$permastructname</code>, refers to the name of the registered permastruct, e.g. 'post_tag' (tags), 'category' (categories), etc.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$permastructname</code>, refers to the name of the registered permastruct.</p> <p>Possible hook names include:</p> <ul> <li><code>category_rewrite_rules</code></li> <li><code>post_format_rewrite_rules</code></li> <li><code>post_tag_rewrite_rules</code></li> </ul>"
             }
         },
         {
