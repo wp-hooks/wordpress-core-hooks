@@ -43643,70 +43643,6 @@
             }
         },
         {
-            "name": "user_confirmed_action_email_content",
-            "file": "wp-includes/user.php",
-            "type": "filter",
-            "doc": {
-                "description": "Filters the body of the user request confirmation email.",
-                "long_description": "The email is sent to an administrator when an user request is confirmed. The following strings have a special meaning and will get replaced dynamically:\n ###SITENAME###    The name of the site. ###USER_EMAIL###  The user email for the request. ###DESCRIPTION### Description of the action being performed so the user knows what the email is for. ###MANAGE_URL###  The URL to manage requests. ###SITEURL###     The URL to the site.",
-                "tags": [
-                    {
-                        "name": "since",
-                        "content": "4.9.6"
-                    },
-                    {
-                        "name": "param",
-                        "content": "Text in the email.",
-                        "types": [
-                            "string"
-                        ],
-                        "variable": "$email_text"
-                    },
-                    {
-                        "name": "param",
-                        "content": "{     Data relating to the account action email.     @type WP_User_Request $request     User request object.     @type string          $user_email  The email address confirming a request     @type string          $description Description of the action being performed so the user knows what the email is for.     @type string          $manage_url  The link to click manage privacy requests of this type.     @type string          $sitename    The site name sending the mail.     @type string          $siteurl     The site URL sending the mail.     @type string          $admin_email The administrator email receiving the mail. }",
-                        "types": [
-                            "array"
-                        ],
-                        "variable": "$email_data"
-                    }
-                ],
-                "long_description_html": "<p>The email is sent to an administrator when an user request is confirmed. The following strings have a special meaning and will get replaced dynamically:</p> <h3>SITENAME###    The name of the site.</h3> <h3>USER_EMAIL###  The user email for the request.</h3> <h3>DESCRIPTION### Description of the action being performed so the user knows what the email is for.</h3> <h3>MANAGE_URL###  The URL to manage requests.</h3> <h3>SITEURL###     The URL to the site.</h3>"
-            }
-        },
-        {
-            "name": "user_confirmed_action_email_content",
-            "file": "wp-includes/user.php",
-            "type": "filter",
-            "doc": {
-                "description": "Filters the body of the data erasure fulfillment notification.",
-                "long_description": "The email is sent to a user when a their data erasure request is fulfilled by an administrator.\n The following strings have a special meaning and will get replaced dynamically:\n ###SITENAME###           The name of the site. ###PRIVACY_POLICY_URL### Privacy policy page URL. ###SITEURL###            The URL to the site.",
-                "tags": [
-                    {
-                        "name": "since",
-                        "content": "4.9.6"
-                    },
-                    {
-                        "name": "param",
-                        "content": "Text in the email.",
-                        "types": [
-                            "string"
-                        ],
-                        "variable": "$email_text"
-                    },
-                    {
-                        "name": "param",
-                        "content": "{     Data relating to the account action email.     @type WP_User_Request $request            User request object.     @type string          $message_recipient  The address that the email will be sent to. Defaults                                               to the value of <code>$request-&gt;email</code>, but can be changed                                               by the <code>user_erasure_fulfillment_email_to</code> filter.     @type string          $privacy_policy_url Privacy policy URL.     @type string          $sitename           The site name sending the mail.     @type string          $siteurl            The site URL sending the mail. }",
-                        "types": [
-                            "array"
-                        ],
-                        "variable": "$email_data"
-                    }
-                ],
-                "long_description_html": "<p>The email is sent to a user when a their data erasure request is fulfilled by an administrator.</p> <p>The following strings have a special meaning and will get replaced dynamically:</p> <h3>SITENAME###           The name of the site.</h3> <h3>PRIVACY_POLICY_URL### Privacy policy page URL.</h3> <h3>SITEURL###            The URL to the site.</h3>"
-            }
-        },
-        {
             "name": "user_contactmethods",
             "file": "wp-includes/user.php",
             "type": "filter",
@@ -43788,7 +43724,39 @@
             }
         },
         {
-            "name": "user_erasure_complete_email_headers",
+            "name": "user_erasure_fulfillment_email_content",
+            "file": "wp-includes/user.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the body of the data erasure fulfillment notification.",
+                "long_description": "The email is sent to a user when a their data erasure request is fulfilled by an administrator.\n The following strings have a special meaning and will get replaced dynamically:\n ###SITENAME###           The name of the site. ###PRIVACY_POLICY_URL### Privacy policy page URL. ###SITEURL###            The URL to the site.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.8.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The email content.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$content"
+                    },
+                    {
+                        "name": "param",
+                        "content": "{     Data relating to the account action email.     @type WP_User_Request $request            User request object.     @type string          $message_recipient  The address that the email will be sent to. Defaults                                               to the value of <code>$request-&gt;email</code>, but can be changed                                               by the <code>user_erasure_fulfillment_email_to</code> filter.     @type string          $privacy_policy_url Privacy policy URL.     @type string          $sitename           The site name sending the mail.     @type string          $siteurl            The site URL sending the mail. }",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$email_data"
+                    }
+                ],
+                "long_description_html": "<p>The email is sent to a user when a their data erasure request is fulfilled by an administrator.</p> <p>The following strings have a special meaning and will get replaced dynamically:</p> <h3>SITENAME###           The name of the site.</h3> <h3>PRIVACY_POLICY_URL### Privacy policy page URL.</h3> <h3>SITEURL###            The URL to the site.</h3>"
+            }
+        },
+        {
+            "name": "user_erasure_fulfillment_email_headers",
             "file": "wp-includes/user.php",
             "type": "filter",
             "doc": {
@@ -43797,7 +43765,7 @@
                 "tags": [
                     {
                         "name": "since",
-                        "content": "5.4.0"
+                        "content": "5.8.0"
                     },
                     {
                         "name": "param",
@@ -43845,7 +43813,7 @@
             }
         },
         {
-            "name": "user_erasure_complete_email_subject",
+            "name": "user_erasure_fulfillment_email_subject",
             "file": "wp-includes/user.php",
             "type": "filter",
             "doc": {
@@ -43854,7 +43822,7 @@
                 "tags": [
                     {
                         "name": "since",
-                        "content": "4.9.8"
+                        "content": "5.8.0"
                     },
                     {
                         "name": "param",
@@ -44112,7 +44080,7 @@
                         "types": [
                             "string"
                         ],
-                        "variable": "$email_text"
+                        "variable": "$content"
                     },
                     {
                         "name": "param",
@@ -44221,6 +44189,38 @@
                     }
                 ],
                 "long_description_html": ""
+            }
+        },
+        {
+            "name": "user_request_confirmed_email_content",
+            "file": "wp-includes/user.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the body of the user request confirmation email.",
+                "long_description": "The email is sent to an administrator when an user request is confirmed. The following strings have a special meaning and will get replaced dynamically:\n ###SITENAME###    The name of the site. ###USER_EMAIL###  The user email for the request. ###DESCRIPTION### Description of the action being performed so the user knows what the email is for. ###MANAGE_URL###  The URL to manage requests. ###SITEURL###     The URL to the site.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.8.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The email content.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$content"
+                    },
+                    {
+                        "name": "param",
+                        "content": "{     Data relating to the account action email.     @type WP_User_Request $request     User request object.     @type string          $user_email  The email address confirming a request     @type string          $description Description of the action being performed so the user knows what the email is for.     @type string          $manage_url  The link to click manage privacy requests of this type.     @type string          $sitename    The site name sending the mail.     @type string          $siteurl     The site URL sending the mail.     @type string          $admin_email The administrator email receiving the mail. }",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$email_data"
+                    }
+                ],
+                "long_description_html": "<p>The email is sent to an administrator when an user request is confirmed. The following strings have a special meaning and will get replaced dynamically:</p> <h3>SITENAME###    The name of the site.</h3> <h3>USER_EMAIL###  The user email for the request.</h3> <h3>DESCRIPTION### Description of the action being performed so the user knows what the email is for.</h3> <h3>MANAGE_URL###  The URL to manage requests.</h3> <h3>SITEURL###     The URL to the site.</h3>"
             }
         },
         {
