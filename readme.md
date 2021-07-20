@@ -98,7 +98,7 @@ Do you want the same hook files for your favourite plugins? The hook files in th
 
 ## Sponsors
 
-Development of this library is sponsored by:
+The time that I spend maintaining this library and others is in part sponsored by:
 
 [![Automattic](assets/gh/automattic.png)](https://automattic.com)
 
