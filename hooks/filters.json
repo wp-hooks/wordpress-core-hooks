@@ -974,7 +974,7 @@
                         "types": [
                             "int"
                         ],
-                        "variable": "$ID"
+                        "variable": "$user_id"
                     }
                 ],
                 "long_description_html": ""
@@ -10087,6 +10087,30 @@
             }
         },
         {
+            "name": "excerpt_allowed_wrapper_blocks",
+            "file": "wp-includes/blocks.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the list of blocks that can be used as wrapper blocks, allowing excerpts to be generated from the `innerBlocks` of these wrappers.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.8.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The list of allowed wrapper blocks.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$allowed_wrapper_blocks"
+                    }
+                ],
+                "long_description_html": ""
+            }
+        },
+        {
             "name": "excerpt_length",
             "file": "wp-includes/formatting.php",
             "type": "filter",
@@ -17108,7 +17132,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the image editor output format mapping.",
-                "long_description": "Enables filtering the mime type used to save images. By default, the mapping array is empty, so the mime type matches the source image.",
+                "long_description": "Enables filtering the mime type used to save images. By default, the mapping array is empty, so the mime type matches the source image.\n This should be considered experimental as there are a few edge cases that still need to be solved.\n When this filter is used in combination with the {@see 'wp_editor_set_quality'} filter, the image quality value used will be that of the original mime type, not the mapped one. This could result in unexpected image quality for generated images. See https://core.trac.wordpress.org/ticket/53667 for more details.\n When a mime type is mapped to another, and two images with the same name are uploaded (image.jpg and image.webp, for example), the generated images for one will potentially overwrite the other's. See https://core.trac.wordpress.org/ticket/53668 for more details.",
                 "tags": [
                     {
                         "name": "see",
@@ -17144,7 +17168,7 @@
                         "variable": "$mime_type"
                     }
                 ],
-                "long_description_html": "<p>Enables filtering the mime type used to save images. By default, the mapping array is empty, so the mime type matches the source image.</p>"
+                "long_description_html": "<p>Enables filtering the mime type used to save images. By default, the mapping array is empty, so the mime type matches the source image.</p> <p>This should be considered experimental as there are a few edge cases that still need to be solved.</p> <p>When this filter is used in combination with the {@see 'wp_editor_set_quality'} filter, the image quality value used will be that of the original mime type, not the mapped one. This could result in unexpected image quality for generated images. See <a href=\"https://core.trac.wordpress.org/ticket/53667\">https://core.trac.wordpress.org/ticket/53667</a> for more details.</p> <p>When a mime type is mapped to another, and two images with the same name are uploaded (image.jpg and image.webp, for example), the generated images for one will potentially overwrite the other's. See <a href=\"https://core.trac.wordpress.org/ticket/53668\">https://core.trac.wordpress.org/ticket/53668</a> for more details.</p>"
             }
         },
         {
@@ -43729,7 +43753,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the body of the data erasure fulfillment notification.",
-                "long_description": "The email is sent to a user when a their data erasure request is fulfilled by an administrator.\n The following strings have a special meaning and will get replaced dynamically:\n ###SITENAME###           The name of the site. ###PRIVACY_POLICY_URL### Privacy policy page URL. ###SITEURL###            The URL to the site.",
+                "long_description": "The email is sent to a user when their data erasure request is fulfilled by an administrator.\n The following strings have a special meaning and will get replaced dynamically:\n ###SITENAME###           The name of the site. ###PRIVACY_POLICY_URL### Privacy policy page URL. ###SITEURL###            The URL to the site.",
                 "tags": [
                     {
                         "name": "since",
@@ -43752,7 +43776,7 @@
                         "variable": "$email_data"
                     }
                 ],
-                "long_description_html": "<p>The email is sent to a user when a their data erasure request is fulfilled by an administrator.</p> <p>The following strings have a special meaning and will get replaced dynamically:</p> <h3>SITENAME###           The name of the site.</h3> <h3>PRIVACY_POLICY_URL### Privacy policy page URL.</h3> <h3>SITEURL###            The URL to the site.</h3>"
+                "long_description_html": "<p>The email is sent to a user when their data erasure request is fulfilled by an administrator.</p> <p>The following strings have a special meaning and will get replaced dynamically:</p> <h3>SITENAME###           The name of the site.</h3> <h3>PRIVACY_POLICY_URL### Privacy policy page URL.</h3> <h3>SITEURL###            The URL to the site.</h3>"
             }
         },
         {
@@ -44197,7 +44221,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the body of the user request confirmation email.",
-                "long_description": "The email is sent to an administrator when an user request is confirmed. The following strings have a special meaning and will get replaced dynamically:\n ###SITENAME###    The name of the site. ###USER_EMAIL###  The user email for the request. ###DESCRIPTION### Description of the action being performed so the user knows what the email is for. ###MANAGE_URL###  The URL to manage requests. ###SITEURL###     The URL to the site.",
+                "long_description": "The email is sent to an administrator when a user request is confirmed. The following strings have a special meaning and will get replaced dynamically:\n ###SITENAME###    The name of the site. ###USER_EMAIL###  The user email for the request. ###DESCRIPTION### Description of the action being performed so the user knows what the email is for. ###MANAGE_URL###  The URL to manage requests. ###SITEURL###     The URL to the site.",
                 "tags": [
                     {
                         "name": "since",
@@ -44220,7 +44244,7 @@
                         "variable": "$email_data"
                     }
                 ],
-                "long_description_html": "<p>The email is sent to an administrator when an user request is confirmed. The following strings have a special meaning and will get replaced dynamically:</p> <h3>SITENAME###    The name of the site.</h3> <h3>USER_EMAIL###  The user email for the request.</h3> <h3>DESCRIPTION### Description of the action being performed so the user knows what the email is for.</h3> <h3>MANAGE_URL###  The URL to manage requests.</h3> <h3>SITEURL###     The URL to the site.</h3>"
+                "long_description_html": "<p>The email is sent to an administrator when a user request is confirmed. The following strings have a special meaning and will get replaced dynamically:</p> <h3>SITENAME###    The name of the site.</h3> <h3>USER_EMAIL###  The user email for the request.</h3> <h3>DESCRIPTION### Description of the action being performed so the user knows what the email is for.</h3> <h3>MANAGE_URL###  The URL to manage requests.</h3> <h3>SITEURL###     The URL to the site.</h3>"
             }
         },
         {
@@ -51361,7 +51385,7 @@
                             "int",
                             "null"
                         ],
-                        "variable": "$id"
+                        "variable": "$user_id"
                     },
                     {
                         "name": "param",
