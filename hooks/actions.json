@@ -452,7 +452,7 @@
             "type": "action",
             "doc": {
                 "description": "Fires after all built-in meta boxes have been added, contextually for the given post type.",
-                "long_description": "The dynamic portion of the hook, `$post_type`, refers to the post type of the post.\n Possible hook names include:\n  - `add_meta_boxes_post`  - `add_meta_boxes_page`  - `add_meta_boxes_attachment`",
+                "long_description": "The dynamic portion of the hook name, `$post_type`, refers to the post type of the post.\n Possible hook names include:\n  - `add_meta_boxes_post`  - `add_meta_boxes_page`  - `add_meta_boxes_attachment`",
                 "tags": [
                     {
                         "name": "since",
@@ -467,7 +467,7 @@
                         "variable": "$post"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook, <code>$post_type</code>, refers to the post type of the post.</p> <p>Possible hook names include:</p> <ul> <li><code>add_meta_boxes_post</code></li> <li><code>add_meta_boxes_page</code></li> <li><code>add_meta_boxes_attachment</code></li> </ul>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$post_type</code>, refers to the post type of the post.</p> <p>Possible hook names include:</p> <ul> <li><code>add_meta_boxes_post</code></li> <li><code>add_meta_boxes_page</code></li> <li><code>add_meta_boxes_attachment</code></li> </ul>"
             }
         },
         {
@@ -782,7 +782,7 @@
             "type": "action",
             "doc": {
                 "description": "Fires immediately before meta of a specific type is added.",
-                "long_description": "The dynamic portion of the hook, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).\n Possible hook names include:\n  - `add_post_meta`  - `add_comment_meta`  - `add_term_meta`  - `add_user_meta`",
+                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).\n Possible hook names include:\n  - `add_post_meta`  - `add_comment_meta`  - `add_term_meta`  - `add_user_meta`",
                 "tags": [
                     {
                         "name": "since",
@@ -813,7 +813,7 @@
                         "variable": "$_meta_value"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).</p> <p>Possible hook names include:</p> <ul> <li><code>add_post_meta</code></li> <li><code>add_comment_meta</code></li> <li><code>add_term_meta</code></li> <li><code>add_user_meta</code></li> </ul>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).</p> <p>Possible hook names include:</p> <ul> <li><code>add_post_meta</code></li> <li><code>add_comment_meta</code></li> <li><code>add_term_meta</code></li> <li><code>add_user_meta</code></li> </ul>"
             }
         },
         {
@@ -933,7 +933,7 @@
             "type": "action",
             "doc": {
                 "description": "Fires immediately after meta of a specific type is added.",
-                "long_description": "The dynamic portion of the hook, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).\n Possible hook names include:\n  - `added_post_meta`  - `added_comment_meta`  - `added_term_meta`  - `added_user_meta`",
+                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).\n Possible hook names include:\n  - `added_post_meta`  - `added_comment_meta`  - `added_term_meta`  - `added_user_meta`",
                 "tags": [
                     {
                         "name": "since",
@@ -972,7 +972,7 @@
                         "variable": "$_meta_value"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).</p> <p>Possible hook names include:</p> <ul> <li><code>added_post_meta</code></li> <li><code>added_comment_meta</code></li> <li><code>added_term_meta</code></li> <li><code>added_user_meta</code></li> </ul>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).</p> <p>Possible hook names include:</p> <ul> <li><code>added_post_meta</code></li> <li><code>added_comment_meta</code></li> <li><code>added_term_meta</code></li> <li><code>added_user_meta</code></li> </ul>"
             }
         },
         {
@@ -1012,7 +1012,7 @@
             "file": "wp-includes/admin-bar.php",
             "type": "action_reference",
             "doc": {
-                "description": "Load all necessary admin bar items.",
+                "description": "Loads all necessary admin bar items.",
                 "long_description": "This is the hook used to add, remove, or manipulate admin bar items.",
                 "tags": [
                     {
@@ -1021,7 +1021,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "WP_Admin_Bar instance, passed by reference",
+                        "content": "The WP_Admin_Bar instance, passed by reference.",
                         "types": [
                             "\\WP_Admin_Bar"
                         ],
@@ -1202,14 +1202,14 @@
             "type": "action",
             "doc": {
                 "description": "Fires in head section for a specific admin page.",
-                "long_description": "The dynamic portion of the hook, `$hook_suffix`, refers to the hook suffix for the admin page.",
+                "long_description": "The dynamic portion of the hook name, `$hook_suffix`, refers to the hook suffix for the admin page.",
                 "tags": [
                     {
                         "name": "since",
                         "content": "2.1.0"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook, <code>$hook_suffix</code>, refers to the hook suffix for the admin page.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$hook_suffix</code>, refers to the hook suffix for the admin page.</p>"
             }
         },
         {
@@ -1218,14 +1218,14 @@
             "type": "action",
             "doc": {
                 "description": "Fires in the admin header for each specific form tab in the legacy (pre-3.5.0) media upload popup.",
-                "long_description": "The dynamic portion of the hook, `$content_func`, refers to the form callback for the media upload type.",
+                "long_description": "The dynamic portion of the hook name, `$content_func`, refers to the form callback for the media upload type.",
                 "tags": [
                     {
                         "name": "since",
                         "content": "2.5.0"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook, <code>$content_func</code>, refers to the form callback for the media upload type.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$content_func</code>, refers to the form callback for the media upload type.</p>"
             }
         },
         {
@@ -2583,7 +2583,7 @@
             "file": "wp-signup.php",
             "type": "action",
             "doc": {
-                "description": "Fires before the site sign-up form.",
+                "description": "Fires before the site Sign-up form.",
                 "long_description": "",
                 "tags": [
                     {
@@ -2599,7 +2599,7 @@
             "file": "wp-signup.php",
             "type": "action",
             "doc": {
-                "description": "Fires before the Site Signup page is loaded.",
+                "description": "Fires before the Site Sign-up page is loaded.",
                 "long_description": "",
                 "tags": [
                     {
@@ -3696,7 +3696,7 @@
             "type": "action",
             "doc": {
                 "description": "Fires when the status of a specific comment type is in transition.",
-                "long_description": "The dynamic portions of the hook name, `$new_status`, and `$comment->comment_type`, refer to the new comment status, and the type of comment, respectively.\n Typical comment types include an empty string (standard comment), 'pingback', or 'trackback'.",
+                "long_description": "The dynamic portions of the hook name, `$new_status`, and `$comment->comment_type`, refer to the new comment status, and the type of comment, respectively.\n Typical comment types include 'comment', 'pingback', or 'trackback'.\n Possible hook names include:\n  - `comment_approved_comment`  - `comment_approved_pingback`  - `comment_approved_trackback`  - `comment_unapproved_comment`  - `comment_unapproved_pingback`  - `comment_unapproved_trackback`  - `comment_spam_comment`  - `comment_spam_pingback`  - `comment_spam_trackback`",
                 "tags": [
                     {
                         "name": "since",
@@ -3719,7 +3719,7 @@
                         "variable": "$comment"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portions of the hook name, <code>$new_status</code>, and <code>$comment-&gt;comment_type</code>, refer to the new comment status, and the type of comment, respectively.</p> <p>Typical comment types include an empty string (standard comment), 'pingback', or 'trackback'.</p>"
+                "long_description_html": "<p>The dynamic portions of the hook name, <code>$new_status</code>, and <code>$comment-&gt;comment_type</code>, refer to the new comment status, and the type of comment, respectively.</p> <p>Typical comment types include 'comment', 'pingback', or 'trackback'.</p> <p>Possible hook names include:</p> <ul> <li><code>comment_approved_comment</code></li> <li><code>comment_approved_pingback</code></li> <li><code>comment_approved_trackback</code></li> <li><code>comment_unapproved_comment</code></li> <li><code>comment_unapproved_pingback</code></li> <li><code>comment_unapproved_trackback</code></li> <li><code>comment_spam_comment</code></li> <li><code>comment_spam_pingback</code></li> <li><code>comment_spam_trackback</code></li> </ul>"
             }
         },
         {
@@ -3728,7 +3728,7 @@
             "type": "action",
             "doc": {
                 "description": "Fires when the comment status is in transition from one specific status to another.",
-                "long_description": "The dynamic portions of the hook name, `$old_status`, and `$new_status`, refer to the old and new comment statuses, respectively.",
+                "long_description": "The dynamic portions of the hook name, `$old_status`, and `$new_status`, refer to the old and new comment statuses, respectively.\n Possible hook names include:\n  - `comment_unapproved_to_approved`  - `comment_spam_to_approved`  - `comment_approved_to_unapproved`  - `comment_spam_to_unapproved`  - `comment_unapproved_to_spam`  - `comment_approved_to_spam`",
                 "tags": [
                     {
                         "name": "since",
@@ -3743,7 +3743,7 @@
                         "variable": "$comment"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portions of the hook name, <code>$old_status</code>, and <code>$new_status</code>, refer to the old and new comment statuses, respectively.</p>"
+                "long_description_html": "<p>The dynamic portions of the hook name, <code>$old_status</code>, and <code>$new_status</code>, refer to the old and new comment statuses, respectively.</p> <p>Possible hook names include:</p> <ul> <li><code>comment_unapproved_to_approved</code></li> <li><code>comment_spam_to_approved</code></li> <li><code>comment_approved_to_unapproved</code></li> <li><code>comment_spam_to_unapproved</code></li> <li><code>comment_unapproved_to_spam</code></li> <li><code>comment_approved_to_spam</code></li> </ul>"
             }
         },
         {
@@ -4140,7 +4140,7 @@
                         "types": [
                             "\\WP_Customize_Manager"
                         ],
-                        "variable": "$this"
+                        "variable": "$manager"
                     }
                 ],
                 "long_description_html": "<p>Fires when the WP_Customize_Manager::set_post_value() method is called.</p> <p>This is useful for <code>WP_Customize_Setting</code> instances to watch in order to update a cached previewed value.</p>"
@@ -4172,7 +4172,7 @@
                         "types": [
                             "\\WP_Customize_Manager"
                         ],
-                        "variable": "$this"
+                        "variable": "$manager"
                     }
                 ],
                 "long_description_html": "<p>Fires when the WP_Customize_Manager::set_post_value() method is called.</p> <p>The dynamic portion of the hook name, <code>$setting_id</code>, refers to the setting ID.</p>"
@@ -4196,7 +4196,7 @@
                         "types": [
                             "\\WP_Customize_Manager"
                         ],
-                        "variable": "$this"
+                        "variable": "$manager"
                     }
                 ],
                 "long_description_html": ""
@@ -4220,7 +4220,7 @@
                         "types": [
                             "\\WP_Customize_Setting"
                         ],
-                        "variable": "$this"
+                        "variable": "$setting"
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;id</code>, refers to the setting ID.</p>"
@@ -4244,7 +4244,7 @@
                         "types": [
                             "\\WP_Customize_Setting"
                         ],
-                        "variable": "$this"
+                        "variable": "$setting"
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;type</code>, refers to the setting type.</p>"
@@ -4268,7 +4268,7 @@
                         "types": [
                             "\\WP_Customize_Manager"
                         ],
-                        "variable": "$this"
+                        "variable": "$manager"
                     }
                 ],
                 "long_description_html": ""
@@ -4292,7 +4292,7 @@
                         "types": [
                             "\\WP_Customize_Control"
                         ],
-                        "variable": "$this"
+                        "variable": "$control"
                     }
                 ],
                 "long_description_html": ""
@@ -4316,7 +4316,7 @@
                         "types": [
                             "\\WP_Customize_Control"
                         ],
-                        "variable": "$this"
+                        "variable": "$control"
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;id</code>, refers to the control ID.</p>"
@@ -4340,7 +4340,7 @@
                         "types": [
                             "\\WP_Customize_Panel"
                         ],
-                        "variable": "$this"
+                        "variable": "$panel"
                     }
                 ],
                 "long_description_html": ""
@@ -4380,7 +4380,7 @@
                         "types": [
                             "\\WP_Customize_Selective_Refresh"
                         ],
-                        "variable": "$this"
+                        "variable": "$refresh"
                     },
                     {
                         "name": "param",
@@ -4412,7 +4412,7 @@
                         "types": [
                             "\\WP_Customize_Selective_Refresh"
                         ],
-                        "variable": "$this"
+                        "variable": "$refresh"
                     },
                     {
                         "name": "param",
@@ -4444,7 +4444,7 @@
                         "types": [
                             "\\WP_Customize_Section"
                         ],
-                        "variable": "$this"
+                        "variable": "$section"
                     }
                 ],
                 "long_description_html": ""
@@ -4532,7 +4532,7 @@
                         "types": [
                             "\\WP_Customize_Manager"
                         ],
-                        "variable": "$this"
+                        "variable": "$manager"
                     }
                 ],
                 "long_description_html": "<p>Plugins can add just-in-time {@see 'customize<em>validate</em>{$this-&gt;ID}'} filters at this point to catch any settings registered after <code>customize_register</code>. The dynamic portion of the hook name, <code>$this-&gt;ID</code> refers to the setting ID.</p>"
@@ -4556,7 +4556,7 @@
                         "types": [
                             "\\WP_Customize_Setting"
                         ],
-                        "variable": "$this"
+                        "variable": "$setting"
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$id_base</code> refers to the base slug of the setting name.</p>"
@@ -4588,7 +4588,7 @@
                         "types": [
                             "\\WP_Customize_Setting"
                         ],
-                        "variable": "$this"
+                        "variable": "$setting"
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;type</code>, refers to the type of setting.</p>"
@@ -5372,7 +5372,7 @@
             "type": "action",
             "doc": {
                 "description": "Fires immediately before deleting metadata of a specific type.",
-                "long_description": "The dynamic portion of the hook, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).\n Possible hook names include:\n  - `delete_post_meta`  - `delete_comment_meta`  - `delete_term_meta`  - `delete_user_meta`",
+                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).\n Possible hook names include:\n  - `delete_post_meta`  - `delete_comment_meta`  - `delete_term_meta`  - `delete_user_meta`",
                 "tags": [
                     {
                         "name": "since",
@@ -5411,7 +5411,7 @@
                         "variable": "$_meta_value"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).</p> <p>Possible hook names include:</p> <ul> <li><code>delete_post_meta</code></li> <li><code>delete_comment_meta</code></li> <li><code>delete_term_meta</code></li> <li><code>delete_user_meta</code></li> </ul>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).</p> <p>Possible hook names include:</p> <ul> <li><code>delete_post_meta</code></li> <li><code>delete_comment_meta</code></li> <li><code>delete_term_meta</code></li> <li><code>delete_user_meta</code></li> </ul>"
             }
         },
         {
@@ -5420,7 +5420,7 @@
             "type": "action",
             "doc": {
                 "description": "Fires immediately before deleting post or comment metadata of a specific type.",
-                "long_description": "The dynamic portion of the hook, `$meta_type`, refers to the meta object type (post or comment).\n Possible hook names include:\n  - `delete_postmeta`  - `delete_commentmeta`  - `delete_termmeta`  - `delete_usermeta`",
+                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (post or comment).\n Possible hook names include:\n  - `delete_postmeta`  - `delete_commentmeta`  - `delete_termmeta`  - `delete_usermeta`",
                 "tags": [
                     {
                         "name": "since",
@@ -5435,7 +5435,7 @@
                         "variable": "$meta_id"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook, <code>$meta_type</code>, refers to the meta object type (post or comment).</p> <p>Possible hook names include:</p> <ul> <li><code>delete_postmeta</code></li> <li><code>delete_commentmeta</code></li> <li><code>delete_termmeta</code></li> <li><code>delete_usermeta</code></li> </ul>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (post or comment).</p> <p>Possible hook names include:</p> <ul> <li><code>delete_postmeta</code></li> <li><code>delete_commentmeta</code></li> <li><code>delete_termmeta</code></li> <li><code>delete_usermeta</code></li> </ul>"
             }
         },
         {
@@ -5870,7 +5870,7 @@
             "type": "action",
             "doc": {
                 "description": "Fires immediately after deleting metadata of a specific type.",
-                "long_description": "The dynamic portion of the hook, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).\n Possible hook names include:\n  - `deleted_post_meta`  - `deleted_comment_meta`  - `deleted_term_meta`  - `deleted_user_meta`",
+                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).\n Possible hook names include:\n  - `deleted_post_meta`  - `deleted_comment_meta`  - `deleted_term_meta`  - `deleted_user_meta`",
                 "tags": [
                     {
                         "name": "since",
@@ -5909,7 +5909,7 @@
                         "variable": "$_meta_value"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).</p> <p>Possible hook names include:</p> <ul> <li><code>deleted_post_meta</code></li> <li><code>deleted_comment_meta</code></li> <li><code>deleted_term_meta</code></li> <li><code>deleted_user_meta</code></li> </ul>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).</p> <p>Possible hook names include:</p> <ul> <li><code>deleted_post_meta</code></li> <li><code>deleted_comment_meta</code></li> <li><code>deleted_term_meta</code></li> <li><code>deleted_user_meta</code></li> </ul>"
             }
         },
         {
@@ -5918,7 +5918,7 @@
             "type": "action",
             "doc": {
                 "description": "Fires immediately after deleting post or comment metadata of a specific type.",
-                "long_description": "The dynamic portion of the hook, `$meta_type`, refers to the meta object type (post or comment).\n Possible hook names include:\n  - `deleted_postmeta`  - `deleted_commentmeta`  - `deleted_termmeta`  - `deleted_usermeta`",
+                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (post or comment).\n Possible hook names include:\n  - `deleted_postmeta`  - `deleted_commentmeta`  - `deleted_termmeta`  - `deleted_usermeta`",
                 "tags": [
                     {
                         "name": "since",
@@ -5933,7 +5933,7 @@
                         "variable": "$meta_ids"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook, <code>$meta_type</code>, refers to the meta object type (post or comment).</p> <p>Possible hook names include:</p> <ul> <li><code>deleted_postmeta</code></li> <li><code>deleted_commentmeta</code></li> <li><code>deleted_termmeta</code></li> <li><code>deleted_usermeta</code></li> </ul>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (post or comment).</p> <p>Possible hook names include:</p> <ul> <li><code>deleted_postmeta</code></li> <li><code>deleted_commentmeta</code></li> <li><code>deleted_termmeta</code></li> <li><code>deleted_usermeta</code></li> </ul>"
             }
         },
         {
@@ -7382,7 +7382,7 @@
                         "types": [
                             "\\WP_Rewrite"
                         ],
-                        "variable": "$this"
+                        "variable": "$wp_rewrite"
                     }
                 ],
                 "long_description_html": ""
@@ -7879,9 +7879,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "{     An array of metadata about the available plugin update.     @type int    $id          Plugin ID.     @type string $slug        Plugin slug.     @type string $new_version New plugin version.     @type string $url         Plugin URL.     @type string $package     Plugin update package URL. }",
+                        "content": "{     An object of metadata about the available plugin update.     @type int    $id          Plugin ID.     @type string $slug        Plugin slug.     @type string $new_version New plugin version.     @type string $url         Plugin URL.     @type string $package     Plugin update package URL. }",
                         "types": [
-                            "array"
+                            "object"
                         ],
                         "variable": "$response"
                     }
@@ -7983,14 +7983,14 @@
             "type": "action",
             "doc": {
                 "description": "Fires before each tab on the Install Plugins screen is loaded.",
-                "long_description": "The dynamic portion of the action hook, `$tab`, allows for targeting individual tabs, for instance 'install_plugins_pre_plugin-information'.",
+                "long_description": "The dynamic portion of the hook name, `$tab`, allows for targeting individual tabs.\n Possible hook names include:\n  - `install_plugins_pre_beta`  - `install_plugins_pre_favorites`  - `install_plugins_pre_featured`  - `install_plugins_pre_plugin-information`  - `install_plugins_pre_popular`  - `install_plugins_pre_recommended`  - `install_plugins_pre_search`  - `install_plugins_pre_upload`",
                 "tags": [
                     {
                         "name": "since",
                         "content": "2.7.0"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the action hook, <code>$tab</code>, allows for targeting individual tabs, for instance 'install_plugins_pre_plugin-information'.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$tab</code>, allows for targeting individual tabs.</p> <p>Possible hook names include:</p> <ul> <li><code>install_plugins_pre_beta</code></li> <li><code>install_plugins_pre_favorites</code></li> <li><code>install_plugins_pre_featured</code></li> <li><code>install_plugins_pre_plugin-information</code></li> <li><code>install_plugins_pre_popular</code></li> <li><code>install_plugins_pre_recommended</code></li> <li><code>install_plugins_pre_search</code></li> <li><code>install_plugins_pre_upload</code></li> </ul>"
             }
         },
         {
@@ -8015,7 +8015,7 @@
             "type": "action",
             "doc": {
                 "description": "Fires after the plugins list table in each tab of the Install Plugins screen.",
-                "long_description": "The dynamic portion of the action hook, `$tab`, allows for targeting individual tabs, for instance 'install_plugins_plugin-information'.",
+                "long_description": "The dynamic portion of the hook name, `$tab`, allows for targeting individual tabs.\n Possible hook names include:\n  - `install_plugins_beta`  - `install_plugins_favorites`  - `install_plugins_featured`  - `install_plugins_plugin-information`  - `install_plugins_popular`  - `install_plugins_recommended`  - `install_plugins_search`  - `install_plugins_upload`",
                 "tags": [
                     {
                         "name": "since",
@@ -8030,7 +8030,7 @@
                         "variable": "$paged"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the action hook, <code>$tab</code>, allows for targeting individual tabs, for instance 'install_plugins_plugin-information'.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$tab</code>, allows for targeting individual tabs.</p> <p>Possible hook names include:</p> <ul> <li><code>install_plugins_beta</code></li> <li><code>install_plugins_favorites</code></li> <li><code>install_plugins_featured</code></li> <li><code>install_plugins_plugin-information</code></li> <li><code>install_plugins_popular</code></li> <li><code>install_plugins_recommended</code></li> <li><code>install_plugins_search</code></li> <li><code>install_plugins_upload</code></li> </ul>"
             }
         },
         {
@@ -8349,14 +8349,14 @@
             "type": "action",
             "doc": {
                 "description": "Fires before a specified login form action.",
-                "long_description": "The dynamic portion of the hook name, `$action`, refers to the action that brought the visitor to the login form.\n Possible hook names include:\n  - 'login_form_checkemail'  - 'login_form_confirm_admin_email'  - 'login_form_confirmaction'  - 'login_form_entered_recovery_mode'  - 'login_form_login'  - 'login_form_logout'  - 'login_form_lostpassword'  - 'login_form_postpass'  - 'login_form_register'  - 'login_form_resetpass'  - 'login_form_retrievepassword'  - 'login_form_rp'",
+                "long_description": "The dynamic portion of the hook name, `$action`, refers to the action that brought the visitor to the login form.\n Possible hook names include:\n  - `login_form_checkemail`  - `login_form_confirm_admin_email`  - `login_form_confirmaction`  - `login_form_entered_recovery_mode`  - `login_form_login`  - `login_form_logout`  - `login_form_lostpassword`  - `login_form_postpass`  - `login_form_register`  - `login_form_resetpass`  - `login_form_retrievepassword`  - `login_form_rp`",
                 "tags": [
                     {
                         "name": "since",
                         "content": "2.8.0"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$action</code>, refers to the action that brought the visitor to the login form.</p> <p>Possible hook names include:</p> <ul> <li>'login_form_checkemail'</li> <li>'login_form_confirm_admin_email'</li> <li>'login_form_confirmaction'</li> <li>'login_form_entered_recovery_mode'</li> <li>'login_form_login'</li> <li>'login_form_logout'</li> <li>'login_form_lostpassword'</li> <li>'login_form_postpass'</li> <li>'login_form_register'</li> <li>'login_form_resetpass'</li> <li>'login_form_retrievepassword'</li> <li>'login_form_rp'</li> </ul>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$action</code>, refers to the action that brought the visitor to the login form.</p> <p>Possible hook names include:</p> <ul> <li><code>login_form_checkemail</code></li> <li><code>login_form_confirm_admin_email</code></li> <li><code>login_form_confirmaction</code></li> <li><code>login_form_entered_recovery_mode</code></li> <li><code>login_form_login</code></li> <li><code>login_form_logout</code></li> <li><code>login_form_lostpassword</code></li> <li><code>login_form_postpass</code></li> <li><code>login_form_register</code></li> <li><code>login_form_resetpass</code></li> <li><code>login_form_retrievepassword</code></li> <li><code>login_form_rp</code></li> </ul>"
             }
         },
         {
@@ -9794,7 +9794,7 @@
                         "types": [
                             "\\WP_Comment_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": ""
@@ -9818,7 +9818,7 @@
                         "types": [
                             "\\WP_Network_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": ""
@@ -9866,7 +9866,7 @@
                         "types": [
                             "\\WP"
                         ],
-                        "variable": "$this"
+                        "variable": "$wp"
                     }
                 ],
                 "long_description_html": ""
@@ -9890,7 +9890,7 @@
                         "types": [
                             "\\WP_Site_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": ""
@@ -9938,7 +9938,7 @@
                         "types": [
                             "\\WP_Term_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": ""
@@ -10375,7 +10375,7 @@
             "file": "wp-admin/includes/meta-boxes.php",
             "type": "action",
             "doc": {
-                "description": "Fires before the post time/date setting in the Publish meta box.",
+                "description": "Fires after the Save Draft (or Save as Pending) and Preview (or Preview Changes) buttons in the Publish meta box.",
                 "long_description": "",
                 "tags": [
                     {
@@ -10774,7 +10774,7 @@
                         "types": [
                             "\\WP_Comment_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": ""
@@ -10798,7 +10798,7 @@
                         "types": [
                             "\\WP_Network_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": ""
@@ -10885,7 +10885,7 @@
                         "types": [
                             "\\WP_Site_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": ""
@@ -10909,7 +10909,7 @@
                         "types": [
                             "\\WP_Term_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": ""
@@ -13156,7 +13156,7 @@
                         "types": [
                             "\\WP"
                         ],
-                        "variable": "$this"
+                        "variable": "$wp"
                     }
                 ],
                 "long_description_html": ""
@@ -14031,7 +14031,7 @@
                         "types": [
                             "\\WP_Customize_Manager"
                         ],
-                        "variable": "$this"
+                        "variable": "$manager"
                     }
                 ],
                 "long_description_html": ""
@@ -14055,7 +14055,7 @@
                         "types": [
                             "\\WP_Customize_Manager"
                         ],
-                        "variable": "$this"
+                        "variable": "$manager"
                     }
                 ],
                 "long_description_html": ""
@@ -15412,7 +15412,7 @@
             "type": "action",
             "doc": {
                 "description": "Fires immediately before updating metadata of a specific type.",
-                "long_description": "The dynamic portion of the hook, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).\n Possible hook names include:\n  - `update_post_meta`  - `update_comment_meta`  - `update_term_meta`  - `update_user_meta`",
+                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).\n Possible hook names include:\n  - `update_post_meta`  - `update_comment_meta`  - `update_term_meta`  - `update_user_meta`",
                 "tags": [
                     {
                         "name": "since",
@@ -15451,7 +15451,7 @@
                         "variable": "$_meta_value"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).</p> <p>Possible hook names include:</p> <ul> <li><code>update_post_meta</code></li> <li><code>update_comment_meta</code></li> <li><code>update_term_meta</code></li> <li><code>update_user_meta</code></li> </ul>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).</p> <p>Possible hook names include:</p> <ul> <li><code>update_post_meta</code></li> <li><code>update_comment_meta</code></li> <li><code>update_term_meta</code></li> <li><code>update_user_meta</code></li> </ul>"
             }
         },
         {
@@ -15548,7 +15548,7 @@
             "type": "action",
             "doc": {
                 "description": "Fires immediately after updating metadata of a specific type.",
-                "long_description": "The dynamic portion of the hook, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).\n Possible hook names include:\n  - `updated_post_meta`  - `updated_comment_meta`  - `updated_term_meta`  - `updated_user_meta`",
+                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).\n Possible hook names include:\n  - `updated_post_meta`  - `updated_comment_meta`  - `updated_term_meta`  - `updated_user_meta`",
                 "tags": [
                     {
                         "name": "since",
@@ -15587,7 +15587,7 @@
                         "variable": "$_meta_value"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).</p> <p>Possible hook names include:</p> <ul> <li><code>updated_post_meta</code></li> <li><code>updated_comment_meta</code></li> <li><code>updated_term_meta</code></li> <li><code>updated_user_meta</code></li> </ul>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).</p> <p>Possible hook names include:</p> <ul> <li><code>updated_post_meta</code></li> <li><code>updated_comment_meta</code></li> <li><code>updated_term_meta</code></li> <li><code>updated_user_meta</code></li> </ul>"
             }
         },
         {
@@ -15654,11 +15654,11 @@
                     },
                     {
                         "name": "param",
-                        "content": "WP_Upgrader instance. In other contexts, $this, might be a                          Theme_Upgrader, Plugin_Upgrader, Core_Upgrade, or Language_Pack_Upgrader instance.",
+                        "content": "WP_Upgrader instance. In other contexts this might be a                                Theme_Upgrader, Plugin_Upgrader, Core_Upgrade, or Language_Pack_Upgrader instance.",
                         "types": [
                             "\\WP_Upgrader"
                         ],
-                        "variable": "$this"
+                        "variable": "$upgrader"
                     },
                     {
                         "name": "param",
@@ -16000,7 +16000,7 @@
                         "types": [
                             "\\WP"
                         ],
-                        "variable": "$this"
+                        "variable": "$wp"
                     }
                 ],
                 "long_description_html": ""
@@ -16523,7 +16523,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The details about the created password.",
+                        "content": "{     The details about the created password.     @type string $uuid      The unique identifier for the application password.     @type string $app_id    A UUID provided by the application to uniquely identify it.     @type string $name      The name of the application password.     @type string $password  A one-way hash of the password.     @type int    $created   Unix timestamp of when the password was created.     @type null   $last_used Null.     @type null   $last_ip   Null. }",
                         "types": [
                             "array"
                         ],
@@ -16531,7 +16531,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The unhashed generated app password.",
+                        "content": "The unhashed generated application password.",
                         "types": [
                             "string"
                         ],
@@ -16539,7 +16539,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Information used to create the application password.",
+                        "content": "{     Arguments used to create the application password.     @type string $name   The name of the application password.     @type string $app_id A UUID provided by the application to uniquely identify it. }",
                         "types": [
                             "array"
                         ],
@@ -16695,7 +16695,7 @@
                         "types": [
                             "\\WP_Scripts"
                         ],
-                        "variable": "$this"
+                        "variable": "$wp_scripts"
                     }
                 ],
                 "long_description_html": ""
@@ -16719,7 +16719,7 @@
                         "types": [
                             "\\WP_Styles"
                         ],
-                        "variable": "$this"
+                        "variable": "$wp_styles"
                     }
                 ],
                 "long_description_html": ""
@@ -17453,7 +17453,7 @@
                         "types": [
                             "\\WP_Post"
                         ],
-                        "variable": "$item"
+                        "variable": "$menu_item"
                     },
                     {
                         "name": "param",
@@ -17477,7 +17477,7 @@
                         "types": [
                             "int"
                         ],
-                        "variable": "$id"
+                        "variable": "$current_object_id"
                     }
                 ],
                 "long_description_html": ""
@@ -17778,7 +17778,7 @@
                         "types": [
                             "\\WP_Roles"
                         ],
-                        "variable": "$this"
+                        "variable": "$wp_roles"
                     }
                 ],
                 "long_description_html": ""
@@ -19164,7 +19164,7 @@
             "type": "action",
             "doc": {
                 "description": "Fires when a post is transitioned from one status to another.",
-                "long_description": "The dynamic portions of the hook name, `$new_status` and `$old_status`, refer to the old and new post statuses, respectively.",
+                "long_description": "The dynamic portions of the hook name, `$new_status` and `$old_status`, refer to the old and new post statuses, respectively.\n Possible hook names include:\n  - `draft_to_publish`  - `publish_to_trash`  - `pending_to_draft`",
                 "tags": [
                     {
                         "name": "since",
@@ -19179,7 +19179,7 @@
                         "variable": "$post"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portions of the hook name, <code>$new_status</code> and <code>$old_status</code>, refer to the old and new post statuses, respectively.</p>"
+                "long_description_html": "<p>The dynamic portions of the hook name, <code>$new_status</code> and <code>$old_status</code>, refer to the old and new post statuses, respectively.</p> <p>Possible hook names include:</p> <ul> <li><code>draft_to_publish</code></li> <li><code>publish_to_trash</code></li> <li><code>pending_to_draft</code></li> </ul>"
             }
         },
         {

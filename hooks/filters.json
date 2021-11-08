@@ -268,7 +268,7 @@
             "type": "filter",
             "doc": {
                 "description": "Short-circuits adding metadata of a specific type.",
-                "long_description": "The dynamic portion of the hook, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible hook names include:\n  - `add_post_metadata`  - `add_comment_metadata`  - `add_term_metadata`  - `add_user_metadata`",
+                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible hook names include:\n  - `add_post_metadata`  - `add_comment_metadata`  - `add_term_metadata`  - `add_user_metadata`",
                 "tags": [
                     {
                         "name": "since",
@@ -316,7 +316,7 @@
                         "variable": "$unique"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.</p> <p>Possible hook names include:</p> <ul> <li><code>add_post_metadata</code></li> <li><code>add_comment_metadata</code></li> <li><code>add_term_metadata</code></li> <li><code>add_user_metadata</code></li> </ul>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.</p> <p>Possible hook names include:</p> <ul> <li><code>add_post_metadata</code></li> <li><code>add_comment_metadata</code></li> <li><code>add_term_metadata</code></li> <li><code>add_user_metadata</code></li> </ul>"
             }
         },
         {
@@ -3360,7 +3360,7 @@
                         "types": [
                             "int"
                         ],
-                        "variable": "$id"
+                        "variable": "$current_object_id"
                     }
                 ],
                 "long_description_html": ""
@@ -4138,7 +4138,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters a comment form field for display.",
-                "long_description": "The dynamic portion of the filter hook, `$name`, refers to the name of the comment form field.\n Possible hook names include:\n  - `comment_form_field_comment`  - `comment_form_field_author`  - `comment_form_field_email`  - `comment_form_field_url`  - `comment_form_field_cookies`",
+                "long_description": "The dynamic portion of the hook name, `$name`, refers to the name of the comment form field.\n Possible hook names include:\n  - `comment_form_field_comment`  - `comment_form_field_author`  - `comment_form_field_email`  - `comment_form_field_url`  - `comment_form_field_cookies`",
                 "tags": [
                     {
                         "name": "since",
@@ -4153,7 +4153,7 @@
                         "variable": "$field"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the filter hook, <code>$name</code>, refers to the name of the comment form field.</p> <p>Possible hook names include:</p> <ul> <li><code>comment_form_field_comment</code></li> <li><code>comment_form_field_author</code></li> <li><code>comment_form_field_email</code></li> <li><code>comment_form_field_url</code></li> <li><code>comment_form_field_cookies</code></li> </ul>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$name</code>, refers to the name of the comment form field.</p> <p>Possible hook names include:</p> <ul> <li><code>comment_form_field_comment</code></li> <li><code>comment_form_field_author</code></li> <li><code>comment_form_field_email</code></li> <li><code>comment_form_field_url</code></li> <li><code>comment_form_field_cookies</code></li> </ul>"
             }
         },
         {
@@ -5543,9 +5543,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "An array of non-default cron schedules. Default empty.",
+                        "content": "An array of non-default cron schedule arrays. Default empty.",
                         "types": [
-                            "array"
+                            "array[]"
                         ],
                         "variable": "$new_schedules"
                     }
@@ -5969,7 +5969,7 @@
                         "types": [
                             "\\WP_Customize_Manager"
                         ],
-                        "variable": "$this"
+                        "variable": "$manager"
                     }
                 ],
                 "long_description_html": "<p>This allows Core components to be excluded from being instantiated by filtering them out of the array. Note that this filter generally runs during the {@see 'plugins_loaded'} action, so it cannot be added in a theme.</p>"
@@ -6243,7 +6243,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Array of refreshed nonces for save and                                     preview actions.",
+                        "content": "Array of refreshed nonces for save and                                      preview actions.",
                         "types": [
                             "string[]"
                         ],
@@ -6255,7 +6255,7 @@
                         "types": [
                             "\\WP_Customize_Manager"
                         ],
-                        "variable": "$this"
+                        "variable": "$manager"
                     }
                 ],
                 "long_description_html": ""
@@ -6359,7 +6359,7 @@
                         "types": [
                             "\\WP_Customize_Setting"
                         ],
-                        "variable": "$this"
+                        "variable": "$setting"
                     }
                 ],
                 "long_description_html": ""
@@ -6391,7 +6391,7 @@
                         "types": [
                             "\\WP_Customize_Manager"
                         ],
-                        "variable": "$this"
+                        "variable": "$manager"
                     }
                 ],
                 "long_description_html": "<p>This filter does not apply if there was a nonce or authentication failure.</p>"
@@ -6882,8 +6882,13 @@
                         "description": "Added 'user_registered' to the default recognized columns."
                     },
                     {
+                        "name": "since",
+                        "content": "4.6.0",
+                        "description": "Added 'registered' and 'last_updated' to the default recognized columns."
+                    },
+                    {
                         "name": "param",
-                        "content": "An array of valid date query columns. Defaults                                are 'post_date', 'post_date_gmt', 'post_modified',                                'post_modified_gmt', 'comment_date', 'comment_date_gmt',                                'user_registered'",
+                        "content": "An array of valid date query columns. Defaults                                are 'post_date', 'post_date_gmt', 'post_modified',                                'post_modified_gmt', 'comment_date', 'comment_date_gmt',                                'user_registered', 'registered', 'last_updated'.",
                         "types": [
                             "string[]"
                         ],
@@ -7042,8 +7047,8 @@
             "file": "wp-admin/includes/class-wp-debug-data.php",
             "type": "filter",
             "doc": {
-                "description": "Add or modify the debug information.",
-                "long_description": "Plugin or themes may wish to introduce their own debug information without creating additional admin pages they can utilize this filter to introduce their own sections or add more data to existing sections.\n Array keys for sections added by core are all prefixed with `wp-`, plugins and themes should use their own slug as a prefix, both for consistency as well as avoiding key collisions. Note that the array keys are used as labels for the copied data.\n All strings are expected to be plain text except $description that can contain inline HTML tags (see below).",
+                "description": "Add to or modify the debug information shown on the Tools -> Site Health -> Info screen.",
+                "long_description": "Plugin or themes may wish to introduce their own debug information without creating additional admin pages. They can utilize this filter to introduce their own sections or add more data to existing sections.\n Array keys for sections added by core are all prefixed with `wp-`. Plugins and themes should use their own slug as a prefix, both for consistency as well as avoiding key collisions. Note that the array keys are used as labels for the copied data.\n All strings are expected to be plain text except `$description` that can contain inline HTML tags (see below).",
                 "tags": [
                     {
                         "name": "since",
@@ -7051,14 +7056,14 @@
                     },
                     {
                         "name": "param",
-                        "content": "{     The debug information to be added to the core information page.     This is an associative multi-dimensional array, up to three levels deep. The topmost array holds the sections.     Each section has a <code>$fields</code> associative array (see below), and each <code>$value</code> in <code>$fields</code> can be     another associative array of name/value pairs when there is more structured data to display.     @type string  $label        The title for this section of the debug output.     @type string  $description  Optional. A description for your information section which may contain basic HTML                                 markup, inline tags only as it is outputted in a paragraph.     @type boolean $show_count   Optional. If set to <code>true</code> the amount of fields will be included in the title for                                 this section.     @type boolean $private      Optional. If set to <code>true</code> the section and all associated fields will be excluded                                 from the copied data.     @type array   $fields {         An associative array containing the data to be displayed.         @type string  $label    The label for this piece of information.         @type string  $value    The output that is displayed for this field. Text should be translated. Can be                                 an associative array that is displayed as name/value pairs.         @type string  $debug    Optional. The output that is used for this field when the user copies the data.                                 It should be more concise and not translated. If not set, the content of <code>$value</code> is used.                                 Note that the array keys are used as labels for the copied data.         @type boolean $private  Optional. If set to <code>true</code> the field will not be included in the copied data                                 allowing you to show, for example, API keys here.     } }",
+                        "content": "{     The debug information to be added to the core information page.     This is an associative multi-dimensional array, up to three levels deep.     The topmost array holds the sections, keyed by section ID.     @type array ...$0 {         Each section has a <code>$fields</code> associative array (see below), and each <code>$value</code> in <code>$fields</code>         can be another associative array of name/value pairs when there is more structured data         to display.         @type string $label       Required. The title for this section of the debug output.         @type string $description Optional. A description for your information section which                                   may contain basic HTML markup, inline tags only as it is                                   outputted in a paragraph.         @type bool   $show_count  Optional. If set to <code>true</code>, the amount of fields will be included                                   in the title for this section. Default false.         @type bool   $private     Optional. If set to <code>true</code>, the section and all associated fields                                   will be excluded from the copied data. Default false.         @type array  $fields {             Required. An associative array containing the fields to be displayed in the section,             keyed by field ID.             @type array ...$0 {                 An associative array containing the data to be displayed for the field.                 @type string $label    Required. The label for this piece of information.                 @type mixed  $value    Required. The output that is displayed for this field.                                        Text should be translated. Can be an associative array                                        that is displayed as name/value pairs.                                        Accepted types: <code>string|int|float|(string|int|float)[]</code>.                 @type string $debug    Optional. The output that is used for this field when                                        the user copies the data. It should be more concise and                                        not translated. If not set, the content of <code>$value</code>                                        is used. Note that the array keys are used as labels                                        for the copied data.                 @type bool   $private  Optional. If set to <code>true</code>, the field will be excluded                                        from the copied data, allowing you to show, for example,                                        API keys here. Default false.             }         }     } }",
                         "types": [
                             "array"
                         ],
                         "variable": "$args"
                     }
                 ],
-                "long_description_html": "<p>Plugin or themes may wish to introduce their own debug information without creating additional admin pages they can utilize this filter to introduce their own sections or add more data to existing sections.</p> <p>Array keys for sections added by core are all prefixed with <code>wp-</code>, plugins and themes should use their own slug as a prefix, both for consistency as well as avoiding key collisions. Note that the array keys are used as labels for the copied data.</p> <p>All strings are expected to be plain text except $description that can contain inline HTML tags (see below).</p>"
+                "long_description_html": "<p>Plugin or themes may wish to introduce their own debug information without creating additional admin pages. They can utilize this filter to introduce their own sections or add more data to existing sections.</p> <p>Array keys for sections added by core are all prefixed with <code>wp-</code>. Plugins and themes should use their own slug as a prefix, both for consistency as well as avoiding key collisions. Note that the array keys are used as labels for the copied data.</p> <p>All strings are expected to be plain text except <code>$description</code> that can contain inline HTML tags (see below).</p>"
             }
         },
         {
@@ -7431,7 +7436,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the default metadata value for a specified meta key and object.",
-                "long_description": "The dynamic portion of the hook, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).\n Possible filter names include:\n  - `default_post_metadata`  - `default_comment_metadata`  - `default_term_metadata`  - `default_user_metadata`",
+                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).\n Possible filter names include:\n  - `default_post_metadata`  - `default_comment_metadata`  - `default_term_metadata`  - `default_user_metadata`",
                 "tags": [
                     {
                         "name": "since",
@@ -7478,7 +7483,7 @@
                         "variable": "$meta_type"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).</p> <p>Possible filter names include:</p> <ul> <li><code>default_post_metadata</code></li> <li><code>default_comment_metadata</code></li> <li><code>default_term_metadata</code></li> <li><code>default_user_metadata</code></li> </ul>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).</p> <p>Possible filter names include:</p> <ul> <li><code>default_post_metadata</code></li> <li><code>default_comment_metadata</code></li> <li><code>default_term_metadata</code></li> <li><code>default_user_metadata</code></li> </ul>"
             }
         },
         {
@@ -7511,7 +7516,7 @@
             "type": "filter",
             "doc": {
                 "description": "Short-circuits deleting metadata of a specific type.",
-                "long_description": "The dynamic portion of the hook, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible hook names include:\n  - `delete_post_metadata`  - `delete_comment_metadata`  - `delete_term_metadata`  - `delete_user_metadata`",
+                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible hook names include:\n  - `delete_post_metadata`  - `delete_comment_metadata`  - `delete_term_metadata`  - `delete_user_metadata`",
                 "tags": [
                     {
                         "name": "since",
@@ -7559,7 +7564,7 @@
                         "variable": "$delete_all"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.</p> <p>Possible hook names include:</p> <ul> <li><code>delete_post_metadata</code></li> <li><code>delete_comment_metadata</code></li> <li><code>delete_term_metadata</code></li> <li><code>delete_user_metadata</code></li> </ul>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.</p> <p>Possible hook names include:</p> <ul> <li><code>delete_post_metadata</code></li> <li><code>delete_comment_metadata</code></li> <li><code>delete_term_metadata</code></li> <li><code>delete_user_metadata</code></li> </ul>"
             }
         },
         {
@@ -7568,7 +7573,7 @@
             "type": "filter",
             "doc": {
                 "description": "Short-circuits deleting metadata of a specific type by meta ID.",
-                "long_description": "The dynamic portion of the hook, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible hook names include:\n  - `delete_post_metadata_by_mid`  - `delete_comment_metadata_by_mid`  - `delete_term_metadata_by_mid`  - `delete_user_metadata_by_mid`",
+                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible hook names include:\n  - `delete_post_metadata_by_mid`  - `delete_comment_metadata_by_mid`  - `delete_term_metadata_by_mid`  - `delete_user_metadata_by_mid`",
                 "tags": [
                     {
                         "name": "since",
@@ -7592,7 +7597,7 @@
                         "variable": "$meta_id"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.</p> <p>Possible hook names include:</p> <ul> <li><code>delete_post_metadata_by_mid</code></li> <li><code>delete_comment_metadata_by_mid</code></li> <li><code>delete_term_metadata_by_mid</code></li> <li><code>delete_user_metadata_by_mid</code></li> </ul>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.</p> <p>Possible hook names include:</p> <ul> <li><code>delete_post_metadata_by_mid</code></li> <li><code>delete_comment_metadata_by_mid</code></li> <li><code>delete_term_metadata_by_mid</code></li> <li><code>delete_user_metadata_by_mid</code></li> </ul>"
             }
         },
         {
@@ -8051,7 +8056,7 @@
                         "types": [
                             "\\WP"
                         ],
-                        "variable": "$this"
+                        "variable": "$wp"
                     },
                     {
                         "name": "param",
@@ -8786,7 +8791,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters a term field to edit before it is sanitized.",
-                "long_description": "The dynamic portion of the filter name, `$field`, refers to the term field.",
+                "long_description": "The dynamic portion of the hook name, `$field`, refers to the term field.",
                 "tags": [
                     {
                         "name": "since",
@@ -8817,7 +8822,7 @@
                         "variable": "$taxonomy"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the filter name, <code>$field</code>, refers to the term field.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$field</code>, refers to the term field.</p>"
             }
         },
         {
@@ -10076,9 +10081,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "The list of allowed blocks.",
+                        "content": "The list of names of allowed blocks.",
                         "types": [
-                            "array"
+                            "string[]"
                         ],
                         "variable": "$allowed_blocks"
                     }
@@ -10100,9 +10105,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "The list of allowed wrapper blocks.",
+                        "content": "The list of names of allowed wrapper blocks.",
                         "types": [
-                            "array"
+                            "string[]"
                         ],
                         "variable": "$allowed_wrapper_blocks"
                     }
@@ -12534,7 +12539,7 @@
                         "types": [
                             "\\WP_Date_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": ""
@@ -13302,7 +13307,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the object subtype identifier for a non-standard object type.",
-                "long_description": "The dynamic portion of the hook, `$object_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).\n Possible hook names include:\n  - `get_object_subtype_post`  - `get_object_subtype_comment`  - `get_object_subtype_term`  - `get_object_subtype_user`",
+                "long_description": "The dynamic portion of the hook name, `$object_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).\n Possible hook names include:\n  - `get_object_subtype_post`  - `get_object_subtype_comment`  - `get_object_subtype_term`  - `get_object_subtype_user`",
                 "tags": [
                     {
                         "name": "since",
@@ -13325,7 +13330,7 @@
                         "variable": "$object_id"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook, <code>$object_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).</p> <p>Possible hook names include:</p> <ul> <li><code>get_object_subtype_post</code></li> <li><code>get_object_subtype_comment</code></li> <li><code>get_object_subtype_term</code></li> <li><code>get_object_subtype_user</code></li> </ul>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$object_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).</p> <p>Possible hook names include:</p> <ul> <li><code>get_object_subtype_post</code></li> <li><code>get_object_subtype_comment</code></li> <li><code>get_object_subtype_term</code></li> <li><code>get_object_subtype_user</code></li> </ul>"
             }
         },
         {
@@ -15408,7 +15413,7 @@
             "type": "filter",
             "doc": {
                 "description": "Short-circuits the return value of a meta field.",
-                "long_description": "The dynamic portion of the hook, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible filter names include:\n  - `get_post_metadata`  - `get_comment_metadata`  - `get_term_metadata`  - `get_user_metadata`",
+                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible filter names include:\n  - `get_post_metadata`  - `get_comment_metadata`  - `get_term_metadata`  - `get_user_metadata`",
                 "tags": [
                     {
                         "name": "since",
@@ -15460,7 +15465,7 @@
                         "variable": "$meta_type"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.</p> <p>Possible filter names include:</p> <ul> <li><code>get_post_metadata</code></li> <li><code>get_comment_metadata</code></li> <li><code>get_term_metadata</code></li> <li><code>get_user_metadata</code></li> </ul>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.</p> <p>Possible filter names include:</p> <ul> <li><code>get_post_metadata</code></li> <li><code>get_comment_metadata</code></li> <li><code>get_term_metadata</code></li> <li><code>get_user_metadata</code></li> </ul>"
             }
         },
         {
@@ -15469,7 +15474,7 @@
             "type": "filter",
             "doc": {
                 "description": "Short-circuits the return value when fetching a meta field by meta ID.",
-                "long_description": "The dynamic portion of the hook, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible hook names include:\n  - `get_post_metadata_by_mid`  - `get_comment_metadata_by_mid`  - `get_term_metadata_by_mid`  - `get_user_metadata_by_mid`",
+                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible hook names include:\n  - `get_post_metadata_by_mid`  - `get_comment_metadata_by_mid`  - `get_term_metadata_by_mid`  - `get_user_metadata_by_mid`",
                 "tags": [
                     {
                         "name": "since",
@@ -15493,7 +15498,7 @@
                         "variable": "$meta_id"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.</p> <p>Possible hook names include:</p> <ul> <li><code>get_post_metadata_by_mid</code></li> <li><code>get_comment_metadata_by_mid</code></li> <li><code>get_term_metadata_by_mid</code></li> <li><code>get_user_metadata_by_mid</code></li> </ul>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.</p> <p>Possible hook names include:</p> <ul> <li><code>get_post_metadata_by_mid</code></li> <li><code>get_comment_metadata_by_mid</code></li> <li><code>get_term_metadata_by_mid</code></li> <li><code>get_user_metadata_by_mid</code></li> </ul>"
             }
         },
         {
@@ -15502,7 +15507,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters a taxonomy term object.",
-                "long_description": "The dynamic portion of the filter name, `$taxonomy`, refers to the slug of the term's taxonomy.\n Possible hook names include:\n  - `get_category`  - `get_post_tag`",
+                "long_description": "The dynamic portion of the hook name, `$taxonomy`, refers to the slug of the term's taxonomy.\n Possible hook names include:\n  - `get_category`  - `get_post_tag`",
                 "tags": [
                     {
                         "name": "since",
@@ -15530,7 +15535,7 @@
                         "variable": "$taxonomy"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the filter name, <code>$taxonomy</code>, refers to the slug of the term's taxonomy.</p> <p>Possible hook names include:</p> <ul> <li><code>get_category</code></li> <li><code>get_post_tag</code></li> </ul>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the slug of the term's taxonomy.</p> <p>Possible hook names include:</p> <ul> <li><code>get_category</code></li> <li><code>get_post_tag</code></li> </ul>"
             }
         },
         {
@@ -15715,7 +15720,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters text with its translation based on context information for a domain.",
-                "long_description": "The dynamic portion of the hook, `$domain`, refers to the text domain.",
+                "long_description": "The dynamic portion of the hook name, `$domain`, refers to the text domain.",
                 "tags": [
                     {
                         "name": "since",
@@ -15754,7 +15759,7 @@
                         "variable": "$domain"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook, <code>$domain</code>, refers to the text domain.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$domain</code>, refers to the text domain.</p>"
             }
         },
         {
@@ -15763,7 +15768,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters text with its translation for a domain.",
-                "long_description": "The dynamic portion of the hook, `$domain`, refers to the text domain.",
+                "long_description": "The dynamic portion of the hook name, `$domain`, refers to the text domain.",
                 "tags": [
                     {
                         "name": "since",
@@ -15794,7 +15799,7 @@
                         "variable": "$domain"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook, <code>$domain</code>, refers to the text domain.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$domain</code>, refers to the text domain.</p>"
             }
         },
         {
@@ -18015,7 +18020,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters API request arguments for each Add Plugins screen tab.",
-                "long_description": "The dynamic portion of the hook name, `$tab`, refers to the plugin install tabs.\n Possible hook names include:\n  - `install_plugins_table_api_args_favorites`  - `install_plugins_table_api_args_featured`  - `install_plugins_table_api_args_popular`  - `install_plugins_table_api_args_recommended`  - `install_plugins_table_api_args_upload`",
+                "long_description": "The dynamic portion of the hook name, `$tab`, refers to the plugin install tabs.\n Possible hook names include:\n  - `install_plugins_table_api_args_favorites`  - `install_plugins_table_api_args_featured`  - `install_plugins_table_api_args_popular`  - `install_plugins_table_api_args_recommended`  - `install_plugins_table_api_args_upload`  - `install_plugins_table_api_args_search`  - `install_plugins_table_api_args_beta`",
                 "tags": [
                     {
                         "name": "since",
@@ -18031,7 +18036,7 @@
                         "variable": "$args"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$tab</code>, refers to the plugin install tabs.</p> <p>Possible hook names include:</p> <ul> <li><code>install_plugins_table_api_args_favorites</code></li> <li><code>install_plugins_table_api_args_featured</code></li> <li><code>install_plugins_table_api_args_popular</code></li> <li><code>install_plugins_table_api_args_recommended</code></li> <li><code>install_plugins_table_api_args_upload</code></li> </ul>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$tab</code>, refers to the plugin install tabs.</p> <p>Possible hook names include:</p> <ul> <li><code>install_plugins_table_api_args_favorites</code></li> <li><code>install_plugins_table_api_args_featured</code></li> <li><code>install_plugins_table_api_args_popular</code></li> <li><code>install_plugins_table_api_args_recommended</code></li> <li><code>install_plugins_table_api_args_upload</code></li> <li><code>install_plugins_table_api_args_search</code></li> <li><code>install_plugins_table_api_args_beta</code></li> </ul>"
             }
         },
         {
@@ -20503,7 +20508,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Blank string.",
+                        "content": "Custom column output. Default empty.",
                         "types": [
                             "string"
                         ],
@@ -21440,7 +21445,7 @@
                         "types": [
                             "\\WP_Meta_Query"
                         ],
-                        "variable": "$this"
+                        "variable": "$query"
                     }
                 ],
                 "long_description_html": ""
@@ -21934,11 +21939,11 @@
                     },
                     {
                         "name": "param",
-                        "content": "The current menu item.",
+                        "content": "The current menu item object.",
                         "types": [
                             "\\WP_Post"
                         ],
-                        "variable": "$item"
+                        "variable": "$menu_item"
                     },
                     {
                         "name": "param",
@@ -22010,7 +22015,7 @@
                         "types": [
                             "\\WP_Post"
                         ],
-                        "variable": "$item"
+                        "variable": "$menu_item"
                     },
                     {
                         "name": "param",
@@ -22055,7 +22060,7 @@
                         "types": [
                             "\\WP_Post"
                         ],
-                        "variable": "$item"
+                        "variable": "$menu_item"
                     },
                     {
                         "name": "param",
@@ -22099,11 +22104,11 @@
                     },
                     {
                         "name": "param",
-                        "content": "The current menu item.",
+                        "content": "The current menu item object.",
                         "types": [
                             "\\WP_Post"
                         ],
-                        "variable": "$item"
+                        "variable": "$menu_item"
                     },
                     {
                         "name": "param",
@@ -22255,11 +22260,11 @@
                     },
                     {
                         "name": "param",
-                        "content": "The current menu item.",
+                        "content": "The current menu item object.",
                         "types": [
                             "\\WP_Post"
                         ],
-                        "variable": "$item"
+                        "variable": "$menu_item"
                     },
                     {
                         "name": "param",
@@ -23291,7 +23296,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the singular or plural form of a string with gettext context for a domain.",
-                "long_description": "The dynamic portion of the hook, `$domain`, refers to the text domain.",
+                "long_description": "The dynamic portion of the hook name, `$domain`, refers to the text domain.",
                 "tags": [
                     {
                         "name": "since",
@@ -23346,7 +23351,7 @@
                         "variable": "$domain"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook, <code>$domain</code>, refers to the text domain.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$domain</code>, refers to the text domain.</p>"
             }
         },
         {
@@ -23355,7 +23360,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the singular or plural form of a string for a domain.",
-                "long_description": "The dynamic portion of the hook, `$domain`, refers to the text domain.",
+                "long_description": "The dynamic portion of the hook name, `$domain`, refers to the text domain.",
                 "tags": [
                     {
                         "name": "since",
@@ -23402,7 +23407,7 @@
                         "variable": "$domain"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook, <code>$domain</code>, refers to the text domain.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$domain</code>, refers to the text domain.</p>"
             }
         },
         {
@@ -24470,7 +24475,7 @@
                         "types": [
                             "int"
                         ],
-                        "variable": "$current_page"
+                        "variable": "$current_page_id"
                     }
                 ],
                 "long_description_html": ""
@@ -24566,7 +24571,7 @@
                         "types": [
                             "int"
                         ],
-                        "variable": "$current_page"
+                        "variable": "$current_page_id"
                     }
                 ],
                 "long_description_html": ""
@@ -29459,7 +29464,7 @@
                         "name": "param",
                         "content": "The new value of the theme modification.",
                         "types": [
-                            "string"
+                            "mixed"
                         ],
                         "variable": "$value"
                     },
@@ -29467,7 +29472,7 @@
                         "name": "param",
                         "content": "The current value of the theme modification.",
                         "types": [
-                            "string"
+                            "mixed"
                         ],
                         "variable": "$old_value"
                     }
@@ -29668,7 +29673,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters a term field value before it is sanitized.",
-                "long_description": "The dynamic portion of the filter name, `$field`, refers to the term field.",
+                "long_description": "The dynamic portion of the hook name, `$field`, refers to the term field.",
                 "tags": [
                     {
                         "name": "since",
@@ -29691,7 +29696,7 @@
                         "variable": "$taxonomy"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the filter name, <code>$field</code>, refers to the term field.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$field</code>, refers to the term field.</p>"
             }
         },
         {
@@ -34393,7 +34398,7 @@
                         "types": [
                             "\\WP_REST_Request"
                         ],
-                        "variable": "$this"
+                        "variable": "$request"
                     }
                 ],
                 "long_description_html": "<p>The order affects which parameters are checked when using WP_REST_Request::get_param() and family. This acts similarly to PHP's <code>request_order</code> setting.</p>"
@@ -35304,7 +35309,7 @@
             "file": "wp-includes/kses.php",
             "type": "filter",
             "doc": {
-                "description": "Filters list of allowed CSS attributes.",
+                "description": "Filters the list of allowed CSS attributes.",
                 "long_description": "",
                 "tags": [
                     {
@@ -36041,7 +36046,7 @@
                         "types": [
                             "\\WP_Screen"
                         ],
-                        "variable": "$this"
+                        "variable": "$screen"
                     }
                 ],
                 "long_description_html": ""
@@ -36105,7 +36110,7 @@
                         "types": [
                             "\\WP_Screen"
                         ],
-                        "variable": "$this"
+                        "variable": "$screen"
                     }
                 ],
                 "long_description_html": "<p>This filter is currently only used on the Widgets screen to enable accessibility mode.</p>"
@@ -36896,7 +36901,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters a screen option value before it is set.",
-                "long_description": "The dynamic portion of the hook, `$option`, refers to the option name.\n Returning false from the filter will skip saving the current option.",
+                "long_description": "The dynamic portion of the hook name, `$option`, refers to the option name.\n Returning false from the filter will skip saving the current option.",
                 "tags": [
                     {
                         "name": "since",
@@ -36932,7 +36937,7 @@
                         "variable": "$value"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook, <code>$option</code>, refers to the option name.</p> <p>Returning false from the filter will skip saving the current option.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$option</code>, refers to the option name.</p> <p>Returning false from the filter will skip saving the current option.</p>"
             }
         },
         {
@@ -37444,8 +37449,8 @@
             "file": "wp-signup.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the list of available languages for front-end site signups.",
-                "long_description": "Passing an empty array to this hook will disable output of the setting on the signup form, and the default language will be used when creating the site.\n Languages not already installed will be stripped.",
+                "description": "Filters the list of available languages for front-end site sign-ups.",
+                "long_description": "Passing an empty array to this hook will disable output of the setting on the sign-up form, and the default language will be used when creating the site.\n Languages not already installed will be stripped.",
                 "tags": [
                     {
                         "name": "since",
@@ -37460,7 +37465,7 @@
                         "variable": "$languages"
                     }
                 ],
-                "long_description_html": "<p>Passing an empty array to this hook will disable output of the setting on the signup form, and the default language will be used when creating the site.</p> <p>Languages not already installed will be stripped.</p>"
+                "long_description_html": "<p>Passing an empty array to this hook will disable output of the setting on the sign-up form, and the default language will be used when creating the site.</p> <p>Languages not already installed will be stripped.</p>"
             }
         },
         {
@@ -39462,7 +39467,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the term links for a given taxonomy.",
-                "long_description": "The dynamic portion of the filter name, `$taxonomy`, refers to the taxonomy slug.\n Possible hook names include:\n  - `term_links-category`  - `term_links-post_tag`  - `term_links-post_format`",
+                "long_description": "The dynamic portion of the hook name, `$taxonomy`, refers to the taxonomy slug.\n Possible hook names include:\n  - `term_links-category`  - `term_links-post_tag`  - `term_links-post_format`",
                 "tags": [
                     {
                         "name": "since",
@@ -39477,7 +39482,7 @@
                         "variable": "$links"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the filter name, <code>$taxonomy</code>, refers to the taxonomy slug.</p> <p>Possible hook names include:</p> <ul> <li><code>term_links-category</code></li> <li><code>term_links-post_tag</code></li> <li><code>term_links-post_format</code></li> </ul>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the taxonomy slug.</p> <p>Possible hook names include:</p> <ul> <li><code>term_links-category</code></li> <li><code>term_links-post_tag</code></li> <li><code>term_links-post_format</code></li> </ul>"
             }
         },
         {
@@ -39587,7 +39592,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the term field sanitized for display.",
-                "long_description": "The dynamic portion of the filter name, `$field`, refers to the term field name.",
+                "long_description": "The dynamic portion of the hook name, `$field`, refers to the term field name.",
                 "tags": [
                     {
                         "name": "since",
@@ -39626,7 +39631,7 @@
                         "variable": "$context"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the filter name, <code>$field</code>, refers to the term field name.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$field</code>, refers to the term field name.</p>"
             }
         },
         {
@@ -39635,7 +39640,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the term field for use in RSS.",
-                "long_description": "The dynamic portion of the filter name, `$field`, refers to the term field.",
+                "long_description": "The dynamic portion of the hook name, `$field`, refers to the term field.",
                 "tags": [
                     {
                         "name": "since",
@@ -39658,7 +39663,7 @@
                         "variable": "$taxonomy"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the filter name, <code>$field</code>, refers to the term field.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$field</code>, refers to the term field.</p>"
             }
         },
         {
@@ -41525,7 +41530,7 @@
                         "name": "param",
                         "content": "The value of the current theme modification.",
                         "types": [
-                            "string"
+                            "mixed"
                         ],
                         "variable": "$current_mod"
                     }
@@ -42803,7 +42808,7 @@
             "type": "filter",
             "doc": {
                 "description": "Short-circuits updating metadata of a specific type.",
-                "long_description": "The dynamic portion of the hook, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible hook names include:\n  - `update_post_metadata`  - `update_comment_metadata`  - `update_term_metadata`  - `update_user_metadata`",
+                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible hook names include:\n  - `update_post_metadata`  - `update_comment_metadata`  - `update_term_metadata`  - `update_user_metadata`",
                 "tags": [
                     {
                         "name": "since",
@@ -42851,7 +42856,7 @@
                         "variable": "$prev_value"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.</p> <p>Possible hook names include:</p> <ul> <li><code>update_post_metadata</code></li> <li><code>update_comment_metadata</code></li> <li><code>update_term_metadata</code></li> <li><code>update_user_metadata</code></li> </ul>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.</p> <p>Possible hook names include:</p> <ul> <li><code>update_post_metadata</code></li> <li><code>update_comment_metadata</code></li> <li><code>update_term_metadata</code></li> <li><code>update_user_metadata</code></li> </ul>"
             }
         },
         {
@@ -42860,7 +42865,7 @@
             "type": "filter",
             "doc": {
                 "description": "Short-circuits updating metadata of a specific type by meta ID.",
-                "long_description": "The dynamic portion of the hook, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible hook names include:\n  - `update_post_metadata_by_mid`  - `update_comment_metadata_by_mid`  - `update_term_metadata_by_mid`  - `update_user_metadata_by_mid`",
+                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible hook names include:\n  - `update_post_metadata_by_mid`  - `update_comment_metadata_by_mid`  - `update_term_metadata_by_mid`  - `update_user_metadata_by_mid`",
                 "tags": [
                     {
                         "name": "since",
@@ -42901,7 +42906,7 @@
                         "variable": "$meta_key"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.</p> <p>Possible hook names include:</p> <ul> <li><code>update_post_metadata_by_mid</code></li> <li><code>update_comment_metadata_by_mid</code></li> <li><code>update_term_metadata_by_mid</code></li> <li><code>update_user_metadata_by_mid</code></li> </ul>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.</p> <p>Possible hook names include:</p> <ul> <li><code>update_post_metadata_by_mid</code></li> <li><code>update_comment_metadata_by_mid</code></li> <li><code>update_term_metadata_by_mid</code></li> <li><code>update_user_metadata_by_mid</code></li> </ul>"
             }
         },
         {
@@ -42910,7 +42915,7 @@
             "type": "filter",
             "doc": {
                 "description": "Short-circuits updating the metadata cache of a specific type.",
-                "long_description": "The dynamic portion of the hook, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible hook names include:\n  - `update_post_metadata_cache`  - `update_comment_metadata_cache`  - `update_term_metadata_cache`  - `update_user_metadata_cache`",
+                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible hook names include:\n  - `update_post_metadata_cache`  - `update_comment_metadata_cache`  - `update_term_metadata_cache`  - `update_user_metadata_cache`",
                 "tags": [
                     {
                         "name": "since",
@@ -42933,7 +42938,7 @@
                         "variable": "$object_ids"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.</p> <p>Possible hook names include:</p> <ul> <li><code>update_post_metadata_cache</code></li> <li><code>update_comment_metadata_cache</code></li> <li><code>update_term_metadata_cache</code></li> <li><code>update_user_metadata_cache</code></li> </ul>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.</p> <p>Possible hook names include:</p> <ul> <li><code>update_post_metadata_cache</code></li> <li><code>update_comment_metadata_cache</code></li> <li><code>update_term_metadata_cache</code></li> <li><code>update_user_metadata_cache</code></li> </ul>"
             }
         },
         {
@@ -42950,7 +42955,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Whether the destination was cleared. true upon success, WP_Error on failure.",
+                        "content": "Whether the destination was cleared.                                          True upon success, WP_Error on failure.",
                         "types": [
                             "true",
                             "\\WP_Error"
@@ -44550,7 +44555,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters a user contactmethod label.",
-                "long_description": "The dynamic portion of the filter hook, `$name`, refers to each of the keys in the contact methods array.",
+                "long_description": "The dynamic portion of the hook name, `$name`, refers to each of the keys in the contact methods array.",
                 "tags": [
                     {
                         "name": "since",
@@ -44565,7 +44570,7 @@
                         "variable": "$desc"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the filter hook, <code>$name</code>, refers to each of the keys in the contact methods array.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$name</code>, refers to each of the keys in the contact methods array.</p>"
             }
         },
         {
@@ -44820,7 +44825,7 @@
                         "types": [
                             "\\WP_Post"
                         ],
-                        "variable": "$item"
+                        "variable": "$menu_item"
                     },
                     {
                         "name": "param",
@@ -46752,7 +46757,7 @@
                         "name": "param",
                         "content": "An object containing the attachment counts by                                   mime type.",
                         "types": [
-                            "object"
+                            "\\stdClass"
                         ],
                         "variable": "$counts"
                     },
@@ -46816,9 +46821,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "An object containing the current post_type's post                       counts by status.",
+                        "content": "An object containing the current post_type's post                         counts by status.",
                         "types": [
-                            "object"
+                            "\\stdClass"
                         ],
                         "variable": "$counts"
                     },
@@ -46832,7 +46837,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The permission to determine if the posts are 'readable'                       by the current user.",
+                        "content": "The permission to determine if the posts are 'readable'                         by the current user.",
                         "types": [
                             "string"
                         ],
@@ -47039,7 +47044,7 @@
             "file": "wp-includes/functions.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the callback for killing WordPress execution for JSONP requests.",
+                "description": "Filters the callback for killing WordPress execution for JSONP REST requests.",
                 "long_description": "",
                 "tags": [
                     {
@@ -50023,12 +50028,11 @@
                     },
                     {
                         "name": "param",
-                        "content": "Context to judge allowed tags by.",
+                        "content": "Allowed HTML tags.",
                         "types": [
-                            "array[]",
-                            "string"
+                            "array[]"
                         ],
-                        "variable": "$context"
+                        "variable": "$html"
                     },
                     {
                         "name": "param",
@@ -50036,7 +50040,7 @@
                         "types": [
                             "string"
                         ],
-                        "variable": "$context_type"
+                        "variable": "$context"
                     }
                 ],
                 "long_description_html": ""
