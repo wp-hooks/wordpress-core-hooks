@@ -19,7 +19,8 @@
                     }
                 ],
                 "long_description_html": "<p>The hook fires before menus and sub-menus are removed based on user privileges.</p>"
-            }
+            },
+            "args": 0
         },
         {
             "name": "_core_updated_successfully",
@@ -43,7 +44,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "_network_admin_menu",
@@ -63,7 +65,8 @@
                     }
                 ],
                 "long_description_html": "<p>The hook fires before menus and sub-menus are removed based on user privileges.</p>"
-            }
+            },
+            "args": 0
         },
         {
             "name": "_user_admin_menu",
@@ -83,7 +86,8 @@
                     }
                 ],
                 "long_description_html": "<p>The hook fires before menus and sub-menus are removed based on user privileges.</p>"
-            }
+            },
+            "args": 0
         },
         {
             "name": "_wp_put_post_revision",
@@ -107,7 +111,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "activate_blog",
@@ -132,7 +137,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "activate_header",
@@ -148,7 +154,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "activate_plugin",
@@ -180,7 +187,8 @@
                     }
                 ],
                 "long_description_html": "<p>If a plugin is silently activated (such as during an update), this hook does not fire.</p>"
-            }
+            },
+            "args": 2
         },
         {
             "name": "activate_wp_head",
@@ -196,7 +204,8 @@
                     }
                 ],
                 "long_description_html": "<p>Fires on the {@see 'wp_head'} action.</p>"
-            }
+            },
+            "args": 0
         },
         {
             "name": "activate_{$plugin}",
@@ -220,7 +229,8 @@
                     }
                 ],
                 "long_description_html": "<p>This hook is the \"activation\" hook used internally by register_activation_hook(). The dynamic portion of the hook name, <code>$plugin</code>, refers to the plugin basename.</p> <p>If a plugin is silently activated (such as during an update), this hook does not fire.</p>"
-            }
+            },
+            "args": 1
         },
         {
             "name": "activated_plugin",
@@ -252,7 +262,8 @@
                     }
                 ],
                 "long_description_html": "<p>If a plugin is silently activated (such as during an update), this hook does not fire.</p>"
-            }
+            },
+            "args": 2
         },
         {
             "name": "activity_box_end",
@@ -268,7 +279,8 @@
                     }
                 ],
                 "long_description_html": "<p>Prior to 3.8.0, the widget was named 'Right Now'.</p>"
-            }
+            },
+            "args": 0
         },
         {
             "name": "add_admin_bar_menus",
@@ -284,7 +296,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "add_attachment",
@@ -308,7 +321,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "add_inline_data",
@@ -340,7 +354,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "add_link",
@@ -364,7 +379,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "add_meta_boxes",
@@ -396,7 +412,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "add_meta_boxes_comment",
@@ -420,7 +437,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "add_meta_boxes_link",
@@ -444,7 +462,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "add_meta_boxes_{$post_type}",
@@ -468,7 +487,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$post_type</code>, refers to the post type of the post.</p> <p>Possible hook names include:</p> <ul> <li><code>add_meta_boxes_post</code></li> <li><code>add_meta_boxes_page</code></li> <li><code>add_meta_boxes_attachment</code></li> </ul>"
-            }
+            },
+            "args": 1
         },
         {
             "name": "add_option",
@@ -500,7 +520,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "add_option_{$option}",
@@ -537,7 +558,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$option</code>, refers to the option name.</p>"
-            }
+            },
+            "args": 2
         },
         {
             "name": "add_site_option",
@@ -582,7 +604,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "add_site_option_{$option}",
@@ -632,7 +655,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$option</code>, refers to the option name.</p>"
-            }
+            },
+            "args": 3
         },
         {
             "name": "add_tag_form_fields",
@@ -656,7 +680,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "add_term_relationship",
@@ -701,7 +726,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "add_user_role",
@@ -733,7 +759,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "add_user_to_blog",
@@ -774,7 +801,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "add_{$meta_type}_meta",
@@ -814,7 +842,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).</p> <p>Possible hook names include:</p> <ul> <li><code>add_post_meta</code></li> <li><code>add_comment_meta</code></li> <li><code>add_term_meta</code></li> <li><code>add_user_meta</code></li> </ul>"
-            }
+            },
+            "args": 3
         },
         {
             "name": "added_existing_user",
@@ -848,7 +877,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "added_option",
@@ -880,7 +910,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "added_term_relationship",
@@ -925,7 +956,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "added_{$meta_type}_meta",
@@ -973,7 +1005,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).</p> <p>Possible hook names include:</p> <ul> <li><code>added_post_meta</code></li> <li><code>added_comment_meta</code></li> <li><code>added_term_meta</code></li> <li><code>added_user_meta</code></li> </ul>"
-            }
+            },
+            "args": 4
         },
         {
             "name": "admin_action_{$action}",
@@ -989,7 +1022,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$action</code>, refers to the action derived from the <code>GET</code> or <code>POST</code> request.</p>"
-            }
+            },
+            "args": 0
         },
         {
             "name": "admin_bar_init",
@@ -1005,7 +1039,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "admin_bar_menu",
@@ -1029,7 +1064,8 @@
                     }
                 ],
                 "long_description_html": "<p>This is the hook used to add, remove, or manipulate admin bar items.</p>"
-            }
+            },
+            "args": 1
         },
         {
             "name": "admin_color_scheme_picker",
@@ -1058,7 +1094,8 @@
                     }
                 ],
                 "long_description_html": "<p>The section is only enabled if a callback is hooked to the action, and if there is more than one defined color scheme for the admin.</p>"
-            }
+            },
+            "args": 1
         },
         {
             "name": "admin_email_confirm",
@@ -1082,7 +1119,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "admin_email_confirm_form",
@@ -1098,7 +1136,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "admin_enqueue_scripts",
@@ -1122,7 +1161,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "admin_footer",
@@ -1146,7 +1186,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "admin_footer-{$hook_suffix}",
@@ -1162,7 +1203,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$hook_suffix</code>, refers to the global hook suffix of the current page.</p>"
-            }
+            },
+            "args": 0
         },
         {
             "name": "admin_head",
@@ -1178,7 +1220,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "admin_head-media-upload-popup",
@@ -1194,7 +1237,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "admin_head-{$hook_suffix}",
@@ -1210,7 +1254,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$hook_suffix</code>, refers to the hook suffix for the admin page.</p>"
-            }
+            },
+            "args": 0
         },
         {
             "name": "admin_head_{$content_func}",
@@ -1226,7 +1271,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$content_func</code>, refers to the form callback for the media upload type.</p>"
-            }
+            },
+            "args": 0
         },
         {
             "name": "admin_init",
@@ -1242,7 +1288,8 @@
                     }
                 ],
                 "long_description_html": "<p>Note, this does not just run on user-facing admin screens. It runs on admin-ajax.php and admin-post.php as well.</p> <p>This is roughly analogous to the more general {@see 'init'} hook, which fires earlier.</p>"
-            }
+            },
+            "args": 0
         },
         {
             "name": "admin_menu",
@@ -1266,7 +1313,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "admin_notices",
@@ -1282,7 +1330,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "admin_page_access_denied",
@@ -1298,7 +1347,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "admin_post",
@@ -1314,7 +1364,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "admin_post_nopriv",
@@ -1330,7 +1381,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "admin_post_nopriv_{$action}",
@@ -1346,7 +1398,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$action</code>, refers to the given request action.</p>"
-            }
+            },
+            "args": 0
         },
         {
             "name": "admin_post_{$action}",
@@ -1362,7 +1415,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$action</code>, refers to the given request action.</p>"
-            }
+            },
+            "args": 0
         },
         {
             "name": "admin_print_footer_scripts",
@@ -1378,7 +1432,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "admin_print_footer_scripts-{$hook_suffix}",
@@ -1394,7 +1449,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$hook_suffix</code>, refers to the global hook suffix of the current page.</p>"
-            }
+            },
+            "args": 0
         },
         {
             "name": "admin_print_scripts",
@@ -1410,7 +1466,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "admin_print_scripts-media-upload-popup",
@@ -1426,7 +1483,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "admin_print_scripts-{$hook_suffix}",
@@ -1442,7 +1500,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "admin_print_styles",
@@ -1458,7 +1517,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "admin_print_styles-media-upload-popup",
@@ -1474,7 +1534,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "admin_print_styles-{$hook_suffix}",
@@ -1490,7 +1551,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "admin_xml_ns",
@@ -1506,7 +1568,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "adminmenu",
@@ -1522,7 +1585,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "after-{$taxonomy}-table",
@@ -1546,7 +1610,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the taxonomy slug.</p> <p>Possible hook names include:</p> <ul> <li><code>after-category-table</code></li> <li><code>after-post_tag-table</code></li> </ul>"
-            }
+            },
+            "args": 1
         },
         {
             "name": "after_core_auto_updates_settings",
@@ -1570,7 +1635,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "after_db_upgrade",
@@ -1586,7 +1652,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "after_delete_post",
@@ -1628,7 +1695,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "after_menu_locations_table",
@@ -1644,7 +1712,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "after_mu_upgrade",
@@ -1670,7 +1739,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "after_password_reset",
@@ -1702,7 +1772,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "after_plugin_row",
@@ -1747,7 +1818,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "after_plugin_row_{$plugin_file}",
@@ -1792,7 +1864,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$plugin_file</code>, refers to the path to the plugin file, relative to the plugins directory.</p>"
-            }
+            },
+            "args": 3
         },
         {
             "name": "after_setup_theme",
@@ -1808,7 +1881,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "after_signup_form",
@@ -1824,7 +1898,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "after_signup_site",
@@ -1896,7 +1971,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 7
         },
         {
             "name": "after_signup_user",
@@ -1944,7 +2020,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 4
         },
         {
             "name": "after_switch_theme",
@@ -1976,7 +2053,8 @@
                     }
                 ],
                 "long_description_html": "<p>This action fires multiple times and the parameters differs according to the context, if the old theme exists or not. If the old theme is missing, the parameter will be the slug of the old theme.</p>"
-            }
+            },
+            "args": 2
         },
         {
             "name": "after_theme_row",
@@ -2016,7 +2094,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "after_theme_row_{$stylesheet}",
@@ -2056,7 +2135,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$stylesheet</code>, refers to the directory name of the theme, most often synonymous with the template name of the theme.</p>"
-            }
+            },
+            "args": 3
         },
         {
             "name": "after_wp_tiny_mce",
@@ -2080,7 +2160,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "all_admin_notices",
@@ -2096,7 +2177,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "application_password_did_authenticate",
@@ -2128,7 +2210,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "application_password_failed_authentication",
@@ -2152,7 +2235,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "archive_blog",
@@ -2177,7 +2261,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "atom_author",
@@ -2193,7 +2278,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "atom_comments_ns",
@@ -2209,7 +2295,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "atom_entry",
@@ -2225,7 +2312,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "atom_head",
@@ -2241,7 +2329,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "atom_ns",
@@ -2257,7 +2346,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "attachment_submitbox_misc_actions",
@@ -2286,7 +2376,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "attachment_updated",
@@ -2326,7 +2417,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "auth_cookie_bad_hash",
@@ -2350,7 +2442,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "auth_cookie_bad_session_token",
@@ -2374,7 +2467,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "auth_cookie_bad_username",
@@ -2398,7 +2492,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "auth_cookie_expired",
@@ -2422,7 +2517,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "auth_cookie_malformed",
@@ -2454,7 +2550,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "auth_cookie_valid",
@@ -2486,7 +2583,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "auth_redirect",
@@ -2510,7 +2608,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "automatic_updates_complete",
@@ -2534,7 +2633,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "before_delete_post",
@@ -2576,7 +2676,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "before_signup_form",
@@ -2592,7 +2693,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "before_signup_header",
@@ -2608,7 +2710,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "before_wp_tiny_mce",
@@ -2632,7 +2735,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "begin_fetch_post_thumbnail_html",
@@ -2673,7 +2777,8 @@
                     }
                 ],
                 "long_description_html": "<p>Provides \"just in time\" filtering of all filters in wp_get_attachment_image().</p>"
-            }
+            },
+            "args": 3
         },
         {
             "name": "block_editor_meta_box_hidden_fields",
@@ -2697,7 +2802,8 @@
                     }
                 ],
                 "long_description_html": "<p>Hook into this action to print <code>&lt;input type=\"hidden\" ... /&gt;</code> fields, which will be POSTed back to the server when meta boxes are saved.</p>"
-            }
+            },
+            "args": 1
         },
         {
             "name": "blog_privacy_selector",
@@ -2713,7 +2819,8 @@
                     }
                 ],
                 "long_description_html": "<p>By default the privacy options form displays a single checkbox to 'discourage' search engines from indexing the site. Hooking to this action serves a dual purpose:</p> <ol> <li>Disable the single checkbox in favor of a multiple-choice list of radio buttons.</li> <li>Open the door to adding additional radio button choices to the list.</li> </ol> <p>Hooking to this action also converts the 'Search engine visibility' heading to the more open-ended 'Site visibility' heading.</p>"
-            }
+            },
+            "args": 0
         },
         {
             "name": "bulk_edit_custom_box",
@@ -2745,7 +2852,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "change_locale",
@@ -2769,7 +2877,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "check_admin_referer",
@@ -2802,7 +2911,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "check_ajax_referer",
@@ -2835,7 +2945,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "check_comment_flood",
@@ -2893,7 +3004,8 @@
                     }
                 ],
                 "long_description_html": "<p>Allows checking for comment flooding.</p>"
-            }
+            },
+            "args": 4
         },
         {
             "name": "check_passwords",
@@ -2933,7 +3045,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "clean_attachment_cache",
@@ -2957,7 +3070,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "clean_comment_cache",
@@ -2981,7 +3095,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "clean_network_cache",
@@ -3005,7 +3120,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "clean_object_term_cache",
@@ -3037,7 +3153,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "clean_page_cache",
@@ -3061,7 +3178,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "clean_post_cache",
@@ -3093,7 +3211,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "clean_site_cache",
@@ -3133,7 +3252,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "clean_taxonomy_cache",
@@ -3157,7 +3277,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "clean_term_cache",
@@ -3202,7 +3323,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "clean_user_cache",
@@ -3234,7 +3356,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "clear_auth_cookie",
@@ -3250,7 +3373,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "comment_atom_entry",
@@ -3282,7 +3406,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "comment_closed",
@@ -3306,7 +3431,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "comment_duplicate_trigger",
@@ -3330,7 +3456,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "comment_flood_trigger",
@@ -3362,7 +3489,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "comment_form",
@@ -3386,7 +3514,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "comment_form_after",
@@ -3402,7 +3531,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "comment_form_after_fields",
@@ -3418,7 +3548,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "comment_form_before",
@@ -3434,7 +3565,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "comment_form_before_fields",
@@ -3450,7 +3582,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "comment_form_comments_closed",
@@ -3466,7 +3599,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "comment_form_logged_in_after",
@@ -3498,7 +3632,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "comment_form_must_log_in_after",
@@ -3514,7 +3649,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "comment_form_top",
@@ -3530,7 +3666,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "comment_id_not_found",
@@ -3554,7 +3691,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "comment_loop_start",
@@ -3570,7 +3708,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "comment_on_draft",
@@ -3594,7 +3733,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "comment_on_password_protected",
@@ -3618,7 +3758,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "comment_on_trash",
@@ -3642,7 +3783,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "comment_post",
@@ -3688,7 +3830,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "comment_{$new_status}_{$comment->comment_type}",
@@ -3720,7 +3863,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portions of the hook name, <code>$new_status</code>, and <code>$comment-&gt;comment_type</code>, refer to the new comment status, and the type of comment, respectively.</p> <p>Typical comment types include 'comment', 'pingback', or 'trackback'.</p> <p>Possible hook names include:</p> <ul> <li><code>comment_approved_comment</code></li> <li><code>comment_approved_pingback</code></li> <li><code>comment_approved_trackback</code></li> <li><code>comment_unapproved_comment</code></li> <li><code>comment_unapproved_pingback</code></li> <li><code>comment_unapproved_trackback</code></li> <li><code>comment_spam_comment</code></li> <li><code>comment_spam_pingback</code></li> <li><code>comment_spam_trackback</code></li> </ul>"
-            }
+            },
+            "args": 2
         },
         {
             "name": "comment_{$old_status}_to_{$new_status}",
@@ -3744,7 +3888,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portions of the hook name, <code>$old_status</code>, and <code>$new_status</code>, refer to the old and new comment statuses, respectively.</p> <p>Possible hook names include:</p> <ul> <li><code>comment_unapproved_to_approved</code></li> <li><code>comment_spam_to_approved</code></li> <li><code>comment_approved_to_unapproved</code></li> <li><code>comment_spam_to_unapproved</code></li> <li><code>comment_unapproved_to_spam</code></li> <li><code>comment_approved_to_spam</code></li> </ul>"
-            }
+            },
+            "args": 1
         },
         {
             "name": "commentrss2_item",
@@ -3776,7 +3921,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "comments_atom_head",
@@ -3792,7 +3938,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "commentsrss2_head",
@@ -3808,7 +3955,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "core_upgrade_preamble",
@@ -3824,7 +3972,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "create_term",
@@ -3864,7 +4013,8 @@
                     }
                 ],
                 "long_description_html": "<p>The {@see 'create_$taxonomy'} hook is also available for targeting a specific taxonomy.</p>"
-            }
+            },
+            "args": 3
         },
         {
             "name": "create_{$taxonomy}",
@@ -3896,7 +4046,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the slug of the taxonomy the term was created for.</p> <p>Possible hook names include:</p> <ul> <li><code>create_category</code></li> <li><code>create_post_tag</code></li> </ul>"
-            }
+            },
+            "args": 2
         },
         {
             "name": "created_term",
@@ -3936,7 +4087,8 @@
                     }
                 ],
                 "long_description_html": "<p>The {@see 'created_$taxonomy'} hook is also available for targeting a specific taxonomy.</p>"
-            }
+            },
+            "args": 3
         },
         {
             "name": "created_{$taxonomy}",
@@ -3968,7 +4120,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the taxonomy slug.</p> <p>Possible hook names include:</p> <ul> <li><code>created_category</code></li> <li><code>created_post_tag</code></li> </ul>"
-            }
+            },
+            "args": 2
         },
         {
             "name": "current_screen",
@@ -3992,7 +4145,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "custom_header_options",
@@ -4008,7 +4162,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "customize_controls_enqueue_scripts",
@@ -4024,7 +4179,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "customize_controls_head",
@@ -4040,7 +4196,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "customize_controls_init",
@@ -4056,7 +4213,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "customize_controls_print_footer_scripts",
@@ -4072,7 +4230,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "customize_controls_print_scripts",
@@ -4088,7 +4247,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "customize_controls_print_styles",
@@ -4104,7 +4264,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "customize_post_value_set",
@@ -4144,7 +4305,8 @@
                     }
                 ],
                 "long_description_html": "<p>Fires when the WP_Customize_Manager::set_post_value() method is called.</p> <p>This is useful for <code>WP_Customize_Setting</code> instances to watch in order to update a cached previewed value.</p>"
-            }
+            },
+            "args": 3
         },
         {
             "name": "customize_post_value_set_{$setting_id}",
@@ -4176,7 +4338,8 @@
                     }
                 ],
                 "long_description_html": "<p>Fires when the WP_Customize_Manager::set_post_value() method is called.</p> <p>The dynamic portion of the hook name, <code>$setting_id</code>, refers to the setting ID.</p>"
-            }
+            },
+            "args": 2
         },
         {
             "name": "customize_preview_init",
@@ -4200,7 +4363,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "customize_preview_{$this->id}",
@@ -4224,7 +4388,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;id</code>, refers to the setting ID.</p>"
-            }
+            },
+            "args": 1
         },
         {
             "name": "customize_preview_{$this->type}",
@@ -4248,7 +4413,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;type</code>, refers to the setting type.</p>"
-            }
+            },
+            "args": 1
         },
         {
             "name": "customize_register",
@@ -4272,7 +4438,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "customize_render_control",
@@ -4296,7 +4463,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "customize_render_control_{$this->id}",
@@ -4320,7 +4488,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;id</code>, refers to the control ID.</p>"
-            }
+            },
+            "args": 1
         },
         {
             "name": "customize_render_panel",
@@ -4344,7 +4513,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "customize_render_panel_{$this->id}",
@@ -4360,7 +4530,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;id</code>, refers to the ID of the specific Customizer panel to be rendered.</p>"
-            }
+            },
+            "args": 0
         },
         {
             "name": "customize_render_partials_after",
@@ -4392,7 +4563,8 @@
                     }
                 ],
                 "long_description_html": "<p>Plugins may do things like call wp_footer() to scrape scripts output and return them via the {@see 'customize_render_partials_response'} filter.</p>"
-            }
+            },
+            "args": 2
         },
         {
             "name": "customize_render_partials_before",
@@ -4424,7 +4596,8 @@
                     }
                 ],
                 "long_description_html": "<p>Plugins may do things like call wp_enqueue_scripts() and gather a list of the scripts and styles which may get enqueued in the response.</p>"
-            }
+            },
+            "args": 2
         },
         {
             "name": "customize_render_section",
@@ -4448,7 +4621,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "customize_render_section_{$this->id}",
@@ -4464,7 +4638,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;id</code>, refers to the ID of the specific Customizer section to be rendered.</p>"
-            }
+            },
+            "args": 0
         },
         {
             "name": "customize_save",
@@ -4488,7 +4663,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "customize_save_after",
@@ -4512,7 +4688,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "customize_save_validation_before",
@@ -4536,7 +4713,8 @@
                     }
                 ],
                 "long_description_html": "<p>Plugins can add just-in-time {@see 'customize<em>validate</em>{$this-&gt;ID}'} filters at this point to catch any settings registered after <code>customize_register</code>. The dynamic portion of the hook name, <code>$this-&gt;ID</code> refers to the setting ID.</p>"
-            }
+            },
+            "args": 1
         },
         {
             "name": "customize_save_{$id_base}",
@@ -4560,7 +4738,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$id_base</code> refers to the base slug of the setting name.</p>"
-            }
+            },
+            "args": 1
         },
         {
             "name": "customize_update_{$this->type}",
@@ -4592,7 +4771,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;type</code>, refers to the type of setting.</p>"
-            }
+            },
+            "args": 2
         },
         {
             "name": "dbx_post_sidebar",
@@ -4616,7 +4796,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "deactivate_blog",
@@ -4641,7 +4822,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "deactivate_plugin",
@@ -4673,7 +4855,8 @@
                     }
                 ],
                 "long_description_html": "<p>If a plugin is silently deactivated (such as during an update), this hook does not fire.</p>"
-            }
+            },
+            "args": 2
         },
         {
             "name": "deactivate_{$plugin}",
@@ -4697,7 +4880,8 @@
                     }
                 ],
                 "long_description_html": "<p>This hook is the \"deactivation\" hook used internally by register_deactivation_hook(). The dynamic portion of the hook name, <code>$plugin</code>, refers to the plugin basename.</p> <p>If a plugin is silently deactivated (such as during an update), this hook does not fire.</p>"
-            }
+            },
+            "args": 1
         },
         {
             "name": "deactivated_plugin",
@@ -4729,7 +4913,8 @@
                     }
                 ],
                 "long_description_html": "<p>If a plugin is silently deactivated (such as during an update), this hook does not fire.</p>"
-            }
+            },
+            "args": 2
         },
         {
             "name": "delete_attachment",
@@ -4766,7 +4951,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "delete_comment",
@@ -4803,7 +4989,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "delete_link",
@@ -4827,7 +5014,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "delete_option",
@@ -4851,7 +5039,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "delete_option_{$option}",
@@ -4875,7 +5064,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$option</code>, refers to the option name.</p>"
-            }
+            },
+            "args": 1
         },
         {
             "name": "delete_plugin",
@@ -4899,7 +5089,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "delete_post",
@@ -4936,7 +5127,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "delete_postmeta",
@@ -4960,7 +5152,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "delete_site_option",
@@ -4997,7 +5190,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "delete_site_option_{$option}",
@@ -5039,7 +5233,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$option</code>, refers to the option name.</p>"
-            }
+            },
+            "args": 2
         },
         {
             "name": "delete_site_transient_{$transient}",
@@ -5063,7 +5258,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$transient</code>, refers to the transient name.</p>"
-            }
+            },
+            "args": 1
         },
         {
             "name": "delete_term",
@@ -5124,7 +5320,8 @@
                     }
                 ],
                 "long_description_html": "<p>The {@see 'delete_$taxonomy'} hook is also available for targeting a specific taxonomy.</p>"
-            }
+            },
+            "args": 5
         },
         {
             "name": "delete_term_relationships",
@@ -5169,7 +5366,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "delete_term_taxonomy",
@@ -5193,7 +5391,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "delete_theme",
@@ -5217,7 +5416,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "delete_transient_{$transient}",
@@ -5241,7 +5441,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$transient</code>, refers to the transient name.</p>"
-            }
+            },
+            "args": 1
         },
         {
             "name": "delete_user",
@@ -5287,7 +5488,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "delete_user_form",
@@ -5324,7 +5526,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "delete_widget",
@@ -5364,7 +5567,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "delete_{$meta_type}_meta",
@@ -5412,7 +5616,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).</p> <p>Possible hook names include:</p> <ul> <li><code>delete_post_meta</code></li> <li><code>delete_comment_meta</code></li> <li><code>delete_term_meta</code></li> <li><code>delete_user_meta</code></li> </ul>"
-            }
+            },
+            "args": 4
         },
         {
             "name": "delete_{$meta_type}meta",
@@ -5436,7 +5641,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (post or comment).</p> <p>Possible hook names include:</p> <ul> <li><code>delete_postmeta</code></li> <li><code>delete_commentmeta</code></li> <li><code>delete_termmeta</code></li> <li><code>delete_usermeta</code></li> </ul>"
-            }
+            },
+            "args": 1
         },
         {
             "name": "delete_{$taxonomy}",
@@ -5489,7 +5695,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the specific taxonomy the term belonged to.</p> <p>Possible hook names include:</p> <ul> <li><code>delete_category</code></li> <li><code>delete_post_tag</code></li> </ul>"
-            }
+            },
+            "args": 4
         },
         {
             "name": "deleted_comment",
@@ -5526,7 +5733,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "deleted_link",
@@ -5550,7 +5758,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "deleted_option",
@@ -5574,7 +5783,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "deleted_plugin",
@@ -5606,7 +5816,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "deleted_post",
@@ -5643,7 +5854,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "deleted_postmeta",
@@ -5667,7 +5879,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "deleted_site_transient",
@@ -5691,7 +5904,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "deleted_term_relationships",
@@ -5736,7 +5950,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "deleted_term_taxonomy",
@@ -5760,7 +5975,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "deleted_theme",
@@ -5792,7 +6008,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "deleted_transient",
@@ -5816,7 +6033,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "deleted_user",
@@ -5862,7 +6080,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "deleted_{$meta_type}_meta",
@@ -5910,7 +6129,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).</p> <p>Possible hook names include:</p> <ul> <li><code>deleted_post_meta</code></li> <li><code>deleted_comment_meta</code></li> <li><code>deleted_term_meta</code></li> <li><code>deleted_user_meta</code></li> </ul>"
-            }
+            },
+            "args": 4
         },
         {
             "name": "deleted_{$meta_type}meta",
@@ -5934,7 +6154,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (post or comment).</p> <p>Possible hook names include:</p> <ul> <li><code>deleted_postmeta</code></li> <li><code>deleted_commentmeta</code></li> <li><code>deleted_termmeta</code></li> <li><code>deleted_usermeta</code></li> </ul>"
-            }
+            },
+            "args": 1
         },
         {
             "name": "deprecated_argument_run",
@@ -5974,7 +6195,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "deprecated_constructor_run",
@@ -6019,7 +6241,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "deprecated_file_included",
@@ -6067,7 +6290,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 4
         },
         {
             "name": "deprecated_function_run",
@@ -6107,7 +6331,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "deprecated_hook_run",
@@ -6155,7 +6380,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 4
         },
         {
             "name": "do_all_pings",
@@ -6171,7 +6397,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "do_favicon",
@@ -6187,7 +6414,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "do_faviconico",
@@ -6203,7 +6431,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "do_feed_{$feed}",
@@ -6240,7 +6469,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$feed</code>, refers to the feed template name.</p> <p>Possible hook names include:</p> <ul> <li><code>do_feed_atom</code></li> <li><code>do_feed_rdf</code></li> <li><code>do_feed_rss</code></li> <li><code>do_feed_rss2</code></li> </ul>"
-            }
+            },
+            "args": 2
         },
         {
             "name": "do_meta_boxes",
@@ -6282,7 +6512,8 @@
                     }
                 ],
                 "long_description_html": "<p>Fires once for each of the default meta box contexts: normal, advanced, and side.</p>"
-            }
+            },
+            "args": 3
         },
         {
             "name": "do_robots",
@@ -6298,7 +6529,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "do_robotstxt",
@@ -6314,7 +6546,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "doing_it_wrong_run",
@@ -6354,7 +6587,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "dynamic_sidebar",
@@ -6378,7 +6612,8 @@
                     }
                 ],
                 "long_description_html": "<p>Note: The action fires on both the front end and back end, including for widgets in the Inactive Widgets sidebar on the Widgets screen.</p> <p>The action is not fired for empty sidebars.</p>"
-            }
+            },
+            "args": 1
         },
         {
             "name": "dynamic_sidebar_after",
@@ -6411,7 +6646,8 @@
                     }
                 ],
                 "long_description_html": "<p>Note: The action also fires for empty sidebars, and on both the front end and back end, including the Inactive Widgets sidebar on the Widgets screen.</p>"
-            }
+            },
+            "args": 2
         },
         {
             "name": "dynamic_sidebar_before",
@@ -6444,7 +6680,8 @@
                     }
                 ],
                 "long_description_html": "<p>Note: The action also fires for empty sidebars, and on both the front end and back end, including the Inactive Widgets sidebar on the Widgets screen.</p>"
-            }
+            },
+            "args": 2
         },
         {
             "name": "edit_attachment",
@@ -6468,7 +6705,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "edit_comment",
@@ -6505,7 +6743,8 @@
                     }
                 ],
                 "long_description_html": "<p>The hook also fires immediately before comment status transition hooks are fired.</p>"
-            }
+            },
+            "args": 2
         },
         {
             "name": "edit_form_advanced",
@@ -6529,7 +6768,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "edit_form_after_editor",
@@ -6553,7 +6793,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "edit_form_after_title",
@@ -6577,7 +6818,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "edit_form_before_permalink",
@@ -6601,7 +6843,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "edit_form_top",
@@ -6625,7 +6868,8 @@
                     }
                 ],
                 "long_description_html": "<p>At this point, the required hidden fields and nonces have already been output.</p>"
-            }
+            },
+            "args": 1
         },
         {
             "name": "edit_link",
@@ -6649,7 +6893,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "edit_page_form",
@@ -6673,7 +6918,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "edit_post",
@@ -6705,7 +6951,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "edit_post_{$post->post_type}",
@@ -6737,7 +6984,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$post-&gt;post_type</code>, refers to the post type slug.</p> <p>Possible hook names include:</p> <ul> <li><code>edit_post_post</code></li> <li><code>edit_post_page</code></li> </ul>"
-            }
+            },
+            "args": 2
         },
         {
             "name": "edit_term",
@@ -6777,7 +7025,8 @@
                     }
                 ],
                 "long_description_html": "<p>The {@see 'edit_$taxonomy'} hook is also available for targeting a specific taxonomy.</p>"
-            }
+            },
+            "args": 3
         },
         {
             "name": "edit_term_taxonomies",
@@ -6801,7 +7050,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "edit_term_taxonomy",
@@ -6832,8 +7082,9 @@
                         "variable": "$taxonomy"
                     }
                 ],
-                "long_description_html": "<p>The {@see 'edit_$taxonomy'} hook is also available for targeting a specific taxonomy.</p>"
-            }
+                "long_description_html": ""
+            },
+            "args": 2
         },
         {
             "name": "edit_terms",
@@ -6864,8 +7115,9 @@
                         "variable": "$taxonomy"
                     }
                 ],
-                "long_description_html": "<p>The {@see 'edit_$taxonomy'} hook is also available for targeting a specific taxonomy.</p>"
-            }
+                "long_description_html": ""
+            },
+            "args": 2
         },
         {
             "name": "edit_user_created_user",
@@ -6897,7 +7149,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "edit_user_profile",
@@ -6921,7 +7174,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "edit_user_profile_update",
@@ -6945,7 +7199,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "edit_{$taxonomy}",
@@ -6977,7 +7232,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the taxonomy slug.</p> <p>Possible hook names include:</p> <ul> <li><code>edit_category</code></li> <li><code>edit_post_tag</code></li> </ul>"
-            }
+            },
+            "args": 2
         },
         {
             "name": "edited_term",
@@ -7017,7 +7273,8 @@
                     }
                 ],
                 "long_description_html": "<p>The {@see 'edited_$taxonomy'} hook is also available for targeting a specific taxonomy.</p>"
-            }
+            },
+            "args": 3
         },
         {
             "name": "edited_term_taxonomies",
@@ -7041,7 +7298,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "edited_term_taxonomy",
@@ -7072,8 +7330,9 @@
                         "variable": "$taxonomy"
                     }
                 ],
-                "long_description_html": "<p>The {@see 'edited_$taxonomy'} hook is also available for targeting a specific taxonomy.</p>"
-            }
+                "long_description_html": ""
+            },
+            "args": 2
         },
         {
             "name": "edited_terms",
@@ -7104,8 +7363,9 @@
                         "variable": "$taxonomy"
                     }
                 ],
-                "long_description_html": "<p>The {@see 'edited_$taxonomy'} hook is also available for targeting a specific taxonomy.</p>"
-            }
+                "long_description_html": ""
+            },
+            "args": 2
         },
         {
             "name": "edited_{$taxonomy}",
@@ -7137,7 +7397,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the taxonomy slug.</p> <p>Possible hook names include:</p> <ul> <li><code>edited_category</code></li> <li><code>edited_post_tag</code></li> </ul>"
-            }
+            },
+            "args": 2
         },
         {
             "name": "embed_content",
@@ -7153,7 +7414,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "embed_content_meta",
@@ -7169,7 +7431,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "embed_footer",
@@ -7185,7 +7448,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "embed_head",
@@ -7201,7 +7465,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "end_fetch_post_thumbnail_html",
@@ -7242,7 +7507,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "enqueue_block_assets",
@@ -7258,7 +7524,8 @@
                     }
                 ],
                 "long_description_html": "<p>Call <code>add_action</code> on any hook before 'wp_enqueue_scripts'.</p> <p>In the function call you supply, simply use <code>wp_enqueue_script</code> and <code>wp_enqueue_style</code> to add your functionality to the Gutenberg editor.</p>"
-            }
+            },
+            "args": 0
         },
         {
             "name": "enqueue_block_editor_assets",
@@ -7274,7 +7541,8 @@
                     }
                 ],
                 "long_description_html": "<p>Call <code>add_action</code> on any hook before 'admin_enqueue_scripts'.</p> <p>In the function call you supply, simply use <code>wp_enqueue_script</code> and <code>wp_enqueue_style</code> to add your functionality to the block editor.</p>"
-            }
+            },
+            "args": 0
         },
         {
             "name": "enqueue_embed_scripts",
@@ -7290,7 +7558,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "export_filters",
@@ -7306,7 +7575,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "export_wp",
@@ -7330,7 +7600,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "generate_recovery_mode_key",
@@ -7362,7 +7633,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "generate_rewrite_rules",
@@ -7386,7 +7658,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "get_footer",
@@ -7429,7 +7702,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "get_header",
@@ -7472,7 +7746,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "get_sidebar",
@@ -7515,7 +7790,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "get_template_part",
@@ -7568,7 +7844,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 4
         },
         {
             "name": "get_template_part_{$slug}",
@@ -7614,7 +7891,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$slug</code>, refers to the slug name for the generic template part.</p>"
-            }
+            },
+            "args": 3
         },
         {
             "name": "grant_super_admin",
@@ -7638,7 +7916,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "granted_super_admin",
@@ -7662,7 +7941,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "heartbeat_nopriv_tick",
@@ -7694,7 +7974,8 @@
                     }
                 ],
                 "long_description_html": "<p>Allows the transport to be easily replaced with long-polling.</p>"
-            }
+            },
+            "args": 2
         },
         {
             "name": "heartbeat_tick",
@@ -7726,7 +8007,8 @@
                     }
                 ],
                 "long_description_html": "<p>Allows the transport to be easily replaced with long-polling.</p>"
-            }
+            },
+            "args": 2
         },
         {
             "name": "http_api_curl",
@@ -7766,7 +8048,8 @@
                     }
                 ],
                 "long_description_html": "<p>Cookies are not currently handled by the HTTP API. This action allows plugins to handle cookies themselves.</p>"
-            }
+            },
+            "args": 1
         },
         {
             "name": "http_api_debug",
@@ -7823,7 +8106,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 5
         },
         {
             "name": "in_admin_footer",
@@ -7839,7 +8123,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "in_admin_header",
@@ -7855,7 +8140,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "in_plugin_update_message-{$file}",
@@ -7887,7 +8173,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$file</code>, refers to the path of the plugin's primary file relative to the plugins directory.</p>"
-            }
+            },
+            "args": 2
         },
         {
             "name": "in_theme_update_message-{$theme_key}",
@@ -7919,7 +8206,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$theme_key</code>, refers to the theme slug as found in the WordPress.org themes repository.</p>"
-            }
+            },
+            "args": 2
         },
         {
             "name": "in_widget_form",
@@ -7959,7 +8247,8 @@
                     }
                 ],
                 "long_description_html": "<p>Use this hook to add extra fields to the widget form. The hook is only fired if the value passed to the 'widget_form_callback' hook is not false.</p> <p>Note: If the widget has no form, the text echoed from the default form method can be hidden using CSS.</p>"
-            }
+            },
+            "args": 1
         },
         {
             "name": "init",
@@ -7975,7 +8264,8 @@
                     }
                 ],
                 "long_description_html": "<p>Most of WP is loaded at this stage, and the user is authenticated. WP continues to load on the {@see 'init'} hook that follows (e.g. widgets), and many plugins instantiate themselves on it for all sorts of reasons (e.g. they need a user, a taxonomy, etc.).</p> <p>If you wish to plug an action once WP is loaded, use the {@see 'wp_loaded'} hook below.</p>"
-            }
+            },
+            "args": 0
         },
         {
             "name": "install_plugins_pre_{$tab}",
@@ -7991,7 +8281,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$tab</code>, allows for targeting individual tabs.</p> <p>Possible hook names include:</p> <ul> <li><code>install_plugins_pre_beta</code></li> <li><code>install_plugins_pre_favorites</code></li> <li><code>install_plugins_pre_featured</code></li> <li><code>install_plugins_pre_plugin-information</code></li> <li><code>install_plugins_pre_popular</code></li> <li><code>install_plugins_pre_recommended</code></li> <li><code>install_plugins_pre_search</code></li> <li><code>install_plugins_pre_upload</code></li> </ul>"
-            }
+            },
+            "args": 0
         },
         {
             "name": "install_plugins_table_header",
@@ -8007,7 +8298,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "install_plugins_{$tab}",
@@ -8031,7 +8323,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$tab</code>, allows for targeting individual tabs.</p> <p>Possible hook names include:</p> <ul> <li><code>install_plugins_beta</code></li> <li><code>install_plugins_favorites</code></li> <li><code>install_plugins_featured</code></li> <li><code>install_plugins_plugin-information</code></li> <li><code>install_plugins_popular</code></li> <li><code>install_plugins_recommended</code></li> <li><code>install_plugins_search</code></li> <li><code>install_plugins_upload</code></li> </ul>"
-            }
+            },
+            "args": 1
         },
         {
             "name": "install_themes_pre_{$tab}",
@@ -8047,7 +8340,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$tab</code>, refers to the current theme installation tab.</p> <p>Possible hook names include:</p> <ul> <li><code>install_themes_pre_dashboard</code></li> <li><code>install_themes_pre_featured</code></li> <li><code>install_themes_pre_new</code></li> <li><code>install_themes_pre_search</code></li> <li><code>install_themes_pre_updated</code></li> <li><code>install_themes_pre_upload</code></li> </ul>"
-            }
+            },
+            "args": 0
         },
         {
             "name": "install_themes_table_header",
@@ -8063,7 +8357,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "install_themes_{$tab}",
@@ -8087,7 +8382,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$tab</code>, refers to the current theme installation tab.</p> <p>Possible hook names include:</p> <ul> <li><code>install_themes_dashboard</code></li> <li><code>install_themes_featured</code></li> <li><code>install_themes_new</code></li> <li><code>install_themes_search</code></li> <li><code>install_themes_updated</code></li> <li><code>install_themes_upload</code></li> </ul>"
-            }
+            },
+            "args": 1
         },
         {
             "name": "invite_user",
@@ -8127,7 +8423,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "is_wp_error_instance",
@@ -8151,7 +8448,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "load-importer-{$importer}",
@@ -8167,7 +8465,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$importer</code>, refers to the importer slug.</p> <p>Possible hook names include:</p> <ul> <li><code>load-importer-blogger</code></li> <li><code>load-importer-wpcat2tag</code></li> <li><code>load-importer-livejournal</code></li> <li><code>load-importer-mt</code></li> <li><code>load-importer-rss</code></li> <li><code>load-importer-tumblr</code></li> <li><code>load-importer-wordpress</code></li> </ul>"
-            }
+            },
+            "args": 0
         },
         {
             "name": "load-widgets.php",
@@ -8183,7 +8482,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "load-{$page_hook}",
@@ -8204,7 +8504,8 @@
                     }
                 ],
                 "long_description_html": "<p>The load-* hook fires in a number of contexts. This hook is for plugin screens where a callback is provided when the screen is registered.</p> <p>The dynamic portion of the hook name, <code>$page_hook</code>, refers to a mixture of plugin page information including:</p> <ol> <li>The page type. If the plugin page is registered as a submenu page, such as for Settings, the page type would be 'settings'. Otherwise the type is 'toplevel'.</li> <li>A separator of '<em>page</em>'.</li> <li>The plugin basename minus the file extension.</li> </ol> <p>Together, the three parts form the <code>$page_hook</code>. Citing the example above, the hook name used would be 'load-settings_page_pluginbasename'.</p>"
-            }
+            },
+            "args": 0
         },
         {
             "name": "load-{$pagenow}",
@@ -8220,7 +8521,8 @@
                     }
                 ],
                 "long_description_html": "<p>The load-* hook fires in a number of contexts. This hook is for core screens.</p> <p>The dynamic portion of the hook name, <code>$pagenow</code>, is a global variable referring to the filename of the current page, such as 'admin.php', 'post-new.php' etc. A complete hook for the latter would be 'load-post-new.php'.</p>"
-            }
+            },
+            "args": 0
         },
         {
             "name": "load-{$plugin_page}",
@@ -8241,7 +8543,8 @@
                     }
                 ],
                 "long_description_html": "<p>The load-* hook fires in a number of contexts. This hook is for plugin screens where the file to load is directly included, rather than the use of a function.</p> <p>The dynamic portion of the hook name, <code>$plugin_page</code>, refers to the plugin basename.</p>"
-            }
+            },
+            "args": 0
         },
         {
             "name": "load_feed_engine",
@@ -8261,7 +8564,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "load_textdomain",
@@ -8293,7 +8597,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "login_enqueue_scripts",
@@ -8309,7 +8614,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "login_footer",
@@ -8325,7 +8631,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "login_form",
@@ -8341,7 +8648,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "login_form_{$action}",
@@ -8357,7 +8665,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$action</code>, refers to the action that brought the visitor to the login form.</p> <p>Possible hook names include:</p> <ul> <li><code>login_form_checkemail</code></li> <li><code>login_form_confirm_admin_email</code></li> <li><code>login_form_confirmaction</code></li> <li><code>login_form_entered_recovery_mode</code></li> <li><code>login_form_login</code></li> <li><code>login_form_logout</code></li> <li><code>login_form_lostpassword</code></li> <li><code>login_form_postpass</code></li> <li><code>login_form_register</code></li> <li><code>login_form_resetpass</code></li> <li><code>login_form_retrievepassword</code></li> <li><code>login_form_rp</code></li> </ul>"
-            }
+            },
+            "args": 0
         },
         {
             "name": "login_head",
@@ -8373,7 +8682,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "login_header",
@@ -8389,7 +8699,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "login_init",
@@ -8405,7 +8716,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "loop_end",
@@ -8429,7 +8741,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "loop_no_results",
@@ -8453,7 +8766,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "loop_start",
@@ -8477,7 +8791,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "lost_password",
@@ -8506,7 +8821,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "lostpassword_form",
@@ -8522,7 +8838,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "lostpassword_post",
@@ -8565,7 +8882,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "make_delete_blog",
@@ -8589,7 +8907,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "make_ham_blog",
@@ -8614,7 +8933,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "make_ham_user",
@@ -8638,7 +8958,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "make_spam_blog",
@@ -8663,7 +8984,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "make_spam_user",
@@ -8687,7 +9009,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "make_undelete_blog",
@@ -8711,7 +9034,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "manage_comments_custom_column",
@@ -8743,7 +9067,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "manage_comments_nav",
@@ -8780,7 +9105,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "manage_link_custom_column",
@@ -8812,7 +9138,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "manage_media_custom_column",
@@ -8844,7 +9171,8 @@
                     }
                 ],
                 "long_description_html": "<p>Custom columns are registered using the {@see 'manage_media_columns'} filter.</p>"
-            }
+            },
+            "args": 2
         },
         {
             "name": "manage_pages_custom_column",
@@ -8876,7 +9204,8 @@
                     }
                 ],
                 "long_description_html": "<p>This hook only fires if the current post type is hierarchical, such as pages.</p>"
-            }
+            },
+            "args": 2
         },
         {
             "name": "manage_plugins_custom_column",
@@ -8916,7 +9245,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "manage_posts_custom_column",
@@ -8948,7 +9278,8 @@
                     }
                 ],
                 "long_description_html": "<p>This hook only fires if the current post type is non-hierarchical, such as posts.</p>"
-            }
+            },
+            "args": 2
         },
         {
             "name": "manage_posts_extra_tablenav",
@@ -8972,7 +9303,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "manage_sites_custom_column",
@@ -9004,7 +9336,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "manage_sites_extra_tablenav",
@@ -9028,7 +9361,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "manage_themes_custom_column",
@@ -9068,7 +9402,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "manage_users_extra_tablenav",
@@ -9092,7 +9427,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "manage_{$post->post_type}_posts_custom_column",
@@ -9124,7 +9460,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$post-&gt;post_type</code>, refers to the post type.</p> <p>Possible hook names include:</p> <ul> <li><code>manage_post_posts_custom_column</code></li> <li><code>manage_page_posts_custom_column</code></li> </ul>"
-            }
+            },
+            "args": 2
         },
         {
             "name": "manage_{$this->screen->id}_custom_column",
@@ -9156,7 +9493,8 @@
                     }
                 ],
                 "long_description_html": "<p>Custom columns are registered using the {@see 'manage_application-passwords-user_columns'} filter.</p>"
-            }
+            },
+            "args": 2
         },
         {
             "name": "manage_{$this->screen->id}_custom_column_js_template",
@@ -9180,7 +9518,8 @@
                     }
                 ],
                 "long_description_html": "<p>Custom columns are registered using the {@see 'manage_application-passwords-user_columns'} filter.</p>"
-            }
+            },
+            "args": 1
         },
         {
             "name": "mature_blog",
@@ -9204,7 +9543,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "media_buttons",
@@ -9228,7 +9568,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "media_upload_{$tab}",
@@ -9244,7 +9585,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$tab</code>, refers to the specific media upload tab. Possible values include 'library' (Media Library), or any custom tab registered via the {@see 'media_upload_tabs'} filter.</p>"
-            }
+            },
+            "args": 0
         },
         {
             "name": "media_upload_{$type}",
@@ -9260,7 +9602,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$type</code>, refers to the specific media upload type.</p> <p>The hook only fires if the current <code>$tab</code> is 'type' (From Computer), 'type_url' (From URL), or, if the tab does not exist (i.e., has not been registered via the {@see 'media_upload_tabs'} filter.</p> <p>Possible hook names include:</p> <ul> <li><code>media_upload_audio</code></li> <li><code>media_upload_file</code></li> <li><code>media_upload_image</code></li> <li><code>media_upload_video</code></li> </ul>"
-            }
+            },
+            "args": 0
         },
         {
             "name": "metadata_lazyloader_queued_objects",
@@ -9300,7 +9643,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "ms_loaded",
@@ -9316,7 +9660,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "ms_network_not_found",
@@ -9348,7 +9693,8 @@
                     }
                 ],
                 "long_description_html": "<p>At the time of this action, the only recourse is to redirect somewhere and exit. If you want to declare a particular network, do so earlier.</p>"
-            }
+            },
+            "args": 2
         },
         {
             "name": "ms_site_not_found",
@@ -9388,7 +9734,8 @@
                     }
                 ],
                 "long_description_html": "<p>At the time of this action, the only recourse is to redirect somewhere and exit. If you want to declare a particular site, do so earlier.</p>"
-            }
+            },
+            "args": 3
         },
         {
             "name": "mu_activity_box_end",
@@ -9405,7 +9752,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "mu_plugin_loaded",
@@ -9429,7 +9777,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "mu_rightnow_end",
@@ -9446,7 +9795,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "muplugins_loaded",
@@ -9462,7 +9812,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "myblogs_allblogs_options",
@@ -9478,7 +9829,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "network_admin_edit_{$action}",
@@ -9494,7 +9846,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$action</code>, refers to the name of the requested action derived from the <code>GET</code> request.</p>"
-            }
+            },
+            "args": 0
         },
         {
             "name": "network_admin_menu",
@@ -9518,7 +9871,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "network_admin_notices",
@@ -9534,7 +9888,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "network_plugin_loaded",
@@ -9558,7 +9913,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "network_site_info_form",
@@ -9582,7 +9938,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "network_site_new_created_user",
@@ -9606,7 +9963,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "network_site_new_form",
@@ -9622,7 +9980,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "network_site_users_after_list_table",
@@ -9638,7 +9997,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "network_site_users_created_user",
@@ -9662,7 +10022,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "network_user_new_created_user",
@@ -9686,7 +10047,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "network_user_new_form",
@@ -9702,7 +10064,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "opml_head",
@@ -9718,7 +10081,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "page_attributes_meta_box_template",
@@ -9750,7 +10114,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "page_attributes_misc_attributes",
@@ -9774,7 +10139,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "parse_comment_query",
@@ -9798,7 +10164,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "parse_network_query",
@@ -9822,7 +10189,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "parse_query",
@@ -9846,7 +10214,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "parse_request",
@@ -9870,7 +10239,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "parse_site_query",
@@ -9894,7 +10264,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "parse_tax_query",
@@ -9918,7 +10289,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "parse_term_query",
@@ -9942,7 +10314,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "password_reset",
@@ -9974,7 +10347,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "permalink_structure_changed",
@@ -10006,7 +10380,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "personal_options",
@@ -10030,7 +10405,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "personal_options_update",
@@ -10054,7 +10430,8 @@
                     }
                 ],
                 "long_description_html": "<p>The action only fires if the current user is editing their own profile.</p>"
-            }
+            },
+            "args": 1
         },
         {
             "name": "phpmailer_init",
@@ -10078,7 +10455,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "pingback_post",
@@ -10102,7 +10480,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "plugin_loaded",
@@ -10126,7 +10505,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "plugins_loaded",
@@ -10142,7 +10522,8 @@
                     }
                 ],
                 "long_description_html": "<p>Pluggable functions are also available at this point in the loading order.</p>"
-            }
+            },
+            "args": 0
         },
         {
             "name": "populate_options",
@@ -10158,7 +10539,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "post-html-upload-ui",
@@ -10174,7 +10556,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "post-plupload-upload-ui",
@@ -10195,7 +10578,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "post-upload-ui",
@@ -10211,7 +10595,8 @@
                     }
                 ],
                 "long_description_html": "<p>Legacy (pre-3.5.0) media workflow hook.</p>"
-            }
+            },
+            "args": 0
         },
         {
             "name": "post_action_{$action}",
@@ -10235,7 +10620,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$action</code>, refers to the custom post action.</p>"
-            }
+            },
+            "args": 1
         },
         {
             "name": "post_comment_status_meta_box-options",
@@ -10259,7 +10645,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "post_edit_form_tag",
@@ -10283,7 +10670,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "post_lock_lost_dialog",
@@ -10307,7 +10695,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "post_locked_dialog",
@@ -10344,7 +10733,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "post_stuck",
@@ -10368,7 +10758,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "post_submitbox_minor_actions",
@@ -10392,7 +10783,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "post_submitbox_misc_actions",
@@ -10421,7 +10813,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "post_submitbox_start",
@@ -10451,7 +10844,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "post_unstuck",
@@ -10475,7 +10869,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "post_updated",
@@ -10515,7 +10910,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "posts_selection",
@@ -10539,7 +10935,8 @@
                     }
                 ],
                 "long_description_html": "<p>For use by caching plugins.</p>"
-            }
+            },
+            "args": 1
         },
         {
             "name": "pre-html-upload-ui",
@@ -10555,7 +10952,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "pre-plupload-upload-ui",
@@ -10576,7 +10974,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "pre-upload-ui",
@@ -10592,7 +10991,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "pre_auto_update",
@@ -10632,7 +11032,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "pre_comment_on_post",
@@ -10656,7 +11057,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "pre_current_active_plugins",
@@ -10680,7 +11082,8 @@
                     }
                 ],
                 "long_description_html": "<p>This hook also fires before the plugins list table is rendered in the Network Admin.</p> <p>Please note: The 'active' portion of the hook name does not refer to whether the current view is for active plugins, but rather all plugins actively-installed.</p>"
-            }
+            },
+            "args": 1
         },
         {
             "name": "pre_delete_site_option_{$option}",
@@ -10722,7 +11125,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$option</code>, refers to the option name.</p>"
-            }
+            },
+            "args": 2
         },
         {
             "name": "pre_delete_term",
@@ -10754,7 +11158,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "pre_get_comments",
@@ -10778,7 +11183,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "pre_get_networks",
@@ -10802,7 +11208,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "pre_get_posts",
@@ -10826,7 +11233,8 @@
                     }
                 ],
                 "long_description_html": "<p>Note: If using conditional tags, use the method versions within the passed instance (e.g. $this-&gt;is_main_query() instead of is_main_query()). This is because the functions like is_main_query() test against the global $wp_query instance, not the passed one.</p>"
-            }
+            },
+            "args": 1
         },
         {
             "name": "pre_get_search_form",
@@ -10865,7 +11273,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "pre_get_sites",
@@ -10889,7 +11298,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "pre_get_terms",
@@ -10913,7 +11323,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "pre_get_users",
@@ -10937,7 +11348,8 @@
                     }
                 ],
                 "long_description_html": "<p>The passed WP_User_Query object contains the query variables, not yet passed into SQL.</p>"
-            }
+            },
+            "args": 1
         },
         {
             "name": "pre_network_site_new_created_user",
@@ -10961,7 +11373,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "pre_ping",
@@ -11001,7 +11414,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "pre_post_update",
@@ -11033,7 +11447,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "pre_trackback_post",
@@ -11097,7 +11512,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 6
         },
         {
             "name": "pre_uninstall_plugin",
@@ -11129,7 +11545,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "pre_user_query",
@@ -11153,7 +11570,8 @@
                     }
                 ],
                 "long_description_html": "<p>The passed WP_User_Query object contains SQL parts formed from parsing the given query.</p>"
-            }
+            },
+            "args": 1
         },
         {
             "name": "preprocess_signup_form",
@@ -11169,7 +11587,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "print_default_editor_scripts",
@@ -11185,7 +11604,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "print_media_templates",
@@ -11201,7 +11621,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "profile_personal_options",
@@ -11225,7 +11646,8 @@
                     }
                 ],
                 "long_description_html": "<p>The action only fires if the current user is editing their own profile.</p>"
-            }
+            },
+            "args": 1
         },
         {
             "name": "profile_update",
@@ -11270,7 +11692,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "publish_phone",
@@ -11294,7 +11717,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "quick_edit_custom_box",
@@ -11334,7 +11758,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "rdf_header",
@@ -11350,7 +11775,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "rdf_item",
@@ -11366,7 +11792,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "rdf_ns",
@@ -11382,7 +11809,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "register_form",
@@ -11398,7 +11826,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "register_new_user",
@@ -11422,7 +11851,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "register_post",
@@ -11462,7 +11892,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "register_setting",
@@ -11502,7 +11933,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "register_sidebar",
@@ -11526,7 +11958,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "registered_post_type",
@@ -11563,7 +11996,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "registered_taxonomy",
@@ -11604,7 +12038,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "registered_taxonomy_for_object_type",
@@ -11636,7 +12071,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "remove_user_from_blog",
@@ -11682,7 +12118,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "remove_user_role",
@@ -11714,7 +12151,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "requests-{$hook}",
@@ -11759,7 +12197,8 @@
                     }
                 ],
                 "long_description_html": "<p>This action maps Requests internal hook to a native WordPress action.</p>"
-            }
+            },
+            "args": 3
         },
         {
             "name": "resetpass_form",
@@ -11783,7 +12222,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "rest_after_insert_application_password",
@@ -11823,7 +12263,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "rest_after_insert_attachment",
@@ -11863,7 +12304,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "rest_after_insert_comment",
@@ -11903,7 +12345,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "rest_after_insert_user",
@@ -11943,7 +12386,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "rest_after_insert_{$this->post_type}",
@@ -11983,7 +12427,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;post_type</code>, refers to the post type slug.</p> <p>Possible hook names include:</p> <ul> <li><code>rest_after_insert_post</code></li> <li><code>rest_after_insert_page</code></li> <li><code>rest_after_insert_attachment</code></li> </ul>"
-            }
+            },
+            "args": 3
         },
         {
             "name": "rest_after_insert_{$this->taxonomy}",
@@ -12023,7 +12468,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;taxonomy</code>, refers to the taxonomy slug.</p> <p>Possible hook names include:</p> <ul> <li><code>rest_after_insert_category</code></li> <li><code>rest_after_insert_post_tag</code></li> </ul>"
-            }
+            },
+            "args": 3
         },
         {
             "name": "rest_after_save_widget",
@@ -12071,7 +12517,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 4
         },
         {
             "name": "rest_api_init",
@@ -12095,7 +12542,8 @@
                     }
                 ],
                 "long_description_html": "<p>Endpoint objects should be created and register their hooks on this action rather than another action to ensure they're only loaded when needed.</p>"
-            }
+            },
+            "args": 1
         },
         {
             "name": "rest_delete_comment",
@@ -12135,7 +12583,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "rest_delete_revision",
@@ -12169,7 +12618,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "rest_delete_user",
@@ -12209,7 +12659,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "rest_delete_widget",
@@ -12257,7 +12708,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 4
         },
         {
             "name": "rest_delete_{$this->post_type}",
@@ -12297,7 +12749,8 @@
                     }
                 ],
                 "long_description_html": "<p>They dynamic portion of the hook name, <code>$this-&gt;post_type</code>, refers to the post type slug.</p> <p>Possible hook names include:</p> <ul> <li><code>rest_delete_post</code></li> <li><code>rest_delete_page</code></li> <li><code>rest_delete_attachment</code></li> </ul>"
-            }
+            },
+            "args": 3
         },
         {
             "name": "rest_delete_{$this->taxonomy}",
@@ -12337,7 +12790,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;taxonomy</code>, refers to the taxonomy slug.</p> <p>Possible hook names include:</p> <ul> <li><code>rest_delete_category</code></li> <li><code>rest_delete_post_tag</code></li> </ul>"
-            }
+            },
+            "args": 3
         },
         {
             "name": "rest_insert_attachment",
@@ -12377,7 +12831,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "rest_insert_comment",
@@ -12417,7 +12872,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "rest_insert_user",
@@ -12457,7 +12913,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "rest_insert_{$this->post_type}",
@@ -12497,7 +12954,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;post_type</code>, refers to the post type slug.</p> <p>Possible hook names include:</p> <ul> <li><code>rest_insert_post</code></li> <li><code>rest_insert_page</code></li> <li><code>rest_insert_attachment</code></li> </ul>"
-            }
+            },
+            "args": 3
         },
         {
             "name": "rest_insert_{$this->taxonomy}",
@@ -12537,7 +12995,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$this-&gt;taxonomy</code>, refers to the taxonomy slug.</p> <p>Possible hook names include:</p> <ul> <li><code>rest_insert_category</code></li> <li><code>rest_insert_post_tag</code></li> </ul>"
-            }
+            },
+            "args": 3
         },
         {
             "name": "rest_save_sidebar",
@@ -12569,7 +13028,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "restore_previous_locale",
@@ -12601,7 +13061,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "restrict_manage_comments",
@@ -12617,7 +13078,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "restrict_manage_posts",
@@ -12659,7 +13121,8 @@
                     }
                 ],
                 "long_description_html": "<p>The Filter button allows sorting by date and/or category on the Posts list table, and sorting by date on the Pages list table.</p>"
-            }
+            },
+            "args": 2
         },
         {
             "name": "restrict_manage_sites",
@@ -12683,7 +13146,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "restrict_manage_users",
@@ -12712,7 +13176,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "retrieve_password",
@@ -12736,7 +13201,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "retrieve_password_key",
@@ -12768,7 +13234,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "revoke_super_admin",
@@ -12792,7 +13259,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "revoked_super_admin",
@@ -12816,7 +13284,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "rightnow_end",
@@ -12832,7 +13301,8 @@
                     }
                 ],
                 "long_description_html": "<p>Prior to 3.8.0, the widget was named 'Right Now'.</p>"
-            }
+            },
+            "args": 0
         },
         {
             "name": "rss2_comments_ns",
@@ -12848,7 +13318,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "rss2_head",
@@ -12864,7 +13335,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "rss2_item",
@@ -12880,7 +13352,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "rss2_ns",
@@ -12896,7 +13369,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "rss_head",
@@ -12912,7 +13386,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "rss_item",
@@ -12928,7 +13403,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "rss_tag_pre",
@@ -12952,7 +13428,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "sanitize_comment_cookies",
@@ -12968,7 +13445,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "save_post",
@@ -13008,7 +13486,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "save_post_{$post->post_type}",
@@ -13048,7 +13527,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$post-&gt;post_type</code>, refers to the post type slug.</p> <p>Possible hook names include:</p> <ul> <li><code>save_post_post</code></li> <li><code>save_post_page</code></li> </ul>"
-            }
+            },
+            "args": 3
         },
         {
             "name": "saved_term",
@@ -13096,7 +13576,8 @@
                     }
                 ],
                 "long_description_html": "<p>The {@see 'saved_$taxonomy'} hook is also available for targeting a specific taxonomy.</p>"
-            }
+            },
+            "args": 4
         },
         {
             "name": "saved_{$taxonomy}",
@@ -13136,7 +13617,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the taxonomy slug.</p> <p>Possible hook names include:</p> <ul> <li><code>saved_category</code></li> <li><code>saved_post_tag</code></li> </ul>"
-            }
+            },
+            "args": 3
         },
         {
             "name": "send_headers",
@@ -13160,7 +13642,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "set_404",
@@ -13184,7 +13667,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "set_auth_cookie",
@@ -13253,7 +13737,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 6
         },
         {
             "name": "set_comment_cookies",
@@ -13298,7 +13783,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "set_current_user",
@@ -13314,7 +13800,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "set_logged_in_cookie",
@@ -13383,7 +13870,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 6
         },
         {
             "name": "set_object_terms",
@@ -13447,7 +13935,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 6
         },
         {
             "name": "set_site_transient_{$transient}",
@@ -13492,7 +13981,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$transient</code>, refers to the transient name.</p>"
-            }
+            },
+            "args": 3
         },
         {
             "name": "set_transient_{$transient}",
@@ -13542,7 +14032,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$transient</code>, refers to the transient name.</p>"
-            }
+            },
+            "args": 3
         },
         {
             "name": "set_user_role",
@@ -13587,7 +14078,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "setted_site_transient",
@@ -13627,7 +14119,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "setted_transient",
@@ -13672,7 +14165,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "setup_theme",
@@ -13688,7 +14182,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "show_user_profile",
@@ -13712,7 +14207,8 @@
                     }
                 ],
                 "long_description_html": "<p>The action only fires if the current user is editing their own profile.</p>"
-            }
+            },
+            "args": 1
         },
         {
             "name": "shutdown",
@@ -13728,7 +14224,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "sidebar_admin_page",
@@ -13744,7 +14241,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "sidebar_admin_setup",
@@ -13760,7 +14258,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "signup_blogform",
@@ -13784,7 +14283,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "signup_extra_fields",
@@ -13808,7 +14308,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "signup_finished",
@@ -13824,7 +14325,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "signup_header",
@@ -13840,7 +14342,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "signup_hidden_fields",
@@ -13865,7 +14368,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "site_health_tab_content",
@@ -13889,7 +14393,8 @@
                     }
                 ],
                 "long_description_html": "<p>This action fires right after the Site Health header, and users are still subject to the capability checks for the Site Health page to view any custom tabs and their contents.</p>"
-            }
+            },
+            "args": 1
         },
         {
             "name": "spam_comment",
@@ -13926,7 +14431,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "spammed_comment",
@@ -13963,7 +14469,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "split_shared_term",
@@ -14011,7 +14518,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 4
         },
         {
             "name": "start_previewing_theme",
@@ -14035,7 +14543,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "stop_previewing_theme",
@@ -14059,7 +14568,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "submitlink_box",
@@ -14075,7 +14585,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "submitpage_box",
@@ -14099,7 +14610,8 @@
                     }
                 ],
                 "long_description_html": "<p>The submitpage box is a meta box with 'side' context, so this hook fires just before it is output.</p>"
-            }
+            },
+            "args": 1
         },
         {
             "name": "submitpost_box",
@@ -14123,7 +14635,8 @@
                     }
                 ],
                 "long_description_html": "<p>The submitpost box is a meta box with 'side' context, so this hook fires just before it is output.</p>"
-            }
+            },
+            "args": 1
         },
         {
             "name": "switch_blog",
@@ -14169,7 +14682,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "switch_locale",
@@ -14193,7 +14707,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "switch_theme",
@@ -14238,7 +14753,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "template_redirect",
@@ -14254,7 +14770,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "the_post",
@@ -14291,7 +14808,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "the_widget",
@@ -14331,7 +14849,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "tool_box",
@@ -14347,7 +14866,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "trackback_post",
@@ -14371,7 +14891,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "transition_comment_status",
@@ -14413,7 +14934,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "transition_post_status",
@@ -14453,7 +14975,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "trash_comment",
@@ -14490,7 +15013,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "trash_post_comments",
@@ -14514,7 +15038,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "trashed_comment",
@@ -14551,7 +15076,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "trashed_post",
@@ -14575,7 +15101,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "trashed_post_comments",
@@ -14607,7 +15134,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "unarchive_blog",
@@ -14632,7 +15160,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "uninstall_{$file}",
@@ -14648,7 +15177,8 @@
                     }
                 ],
                 "long_description_html": "<p>The action concatenates the 'uninstall_' prefix with the basename of the plugin passed to uninstall_plugin() to create a dynamically-named action.</p>"
-            }
+            },
+            "args": 0
         },
         {
             "name": "unload_textdomain",
@@ -14672,7 +15202,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "unmature_blog",
@@ -14696,7 +15227,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "unregister_setting",
@@ -14728,7 +15260,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "unregistered_post_type",
@@ -14752,7 +15285,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "unregistered_taxonomy",
@@ -14776,7 +15310,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "unregistered_taxonomy_for_object_type",
@@ -14808,7 +15343,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "unspam_comment",
@@ -14845,7 +15381,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "unspammed_comment",
@@ -14882,7 +15419,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "untrash_comment",
@@ -14919,7 +15457,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "untrash_post",
@@ -14956,7 +15495,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "untrash_post_comments",
@@ -14980,7 +15520,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "untrashed_comment",
@@ -15017,7 +15558,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "untrashed_post",
@@ -15054,7 +15596,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "untrashed_post_comments",
@@ -15078,7 +15621,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "update-core-custom_{$action}",
@@ -15094,7 +15638,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$action</code>, refers to the passed update action. The hook fires in lieu of all available default update actions.</p>"
-            }
+            },
+            "args": 0
         },
         {
             "name": "update-custom_{$action}",
@@ -15110,7 +15655,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$action</code>, refers to the action provided in the request for wp-admin/update.php. Can be used to provide custom update functionality for themes and plugins.</p>"
-            }
+            },
+            "args": 0
         },
         {
             "name": "update_blog_public",
@@ -15143,7 +15689,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "update_option",
@@ -15183,7 +15730,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "update_option_{$option}",
@@ -15228,7 +15776,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$option</code>, refers to the option name.</p>"
-            }
+            },
+            "args": 3
         },
         {
             "name": "update_postmeta",
@@ -15276,7 +15825,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 4
         },
         {
             "name": "update_site_option",
@@ -15329,7 +15879,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 4
         },
         {
             "name": "update_site_option_{$option}",
@@ -15387,7 +15938,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$option</code>, refers to the option name.</p>"
-            }
+            },
+            "args": 4
         },
         {
             "name": "update_wpmu_options",
@@ -15404,7 +15956,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "update_{$meta_type}_meta",
@@ -15452,7 +16005,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).</p> <p>Possible hook names include:</p> <ul> <li><code>update_post_meta</code></li> <li><code>update_comment_meta</code></li> <li><code>update_term_meta</code></li> <li><code>update_user_meta</code></li> </ul>"
-            }
+            },
+            "args": 4
         },
         {
             "name": "updated_option",
@@ -15492,7 +16046,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "updated_postmeta",
@@ -15540,7 +16095,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 4
         },
         {
             "name": "updated_{$meta_type}_meta",
@@ -15588,7 +16144,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).</p> <p>Possible hook names include:</p> <ul> <li><code>updated_post_meta</code></li> <li><code>updated_comment_meta</code></li> <li><code>updated_term_meta</code></li> <li><code>updated_user_meta</code></li> </ul>"
-            }
+            },
+            "args": 4
         },
         {
             "name": "upgrader_overwrote_package",
@@ -15628,7 +16185,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "upgrader_process_complete",
@@ -15670,7 +16228,8 @@
                     }
                 ],
                 "long_description_html": "<p>See also {@see 'upgrader_package_options'}.</p>"
-            }
+            },
+            "args": 2
         },
         {
             "name": "upload_ui_over_quota",
@@ -15686,7 +16245,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "user_admin_menu",
@@ -15710,7 +16270,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "user_admin_notices",
@@ -15726,7 +16287,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "user_edit_form_tag",
@@ -15742,7 +16304,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "user_new_form",
@@ -15766,7 +16329,8 @@
                     }
                 ],
                 "long_description_html": "<p>Passes a contextual string to make both types of new user forms uniquely targetable. Contexts are 'add-existing-user' (Multisite), and 'add-new-user' (single site and network admin).</p>"
-            }
+            },
+            "args": 1
         },
         {
             "name": "user_new_form_tag",
@@ -15782,7 +16346,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "user_profile_update_errors",
@@ -15822,7 +16387,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "user_register",
@@ -15859,7 +16425,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "user_request_action_confirmed",
@@ -15883,7 +16450,8 @@
                     }
                 ],
                 "long_description_html": "<p>Using this you can assume the user has agreed to perform the action by clicking on the link in the confirmation email.</p> <p>After firing this action hook the page will redirect to wp-login a callback redirects or exits first.</p>"
-            }
+            },
+            "args": 1
         },
         {
             "name": "validate_password_reset",
@@ -15916,7 +16484,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "welcome_panel",
@@ -15932,7 +16501,8 @@
                     }
                 ],
                 "long_description_html": "<p>To remove the default welcome panel, use remove_action():</p> <pre><code>remove_action( 'welcome_panel', 'wp_welcome_panel' );</code></pre>"
-            }
+            },
+            "args": 0
         },
         {
             "name": "widgets.php",
@@ -15948,7 +16518,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "widgets_admin_page",
@@ -15964,7 +16535,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "widgets_init",
@@ -15980,7 +16552,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "wp",
@@ -16004,7 +16577,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "wp-mail.php",
@@ -16020,7 +16594,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "wp_add_nav_menu_item",
@@ -16065,7 +16640,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "wp_after_admin_bar_render",
@@ -16081,7 +16657,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "wp_after_insert_post",
@@ -16130,7 +16707,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 4
         },
         {
             "name": "wp_ajax_crop_image_pre_save",
@@ -16170,7 +16748,8 @@
                     }
                 ],
                 "long_description_html": "<p>Allows to add filters to modify the way a cropped image is saved.</p>"
-            }
+            },
+            "args": 3
         },
         {
             "name": "wp_ajax_nopriv_{$action}",
@@ -16186,7 +16765,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$action</code>, refers to the name of the Ajax action callback being fired.</p>"
-            }
+            },
+            "args": 0
         },
         {
             "name": "wp_ajax_{$action}",
@@ -16202,7 +16782,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$action</code>, refers to the name of the Ajax action callback being fired.</p>"
-            }
+            },
+            "args": 0
         },
         {
             "name": "wp_authenticate",
@@ -16238,7 +16819,8 @@
                     }
                 ],
                 "long_description_html": "<p>The variables passed to the callbacks are passed by reference, and can be modified by callback functions.</p>"
-            }
+            },
+            "args": 1
         },
         {
             "name": "wp_authenticate_application_password_errors",
@@ -16286,7 +16868,8 @@
                     }
                 ],
                 "long_description_html": "<p>This allows for plugins to add additional constraints to prevent an application password from being used.</p>"
-            }
+            },
+            "args": 4
         },
         {
             "name": "wp_authorize_application_password_form",
@@ -16318,7 +16901,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "wp_authorize_application_password_form_approved_no_js",
@@ -16363,7 +16947,8 @@
                     }
                 ],
                 "long_description_html": "<p>In most cases, this should be used in combination with the {@see 'wp_application_passwords_approve_app_request_success'} action to ensure that both the JS and no-JS variants are handled.</p>"
-            }
+            },
+            "args": 3
         },
         {
             "name": "wp_authorize_application_password_request_errors",
@@ -16403,7 +16988,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "wp_before_admin_bar_render",
@@ -16419,7 +17005,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "wp_body_open",
@@ -16435,7 +17022,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "wp_check_comment_disallowed_list",
@@ -16499,7 +17087,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 6
         },
         {
             "name": "wp_create_application_password",
@@ -16547,7 +17136,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 4
         },
         {
             "name": "wp_create_application_password_form",
@@ -16571,7 +17161,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "wp_create_file_in_uploads",
@@ -16603,7 +17194,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "wp_create_nav_menu",
@@ -16635,7 +17227,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "wp_creating_autosave",
@@ -16659,7 +17252,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "wp_dashboard_setup",
@@ -16675,7 +17269,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "wp_default_scripts",
@@ -16699,7 +17294,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "wp_default_styles",
@@ -16723,7 +17319,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "wp_delete_application_password",
@@ -16755,7 +17352,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "wp_delete_nav_menu",
@@ -16779,7 +17377,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "wp_delete_post_revision",
@@ -16811,7 +17410,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "wp_delete_site",
@@ -16835,7 +17435,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "wp_edit_form_attachment_display",
@@ -16859,7 +17460,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "wp_enqueue_code_editor",
@@ -16883,7 +17485,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "wp_enqueue_editor",
@@ -16907,7 +17510,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "wp_enqueue_media",
@@ -16923,7 +17527,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "wp_enqueue_scripts",
@@ -16939,7 +17544,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "wp_error_added",
@@ -16988,7 +17594,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 4
         },
         {
             "name": "wp_feed_options",
@@ -17021,7 +17628,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "wp_footer",
@@ -17037,7 +17645,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "wp_head",
@@ -17053,7 +17662,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "wp_initialize_site",
@@ -17085,7 +17695,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "wp_insert_comment",
@@ -17117,7 +17728,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "wp_insert_post",
@@ -17157,7 +17769,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "wp_insert_site",
@@ -17181,7 +17794,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "wp_install",
@@ -17205,7 +17819,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "wp_loaded",
@@ -17226,7 +17841,8 @@
                     }
                 ],
                 "long_description_html": "<p>Ajax requests should use wp-admin/admin-ajax.php. admin-ajax.php can handle requests for users not logged in.</p>"
-            }
+            },
+            "args": 0
         },
         {
             "name": "wp_login",
@@ -17258,7 +17874,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "wp_login_failed",
@@ -17300,7 +17917,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "wp_logout",
@@ -17329,7 +17947,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "wp_mail_failed",
@@ -17353,7 +17972,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "wp_maybe_auto_update",
@@ -17369,7 +17989,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "wp_media_attach_action",
@@ -17409,7 +18030,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "wp_meta",
@@ -17425,7 +18047,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "wp_nav_menu_item_custom_fields",
@@ -17481,7 +18104,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 5
         },
         {
             "name": "wp_nav_menu_item_custom_fields_customize_template",
@@ -17497,7 +18121,8 @@
                     }
                 ],
                 "long_description_html": "<p>Additional fields can be rendered here and managed in JavaScript.</p>"
-            }
+            },
+            "args": 0
         },
         {
             "name": "wp_network_dashboard_setup",
@@ -17513,7 +18138,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "wp_playlist_scripts",
@@ -17545,7 +18171,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "wp_print_footer_scripts",
@@ -17561,7 +18188,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "wp_print_scripts",
@@ -17577,7 +18205,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "wp_print_styles",
@@ -17593,7 +18222,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "wp_privacy_personal_data_erased",
@@ -17617,7 +18247,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "wp_privacy_personal_data_export_file",
@@ -17641,7 +18272,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "wp_privacy_personal_data_export_file_created",
@@ -17702,7 +18334,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 5
         },
         {
             "name": "wp_register_sidebar_widget",
@@ -17726,7 +18359,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "wp_restore_post_revision",
@@ -17758,7 +18392,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "wp_roles_init",
@@ -17782,7 +18417,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "wp_set_comment_status",
@@ -17814,7 +18450,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "wp_sitemaps_init",
@@ -17838,7 +18475,8 @@
                     }
                 ],
                 "long_description_html": "<p>Additional sitemaps should be registered on this hook.</p>"
-            }
+            },
+            "args": 1
         },
         {
             "name": "wp_tiny_mce_init",
@@ -17862,7 +18500,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "wp_trash_post",
@@ -17886,7 +18525,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "wp_uninitialize_site",
@@ -17910,7 +18550,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "wp_unregister_sidebar_widget",
@@ -17934,7 +18575,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "wp_update_application_password",
@@ -17974,7 +18616,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "wp_update_comment_count",
@@ -18014,7 +18657,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "wp_update_nav_menu",
@@ -18046,7 +18690,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "wp_update_nav_menu_item",
@@ -18091,7 +18736,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "wp_update_site",
@@ -18123,7 +18769,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "wp_upgrade",
@@ -18155,7 +18802,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "wp_user_dashboard_setup",
@@ -18171,7 +18819,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "wp_validate_site_data",
@@ -18212,7 +18861,8 @@
                     }
                 ],
                 "long_description_html": "<p>Plugins should amend the <code>$errors</code> object via its <code>WP_Error::add()</code> method.</p>"
-            }
+            },
+            "args": 3
         },
         {
             "name": "wp_validate_site_deletion",
@@ -18244,7 +18894,8 @@
                     }
                 ],
                 "long_description_html": "<p>Plugins should amend the <code>$errors</code> object via its <code>WP_Error::add()</code> method. If any errors are present, the site will not be deleted.</p>"
-            }
+            },
+            "args": 2
         },
         {
             "name": "wp_verify_nonce_failed",
@@ -18293,7 +18944,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 4
         },
         {
             "name": "wpmu_activate_blog",
@@ -18350,7 +19002,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 5
         },
         {
             "name": "wpmu_activate_user",
@@ -18391,7 +19044,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 3
         },
         {
             "name": "wpmu_blog_updated",
@@ -18416,7 +19070,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "wpmu_delete_user",
@@ -18454,7 +19109,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "wpmu_new_user",
@@ -18479,7 +19135,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "wpmu_options",
@@ -18496,7 +19153,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "wpmu_update_blog_options",
@@ -18525,7 +19183,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "wpmu_upgrade_page",
@@ -18542,7 +19201,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "wpmu_upgrade_site",
@@ -18567,7 +19227,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "wpmuadminedit",
@@ -18583,7 +19244,8 @@
                     }
                 ],
                 "long_description_html": "<p>This hook fires on multiple screens in the Multisite Network Admin, including Users, Network Settings, and Site Settings.</p>"
-            }
+            },
+            "args": 0
         },
         {
             "name": "wpmuadminresult",
@@ -18600,7 +19262,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "wpmublogsaction",
@@ -18625,7 +19288,8 @@
                     }
                 ],
                 "long_description_html": "<p>By default this column is hidden unless something is hooked to the action.</p>"
-            }
+            },
+            "args": 1
         },
         {
             "name": "wpmueditblogaction",
@@ -18649,7 +19313,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "xmlrpc_call",
@@ -18695,7 +19360,8 @@
                     }
                 ],
                 "long_description_html": "<p>All built-in XML-RPC methods use the action xmlrpc_call, with a parameter equal to the method's name, e.g., wp.getUsersBlogs, wp.newPost, etc.</p>"
-            }
+            },
+            "args": 3
         },
         {
             "name": "xmlrpc_call_success_blogger_deletePost",
@@ -18727,7 +19393,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "xmlrpc_call_success_blogger_editPost",
@@ -18759,7 +19426,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "xmlrpc_call_success_blogger_newPost",
@@ -18791,7 +19459,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "xmlrpc_call_success_mw_editPost",
@@ -18823,7 +19492,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "xmlrpc_call_success_mw_newMediaObject",
@@ -18855,7 +19525,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "xmlrpc_call_success_mw_newPost",
@@ -18887,7 +19558,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "xmlrpc_call_success_wp_deleteCategory",
@@ -18919,7 +19591,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "xmlrpc_call_success_wp_deleteComment",
@@ -18951,7 +19624,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "xmlrpc_call_success_wp_deletePage",
@@ -18983,7 +19657,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "xmlrpc_call_success_wp_editComment",
@@ -19015,7 +19690,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "xmlrpc_call_success_wp_newCategory",
@@ -19047,7 +19723,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "xmlrpc_call_success_wp_newComment",
@@ -19079,7 +19756,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 2
         },
         {
             "name": "xmlrpc_publish_post",
@@ -19103,7 +19781,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 1
         },
         {
             "name": "xmlrpc_rsd_apis",
@@ -19124,7 +19803,8 @@
                     }
                 ],
                 "long_description_html": ""
-            }
+            },
+            "args": 0
         },
         {
             "name": "{$new_status}_{$post->post_type}",
@@ -19156,7 +19836,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portions of the hook name, <code>$new_status</code> and <code>$post-&gt;post_type</code>, refer to the new post status and post type, respectively.</p> <p>Possible hook names include:</p> <ul> <li><code>draft_post</code></li> <li><code>future_post</code></li> <li><code>pending_post</code></li> <li><code>private_post</code></li> <li><code>publish_post</code></li> <li><code>trash_post</code></li> <li><code>draft_page</code></li> <li><code>future_page</code></li> <li><code>pending_page</code></li> <li><code>private_page</code></li> <li><code>publish_page</code></li> <li><code>trash_page</code></li> <li><code>publish_attachment</code></li> <li><code>trash_attachment</code></li> </ul> <p>Please note: When this action is hooked using a particular post status (like 'publish', as <code>publish_{$post-&gt;post_type}</code>), it will fire both when a post is first transitioned to that status from something else, as well as upon subsequent post updates (old and new status are both the same).</p> <p>Therefore, if you are looking to only fire a callback when a post is first transitioned to a status, use the {@see 'transition_post_status'} hook instead.</p>"
-            }
+            },
+            "args": 2
         },
         {
             "name": "{$old_status}_to_{$new_status}",
@@ -19180,7 +19861,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portions of the hook name, <code>$new_status</code> and <code>$old_status</code>, refer to the old and new post statuses, respectively.</p> <p>Possible hook names include:</p> <ul> <li><code>draft_to_publish</code></li> <li><code>publish_to_trash</code></li> <li><code>pending_to_draft</code></li> </ul>"
-            }
+            },
+            "args": 1
         },
         {
             "name": "{$page_hook}",
@@ -19201,7 +19883,8 @@
                     }
                 ],
                 "long_description_html": "<p>This hook uses a dynamic hook name, <code>$page_hook</code>, which refers to a mixture of plugin page information including:</p> <ol> <li>The page type. If the plugin page is registered as a submenu page, such as for Settings, the page type would be 'settings'. Otherwise the type is 'toplevel'.</li> <li>A separator of '<em>page</em>'.</li> <li>The plugin basename minus the file extension.</li> </ol> <p>Together, the three parts form the <code>$page_hook</code>. Citing the example above, the hook name used would be 'settings_page_pluginbasename'.</p>"
-            }
+            },
+            "args": 0
         },
         {
             "name": "{$taxonomy}_add_form",
@@ -19225,7 +19908,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the taxonomy slug.</p> <p>Possible hook names include:</p> <ul> <li><code>category_add_form</code></li> <li><code>post_tag_add_form</code></li> </ul>"
-            }
+            },
+            "args": 1
         },
         {
             "name": "{$taxonomy}_add_form_fields",
@@ -19249,7 +19933,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the taxonomy slug.</p> <p>Possible hook names include:</p> <ul> <li><code>category_add_form_fields</code></li> <li><code>post_tag_add_form_fields</code></li> </ul>"
-            }
+            },
+            "args": 1
         },
         {
             "name": "{$taxonomy}_edit_form",
@@ -19281,7 +19966,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the taxonomy slug.</p> <p>Possible hook names include:</p> <ul> <li><code>category_edit_form</code></li> <li><code>post_tag_edit_form</code></li> </ul>"
-            }
+            },
+            "args": 2
         },
         {
             "name": "{$taxonomy}_edit_form_fields",
@@ -19313,7 +19999,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the taxonomy slug.</p> <p>Possible hook names include:</p> <ul> <li><code>category_edit_form_fields</code></li> <li><code>post_tag_edit_form_fields</code></li> </ul>"
-            }
+            },
+            "args": 2
         },
         {
             "name": "{$taxonomy}_pre_add_form",
@@ -19337,7 +20024,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the taxonomy slug.</p> <p>Possible hook names include:</p> <ul> <li><code>category_pre_add_form</code></li> <li><code>post_tag_pre_add_form</code></li> </ul>"
-            }
+            },
+            "args": 1
         },
         {
             "name": "{$taxonomy}_pre_edit_form",
@@ -19369,7 +20057,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the taxonomy slug.</p> <p>Possible hook names include:</p> <ul> <li><code>category_pre_edit_form</code></li> <li><code>post_tag_pre_edit_form</code></li> </ul>"
-            }
+            },
+            "args": 2
         },
         {
             "name": "{$taxonomy}_term_edit_form_tag",
@@ -19385,7 +20074,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the taxonomy slug.</p> <p>Possible hook names include:</p> <ul> <li><code>category_term_edit_form_tag</code></li> <li><code>post_tag_term_edit_form_tag</code></li> </ul>"
-            }
+            },
+            "args": 0
         },
         {
             "name": "{$taxonomy}_term_edit_form_top",
@@ -19417,7 +20107,8 @@
                     }
                 ],
                 "long_description_html": "<p>At this point, the required hidden fields and nonces have already been output.</p> <p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the taxonomy slug.</p> <p>Possible hook names include:</p> <ul> <li><code>category_term_edit_form_top</code></li> <li><code>post_tag_term_edit_form_top</code></li> </ul>"
-            }
+            },
+            "args": 2
         },
         {
             "name": "{$taxonomy}_term_new_form_tag",
@@ -19433,7 +20124,8 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the taxonomy slug.</p> <p>Possible hook names include:</p> <ul> <li><code>category_term_new_form_tag</code></li> <li><code>post_tag_term_new_form_tag</code></li> </ul>"
-            }
+            },
+            "args": 0
         }
     ]
 }
