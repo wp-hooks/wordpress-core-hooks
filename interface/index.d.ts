@@ -41,6 +41,10 @@ export interface Hook {
    */
   type: string;
   doc: Doc;
+  /**
+   * The number of arguments passed to the hook
+   */
+  args: number;
 }
 /**
  * The docblock information for the hook
