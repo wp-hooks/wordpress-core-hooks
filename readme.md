@@ -91,6 +91,9 @@ Some scripts are available for checking the data:
 * Find hooks with missing `@since` tags:
   - `jq '.hooks[] | . as $d | .doc .tags | map(.name) | select( contains(["since"]) | not ) | $d' hooks/filters.json`
   - `jq '.hooks[] | . as $d | .doc .tags | map(.name) | select( contains(["since"]) | not ) | $d' hooks/actions.json`
+* Find hooks with incorrect number of `@param` tags:
+  - `jq '.hooks[] | select( .args == ( .doc.tags | map(.name) | select( contains(["param"]) ) | length ) ) | .name' hooks/filters.json`
+  - `jq '.hooks[] | select( .args == ( .doc.tags | map(.name) | select( contains(["param"]) ) | length ) ) | .name' hooks/actions.json`
 
 ## Hook Files for Plugins
 
