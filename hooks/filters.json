@@ -33187,7 +33187,7 @@
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$name</code>, refers to the block name, e.g. \"core/paragraph\".</p>"
             },
-            "args": 3
+            "args": 2
         },
         {
             "name": "replace_editor",
