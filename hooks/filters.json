@@ -1946,9 +1946,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "The comment ID.",
+                        "content": "The comment ID as a numeric string.",
                         "types": [
-                            "int"
+                            "string"
                         ],
                         "variable": "$comment_ID"
                     }
@@ -2285,7 +2285,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters whether to automatically update core, a plugin, a theme, or a language.",
-                "long_description": "The dynamic portion of the hook name, `$type`, refers to the type of update being checked.\n Possible hook names include:\n  - `auto_update_core`  - `auto_update_plugin`  - `auto_update_theme`  - `auto_update_translation`\n Generally speaking, plugins, themes, and major core versions are not updated by default, while translations and minor and development versions for core are updated by default.\n See the {@see 'allow_dev_auto_core_updates'}, {@see 'allow_minor_auto_core_updates'}, and {@see 'allow_major_auto_core_updates'} filters for a more straightforward way to adjust core updates.",
+                "long_description": "The dynamic portion of the hook name, `$type`, refers to the type of update being checked.\n Possible hook names include:\n  - `auto_update_core`  - `auto_update_plugin`  - `auto_update_theme`  - `auto_update_translation`\n Since WordPress 3.7, minor and development versions of core, and translations have been auto-updated by default. New installs on WordPress 5.6 or higher will also auto-update major versions by default. Starting in 5.6, older sites can opt-in to major version auto-updates, and auto-updates for plugins and themes.\n See the {@see 'allow_dev_auto_core_updates'}, {@see 'allow_minor_auto_core_updates'}, and {@see 'allow_major_auto_core_updates'} filters for a more straightforward way to adjust core updates.",
                 "tags": [
                     {
                         "name": "since",
@@ -2314,7 +2314,7 @@
                         "variable": "$item"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$type</code>, refers to the type of update being checked.</p> <p>Possible hook names include:</p> <ul> <li><code>auto_update_core</code></li> <li><code>auto_update_plugin</code></li> <li><code>auto_update_theme</code></li> <li><code>auto_update_translation</code></li> </ul> <p>Generally speaking, plugins, themes, and major core versions are not updated by default, while translations and minor and development versions for core are updated by default.</p> <p>See the {@see 'allow_dev_auto_core_updates'}, {@see 'allow_minor_auto_core_updates'}, and {@see 'allow_major_auto_core_updates'} filters for a more straightforward way to adjust core updates.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$type</code>, refers to the type of update being checked.</p> <p>Possible hook names include:</p> <ul> <li><code>auto_update_core</code></li> <li><code>auto_update_plugin</code></li> <li><code>auto_update_theme</code></li> <li><code>auto_update_translation</code></li> </ul> <p>Since WordPress 3.7, minor and development versions of core, and translations have been auto-updated by default. New installs on WordPress 5.6 or higher will also auto-update major versions by default. Starting in 5.6, older sites can opt-in to major version auto-updates, and auto-updates for plugins and themes.</p> <p>See the {@see 'allow_dev_auto_core_updates'}, {@see 'allow_minor_auto_core_updates'}, and {@see 'allow_major_auto_core_updates'} filters for a more straightforward way to adjust core updates.</p>"
             },
             "args": 2
         },
@@ -2684,6 +2684,14 @@
                             "string[]"
                         ],
                         "variable": "$preload_paths"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The current block editor context.",
+                        "types": [
+                            "\\WP_Block_Editor_Context"
+                        ],
+                        "variable": "$block_editor_context"
                     }
                 ],
                 "long_description_html": ""
@@ -3048,9 +3056,10 @@
                     },
                     {
                         "name": "param",
-                        "content": "An array containing web browser information. See <code>wp_check_browser_version()</code>.",
+                        "content": "An array containing web browser information, or                              false on failure. See <code>wp_check_browser_version()</code>.",
                         "types": [
-                            "array"
+                            "array",
+                            "false"
                         ],
                         "variable": "$response"
                     }
@@ -3642,9 +3651,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "The comment ID.",
+                        "content": "The comment ID as a numeric string.",
                         "types": [
-                            "int"
+                            "string"
                         ],
                         "variable": "$comment_ID"
                     }
@@ -3713,9 +3722,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "The comment ID.",
+                        "content": "The comment ID as a numeric string.",
                         "types": [
-                            "int"
+                            "string"
                         ],
                         "variable": "$comment_id"
                     },
@@ -3914,9 +3923,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "The comment ID.",
+                        "content": "The comment ID as a numeric string.",
                         "types": [
-                            "int"
+                            "string"
                         ],
                         "variable": "$comment_ID"
                     }
@@ -4684,9 +4693,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "Comment ID.",
+                        "content": "Comment ID as a numeric string.",
                         "types": [
-                            "int"
+                            "string"
                         ],
                         "variable": "$comment_id"
                     }
@@ -4709,7 +4718,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Whether to notify the post author of their own comment.                         Default false.",
+                        "content": "Whether to notify the post author of their own comment.                           Default false.",
                         "types": [
                             "bool"
                         ],
@@ -4717,9 +4726,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "The comment ID.",
+                        "content": "The comment ID as a numeric string.",
                         "types": [
-                            "int"
+                            "string"
                         ],
                         "variable": "$comment_id"
                     }
@@ -4750,9 +4759,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "The comment ID.",
+                        "content": "The comment ID as a numeric string.",
                         "types": [
-                            "int"
+                            "string"
                         ],
                         "variable": "$comment_id"
                     }
@@ -4783,9 +4792,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "Comment ID.",
+                        "content": "Comment ID as a numeric string.",
                         "types": [
-                            "int"
+                            "string"
                         ],
                         "variable": "$comment_id"
                     }
@@ -4816,9 +4825,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "Comment ID.",
+                        "content": "Comment ID as a numeric string.",
                         "types": [
-                            "int"
+                            "string"
                         ],
                         "variable": "$comment_id"
                     }
@@ -5137,9 +5146,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "The comment ID.",
+                        "content": "The comment ID as a numeric string.",
                         "types": [
-                            "int"
+                            "string"
                         ],
                         "variable": "$comment_ID"
                     }
@@ -6091,9 +6100,10 @@
                     },
                     {
                         "name": "param",
-                        "content": "Nested array of theme data.",
+                        "content": "Nested array or object of theme data.",
                         "types": [
-                            "array"
+                            "array",
+                            "\\stdClass"
                         ],
                         "variable": "$themes"
                     },
@@ -8804,9 +8814,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "Comment ID.",
+                        "content": "Comment ID as a numeric string.",
                         "types": [
-                            "int"
+                            "string"
                         ],
                         "variable": "$comment_id"
                     },
@@ -9779,9 +9789,10 @@
                     },
                     {
                         "name": "param",
-                        "content": "Attachment ID.",
+                        "content": "Attachment ID, or false if there is none.",
                         "types": [
-                            "int"
+                            "int",
+                            "false"
                         ],
                         "variable": "$thumbnail_id"
                     }
@@ -12144,13 +12155,13 @@
                     {
                         "name": "since",
                         "content": "4.1.0",
-                        "description": "The <code>$comment_ID</code> parameter was added."
+                        "description": "The <code>$comment</code> parameter was added."
                     },
                     {
                         "name": "param",
-                        "content": "The current comment ID.",
+                        "content": "The current comment ID as a numeric string.",
                         "types": [
-                            "int"
+                            "string"
                         ],
                         "variable": "$comment_ID"
                     },
@@ -12194,9 +12205,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "The comment ID.",
+                        "content": "The comment ID as a numeric string.",
                         "types": [
-                            "int"
+                            "string"
                         ],
                         "variable": "$comment_ID"
                     },
@@ -12240,9 +12251,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "The comment ID.",
+                        "content": "The comment ID as a numeric string.",
                         "types": [
-                            "int"
+                            "string"
                         ],
                         "variable": "$comment_ID"
                     },
@@ -12286,9 +12297,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "The comment ID.",
+                        "content": "The comment ID as a numeric string.",
                         "types": [
-                            "int"
+                            "string"
                         ],
                         "variable": "$comment_ID"
                     },
@@ -12340,9 +12351,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "The comment ID.",
+                        "content": "The comment ID as a numeric string.",
                         "types": [
-                            "int"
+                            "string"
                         ],
                         "variable": "$comment_ID"
                     }
@@ -12370,7 +12381,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The comment author's URL.",
+                        "content": "The comment author's URL, or an empty string.",
                         "types": [
                             "string"
                         ],
@@ -12378,17 +12389,19 @@
                     },
                     {
                         "name": "param",
-                        "content": "The comment ID.",
+                        "content": "The comment ID as a numeric string, or 0 if not found.",
                         "types": [
+                            "string",
                             "int"
                         ],
                         "variable": "$comment_ID"
                     },
                     {
                         "name": "param",
-                        "content": "The comment object.",
+                        "content": "The comment object, or null if not found.",
                         "types": [
-                            "\\WP_Comment"
+                            "\\WP_Comment",
+                            "null"
                         ],
                         "variable": "$comment"
                     }
@@ -12491,9 +12504,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "The comment ID.",
+                        "content": "The comment ID as a numeric string.",
                         "types": [
-                            "int"
+                            "string"
                         ],
                         "variable": "$comment_ID"
                     },
@@ -12700,9 +12713,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "The comment ID.",
+                        "content": "The comment ID as a numeric string.",
                         "types": [
-                            "int"
+                            "string"
                         ],
                         "variable": "$comment_ID"
                     },
@@ -13168,7 +13181,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The object type (eg. the post type).",
+                        "content": "The object type.",
                         "types": [
                             "string"
                         ],
@@ -14688,9 +14701,10 @@
                     },
                     {
                         "name": "param",
-                        "content": "An array of taxonomies.",
+                        "content": "An array of taxonomies if known.",
                         "types": [
-                            "array"
+                            "array",
+                            "null"
                         ],
                         "variable": "$taxonomies"
                     },
@@ -17640,7 +17654,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the image editor output format mapping.",
-                "long_description": "Enables filtering the mime type used to save images. By default, the mapping array is empty, so the mime type matches the source image.\n This should be considered experimental as there are a few edge cases that still need to be solved.\n When this filter is used in combination with the {@see 'wp_editor_set_quality'} filter, the image quality value used will be that of the original mime type, not the mapped one. This could result in unexpected image quality for generated images. See https://core.trac.wordpress.org/ticket/53667 for more details.\n When a mime type is mapped to another, and two images with the same name are uploaded (image.jpg and image.webp, for example), the generated images for one will potentially overwrite the other's. See https://core.trac.wordpress.org/ticket/53668 for more details.",
+                "long_description": "Enables filtering the mime type used to save images. By default, the mapping array is empty, so the mime type matches the source image.",
                 "tags": [
                     {
                         "name": "see",
@@ -17669,14 +17683,14 @@
                     },
                     {
                         "name": "param",
-                        "content": "The source image mime type. }",
+                        "content": "The source image mime type.",
                         "types": [
                             "string"
                         ],
                         "variable": "$mime_type"
                     }
                 ],
-                "long_description_html": "<p>Enables filtering the mime type used to save images. By default, the mapping array is empty, so the mime type matches the source image.</p> <p>This should be considered experimental as there are a few edge cases that still need to be solved.</p> <p>When this filter is used in combination with the {@see 'wp_editor_set_quality'} filter, the image quality value used will be that of the original mime type, not the mapped one. This could result in unexpected image quality for generated images. See <a href=\"https://core.trac.wordpress.org/ticket/53667\">https://core.trac.wordpress.org/ticket/53667</a> for more details.</p> <p>When a mime type is mapped to another, and two images with the same name are uploaded (image.jpg and image.webp, for example), the generated images for one will potentially overwrite the other's. See <a href=\"https://core.trac.wordpress.org/ticket/53668\">https://core.trac.wordpress.org/ticket/53668</a> for more details.</p>"
+                "long_description_html": "<p>Enables filtering the mime type used to save images. By default, the mapping array is empty, so the mime type matches the source image.</p>"
             },
             "args": 3
         },
@@ -18310,7 +18324,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters a user's meta values and keys immediately after the user is created or updated and before any user meta is inserted or updated.",
-                "long_description": "Does not include contact methods. These are added using `wp_get_user_contact_methods( $user )`.",
+                "long_description": "Does not include contact methods. These are added using `wp_get_user_contact_methods( $user )`.\n For custom meta fields, see the {@see 'insert_custom_user_meta'} filter.",
                 "tags": [
                     {
                         "name": "since",
@@ -18354,7 +18368,7 @@
                         "variable": "$userdata"
                     }
                 ],
-                "long_description_html": "<p>Does not include contact methods. These are added using <code>wp_get_user_contact_methods( $user )</code>.</p>"
+                "long_description_html": "<p>Does not include contact methods. These are added using <code>wp_get_user_contact_methods( $user )</code>.</p> <p>For custom meta fields, see the {@see 'insert_custom_user_meta'} filter.</p>"
             },
             "args": 4
         },
@@ -18702,9 +18716,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "Array with current theme data.",
+                        "content": "Current theme data.",
                         "types": [
-                            "array"
+                            "\\WP_Theme"
                         ],
                         "variable": "$current_theme_data"
                     },
@@ -23013,7 +23027,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the navigation markup template.",
-                "long_description": "Note: The filtered template HTML must contain specifiers for the navigation class (%1$s), the screen-reader-text value (%2$s), placement of the navigation links (%3$s), and ARIA label text if screen-reader-text does not fit that (%4$s):\n     <nav class=\"navigation %1$s\" role=\"navigation\" aria-label=\"%4$s\">         <h2 class=\"screen-reader-text\">%2$s</h2>         <div class=\"nav-links\">%3$s</div>     </nav>",
+                "long_description": "Note: The filtered template HTML must contain specifiers for the navigation class (%1$s), the screen-reader-text value (%2$s), placement of the navigation links (%3$s), and ARIA label text if screen-reader-text does not fit that (%4$s):\n     <nav class=\"navigation %1$s\" aria-label=\"%4$s\">         <h2 class=\"screen-reader-text\">%2$s</h2>         <div class=\"nav-links\">%3$s</div>     </nav>",
                 "tags": [
                     {
                         "name": "since",
@@ -23043,7 +23057,7 @@
                         ]
                     }
                 ],
-                "long_description_html": "<p>Note: The filtered template HTML must contain specifiers for the navigation class (%1$s), the screen-reader-text value (%2$s), placement of the navigation links (%3$s), and ARIA label text if screen-reader-text does not fit that (%4$s):</p> <pre><code>&lt;nav class=\"navigation %1$s\" role=\"navigation\" aria-label=\"%4$s\"&gt;\n    &lt;h2 class=\"screen-reader-text\"&gt;%2$s&lt;/h2&gt;\n    &lt;div class=\"nav-links\"&gt;%3$s&lt;/div&gt;\n&lt;/nav&gt;</code></pre>"
+                "long_description_html": "<p>Note: The filtered template HTML must contain specifiers for the navigation class (%1$s), the screen-reader-text value (%2$s), placement of the navigation links (%3$s), and ARIA label text if screen-reader-text does not fit that (%4$s):</p> <pre><code>&lt;nav class=\"navigation %1$s\" aria-label=\"%4$s\"&gt;\n    &lt;h2 class=\"screen-reader-text\"&gt;%2$s&lt;/h2&gt;\n    &lt;div class=\"nav-links\"&gt;%3$s&lt;/div&gt;\n&lt;/nav&gt;</code></pre>"
             },
             "args": 2
         },
@@ -23728,9 +23742,10 @@
                     },
                     {
                         "name": "param",
-                        "content": "The new site's ID.",
+                        "content": "The new site's ID as an integer or numeric string.",
                         "types": [
-                            "int"
+                            "int",
+                            "string"
                         ],
                         "variable": "$blog_id"
                     }
@@ -27261,7 +27276,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The post thumbnail ID.",
+                        "content": "The post thumbnail ID, or 0 if there isn't one.",
                         "types": [
                             "int"
                         ],
@@ -27278,9 +27293,10 @@
                     },
                     {
                         "name": "param",
-                        "content": "Query string of attributes.",
+                        "content": "Query string or array of attributes.",
                         "types": [
-                            "string"
+                            "string",
+                            "array"
                         ],
                         "variable": "$attr"
                     }
@@ -30069,6 +30085,40 @@
                             "false"
                         ],
                         "variable": "$space_used"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Full path of a directory.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$directory"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Full path of a subdirectory to exclude from the total,                                                 or array of paths.",
+                        "types": [
+                            "string",
+                            "string[]",
+                            "null"
+                        ],
+                        "variable": "$exclude"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Maximum time to run before giving up. In seconds.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$max_execution_time"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Array of cached directory paths.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$directory_cache"
                     }
                 ],
                 "long_description_html": "<p>Return the actual used space to short-circuit the recursive PHP file size calculation and use something else, like a CDN API or native operating system tools for better performance.</p>"
@@ -33674,7 +33724,7 @@
             "file": "wp-includes/rest-api/class-wp-rest-server.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the REST API endpoint data.",
+                "description": "Filters the publicly-visible data for a single REST API route.",
                 "long_description": "",
                 "tags": [
                     {
@@ -33683,11 +33733,11 @@
                     },
                     {
                         "name": "param",
-                        "content": "Request data. The namespace is passed as the 'namespace' parameter.",
+                        "content": "Publicly-visible data for the route.",
                         "types": [
-                            "\\WP_REST_Request"
+                            "array"
                         ],
-                        "variable": "$request"
+                        "variable": "$data"
                     }
                 ],
                 "long_description_html": ""
@@ -35018,9 +35068,10 @@
                     },
                     {
                         "name": "param",
-                        "content": "The response object.",
+                        "content": "The response object, or WP_Error object on failure.",
                         "types": [
-                            "\\WP_REST_Response"
+                            "\\WP_REST_Response",
+                            "\\WP_Error"
                         ],
                         "variable": "$response"
                     },
@@ -36345,51 +36396,6 @@
                     {
                         "name": "since",
                         "content": "2.8.1"
-                    },
-                    {
-                        "name": "since",
-                        "content": "4.4.0",
-                        "description": "Added support for <code>min-height</code>, <code>max-height</code>, <code>min-width</code>, and <code>max-width</code>."
-                    },
-                    {
-                        "name": "since",
-                        "content": "4.6.0",
-                        "description": "Added support for <code>list-style-type</code>."
-                    },
-                    {
-                        "name": "since",
-                        "content": "5.0.0",
-                        "description": "Added support for <code>background-image</code>."
-                    },
-                    {
-                        "name": "since",
-                        "content": "5.1.0",
-                        "description": "Added support for <code>text-transform</code>."
-                    },
-                    {
-                        "name": "since",
-                        "content": "5.2.0",
-                        "description": "Added support for <code>background-position</code> and <code>grid-template-columns</code>."
-                    },
-                    {
-                        "name": "since",
-                        "content": "5.3.0",
-                        "description": "Added support for <code>grid</code>, <code>flex</code> and <code>column</code> layout properties.              Extend <code>background-*</code> support of individual properties."
-                    },
-                    {
-                        "name": "since",
-                        "content": "5.3.1",
-                        "description": "Added support for gradient backgrounds."
-                    },
-                    {
-                        "name": "since",
-                        "content": "5.7.1",
-                        "description": "Added support for <code>object-position</code>."
-                    },
-                    {
-                        "name": "since",
-                        "content": "5.8.0",
-                        "description": "Added support for <code>calc()</code> and <code>var()</code> values."
                     },
                     {
                         "name": "param",
@@ -42683,9 +42689,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "Theme object.",
+                        "content": "An object that contains theme data returned by the                          WordPress.org API.",
                         "types": [
-                            "\\WP_Theme"
+                            "\\stdClass"
                         ],
                         "variable": "$theme"
                     }
@@ -43095,14 +43101,14 @@
                         "content": "WordPress.org Themes API response.",
                         "types": [
                             "array",
-                            "object",
+                            "\\stdClass",
                             "\\WP_Error"
                         ],
                         "variable": "$res"
                     },
                     {
                         "name": "param",
-                        "content": "Requested action. Likely values are 'theme_information',                                      'feature_list', or 'query_themes'.",
+                        "content": "Requested action. Likely values are 'theme_information',                                        'feature_list', or 'query_themes'.",
                         "types": [
                             "string"
                         ],
@@ -43112,7 +43118,7 @@
                         "name": "param",
                         "content": "Arguments used to query for installer pages from the WordPress.org Themes API.",
                         "types": [
-                            "object"
+                            "\\stdClass"
                         ],
                         "variable": "$args"
                     }
@@ -49507,9 +49513,10 @@
                     },
                     {
                         "name": "param",
-                        "content": "Post ID.",
+                        "content": "Post ID or object. Can be 0 for the current global post.",
                         "types": [
-                            "int"
+                            "int",
+                            "\\WP_Post"
                         ],
                         "variable": "$id"
                     },
@@ -49757,7 +49764,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "CSS pulled in from the Custom CSS CPT.",
+                        "content": "CSS pulled in from the Custom CSS post type.",
                         "types": [
                             "string"
                         ],
@@ -50404,7 +50411,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The <code>loading</code> attribute value. Returning a falsey value will result in                             the attribute being omitted for the iframe. Default 'lazy'.",
+                        "content": "The <code>loading</code> attribute value. Returning a falsey value will result in                             the attribute being omitted for the iframe.",
                         "types": [
                             "string",
                             "bool"
@@ -50677,7 +50684,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The <code>loading</code> attribute value. Returning a falsey value will result in                             the attribute being omitted for the image. Default 'lazy'.",
+                        "content": "The <code>loading</code> attribute value. Returning a falsey value will result in                             the attribute being omitted for the image.",
                         "types": [
                             "string",
                             "bool"
@@ -50858,11 +50865,19 @@
                     },
                     {
                         "name": "param",
-                        "content": "Key-value pairs representing <code>&lt;script&gt;</code> tag attributes.                          Only the attribute name is added to the <code>&lt;script&gt;</code> tag for                          entries with a boolean value, and that are true.",
+                        "content": "Key-value pairs representing <code>&lt;script&gt;</code> tag attributes.                           Only the attribute name is added to the <code>&lt;script&gt;</code> tag for                           entries with a boolean value, and that are true.",
                         "types": [
                             "array"
                         ],
                         "variable": "$attributes"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Inline JavaScript code.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$javascript"
                     }
                 ],
                 "long_description_html": ""
@@ -51584,9 +51599,10 @@
                     },
                     {
                         "name": "param",
-                        "content": "An array of arguments. See wp_link_pages()                       for information on accepted arguments.",
+                        "content": "An array or query string of arguments. See wp_link_pages()                             for information on accepted arguments.",
                         "types": [
-                            "array"
+                            "array",
+                            "string"
                         ],
                         "variable": "$args"
                     }
@@ -51768,9 +51784,10 @@
                     },
                     {
                         "name": "param",
-                        "content": "An array of taxonomy-listing arguments. See wp_list_categories()                       for information on accepted arguments.",
+                        "content": "An array or query string of taxonomy-listing arguments. See                             wp_list_categories() for information on accepted arguments.",
                         "types": [
-                            "array"
+                            "array",
+                            "string"
                         ],
                         "variable": "$args"
                     }
@@ -52678,7 +52695,7 @@
                 "tags": [
                     {
                         "name": "since",
-                        "content": "2.3.0"
+                        "content": "2.2.1"
                     },
                     {
                         "name": "param",
@@ -53719,7 +53736,7 @@
                         "name": "param",
                         "content": "Raw metadata from getID3.",
                         "types": [
-                            "string"
+                            "array"
                         ],
                         "variable": "$data"
                     }
@@ -54690,7 +54707,8 @@
                         "name": "param",
                         "content": "The URL list. Default null.",
                         "types": [
-                            "array"
+                            "array[]",
+                            "null"
                         ],
                         "variable": "$url_list"
                     },
@@ -54974,7 +54992,7 @@
             "file": "wp-includes/sitemaps/providers/class-wp-sitemaps-taxonomies.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the max number of pages before it is generated.",
+                "description": "Filters the max number of pages for a taxonomy sitemap before it is generated.",
                 "long_description": "Passing a non-null value will short-circuit the generation, returning that value instead.",
                 "tags": [
                     {
@@ -54985,7 +55003,8 @@
                         "name": "param",
                         "content": "The maximum number of pages. Default null.",
                         "types": [
-                            "int"
+                            "int",
+                            "null"
                         ],
                         "variable": "$max_num_pages"
                     },
@@ -55018,7 +55037,8 @@
                         "name": "param",
                         "content": "The URL list. Default null.",
                         "types": [
-                            "array"
+                            "array[]",
+                            "null"
                         ],
                         "variable": "$url_list"
                     },
@@ -55119,7 +55139,7 @@
             "file": "wp-includes/sitemaps/providers/class-wp-sitemaps-users.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the max number of pages before it is generated.",
+                "description": "Filters the max number of pages for a user sitemap before it is generated.",
                 "long_description": "Passing a non-null value will effectively short-circuit the generation, returning that value instead.",
                 "tags": [
                     {
@@ -55130,7 +55150,8 @@
                         "name": "param",
                         "content": "The maximum number of pages. Default null.",
                         "types": [
-                            "int"
+                            "int",
+                            "null"
                         ],
                         "variable": "$max_num_pages"
                     }
@@ -55155,7 +55176,8 @@
                         "name": "param",
                         "content": "The URL list. Default null.",
                         "types": [
-                            "array"
+                            "array[]",
+                            "null"
                         ],
                         "variable": "$url_list"
                     },
@@ -55371,9 +55393,10 @@
                     },
                     {
                         "name": "param",
-                        "content": "An array of arguments.",
+                        "content": "An array or string of arguments.",
                         "types": [
-                            "array"
+                            "array",
+                            "string"
                         ],
                         "variable": "$args"
                     },
@@ -55652,6 +55675,11 @@
                         "content": "4.5.0"
                     },
                     {
+                        "name": "since",
+                        "content": "5.8.1",
+                        "description": "The <code>$alt_filenames</code> and <code>$number</code> parameters were added."
+                    },
+                    {
                         "name": "param",
                         "content": "Unique file name.",
                         "types": [
@@ -55661,7 +55689,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "File extension, eg. \".png\".",
+                        "content": "File extension. Example: \".png\".",
                         "types": [
                             "string"
                         ],
@@ -55683,6 +55711,23 @@
                             "null"
                         ],
                         "variable": "$unique_filename_callback"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Array of alternate file names that were checked for collisions.",
+                        "types": [
+                            "string[]"
+                        ],
+                        "variable": "$alt_filenames"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The highest number that was used to make the file name unique                                                or an empty string if unused.",
+                        "types": [
+                            "int",
+                            "string"
+                        ],
+                        "variable": "$number"
                     }
                 ],
                 "long_description_html": ""

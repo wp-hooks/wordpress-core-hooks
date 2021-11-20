@@ -131,7 +131,7 @@
                         "name": "param",
                         "content": "The ID of the activated site.",
                         "types": [
-                            "string"
+                            "int"
                         ],
                         "variable": "$id"
                     }
@@ -834,7 +834,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Metadata value. Serialized if non-scalar.",
+                        "content": "Metadata value.",
                         "types": [
                             "mixed"
                         ],
@@ -997,7 +997,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Metadata value. Serialized if non-scalar.",
+                        "content": "Metadata value.",
                         "types": [
                             "mixed"
                         ],
@@ -3228,9 +3228,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "Blog ID.",
+                        "content": "Site ID as a numeric string.",
                         "types": [
-                            "int"
+                            "string"
                         ],
                         "variable": "$id"
                     },
@@ -3847,9 +3847,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "The comment ID.",
+                        "content": "The comment ID as a numeric string.",
                         "types": [
-                            "int"
+                            "string"
                         ],
                         "variable": "$comment_ID"
                     },
@@ -4816,7 +4816,7 @@
                         "name": "param",
                         "content": "The ID of the site being deactivated.",
                         "types": [
-                            "string"
+                            "int"
                         ],
                         "variable": "$id"
                     }
@@ -4973,9 +4973,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "The comment ID.",
+                        "content": "The comment ID as a numeric string.",
                         "types": [
-                            "int"
+                            "string"
                         ],
                         "variable": "$comment_id"
                     },
@@ -5608,7 +5608,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Metadata value. Serialized if non-scalar.",
+                        "content": "Metadata value.",
                         "types": [
                             "mixed"
                         ],
@@ -5717,9 +5717,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "The comment ID.",
+                        "content": "The comment ID as a numeric string.",
                         "types": [
-                            "int"
+                            "string"
                         ],
                         "variable": "$comment_id"
                     },
@@ -6121,7 +6121,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Metadata value. Serialized if non-scalar.",
+                        "content": "Metadata value.",
                         "types": [
                             "mixed"
                         ],
@@ -7133,15 +7133,16 @@
                     },
                     {
                         "name": "param",
-                        "content": "ID of the newly created user.",
+                        "content": "ID of the newly created user or WP_Error on failure.",
                         "types": [
-                            "int"
+                            "int",
+                            "\\WP_Error"
                         ],
                         "variable": "$user_id"
                     },
                     {
                         "name": "param",
-                        "content": "Type of notification that should happen. See wp_send_new_user_notifications()                        for more information on possible values.",
+                        "content": "Type of notification that should happen. See                              wp_send_new_user_notifications() for more information.",
                         "types": [
                             "string"
                         ],
@@ -7798,7 +7799,7 @@
             "file": "wp-includes/general-template.php",
             "type": "action",
             "doc": {
-                "description": "Fires before a template part is loaded.",
+                "description": "Fires before an attempt is made to locate and load a template part.",
                 "long_description": "",
                 "tags": [
                     {
@@ -8165,7 +8166,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "{     An object of metadata about the available plugin update.     @type int    $id          Plugin ID.     @type string $slug        Plugin slug.     @type string $new_version New plugin version.     @type string $url         Plugin URL.     @type string $package     Plugin update package URL. }",
+                        "content": "{     An object of metadata about the available plugin update.     @type int    $id           Plugin ID.     @type string $slug         Plugin slug.     @type string $plugin       Plugin basename.     @type string $new_version  New plugin version.     @type string $url          Plugin URL.     @type string $package      Plugin update package URL.     @type array  $icons        An array of plugin icon URLs.     @type array  $banners      An array of plugin banner URLs.     @type array  $banners_rtl  An array of plugin RTL banner URLs.     @type string $requires     The version of WordPress which the plugin requires.     @type string $tested       The version of WordPress the plugin is tested against.     @type string $requires_php The version of PHP which the plugin requires. }",
                         "types": [
                             "object"
                         ],
@@ -9059,9 +9060,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "The custom column's unique ID number.",
+                        "content": "The comment ID as a numeric string.",
                         "types": [
-                            "int"
+                            "string"
                         ],
                         "variable": "$comment_id"
                     }
@@ -10100,7 +10101,8 @@
                         "name": "param",
                         "content": "The template used for the current post.",
                         "types": [
-                            "string"
+                            "string",
+                            "false"
                         ],
                         "variable": "$template"
                     },
@@ -12692,9 +12694,10 @@
                     },
                     {
                         "name": "param",
-                        "content": "The response data.",
+                        "content": "The response data, or WP_Error object on failure.",
                         "types": [
-                            "\\WP_REST_Response"
+                            "\\WP_REST_Response",
+                            "\\WP_Error"
                         ],
                         "variable": "$response"
                     },
@@ -14997,9 +15000,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "The comment ID.",
+                        "content": "The comment ID as a numeric string.",
                         "types": [
-                            "int"
+                            "string"
                         ],
                         "variable": "$comment_id"
                     },
@@ -15060,9 +15063,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "The comment ID.",
+                        "content": "The comment ID as a numeric string.",
                         "types": [
-                            "int"
+                            "string"
                         ],
                         "variable": "$comment_id"
                     },
@@ -15365,9 +15368,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "The comment ID.",
+                        "content": "The comment ID as a numeric string.",
                         "types": [
-                            "int"
+                            "string"
                         ],
                         "variable": "$comment_id"
                     },
@@ -15403,9 +15406,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "The comment ID.",
+                        "content": "The comment ID as a numeric string.",
                         "types": [
-                            "int"
+                            "string"
                         ],
                         "variable": "$comment_id"
                     },
@@ -15441,9 +15444,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "The comment ID.",
+                        "content": "The comment ID as a numeric string.",
                         "types": [
-                            "int"
+                            "string"
                         ],
                         "variable": "$comment_id"
                     },
@@ -15542,9 +15545,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "The comment ID.",
+                        "content": "The comment ID as a numeric string.",
                         "types": [
-                            "int"
+                            "string"
                         ],
                         "variable": "$comment_id"
                     },
@@ -15997,7 +16000,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Metadata value. Serialized if non-scalar.",
+                        "content": "Metadata value.",
                         "types": [
                             "mixed"
                         ],
@@ -16136,7 +16139,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Metadata value. Serialized if non-scalar.",
+                        "content": "Metadata value.",
                         "types": [
                             "mixed"
                         ],
@@ -18064,9 +18067,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "Menu item ID.",
+                        "content": "Menu item ID as a numeric string.",
                         "types": [
-                            "int"
+                            "string"
                         ],
                         "variable": "$item_id"
                     },
@@ -18090,7 +18093,8 @@
                         "name": "param",
                         "content": "An object of menu item arguments.",
                         "types": [
-                            "\\stdClass"
+                            "\\stdClass",
+                            "null"
                         ],
                         "variable": "$args"
                     },
@@ -18434,9 +18438,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "Comment ID.",
+                        "content": "Comment ID as a numeric string.",
                         "types": [
-                            "int"
+                            "string"
                         ],
                         "variable": "$comment_id"
                     },
@@ -18569,7 +18573,8 @@
                         "name": "param",
                         "content": "The widget ID.",
                         "types": [
-                            "int"
+                            "int",
+                            "string"
                         ],
                         "variable": "$id"
                     }
@@ -18980,7 +18985,7 @@
                         "name": "param",
                         "content": "User password.",
                         "types": [
-                            "int"
+                            "string"
                         ],
                         "variable": "$password"
                     },
