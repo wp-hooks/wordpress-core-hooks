@@ -10,7 +10,12 @@
         }
     ],
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "composer/installers": true,
+            "oomphinc/composer-installers-extender": true,
+            "roots/wordpress-core-installer": true
+        }
     },
     "scripts": {
         "generate": "wp-hooks-generator --input=vendor/wordpress/wordpress --output=hooks"
