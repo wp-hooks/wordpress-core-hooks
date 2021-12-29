@@ -6,13 +6,13 @@ Last updated for WordPress 5.8.
 
 ## Installation
 
-* As a Composer package: `composer require johnbillion/wp-hooks`
-* As an npm package: `npm install @johnbillion/wp-hooks`
+* As a Composer package for use in PHP:
 
-## Actions and Filters
+      composer require johnbillion/wp-hooks
 
-* Actions can be found in [`hooks/actions.json`](hooks/actions.json).
-* Filters can be found in [`hooks/filters.json`](hooks/filters.json).
+* As an npm package for use in JavaScript or TypeScript:
+
+      npm install @johnbillion/wp-hooks
 
 ## Usage in PHP
 
@@ -21,7 +21,7 @@ Last updated for WordPress 5.8.
 $actions_json = file_get_contents( 'vendor/johnbillion/wp-hooks/hooks/actions.json' );
 $filters_json = file_get_contents( 'vendor/johnbillion/wp-hooks/hooks/filters.json' );
 
-// Get hooks as PHP:
+// Convert hooks to PHP:
 $actions = json_decode( $actions_json, true )['hooks'];
 $filters = json_decode( $filters_json, true )['hooks'];
 
@@ -48,14 +48,6 @@ const results = actions.filter( hook => ( null !== hook.name.match( search ) ) )
 console.log(results);
 ```
 
-## TypeScript Interfaces
-
-The TypeScript interfaces can be found in [`interface/index.d.ts`](interface/index.d.ts). Usage:
-
-```typescript
-import { Hooks, Hook, Doc, Tags, Tag } from '@johnbillion/wp-hooks/interface';
-```
-
 ## Importing in TypeScript
 
 ```typescript
@@ -63,37 +55,56 @@ import { hooks as actions } from '@johnbillion/wp-hooks/hooks/actions.json';
 import { hooks as filters } from '@johnbillion/wp-hooks/hooks/filters.json';
 ```
 
-## JSON Schema
+Interfaces for the components of the hooks can be imported too, if you need them:
 
-The JSON schema can be found in [`hooks/schema.json`](hooks/schema.json).
+```typescript
+import { Hooks, Hook, Doc, Tags, Tag } from '@johnbillion/wp-hooks/interface';
+```
+
+## Actions, Filters, and Schemas
+
+* The actions can be found in [hooks/actions.json](hooks/actions.json)
+* The filters can be found in [hooks/filters.json](hooks/filters.json)
+* The JSON schema can be found in [hooks/schema.json](hooks/schema.json)
+* The TypeScript interfaces can be found in [interface/index.d.ts](interface/index.d.ts)
 
 ## What can I use this for?
 
 Anything that needs programmatic access to a list of available hooks, for example:
 
-* [Autocomplete WordPress action and filter names in VS Code](https://github.com/johnbillion/vscode-wordpress-hooks).
-* [Autocomplete WordPress action and filter names in Vim](https://github.com/Mte90/deoplete-wp-hooks).
+* [Autocomplete WordPress action and filter names in VS Code](https://github.com/johnbillion/vscode-wordpress-hooks)
+* [Autocomplete WordPress action and filter names in Vim](https://github.com/Mte90/deoplete-wp-hooks)
 
 ## Regenerating the Hook Files
 
 Install the dependencies:
 
-`npm i && composer i`
+    npm i && composer i
 
 Then run:
 
-`composer generate`
+    composer generate
 
 Some scripts are available for checking the data:
 
 * Check everything:
-  - `npm run check`
+  ```
+  npm run check
+  ```
 * Find hooks with missing `@since` tags:
-  - `jq '.hooks[] | . as $d | .doc .tags | map(.name) | select( contains(["since"]) | not ) | $d' hooks/filters.json`
-  - `jq '.hooks[] | . as $d | .doc .tags | map(.name) | select( contains(["since"]) | not ) | $d' hooks/actions.json`
-* Find hooks with incorrect number of `@param` tags:
-  - `jq '.hooks[] | select( .args == ( .doc.tags | map(.name) | select( contains(["param"]) ) | length ) ) | .name' hooks/filters.json`
-  - `jq '.hooks[] | select( .args == ( .doc.tags | map(.name) | select( contains(["param"]) ) | length ) ) | .name' hooks/actions.json`
+  ```
+  jq '.hooks[] | . as $d | .doc .tags | map(.name) | select( contains(["since"]) | not ) | $d' hooks/filters.json
+  ```
+  ```
+  jq '.hooks[] | . as $d | .doc .tags | map(.name) | select( contains(["since"]) | not ) | $d' hooks/actions.json
+  ```
+* Find hooks with incorrect number of `@param` tags (not completely accurate, not sure why):
+  ```
+  jq '.hooks[] | select( .args == ( .doc.tags | map(.name) | select( contains(["param"]) ) | length ) ) | .name' hooks/filters.json
+  ```
+  ```
+  jq '.hooks[] | select( .args == ( .doc.tags | map(.name) | select( contains(["param"]) ) | length ) ) | .name' hooks/actions.json
+  ```
 
 ## Hook Files for Plugins
 
