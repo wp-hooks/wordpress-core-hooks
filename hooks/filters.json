@@ -40,7 +40,7 @@
             "type": "filter",
             "doc": {
                 "description": "Contextually filter a post revision field.",
-                "long_description": "The dynamic portion of the hook name, `$field`, corresponds to a name of a field of the revision object.\n Possible hook names include:\n  - `_wp_post_revision_field_post_title`  - `_wp_post_revision_field_post_content`  - `_wp_post_revision_field_post_excerpt`",
+                "long_description": "The dynamic portion of the hook name, `$field`, corresponds to a name of a field of the revision object.\n Possible hook names include:\n\n  - `_wp_post_revision_field_post_title`\n  - `_wp_post_revision_field_post_content`\n  - `_wp_post_revision_field_post_excerpt`",
                 "tags": [
                     {
                         "name": "since",
@@ -276,7 +276,7 @@
             "type": "filter",
             "doc": {
                 "description": "Short-circuits adding metadata of a specific type.",
-                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible hook names include:\n  - `add_post_metadata`  - `add_comment_metadata`  - `add_term_metadata`  - `add_user_metadata`",
+                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible hook names include:\n\n  - `add_post_metadata`\n  - `add_comment_metadata`\n  - `add_term_metadata`\n  - `add_user_metadata`",
                 "tags": [
                     {
                         "name": "since",
@@ -367,7 +367,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the CSS classes for the body tag in the admin.",
-                "long_description": "This filter differs from the {@see 'post_class'} and {@see 'body_class'} filters in two important ways:\n 1. `$classes` is a space-separated string of class names instead of an array. 2. Not all core admin classes are filterable, notably: wp-admin, wp-core-ui,    and no-js cannot be removed.",
+                "long_description": "This filter differs from the {@see 'post_class'} and {@see 'body_class'} filters in two important ways:\n\n 1. `$classes` is a space-separated string of class names instead of an array.\n 2. Not all core admin classes are filterable, notably: wp-admin, wp-core-ui,    and no-js cannot be removed.",
                 "tags": [
                     {
                         "name": "since",
@@ -1276,7 +1276,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the returned ID of an uploaded attachment.",
-                "long_description": "The dynamic portion of the hook name, `$type`, refers to the attachment type.\n Possible hook names include:\n  - `async_upload_audio`  - `async_upload_file`  - `async_upload_image`  - `async_upload_video`",
+                "long_description": "The dynamic portion of the hook name, `$type`, refers to the attachment type.\n Possible hook names include:\n\n  - `async_upload_audio`\n  - `async_upload_file`\n  - `async_upload_image`\n  - `async_upload_video`",
                 "tags": [
                     {
                         "name": "since",
@@ -2285,7 +2285,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters whether to automatically update core, a plugin, a theme, or a language.",
-                "long_description": "The dynamic portion of the hook name, `$type`, refers to the type of update being checked.\n Possible hook names include:\n  - `auto_update_core`  - `auto_update_plugin`  - `auto_update_theme`  - `auto_update_translation`\n Since WordPress 3.7, minor and development versions of core, and translations have been auto-updated by default. New installs on WordPress 5.6 or higher will also auto-update major versions by default. Starting in 5.6, older sites can opt-in to major version auto-updates, and auto-updates for plugins and themes.\n See the {@see 'allow_dev_auto_core_updates'}, {@see 'allow_minor_auto_core_updates'}, and {@see 'allow_major_auto_core_updates'} filters for a more straightforward way to adjust core updates.",
+                "long_description": "The dynamic portion of the hook name, `$type`, refers to the type of update being checked.\n Possible hook names include:\n\n  - `auto_update_core`\n  - `auto_update_plugin`\n  - `auto_update_theme`\n  - `auto_update_translation`\n Since WordPress 3.7, minor and development versions of core, and translations have been auto-updated by default. New installs on WordPress 5.6 or higher will also auto-update major versions by default. Starting in 5.6, older sites can opt-in to major version auto-updates, and auto-updates for plugins and themes.\n See the {@see 'allow_dev_auto_core_updates'}, {@see 'allow_minor_auto_core_updates'}, and {@see 'allow_major_auto_core_updates'} filters for a more straightforward way to adjust core updates.",
                 "tags": [
                     {
                         "name": "since",
@@ -4271,7 +4271,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters a comment form field for display.",
-                "long_description": "The dynamic portion of the hook name, `$name`, refers to the name of the comment form field.\n Possible hook names include:\n  - `comment_form_field_comment`  - `comment_form_field_author`  - `comment_form_field_email`  - `comment_form_field_url`  - `comment_form_field_cookies`",
+                "long_description": "The dynamic portion of the hook name, `$name`, refers to the name of the comment form field.\n Possible hook names include:\n\n  - `comment_form_field_comment`\n  - `comment_form_field_author`\n  - `comment_form_field_email`\n  - `comment_form_field_url`\n  - `comment_form_field_cookies`",
                 "tags": [
                     {
                         "name": "since",
@@ -7673,7 +7673,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the default metadata value for a specified meta key and object.",
-                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).\n Possible filter names include:\n  - `default_post_metadata`  - `default_comment_metadata`  - `default_term_metadata`  - `default_user_metadata`",
+                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).\n Possible filter names include:\n\n  - `default_post_metadata`\n  - `default_comment_metadata`\n  - `default_term_metadata`\n  - `default_user_metadata`",
                 "tags": [
                     {
                         "name": "since",
@@ -7755,7 +7755,7 @@
             "type": "filter",
             "doc": {
                 "description": "Short-circuits deleting metadata of a specific type.",
-                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible hook names include:\n  - `delete_post_metadata`  - `delete_comment_metadata`  - `delete_term_metadata`  - `delete_user_metadata`",
+                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible hook names include:\n\n  - `delete_post_metadata`\n  - `delete_comment_metadata`\n  - `delete_term_metadata`\n  - `delete_user_metadata`",
                 "tags": [
                     {
                         "name": "since",
@@ -7813,7 +7813,7 @@
             "type": "filter",
             "doc": {
                 "description": "Short-circuits deleting metadata of a specific type by meta ID.",
-                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible hook names include:\n  - `delete_post_metadata_by_mid`  - `delete_comment_metadata_by_mid`  - `delete_term_metadata_by_mid`  - `delete_user_metadata_by_mid`",
+                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible hook names include:\n\n  - `delete_post_metadata_by_mid`\n  - `delete_comment_metadata_by_mid`\n  - `delete_term_metadata_by_mid`\n  - `delete_user_metadata_by_mid`",
                 "tags": [
                     {
                         "name": "since",
@@ -9177,7 +9177,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the number of items per page to show for a specific 'per_page' type.",
-                "long_description": "The dynamic portion of the hook name, `$post_type`, refers to the post type.\n Possible hook names include:\n  - `edit_post_per_page`  - `edit_page_per_page`  - `edit_attachment_per_page`",
+                "long_description": "The dynamic portion of the hook name, `$post_type`, refers to the post type.\n Possible hook names include:\n\n  - `edit_post_per_page`\n  - `edit_page_per_page`\n  - `edit_attachment_per_page`",
                 "tags": [
                     {
                         "name": "since",
@@ -13719,7 +13719,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the object subtype identifier for a non-standard object type.",
-                "long_description": "The dynamic portion of the hook name, `$object_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).\n Possible hook names include:\n  - `get_object_subtype_post`  - `get_object_subtype_comment`  - `get_object_subtype_term`  - `get_object_subtype_user`",
+                "long_description": "The dynamic portion of the hook name, `$object_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).\n Possible hook names include:\n\n  - `get_object_subtype_post`\n  - `get_object_subtype_comment`\n  - `get_object_subtype_term`\n  - `get_object_subtype_user`",
                 "tags": [
                     {
                         "name": "since",
@@ -15145,7 +15145,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the HTML for the retrieved generator type.",
-                "long_description": "The dynamic portion of the hook name, `$type`, refers to the generator type.\n Possible hook names include:\n  - `get_the_generator_atom`  - `get_the_generator_comment`  - `get_the_generator_export`  - `get_the_generator_html`  - `get_the_generator_rdf`  - `get_the_generator_rss2`  - `get_the_generator_xhtml`",
+                "long_description": "The dynamic portion of the hook name, `$type`, refers to the generator type.\n Possible hook names include:\n\n  - `get_the_generator_atom`\n  - `get_the_generator_comment`\n  - `get_the_generator_export`\n  - `get_the_generator_html`\n  - `get_the_generator_rdf`\n  - `get_the_generator_rss2`\n  - `get_the_generator_xhtml`",
                 "tags": [
                     {
                         "name": "since",
@@ -15680,7 +15680,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the IDs of terms excluded from adjacent post queries.",
-                "long_description": "The dynamic portion of the hook name, `$adjacent`, refers to the type of adjacency, 'next' or 'previous'.\n Possible hook names include:\n  - `get_next_post_excluded_terms`  - `get_previous_post_excluded_terms`",
+                "long_description": "The dynamic portion of the hook name, `$adjacent`, refers to the type of adjacency, 'next' or 'previous'.\n Possible hook names include:\n\n  - `get_next_post_excluded_terms`\n  - `get_previous_post_excluded_terms`",
                 "tags": [
                     {
                         "name": "since",
@@ -15706,7 +15706,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the JOIN clause in the SQL for an adjacent post query.",
-                "long_description": "The dynamic portion of the hook name, `$adjacent`, refers to the type of adjacency, 'next' or 'previous'.\n Possible hook names include:\n  - `get_next_post_join`  - `get_previous_post_join`",
+                "long_description": "The dynamic portion of the hook name, `$adjacent`, refers to the type of adjacency, 'next' or 'previous'.\n Possible hook names include:\n\n  - `get_next_post_join`\n  - `get_previous_post_join`",
                 "tags": [
                     {
                         "name": "since",
@@ -15768,7 +15768,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the ORDER BY clause in the SQL for an adjacent post query.",
-                "long_description": "The dynamic portion of the hook name, `$adjacent`, refers to the type of adjacency, 'next' or 'previous'.\n Possible hook names include:\n  - `get_next_post_sort`  - `get_previous_post_sort`",
+                "long_description": "The dynamic portion of the hook name, `$adjacent`, refers to the type of adjacency, 'next' or 'previous'.\n Possible hook names include:\n\n  - `get_next_post_sort`\n  - `get_previous_post_sort`",
                 "tags": [
                     {
                         "name": "since",
@@ -15819,7 +15819,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the WHERE clause in the SQL for an adjacent post query.",
-                "long_description": "The dynamic portion of the hook name, `$adjacent`, refers to the type of adjacency, 'next' or 'previous'.\n Possible hook names include:\n  - `get_next_post_where`  - `get_previous_post_where`",
+                "long_description": "The dynamic portion of the hook name, `$adjacent`, refers to the type of adjacency, 'next' or 'previous'.\n Possible hook names include:\n\n  - `get_next_post_where`\n  - `get_previous_post_where`",
                 "tags": [
                     {
                         "name": "since",
@@ -15881,7 +15881,7 @@
             "type": "filter",
             "doc": {
                 "description": "Short-circuits the return value of a meta field.",
-                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible filter names include:\n  - `get_post_metadata`  - `get_comment_metadata`  - `get_term_metadata`  - `get_user_metadata`",
+                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible filter names include:\n\n  - `get_post_metadata`\n  - `get_comment_metadata`\n  - `get_term_metadata`\n  - `get_user_metadata`",
                 "tags": [
                     {
                         "name": "since",
@@ -15943,7 +15943,7 @@
             "type": "filter",
             "doc": {
                 "description": "Short-circuits the return value when fetching a meta field by meta ID.",
-                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible hook names include:\n  - `get_post_metadata_by_mid`  - `get_comment_metadata_by_mid`  - `get_term_metadata_by_mid`  - `get_user_metadata_by_mid`",
+                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible hook names include:\n\n  - `get_post_metadata_by_mid`\n  - `get_comment_metadata_by_mid`\n  - `get_term_metadata_by_mid`\n  - `get_user_metadata_by_mid`",
                 "tags": [
                     {
                         "name": "since",
@@ -15977,7 +15977,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters a taxonomy term object.",
-                "long_description": "The dynamic portion of the hook name, `$taxonomy`, refers to the slug of the term's taxonomy.\n Possible hook names include:\n  - `get_category`  - `get_post_tag`",
+                "long_description": "The dynamic portion of the hook name, `$taxonomy`, refers to the slug of the term's taxonomy.\n Possible hook names include:\n\n  - `get_category`\n  - `get_post_tag`",
                 "tags": [
                     {
                         "name": "since",
@@ -18047,7 +18047,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the list of allowed file extensions when sideloading an image from a URL.",
-                "long_description": "The default allowed extensions are:\n  - `jpg`  - `jpeg`  - `jpe`  - `png`  - `gif`",
+                "long_description": "The default allowed extensions are:\n\n  - `jpg`\n  - `jpeg`\n  - `jpe`\n  - `png`\n  - `gif`",
                 "tags": [
                     {
                         "name": "since",
@@ -18559,7 +18559,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters API request arguments for each Add Plugins screen tab.",
-                "long_description": "The dynamic portion of the hook name, `$tab`, refers to the plugin install tabs.\n Possible hook names include:\n  - `install_plugins_table_api_args_favorites`  - `install_plugins_table_api_args_featured`  - `install_plugins_table_api_args_popular`  - `install_plugins_table_api_args_recommended`  - `install_plugins_table_api_args_upload`  - `install_plugins_table_api_args_search`  - `install_plugins_table_api_args_beta`",
+                "long_description": "The dynamic portion of the hook name, `$tab`, refers to the plugin install tabs.\n Possible hook names include:\n\n  - `install_plugins_table_api_args_favorites`\n  - `install_plugins_table_api_args_featured`\n  - `install_plugins_table_api_args_popular`\n  - `install_plugins_table_api_args_recommended`\n  - `install_plugins_table_api_args_upload`\n  - `install_plugins_table_api_args_search`\n  - `install_plugins_table_api_args_beta`",
                 "tags": [
                     {
                         "name": "since",
@@ -18766,7 +18766,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters API request arguments for each Install Themes screen tab.",
-                "long_description": "The dynamic portion of the hook name, `$tab`, refers to the theme install tab.\n Possible hook names include:\n  - `install_themes_table_api_args_dashboard`  - `install_themes_table_api_args_featured`  - `install_themes_table_api_args_new`  - `install_themes_table_api_args_search`  - `install_themes_table_api_args_updated`  - `install_themes_table_api_args_upload`",
+                "long_description": "The dynamic portion of the hook name, `$tab`, refers to the theme install tab.\n Possible hook names include:\n\n  - `install_themes_table_api_args_dashboard`\n  - `install_themes_table_api_args_featured`\n  - `install_themes_table_api_args_new`\n  - `install_themes_table_api_args_search`\n  - `install_themes_table_api_args_updated`\n  - `install_themes_table_api_args_upload`",
                 "tags": [
                     {
                         "name": "since",
@@ -20967,7 +20967,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the taxonomy columns in the Posts list table.",
-                "long_description": "The dynamic portion of the hook name, `$post_type`, refers to the post type slug.\n Possible hook names include:\n  - `manage_taxonomies_for_post_columns`  - `manage_taxonomies_for_page_columns`",
+                "long_description": "The dynamic portion of the hook name, `$post_type`, refers to the post type slug.\n Possible hook names include:\n\n  - `manage_taxonomies_for_post_columns`\n  - `manage_taxonomies_for_page_columns`",
                 "tags": [
                     {
                         "name": "since",
@@ -21041,7 +21041,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the columns displayed in the Posts list table for a specific post type.",
-                "long_description": "The dynamic portion of the hook name, `$post_type`, refers to the post type slug.\n Possible hook names include:\n  - `manage_post_posts_columns`  - `manage_page_posts_columns`",
+                "long_description": "The dynamic portion of the hook name, `$post_type`, refers to the post type slug.\n Possible hook names include:\n\n  - `manage_post_posts_columns`\n  - `manage_page_posts_columns`",
                 "tags": [
                     {
                         "name": "since",
@@ -21116,7 +21116,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the displayed columns in the terms list table.",
-                "long_description": "The dynamic portion of the hook name, `$this->screen->taxonomy`, refers to the slug of the current taxonomy.\n Possible hook names include:\n  - `manage_category_custom_column`  - `manage_post_tag_custom_column`",
+                "long_description": "The dynamic portion of the hook name, `$this->screen->taxonomy`, refers to the slug of the current taxonomy.\n Possible hook names include:\n\n  - `manage_category_custom_column`\n  - `manage_post_tag_custom_column`",
                 "tags": [
                     {
                         "name": "since",
@@ -22801,7 +22801,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the posts displayed in the 'View All' tab of the current post type's menu items meta box.",
-                "long_description": "The dynamic portion of the hook name, `$post_type_name`, refers to the slug of the current post type.\n Possible hook names include:\n  - `nav_menu_items_post`  - `nav_menu_items_page`",
+                "long_description": "The dynamic portion of the hook name, `$post_type_name`, refers to the slug of the current post type.\n Possible hook names include:\n\n  - `nav_menu_items_post`\n  - `nav_menu_items_page`",
                 "tags": [
                     {
                         "name": "since",
@@ -22852,7 +22852,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the posts displayed in the 'Most Recent' tab of the current post type's menu items meta box.",
-                "long_description": "The dynamic portion of the hook name, `$post_type_name`, refers to the post type name.\n Possible hook names include:\n  - `nav_menu_items_post_recent`  - `nav_menu_items_page_recent`",
+                "long_description": "The dynamic portion of the hook name, `$post_type_name`, refers to the post type name.\n Possible hook names include:\n\n  - `nav_menu_items_post_recent`\n  - `nav_menu_items_page_recent`",
                 "tags": [
                     {
                         "name": "since",
@@ -27449,7 +27449,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the labels of a specific post type.",
-                "long_description": "The dynamic portion of the hook name, `$post_type`, refers to the post type slug.\n Possible hook names include:\n  - `post_type_labels_post`  - `post_type_labels_page`  - `post_type_labels_attachment`",
+                "long_description": "The dynamic portion of the hook name, `$post_type`, refers to the post type slug.\n Possible hook names include:\n\n  - `post_type_labels_post`\n  - `post_type_labels_page`\n  - `post_type_labels_attachment`",
                 "tags": [
                     {
                         "name": "since",
@@ -29590,7 +29590,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the preemptive return value of an HTTP request.",
-                "long_description": "Returning a non-false value from the filter will short-circuit the HTTP request and return early with that value. A filter should return one of:\n  - An array containing 'headers', 'body', 'response', 'cookies', and 'filename' elements  - A WP_Error instance  - boolean false to avoid short-circuiting the response\n Returning any other value may result in unexpected behaviour.",
+                "long_description": "Returning a non-false value from the filter will short-circuit the HTTP request and return early with that value. A filter should return one of:\n\n  - An array containing 'headers', 'body', 'response', 'cookies', and 'filename' elements\n  - A WP_Error instance\n  - boolean false to avoid short-circuiting the response\n Returning any other value may result in unexpected behaviour.",
                 "tags": [
                     {
                         "name": "since",
@@ -34322,7 +34322,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters a post before it is inserted via the REST API.",
-                "long_description": "The dynamic portion of the hook name, `$this->post_type`, refers to the post type slug.\n Possible hook names include:\n  - `rest_pre_insert_post`  - `rest_pre_insert_page`  - `rest_pre_insert_attachment`",
+                "long_description": "The dynamic portion of the hook name, `$this->post_type`, refers to the post type slug.\n Possible hook names include:\n\n  - `rest_pre_insert_post`\n  - `rest_pre_insert_page`\n  - `rest_pre_insert_attachment`",
                 "tags": [
                     {
                         "name": "since",
@@ -34355,7 +34355,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters term data before inserting term via the REST API.",
-                "long_description": "The dynamic portion of the hook name, `$this->taxonomy`, refers to the taxonomy slug.\n Possible hook names include:\n  - `rest_pre_insert_category`  - `rest_pre_insert_post_tag`",
+                "long_description": "The dynamic portion of the hook name, `$this->taxonomy`, refers to the taxonomy slug.\n Possible hook names include:\n\n  - `rest_pre_insert_category`\n  - `rest_pre_insert_post_tag`",
                 "tags": [
                     {
                         "name": "since",
@@ -35143,7 +35143,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the post data for a REST API response.",
-                "long_description": "The dynamic portion of the hook name, `$this->post_type`, refers to the post type slug.\n Possible hook names include:\n  - `rest_prepare_post`  - `rest_prepare_page`  - `rest_prepare_attachment`",
+                "long_description": "The dynamic portion of the hook name, `$this->post_type`, refers to the post type slug.\n Possible hook names include:\n\n  - `rest_prepare_post`\n  - `rest_prepare_page`\n  - `rest_prepare_attachment`",
                 "tags": [
                     {
                         "name": "since",
@@ -35184,7 +35184,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the term data for a REST API response.",
-                "long_description": "The dynamic portion of the hook name, `$this->taxonomy`, refers to the taxonomy slug.\n Possible hook names include:\n  - `rest_prepare_category`  - `rest_prepare_post_tag`\n Allows modification of the term data right before it is returned.",
+                "long_description": "The dynamic portion of the hook name, `$this->taxonomy`, refers to the taxonomy slug.\n Possible hook names include:\n\n  - `rest_prepare_category`\n  - `rest_prepare_post_tag`\n Allows modification of the term data right before it is returned.",
                 "tags": [
                     {
                         "name": "since",
@@ -35841,7 +35841,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the post's schema.",
-                "long_description": "The dynamic portion of the filter, `$this->post_type`, refers to the post type slug for the controller.\n Possible hook names include:\n  - `rest_post_item_schema`  - `rest_page_item_schema`  - `rest_attachment_item_schema`",
+                "long_description": "The dynamic portion of the filter, `$this->post_type`, refers to the post type slug for the controller.\n Possible hook names include:\n\n  - `rest_post_item_schema`\n  - `rest_page_item_schema`\n  - `rest_attachment_item_schema`",
                 "tags": [
                     {
                         "name": "since",
@@ -35866,7 +35866,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters WP_Query arguments when querying posts via the REST API.",
-                "long_description": "The dynamic portion of the hook name, `$this->post_type`, refers to the post type slug.\n Possible hook names include:\n  - `rest_post_query`  - `rest_page_query`  - `rest_attachment_query`\n Enables adding extra arguments or setting defaults for a post collection request.",
+                "long_description": "The dynamic portion of the hook name, `$this->post_type`, refers to the post type slug.\n Possible hook names include:\n\n  - `rest_post_query`\n  - `rest_page_query`\n  - `rest_attachment_query`\n Enables adding extra arguments or setting defaults for a post collection request.",
                 "tags": [
                     {
                         "name": "since",
@@ -35909,7 +35909,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters whether a post is trashable.",
-                "long_description": "The dynamic portion of the hook name, `$this->post_type`, refers to the post type slug.\n Possible hook names include:\n  - `rest_post_trashable`  - `rest_page_trashable`  - `rest_attachment_trashable`\n Pass false to disable Trash support for the post.",
+                "long_description": "The dynamic portion of the hook name, `$this->post_type`, refers to the post type slug.\n Possible hook names include:\n\n  - `rest_post_trashable`\n  - `rest_page_trashable`\n  - `rest_attachment_trashable`\n Pass false to disable Trash support for the post.",
                 "tags": [
                     {
                         "name": "since",
@@ -35975,7 +35975,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters get_terms() arguments when querying terms via the REST API.",
-                "long_description": "The dynamic portion of the hook name, `$this->taxonomy`, refers to the taxonomy slug.\n Possible hook names include:\n  - `rest_category_query`  - `rest_post_tag_query`\n Enables adding extra arguments or setting defaults for a terms collection request.",
+                "long_description": "The dynamic portion of the hook name, `$this->taxonomy`, refers to the taxonomy slug.\n Possible hook names include:\n\n  - `rest_category_query`\n  - `rest_post_tag_query`\n Enables adding extra arguments or setting defaults for a terms collection request.",
                 "tags": [
                     {
                         "name": "since",
@@ -40228,7 +40228,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the labels of a specific taxonomy.",
-                "long_description": "The dynamic portion of the hook name, `$taxonomy`, refers to the taxonomy slug.\n Possible hook names include:\n  - `taxonomy_labels_category`  - `taxonomy_labels_post_tag`",
+                "long_description": "The dynamic portion of the hook name, `$taxonomy`, refers to the taxonomy slug.\n Possible hook names include:\n\n  - `taxonomy_labels_category`\n  - `taxonomy_labels_post_tag`",
                 "tags": [
                     {
                         "name": "since",
@@ -40624,7 +40624,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the term links for a given taxonomy.",
-                "long_description": "The dynamic portion of the hook name, `$taxonomy`, refers to the taxonomy slug.\n Possible hook names include:\n  - `term_links-category`  - `term_links-post_tag`  - `term_links-post_format`",
+                "long_description": "The dynamic portion of the hook name, `$taxonomy`, refers to the taxonomy slug.\n Possible hook names include:\n\n  - `term_links-category`\n  - `term_links-post_tag`\n  - `term_links-post_format`",
                 "tags": [
                     {
                         "name": "since",
@@ -42954,7 +42954,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters list of page templates for a theme.",
-                "long_description": "The dynamic portion of the hook name, `$post_type`, refers to the post type.\n Possible hook names include:\n  - `theme_post_templates`  - `theme_page_templates`  - `theme_attachment_templates`",
+                "long_description": "The dynamic portion of the hook name, `$post_type`, refers to the post type.\n Possible hook names include:\n\n  - `theme_post_templates`\n  - `theme_page_templates`\n  - `theme_attachment_templates`",
                 "tags": [
                     {
                         "name": "since",
@@ -43643,7 +43643,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters feedback messages displayed during the core update process.",
-                "long_description": "The filter is first evaluated after the zip file for the latest version has been downloaded and unzipped. It is evaluated five more times during the process:\n 1. Before WordPress begins the core upgrade process. 2. Before Maintenance Mode is enabled. 3. Before WordPress begins copying over the necessary files. 4. Before Maintenance Mode is disabled. 5. Before the database is upgraded.",
+                "long_description": "The filter is first evaluated after the zip file for the latest version has been downloaded and unzipped. It is evaluated five more times during the process:\n\n 1. Before WordPress begins the core upgrade process.\n 2. Before Maintenance Mode is enabled.\n 3. Before WordPress begins copying over the necessary files.\n 4. Before Maintenance Mode is disabled.\n 5. Before the database is upgraded.",
                 "tags": [
                     {
                         "name": "since",
@@ -44065,7 +44065,7 @@
             "type": "filter",
             "doc": {
                 "description": "Short-circuits updating metadata of a specific type.",
-                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible hook names include:\n  - `update_post_metadata`  - `update_comment_metadata`  - `update_term_metadata`  - `update_user_metadata`",
+                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible hook names include:\n\n  - `update_post_metadata`\n  - `update_comment_metadata`\n  - `update_term_metadata`\n  - `update_user_metadata`",
                 "tags": [
                     {
                         "name": "since",
@@ -44123,7 +44123,7 @@
             "type": "filter",
             "doc": {
                 "description": "Short-circuits updating metadata of a specific type by meta ID.",
-                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible hook names include:\n  - `update_post_metadata_by_mid`  - `update_comment_metadata_by_mid`  - `update_term_metadata_by_mid`  - `update_user_metadata_by_mid`",
+                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible hook names include:\n\n  - `update_post_metadata_by_mid`\n  - `update_comment_metadata_by_mid`\n  - `update_term_metadata_by_mid`\n  - `update_user_metadata_by_mid`",
                 "tags": [
                     {
                         "name": "since",
@@ -44174,7 +44174,7 @@
             "type": "filter",
             "doc": {
                 "description": "Short-circuits updating the metadata cache of a specific type.",
-                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible hook names include:\n  - `update_post_metadata_cache`  - `update_comment_metadata_cache`  - `update_term_metadata_cache`  - `update_user_metadata_cache`",
+                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible hook names include:\n\n  - `update_post_metadata_cache`\n  - `update_comment_metadata_cache`\n  - `update_term_metadata_cache`\n  - `update_user_metadata_cache`",
                 "tags": [
                     {
                         "name": "since",
@@ -50982,7 +50982,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters whether the post should be considered \"empty\".",
-                "long_description": "The post is considered \"empty\" if both: 1. The post type supports the title, editor, and excerpt fields 2. The title, editor, and excerpt fields are all empty\n Returning a truthy value from the filter will effectively short-circuit the new post being inserted and return 0. If $wp_error is true, a WP_Error will be returned instead.",
+                "long_description": "The post is considered \"empty\" if both:\n 1. The post type supports the title, editor, and excerpt fields\n 2. The title, editor, and excerpt fields are all empty\n Returning a truthy value from the filter will effectively short-circuit the new post being inserted and return 0. If $wp_error is true, a WP_Error will be returned instead.",
                 "tags": [
                     {
                         "name": "since",
@@ -56637,7 +56637,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the number of revisions to save for the given post by its post type.",
-                "long_description": "Overrides both the value of WP_POST_REVISIONS and the {@see 'wp_revisions_to_keep'} filter.\n The dynamic portion of the hook name, `$post->post_type`, refers to the post type slug.\n Possible hook names include:\n  - `wp_post_revisions_to_keep`  - `wp_page_revisions_to_keep`",
+                "long_description": "Overrides both the value of WP_POST_REVISIONS and the {@see 'wp_revisions_to_keep'} filter.\n The dynamic portion of the hook name, `$post->post_type`, refers to the post type slug.\n Possible hook names include:\n\n  - `wp_post_revisions_to_keep`\n  - `wp_page_revisions_to_keep`",
                 "tags": [
                     {
                         "name": "since",
@@ -58341,7 +58341,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the override parameters for a file before it is uploaded to WordPress.",
-                "long_description": "The dynamic portion of the hook name, `$action`, refers to the post action.\n Possible hook names include:\n  - `wp_handle_sideload_overrides`  - `wp_handle_upload_overrides`",
+                "long_description": "The dynamic portion of the hook name, `$action`, refers to the post action.\n Possible hook names include:\n\n  - `wp_handle_sideload_overrides`\n  - `wp_handle_upload_overrides`",
                 "tags": [
                     {
                         "name": "since",
@@ -58375,7 +58375,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the data for a file before it is uploaded to WordPress.",
-                "long_description": "The dynamic portion of the hook name, `$action`, refers to the post action.\n Possible hook names include:\n  - `wp_handle_sideload_prefilter`  - `wp_handle_upload_prefilter`",
+                "long_description": "The dynamic portion of the hook name, `$action`, refers to the post action.\n Possible hook names include:\n\n  - `wp_handle_sideload_prefilter`\n  - `wp_handle_upload_prefilter`",
                 "tags": [
                     {
                         "name": "since",
@@ -58406,7 +58406,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the adjacent image link.",
-                "long_description": "The dynamic portion of the hook name, `$adjacent`, refers to the type of adjacency, either 'next', or 'previous'.\n Possible hook names include:\n  - `next_image_link`  - `previous_image_link`",
+                "long_description": "The dynamic portion of the hook name, `$adjacent`, refers to the type of adjacency, either 'next', or 'previous'.\n Possible hook names include:\n\n  - `next_image_link`\n  - `previous_image_link`",
                 "tags": [
                     {
                         "name": "since",
@@ -58456,7 +58456,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the adjacent post link.",
-                "long_description": "The dynamic portion of the hook name, `$adjacent`, refers to the type of adjacency, 'next' or 'previous'.\n Possible hook names include:\n  - `next_post_link`  - `previous_post_link`",
+                "long_description": "The dynamic portion of the hook name, `$adjacent`, refers to the type of adjacency, 'next' or 'previous'.\n Possible hook names include:\n\n  - `next_post_link`\n  - `previous_post_link`",
                 "tags": [
                     {
                         "name": "since",
@@ -58518,7 +58518,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the adjacent post relational link.",
-                "long_description": "The dynamic portion of the hook name, `$adjacent`, refers to the type of adjacency, 'next' or 'previous'.\n Possible hook names include:\n  - `next_post_rel_link`  - `previous_post_rel_link`",
+                "long_description": "The dynamic portion of the hook name, `$adjacent`, refers to the type of adjacency, 'next' or 'previous'.\n Possible hook names include:\n\n  - `next_post_rel_link`\n  - `previous_post_rel_link`",
                 "tags": [
                     {
                         "name": "since",
@@ -58693,7 +58693,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the number of items to be displayed on each page of the list table.",
-                "long_description": "The dynamic hook name, `$option`, refers to the `per_page` option depending on the type of list table in use. Possible filter names include:\n  - `edit_comments_per_page`  - `sites_network_per_page`  - `site_themes_network_per_page`  - `themes_network_per_page'`  - `users_network_per_page`  - `edit_post_per_page`  - `edit_page_per_page'`  - `edit_{$post_type}_per_page`  - `edit_post_tag_per_page`  - `edit_category_per_page`  - `edit_{$taxonomy}_per_page`  - `site_users_network_per_page`  - `users_per_page`",
+                "long_description": "The dynamic hook name, `$option`, refers to the `per_page` option depending on the type of list table in use. Possible filter names include:\n\n  - `edit_comments_per_page`\n  - `sites_network_per_page`\n  - `site_themes_network_per_page`\n  - `themes_network_per_page'`\n  - `users_network_per_page`\n  - `edit_post_per_page`\n  - `edit_page_per_page'`\n  - `edit_{$post_type}_per_page`\n  - `edit_post_tag_per_page`\n  - `edit_category_per_page`\n  - `edit_{$taxonomy}_per_page`\n  - `site_users_network_per_page`\n  - `users_per_page`",
                 "tags": [
                     {
                         "name": "since",
@@ -58718,7 +58718,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters rewrite rules used for individual permastructs.",
-                "long_description": "The dynamic portion of the hook name, `$permastructname`, refers to the name of the registered permastruct.\n Possible hook names include:\n  - `category_rewrite_rules`  - `post_format_rewrite_rules`  - `post_tag_rewrite_rules`",
+                "long_description": "The dynamic portion of the hook name, `$permastructname`, refers to the name of the registered permastruct.\n Possible hook names include:\n\n  - `category_rewrite_rules`\n  - `post_format_rewrite_rules`\n  - `post_tag_rewrite_rules`",
                 "tags": [
                     {
                         "name": "since",
@@ -58743,7 +58743,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the action links displayed for each term in the terms list table.",
-                "long_description": "The dynamic portion of the hook name, `$taxonomy`, refers to the taxonomy slug.\n Possible hook names include:\n  - `category_row_actions`  - `post_tag_row_actions`",
+                "long_description": "The dynamic portion of the hook name, `$taxonomy`, refers to the taxonomy slug.\n Possible hook names include:\n\n  - `category_row_actions`\n  - `post_tag_row_actions`",
                 "tags": [
                     {
                         "name": "since",
@@ -58842,7 +58842,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the URL sent to the editor for a specific media type.",
-                "long_description": "The dynamic portion of the hook name, `$type`, refers to the type of media being sent.\n Possible hook names include:\n  - `audio_send_to_editor_url`  - `file_send_to_editor_url`  - `video_send_to_editor_url`",
+                "long_description": "The dynamic portion of the hook name, `$type`, refers to the type of media being sent.\n Possible hook names include:\n\n  - `audio_send_to_editor_url`\n  - `file_send_to_editor_url`\n  - `video_send_to_editor_url`",
                 "tags": [
                     {
                         "name": "since",
@@ -58883,7 +58883,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the path of the queried template by type.",
-                "long_description": "The dynamic portion of the hook name, `$type`, refers to the filename -- minus the file extension and any non-alphanumeric characters delimiting words -- of the file to load. This hook also applies to various types of files loaded as part of the Template Hierarchy.\n Possible hook names include:\n  - `404_template`  - `archive_template`  - `attachment_template`  - `author_template`  - `category_template`  - `date_template`  - `embed_template`  - `frontpage_template`  - `home_template`  - `index_template`  - `page_template`  - `paged_template`  - `privacypolicy_template`  - `search_template`  - `single_template`  - `singular_template`  - `tag_template`  - `taxonomy_template`",
+                "long_description": "The dynamic portion of the hook name, `$type`, refers to the filename -- minus the file extension and any non-alphanumeric characters delimiting words -- of the file to load. This hook also applies to various types of files loaded as part of the Template Hierarchy.\n Possible hook names include:\n\n  - `404_template`\n  - `archive_template`\n  - `attachment_template`\n  - `author_template`\n  - `category_template`\n  - `date_template`\n  - `embed_template`\n  - `frontpage_template`\n  - `home_template`\n  - `index_template`\n  - `page_template`\n  - `paged_template`\n  - `privacypolicy_template`\n  - `search_template`\n  - `single_template`\n  - `singular_template`\n  - `tag_template`\n  - `taxonomy_template`",
                 "tags": [
                     {
                         "name": "since",
@@ -58929,7 +58929,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the list of template filenames that are searched for when retrieving a template to use.",
-                "long_description": "The dynamic portion of the hook name, `$type`, refers to the filename -- minus the file extension and any non-alphanumeric characters delimiting words -- of the file to load. The last element in the array should always be the fallback template for this query type.\n Possible hook names include:\n  - `404_template_hierarchy`  - `archive_template_hierarchy`  - `attachment_template_hierarchy`  - `author_template_hierarchy`  - `category_template_hierarchy`  - `date_template_hierarchy`  - `embed_template_hierarchy`  - `frontpage_template_hierarchy`  - `home_template_hierarchy`  - `index_template_hierarchy`  - `page_template_hierarchy`  - `paged_template_hierarchy`  - `privacypolicy_template_hierarchy`  - `search_template_hierarchy`  - `single_template_hierarchy`  - `singular_template_hierarchy`  - `tag_template_hierarchy`  - `taxonomy_template_hierarchy`",
+                "long_description": "The dynamic portion of the hook name, `$type`, refers to the filename -- minus the file extension and any non-alphanumeric characters delimiting words -- of the file to load. The last element in the array should always be the fallback template for this query type.\n Possible hook names include:\n\n  - `404_template_hierarchy`\n  - `archive_template_hierarchy`\n  - `attachment_template_hierarchy`\n  - `author_template_hierarchy`\n  - `category_template_hierarchy`\n  - `date_template_hierarchy`\n  - `embed_template_hierarchy`\n  - `frontpage_template_hierarchy`\n  - `home_template_hierarchy`\n  - `index_template_hierarchy`\n  - `page_template_hierarchy`\n  - `paged_template_hierarchy`\n  - `privacypolicy_template_hierarchy`\n  - `search_template_hierarchy`\n  - `single_template_hierarchy`\n  - `singular_template_hierarchy`\n  - `tag_template_hierarchy`\n  - `taxonomy_template_hierarchy`",
                 "tags": [
                     {
                         "name": "since",
@@ -58954,7 +58954,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the upload iframe source URL for a specific media type.",
-                "long_description": "The dynamic portion of the hook name, `$type`, refers to the type of media uploaded.\n Possible hook names include:\n  - `image_upload_iframe_src`  - `media_upload_iframe_src`",
+                "long_description": "The dynamic portion of the hook name, `$type`, refers to the type of media uploaded.\n Possible hook names include:\n\n  - `image_upload_iframe_src`\n  - `media_upload_iframe_src`",
                 "tags": [
                     {
                         "name": "since",
