@@ -7,12 +7,13 @@ Last updated for WordPress 5.8.
 ## Installation
 
 * As a Composer package for use in PHP:
-
-      composer require johnbillion/wp-hooks
-
+    ```shell
+    composer require johnbillion/wp-hooks
+    ```
 * As an npm package for use in JavaScript or TypeScript:
-
-      npm install @johnbillion/wp-hooks
+    ```shell
+    npm install @johnbillion/wp-hooks
+    ```
 
 ## Usage in PHP
 
@@ -78,31 +79,33 @@ Anything that needs programmatic access to a list of available hooks, for exampl
 ## Regenerating the Hook Files
 
 Install the dependencies:
-
+    ```shell
     npm i && composer i
+    ```
 
 Then run:
-
+    ```shell
     composer generate
+    ```
 
 Some scripts are available for checking the data:
 
 * Check everything:
-  ```
+  ```shell
   npm run check
   ```
 * Find hooks with missing `@since` tags:
-  ```
+  ```shell
   jq '.hooks[] | . as $d | .doc .tags | map(.name) | select( contains(["since"]) | not ) | $d' hooks/filters.json
   ```
-  ```
+  ```shell
   jq '.hooks[] | . as $d | .doc .tags | map(.name) | select( contains(["since"]) | not ) | $d' hooks/actions.json
   ```
 * Find hooks with incorrect number of `@param` tags (not completely accurate, not sure why):
-  ```
+  ```shell
   jq '.hooks[] | select( .args == ( .doc.tags | map(.name) | select( contains(["param"]) ) | length ) ) | .name' hooks/filters.json
   ```
-  ```
+  ```shell
   jq '.hooks[] | select( .args == ( .doc.tags | map(.name) | select( contains(["param"]) ) | length ) ) | .name' hooks/actions.json
   ```
 
