@@ -2733,7 +2733,7 @@
         },
         {
             "name": "block_local_requests",
-            "file": "wp-includes/class-http.php",
+            "file": "wp-includes/class-wp-http.php",
             "type": "filter",
             "doc": {
                 "description": "Filters whether to block local HTTP API requests.",
@@ -16865,7 +16865,7 @@
         },
         {
             "name": "http_api_transports",
-            "file": "wp-includes/class-http.php",
+            "file": "wp-includes/class-wp-http.php",
             "type": "filter",
             "doc": {
                 "description": "Filters which HTTP transports are available and in what order.",
@@ -16906,7 +16906,7 @@
         },
         {
             "name": "http_headers_useragent",
-            "file": "wp-includes/class-http.php",
+            "file": "wp-includes/class-wp-http.php",
             "type": "filter",
             "doc": {
                 "description": "Filters the user agent value sent with an HTTP request.",
@@ -16969,7 +16969,7 @@
         },
         {
             "name": "http_request_args",
-            "file": "wp-includes/class-http.php",
+            "file": "wp-includes/class-wp-http.php",
             "type": "filter",
             "doc": {
                 "description": "Filters the arguments used in an HTTP request.",
@@ -17043,7 +17043,7 @@
         },
         {
             "name": "http_request_redirection_count",
-            "file": "wp-includes/class-http.php",
+            "file": "wp-includes/class-wp-http.php",
             "type": "filter",
             "doc": {
                 "description": "Filters the number of redirects allowed during an HTTP request.",
@@ -17081,7 +17081,7 @@
         },
         {
             "name": "http_request_reject_unsafe_urls",
-            "file": "wp-includes/class-http.php",
+            "file": "wp-includes/class-wp-http.php",
             "type": "filter",
             "doc": {
                 "description": "Filters whether to pass URLs through wp_http_validate_url() in an HTTP request.",
@@ -17119,7 +17119,7 @@
         },
         {
             "name": "http_request_timeout",
-            "file": "wp-includes/class-http.php",
+            "file": "wp-includes/class-wp-http.php",
             "type": "filter",
             "doc": {
                 "description": "Filters the timeout value for an HTTP request.",
@@ -17157,7 +17157,7 @@
         },
         {
             "name": "http_request_version",
-            "file": "wp-includes/class-http.php",
+            "file": "wp-includes/class-wp-http.php",
             "type": "filter",
             "doc": {
                 "description": "Filters the version of the HTTP protocol used in a request.",
@@ -17195,7 +17195,7 @@
         },
         {
             "name": "http_response",
-            "file": "wp-includes/class-http.php",
+            "file": "wp-includes/class-wp-http.php",
             "type": "filter",
             "doc": {
                 "description": "Filters a successful HTTP API response immediately before the response is returned.",
@@ -17274,7 +17274,7 @@
         },
         {
             "name": "https_ssl_verify",
-            "file": "wp-includes/class-http.php",
+            "file": "wp-includes/class-wp-http.php",
             "type": "filter",
             "doc": {
                 "description": "Filters whether SSL should be verified for non-local requests.",
@@ -29587,7 +29587,7 @@
         },
         {
             "name": "pre_http_request",
-            "file": "wp-includes/class-http.php",
+            "file": "wp-includes/class-wp-http.php",
             "type": "filter",
             "doc": {
                 "description": "Filters the preemptive return value of an HTTP request.",

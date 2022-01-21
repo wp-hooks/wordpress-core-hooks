@@ -8053,7 +8053,7 @@
         },
         {
             "name": "http_api_debug",
-            "file": "wp-includes/class-http.php",
+            "file": "wp-includes/class-wp-http.php",
             "type": "action",
             "doc": {
                 "description": "Fires after an HTTP API response is received and before the response is returned.",
@@ -16491,7 +16491,7 @@
         },
         {
             "name": "welcome_panel",
-            "file": "wp-admin/_index.php",
+            "file": "wp-admin/index.php",
             "type": "action",
             "doc": {
                 "description": "Add content to the welcome panel on the admin dashboard.",
