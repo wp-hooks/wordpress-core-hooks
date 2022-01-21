@@ -2600,6 +2600,31 @@
             "args": 2
         },
         {
+            "name": "block_core_navigation_render_fallback",
+            "file": "wp-includes/blocks/navigation.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the fallback experience for the Navigation block.",
+                "long_description": "Returning a falsey value will opt out of the fallback and cause the block not to render. To customise the blocks provided return an array of blocks - these should be valid children of the `core/navigation` block.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.9.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "default fallback blocks provided by the default block mechanic.",
+                        "types": [
+                            "array[]"
+                        ],
+                        "variable": ""
+                    }
+                ],
+                "long_description_html": "<p>Returning a falsey value will opt out of the fallback and cause the block not to render. To customise the blocks provided return an array of blocks - these should be valid children of the <code>core/navigation</code> block.</p>"
+            },
+            "args": 1
+        },
+        {
             "name": "block_default_classname",
             "file": "wp-includes/block-supports/generated-classname.php",
             "type": "filter",
@@ -7635,6 +7660,31 @@
             "args": 3
         },
         {
+            "name": "default_template_types",
+            "file": "wp-includes/block-template-utils.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the list of template types.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.9.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "An array of template types, formatted as [ slug =&gt; [ title, description ] ].",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$default_template_types"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 1
+        },
+        {
             "name": "default_title",
             "file": "wp-admin/includes/post.php",
             "type": "filter",
@@ -7666,6 +7716,31 @@
                 "long_description_html": ""
             },
             "args": 2
+        },
+        {
+            "name": "default_wp_template_part_areas",
+            "file": "wp-includes/block-template-utils.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the list of allowed template part area values.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.9.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "An array of supported area objects.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$default_area_definitions"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 1
         },
         {
             "name": "default_{$meta_type}_metadata",
@@ -11902,6 +11977,130 @@
             "args": 3
         },
         {
+            "name": "get_block_file_template",
+            "file": "wp-includes/block-template-utils.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the array of queried block templates array after they've been fetched.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.9.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The found block template.",
+                        "types": [
+                            "\\WP_Block_Template"
+                        ],
+                        "variable": "$block_template"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Template unique identifier (example: theme_slug//template_slug).",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$id"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Template type: <code>'wp_template'</code> or '<code>wp_template_part'</code>.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$template_type"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 3
+        },
+        {
+            "name": "get_block_template",
+            "file": "wp-includes/block-template-utils.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the queried block template object after it's been fetched.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.9.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The found block template, or null if there isn't one.",
+                        "types": [
+                            "\\WP_Block_Template",
+                            "null"
+                        ],
+                        "variable": "$block_template"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Template unique identifier (example: theme_slug//template_slug).",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$id"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Template type: <code>'wp_template'</code> or '<code>wp_template_part'</code>.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$template_type"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 3
+        },
+        {
+            "name": "get_block_templates",
+            "file": "wp-includes/block-template-utils.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the array of queried block templates array after they've been fetched.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.9.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Array of found block templates.",
+                        "types": [
+                            "\\WP_Block_Template[]"
+                        ],
+                        "variable": "$query_result"
+                    },
+                    {
+                        "name": "param",
+                        "content": "{     Optional. Arguments to retrieve templates.     @type array  $slug__in List of slugs to include.     @type int    $wp_id Post ID of customized template. }",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$query"
+                    },
+                    {
+                        "name": "param",
+                        "content": "wp_template or wp_template_part.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$template_type"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 3
+        },
+        {
             "name": "get_bloginfo_rss",
             "file": "wp-includes/feed.php",
             "type": "filter",
@@ -13332,6 +13531,39 @@
                 "long_description_html": ""
             },
             "args": 3
+        },
+        {
+            "name": "get_header_image_tag_attributes",
+            "file": "wp-includes/theme.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the list of header image attributes.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.9.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Array of the attributes for the image tag.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$attr"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The custom header object returned by 'get_custom_header()'.",
+                        "types": [
+                            "object"
+                        ],
+                        "variable": "$header"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 2
         },
         {
             "name": "get_header_video_url",
@@ -16864,6 +17096,47 @@
             "args": 4
         },
         {
+            "name": "http_allowed_safe_ports",
+            "file": "wp-includes/http.php",
+            "type": "filter",
+            "doc": {
+                "description": "Controls the list of ports considered safe in HTTP API.",
+                "long_description": "Allows to change and allow external requests for the HTTP request.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.9.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Array of integers for valid ports.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$allowed_ports"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Host name of the requested URL.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$host"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Requested URL.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$url"
+                    }
+                ],
+                "long_description_html": "<p>Allows to change and allow external requests for the HTTP request.</p>"
+            },
+            "args": 3
+        },
+        {
             "name": "http_api_transports",
             "file": "wp-includes/class-wp-http.php",
             "type": "filter",
@@ -18319,6 +18592,55 @@
             "args": 1
         },
         {
+            "name": "insert_custom_user_meta",
+            "file": "wp-includes/user.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters a user's custom meta values and keys immediately after the user is created or updated and before any user meta is inserted or updated.",
+                "long_description": "For non-custom meta fields, see the {@see 'insert_user_meta'} filter.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.9.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Array of custom user meta values keyed by meta key.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$custom_meta"
+                    },
+                    {
+                        "name": "param",
+                        "content": "User object.",
+                        "types": [
+                            "\\WP_User"
+                        ],
+                        "variable": "$user"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether the user is being updated rather than created.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$update"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The raw array of data passed to wp_insert_user().",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$userdata"
+                    }
+                ],
+                "long_description_html": "<p>For non-custom meta fields, see the {@see 'insert_user_meta'} filter.</p>"
+            },
+            "args": 4
+        },
+        {
             "name": "insert_user_meta",
             "file": "wp-includes/user.php",
             "type": "filter",
@@ -19094,6 +19416,72 @@
                 "long_description_html": ""
             },
             "args": 1
+        },
+        {
+            "name": "is_post_status_viewable",
+            "file": "wp-includes/post.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters whether a post status is considered \"viewable\".",
+                "long_description": "The returned filtered value must be a boolean type to ensure `is_post_status_viewable()` only returns a boolean. This strictness is by design to maintain backwards-compatibility and guard against potential type errors in PHP 8.1+. Non-boolean values (even falsey and truthy values) will result in the function returning false.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.9.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether the post status is \"viewable\" (strict type).",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$is_viewable"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Post status object.",
+                        "types": [
+                            "\\stdClass"
+                        ],
+                        "variable": "$post_status"
+                    }
+                ],
+                "long_description_html": "<p>The returned filtered value must be a boolean type to ensure <code>is_post_status_viewable()</code> only returns a boolean. This strictness is by design to maintain backwards-compatibility and guard against potential type errors in PHP 8.1+. Non-boolean values (even falsey and truthy values) will result in the function returning false.</p>"
+            },
+            "args": 2
+        },
+        {
+            "name": "is_post_type_viewable",
+            "file": "wp-includes/post.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters whether a post type is considered \"viewable\".",
+                "long_description": "The returned filtered value must be a boolean type to ensure `is_post_type_viewable()` only returns a boolean. This strictness is by design to maintain backwards-compatibility and guard against potential type errors in PHP 8.1+. Non-boolean values (even falsey and truthy values) will result in the function returning false.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.9.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether the post type is \"viewable\" (strict type).",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$is_viewable"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Post type object.",
+                        "types": [
+                            "\\WP_Post_Type"
+                        ],
+                        "variable": "$post_type"
+                    }
+                ],
+                "long_description_html": "<p>The returned filtered value must be a boolean type to ensure <code>is_post_type_viewable()</code> only returns a boolean. This strictness is by design to maintain backwards-compatibility and guard against potential type errors in PHP 8.1+. Non-boolean values (even falsey and truthy values) will result in the function returning false.</p>"
+            },
+            "args": 2
         },
         {
             "name": "is_protected_endpoint",
@@ -20114,6 +20502,31 @@
             "args": 2
         },
         {
+            "name": "login_display_language_dropdown",
+            "file": "wp-login.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the Languages select input activation on the login screen.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.9.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether to display the Languages select input on the login screen.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": ""
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 1
+        },
+        {
             "name": "login_errors",
             "file": "wp-login.php",
             "type": "filter",
@@ -20311,6 +20724,31 @@
                             "string"
                         ],
                         "variable": "$login_header_url"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 1
+        },
+        {
+            "name": "login_language_dropdown_args",
+            "file": "wp-login.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters default arguments for the Languages select input on the login screen.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.9.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Arguments for the Languages select input on the login screen.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$args"
                     }
                 ],
                 "long_description_html": ""
@@ -23173,7 +23611,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The plugin context. By default this can include 'all', 'active', 'inactive',                              'recently_activated', 'upgrade', 'mustuse', 'dropins', and 'search'.",
+                        "content": "The plugin context. By default this can include 'all',                              'active', 'inactive', 'recently_activated', 'upgrade',                              'mustuse', 'dropins', and 'search'.",
                         "types": [
                             "string"
                         ],
@@ -24641,7 +25079,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the list of sanctioned oEmbed providers.",
-                "long_description": "Since WordPress 4.4, oEmbed discovery is enabled for all users and allows embedding of sanitized iframes. The providers in this list are sanctioned, meaning they are trusted and allowed to embed any content, such as iframes, videos, JavaScript, and arbitrary HTML.\n Supported providers:\n |   Provider   |                     Flavor                |  Since  | | ------------ | ----------------------------------------- | ------- | | Dailymotion  | dailymotion.com                           | 2.9.0   | | Flickr       | flickr.com                                | 2.9.0   | | Scribd       | scribd.com                                | 2.9.0   | | Vimeo        | vimeo.com                                 | 2.9.0   | | WordPress.tv | wordpress.tv                              | 2.9.0   | | YouTube      | youtube.com/watch                         | 2.9.0   | | Crowdsignal  | polldaddy.com                             | 3.0.0   | | SmugMug      | smugmug.com                               | 3.0.0   | | YouTube      | youtu.be                                  | 3.0.0   | | Twitter      | twitter.com                               | 3.4.0   | | Slideshare   | slideshare.net                            | 3.5.0   | | SoundCloud   | soundcloud.com                            | 3.5.0   | | Dailymotion  | dai.ly                                    | 3.6.0   | | Flickr       | flic.kr                                   | 3.6.0   | | Spotify      | spotify.com                               | 3.6.0   | | Imgur        | imgur.com                                 | 3.9.0   | | Meetup.com   | meetup.com                                | 3.9.0   | | Meetup.com   | meetu.ps                                  | 3.9.0   | | Animoto      | animoto.com                               | 4.0.0   | | Animoto      | video214.com                              | 4.0.0   | | Issuu        | issuu.com                                 | 4.0.0   | | Mixcloud     | mixcloud.com                              | 4.0.0   | | Crowdsignal  | poll.fm                                   | 4.0.0   | | TED          | ted.com                                   | 4.0.0   | | YouTube      | youtube.com/playlist                      | 4.0.0   | | Tumblr       | tumblr.com                                | 4.2.0   | | Kickstarter  | kickstarter.com                           | 4.2.0   | | Kickstarter  | kck.st                                    | 4.2.0   | | Cloudup      | cloudup.com                               | 4.3.0   | | ReverbNation | reverbnation.com                          | 4.4.0   | | VideoPress   | videopress.com                            | 4.4.0   | | Reddit       | reddit.com                                | 4.4.0   | | Speaker Deck | speakerdeck.com                           | 4.4.0   | | Twitter      | twitter.com/timelines                     | 4.5.0   | | Twitter      | twitter.com/moments                       | 4.5.0   | | Twitter      | twitter.com/user                          | 4.7.0   | | Twitter      | twitter.com/likes                         | 4.7.0   | | Twitter      | twitter.com/lists                         | 4.7.0   | | Screencast   | screencast.com                            | 4.8.0   | | Amazon       | amazon.com (com.mx, com.br, ca)           | 4.9.0   | | Amazon       | amazon.de (fr, it, es, in, nl, ru, co.uk) | 4.9.0   | | Amazon       | amazon.co.jp (com.au)                     | 4.9.0   | | Amazon       | amazon.cn                                 | 4.9.0   | | Amazon       | a.co                                      | 4.9.0   | | Amazon       | amzn.to (eu, in, asia)                    | 4.9.0   | | Amazon       | z.cn                                      | 4.9.0   | | Someecards   | someecards.com                            | 4.9.0   | | Someecards   | some.ly                                   | 4.9.0   | | Crowdsignal  | survey.fm                                 | 5.1.0   | | TikTok       | tiktok.com                                | 5.4.0   |\n No longer supported providers:\n |   Provider   |        Flavor        |   Since   |  Removed  | | ------------ | -------------------- | --------- | --------- | | Qik          | qik.com              | 2.9.0     | 3.9.0     | | Viddler      | viddler.com          | 2.9.0     | 4.0.0     | | Revision3    | revision3.com        | 2.9.0     | 4.2.0     | | Blip         | blip.tv              | 2.9.0     | 4.4.0     | | Rdio         | rdio.com             | 3.6.0     | 4.4.1     | | Rdio         | rd.io                | 3.6.0     | 4.4.1     | | Vine         | vine.co              | 4.1.0     | 4.9.0     | | Photobucket  | photobucket.com      | 2.9.0     | 5.1.0     | | Funny or Die | funnyordie.com       | 3.0.0     | 5.1.0     | | CollegeHumor | collegehumor.com     | 4.0.0     | 5.3.1     | | Hulu         | hulu.com             | 2.9.0     | 5.5.0     | | Instagram    | instagram.com        | 3.5.0     | 5.5.2     | | Instagram    | instagr.am           | 3.5.0     | 5.5.2     | | Instagram TV | instagram.com        | 5.1.0     | 5.5.2     | | Instagram TV | instagr.am           | 5.1.0     | 5.5.2     | | Facebook     | facebook.com         | 4.7.0     | 5.5.2     |",
+                "long_description": "Since WordPress 4.4, oEmbed discovery is enabled for all users and allows embedding of sanitized iframes. The providers in this list are sanctioned, meaning they are trusted and allowed to embed any content, such as iframes, videos, JavaScript, and arbitrary HTML.\n Supported providers:\n |   Provider   |                     Flavor                |  Since  | | ------------ | ----------------------------------------- | ------- | | Dailymotion  | dailymotion.com                           | 2.9.0   | | Flickr       | flickr.com                                | 2.9.0   | | Scribd       | scribd.com                                | 2.9.0   | | Vimeo        | vimeo.com                                 | 2.9.0   | | WordPress.tv | wordpress.tv                              | 2.9.0   | | YouTube      | youtube.com/watch                         | 2.9.0   | | Crowdsignal  | polldaddy.com                             | 3.0.0   | | SmugMug      | smugmug.com                               | 3.0.0   | | YouTube      | youtu.be                                  | 3.0.0   | | Twitter      | twitter.com                               | 3.4.0   | | Slideshare   | slideshare.net                            | 3.5.0   | | SoundCloud   | soundcloud.com                            | 3.5.0   | | Dailymotion  | dai.ly                                    | 3.6.0   | | Flickr       | flic.kr                                   | 3.6.0   | | Spotify      | spotify.com                               | 3.6.0   | | Imgur        | imgur.com                                 | 3.9.0   | | Meetup.com   | meetup.com                                | 3.9.0   | | Meetup.com   | meetu.ps                                  | 3.9.0   | | Animoto      | animoto.com                               | 4.0.0   | | Animoto      | video214.com                              | 4.0.0   | | Issuu        | issuu.com                                 | 4.0.0   | | Mixcloud     | mixcloud.com                              | 4.0.0   | | Crowdsignal  | poll.fm                                   | 4.0.0   | | TED          | ted.com                                   | 4.0.0   | | YouTube      | youtube.com/playlist                      | 4.0.0   | | Tumblr       | tumblr.com                                | 4.2.0   | | Kickstarter  | kickstarter.com                           | 4.2.0   | | Kickstarter  | kck.st                                    | 4.2.0   | | Cloudup      | cloudup.com                               | 4.3.0   | | ReverbNation | reverbnation.com                          | 4.4.0   | | VideoPress   | videopress.com                            | 4.4.0   | | Reddit       | reddit.com                                | 4.4.0   | | Speaker Deck | speakerdeck.com                           | 4.4.0   | | Twitter      | twitter.com/timelines                     | 4.5.0   | | Twitter      | twitter.com/moments                       | 4.5.0   | | Twitter      | twitter.com/user                          | 4.7.0   | | Twitter      | twitter.com/likes                         | 4.7.0   | | Twitter      | twitter.com/lists                         | 4.7.0   | | Screencast   | screencast.com                            | 4.8.0   | | Amazon       | amazon.com (com.mx, com.br, ca)           | 4.9.0   | | Amazon       | amazon.de (fr, it, es, in, nl, ru, co.uk) | 4.9.0   | | Amazon       | amazon.co.jp (com.au)                     | 4.9.0   | | Amazon       | amazon.cn                                 | 4.9.0   | | Amazon       | a.co                                      | 4.9.0   | | Amazon       | amzn.to (eu, in, asia)                    | 4.9.0   | | Amazon       | z.cn                                      | 4.9.0   | | Someecards   | someecards.com                            | 4.9.0   | | Someecards   | some.ly                                   | 4.9.0   | | Crowdsignal  | survey.fm                                 | 5.1.0   | | TikTok       | tiktok.com                                | 5.4.0   | | Pinterest    | pinterest.com                             | 5.9.0   | | WolframCloud | wolframcloud.com                          | 5.9.0   |\n No longer supported providers:\n |   Provider   |        Flavor        |   Since   |  Removed  | | ------------ | -------------------- | --------- | --------- | | Qik          | qik.com              | 2.9.0     | 3.9.0     | | Viddler      | viddler.com          | 2.9.0     | 4.0.0     | | Revision3    | revision3.com        | 2.9.0     | 4.2.0     | | Blip         | blip.tv              | 2.9.0     | 4.4.0     | | Rdio         | rdio.com             | 3.6.0     | 4.4.1     | | Rdio         | rd.io                | 3.6.0     | 4.4.1     | | Vine         | vine.co              | 4.1.0     | 4.9.0     | | Photobucket  | photobucket.com      | 2.9.0     | 5.1.0     | | Funny or Die | funnyordie.com       | 3.0.0     | 5.1.0     | | CollegeHumor | collegehumor.com     | 4.0.0     | 5.3.1     | | Hulu         | hulu.com             | 2.9.0     | 5.5.0     | | Instagram    | instagram.com        | 3.5.0     | 5.5.2     | | Instagram    | instagr.am           | 3.5.0     | 5.5.2     | | Instagram TV | instagram.com        | 5.1.0     | 5.5.2     | | Instagram TV | instagr.am           | 5.1.0     | 5.5.2     | | Facebook     | facebook.com         | 4.7.0     | 5.5.2     |",
                 "tags": [
                     {
                         "name": "see",
@@ -24661,7 +25099,7 @@
                         "variable": "$providers"
                     }
                 ],
-                "long_description_html": "<p>Since WordPress 4.4, oEmbed discovery is enabled for all users and allows embedding of sanitized iframes. The providers in this list are sanctioned, meaning they are trusted and allowed to embed any content, such as iframes, videos, JavaScript, and arbitrary HTML.</p> <p>Supported providers:</p> <table> <thead> <tr> <th>Provider</th> <th>Flavor</th> <th>Since</th> </tr> </thead> <tbody> <tr> <td>Dailymotion</td> <td>dailymotion.com</td> <td>2.9.0</td> </tr> <tr> <td>Flickr</td> <td>flickr.com</td> <td>2.9.0</td> </tr> <tr> <td>Scribd</td> <td>scribd.com</td> <td>2.9.0</td> </tr> <tr> <td>Vimeo</td> <td>vimeo.com</td> <td>2.9.0</td> </tr> <tr> <td>WordPress.tv</td> <td>wordpress.tv</td> <td>2.9.0</td> </tr> <tr> <td>YouTube</td> <td>youtube.com/watch</td> <td>2.9.0</td> </tr> <tr> <td>Crowdsignal</td> <td>polldaddy.com</td> <td>3.0.0</td> </tr> <tr> <td>SmugMug</td> <td>smugmug.com</td> <td>3.0.0</td> </tr> <tr> <td>YouTube</td> <td>youtu.be</td> <td>3.0.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com</td> <td>3.4.0</td> </tr> <tr> <td>Slideshare</td> <td>slideshare.net</td> <td>3.5.0</td> </tr> <tr> <td>SoundCloud</td> <td>soundcloud.com</td> <td>3.5.0</td> </tr> <tr> <td>Dailymotion</td> <td>dai.ly</td> <td>3.6.0</td> </tr> <tr> <td>Flickr</td> <td>flic.kr</td> <td>3.6.0</td> </tr> <tr> <td>Spotify</td> <td>spotify.com</td> <td>3.6.0</td> </tr> <tr> <td>Imgur</td> <td>imgur.com</td> <td>3.9.0</td> </tr> <tr> <td>Meetup.com</td> <td>meetup.com</td> <td>3.9.0</td> </tr> <tr> <td>Meetup.com</td> <td>meetu.ps</td> <td>3.9.0</td> </tr> <tr> <td>Animoto</td> <td>animoto.com</td> <td>4.0.0</td> </tr> <tr> <td>Animoto</td> <td>video214.com</td> <td>4.0.0</td> </tr> <tr> <td>Issuu</td> <td>issuu.com</td> <td>4.0.0</td> </tr> <tr> <td>Mixcloud</td> <td>mixcloud.com</td> <td>4.0.0</td> </tr> <tr> <td>Crowdsignal</td> <td>poll.fm</td> <td>4.0.0</td> </tr> <tr> <td>TED</td> <td>ted.com</td> <td>4.0.0</td> </tr> <tr> <td>YouTube</td> <td>youtube.com/playlist</td> <td>4.0.0</td> </tr> <tr> <td>Tumblr</td> <td>tumblr.com</td> <td>4.2.0</td> </tr> <tr> <td>Kickstarter</td> <td>kickstarter.com</td> <td>4.2.0</td> </tr> <tr> <td>Kickstarter</td> <td>kck.st</td> <td>4.2.0</td> </tr> <tr> <td>Cloudup</td> <td>cloudup.com</td> <td>4.3.0</td> </tr> <tr> <td>ReverbNation</td> <td>reverbnation.com</td> <td>4.4.0</td> </tr> <tr> <td>VideoPress</td> <td>videopress.com</td> <td>4.4.0</td> </tr> <tr> <td>Reddit</td> <td>reddit.com</td> <td>4.4.0</td> </tr> <tr> <td>Speaker Deck</td> <td>speakerdeck.com</td> <td>4.4.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/timelines</td> <td>4.5.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/moments</td> <td>4.5.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/user</td> <td>4.7.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/likes</td> <td>4.7.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/lists</td> <td>4.7.0</td> </tr> <tr> <td>Screencast</td> <td>screencast.com</td> <td>4.8.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.com (com.mx, com.br, ca)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.de (fr, it, es, in, nl, ru, co.uk)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.co.jp (com.au)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.cn</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>a.co</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amzn.to (eu, in, asia)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>z.cn</td> <td>4.9.0</td> </tr> <tr> <td>Someecards</td> <td>someecards.com</td> <td>4.9.0</td> </tr> <tr> <td>Someecards</td> <td>some.ly</td> <td>4.9.0</td> </tr> <tr> <td>Crowdsignal</td> <td>survey.fm</td> <td>5.1.0</td> </tr> <tr> <td>TikTok</td> <td>tiktok.com</td> <td>5.4.0</td> </tr> </tbody> </table> <p>No longer supported providers:</p> <table> <thead> <tr> <th>Provider</th> <th>Flavor</th> <th>Since</th> <th>Removed</th> </tr> </thead> <tbody> <tr> <td>Qik</td> <td>qik.com</td> <td>2.9.0</td> <td>3.9.0</td> </tr> <tr> <td>Viddler</td> <td>viddler.com</td> <td>2.9.0</td> <td>4.0.0</td> </tr> <tr> <td>Revision3</td> <td>revision3.com</td> <td>2.9.0</td> <td>4.2.0</td> </tr> <tr> <td>Blip</td> <td>blip.tv</td> <td>2.9.0</td> <td>4.4.0</td> </tr> <tr> <td>Rdio</td> <td>rdio.com</td> <td>3.6.0</td> <td>4.4.1</td> </tr> <tr> <td>Rdio</td> <td>rd.io</td> <td>3.6.0</td> <td>4.4.1</td> </tr> <tr> <td>Vine</td> <td>vine.co</td> <td>4.1.0</td> <td>4.9.0</td> </tr> <tr> <td>Photobucket</td> <td>photobucket.com</td> <td>2.9.0</td> <td>5.1.0</td> </tr> <tr> <td>Funny or Die</td> <td>funnyordie.com</td> <td>3.0.0</td> <td>5.1.0</td> </tr> <tr> <td>CollegeHumor</td> <td>collegehumor.com</td> <td>4.0.0</td> <td>5.3.1</td> </tr> <tr> <td>Hulu</td> <td>hulu.com</td> <td>2.9.0</td> <td>5.5.0</td> </tr> <tr> <td>Instagram</td> <td>instagram.com</td> <td>3.5.0</td> <td>5.5.2</td> </tr> <tr> <td>Instagram</td> <td>instagr.am</td> <td>3.5.0</td> <td>5.5.2</td> </tr> <tr> <td>Instagram TV</td> <td>instagram.com</td> <td>5.1.0</td> <td>5.5.2</td> </tr> <tr> <td>Instagram TV</td> <td>instagr.am</td> <td>5.1.0</td> <td>5.5.2</td> </tr> <tr> <td>Facebook</td> <td>facebook.com</td> <td>4.7.0</td> <td>5.5.2</td> </tr> </tbody> </table>"
+                "long_description_html": "<p>Since WordPress 4.4, oEmbed discovery is enabled for all users and allows embedding of sanitized iframes. The providers in this list are sanctioned, meaning they are trusted and allowed to embed any content, such as iframes, videos, JavaScript, and arbitrary HTML.</p> <p>Supported providers:</p> <table> <thead> <tr> <th>Provider</th> <th>Flavor</th> <th>Since</th> </tr> </thead> <tbody> <tr> <td>Dailymotion</td> <td>dailymotion.com</td> <td>2.9.0</td> </tr> <tr> <td>Flickr</td> <td>flickr.com</td> <td>2.9.0</td> </tr> <tr> <td>Scribd</td> <td>scribd.com</td> <td>2.9.0</td> </tr> <tr> <td>Vimeo</td> <td>vimeo.com</td> <td>2.9.0</td> </tr> <tr> <td>WordPress.tv</td> <td>wordpress.tv</td> <td>2.9.0</td> </tr> <tr> <td>YouTube</td> <td>youtube.com/watch</td> <td>2.9.0</td> </tr> <tr> <td>Crowdsignal</td> <td>polldaddy.com</td> <td>3.0.0</td> </tr> <tr> <td>SmugMug</td> <td>smugmug.com</td> <td>3.0.0</td> </tr> <tr> <td>YouTube</td> <td>youtu.be</td> <td>3.0.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com</td> <td>3.4.0</td> </tr> <tr> <td>Slideshare</td> <td>slideshare.net</td> <td>3.5.0</td> </tr> <tr> <td>SoundCloud</td> <td>soundcloud.com</td> <td>3.5.0</td> </tr> <tr> <td>Dailymotion</td> <td>dai.ly</td> <td>3.6.0</td> </tr> <tr> <td>Flickr</td> <td>flic.kr</td> <td>3.6.0</td> </tr> <tr> <td>Spotify</td> <td>spotify.com</td> <td>3.6.0</td> </tr> <tr> <td>Imgur</td> <td>imgur.com</td> <td>3.9.0</td> </tr> <tr> <td>Meetup.com</td> <td>meetup.com</td> <td>3.9.0</td> </tr> <tr> <td>Meetup.com</td> <td>meetu.ps</td> <td>3.9.0</td> </tr> <tr> <td>Animoto</td> <td>animoto.com</td> <td>4.0.0</td> </tr> <tr> <td>Animoto</td> <td>video214.com</td> <td>4.0.0</td> </tr> <tr> <td>Issuu</td> <td>issuu.com</td> <td>4.0.0</td> </tr> <tr> <td>Mixcloud</td> <td>mixcloud.com</td> <td>4.0.0</td> </tr> <tr> <td>Crowdsignal</td> <td>poll.fm</td> <td>4.0.0</td> </tr> <tr> <td>TED</td> <td>ted.com</td> <td>4.0.0</td> </tr> <tr> <td>YouTube</td> <td>youtube.com/playlist</td> <td>4.0.0</td> </tr> <tr> <td>Tumblr</td> <td>tumblr.com</td> <td>4.2.0</td> </tr> <tr> <td>Kickstarter</td> <td>kickstarter.com</td> <td>4.2.0</td> </tr> <tr> <td>Kickstarter</td> <td>kck.st</td> <td>4.2.0</td> </tr> <tr> <td>Cloudup</td> <td>cloudup.com</td> <td>4.3.0</td> </tr> <tr> <td>ReverbNation</td> <td>reverbnation.com</td> <td>4.4.0</td> </tr> <tr> <td>VideoPress</td> <td>videopress.com</td> <td>4.4.0</td> </tr> <tr> <td>Reddit</td> <td>reddit.com</td> <td>4.4.0</td> </tr> <tr> <td>Speaker Deck</td> <td>speakerdeck.com</td> <td>4.4.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/timelines</td> <td>4.5.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/moments</td> <td>4.5.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/user</td> <td>4.7.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/likes</td> <td>4.7.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/lists</td> <td>4.7.0</td> </tr> <tr> <td>Screencast</td> <td>screencast.com</td> <td>4.8.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.com (com.mx, com.br, ca)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.de (fr, it, es, in, nl, ru, co.uk)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.co.jp (com.au)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.cn</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>a.co</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amzn.to (eu, in, asia)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>z.cn</td> <td>4.9.0</td> </tr> <tr> <td>Someecards</td> <td>someecards.com</td> <td>4.9.0</td> </tr> <tr> <td>Someecards</td> <td>some.ly</td> <td>4.9.0</td> </tr> <tr> <td>Crowdsignal</td> <td>survey.fm</td> <td>5.1.0</td> </tr> <tr> <td>TikTok</td> <td>tiktok.com</td> <td>5.4.0</td> </tr> <tr> <td>Pinterest</td> <td>pinterest.com</td> <td>5.9.0</td> </tr> <tr> <td>WolframCloud</td> <td>wolframcloud.com</td> <td>5.9.0</td> </tr> </tbody> </table> <p>No longer supported providers:</p> <table> <thead> <tr> <th>Provider</th> <th>Flavor</th> <th>Since</th> <th>Removed</th> </tr> </thead> <tbody> <tr> <td>Qik</td> <td>qik.com</td> <td>2.9.0</td> <td>3.9.0</td> </tr> <tr> <td>Viddler</td> <td>viddler.com</td> <td>2.9.0</td> <td>4.0.0</td> </tr> <tr> <td>Revision3</td> <td>revision3.com</td> <td>2.9.0</td> <td>4.2.0</td> </tr> <tr> <td>Blip</td> <td>blip.tv</td> <td>2.9.0</td> <td>4.4.0</td> </tr> <tr> <td>Rdio</td> <td>rdio.com</td> <td>3.6.0</td> <td>4.4.1</td> </tr> <tr> <td>Rdio</td> <td>rd.io</td> <td>3.6.0</td> <td>4.4.1</td> </tr> <tr> <td>Vine</td> <td>vine.co</td> <td>4.1.0</td> <td>4.9.0</td> </tr> <tr> <td>Photobucket</td> <td>photobucket.com</td> <td>2.9.0</td> <td>5.1.0</td> </tr> <tr> <td>Funny or Die</td> <td>funnyordie.com</td> <td>3.0.0</td> <td>5.1.0</td> </tr> <tr> <td>CollegeHumor</td> <td>collegehumor.com</td> <td>4.0.0</td> <td>5.3.1</td> </tr> <tr> <td>Hulu</td> <td>hulu.com</td> <td>2.9.0</td> <td>5.5.0</td> </tr> <tr> <td>Instagram</td> <td>instagram.com</td> <td>3.5.0</td> <td>5.5.2</td> </tr> <tr> <td>Instagram</td> <td>instagr.am</td> <td>3.5.0</td> <td>5.5.2</td> </tr> <tr> <td>Instagram TV</td> <td>instagram.com</td> <td>5.1.0</td> <td>5.5.2</td> </tr> <tr> <td>Instagram TV</td> <td>instagr.am</td> <td>5.1.0</td> <td>5.5.2</td> </tr> <tr> <td>Facebook</td> <td>facebook.com</td> <td>4.7.0</td> <td>5.5.2</td> </tr> </tbody> </table>"
             },
             "args": 1
         },
@@ -25842,7 +26280,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The plugin context. By default this can include 'all', 'active', 'inactive',                              'recently_activated', 'upgrade', 'mustuse', 'dropins', and 'search'.",
+                        "content": "The plugin context. By default this can include 'all',                              'active', 'inactive', 'recently_activated', 'upgrade',                              'mustuse', 'dropins', and 'search'.",
                         "types": [
                             "string"
                         ],
@@ -27306,6 +27744,42 @@
             "args": 5
         },
         {
+            "name": "post_thumbnail_id",
+            "file": "wp-includes/post-thumbnail-template.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters post thumbnail ID.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.9.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Post thumbnail ID or false if the post does not exist.",
+                        "types": [
+                            "int",
+                            "false"
+                        ],
+                        "variable": "$thumbnail_id"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Post ID or WP_Post object. Default is global <code>$post</code>.",
+                        "types": [
+                            "int",
+                            "\\WP_Post",
+                            "null"
+                        ],
+                        "variable": "$post"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 2
+        },
+        {
             "name": "post_thumbnail_size",
             "file": "wp-includes/post-thumbnail-template.php",
             "type": "filter",
@@ -27343,6 +27817,51 @@
                 "long_description_html": ""
             },
             "args": 2
+        },
+        {
+            "name": "post_thumbnail_url",
+            "file": "wp-includes/post-thumbnail-template.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the post thumbnail URL.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.9.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Post thumbnail URL or false if the post does not exist.",
+                        "types": [
+                            "string",
+                            "false"
+                        ],
+                        "variable": "$thumbnail_url"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Post ID or WP_Post object. Default is global <code>$post</code>.",
+                        "types": [
+                            "int",
+                            "\\WP_Post",
+                            "null"
+                        ],
+                        "variable": "$post"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Registered image size to retrieve the source for or a flat array                                        of height and width dimensions. Default 'post-thumbnail'.",
+                        "types": [
+                            "string",
+                            "int[]"
+                        ],
+                        "variable": "$size"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 3
         },
         {
             "name": "post_type_archive_feed_link",
@@ -29059,6 +29578,132 @@
             "args": 2
         },
         {
+            "name": "pre_get_block_file_template",
+            "file": "wp-includes/block-template-utils.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the block templates array before the query takes place.",
+                "long_description": "Return a non-null value to bypass the WordPress queries.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.9.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Return block template object to short-circuit the default query,                                               or null to allow WP to run its normal queries.",
+                        "types": [
+                            "\\WP_Block_Template",
+                            "null"
+                        ],
+                        "variable": "$block_template"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Template unique identifier (example: theme_slug//template_slug).",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$id"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Template type: <code>'wp_template'</code> or '<code>wp_template_part'</code>.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$template_type"
+                    }
+                ],
+                "long_description_html": "<p>Return a non-null value to bypass the WordPress queries.</p>"
+            },
+            "args": 3
+        },
+        {
+            "name": "pre_get_block_template",
+            "file": "wp-includes/block-template-utils.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the block template object before the query takes place.",
+                "long_description": "Return a non-null value to bypass the WordPress queries.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.9.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Return block template object to short-circuit the default query,                                               or null to allow WP to run its normal queries.",
+                        "types": [
+                            "\\WP_Block_Template",
+                            "null"
+                        ],
+                        "variable": "$block_template"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Template unique identifier (example: theme_slug//template_slug).",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$id"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Template type: <code>'wp_template'</code> or '<code>wp_template_part'</code>.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$template_type"
+                    }
+                ],
+                "long_description_html": "<p>Return a non-null value to bypass the WordPress queries.</p>"
+            },
+            "args": 3
+        },
+        {
+            "name": "pre_get_block_templates",
+            "file": "wp-includes/block-template-utils.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the block templates array before the query takes place.",
+                "long_description": "Return a non-null value to bypass the WordPress queries.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.9.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Return an array of block templates to short-circuit the default query,                                                  or null to allow WP to run it's normal queries.",
+                        "types": [
+                            "\\WP_Block_Template[]",
+                            "null"
+                        ],
+                        "variable": "$block_templates"
+                    },
+                    {
+                        "name": "param",
+                        "content": "{     Optional. Arguments to retrieve templates.     @type array  $slug__in List of slugs to include.     @type int    $wp_id Post ID of customized template.     @type string $post_type Post type to get the templates for. }",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$query"
+                    },
+                    {
+                        "name": "param",
+                        "content": "wp_template or wp_template_part.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$template_type"
+                    }
+                ],
+                "long_description_html": "<p>Return a non-null value to bypass the WordPress queries.</p>"
+            },
+            "args": 3
+        },
+        {
             "name": "pre_get_blogs_of_user",
             "file": "wp-includes/user.php",
             "type": "filter",
@@ -30199,6 +30844,11 @@
                         "content": "5.1.0"
                     },
                     {
+                        "name": "since",
+                        "content": "5.9.0",
+                        "description": "The <code>$parent_block</code> parameter was added."
+                    },
+                    {
                         "name": "param",
                         "content": "The pre-rendered content. Default null.",
                         "types": [
@@ -30214,11 +30864,20 @@
                             "array"
                         ],
                         "variable": "$parsed_block"
+                    },
+                    {
+                        "name": "param",
+                        "content": "If this is a nested block, a reference to the parent block.",
+                        "types": [
+                            "\\WP_Block",
+                            "null"
+                        ],
+                        "variable": "$parent_block"
                     }
                 ],
                 "long_description_html": ""
             },
-            "args": 2
+            "args": 3
         },
         {
             "name": "pre_reschedule_event",
@@ -33071,17 +33730,31 @@
                         "content": "3.0.0"
                     },
                     {
+                        "name": "since",
+                        "content": "5.9.0",
+                        "description": "Added the <code>$errors</code> parameter."
+                    },
+                    {
                         "name": "param",
                         "content": "The redirect destination URL.",
                         "types": [
                             "string"
                         ],
                         "variable": "$registration_redirect"
+                    },
+                    {
+                        "name": "param",
+                        "content": "User id if registration was successful,                                            WP_Error object otherwise.",
+                        "types": [
+                            "int",
+                            "\\WP_Error"
+                        ],
+                        "variable": "$errors"
                     }
                 ],
                 "long_description_html": ""
             },
-            "args": 1
+            "args": 2
         },
         {
             "name": "removable_query_args",
@@ -33121,6 +33794,11 @@
                         "content": "5.0.0"
                     },
                     {
+                        "name": "since",
+                        "content": "5.9.0",
+                        "description": "The <code>$instance</code> parameter was added."
+                    },
+                    {
                         "name": "param",
                         "content": "The block content about to be appended.",
                         "types": [
@@ -33135,11 +33813,19 @@
                             "array"
                         ],
                         "variable": "$block"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The block instance.",
+                        "types": [
+                            "\\WP_Block"
+                        ],
+                        "variable": "$instance"
                     }
                 ],
                 "long_description_html": ""
             },
-            "args": 2
+            "args": 3
         },
         {
             "name": "render_block_context",
@@ -33152,6 +33838,11 @@
                     {
                         "name": "since",
                         "content": "5.5.0"
+                    },
+                    {
+                        "name": "since",
+                        "content": "5.9.0",
+                        "description": "The <code>$parent_block</code> parameter was added."
                     },
                     {
                         "name": "param",
@@ -33168,11 +33859,20 @@
                             "array"
                         ],
                         "variable": "$parsed_block"
+                    },
+                    {
+                        "name": "param",
+                        "content": "If this is a nested block, a reference to the parent block.",
+                        "types": [
+                            "\\WP_Block",
+                            "null"
+                        ],
+                        "variable": "$parent_block"
                     }
                 ],
                 "long_description_html": ""
             },
-            "args": 2
+            "args": 3
         },
         {
             "name": "render_block_data",
@@ -33185,6 +33885,11 @@
                     {
                         "name": "since",
                         "content": "5.1.0"
+                    },
+                    {
+                        "name": "since",
+                        "content": "5.9.0",
+                        "description": "The <code>$parent_block</code> parameter was added."
                     },
                     {
                         "name": "param",
@@ -33201,11 +33906,20 @@
                             "array"
                         ],
                         "variable": "$source_block"
+                    },
+                    {
+                        "name": "param",
+                        "content": "If this is a nested block, a reference to the parent block.",
+                        "types": [
+                            "\\WP_Block",
+                            "null"
+                        ],
+                        "variable": "$parent_block"
                     }
                 ],
                 "long_description_html": ""
             },
-            "args": 2
+            "args": 3
         },
         {
             "name": "render_block_{$this->name}",
@@ -33218,6 +33932,11 @@
                     {
                         "name": "since",
                         "content": "5.7.0"
+                    },
+                    {
+                        "name": "since",
+                        "content": "5.9.0",
+                        "description": "The <code>$instance</code> parameter was added."
                     },
                     {
                         "name": "param",
@@ -33234,11 +33953,19 @@
                             "array"
                         ],
                         "variable": "$block"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The block instance.",
+                        "types": [
+                            "\\WP_Block"
+                        ],
+                        "variable": "$instance"
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$name</code>, refers to the block name, e.g. \"core/paragraph\".</p>"
             },
-            "args": 2
+            "args": 3
         },
         {
             "name": "replace_editor",
@@ -34285,6 +35012,39 @@
             "args": 2
         },
         {
+            "name": "rest_pre_insert_nav_menu_item",
+            "file": "wp-includes/rest-api/endpoints/class-wp-rest-menu-items-controller.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters a menu item before it is inserted via the REST API.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.9.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "An object representing a single menu item prepared                                           for inserting or updating the database.",
+                        "types": [
+                            "object"
+                        ],
+                        "variable": "$prepared_nav_item"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Request object.",
+                        "types": [
+                            "\\WP_REST_Request"
+                        ],
+                        "variable": "$request"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 2
+        },
+        {
             "name": "rest_pre_insert_user",
             "file": "wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php",
             "type": "filter",
@@ -34728,6 +35488,88 @@
             "args": 3
         },
         {
+            "name": "rest_prepare_menu_location",
+            "file": "wp-includes/rest-api/endpoints/class-wp-rest-menu-locations-controller.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters menu location data returned from the REST API.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.9.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The response object.",
+                        "types": [
+                            "\\WP_REST_Response"
+                        ],
+                        "variable": "$response"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The original location object.",
+                        "types": [
+                            "object"
+                        ],
+                        "variable": "$location"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Request used to generate the response.",
+                        "types": [
+                            "\\WP_REST_Request"
+                        ],
+                        "variable": "$request"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 3
+        },
+        {
+            "name": "rest_prepare_nav_menu_item",
+            "file": "wp-includes/rest-api/endpoints/class-wp-rest-menu-items-controller.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the menu item data for a REST API response.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.9.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The response object.",
+                        "types": [
+                            "\\WP_REST_Response"
+                        ],
+                        "variable": "$response"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Menu item setup by {@see wp_setup_nav_menu_item()}.",
+                        "types": [
+                            "object"
+                        ],
+                        "variable": "$menu_item"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Request object.",
+                        "types": [
+                            "\\WP_REST_Request"
+                        ],
+                        "variable": "$request"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 3
+        },
+        {
             "name": "rest_prepare_plugin",
             "file": "wp-includes/rest-api/endpoints/class-wp-rest-plugins-controller.php",
             "type": "filter",
@@ -35013,6 +35855,55 @@
                 "long_description_html": ""
             },
             "args": 3
+        },
+        {
+            "name": "rest_prepare_url_details",
+            "file": "wp-includes/rest-api/endpoints/class-wp-rest-url-details-controller.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the URL data for the response.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.9.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The response object.",
+                        "types": [
+                            "\\WP_REST_Response"
+                        ],
+                        "variable": "$response"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The requested URL.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$url"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Request object.",
+                        "types": [
+                            "\\WP_REST_Request"
+                        ],
+                        "variable": "$request"
+                    },
+                    {
+                        "name": "param",
+                        "content": "HTTP response body from the remote URL.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$remote_url_response"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 4
         },
         {
             "name": "rest_prepare_user",
@@ -35550,6 +36441,72 @@
             "args": 2
         },
         {
+            "name": "rest_route_for_post_type_items",
+            "file": "wp-includes/rest-api.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the REST API route for a post type.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.9.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The route path.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$route"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The post type object.",
+                        "types": [
+                            "\\WP_Post_Type"
+                        ],
+                        "variable": "$post_type"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 2
+        },
+        {
+            "name": "rest_route_for_taxonomy_items",
+            "file": "wp-includes/rest-api.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the REST API route for a taxonomy.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.9.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The route path.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$route"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The taxonomy object.",
+                        "types": [
+                            "\\WP_Taxonomy"
+                        ],
+                        "variable": "$taxonomy"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 2
+        },
+        {
             "name": "rest_route_for_term",
             "file": "wp-includes/rest-api.php",
             "type": "filter",
@@ -35714,6 +36671,64 @@
                 "long_description_html": "<p>Use this filter to adjust the url returned by the get_rest_url() function.</p>"
             },
             "args": 4
+        },
+        {
+            "name": "rest_url_details_cache_expiration",
+            "file": "wp-includes/rest-api/endpoints/class-wp-rest-url-details-controller.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the cache expiration.",
+                "long_description": "Can be used to adjust the time until expiration in seconds for the cache of the data retrieved for the given URL.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.9.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The time until cache expiration in seconds.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$ttl"
+                    }
+                ],
+                "long_description_html": "<p>Can be used to adjust the time until expiration in seconds for the cache of the data retrieved for the given URL.</p>"
+            },
+            "args": 1
+        },
+        {
+            "name": "rest_url_details_http_request_args",
+            "file": "wp-includes/rest-api/endpoints/class-wp-rest-url-details-controller.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the HTTP request args for URL data retrieval.",
+                "long_description": "Can be used to adjust response size limit and other WP_Http::request args.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.9.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Arguments used for the HTTP request.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$args"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The attempted URL.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$url"
+                    }
+                ],
+                "long_description_html": "<p>Can be used to adjust response size limit and other WP_Http::request args.</p>"
+            },
+            "args": 2
         },
         {
             "name": "rest_url_prefix",
@@ -36355,6 +37370,39 @@
                 "long_description_html": ""
             },
             "args": 1
+        },
+        {
+            "name": "rss_widget_feed_link",
+            "file": "wp-includes/widgets/class-wp-widget-rss.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the classic RSS widget's feed icon link.",
+                "long_description": "Themes can remove the icon link by using `add_filter( 'rss_widget_feed_link', '__return_false' );`.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.9.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "HTML for link to RSS feed.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$feed_link"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Array of settings for the current widget.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$instance"
+                    }
+                ],
+                "long_description_html": "<p>Themes can remove the icon link by using <code>add_filter( 'rss_widget_feed_link', '__return_false' );</code>.</p>"
+            },
+            "args": 2
         },
         {
             "name": "run_wptexturize",
@@ -52582,6 +53630,31 @@
                     }
                 ],
                 "long_description_html": ""
+            },
+            "args": 1
+        },
+        {
+            "name": "wp_omit_loading_attr_threshold",
+            "file": "wp-includes/media.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the threshold for how many of the first content media elements to not lazy-load.",
+                "long_description": "For these first content media elements, the `loading` attribute will be omitted. By default, this is the case for only the very first content media element.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.9.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The number of media elements where the <code>loading</code> attribute will not be added. Default 1.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$omit_threshold"
+                    }
+                ],
+                "long_description_html": "<p>For these first content media elements, the <code>loading</code> attribute will be omitted. By default, this is the case for only the very first content media element.</p>"
             },
             "args": 1
         },
