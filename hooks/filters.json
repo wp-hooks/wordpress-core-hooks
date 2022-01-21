@@ -1,5 +1,5 @@
 {
-    "$schema": "https://raw.githubusercontent.com/johnbillion/wp-hooks-generator/0.7.1/schema.json",
+    "$schema": "https://raw.githubusercontent.com/johnbillion/wp-hooks-generator/0.7.2/schema.json",
     "hooks": [
         {
             "name": "_get_page_link",
