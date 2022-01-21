@@ -1730,10 +1730,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "The upgrade response array or WP_Error on failure.",
+                        "content": "The upgrade response array.",
                         "types": [
-                            "array",
-                            "\\WP_Error"
+                            "array"
                         ],
                         "variable": "$response"
                     }
@@ -1790,7 +1789,7 @@
                     {
                         "name": "since",
                         "content": "5.5.0",
-                        "description": "Added 'auto-update-enabled' and 'auto-update-disabled' to possible values for <code>$status</code>."
+                        "description": "Added 'auto-update-enabled' and 'auto-update-disabled'              to possible values for <code>$status</code>."
                     },
                     {
                         "name": "param",
@@ -1802,7 +1801,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "An array of plugin data.",
+                        "content": "An array of plugin data. See <code>get_plugin_data()</code>                            and the {@see 'plugin_row_meta'} filter for the list                            of possible values.",
                         "types": [
                             "array"
                         ],
@@ -1810,7 +1809,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Status filter currently applied to the plugin list. Possible                            values are: 'all', 'active', 'inactive', 'recently_activated',                            'upgrade', 'mustuse', 'dropins', 'search', 'paused',                            'auto-update-enabled', 'auto-update-disabled'.",
+                        "content": "Status filter currently applied to the plugin list.                            Possible values are: 'all', 'active', 'inactive',                            'recently_activated', 'upgrade', 'mustuse', 'dropins',                            'search', 'paused', 'auto-update-enabled', 'auto-update-disabled'.",
                         "types": [
                             "string"
                         ],
@@ -1836,7 +1835,7 @@
                     {
                         "name": "since",
                         "content": "5.5.0",
-                        "description": "Added 'auto-update-enabled' and 'auto-update-disabled' to possible values for <code>$status</code>."
+                        "description": "Added 'auto-update-enabled' and 'auto-update-disabled'              to possible values for <code>$status</code>."
                     },
                     {
                         "name": "param",
@@ -1848,7 +1847,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "An array of plugin data.",
+                        "content": "An array of plugin data. See <code>get_plugin_data()</code>                            and the {@see 'plugin_row_meta'} filter for the list                            of possible values.",
                         "types": [
                             "array"
                         ],
@@ -1856,7 +1855,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Status filter currently applied to the plugin list. Possible                            values are: 'all', 'active', 'inactive', 'recently_activated',                            'upgrade', 'mustuse', 'dropins', 'search', 'paused',                            'auto-update-enabled', 'auto-update-disabled'.",
+                        "content": "Status filter currently applied to the plugin list.                            Possible values are: 'all', 'active', 'inactive',                            'recently_activated', 'upgrade', 'mustuse', 'dropins',                            'search', 'paused', 'auto-update-enabled', 'auto-update-disabled'.",
                         "types": [
                             "string"
                         ],
@@ -2785,7 +2784,7 @@
             "file": "wp-admin/includes/post.php",
             "type": "action",
             "doc": {
-                "description": "Add hidden input fields to the meta box save form.",
+                "description": "Adds hidden input fields to the meta box save form.",
                 "long_description": "Hook into this action to print `<input type=\"hidden\" ... />` fields, which will be POSTed back to the server when meta boxes are saved.",
                 "tags": [
                     {
@@ -8158,7 +8157,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "{     An array of plugin metadata.     @type string $name        The human-readable name of the plugin.     @type string $plugin_uri  Plugin URI.     @type string $version     Plugin version.     @type string $description Plugin description.     @type string $author      Plugin author.     @type string $author_uri  Plugin author URI.     @type string $text_domain Plugin text domain.     @type string $domain_path Relative path to the plugin's .mo file(s).     @type bool   $network     Whether the plugin can only be activated network wide.     @type string $title       The human-readable title of the plugin.     @type string $author_name Plugin author's name.     @type bool   $update      Whether there's an available update. Default null. }",
+                        "content": "An array of plugin metadata. See get_plugin_data()                            and the {@see 'plugin_row_meta'} filter for the list                            of possible values.",
                         "types": [
                             "array"
                         ],
@@ -8166,7 +8165,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "{     An object of metadata about the available plugin update.     @type int    $id           Plugin ID.     @type string $slug         Plugin slug.     @type string $plugin       Plugin basename.     @type string $new_version  New plugin version.     @type string $url          Plugin URL.     @type string $package      Plugin update package URL.     @type array  $icons        An array of plugin icon URLs.     @type array  $banners      An array of plugin banner URLs.     @type array  $banners_rtl  An array of plugin RTL banner URLs.     @type string $requires     The version of WordPress which the plugin requires.     @type string $tested       The version of WordPress the plugin is tested against.     @type string $requires_php The version of PHP which the plugin requires. }",
+                        "content": "{     An object of metadata about the available plugin update.     @type string   $id           Plugin ID, e.g. <code>w.org/plugins/[plugin-name]</code>.     @type string   $slug         Plugin slug.     @type string   $plugin       Plugin basename.     @type string   $new_version  New plugin version.     @type string   $url          Plugin URL.     @type string   $package      Plugin update package URL.     @type string[] $icons        An array of plugin icon URLs.     @type string[] $banners      An array of plugin banner URLs.     @type string[] $banners_rtl  An array of plugin RTL banner URLs.     @type string   $requires     The version of WordPress which the plugin requires.     @type string   $tested       The version of WordPress the plugin is tested against.     @type string   $requires_php The version of PHP which the plugin requires. }",
                         "types": [
                             "object"
                         ],
@@ -9238,7 +9237,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "An array of plugin data.",
+                        "content": "An array of plugin data. See <code>get_plugin_data()</code>                            and the {@see 'plugin_row_meta'} filter for the list                            of possible values.",
                         "types": [
                             "array"
                         ],
@@ -11152,7 +11151,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Taxonomy Name.",
+                        "content": "Taxonomy name.",
                         "types": [
                             "string"
                         ],
@@ -11666,7 +11665,7 @@
                     {
                         "name": "since",
                         "content": "5.8.0",
-                        "description": "The $userdata parameter was added."
+                        "description": "The <code>$userdata</code> parameter was added."
                     },
                     {
                         "name": "param",
@@ -16408,7 +16407,7 @@
                     {
                         "name": "since",
                         "content": "5.8.0",
-                        "description": "The $userdata parameter was added."
+                        "description": "The <code>$userdata</code> parameter was added."
                     },
                     {
                         "name": "param",
