@@ -1,71 +1,71 @@
 {
-    "name": "johnbillion/wp-hooks",
-    "description": "All the actions and filters from WordPress core in machine-readable JSON format.",
-    "type": "library",
-    "license": "GPL-3.0-or-later",
-    "authors": [
-        {
-            "name": "John Blackbourn",
-            "homepage": "https://johnblackbourn.com/"
-        }
-    ],
-    "config": {
-        "sort-packages": true,
-        "allow-plugins": {
-            "composer/installers": true,
-            "oomphinc/composer-installers-extender": true,
-            "roots/wordpress-core-installer": true
-        }
-    },
-    "scripts": {
-        "generate": "wp-hooks-generator --input=vendor/wordpress/wordpress --output=hooks"
-    },
-    "scripts-descriptions": {
-        "generate": "Generates the hook files for WordPress core"
-    },
-    "require-dev": {
-        "johnbillion/wp-hooks-generator": "0.7.1",
-        "oomphinc/composer-installers-extender": "^2",
-        "roots/wordpress": "dev-nightly"
-    },
-    "minimum-stability": "dev",
-    "extra": {
-        "wordpress-install-dir": "vendor/wordpress/wordpress",
-        "wp-hooks": {
-            "ignore-files": [
-                "wp-admin/includes/deprecated.php",
-                "wp-admin/includes/ms-deprecated.php",
-                "wp-content/",
-                "wp-includes/deprecated.php",
-                "wp-includes/ID3/",
-                "wp-includes/ms-deprecated.php",
-                "wp-includes/pomo/",
-                "wp-includes/random_compat/",
-                "wp-includes/Requests/",
-                "wp-includes/SimplePie/",
-                "wp-includes/sodium_compat/",
-                "wp-includes/Text/"
-            ],
-            "ignore-hooks": [
-                "load-categories.php",
-                "load-edit-link-categories.php",
-                "load-edit-tags.php",
-                "load-page-new.php",
-                "load-page.php",
-                "option_enable_xmlrpc",
-                "edit_post_{$field}",
-                "pre_post_{$field}",
-                "post_{$field}",
-                "pre_option_enable_xmlrpc",
-                "{$hook}",
-                "{$hook_name}"
-            ]
-        }
-    },
-    "funding": [
-        {
-            "type": "github",
-            "url": "https://github.com/sponsors/johnbillion"
-        }
-    ]
+	"name": "johnbillion/wp-hooks",
+	"description": "All the actions and filters from WordPress core in machine-readable JSON format.",
+	"type": "library",
+	"license": "GPL-3.0-or-later",
+	"authors": [
+		{
+			"name": "John Blackbourn",
+			"homepage": "https://johnblackbourn.com/"
+		}
+	],
+	"config": {
+		"sort-packages": true,
+		"allow-plugins": {
+			"composer/installers": true,
+			"oomphinc/composer-installers-extender": true,
+			"roots/wordpress-core-installer": true
+		}
+	},
+	"scripts": {
+		"generate": "wp-hooks-generator --input=vendor/wordpress/wordpress --output=hooks"
+	},
+	"scripts-descriptions": {
+		"generate": "Generates the hook files for WordPress core"
+	},
+	"require-dev": {
+		"johnbillion/wp-hooks-generator": "0.7.1",
+		"oomphinc/composer-installers-extender": "^2",
+		"roots/wordpress": "dev-nightly"
+	},
+	"minimum-stability": "dev",
+	"extra": {
+		"wordpress-install-dir": "vendor/wordpress/wordpress",
+		"wp-hooks": {
+			"ignore-files": [
+				"wp-admin/includes/deprecated.php",
+				"wp-admin/includes/ms-deprecated.php",
+				"wp-content/",
+				"wp-includes/deprecated.php",
+				"wp-includes/ID3/",
+				"wp-includes/ms-deprecated.php",
+				"wp-includes/pomo/",
+				"wp-includes/random_compat/",
+				"wp-includes/Requests/",
+				"wp-includes/SimplePie/",
+				"wp-includes/sodium_compat/",
+				"wp-includes/Text/"
+			],
+			"ignore-hooks": [
+				"load-categories.php",
+				"load-edit-link-categories.php",
+				"load-edit-tags.php",
+				"load-page-new.php",
+				"load-page.php",
+				"option_enable_xmlrpc",
+				"edit_post_{$field}",
+				"pre_post_{$field}",
+				"post_{$field}",
+				"pre_option_enable_xmlrpc",
+				"{$hook}",
+				"{$hook_name}"
+			]
+		}
+	},
+	"funding": [
+		{
+			"type": "github",
+			"url": "https://github.com/sponsors/johnbillion"
+		}
+	]
 }

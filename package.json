@@ -1,33 +1,33 @@
 {
-  "name": "@johnbillion/wp-hooks",
-  "version": "0.7.1",
-  "description": "All the actions and filters from WordPress core in machine-readable JSON format.",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/johnbillion/wp-hooks.git"
-  },
-  "keywords": [
-    "wordpress"
-  ],
-  "files": [
-    "hooks",
-    "interface",
-    "readme.md"
-  ],
-  "author": "John Blackbourn",
-  "license": "GPL-3.0-or-later",
-  "bugs": {
-    "url": "https://github.com/johnbillion/wp-hooks/issues"
-  },
-  "homepage": "https://github.com/johnbillion/wp-hooks#readme",
-  "devDependencies": {
-    "ajv-cli": "^3.3.0"
-  },
-  "scripts": {
-    "check": "npm run validate:actions && npm run validate:filters && npm run check:duplicate-actions && npm run check:duplicate-filters",
-    "check:duplicate-actions": "bash -c \" diff <(jq '.hooks | map(.name) | sort' hooks/actions.json) <(jq '.hooks | map(.name) | unique | sort' hooks/actions.json)\"",
-    "check:duplicate-filters": "bash -c \" diff <(jq '.hooks | map(.name) | sort' hooks/filters.json) <(jq '.hooks | map(.name) | unique | sort' hooks/filters.json)\"",
-    "validate:actions": "ajv validate -s hooks/schema.json -d hooks/actions.json",
-    "validate:filters": "ajv validate -s hooks/schema.json -d hooks/filters.json"
-  }
+	"name": "@johnbillion/wp-hooks",
+	"version": "0.7.1",
+	"description": "All the actions and filters from WordPress core in machine-readable JSON format.",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/johnbillion/wp-hooks.git"
+	},
+	"keywords": [
+		"wordpress"
+	],
+	"files": [
+		"hooks",
+		"interface",
+		"readme.md"
+	],
+	"author": "John Blackbourn",
+	"license": "GPL-3.0-or-later",
+	"bugs": {
+		"url": "https://github.com/johnbillion/wp-hooks/issues"
+	},
+	"homepage": "https://github.com/johnbillion/wp-hooks#readme",
+	"devDependencies": {
+		"ajv-cli": "^3.3.0"
+	},
+	"scripts": {
+		"check": "npm run validate:actions && npm run validate:filters && npm run check:duplicate-actions && npm run check:duplicate-filters",
+		"check:duplicate-actions": "bash -c \" diff <(jq '.hooks | map(.name) | sort' hooks/actions.json) <(jq '.hooks | map(.name) | unique | sort' hooks/actions.json)\"",
+		"check:duplicate-filters": "bash -c \" diff <(jq '.hooks | map(.name) | sort' hooks/filters.json) <(jq '.hooks | map(.name) | unique | sort' hooks/filters.json)\"",
+		"validate:actions": "ajv validate -s hooks/schema.json -d hooks/actions.json",
+		"validate:filters": "ajv validate -s hooks/schema.json -d hooks/filters.json"
+	}
 }
