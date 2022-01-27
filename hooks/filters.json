@@ -11990,9 +11990,10 @@
                     },
                     {
                         "name": "param",
-                        "content": "The found block template.",
+                        "content": "The found block template, or null if there is none.",
                         "types": [
-                            "\\WP_Block_Template"
+                            "\\WP_Block_Template",
+                            "null"
                         ],
                         "variable": "$block_template"
                     },
@@ -12008,7 +12009,7 @@
                         "name": "param",
                         "content": "Template type: <code>'wp_template'</code> or '<code>wp_template_part'</code>.",
                         "types": [
-                            "array"
+                            "string"
                         ],
                         "variable": "$template_type"
                     }
@@ -12050,7 +12051,7 @@
                         "name": "param",
                         "content": "Template type: <code>'wp_template'</code> or '<code>wp_template_part'</code>.",
                         "types": [
-                            "array"
+                            "string"
                         ],
                         "variable": "$template_type"
                     }
@@ -12091,7 +12092,7 @@
                         "name": "param",
                         "content": "wp_template or wp_template_part.",
                         "types": [
-                            "array"
+                            "string"
                         ],
                         "variable": "$template_type"
                     }
@@ -29610,7 +29611,7 @@
                         "name": "param",
                         "content": "Template type: <code>'wp_template'</code> or '<code>wp_template_part'</code>.",
                         "types": [
-                            "array"
+                            "string"
                         ],
                         "variable": "$template_type"
                     }
@@ -29652,7 +29653,7 @@
                         "name": "param",
                         "content": "Template type: <code>'wp_template'</code> or '<code>wp_template_part'</code>.",
                         "types": [
-                            "array"
+                            "string"
                         ],
                         "variable": "$template_type"
                     }
@@ -29694,7 +29695,7 @@
                         "name": "param",
                         "content": "wp_template or wp_template_part.",
                         "types": [
-                            "array"
+                            "string"
                         ],
                         "variable": "$template_type"
                     }
