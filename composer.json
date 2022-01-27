@@ -26,9 +26,8 @@
 	"require-dev": {
 		"johnbillion/wp-hooks-generator": "0.7.2",
 		"oomphinc/composer-installers-extender": "^2",
-		"roots/wordpress": "dev-nightly"
+		"roots/wordpress": "5.9.0"
 	},
-	"minimum-stability": "dev",
 	"extra": {
 		"wordpress-install-dir": "vendor/wordpress/wordpress",
 		"wp-hooks": {
