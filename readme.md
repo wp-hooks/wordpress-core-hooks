@@ -75,6 +75,7 @@ Anything that needs programmatic access to a list of available hooks, for exampl
 
 * [Autocomplete WordPress action and filter names in VS Code](https://github.com/johnbillion/vscode-wordpress-hooks)
 * [Autocomplete WordPress action and filter names in Vim](https://github.com/Mte90/deoplete-wp-hooks)
+* [WordPress plugin for Psalm](https://github.com/humanmade/psalm-plugin-wordpress)
 
 ## Regenerating the Hook Files
 
