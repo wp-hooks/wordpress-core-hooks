@@ -2,7 +2,7 @@
 
 All the actions and filters from WordPress core in machine-readable JSON format.
 
-Last updated for WordPress 5.9.
+Last updated for WordPress 6.0 RC.
 
 ## Installation
 
@@ -79,15 +79,19 @@ Anything that needs programmatic access to a list of available hooks, for exampl
 
 ## Regenerating the Hook Files
 
+Change the `roots/wordpress` version in composer.json to the required WordPress version, or `dev-nightly` for nightly.
+
 Install the dependencies:
-    ```shell
-    npm i && composer i
-    ```
+
+```shell
+npm i && composer i
+```
 
 Then run:
-    ```shell
-    composer generate
-    ```
+
+```shell
+composer generate
+```
 
 Some scripts are available for checking the data:
 
