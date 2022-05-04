@@ -8942,6 +8942,32 @@
             "args": 2
         },
         {
+            "name": "edit_custom_thumbnail_sizes",
+            "file": "wp-admin/includes/image-edit.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters whether custom sizes are available options for image editing.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.0.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "True if custom sizes can be edited or array of custom size names.",
+                        "types": [
+                            "bool",
+                            "string[]"
+                        ],
+                        "variable": "$edit_custom_sizes"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 1
+        },
+        {
             "name": "edit_post_link",
             "file": "wp-includes/link-template.php",
             "type": "filter",
@@ -21927,6 +21953,47 @@
             "args": 2
         },
         {
+            "name": "media_date_column_time",
+            "file": "wp-admin/includes/class-wp-media-list-table.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the published time of an attachment displayed in the Media list table.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.0.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The published time.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$h_time"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Attachment object.",
+                        "types": [
+                            "\\WP_Post"
+                        ],
+                        "variable": "$post"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The column name.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$column_name"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 3
+        },
+        {
             "name": "media_embedded_in_content_allowed_types",
             "file": "wp-includes/media.php",
             "type": "filter",
@@ -26485,6 +26552,39 @@
                     {
                         "name": "param",
                         "content": "An array of plugin data. See {@see plugins_api()}                               for the list of possible values.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$plugin"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 2
+        },
+        {
+            "name": "plugin_install_description",
+            "file": "wp-admin/includes/class-wp-plugin-install-list-table.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the plugin card description on the Add Plugins screen.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.0.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Plugin card description.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$description"
+                    },
+                    {
+                        "name": "param",
+                        "content": "An array of plugin data. See {@see plugins_api()}                            for the list of possible values.",
                         "types": [
                             "array"
                         ],
@@ -31958,6 +32058,40 @@
             "args": 1
         },
         {
+            "name": "pre_wp_filesize",
+            "file": "wp-includes/functions.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the result of wp_filesize before the PHP function is run.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.0.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The unfiltered value. Returning an int from the callback bypasses the filesize call.",
+                        "types": [
+                            "null",
+                            "int"
+                        ],
+                        "variable": "$size"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Path to the file.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$path"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 2
+        },
+        {
             "name": "pre_wp_is_site_initialized",
             "file": "wp-includes/ms-site.php",
             "type": "filter",
@@ -33681,6 +33815,80 @@
             "args": 1
         },
         {
+            "name": "register_{$post_type}_post_type_args",
+            "file": "wp-includes/class-wp-post-type.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the arguments for registering a specific post type.",
+                "long_description": "The dynamic portion of the filter name, `$post_type`, refers to the post type key.\n Possible hook names include:\n\n  - `register_post_post_type_args`\n  - `register_page_post_type_args`",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.0.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Array of arguments for registering a post type.                          See the register_post_type() function for accepted arguments.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$args"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Post type key.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$post_type"
+                    }
+                ],
+                "long_description_html": "<p>The dynamic portion of the filter name, <code>$post_type</code>, refers to the post type key.</p> <p>Possible hook names include:</p> <ul> <li><code>register_post_post_type_args</code></li> <li><code>register_page_post_type_args</code></li> </ul>"
+            },
+            "args": 2
+        },
+        {
+            "name": "register_{$taxonomy}_taxonomy_args",
+            "file": "wp-includes/class-wp-taxonomy.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the arguments for registering a specific taxonomy.",
+                "long_description": "The dynamic portion of the filter name, `$taxonomy`, refers to the taxonomy key.\n Possible hook names include:\n\n  - `register_category_taxonomy_args`\n  - `register_post_tag_taxonomy_args`",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.0.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Array of arguments for registering a taxonomy.                              See the register_taxonomy() function for accepted arguments.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$args"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Taxonomy key.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$taxonomy"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Array of names of object types for the taxonomy.",
+                        "types": [
+                            "string[]"
+                        ],
+                        "variable": "$object_type"
+                    }
+                ],
+                "long_description_html": "<p>The dynamic portion of the filter name, <code>$taxonomy</code>, refers to the taxonomy key.</p> <p>Possible hook names include:</p> <ul> <li><code>register_category_taxonomy_args</code></li> <li><code>register_post_tag_taxonomy_args</code></li> </ul>"
+            },
+            "args": 3
+        },
+        {
             "name": "registration_errors",
             "file": "wp-includes/user.php",
             "type": "filter",
@@ -34572,17 +34780,30 @@
                         "content": "4.4.0"
                     },
                     {
+                        "name": "since",
+                        "content": "6.0.0",
+                        "description": "Added <code>$request</code> parameter."
+                    },
+                    {
                         "name": "param",
                         "content": "Response data.",
                         "types": [
                             "\\WP_REST_Response"
                         ],
                         "variable": "$response"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Request data.",
+                        "types": [
+                            "\\WP_REST_Request"
+                        ],
+                        "variable": "$request"
                     }
                 ],
                 "long_description_html": "<p>This contains the data describing the API. This includes information about supported authentication schemes, supported namespaces, routes available on the API, and a small amount of data about the site.</p>"
             },
-            "args": 1
+            "args": 2
         },
         {
             "name": "rest_jsonp_enabled",
@@ -37082,6 +37303,43 @@
             "args": 4
         },
         {
+            "name": "retrieve_password_notification_email",
+            "file": "wp-includes/user.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the contents of the reset password notification email sent to the user.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.0.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "{     The default notification email arguments. Used to build wp_mail().     @type string $to      The intended recipient - user email address.     @type string $subject The subject of the email.     @type string $message The body of the email.     @type string $headers The headers of the email. }",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$defaults"
+                    },
+                    {
+                        "name": "type",
+                        "content": "string  $key        The activation key."
+                    },
+                    {
+                        "name": "type",
+                        "content": "string  $user_login The username for the user."
+                    },
+                    {
+                        "name": "type",
+                        "content": "WP_User $user_data  WP_User object."
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 4
+        },
+        {
             "name": "retrieve_password_title",
             "file": "wp-includes/user.php",
             "type": "filter",
@@ -38908,6 +39166,47 @@
                     }
                 ],
                 "long_description_html": ""
+            },
+            "args": 3
+        },
+        {
+            "name": "send_retrieve_password_email",
+            "file": "wp-includes/user.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters whether to send the retrieve password email.",
+                "long_description": "Return false to disable sending the email.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.0.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether to send the email.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$send"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The username for the user.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$user_login"
+                    },
+                    {
+                        "name": "param",
+                        "content": "WP_User object.",
+                        "types": [
+                            "\\WP_User"
+                        ],
+                        "variable": "$user_data"
+                    }
+                ],
+                "long_description_html": "<p>Return false to disable sending the email.</p>"
             },
             "args": 3
         },
@@ -41598,6 +41897,57 @@
             "args": 1
         },
         {
+            "name": "term_exists_default_query_args",
+            "file": "wp-includes/taxonomy.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters default query arguments for checking if a term exists.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.0.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "An array of arguments passed to get_terms().",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$defaults"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The term to check. Accepts term ID, slug, or name.",
+                        "types": [
+                            "int",
+                            "string"
+                        ],
+                        "variable": "$term"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The taxonomy name to use. An empty string indicates                             the search is against all taxonomies.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$taxonomy"
+                    },
+                    {
+                        "name": "param",
+                        "content": "ID of parent term under which to confine the exists search.                             Null indicates the search is unconfined.",
+                        "types": [
+                            "int",
+                            "null"
+                        ],
+                        "variable": "$parent"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 4
+        },
+        {
             "name": "term_id_filter",
             "file": "wp-includes/taxonomy.php",
             "type": "filter",
@@ -42020,6 +42370,47 @@
                 "long_description_html": ""
             },
             "args": 1
+        },
+        {
+            "name": "the_author_link",
+            "file": "wp-includes/author-template.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the author URL link HTML.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.0.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The default rendered author HTML link.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$link"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Author's URL.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$author_url"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Author user data.",
+                        "types": [
+                            "\\WP_User"
+                        ],
+                        "variable": "$authordata"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 3
         },
         {
             "name": "the_author_posts_link",
@@ -48229,6 +48620,31 @@
             "args": 1
         },
         {
+            "name": "wp_admin_bar_show_site_icons",
+            "file": "wp-includes/admin-bar.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters whether to show the site icons in toolbar.",
+                "long_description": "Returning false to this hook is the recommended way to hide site icons in the toolbar. A truthy return may have negative performance impact on large multisites.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.0.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether site icons should be shown in the toolbar. Default true.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$show_site_icons"
+                    }
+                ],
+                "long_description_html": "<p>Returning false to this hook is the recommended way to hide site icons in the toolbar. A truthy return may have negative performance impact on large multisites.</p>"
+            },
+            "args": 1
+        },
+        {
             "name": "wp_admin_css",
             "file": "wp-includes/general-template.php",
             "type": "filter",
@@ -49157,6 +49573,47 @@
                 "long_description_html": ""
             },
             "args": 5
+        },
+        {
+            "name": "wp_content_img_tag",
+            "file": "wp-includes/media.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters an img tag within the content for a given context.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.0.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Full img tag with attributes that will replace the source img tag.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$filtered_image"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Additional context, like the current filter name or the function name from where this was called.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$context"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The image attachment ID. May be 0 in case the image is not an attachment.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$attachment_id"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 3
         },
         {
             "name": "wp_count_attachments",
@@ -50165,6 +50622,39 @@
                             "string"
                         ],
                         "variable": "$filename"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 2
+        },
+        {
+            "name": "wp_filesize",
+            "file": "wp-includes/functions.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the size of the file.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.0.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The result of PHP filesize on the file.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$size"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Path to the file.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$path"
                     }
                 ],
                 "long_description_html": ""
@@ -51955,6 +52445,11 @@
                         "description": "The <code>$unsanitized_postarr</code> parameter was added."
                     },
                     {
+                        "name": "since",
+                        "content": "6.0.0",
+                        "description": "The <code>$update</code> parameter was added."
+                    },
+                    {
                         "name": "param",
                         "content": "An array of slashed, sanitized, and processed attachment post data.",
                         "types": [
@@ -51977,11 +52472,19 @@
                             "array"
                         ],
                         "variable": "$unsanitized_postarr"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether this is an existing attachment post being updated.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$update"
                     }
                 ],
                 "long_description_html": ""
             },
-            "args": 3
+            "args": 4
         },
         {
             "name": "wp_insert_post_data",
@@ -51999,6 +52502,11 @@
                         "name": "since",
                         "content": "5.4.1",
                         "description": "The <code>$unsanitized_postarr</code> parameter was added."
+                    },
+                    {
+                        "name": "since",
+                        "content": "6.0.0",
+                        "description": "The <code>$update</code> parameter was added."
                     },
                     {
                         "name": "param",
@@ -52023,11 +52531,19 @@
                             "array"
                         ],
                         "variable": "$unsanitized_postarr"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether this is an existing post being updated.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$update"
                     }
                 ],
                 "long_description_html": ""
             },
-            "args": 3
+            "args": 4
         },
         {
             "name": "wp_insert_post_empty_content",
@@ -52439,6 +52955,48 @@
                 "long_description_html": ""
             },
             "args": 4
+        },
+        {
+            "name": "wp_is_large_user_count",
+            "file": "wp-includes/user.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters whether the site is considered large, based on its number of users.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.0.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether the site has a large number of users.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$is_large_user_count"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The total number of users.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$count"
+                    },
+                    {
+                        "name": "param",
+                        "content": "ID of the network. <code>null</code> represents the current network.",
+                        "types": [
+                            "int",
+                            "null"
+                        ],
+                        "variable": "$network_id"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 3
         },
         {
             "name": "wp_is_mobile",
@@ -56037,6 +56595,11 @@
                         "content": "5.5.0"
                     },
                     {
+                        "name": "since",
+                        "content": "6.0.0",
+                        "description": "Added <code>$term</code> argument containing the term object."
+                    },
+                    {
                         "name": "param",
                         "content": "Sitemap entry for the term.",
                         "types": [
@@ -56059,11 +56622,19 @@
                             "string"
                         ],
                         "variable": "$taxonomy"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Term object.",
+                        "types": [
+                            "\\WP_Term"
+                        ],
+                        "variable": "$term"
                     }
                 ],
                 "long_description_html": ""
             },
-            "args": 3
+            "args": 4
         },
         {
             "name": "wp_sitemaps_taxonomies_pre_max_num_pages",

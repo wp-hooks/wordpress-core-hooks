@@ -12001,6 +12001,39 @@
             "args": 2
         },
         {
+            "name": "registered_post_type_{$post_type}",
+            "file": "wp-includes/post.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires after a specific post type is registered.",
+                "long_description": "The dynamic portion of the filter name, `$post_type`, refers to the post type key.\n Possible hook names include:\n\n  - `registered_post_type_post`\n  - `registered_post_type_page`",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.0.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Post type.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$post_type"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Arguments used to register the post type.",
+                        "types": [
+                            "\\WP_Post_Type"
+                        ],
+                        "variable": "$post_type_object"
+                    }
+                ],
+                "long_description_html": "<p>The dynamic portion of the filter name, <code>$post_type</code>, refers to the post type key.</p> <p>Possible hook names include:</p> <ul> <li><code>registered_post_type_post</code></li> <li><code>registered_post_type_page</code></li> </ul>"
+            },
+            "args": 2
+        },
+        {
             "name": "registered_taxonomy",
             "file": "wp-includes/taxonomy.php",
             "type": "action",
@@ -12074,6 +12107,48 @@
                 "long_description_html": ""
             },
             "args": 2
+        },
+        {
+            "name": "registered_taxonomy_{$taxonomy}",
+            "file": "wp-includes/taxonomy.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires after a specific taxonomy is registered.",
+                "long_description": "The dynamic portion of the filter name, `$taxonomy`, refers to the taxonomy key.\n Possible hook names include:\n\n  - `registered_taxonomy_category`\n  - `registered_taxonomy_post_tag`",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.0.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Taxonomy slug.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$taxonomy"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Object type or array of object types.",
+                        "types": [
+                            "array",
+                            "string"
+                        ],
+                        "variable": "$object_type"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Array of taxonomy registration arguments.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$args"
+                    }
+                ],
+                "long_description_html": "<p>The dynamic portion of the filter name, <code>$taxonomy</code>, refers to the taxonomy key.</p> <p>Possible hook names include:</p> <ul> <li><code>registered_taxonomy_category</code></li> <li><code>registered_taxonomy_post_tag</code></li> </ul>"
+            },
+            "args": 3
         },
         {
             "name": "remove_user_from_blog",
