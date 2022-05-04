@@ -2433,7 +2433,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "An array of data for the authentication cookie.",
+                        "content": "{     Authentication cookie components. None of the components should be assumed     to be valid as they come directly from a client-provided cookie value.     @type string $username   User's username.     @type string $expiration The time the cookie expires as a UNIX timestamp.     @type string $token      User's session token used.     @type string $hmac       The security hash for the cookie.     @type string $scheme     The cookie scheme to use. }",
                         "types": [
                             "string[]"
                         ],
@@ -2458,7 +2458,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "An array of data for the authentication cookie.",
+                        "content": "{     Authentication cookie components. None of the components should be assumed     to be valid as they come directly from a client-provided cookie value.     @type string $username   User's username.     @type string $expiration The time the cookie expires as a UNIX timestamp.     @type string $token      User's session token used.     @type string $hmac       The security hash for the cookie.     @type string $scheme     The cookie scheme to use. }",
                         "types": [
                             "string[]"
                         ],
@@ -2483,7 +2483,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "An array of data for the authentication cookie.",
+                        "content": "{     Authentication cookie components. None of the components should be assumed     to be valid as they come directly from a client-provided cookie value.     @type string $username   User's username.     @type string $expiration The time the cookie expires as a UNIX timestamp.     @type string $token      User's session token used.     @type string $hmac       The security hash for the cookie.     @type string $scheme     The cookie scheme to use. }",
                         "types": [
                             "string[]"
                         ],
@@ -2508,7 +2508,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "An array of data for the authentication cookie.",
+                        "content": "{     Authentication cookie components. None of the components should be assumed     to be valid as they come directly from a client-provided cookie value.     @type string $username   User's username.     @type string $expiration The time the cookie expires as a UNIX timestamp.     @type string $token      User's session token used.     @type string $hmac       The security hash for the cookie.     @type string $scheme     The cookie scheme to use. }",
                         "types": [
                             "string[]"
                         ],
@@ -2566,7 +2566,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "An array of data for the authentication cookie.",
+                        "content": "{     Authentication cookie components.     @type string $username   User's username.     @type string $expiration The time the cookie expires as a UNIX timestamp.     @type string $token      User's session token used.     @type string $hmac       The security hash for the cookie.     @type string $scheme     The cookie scheme to use. }",
                         "types": [
                             "string[]"
                         ],
@@ -4271,7 +4271,7 @@
             "file": "wp-includes/class-wp-customize-manager.php",
             "type": "action",
             "doc": {
-                "description": "Announce when any setting's unsanitized post value has been set.",
+                "description": "Announces when any setting's unsanitized post value has been set.",
                 "long_description": "Fires when the WP_Customize_Manager::set_post_value() method is called.\n This is useful for `WP_Customize_Setting` instances to watch in order to update a cached previewed value.",
                 "tags": [
                     {
@@ -4312,7 +4312,7 @@
             "file": "wp-includes/class-wp-customize-manager.php",
             "type": "action",
             "doc": {
-                "description": "Announce when a specific setting's unsanitized post value has been set.",
+                "description": "Announces when a specific setting's unsanitized post value has been set.",
                 "long_description": "Fires when the WP_Customize_Manager::set_post_value() method is called.\n The dynamic portion of the hook name, `$setting_id`, refers to the setting ID.",
                 "tags": [
                     {
@@ -7170,7 +7170,7 @@
                         "types": [
                             "\\WP_User"
                         ],
-                        "variable": "$profileuser"
+                        "variable": "$profile_user"
                     }
                 ],
                 "long_description_html": ""
@@ -7348,7 +7348,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Term ID",
+                        "content": "Term ID.",
                         "types": [
                             "int"
                         ],
@@ -8513,14 +8513,14 @@
             "type": "action",
             "doc": {
                 "description": "Fires before a particular screen is loaded.",
-                "long_description": "The load-* hook fires in a number of contexts. This hook is for core screens.\n The dynamic portion of the hook name, `$pagenow`, is a global variable referring to the filename of the current page, such as 'admin.php', 'post-new.php' etc. A complete hook for the latter would be 'load-post-new.php'.",
+                "long_description": "The load-* hook fires in a number of contexts. This hook is for core screens.\n The dynamic portion of the hook name, `$pagenow`, is a global variable referring to the filename of the current screen, such as 'admin.php', 'post-new.php' etc. A complete hook for the latter would be 'load-post-new.php'.",
                 "tags": [
                     {
                         "name": "since",
                         "content": "2.1.0"
                     }
                 ],
-                "long_description_html": "<p>The load-* hook fires in a number of contexts. This hook is for core screens.</p> <p>The dynamic portion of the hook name, <code>$pagenow</code>, is a global variable referring to the filename of the current page, such as 'admin.php', 'post-new.php' etc. A complete hook for the latter would be 'load-post-new.php'.</p>"
+                "long_description_html": "<p>The load-* hook fires in a number of contexts. This hook is for core screens.</p> <p>The dynamic portion of the hook name, <code>$pagenow</code>, is a global variable referring to the filename of the current screen, such as 'admin.php', 'post-new.php' etc. A complete hook for the latter would be 'load-post-new.php'.</p>"
             },
             "args": 0
         },
@@ -10402,7 +10402,7 @@
                         "types": [
                             "\\WP_User"
                         ],
-                        "variable": "$profileuser"
+                        "variable": "$profile_user"
                     }
                 ],
                 "long_description_html": ""
@@ -10638,7 +10638,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "WP_Post object of the current post.",
+                        "content": "WP_Post object for the current post.",
                         "types": [
                             "\\WP_Post"
                         ],
@@ -11643,7 +11643,7 @@
                         "types": [
                             "\\WP_User"
                         ],
-                        "variable": "$profileuser"
+                        "variable": "$profile_user"
                     }
                 ],
                 "long_description_html": "<p>The action only fires if the current user is editing their own profile.</p>"
@@ -14467,7 +14467,7 @@
                         "types": [
                             "\\WP_User"
                         ],
-                        "variable": "$profileuser"
+                        "variable": "$profile_user"
                     }
                 ],
                 "long_description_html": "<p>The action only fires if the current user is editing their own profile.</p>"
@@ -17421,7 +17421,7 @@
                         "types": [
                             "\\WP_User"
                         ],
-                        "variable": "$profileuser"
+                        "variable": "$profile_user"
                     }
                 ],
                 "long_description_html": ""
@@ -18244,8 +18244,8 @@
             "file": "wp-includes/pluggable.php",
             "type": "action",
             "doc": {
-                "description": "Fires after PHPMailer has successfully sent a mail.",
-                "long_description": "The firing of this action does not necessarily mean that the recipient received the email successfully. It only means that the `send` method above was able to process the request without any errors.",
+                "description": "Fires after PHPMailer has successfully sent an email.",
+                "long_description": "The firing of this action does not necessarily mean that the recipient(s) received the email successfully. It only means that the `send` method above was able to process the request without any errors.",
                 "tags": [
                     {
                         "name": "since",
@@ -18253,14 +18253,14 @@
                     },
                     {
                         "name": "param",
-                        "content": "An array containing the mail recipient, subject, message, headers, and attachments.",
+                        "content": "{     An array containing the email recipient(s), subject, message, headers, and attachments.     @type string[] $to          Email addresses to send message.     @type string   $subject     Email subject.     @type string   $message     Message contents.     @type string[] $headers     Additional headers.     @type string[] $attachments Paths to files to attach. }",
                         "types": [
                             "array"
                         ],
                         "variable": "$mail_data"
                     }
                 ],
-                "long_description_html": "<p>The firing of this action does not necessarily mean that the recipient received the email successfully. It only means that the <code>send</code> method above was able to process the request without any errors.</p>"
+                "long_description_html": "<p>The firing of this action does not necessarily mean that the recipient(s) received the email successfully. It only means that the <code>send</code> method above was able to process the request without any errors.</p>"
             },
             "args": 1
         },

@@ -159,7 +159,7 @@
             "file": "wp-admin/includes/menu.php",
             "type": "filter",
             "doc": {
-                "description": "Filters administration menus array with classes added for top-level items.",
+                "description": "Filters administration menu array with classes added for top-level items.",
                 "long_description": "",
                 "tags": [
                     {
@@ -354,7 +354,7 @@
                         "types": [
                             "\\WP_User"
                         ],
-                        "variable": "$profileuser"
+                        "variable": "$profile_user"
                     }
                 ],
                 "long_description_html": "<p>The 'Additional Capabilities' section will only be enabled if the number of the user's capabilities exceeds their number of roles.</p>"
@@ -1053,7 +1053,7 @@
                         "content": "Array of block type slugs, or boolean to enable/disable all.                                                      Default true (all registered block types supported).",
                         "types": [
                             "bool",
-                            "array"
+                            "string[]"
                         ],
                         "variable": "$allowed_block_types"
                     },
@@ -3743,7 +3743,7 @@
                         "types": [
                             "string[]"
                         ],
-                        "variable": "$class"
+                        "variable": "$css_class"
                     },
                     {
                         "name": "param",
@@ -5233,7 +5233,7 @@
                         "types": [
                             "string[]"
                         ],
-                        "variable": "$pieces"
+                        "variable": "$clauses"
                     },
                     {
                         "name": "param",
@@ -6247,7 +6247,7 @@
                         "types": [
                             "string"
                         ],
-                        "variable": "$type"
+                        "variable": "$object_type"
                     },
                     {
                         "name": "param",
@@ -6255,7 +6255,7 @@
                         "types": [
                             "string"
                         ],
-                        "variable": "$object"
+                        "variable": "$object_name"
                     },
                     {
                         "name": "param",
@@ -6722,7 +6722,7 @@
                         "types": [
                             "mixed"
                         ],
-                        "variable": "$default"
+                        "variable": "$default_value"
                     },
                     {
                         "name": "param",
@@ -12051,7 +12051,7 @@
                         "name": "param",
                         "content": "Template type: <code>'wp_template'</code> or '<code>wp_template_part'</code>.",
                         "types": [
-                            "string"
+                            "array"
                         ],
                         "variable": "$template_type"
                     }
@@ -14385,15 +14385,16 @@
                     },
                     {
                         "name": "param",
-                        "content": "The formatted time.",
+                        "content": "Formatted date string or Unix timestamp if <code>$format</code> is 'U' or 'G'.",
                         "types": [
-                            "string"
+                            "string",
+                            "int"
                         ],
                         "variable": "$time"
                     },
                     {
                         "name": "param",
-                        "content": "Format to use for retrieving the time the post was written.                       Accepts 'G', 'U', or PHP date format. Default 'U'.",
+                        "content": "Format to use for retrieving the time the post was written.                           Accepts 'G', 'U', or PHP date format.",
                         "types": [
                             "string"
                         ],
@@ -14401,7 +14402,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Whether to retrieve the GMT time. Default false.",
+                        "content": "Whether to retrieve the GMT time.",
                         "types": [
                             "bool"
                         ],
@@ -15306,9 +15307,10 @@
                     },
                     {
                         "name": "param",
-                        "content": "The formatted date.",
+                        "content": "Formatted date string or Unix timestamp if <code>$format</code> is 'U' or 'G'.",
                         "types": [
-                            "string"
+                            "string",
+                            "int"
                         ],
                         "variable": "$the_date"
                     },
@@ -15322,9 +15324,8 @@
                     },
                     {
                         "name": "param",
-                        "content": "The post object or ID.",
+                        "content": "The post object.",
                         "types": [
-                            "int",
                             "\\WP_Post"
                         ],
                         "variable": "$post"
@@ -15657,9 +15658,10 @@
                     },
                     {
                         "name": "param",
-                        "content": "The formatted time.",
+                        "content": "Formatted date string or Unix timestamp if <code>$format</code> is 'U' or 'G'.",
                         "types": [
-                            "string"
+                            "string",
+                            "int"
                         ],
                         "variable": "$the_time"
                     },
@@ -15673,9 +15675,8 @@
                     },
                     {
                         "name": "param",
-                        "content": "WP_Post object or ID.",
+                        "content": "Post object.",
                         "types": [
-                            "int",
                             "\\WP_Post"
                         ],
                         "variable": "$post"
@@ -23946,7 +23947,7 @@
                         "types": [
                             "string[]"
                         ],
-                        "variable": "$pieces"
+                        "variable": "$clauses"
                     },
                     {
                         "name": "param",
@@ -26475,7 +26476,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "An array of plugin action links. Defaults are links to Details and Install Now.",
+                        "content": "An array of plugin action links.                               Defaults are links to Details and Install Now.",
                         "types": [
                             "string[]"
                         ],
@@ -26483,7 +26484,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The plugin currently being listed.",
+                        "content": "An array of plugin data. See {@see plugins_api()}                               for the list of possible values.",
                         "types": [
                             "array"
                         ],
@@ -27749,7 +27750,7 @@
             "file": "wp-includes/post-thumbnail-template.php",
             "type": "filter",
             "doc": {
-                "description": "Filters post thumbnail ID.",
+                "description": "Filters the post thumbnail ID.",
                 "long_description": "",
                 "tags": [
                     {
@@ -28235,7 +28236,7 @@
                         "types": [
                             "string[]"
                         ],
-                        "variable": "$pieces"
+                        "variable": "$clauses"
                     },
                     {
                         "name": "param",
@@ -29324,7 +29325,8 @@
                         "name": "param",
                         "content": "Whether to go forward with deletion.",
                         "types": [
-                            "bool",
+                            "\\WP_Post",
+                            "false",
                             "null"
                         ],
                         "variable": "$delete"
@@ -29366,7 +29368,8 @@
                         "name": "param",
                         "content": "Whether to go forward with deletion.",
                         "types": [
-                            "bool",
+                            "\\WP_Post",
+                            "false",
                             "null"
                         ],
                         "variable": "$delete"
@@ -30082,7 +30085,7 @@
             "file": "wp-includes/ms-load.php",
             "type": "filter",
             "doc": {
-                "description": "Determine a site by its domain and path.",
+                "description": "Determines a site by its domain and path.",
                 "long_description": "This allows one to short-circuit the default logic, perhaps by replacing it with a routine that is more optimal for your setup.\n Return null to avoid the short-circuit. Return false if no site can be found at the requested domain and path. Otherwise, return a site object.",
                 "tags": [
                     {
@@ -36356,7 +36359,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters extra CURIEs available on REST API responses.",
-                "long_description": "CURIEs allow a shortened version of URI relations. This allows a more usable form for custom relations than using the full URI. These work similarly to how XML namespaces work.\n Registered CURIES need to specify a name and URI template. This will automatically transform URI relations into their shortened version. The shortened relation follows the format `{name}:{rel}`. `{rel}` in the URI template will be replaced with the `{rel}` part of the shortened relation.\n For example, a CURIE with name `example` and URI template `http://w.org/{rel}` would transform a `http://w.org/term` relation into `example:term`.\n Well-behaved clients should expand and normalise these back to their full URI relation, however some naive clients may not resolve these correctly, so adding new CURIEs may break backward compatibility.",
+                "long_description": "CURIEs allow a shortened version of URI relations. This allows a more usable form for custom relations than using the full URI. These work similarly to how XML namespaces work.\n Registered CURIES need to specify a name and URI template. This will automatically transform URI relations into their shortened version. The shortened relation follows the format `{name}:{rel}`. `{rel}` in the URI template will be replaced with the `{rel}` part of the shortened relation.\n For example, a CURIE with name `example` and URI template `http://w.org/{rel}` would transform a `http://w.org/term` relation into `example:term`.\n Well-behaved clients should expand and normalize these back to their full URI relation, however some naive clients may not resolve these correctly, so adding new CURIEs may break backward compatibility.",
                 "tags": [
                     {
                         "name": "since",
@@ -36371,7 +36374,7 @@
                         "variable": "$additional"
                     }
                 ],
-                "long_description_html": "<p>CURIEs allow a shortened version of URI relations. This allows a more usable form for custom relations than using the full URI. These work similarly to how XML namespaces work.</p> <p>Registered CURIES need to specify a name and URI template. This will automatically transform URI relations into their shortened version. The shortened relation follows the format <code>{name}:{rel}</code>. <code>{rel}</code> in the URI template will be replaced with the <code>{rel}</code> part of the shortened relation.</p> <p>For example, a CURIE with name <code>example</code> and URI template <code>http://w.org/{rel}</code> would transform a <code>http://w.org/term</code> relation into <code>example:term</code>.</p> <p>Well-behaved clients should expand and normalise these back to their full URI relation, however some naive clients may not resolve these correctly, so adding new CURIEs may break backward compatibility.</p>"
+                "long_description_html": "<p>CURIEs allow a shortened version of URI relations. This allows a more usable form for custom relations than using the full URI. These work similarly to how XML namespaces work.</p> <p>Registered CURIES need to specify a name and URI template. This will automatically transform URI relations into their shortened version. The shortened relation follows the format <code>{name}:{rel}</code>. <code>{rel}</code> in the URI template will be replaced with the <code>{rel}</code> part of the shortened relation.</p> <p>For example, a CURIE with name <code>example</code> and URI template <code>http://w.org/{rel}</code> would transform a <code>http://w.org/term</code> relation into <code>example:term</code>.</p> <p>Well-behaved clients should expand and normalize these back to their full URI relation, however some naive clients may not resolve these correctly, so adding new CURIEs may break backward compatibility.</p>"
             },
             "args": 1
         },
@@ -36704,7 +36707,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the HTTP request args for URL data retrieval.",
-                "long_description": "Can be used to adjust response size limit and other WP_Http::request args.",
+                "long_description": "Can be used to adjust response size limit and other WP_Http::request() args.",
                 "tags": [
                     {
                         "name": "since",
@@ -36727,7 +36730,7 @@
                         "variable": "$url"
                     }
                 ],
-                "long_description_html": "<p>Can be used to adjust response size limit and other WP_Http::request args.</p>"
+                "long_description_html": "<p>Can be used to adjust response size limit and other WP_Http::request() args.</p>"
             },
             "args": 2
         },
@@ -39415,7 +39418,7 @@
                     {
                         "name": "since",
                         "content": "2.8.0",
-                        "description": "Added the <code>$profileuser</code> parameter."
+                        "description": "Added the <code>$profile_user</code> parameter."
                     },
                     {
                         "name": "since",
@@ -39436,7 +39439,7 @@
                         "types": [
                             "\\WP_User"
                         ],
-                        "variable": "$profileuser"
+                        "variable": "$profile_user"
                     }
                 ],
                 "long_description_html": ""
@@ -40440,7 +40443,7 @@
                         "types": [
                             "string[]"
                         ],
-                        "variable": "$pieces"
+                        "variable": "$clauses"
                     },
                     {
                         "name": "param",
@@ -41893,11 +41896,11 @@
                     },
                     {
                         "name": "param",
-                        "content": "Array of query SQL clauses.",
+                        "content": "{     Associative array of the clauses for the query.     @type string $fields   The SELECT clause of the query.     @type string $join     The JOIN clause of the query.     @type string $where    The WHERE clause of the query.     @type string $distinct The DISTINCT clause of the query.     @type string $orderby  The ORDER BY clause of the query.     @type string $order    The ORDER clause of the query.     @type string $limits   The LIMIT clause of the query. }",
                         "types": [
                             "string[]"
                         ],
-                        "variable": "$pieces"
+                        "variable": "$clauses"
                     },
                     {
                         "name": "param",
@@ -42048,7 +42051,7 @@
             "file": "wp-includes/author-template.php",
             "type": "filter",
             "doc": {
-                "description": "The value of the requested user metadata.",
+                "description": "Filters the value of the requested user metadata.",
                 "long_description": "The filter name is dynamic and depends on the $field parameter of the function.",
                 "tags": [
                     {
@@ -42705,7 +42708,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The author's display name.",
+                        "content": "The author's display name, empty string if unknown.",
                         "types": [
                             "string"
                         ],
@@ -44435,10 +44438,10 @@
                     },
                     {
                         "name": "param",
-                        "content": "The result object. Default false.",
+                        "content": "The result array. Default false.",
                         "types": [
                             "false",
-                            "object"
+                            "array"
                         ],
                         "variable": "$result"
                     },
@@ -44477,9 +44480,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "Response object or WP_Error.",
+                        "content": "Response as an associative array or WP_Error.",
                         "types": [
-                            "object",
+                            "array",
                             "\\WP_Error"
                         ],
                         "variable": "$res"
@@ -45460,7 +45463,7 @@
             "file": "wp-admin/includes/class-wp-upgrader.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the install response before the installation has started.",
+                "description": "Filters the installation response before the installation has started.",
                 "long_description": "Returning a value that could be evaluated as a `WP_Error` will effectively short-circuit the installation, returning that value instead.",
                 "tags": [
                     {
@@ -45469,7 +45472,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Response.",
+                        "content": "Installation response.",
                         "types": [
                             "bool",
                             "\\WP_Error"
@@ -46320,7 +46323,7 @@
                     {
                         "name": "since",
                         "content": "4.7.0",
-                        "description": "Added the <code>$profileuser</code> parameter."
+                        "description": "Added the <code>$profile_user</code> parameter."
                     },
                     {
                         "name": "param",
@@ -46336,7 +46339,7 @@
                         "types": [
                             "\\WP_User"
                         ],
-                        "variable": "$profileuser"
+                        "variable": "$profile_user"
                     }
                 ],
                 "long_description_html": ""
@@ -48678,7 +48681,7 @@
             "file": "wp-includes/user.php",
             "type": "filter",
             "doc": {
-                "description": "Filters whether the given user can be authenticated with the provided $password.",
+                "description": "Filters whether the given user can be authenticated with the provided password.",
                 "long_description": "",
                 "tags": [
                     {
@@ -49406,7 +49409,7 @@
                         "types": [
                             "callable"
                         ],
-                        "variable": "$function"
+                        "variable": "$callback"
                     }
                 ],
                 "long_description_html": ""
@@ -49431,7 +49434,7 @@
                         "types": [
                             "callable"
                         ],
-                        "variable": "$function"
+                        "variable": "$callback"
                     }
                 ],
                 "long_description_html": ""
@@ -49456,7 +49459,7 @@
                         "types": [
                             "callable"
                         ],
-                        "variable": "$function"
+                        "variable": "$callback"
                     }
                 ],
                 "long_description_html": ""
@@ -49481,7 +49484,7 @@
                         "types": [
                             "callable"
                         ],
-                        "variable": "$function"
+                        "variable": "$callback"
                     }
                 ],
                 "long_description_html": ""
@@ -49506,7 +49509,7 @@
                         "types": [
                             "callable"
                         ],
-                        "variable": "$function"
+                        "variable": "$callback"
                     }
                 ],
                 "long_description_html": ""
@@ -49531,7 +49534,7 @@
                         "types": [
                             "callable"
                         ],
-                        "variable": "$function"
+                        "variable": "$callback"
                     }
                 ],
                 "long_description_html": ""
@@ -50805,7 +50808,7 @@
             "file": "wp-includes/theme.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the Custom CSS Output into the <head>.",
+                "description": "Filters the custom CSS output into the head element.",
                 "long_description": "",
                 "tags": [
                     {
@@ -51949,7 +51952,7 @@
                     {
                         "name": "since",
                         "content": "5.4.1",
-                        "description": "<code>$unsanitized_postarr</code> argument added."
+                        "description": "The <code>$unsanitized_postarr</code> parameter was added."
                     },
                     {
                         "name": "param",
@@ -51995,7 +51998,7 @@
                     {
                         "name": "since",
                         "content": "5.4.1",
-                        "description": "<code>$unsanitized_postarr</code> argument added."
+                        "description": "The <code>$unsanitized_postarr</code> parameter was added."
                     },
                     {
                         "name": "param",
@@ -52155,7 +52158,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the duplicate term check that takes place during term creation.",
-                "long_description": "Term parent+taxonomy+slug combinations are meant to be unique, and wp_insert_term() performs a last-minute confirmation of this uniqueness before allowing a new term to be created. Plugins with different uniqueness requirements may use this filter to bypass or modify the duplicate-term check.",
+                "long_description": "Term parent + taxonomy + slug combinations are meant to be unique, and wp_insert_term() performs a last-minute confirmation of this uniqueness before allowing a new term to be created. Plugins with different uniqueness requirements may use this filter to bypass or modify the duplicate-term check.",
                 "tags": [
                     {
                         "name": "since",
@@ -52202,7 +52205,7 @@
                         "variable": "$tt_id"
                     }
                 ],
-                "long_description_html": "<p>Term parent+taxonomy+slug combinations are meant to be unique, and wp_insert_term() performs a last-minute confirmation of this uniqueness before allowing a new term to be created. Plugins with different uniqueness requirements may use this filter to bypass or modify the duplicate-term check.</p>"
+                "long_description_html": "<p>Term parent + taxonomy + slug combinations are meant to be unique, and wp_insert_term() performs a last-minute confirmation of this uniqueness before allowing a new term to be created. Plugins with different uniqueness requirements may use this filter to bypass or modify the duplicate-term check.</p>"
             },
             "args": 5
         },
@@ -52534,7 +52537,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the HTML tags that are allowed for a given context.",
-                "long_description": "",
+                "long_description": "HTML tags and attribute names are case-insensitive in HTML but must be added to the KSES allow list in lowercase. An item added to the allow list in upper or mixed case will not recognized as permitted by KSES.",
                 "tags": [
                     {
                         "name": "since",
@@ -52557,7 +52560,7 @@
                         "variable": "$context"
                     }
                 ],
-                "long_description_html": ""
+                "long_description_html": "<p>HTML tags and attribute names are case-insensitive in HTML but must be added to the KSES allow list in lowercase. An item added to the allow list in upper or mixed case will not recognized as permitted by KSES.</p>"
             },
             "args": 2
         },
@@ -54101,7 +54104,7 @@
             "file": "wp-includes/user.php",
             "type": "filter",
             "doc": {
-                "description": "Filter to extend the user's profile data for the privacy exporter.",
+                "description": "Filters the user's profile data for the privacy exporter.",
                 "long_description": "",
                 "tags": [
                     {
@@ -55343,7 +55346,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Error information retrieved from error_get_last().",
+                        "content": "Error information retrieved from <code>error_get_last()</code>.",
                         "types": [
                             "array"
                         ],
@@ -56043,11 +56046,11 @@
                     },
                     {
                         "name": "param",
-                        "content": "Term object.",
+                        "content": "Term ID.",
                         "types": [
-                            "\\WP_Term"
+                            "int"
                         ],
-                        "variable": "$term"
+                        "variable": "$term_id"
                     },
                     {
                         "name": "param",
