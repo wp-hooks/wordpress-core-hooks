@@ -33,6 +33,10 @@ export interface Hook {
    */
   name: string;
   /**
+   * Aliases of the hook name
+   */
+  aliases?: string[];
+  /**
    * The relative name of the file containing the hook
    */
   file: string;

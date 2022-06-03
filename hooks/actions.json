@@ -467,6 +467,11 @@
         },
         {
             "name": "add_meta_boxes_{$post_type}",
+            "aliases": [
+                "add_meta_boxes_attachment",
+                "add_meta_boxes_page",
+                "add_meta_boxes_post"
+            ],
             "file": "wp-admin/includes/meta-boxes.php",
             "type": "action",
             "doc": {
@@ -806,6 +811,12 @@
         },
         {
             "name": "add_{$meta_type}_meta",
+            "aliases": [
+                "add_comment_meta",
+                "add_post_meta",
+                "add_term_meta",
+                "add_user_meta"
+            ],
             "file": "wp-includes/meta.php",
             "type": "action",
             "doc": {
@@ -961,6 +972,12 @@
         },
         {
             "name": "added_{$meta_type}_meta",
+            "aliases": [
+                "added_comment_meta",
+                "added_post_meta",
+                "added_term_meta",
+                "added_user_meta"
+            ],
             "file": "wp-includes/meta.php",
             "type": "action",
             "doc": {
@@ -1590,6 +1607,10 @@
         },
         {
             "name": "after-{$taxonomy}-table",
+            "aliases": [
+                "after-category-table",
+                "after-post_tag-table"
+            ],
             "file": "wp-admin/edit-tags.php",
             "type": "action",
             "doc": {
@@ -3834,6 +3855,17 @@
         },
         {
             "name": "comment_{$new_status}_{$comment->comment_type}",
+            "aliases": [
+                "comment_approved_comment",
+                "comment_approved_pingback",
+                "comment_approved_trackback",
+                "comment_spam_comment",
+                "comment_spam_pingback",
+                "comment_spam_trackback",
+                "comment_unapproved_comment",
+                "comment_unapproved_pingback",
+                "comment_unapproved_trackback"
+            ],
             "file": "wp-includes/comment.php",
             "type": "action",
             "doc": {
@@ -3867,6 +3899,14 @@
         },
         {
             "name": "comment_{$old_status}_to_{$new_status}",
+            "aliases": [
+                "comment_approved_to_spam",
+                "comment_approved_to_unapproved",
+                "comment_spam_to_approved",
+                "comment_spam_to_unapproved",
+                "comment_unapproved_to_approved",
+                "comment_unapproved_to_spam"
+            ],
             "file": "wp-includes/comment.php",
             "type": "action",
             "doc": {
@@ -4017,6 +4057,10 @@
         },
         {
             "name": "create_{$taxonomy}",
+            "aliases": [
+                "create_category",
+                "create_post_tag"
+            ],
             "file": "wp-includes/taxonomy.php",
             "type": "action",
             "doc": {
@@ -4091,6 +4135,10 @@
         },
         {
             "name": "created_{$taxonomy}",
+            "aliases": [
+                "created_category",
+                "created_post_tag"
+            ],
             "file": "wp-includes/taxonomy.php",
             "type": "action",
             "doc": {
@@ -5571,6 +5619,12 @@
         },
         {
             "name": "delete_{$meta_type}_meta",
+            "aliases": [
+                "delete_comment_meta",
+                "delete_post_meta",
+                "delete_term_meta",
+                "delete_user_meta"
+            ],
             "file": "wp-includes/meta.php",
             "type": "action",
             "doc": {
@@ -5620,6 +5674,12 @@
         },
         {
             "name": "delete_{$meta_type}meta",
+            "aliases": [
+                "delete_commentmeta",
+                "delete_postmeta",
+                "delete_termmeta",
+                "delete_usermeta"
+            ],
             "file": "wp-includes/meta.php",
             "type": "action",
             "doc": {
@@ -5645,6 +5705,10 @@
         },
         {
             "name": "delete_{$taxonomy}",
+            "aliases": [
+                "delete_category",
+                "delete_post_tag"
+            ],
             "file": "wp-includes/taxonomy.php",
             "type": "action",
             "doc": {
@@ -6084,6 +6148,12 @@
         },
         {
             "name": "deleted_{$meta_type}_meta",
+            "aliases": [
+                "deleted_comment_meta",
+                "deleted_post_meta",
+                "deleted_term_meta",
+                "deleted_user_meta"
+            ],
             "file": "wp-includes/meta.php",
             "type": "action",
             "doc": {
@@ -6133,6 +6203,12 @@
         },
         {
             "name": "deleted_{$meta_type}meta",
+            "aliases": [
+                "deleted_commentmeta",
+                "deleted_postmeta",
+                "deleted_termmeta",
+                "deleted_usermeta"
+            ],
             "file": "wp-includes/meta.php",
             "type": "action",
             "doc": {
@@ -6435,6 +6511,12 @@
         },
         {
             "name": "do_feed_{$feed}",
+            "aliases": [
+                "do_feed_atom",
+                "do_feed_rdf",
+                "do_feed_rss",
+                "do_feed_rss2"
+            ],
             "file": "wp-includes/functions.php",
             "type": "action",
             "doc": {
@@ -6955,6 +7037,10 @@
         },
         {
             "name": "edit_post_{$post->post_type}",
+            "aliases": [
+                "edit_post_page",
+                "edit_post_post"
+            ],
             "file": "wp-includes/post.php",
             "type": "action",
             "doc": {
@@ -7204,6 +7290,10 @@
         },
         {
             "name": "edit_{$taxonomy}",
+            "aliases": [
+                "edit_category",
+                "edit_post_tag"
+            ],
             "file": "wp-includes/taxonomy.php",
             "type": "action",
             "doc": {
@@ -7369,6 +7459,10 @@
         },
         {
             "name": "edited_{$taxonomy}",
+            "aliases": [
+                "edited_category",
+                "edited_post_tag"
+            ],
             "file": "wp-includes/taxonomy.php",
             "type": "action",
             "doc": {
@@ -8269,6 +8363,16 @@
         },
         {
             "name": "install_plugins_pre_{$tab}",
+            "aliases": [
+                "install_plugins_pre_beta",
+                "install_plugins_pre_favorites",
+                "install_plugins_pre_featured",
+                "install_plugins_pre_plugin-information",
+                "install_plugins_pre_popular",
+                "install_plugins_pre_recommended",
+                "install_plugins_pre_search",
+                "install_plugins_pre_upload"
+            ],
             "file": "wp-admin/plugin-install.php",
             "type": "action",
             "doc": {
@@ -8303,6 +8407,16 @@
         },
         {
             "name": "install_plugins_{$tab}",
+            "aliases": [
+                "install_plugins_beta",
+                "install_plugins_favorites",
+                "install_plugins_featured",
+                "install_plugins_plugin-information",
+                "install_plugins_popular",
+                "install_plugins_recommended",
+                "install_plugins_search",
+                "install_plugins_upload"
+            ],
             "file": "wp-admin/plugin-install.php",
             "type": "action",
             "doc": {
@@ -8328,6 +8442,14 @@
         },
         {
             "name": "install_themes_pre_{$tab}",
+            "aliases": [
+                "install_themes_pre_dashboard",
+                "install_themes_pre_featured",
+                "install_themes_pre_new",
+                "install_themes_pre_search",
+                "install_themes_pre_updated",
+                "install_themes_pre_upload"
+            ],
             "file": "wp-admin/theme-install.php",
             "type": "action",
             "doc": {
@@ -8362,6 +8484,14 @@
         },
         {
             "name": "install_themes_{$tab}",
+            "aliases": [
+                "install_themes_dashboard",
+                "install_themes_featured",
+                "install_themes_new",
+                "install_themes_search",
+                "install_themes_updated",
+                "install_themes_upload"
+            ],
             "file": "wp-admin/theme-install.php",
             "type": "action",
             "doc": {
@@ -8453,6 +8583,15 @@
         },
         {
             "name": "load-importer-{$importer}",
+            "aliases": [
+                "load-importer-blogger",
+                "load-importer-livejournal",
+                "load-importer-mt",
+                "load-importer-rss",
+                "load-importer-tumblr",
+                "load-importer-wordpress",
+                "load-importer-wpcat2tag"
+            ],
             "file": "wp-admin/admin.php",
             "type": "action",
             "doc": {
@@ -8653,6 +8792,20 @@
         },
         {
             "name": "login_form_{$action}",
+            "aliases": [
+                "login_form_checkemail",
+                "login_form_confirm_admin_email",
+                "login_form_confirmaction",
+                "login_form_entered_recovery_mode",
+                "login_form_login",
+                "login_form_logout",
+                "login_form_lostpassword",
+                "login_form_postpass",
+                "login_form_register",
+                "login_form_resetpass",
+                "login_form_retrievepassword",
+                "login_form_rp"
+            ],
             "file": "wp-login.php",
             "type": "action",
             "doc": {
@@ -9432,6 +9585,10 @@
         },
         {
             "name": "manage_{$post->post_type}_posts_custom_column",
+            "aliases": [
+                "manage_page_posts_custom_column",
+                "manage_post_posts_custom_column"
+            ],
             "file": "wp-admin/includes/class-wp-posts-list-table.php",
             "type": "action",
             "doc": {
@@ -9590,6 +9747,12 @@
         },
         {
             "name": "media_upload_{$type}",
+            "aliases": [
+                "media_upload_audio",
+                "media_upload_file",
+                "media_upload_image",
+                "media_upload_video"
+            ],
             "file": "wp-admin/media-upload.php",
             "type": "action",
             "doc": {
@@ -12002,6 +12165,10 @@
         },
         {
             "name": "registered_post_type_{$post_type}",
+            "aliases": [
+                "registered_post_type_page",
+                "registered_post_type_post"
+            ],
             "file": "wp-includes/post.php",
             "type": "action",
             "doc": {
@@ -12110,6 +12277,10 @@
         },
         {
             "name": "registered_taxonomy_{$taxonomy}",
+            "aliases": [
+                "registered_taxonomy_category",
+                "registered_taxonomy_post_tag"
+            ],
             "file": "wp-includes/taxonomy.php",
             "type": "action",
             "doc": {
@@ -12647,6 +12818,11 @@
         },
         {
             "name": "rest_after_insert_{$this->post_type}",
+            "aliases": [
+                "rest_after_insert_attachment",
+                "rest_after_insert_page",
+                "rest_after_insert_post"
+            ],
             "file": "wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php",
             "type": "action",
             "doc": {
@@ -12688,6 +12864,10 @@
         },
         {
             "name": "rest_after_insert_{$this->taxonomy}",
+            "aliases": [
+                "rest_after_insert_category",
+                "rest_after_insert_post_tag"
+            ],
             "file": "wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php",
             "type": "action",
             "doc": {
@@ -13011,6 +13191,11 @@
         },
         {
             "name": "rest_delete_{$this->post_type}",
+            "aliases": [
+                "rest_delete_attachment",
+                "rest_delete_page",
+                "rest_delete_post"
+            ],
             "file": "wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php",
             "type": "action",
             "doc": {
@@ -13052,6 +13237,10 @@
         },
         {
             "name": "rest_delete_{$this->taxonomy}",
+            "aliases": [
+                "rest_delete_category",
+                "rest_delete_post_tag"
+            ],
             "file": "wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php",
             "type": "action",
             "doc": {
@@ -13257,6 +13446,11 @@
         },
         {
             "name": "rest_insert_{$this->post_type}",
+            "aliases": [
+                "rest_insert_attachment",
+                "rest_insert_page",
+                "rest_insert_post"
+            ],
             "file": "wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php",
             "type": "action",
             "doc": {
@@ -13298,6 +13492,10 @@
         },
         {
             "name": "rest_insert_{$this->taxonomy}",
+            "aliases": [
+                "rest_insert_category",
+                "rest_insert_post_tag"
+            ],
             "file": "wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php",
             "type": "action",
             "doc": {
@@ -13830,6 +14028,10 @@
         },
         {
             "name": "save_post_{$post->post_type}",
+            "aliases": [
+                "save_post_page",
+                "save_post_post"
+            ],
             "file": "wp-includes/post.php",
             "type": "action",
             "doc": {
@@ -13920,6 +14122,10 @@
         },
         {
             "name": "saved_{$taxonomy}",
+            "aliases": [
+                "saved_category",
+                "saved_post_tag"
+            ],
             "file": "wp-includes/taxonomy.php",
             "type": "action",
             "doc": {
@@ -16300,6 +16506,12 @@
         },
         {
             "name": "update_{$meta_type}_meta",
+            "aliases": [
+                "update_comment_meta",
+                "update_post_meta",
+                "update_term_meta",
+                "update_user_meta"
+            ],
             "file": "wp-includes/meta.php",
             "type": "action",
             "doc": {
@@ -16439,6 +16651,12 @@
         },
         {
             "name": "updated_{$meta_type}_meta",
+            "aliases": [
+                "updated_comment_meta",
+                "updated_post_meta",
+                "updated_term_meta",
+                "updated_user_meta"
+            ],
             "file": "wp-includes/meta.php",
             "type": "action",
             "doc": {
@@ -20174,6 +20392,22 @@
         },
         {
             "name": "{$new_status}_{$post->post_type}",
+            "aliases": [
+                "draft_page",
+                "draft_post",
+                "future_page",
+                "future_post",
+                "pending_page",
+                "pending_post",
+                "private_page",
+                "private_post",
+                "publish_attachment",
+                "publish_page",
+                "publish_post",
+                "trash_attachment",
+                "trash_page",
+                "trash_post"
+            ],
             "file": "wp-includes/post.php",
             "type": "action",
             "doc": {
@@ -20220,6 +20454,11 @@
         },
         {
             "name": "{$old_status}_to_{$new_status}",
+            "aliases": [
+                "draft_to_publish",
+                "pending_to_draft",
+                "publish_to_trash"
+            ],
             "file": "wp-includes/post.php",
             "type": "action",
             "doc": {
@@ -20267,6 +20506,10 @@
         },
         {
             "name": "{$taxonomy}_add_form",
+            "aliases": [
+                "category_add_form",
+                "post_tag_add_form"
+            ],
             "file": "wp-admin/edit-tags.php",
             "type": "action",
             "doc": {
@@ -20292,6 +20535,10 @@
         },
         {
             "name": "{$taxonomy}_add_form_fields",
+            "aliases": [
+                "category_add_form_fields",
+                "post_tag_add_form_fields"
+            ],
             "file": "wp-admin/edit-tags.php",
             "type": "action",
             "doc": {
@@ -20317,6 +20564,10 @@
         },
         {
             "name": "{$taxonomy}_edit_form",
+            "aliases": [
+                "category_edit_form",
+                "post_tag_edit_form"
+            ],
             "file": "wp-admin/edit-tag-form.php",
             "type": "action",
             "doc": {
@@ -20350,6 +20601,10 @@
         },
         {
             "name": "{$taxonomy}_edit_form_fields",
+            "aliases": [
+                "category_edit_form_fields",
+                "post_tag_edit_form_fields"
+            ],
             "file": "wp-admin/edit-tag-form.php",
             "type": "action",
             "doc": {
@@ -20383,6 +20638,10 @@
         },
         {
             "name": "{$taxonomy}_pre_add_form",
+            "aliases": [
+                "category_pre_add_form",
+                "post_tag_pre_add_form"
+            ],
             "file": "wp-admin/edit-tags.php",
             "type": "action",
             "doc": {
@@ -20408,6 +20667,10 @@
         },
         {
             "name": "{$taxonomy}_pre_edit_form",
+            "aliases": [
+                "category_pre_edit_form",
+                "post_tag_pre_edit_form"
+            ],
             "file": "wp-admin/edit-tag-form.php",
             "type": "action",
             "doc": {
@@ -20441,6 +20704,10 @@
         },
         {
             "name": "{$taxonomy}_term_edit_form_tag",
+            "aliases": [
+                "category_term_edit_form_tag",
+                "post_tag_term_edit_form_tag"
+            ],
             "file": "wp-admin/edit-tag-form.php",
             "type": "action",
             "doc": {
@@ -20458,6 +20725,10 @@
         },
         {
             "name": "{$taxonomy}_term_edit_form_top",
+            "aliases": [
+                "category_term_edit_form_top",
+                "post_tag_term_edit_form_top"
+            ],
             "file": "wp-admin/edit-tag-form.php",
             "type": "action",
             "doc": {
@@ -20491,6 +20762,10 @@
         },
         {
             "name": "{$taxonomy}_term_new_form_tag",
+            "aliases": [
+                "category_term_new_form_tag",
+                "post_tag_term_new_form_tag"
+            ],
             "file": "wp-admin/edit-tags.php",
             "type": "action",
             "doc": {
