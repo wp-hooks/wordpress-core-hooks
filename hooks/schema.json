@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"$id": "https://raw.githubusercontent.com/johnbillion/wp-hooks/0.9.0/hooks/schema.json",
+	"$id": "https://github.com/johnbillion/wp-hooks-generator/blob/0.8.0/schema.json",
 	"title": "HooksContainer",
 	"description": "The container for the list of hooks",
 	"type": "object",
@@ -40,6 +40,13 @@
 							"update_site_option_{$option}",
 							"init"
 						]
+					},
+					"aliases": {
+						"description": "Aliases of the hook name",
+						"type": "array",
+						"items": {
+							"type": "string"
+						}
 					},
 					"file": {
 						"description": "The relative name of the file containing the hook",
