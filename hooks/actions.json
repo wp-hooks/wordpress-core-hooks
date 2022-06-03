@@ -1,5 +1,5 @@
 {
-    "$schema": "https://raw.githubusercontent.com/johnbillion/wp-hooks-generator/0.7.3/schema.json",
+    "$schema": "https://raw.githubusercontent.com/johnbillion/wp-hooks-generator/0.7.4/schema.json",
     "hooks": [
         {
             "name": "_admin_menu",
