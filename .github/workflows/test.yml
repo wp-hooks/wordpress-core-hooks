@@ -28,4 +28,4 @@ jobs:
 
     - name: Validate Schemas
       run: |
-        npm run 'validate:**'
+        npx npm-run-all 'validate:**'
