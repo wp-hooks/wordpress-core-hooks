@@ -68,5 +68,8 @@
 			"type": "github",
 			"url": "https://github.com/sponsors/johnbillion"
 		}
-	]
+	],
+	"replace": {
+		"johnbillion/wp-hooks": "*"
+	}
 }
