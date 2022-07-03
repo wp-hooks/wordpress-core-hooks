@@ -116,7 +116,7 @@ Some scripts are available for checking the data:
 
 ## Hook Files for Plugins
 
-Do you want the same hook files for your favourite plugins? The hook files in this repo are generated using [wp-hooks-generator](https://github.com/johnbillion/wp-hooks-generator). It can generate hook files for WordPress plugins and themes as well as core.
+Do you want the same hook files for your favourite plugins? The hook files in this repo are generated using [wp-hooks-generator](https://github.com/wp-hooks/generator). It can generate hook files for WordPress plugins and themes as well as core.
 
 ## Sponsors
 
