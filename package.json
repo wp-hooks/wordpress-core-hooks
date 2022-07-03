@@ -1,6 +1,6 @@
 {
 	"name": "@wp-hooks/wordpress-core",
-	"version": "1.1.0",
+	"version": "1.2.0",
 	"description": "All the actions and filters from WordPress core in machine-readable JSON format.",
 	"repository": {
 		"type": "git",
