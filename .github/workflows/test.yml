@@ -28,6 +28,4 @@ jobs:
 
     - name: Validate Schemas
       run: |
-        npm run validate:schema
-        npm run validate:actions
-        npm run validate:filters
+        npm run 'validate:**'
