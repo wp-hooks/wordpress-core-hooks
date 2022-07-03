@@ -21,12 +21,14 @@
 	},
 	"homepage": "https://github.com/wp-hooks/wordpress-core#readme",
 	"devDependencies": {
-		"ajv-cli": "^3.3.0"
+		"ajv-cli": "^3.3.0",
+		"npm-run-all": "^4.1.5"
 	},
 	"scripts": {
-		"check": "npm run validate:actions && npm run validate:filters && npm run check:duplicate-actions && npm run check:duplicate-filters",
+		"check": "npm-run-all validate:** check:**",
 		"check:duplicate-actions": "bash -c \" diff <(jq '.hooks | map(.name) | sort' hooks/actions.json) <(jq '.hooks | map(.name) | unique | sort' hooks/actions.json)\"",
 		"check:duplicate-filters": "bash -c \" diff <(jq '.hooks | map(.name) | sort' hooks/filters.json) <(jq '.hooks | map(.name) | unique | sort' hooks/filters.json)\"",
+		"validate:schema": "ajv validate -s node_modules/ajv/lib/refs/json-schema-draft-07.json -d hooks/schema.json"
 		"validate:actions": "ajv validate -s hooks/schema.json -d hooks/actions.json",
 		"validate:filters": "ajv validate -s hooks/schema.json -d hooks/filters.json"
 	}
