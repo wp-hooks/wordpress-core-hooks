@@ -1,5 +1,5 @@
 {
-	"name": "johnbillion/wp-hooks",
+	"name": "wp-hooks/wordpress-core",
 	"description": "All the actions and filters from WordPress core in machine-readable JSON format.",
 	"type": "library",
 	"license": "GPL-3.0-or-later",

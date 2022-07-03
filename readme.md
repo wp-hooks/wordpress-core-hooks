@@ -8,7 +8,7 @@ Last updated for WordPress 6.0.
 
 * As a Composer package for use in PHP:
     ```shell
-    composer require johnbillion/wp-hooks
+    composer require wp-hooks/wordpress-core
     ```
 * As an npm package for use in JavaScript or TypeScript:
     ```shell
@@ -19,8 +19,8 @@ Last updated for WordPress 6.0.
 
 ```php
 // Get hooks as JSON:
-$actions_json = file_get_contents( 'vendor/johnbillion/wp-hooks/hooks/actions.json' );
-$filters_json = file_get_contents( 'vendor/johnbillion/wp-hooks/hooks/filters.json' );
+$actions_json = file_get_contents( 'vendor/wp-hooks/wordpress-core/hooks/actions.json' );
+$filters_json = file_get_contents( 'vendor/wp-hooks/wordpress-core/hooks/filters.json' );
 
 // Convert hooks to PHP:
 $actions = json_decode( $actions_json, true )['hooks'];
