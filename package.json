@@ -28,7 +28,7 @@
 		"check": "npm-run-all validate:** check:**",
 		"check:duplicate-actions": "bash -c \" diff <(jq '.hooks | map(.name) | sort' hooks/actions.json) <(jq '.hooks | map(.name) | unique | sort' hooks/actions.json)\"",
 		"check:duplicate-filters": "bash -c \" diff <(jq '.hooks | map(.name) | sort' hooks/filters.json) <(jq '.hooks | map(.name) | unique | sort' hooks/filters.json)\"",
-		"validate:schema": "ajv validate -s node_modules/ajv/lib/refs/json-schema-draft-07.json -d hooks/schema.json"
+		"validate:schema": "ajv validate -s node_modules/ajv/lib/refs/json-schema-draft-07.json -d hooks/schema.json",
 		"validate:actions": "ajv validate -s hooks/schema.json -d hooks/actions.json",
 		"validate:filters": "ajv validate -s hooks/schema.json -d hooks/filters.json"
 	}
