@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"$id": "https://github.com/johnbillion/wp-hooks-generator/blob/0.8.0/schema.json",
+	"$id": "https://github.com/wp-hooks/generator/blob/0.9.0/schema.json",
 	"title": "HooksContainer",
 	"description": "The container for the list of hooks",
 	"type": "object",

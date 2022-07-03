@@ -4,7 +4,7 @@
 	"description": "All the actions and filters from WordPress core in machine-readable JSON format.",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/johnbillion/wp-hooks.git"
+		"url": "git+https://github.com/wp-hooks/wordpress-core.git"
 	},
 	"keywords": [
 		"wordpress"
@@ -17,9 +17,9 @@
 	"author": "John Blackbourn",
 	"license": "GPL-3.0-or-later",
 	"bugs": {
-		"url": "https://github.com/johnbillion/wp-hooks/issues"
+		"url": "https://github.com/wp-hooks/wordpress-core/issues"
 	},
-	"homepage": "https://github.com/johnbillion/wp-hooks#readme",
+	"homepage": "https://github.com/wp-hooks/wordpress-core#readme",
 	"devDependencies": {
 		"ajv-cli": "^3.3.0"
 	},
