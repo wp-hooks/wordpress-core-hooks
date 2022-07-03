@@ -3,22 +3,31 @@
 name: Test
 
 on:
-  push:
+  push: null
   pull_request:
+    branches:
+      - develop
+      - master
 
 jobs:
   test:
-    if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name != github.repository
     name: Tests
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
+    - name: Install Nodejs
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16
+    
     - name: Checkout repository
-      uses: actions/checkout@v1
+      uses: actions/checkout@v3
 
     - name: Install dependencies
-      run: npm install
+      run: |
+        npm ci
 
     - name: Validate Schemas
       run: |
+        npm run validate:schema
         npm run validate:actions
         npm run validate:filters
