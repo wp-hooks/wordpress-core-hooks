@@ -12,7 +12,7 @@ Last updated for WordPress 6.0.
     ```
 * As an npm package for use in JavaScript or TypeScript:
     ```shell
-    npm install @johnbillion/wp-hooks
+    npm install @wp-hooks/wordpress-core
     ```
 
 ## Usage in PHP
@@ -39,8 +39,8 @@ var_dump( $results );
 
 ```js
 // Get hooks as array of objects:
-const actions = require('@johnbillion/wp-hooks/hooks/actions.json').hooks;
-const filters = require('@johnbillion/wp-hooks/hooks/filters.json').hooks;
+const actions = require('@wp-hooks/wordpress-core/hooks/actions.json').hooks;
+const filters = require('@wp-hooks/wordpress-core/hooks/filters.json').hooks;
 
 // Search for actions matching a string:
 const search = 'menu';
@@ -52,14 +52,14 @@ console.log(results);
 ## Importing in TypeScript
 
 ```typescript
-import { hooks as actions } from '@johnbillion/wp-hooks/hooks/actions.json';
-import { hooks as filters } from '@johnbillion/wp-hooks/hooks/filters.json';
+import { hooks as actions } from '@wp-hooks/wordpress-core/hooks/actions.json';
+import { hooks as filters } from '@wp-hooks/wordpress-core/hooks/filters.json';
 ```
 
 Interfaces for the components of the hooks can be imported too, if you need them:
 
 ```typescript
-import { Hooks, Hook, Doc, Tags, Tag } from '@johnbillion/wp-hooks/interface';
+import { Hooks, Hook, Doc, Tags, Tag } from '@wp-hooks/wordpress-core/interface';
 ```
 
 ## Actions, Filters, and Schemas

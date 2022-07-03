@@ -31,7 +31,7 @@ jobs:
           repository: ${{ github.repository }}
           deployment_id: ${{ fromJson( steps.deployment.outputs.data ).id }}
           state: pending
-          environment_url: https://www.npmjs.com/package/@johnbillion/wp-hooks
+          environment_url: https://www.npmjs.com/package/@wp-hooks/wordpress-core
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
