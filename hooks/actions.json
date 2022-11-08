@@ -1822,7 +1822,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "An array of plugin data. See <code>get_plugin_data()</code> and the {@see 'plugin_row_meta'} filter for the list of possible values.",
+                        "content": "An array of plugin data. See get_plugin_data() and the {@see 'plugin_row_meta'} filter for the list of possible values.",
                         "types": [
                             "array"
                         ],
@@ -1868,7 +1868,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "An array of plugin data. See <code>get_plugin_data()</code> and the {@see 'plugin_row_meta'} filter for the list of possible values.",
+                        "content": "An array of plugin data. See get_plugin_data() and the {@see 'plugin_row_meta'} filter for the list of possible values.",
                         "types": [
                             "array"
                         ],
@@ -2830,7 +2830,7 @@
             "file": "wp-admin/options-reading.php",
             "type": "action",
             "doc": {
-                "description": "Enable the legacy 'Site visibility' privacy options.",
+                "description": "Enables the legacy 'Site visibility' privacy options.",
                 "long_description": "By default the privacy options form displays a single checkbox to 'discourage' search engines from indexing the site. Hooking to this action serves a dual purpose:\n\n 1. Disable the single checkbox in favor of a multiple-choice list of radio buttons.\n 2. Open the door to adding additional radio button choices to the list.\n Hooking to this action also converts the 'Search engine visibility' heading to the more open-ended 'Site visibility' heading.",
                 "tags": [
                     {
@@ -2996,7 +2996,7 @@
                         "types": [
                             "string"
                         ],
-                        "variable": "$comment_author_IP"
+                        "variable": "$comment_author_ip"
                     },
                     {
                         "name": "param",
@@ -3447,7 +3447,7 @@
                         "types": [
                             "int"
                         ],
-                        "variable": "$comment_post_ID"
+                        "variable": "$comment_post_id"
                     }
                 ],
                 "long_description_html": ""
@@ -3611,14 +3611,14 @@
             "type": "action",
             "doc": {
                 "description": "Fires after the comment form if comments are closed.",
-                "long_description": "",
+                "long_description": "For backward compatibility, this action also fires if comment_form() is called with an invalid post object or ID.",
                 "tags": [
                     {
                         "name": "since",
                         "content": "3.0.0"
                     }
                 ],
-                "long_description_html": ""
+                "long_description_html": "<p>For backward compatibility, this action also fires if comment_form() is called with an invalid post object or ID.</p>"
             },
             "args": 0
         },
@@ -3707,7 +3707,7 @@
                         "types": [
                             "int"
                         ],
-                        "variable": "$comment_post_ID"
+                        "variable": "$comment_post_id"
                     }
                 ],
                 "long_description_html": ""
@@ -3749,7 +3749,7 @@
                         "types": [
                             "int"
                         ],
-                        "variable": "$comment_post_ID"
+                        "variable": "$comment_post_id"
                     }
                 ],
                 "long_description_html": ""
@@ -3774,7 +3774,7 @@
                         "types": [
                             "int"
                         ],
-                        "variable": "$comment_post_ID"
+                        "variable": "$comment_post_id"
                     }
                 ],
                 "long_description_html": ""
@@ -3799,7 +3799,7 @@
                         "types": [
                             "int"
                         ],
-                        "variable": "$comment_post_ID"
+                        "variable": "$comment_post_id"
                     }
                 ],
                 "long_description_html": ""
@@ -4027,6 +4027,11 @@
                         "content": "2.3.0"
                     },
                     {
+                        "name": "since",
+                        "content": "6.1.0",
+                        "description": "The <code>$args</code> parameter was added."
+                    },
+                    {
                         "name": "param",
                         "content": "Term ID.",
                         "types": [
@@ -4049,11 +4054,19 @@
                             "string"
                         ],
                         "variable": "$taxonomy"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Arguments passed to wp_insert_term().",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$args"
                     }
                 ],
                 "long_description_html": "<p>The {@see 'create_$taxonomy'} hook is also available for targeting a specific taxonomy.</p>"
             },
-            "args": 3
+            "args": 4
         },
         {
             "name": "create_{$taxonomy}",
@@ -4072,6 +4085,11 @@
                         "content": "2.3.0"
                     },
                     {
+                        "name": "since",
+                        "content": "6.1.0",
+                        "description": "The <code>$args</code> parameter was added."
+                    },
+                    {
                         "name": "param",
                         "content": "Term ID.",
                         "types": [
@@ -4086,11 +4104,19 @@
                             "int"
                         ],
                         "variable": "$tt_id"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Arguments passed to wp_insert_term().",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$args"
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the slug of the taxonomy the term was created for.</p> <p>Possible hook names include:</p> <ul> <li><code>create_category</code></li> <li><code>create_post_tag</code></li> </ul>"
             },
-            "args": 2
+            "args": 3
         },
         {
             "name": "created_term",
@@ -4103,6 +4129,11 @@
                     {
                         "name": "since",
                         "content": "2.3.0"
+                    },
+                    {
+                        "name": "since",
+                        "content": "6.1.0",
+                        "description": "The <code>$args</code> parameter was added."
                     },
                     {
                         "name": "param",
@@ -4127,11 +4158,19 @@
                             "string"
                         ],
                         "variable": "$taxonomy"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Arguments passed to wp_insert_term().",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$args"
                     }
                 ],
                 "long_description_html": "<p>The {@see 'created_$taxonomy'} hook is also available for targeting a specific taxonomy.</p>"
             },
-            "args": 3
+            "args": 4
         },
         {
             "name": "created_{$taxonomy}",
@@ -4150,6 +4189,11 @@
                         "content": "2.3.0"
                     },
                     {
+                        "name": "since",
+                        "content": "6.1.0",
+                        "description": "The <code>$args</code> parameter was added."
+                    },
+                    {
                         "name": "param",
                         "content": "Term ID.",
                         "types": [
@@ -4164,11 +4208,101 @@
                             "int"
                         ],
                         "variable": "$tt_id"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Arguments passed to wp_insert_term().",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$args"
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the taxonomy slug.</p> <p>Possible hook names include:</p> <ul> <li><code>created_category</code></li> <li><code>created_post_tag</code></li> </ul>"
             },
-            "args": 2
+            "args": 3
+        },
+        {
+            "name": "cron_reschedule_event_error",
+            "file": "wp-cron.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires when an error happens rescheduling a cron event.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.1.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The WP_Error object.",
+                        "types": [
+                            "\\WP_Error"
+                        ],
+                        "variable": "$result"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Action hook to execute when the event is run.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$hook"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Event data.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$v"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 3
+        },
+        {
+            "name": "cron_unschedule_event_error",
+            "file": "wp-cron.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires when an error happens unscheduling a cron event.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.1.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The WP_Error object.",
+                        "types": [
+                            "\\WP_Error"
+                        ],
+                        "variable": "$result"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Action hook to execute when the event is run.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$hook"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Event data.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$v"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 3
         },
         {
             "name": "current_screen",
@@ -6225,7 +6359,7 @@
                         "types": [
                             "int"
                         ],
-                        "variable": "$meta_ids"
+                        "variable": "$meta_id"
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (post or comment).</p> <p>Possible hook names include:</p> <ul> <li><code>deleted_postmeta</code></li> <li><code>deleted_commentmeta</code></li> <li><code>deleted_termmeta</code></li> <li><code>deleted_usermeta</code></li> </ul>"
@@ -6812,7 +6946,7 @@
                         "types": [
                             "int"
                         ],
-                        "variable": "$comment_ID"
+                        "variable": "$comment_id"
                     },
                     {
                         "name": "param",
@@ -7085,6 +7219,11 @@
                         "content": "2.3.0"
                     },
                     {
+                        "name": "since",
+                        "content": "6.1.0",
+                        "description": "The <code>$args</code> parameter was added."
+                    },
+                    {
                         "name": "param",
                         "content": "Term ID.",
                         "types": [
@@ -7107,11 +7246,19 @@
                             "string"
                         ],
                         "variable": "$taxonomy"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Arguments passed to wp_update_term().",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$args"
                     }
                 ],
                 "long_description_html": "<p>The {@see 'edit_$taxonomy'} hook is also available for targeting a specific taxonomy.</p>"
             },
-            "args": 3
+            "args": 4
         },
         {
             "name": "edit_term_taxonomies",
@@ -7151,6 +7298,11 @@
                         "content": "2.9.0"
                     },
                     {
+                        "name": "since",
+                        "content": "6.1.0",
+                        "description": "The <code>$args</code> parameter was added."
+                    },
+                    {
                         "name": "param",
                         "content": "Term taxonomy ID.",
                         "types": [
@@ -7165,11 +7317,19 @@
                             "string"
                         ],
                         "variable": "$taxonomy"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Arguments passed to wp_update_term().",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$args"
                     }
                 ],
                 "long_description_html": ""
             },
-            "args": 2
+            "args": 3
         },
         {
             "name": "edit_terms",
@@ -7182,6 +7342,11 @@
                     {
                         "name": "since",
                         "content": "2.9.0"
+                    },
+                    {
+                        "name": "since",
+                        "content": "6.1.0",
+                        "description": "The <code>$args</code> parameter was added."
                     },
                     {
                         "name": "param",
@@ -7198,11 +7363,19 @@
                             "string"
                         ],
                         "variable": "$taxonomy"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Arguments passed to wp_update_term().",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$args"
                     }
                 ],
                 "long_description_html": ""
             },
-            "args": 2
+            "args": 3
         },
         {
             "name": "edit_user_created_user",
@@ -7305,6 +7478,11 @@
                         "content": "2.3.0"
                     },
                     {
+                        "name": "since",
+                        "content": "6.1.0",
+                        "description": "The <code>$args</code> parameter was added."
+                    },
+                    {
                         "name": "param",
                         "content": "Term ID.",
                         "types": [
@@ -7319,11 +7497,19 @@
                             "int"
                         ],
                         "variable": "$tt_id"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Arguments passed to wp_update_term().",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$args"
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the taxonomy slug.</p> <p>Possible hook names include:</p> <ul> <li><code>edit_category</code></li> <li><code>edit_post_tag</code></li> </ul>"
             },
-            "args": 2
+            "args": 3
         },
         {
             "name": "edited_term",
@@ -7336,6 +7522,11 @@
                     {
                         "name": "since",
                         "content": "2.3.0"
+                    },
+                    {
+                        "name": "since",
+                        "content": "6.1.0",
+                        "description": "The <code>$args</code> parameter was added."
                     },
                     {
                         "name": "param",
@@ -7360,11 +7551,19 @@
                             "string"
                         ],
                         "variable": "$taxonomy"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Arguments passed to wp_update_term().",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$args"
                     }
                 ],
                 "long_description_html": "<p>The {@see 'edited_$taxonomy'} hook is also available for targeting a specific taxonomy.</p>"
             },
-            "args": 3
+            "args": 4
         },
         {
             "name": "edited_term_taxonomies",
@@ -7404,6 +7603,11 @@
                         "content": "2.9.0"
                     },
                     {
+                        "name": "since",
+                        "content": "6.1.0",
+                        "description": "The <code>$args</code> parameter was added."
+                    },
+                    {
                         "name": "param",
                         "content": "Term taxonomy ID.",
                         "types": [
@@ -7418,11 +7622,19 @@
                             "string"
                         ],
                         "variable": "$taxonomy"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Arguments passed to wp_update_term().",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$args"
                     }
                 ],
                 "long_description_html": ""
             },
-            "args": 2
+            "args": 3
         },
         {
             "name": "edited_terms",
@@ -7435,6 +7647,11 @@
                     {
                         "name": "since",
                         "content": "2.9.0"
+                    },
+                    {
+                        "name": "since",
+                        "content": "6.1.0",
+                        "description": "The <code>$args</code> parameter was added."
                     },
                     {
                         "name": "param",
@@ -7451,11 +7668,19 @@
                             "string"
                         ],
                         "variable": "$taxonomy"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Arguments passed to wp_update_term().",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$args"
                     }
                 ],
                 "long_description_html": ""
             },
-            "args": 2
+            "args": 3
         },
         {
             "name": "edited_{$taxonomy}",
@@ -7474,6 +7699,11 @@
                         "content": "2.3.0"
                     },
                     {
+                        "name": "since",
+                        "content": "6.1.0",
+                        "description": "The <code>$args</code> parameter was added."
+                    },
+                    {
                         "name": "param",
                         "content": "Term ID.",
                         "types": [
@@ -7488,11 +7718,19 @@
                             "int"
                         ],
                         "variable": "$tt_id"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Arguments passed to wp_update_term().",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$args"
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the taxonomy slug.</p> <p>Possible hook names include:</p> <ul> <li><code>edited_category</code></li> <li><code>edited_post_tag</code></li> </ul>"
             },
-            "args": 2
+            "args": 3
         },
         {
             "name": "embed_content",
@@ -8443,6 +8681,7 @@
         {
             "name": "install_themes_pre_{$tab}",
             "aliases": [
+                "install_themes_pre_block-themes",
                 "install_themes_pre_dashboard",
                 "install_themes_pre_featured",
                 "install_themes_pre_new",
@@ -8454,14 +8693,19 @@
             "type": "action",
             "doc": {
                 "description": "Fires before each of the tabs are rendered on the Install Themes page.",
-                "long_description": "The dynamic portion of the hook name, `$tab`, refers to the current theme installation tab.\n Possible hook names include:\n\n  - `install_themes_pre_dashboard`\n  - `install_themes_pre_featured`\n  - `install_themes_pre_new`\n  - `install_themes_pre_search`\n  - `install_themes_pre_updated`\n  - `install_themes_pre_upload`",
+                "long_description": "The dynamic portion of the hook name, `$tab`, refers to the current theme installation tab.\n Possible hook names include:\n\n  - `install_themes_pre_block-themes`\n  - `install_themes_pre_dashboard`\n  - `install_themes_pre_featured`\n  - `install_themes_pre_new`\n  - `install_themes_pre_search`\n  - `install_themes_pre_updated`\n  - `install_themes_pre_upload`",
                 "tags": [
                     {
                         "name": "since",
                         "content": "2.8.0"
+                    },
+                    {
+                        "name": "since",
+                        "content": "6.1.0",
+                        "description": "Added the <code>install_themes_pre_block-themes</code> hook name."
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$tab</code>, refers to the current theme installation tab.</p> <p>Possible hook names include:</p> <ul> <li><code>install_themes_pre_dashboard</code></li> <li><code>install_themes_pre_featured</code></li> <li><code>install_themes_pre_new</code></li> <li><code>install_themes_pre_search</code></li> <li><code>install_themes_pre_updated</code></li> <li><code>install_themes_pre_upload</code></li> </ul>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$tab</code>, refers to the current theme installation tab.</p> <p>Possible hook names include:</p> <ul> <li><code>install_themes_pre_block-themes</code></li> <li><code>install_themes_pre_dashboard</code></li> <li><code>install_themes_pre_featured</code></li> <li><code>install_themes_pre_new</code></li> <li><code>install_themes_pre_search</code></li> <li><code>install_themes_pre_updated</code></li> <li><code>install_themes_pre_upload</code></li> </ul>"
             },
             "args": 0
         },
@@ -8485,6 +8729,7 @@
         {
             "name": "install_themes_{$tab}",
             "aliases": [
+                "install_themes_block-themes",
                 "install_themes_dashboard",
                 "install_themes_featured",
                 "install_themes_new",
@@ -8496,11 +8741,16 @@
             "type": "action",
             "doc": {
                 "description": "Fires at the top of each of the tabs on the Install Themes page.",
-                "long_description": "The dynamic portion of the hook name, `$tab`, refers to the current theme installation tab.\n Possible hook names include:\n\n  - `install_themes_dashboard`\n  - `install_themes_featured`\n  - `install_themes_new`\n  - `install_themes_search`\n  - `install_themes_updated`\n  - `install_themes_upload`",
+                "long_description": "The dynamic portion of the hook name, `$tab`, refers to the current theme installation tab.\n Possible hook names include:\n\n  - `install_themes_block-themes`\n  - `install_themes_dashboard`\n  - `install_themes_featured`\n  - `install_themes_new`\n  - `install_themes_search`\n  - `install_themes_updated`\n  - `install_themes_upload`",
                 "tags": [
                     {
                         "name": "since",
                         "content": "2.8.0"
+                    },
+                    {
+                        "name": "since",
+                        "content": "6.1.0",
+                        "description": "Added the <code>install_themes_block-themes</code> hook name."
                     },
                     {
                         "name": "param",
@@ -8511,7 +8761,7 @@
                         "variable": "$paged"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$tab</code>, refers to the current theme installation tab.</p> <p>Possible hook names include:</p> <ul> <li><code>install_themes_dashboard</code></li> <li><code>install_themes_featured</code></li> <li><code>install_themes_new</code></li> <li><code>install_themes_search</code></li> <li><code>install_themes_updated</code></li> <li><code>install_themes_upload</code></li> </ul>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$tab</code>, refers to the current theme installation tab.</p> <p>Possible hook names include:</p> <ul> <li><code>install_themes_block-themes</code></li> <li><code>install_themes_dashboard</code></li> <li><code>install_themes_featured</code></li> <li><code>install_themes_new</code></li> <li><code>install_themes_search</code></li> <li><code>install_themes_updated</code></li> <li><code>install_themes_upload</code></li> </ul>"
             },
             "args": 1
         },
@@ -9390,7 +9640,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "An array of plugin data. See <code>get_plugin_data()</code> and the {@see 'plugin_row_meta'} filter for the list of possible values.",
+                        "content": "An array of plugin data. See get_plugin_data() and the {@see 'plugin_row_meta'} filter for the list of possible values.",
                         "types": [
                             "array"
                         ],
@@ -11217,7 +11467,7 @@
                         "types": [
                             "int"
                         ],
-                        "variable": "$comment_post_ID"
+                        "variable": "$comment_post_id"
                     }
                 ],
                 "long_description_html": ""
@@ -11574,7 +11824,7 @@
                         "types": [
                             "int"
                         ],
-                        "variable": "$post_ID"
+                        "variable": "$post_id"
                     }
                 ],
                 "long_description_html": ""
@@ -11632,7 +11882,7 @@
                         "types": [
                             "int"
                         ],
-                        "variable": "$tb_id"
+                        "variable": "$post_id"
                     },
                     {
                         "name": "param",
@@ -11640,11 +11890,11 @@
                         "types": [
                             "string"
                         ],
-                        "variable": "$tb_url"
+                        "variable": "$trackback_url"
                     },
                     {
                         "name": "param",
-                        "content": "Character Set.",
+                        "content": "Character set.",
                         "types": [
                             "string"
                         ],
@@ -11652,7 +11902,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Trackback Title.",
+                        "content": "Trackback title.",
                         "types": [
                             "string"
                         ],
@@ -11660,7 +11910,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Trackback Excerpt.",
+                        "content": "Trackback excerpt.",
                         "types": [
                             "string"
                         ],
@@ -11668,7 +11918,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Blog Name.",
+                        "content": "Blog name.",
                         "types": [
                             "string"
                         ],
@@ -14084,6 +14334,11 @@
                         "content": "5.5.0"
                     },
                     {
+                        "name": "since",
+                        "content": "6.1.0",
+                        "description": "The <code>$args</code> parameter was added."
+                    },
+                    {
                         "name": "param",
                         "content": "Term ID.",
                         "types": [
@@ -14114,11 +14369,19 @@
                             "bool"
                         ],
                         "variable": "$update"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Arguments passed to wp_insert_term().",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$args"
                     }
                 ],
                 "long_description_html": "<p>The {@see 'saved_$taxonomy'} hook is also available for targeting a specific taxonomy.</p>"
             },
-            "args": 4
+            "args": 5
         },
         {
             "name": "saved_{$taxonomy}",
@@ -14135,6 +14398,11 @@
                     {
                         "name": "since",
                         "content": "5.5.0"
+                    },
+                    {
+                        "name": "since",
+                        "content": "6.1.0",
+                        "description": "The <code>$args</code> parameter was added."
                     },
                     {
                         "name": "param",
@@ -14159,11 +14427,19 @@
                             "bool"
                         ],
                         "variable": "$update"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Arguments passed to wp_insert_term().",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$args"
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$taxonomy</code>, refers to the taxonomy slug.</p> <p>Possible hook names include:</p> <ul> <li><code>saved_category</code></li> <li><code>saved_post_tag</code></li> </ul>"
             },
-            "args": 3
+            "args": 4
         },
         {
             "name": "send_headers",
@@ -15738,17 +16014,30 @@
                         "content": "3.0.0"
                     },
                     {
+                        "name": "since",
+                        "content": "6.1.0",
+                        "description": "Added the <code>$reloadable</code> parameter."
+                    },
+                    {
                         "name": "param",
                         "content": "Text domain. Unique identifier for retrieving translated strings.",
                         "types": [
                             "string"
                         ],
                         "variable": "$domain"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether the text domain can be loaded just-in-time again.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$reloadable"
                     }
                 ],
                 "long_description_html": ""
             },
-            "args": 1
+            "args": 2
         },
         {
             "name": "unmature_blog",
@@ -17268,6 +17557,47 @@
             "args": 4
         },
         {
+            "name": "wp_after_load_template",
+            "file": "wp-includes/template.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires after a template file is loaded.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.1.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The full path to the template file.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$_template_file"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether to require_once or require.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$require_once"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Additional arguments passed to the template.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$args"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 3
+        },
+        {
             "name": "wp_ajax_crop_image_pre_save",
             "file": "wp-admin/includes/ajax-actions.php",
             "type": "action",
@@ -17442,7 +17772,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "{ The array of request data. All arguments are optional and may be empty. @type string $app_name    The suggested name of the application. @type string $success_url The url the user will be redirected to after approving the application. @type string $reject_url  The url the user will be redirected to after rejecting the application.\n}",
+                        "content": "{ The array of request data. All arguments are optional and may be empty. @type string $app_name    The suggested name of the application. @type string $success_url The URL the user will be redirected to after approving the application. @type string $reject_url  The URL the user will be redirected to after rejecting the application.\n}",
                         "types": [
                             "array"
                         ],
@@ -17564,6 +17894,47 @@
                 "long_description_html": ""
             },
             "args": 0
+        },
+        {
+            "name": "wp_before_load_template",
+            "file": "wp-includes/template.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires before a template file is loaded.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.1.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The full path to the template file.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$_template_file"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether to require_once or require.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$require_once"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Additional arguments passed to the template.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$args"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 3
         },
         {
             "name": "wp_body_open",
@@ -17831,7 +18202,7 @@
         },
         {
             "name": "wp_default_scripts",
-            "file": "wp-includes/class.wp-scripts.php",
+            "file": "wp-includes/class-wp-scripts.php",
             "type": "action_reference",
             "doc": {
                 "description": "Fires when the WP_Scripts instance is initialized.",
@@ -17856,7 +18227,7 @@
         },
         {
             "name": "wp_default_styles",
-            "file": "wp-includes/class.wp-styles.php",
+            "file": "wp-includes/class-wp-styles.php",
             "type": "action_reference",
             "doc": {
                 "description": "Fires when the WP_Styles instance is initialized.",
@@ -18983,7 +19354,7 @@
             "file": "wp-includes/class-wp-roles.php",
             "type": "action",
             "doc": {
-                "description": "After the roles have been initialized, allow plugins to add their own roles.",
+                "description": "Fires after the roles have been initialized, allowing plugins to add their own roles.",
                 "long_description": "",
                 "tags": [
                     {
