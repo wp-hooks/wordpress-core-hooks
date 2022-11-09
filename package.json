@@ -25,8 +25,8 @@
 	},
 	"scripts": {
 		"check": "npm run validate:actions && npm run validate:filters && npm run check:duplicate-actions && npm run check:duplicate-filters",
-		"check:duplicate-actions": "bash -c \" diff <(jq '.hooks | map(.name) | sort' hooks/actions.json) <(jq '.hooks | map(.name) | unique | sort' hooks/actions.json)\"",
-		"check:duplicate-filters": "bash -c \" diff <(jq '.hooks | map(.name) | sort' hooks/filters.json) <(jq '.hooks | map(.name) | unique | sort' hooks/filters.json)\"",
+		"check:duplicate-actions": "jq --exit-status '[reduce .hooks[].name as $n ({}; .[$n] += 1) | to_entries[] | select(.value > 1)] == []' hooks/actions.json",
+		"check:duplicate-filters": "jq --exit-status '[reduce .hooks[].name as $n ({}; .[$n] += 1) | to_entries[] | select(.value > 1)] == []' hooks/filters.json",
 		"validate:actions": "ajv validate -s hooks/schema.json -d hooks/actions.json",
 		"validate:filters": "ajv validate -s hooks/schema.json -d hooks/filters.json"
 	}
