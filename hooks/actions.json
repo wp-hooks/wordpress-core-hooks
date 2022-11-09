@@ -5174,6 +5174,18 @@
             "args": 2
         },
         {
+            "name": "delete_expired_transients",
+            "file": "wp-admin/admin.php",
+            "type": "action",
+            "doc": {
+                "description": "",
+                "long_description": "",
+                "tags": [],
+                "long_description_html": ""
+            },
+            "args": 0
+        },
+        {
             "name": "delete_link",
             "file": "wp-admin/includes/bookmark.php",
             "type": "action",
@@ -6729,6 +6741,18 @@
                 "long_description_html": "<p>Fires once for each of the default meta box contexts: normal, advanced, and side.</p>"
             },
             "args": 3
+        },
+        {
+            "name": "do_pings",
+            "file": "wp-includes/post.php",
+            "type": "action",
+            "doc": {
+                "description": "",
+                "long_description": "",
+                "tags": [],
+                "long_description_html": ""
+            },
+            "args": 0
         },
         {
             "name": "do_robots",
@@ -8440,6 +8464,18 @@
                 "long_description_html": ""
             },
             "args": 5
+        },
+        {
+            "name": "importer_scheduled_cleanup",
+            "file": "wp-admin/includes/import.php",
+            "type": "action",
+            "doc": {
+                "description": "",
+                "long_description": "",
+                "tags": [],
+                "long_description_html": ""
+            },
+            "args": 0
         },
         {
             "name": "in_admin_footer",
@@ -12110,6 +12146,42 @@
             "args": 3
         },
         {
+            "name": "publish_future_post",
+            "file": "wp-includes/post.php",
+            "type": "action",
+            "doc": {
+                "description": "",
+                "long_description": "",
+                "tags": [],
+                "long_description_html": ""
+            },
+            "args": 0
+        },
+        {
+            "name": "publish_future_post",
+            "file": "wp-admin/includes/upgrade.php",
+            "type": "action",
+            "doc": {
+                "description": "",
+                "long_description": "",
+                "tags": [],
+                "long_description_html": ""
+            },
+            "args": 0
+        },
+        {
+            "name": "publish_future_post",
+            "file": "wp-includes/post.php",
+            "type": "action",
+            "doc": {
+                "description": "",
+                "long_description": "",
+                "tags": [],
+                "long_description_html": ""
+            },
+            "args": 0
+        },
+        {
             "name": "publish_phone",
             "file": "wp-mail.php",
             "type": "action",
@@ -12222,6 +12294,18 @@
                         "content": "2.0.0"
                     }
                 ],
+                "long_description_html": ""
+            },
+            "args": 0
+        },
+        {
+            "name": "recovery_mode_clean_expired_keys",
+            "file": "wp-includes/class-wp-recovery-mode.php",
+            "type": "action",
+            "doc": {
+                "description": "",
+                "long_description": "",
+                "tags": [],
                 "long_description_html": ""
             },
             "args": 0
@@ -16527,6 +16611,18 @@
             "args": 2
         },
         {
+            "name": "update_network_counts",
+            "file": "wp-includes/ms-functions.php",
+            "type": "action",
+            "doc": {
+                "description": "",
+                "long_description": "",
+                "tags": [],
+                "long_description_html": ""
+            },
+            "args": 0
+        },
+        {
             "name": "update_option",
             "file": "wp-includes/option.php",
             "type": "action",
@@ -17076,6 +17172,18 @@
                 "long_description_html": "<p>See also {@see 'upgrader_package_options'}.</p>"
             },
             "args": 2
+        },
+        {
+            "name": "upgrader_scheduled_cleanup",
+            "file": "wp-admin/includes/class-file-upload-upgrader.php",
+            "type": "action",
+            "doc": {
+                "description": "",
+                "long_description": "",
+                "tags": [],
+                "long_description_html": ""
+            },
+            "args": 0
         },
         {
             "name": "upload_ui_over_quota",
@@ -18594,6 +18702,18 @@
             "args": 0
         },
         {
+            "name": "wp_https_detection",
+            "file": "wp-includes/https-detection.php",
+            "type": "action",
+            "doc": {
+                "description": "",
+                "long_description": "",
+                "tags": [],
+                "long_description_html": ""
+            },
+            "args": 0
+        },
+        {
             "name": "wp_initialize_site",
             "file": "wp-includes/ms-site.php",
             "type": "action",
@@ -18930,6 +19050,18 @@
         },
         {
             "name": "wp_maybe_auto_update",
+            "file": "wp-admin/includes/class-wp-automatic-updater.php",
+            "type": "action",
+            "doc": {
+                "description": "",
+                "long_description": "",
+                "tags": [],
+                "long_description_html": ""
+            },
+            "args": 0
+        },
+        {
+            "name": "wp_maybe_auto_update",
             "file": "wp-includes/update.php",
             "type": "action",
             "doc": {
@@ -19180,6 +19312,18 @@
             "args": 0
         },
         {
+            "name": "wp_privacy_delete_old_export_files",
+            "file": "wp-includes/functions.php",
+            "type": "action",
+            "doc": {
+                "description": "",
+                "long_description": "",
+                "tags": [],
+                "long_description_html": ""
+            },
+            "args": 0
+        },
+        {
             "name": "wp_privacy_personal_data_erased",
             "file": "wp-admin/includes/privacy-tools.php",
             "type": "action",
@@ -19375,6 +19519,30 @@
             "args": 1
         },
         {
+            "name": "wp_scheduled_auto_draft_delete",
+            "file": "wp-admin/includes/post.php",
+            "type": "action",
+            "doc": {
+                "description": "",
+                "long_description": "",
+                "tags": [],
+                "long_description_html": ""
+            },
+            "args": 0
+        },
+        {
+            "name": "wp_scheduled_delete",
+            "file": "wp-admin/admin.php",
+            "type": "action",
+            "doc": {
+                "description": "",
+                "long_description": "",
+                "tags": [],
+                "long_description_html": ""
+            },
+            "args": 0
+        },
+        {
             "name": "wp_set_comment_status",
             "file": "wp-includes/comment.php",
             "type": "action",
@@ -19408,6 +19576,18 @@
             "args": 2
         },
         {
+            "name": "wp_site_health_scheduled_check",
+            "file": "wp-admin/includes/class-wp-site-health.php",
+            "type": "action",
+            "doc": {
+                "description": "",
+                "long_description": "",
+                "tags": [],
+                "long_description_html": ""
+            },
+            "args": 0
+        },
+        {
             "name": "wp_sitemaps_init",
             "file": "wp-includes/sitemaps.php",
             "type": "action",
@@ -19431,6 +19611,54 @@
                 "long_description_html": "<p>Additional sitemaps should be registered on this hook.</p>"
             },
             "args": 1
+        },
+        {
+            "name": "wp_split_shared_term_batch",
+            "file": "wp-includes/taxonomy.php",
+            "type": "action",
+            "doc": {
+                "description": "",
+                "long_description": "",
+                "tags": [],
+                "long_description_html": ""
+            },
+            "args": 0
+        },
+        {
+            "name": "wp_split_shared_term_batch",
+            "file": "wp-includes/taxonomy.php",
+            "type": "action",
+            "doc": {
+                "description": "",
+                "long_description": "",
+                "tags": [],
+                "long_description_html": ""
+            },
+            "args": 0
+        },
+        {
+            "name": "wp_split_shared_term_batch",
+            "file": "wp-includes/taxonomy.php",
+            "type": "action",
+            "doc": {
+                "description": "",
+                "long_description": "",
+                "tags": [],
+                "long_description_html": ""
+            },
+            "args": 0
+        },
+        {
+            "name": "wp_split_shared_term_batch",
+            "file": "wp-admin/includes/upgrade.php",
+            "type": "action",
+            "doc": {
+                "description": "",
+                "long_description": "",
+                "tags": [],
+                "long_description_html": ""
+            },
+            "args": 0
         },
         {
             "name": "wp_tiny_mce_init",
@@ -19616,6 +19844,54 @@
             "args": 3
         },
         {
+            "name": "wp_update_comment_type_batch",
+            "file": "wp-includes/comment.php",
+            "type": "action",
+            "doc": {
+                "description": "",
+                "long_description": "",
+                "tags": [],
+                "long_description_html": ""
+            },
+            "args": 0
+        },
+        {
+            "name": "wp_update_comment_type_batch",
+            "file": "wp-includes/comment.php",
+            "type": "action",
+            "doc": {
+                "description": "",
+                "long_description": "",
+                "tags": [],
+                "long_description_html": ""
+            },
+            "args": 0
+        },
+        {
+            "name": "wp_update_comment_type_batch",
+            "file": "wp-includes/comment.php",
+            "type": "action",
+            "doc": {
+                "description": "",
+                "long_description": "",
+                "tags": [],
+                "long_description_html": ""
+            },
+            "args": 0
+        },
+        {
+            "name": "wp_update_comment_type_batch",
+            "file": "wp-admin/includes/upgrade.php",
+            "type": "action",
+            "doc": {
+                "description": "",
+                "long_description": "",
+                "tags": [],
+                "long_description_html": ""
+            },
+            "args": 0
+        },
+        {
             "name": "wp_update_nav_menu",
             "file": "wp-includes/nav-menu.php",
             "type": "action",
@@ -19695,6 +19971,18 @@
             "args": 3
         },
         {
+            "name": "wp_update_plugins",
+            "file": "wp-includes/update.php",
+            "type": "action",
+            "doc": {
+                "description": "",
+                "long_description": "",
+                "tags": [],
+                "long_description_html": ""
+            },
+            "args": 0
+        },
+        {
             "name": "wp_update_site",
             "file": "wp-includes/ms-site.php",
             "type": "action",
@@ -19726,6 +20014,30 @@
                 "long_description_html": ""
             },
             "args": 2
+        },
+        {
+            "name": "wp_update_themes",
+            "file": "wp-includes/update.php",
+            "type": "action",
+            "doc": {
+                "description": "",
+                "long_description": "",
+                "tags": [],
+                "long_description_html": ""
+            },
+            "args": 0
+        },
+        {
+            "name": "wp_update_user_counts",
+            "file": "wp-includes/user.php",
+            "type": "action",
+            "doc": {
+                "description": "",
+                "long_description": "",
+                "tags": [],
+                "long_description_html": ""
+            },
+            "args": 0
         },
         {
             "name": "wp_upgrade",
@@ -19901,6 +20213,30 @@
                 "long_description_html": ""
             },
             "args": 4
+        },
+        {
+            "name": "wp_version_check",
+            "file": "wp-includes/update.php",
+            "type": "action",
+            "doc": {
+                "description": "",
+                "long_description": "",
+                "tags": [],
+                "long_description_html": ""
+            },
+            "args": 0
+        },
+        {
+            "name": "wp_version_check",
+            "file": "wp-includes/update.php",
+            "type": "action",
+            "doc": {
+                "description": "",
+                "long_description": "",
+                "tags": [],
+                "long_description_html": ""
+            },
+            "args": 0
         },
         {
             "name": "wpmu_activate_blog",
