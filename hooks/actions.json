@@ -3854,6 +3854,39 @@
             "args": 3
         },
         {
+            "name": "comment_reply_to_unapproved_comment",
+            "file": "wp-includes/comment.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires when a comment reply is attempted to an unapproved comment.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.2.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Post ID.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$comment_post_id"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Parent comment ID.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$comment_parent"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 2
+        },
+        {
             "name": "comment_{$new_status}_{$comment->comment_type}",
             "aliases": [
                 "comment_approved_comment",
@@ -19415,6 +19448,39 @@
                             "string"
                         ],
                         "variable": "$comment_status"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 2
+        },
+        {
+            "name": "wp_set_password",
+            "file": "wp-includes/pluggable.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires after the user password is set.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.2.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The plaintext password just set.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$password"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The ID of the user whose password was just set.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$user_id"
                     }
                 ],
                 "long_description_html": ""
