@@ -317,7 +317,7 @@
                         "types": [
                             "int"
                         ],
-                        "variable": "$post_ID"
+                        "variable": "$post_id"
                     }
                 ],
                 "long_description_html": ""
@@ -2417,7 +2417,7 @@
                         "types": [
                             "int"
                         ],
-                        "variable": "$post_ID"
+                        "variable": "$post_id"
                     },
                     {
                         "name": "param",
@@ -3829,7 +3829,7 @@
                         "types": [
                             "int"
                         ],
-                        "variable": "$comment_ID"
+                        "variable": "$comment_id"
                     },
                     {
                         "name": "param",
@@ -3882,7 +3882,7 @@
                         "types": [
                             "string"
                         ],
-                        "variable": "$comment_ID"
+                        "variable": "$comment_id"
                     },
                     {
                         "name": "param",
@@ -3948,7 +3948,7 @@
                         "types": [
                             "int"
                         ],
-                        "variable": "$comment_ID"
+                        "variable": "$comment_id"
                     },
                     {
                         "name": "param",
@@ -3956,7 +3956,7 @@
                         "types": [
                             "int"
                         ],
-                        "variable": "$ID"
+                        "variable": "$comment_post_id"
                     }
                 ],
                 "long_description_html": ""
@@ -6384,7 +6384,7 @@
                         "types": [
                             "string"
                         ],
-                        "variable": "$function"
+                        "variable": "$function_name"
                     },
                     {
                         "name": "param",
@@ -6430,7 +6430,7 @@
                         "types": [
                             "string"
                         ],
-                        "variable": "$class"
+                        "variable": "$class_name"
                     },
                     {
                         "name": "param",
@@ -6520,7 +6520,7 @@
                         "types": [
                             "string"
                         ],
-                        "variable": "$function"
+                        "variable": "$function_name"
                     },
                     {
                         "name": "param",
@@ -6782,7 +6782,7 @@
                         "types": [
                             "string"
                         ],
-                        "variable": "$function"
+                        "variable": "$function_name"
                     },
                     {
                         "name": "param",
@@ -6916,7 +6916,7 @@
                         "types": [
                             "int"
                         ],
-                        "variable": "$post_ID"
+                        "variable": "$post_id"
                     }
                 ],
                 "long_description_html": ""
@@ -7154,7 +7154,7 @@
                         "types": [
                             "int"
                         ],
-                        "variable": "$post_ID"
+                        "variable": "$post_id"
                     },
                     {
                         "name": "param",
@@ -7191,7 +7191,7 @@
                         "types": [
                             "int"
                         ],
-                        "variable": "$post_ID"
+                        "variable": "$post_id"
                     },
                     {
                         "name": "param",
@@ -10890,7 +10890,7 @@
                         "types": [
                             "int"
                         ],
-                        "variable": "$comment_ID"
+                        "variable": "$comment_id"
                     }
                 ],
                 "long_description_html": ""
@@ -11304,7 +11304,7 @@
                         "types": [
                             "int"
                         ],
-                        "variable": "$post_ID"
+                        "variable": "$post_id"
                     },
                     {
                         "name": "param",
@@ -11849,7 +11849,7 @@
                         "types": [
                             "int"
                         ],
-                        "variable": "$post_ID"
+                        "variable": "$post_id"
                     },
                     {
                         "name": "param",
@@ -14253,7 +14253,7 @@
                         "types": [
                             "int"
                         ],
-                        "variable": "$post_ID"
+                        "variable": "$post_id"
                     },
                     {
                         "name": "param",
@@ -14298,7 +14298,7 @@
                         "types": [
                             "int"
                         ],
-                        "variable": "$post_ID"
+                        "variable": "$post_id"
                     },
                     {
                         "name": "param",
@@ -15519,17 +15519,31 @@
                         "content": "4.7.0"
                     },
                     {
+                        "name": "since",
+                        "content": "6.2.0",
+                        "description": "The <code>$user_id</code> parameter was added."
+                    },
+                    {
                         "name": "param",
                         "content": "The new locale.",
                         "types": [
                             "string"
                         ],
                         "variable": "$locale"
+                    },
+                    {
+                        "name": "param",
+                        "content": "User ID for context if available.",
+                        "types": [
+                            "false",
+                            "int"
+                        ],
+                        "variable": "$user_id"
                     }
                 ],
                 "long_description_html": ""
             },
-            "args": 1
+            "args": 2
         },
         {
             "name": "switch_theme",
@@ -16515,11 +16529,11 @@
                     },
                     {
                         "name": "param",
-                        "content": "The value of the site status.",
+                        "content": "Whether the site is public. A numeric string, for compatibility reasons. Accepts '1' or '0'.",
                         "types": [
                             "string"
                         ],
-                        "variable": "$value"
+                        "variable": "$is_public"
                     }
                 ],
                 "long_description_html": ""
@@ -17582,7 +17596,7 @@
                         "types": [
                             "bool"
                         ],
-                        "variable": "$require_once"
+                        "variable": "$load_once"
                     },
                     {
                         "name": "param",
@@ -17921,7 +17935,7 @@
                         "types": [
                             "bool"
                         ],
-                        "variable": "$require_once"
+                        "variable": "$load_once"
                     },
                     {
                         "name": "param",
@@ -18677,7 +18691,7 @@
                         "types": [
                             "int"
                         ],
-                        "variable": "$post_ID"
+                        "variable": "$post_id"
                     },
                     {
                         "name": "param",
@@ -20336,7 +20350,7 @@
                         "types": [
                             "int"
                         ],
-                        "variable": "$post_ID"
+                        "variable": "$post_id"
                     },
                     {
                         "name": "param",
@@ -20369,7 +20383,7 @@
                         "types": [
                             "int"
                         ],
-                        "variable": "$post_ID"
+                        "variable": "$post_id"
                     },
                     {
                         "name": "param",
@@ -20402,7 +20416,7 @@
                         "types": [
                             "int"
                         ],
-                        "variable": "$post_ID"
+                        "variable": "$post_id"
                     },
                     {
                         "name": "param",
@@ -20435,7 +20449,7 @@
                         "types": [
                             "int"
                         ],
-                        "variable": "$post_ID"
+                        "variable": "$post_id"
                     },
                     {
                         "name": "param",
@@ -20501,7 +20515,7 @@
                         "types": [
                             "int"
                         ],
-                        "variable": "$post_ID"
+                        "variable": "$post_id"
                     },
                     {
                         "name": "param",
@@ -20567,7 +20581,7 @@
                         "types": [
                             "int"
                         ],
-                        "variable": "$comment_ID"
+                        "variable": "$comment_id"
                     },
                     {
                         "name": "param",
@@ -20633,7 +20647,7 @@
                         "types": [
                             "int"
                         ],
-                        "variable": "$comment_ID"
+                        "variable": "$comment_id"
                     },
                     {
                         "name": "param",
@@ -20699,7 +20713,7 @@
                         "types": [
                             "int"
                         ],
-                        "variable": "$comment_ID"
+                        "variable": "$comment_id"
                     },
                     {
                         "name": "param",
