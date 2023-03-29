@@ -3777,6 +3777,39 @@
             "args": 2
         },
         {
+            "name": "comment_author_link_rel",
+            "file": "wp-includes/comment-template.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the rel attributes of the comment author's link.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.2.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "An array of strings representing the rel tags which will be joined into the anchor's rel attribute.",
+                        "types": [
+                            "string[]"
+                        ],
+                        "variable": "$rel_parts"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The comment object.",
+                        "types": [
+                            "\\WP_Comment"
+                        ],
+                        "variable": "$comment"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 2
+        },
+        {
             "name": "comment_author_rss",
             "file": "wp-includes/feed.php",
             "type": "filter",
@@ -28281,6 +28314,47 @@
             "args": 2
         },
         {
+            "name": "post_search_columns",
+            "file": "wp-includes/class-wp-query.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the columns to search in a WP_Query search.",
+                "long_description": "The supported columns are `post_title`, `post_excerpt` and `post_content`. They are all included by default.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.2.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Array of column names to be searched.",
+                        "types": [
+                            "string[]"
+                        ],
+                        "variable": "$search_columns"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Text being searched.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$search"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The current WP_Query instance.",
+                        "types": [
+                            "\\WP_Query"
+                        ],
+                        "variable": "$query"
+                    }
+                ],
+                "long_description_html": "<p>The supported columns are <code>post_title</code>, <code>post_excerpt</code> and <code>post_content</code>. They are all included by default.</p>"
+            },
+            "args": 3
+        },
+        {
             "name": "post_thumbnail_html",
             "file": "wp-includes/post-thumbnail-template.php",
             "type": "filter",
@@ -32709,6 +32783,40 @@
                     }
                 ],
                 "long_description_html": ""
+            },
+            "args": 2
+        },
+        {
+            "name": "pre_wp_load_alloptions",
+            "file": "wp-includes/option.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the array of alloptions before it is populated.",
+                "long_description": "Returning an array from the filter will effectively short circuit wp_load_alloptions(), returning that value instead.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.2.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "An array of alloptions. Default null.",
+                        "types": [
+                            "array",
+                            "null"
+                        ],
+                        "variable": "$alloptions"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether to force an update of the local cache from the persistent cache. Default false.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$force_cache"
+                    }
+                ],
+                "long_description_html": "<p>Returning an array from the filter will effectively short circuit wp_load_alloptions(), returning that value instead.</p>"
             },
             "args": 2
         },
@@ -52193,6 +52301,39 @@
             "args": 7
         },
         {
+            "name": "wp_get_attachment_link_attributes",
+            "file": "wp-includes/post-template.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the list of attachment link attributes.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.2.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "An array of attributes for the link markup, keyed on the attribute name.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$attributes"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Post ID.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$id"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 2
+        },
+        {
             "name": "wp_get_attachment_metadata",
             "file": "wp-includes/post.php",
             "type": "filter",
@@ -53875,6 +54016,31 @@
                 "long_description_html": ""
             },
             "args": 5
+        },
+        {
+            "name": "wp_internal_hosts",
+            "file": "wp-includes/link-template.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the array of URL hosts which are considered internal.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.2.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "An array of internal URL hostnames.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$internal_hosts"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 1
         },
         {
             "name": "wp_is_application_passwords_available",
@@ -57125,6 +57291,39 @@
                 "long_description_html": "<p>By default a revision is saved only if one of the revisioned fields has changed. This filter allows for additional checks to determine if there were changes.</p>"
             },
             "args": 3
+        },
+        {
+            "name": "wp_save_post_revision_revisions_before_deletion",
+            "file": "wp-includes/revision.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the revisions to be considered for deletion.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.2.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Array of revisions, or an empty array if none.",
+                        "types": [
+                            "\\WP_Post[]"
+                        ],
+                        "variable": "$revisions"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The ID of the post to save as a revision.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$post_id"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 2
         },
         {
             "name": "wp_script_attributes",
