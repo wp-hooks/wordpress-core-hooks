@@ -268,7 +268,7 @@
                         "types": [
                             "int"
                         ],
-                        "variable": "$post_ID"
+                        "variable": "$post_id"
                     }
                 ],
                 "long_description_html": ""
@@ -1992,7 +1992,7 @@
                     {
                         "name": "since",
                         "content": "4.1.0",
-                        "description": "The <code>$comment_ID</code> parameter was added."
+                        "description": "The <code>$comment_id</code> parameter was added."
                     },
                     {
                         "name": "param",
@@ -2008,7 +2008,7 @@
                         "types": [
                             "string"
                         ],
-                        "variable": "$comment_ID"
+                        "variable": "$comment_id"
                     }
                 ],
                 "long_description_html": ""
@@ -3141,7 +3141,7 @@
                         "types": [
                             "string[]"
                         ],
-                        "variable": "$class"
+                        "variable": "$css_class"
                     }
                 ],
                 "long_description_html": ""
@@ -3753,7 +3753,7 @@
                     {
                         "name": "since",
                         "content": "4.1.0",
-                        "description": "The <code>$comment_ID</code> parameter was added."
+                        "description": "The <code>$comment_id</code> parameter was added."
                     },
                     {
                         "name": "param",
@@ -3769,7 +3769,7 @@
                         "types": [
                             "string"
                         ],
-                        "variable": "$comment_ID"
+                        "variable": "$comment_id"
                     }
                 ],
                 "long_description_html": ""
@@ -4025,7 +4025,7 @@
                     {
                         "name": "since",
                         "content": "4.1.0",
-                        "description": "The <code>$comment_ID</code> parameter was added."
+                        "description": "The <code>$comment_id</code> parameter was added."
                     },
                     {
                         "name": "param",
@@ -4041,7 +4041,7 @@
                         "types": [
                             "string"
                         ],
-                        "variable": "$comment_ID"
+                        "variable": "$comment_id"
                     }
                 ],
                 "long_description_html": ""
@@ -5255,7 +5255,7 @@
                     {
                         "name": "since",
                         "content": "4.1.0",
-                        "description": "The <code>$comment_ID</code> parameter was added."
+                        "description": "The <code>$comment_id</code> parameter was added."
                     },
                     {
                         "name": "param",
@@ -5271,7 +5271,7 @@
                         "types": [
                             "string"
                         ],
-                        "variable": "$comment_ID"
+                        "variable": "$comment_id"
                     }
                 ],
                 "long_description_html": ""
@@ -5841,9 +5841,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "An array of non-default cron schedule arrays. Default empty.",
+                        "content": "{ An array of non-default cron schedules keyed by the schedule name. Default empty array. @type array ...$0 { Cron schedule information. @type int    $interval The schedule interval in seconds. @type string $display  The schedule display name. }\n}",
                         "types": [
-                            "array[]"
+                            "array"
                         ],
                         "variable": "$new_schedules"
                     }
@@ -7648,7 +7648,7 @@
                         "types": [
                             "mixed"
                         ],
-                        "variable": "$default"
+                        "variable": "$default_value"
                     },
                     {
                         "name": "param",
@@ -7732,7 +7732,7 @@
                         "types": [
                             "mixed"
                         ],
-                        "variable": "$default"
+                        "variable": "$default_value"
                     },
                     {
                         "name": "param",
@@ -8701,7 +8701,7 @@
                     {
                         "name": "since",
                         "content": "5.1.0",
-                        "description": "Added the $function, $message and $version parameters."
+                        "description": "Added the $function_name, $message and $version parameters."
                     },
                     {
                         "name": "param",
@@ -8717,7 +8717,7 @@
                         "types": [
                             "string"
                         ],
-                        "variable": "$function"
+                        "variable": "$function_name"
                     },
                     {
                         "name": "param",
@@ -8779,7 +8779,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Network ID. Relevant only on multi-network installations.",
+                        "content": "Network ID. Only relevant on multi-network installations.",
                         "types": [
                             "int"
                         ],
@@ -9957,7 +9957,7 @@
                         "types": [
                             "int"
                         ],
-                        "variable": "$post_ID"
+                        "variable": "$post_id"
                     }
                 ],
                 "long_description_html": ""
@@ -10463,7 +10463,7 @@
                         "types": [
                             "int"
                         ],
-                        "variable": "$post_ID"
+                        "variable": "$post_id"
                     }
                 ],
                 "long_description_html": "<p>Allows for the addition and/or removal of potential enclosures to save to postmeta before checking the database for existing enclosures.</p>"
@@ -12168,7 +12168,7 @@
                         "types": [
                             "string"
                         ],
-                        "variable": "$default"
+                        "variable": "$default_value"
                     },
                     {
                         "name": "param",
@@ -12677,7 +12677,7 @@
                         "types": [
                             "string"
                         ],
-                        "variable": "$comment_ID"
+                        "variable": "$comment_id"
                     },
                     {
                         "name": "param",
@@ -12707,7 +12707,7 @@
                     {
                         "name": "since",
                         "content": "4.1.0",
-                        "description": "The <code>$comment_ID</code> and <code>$comment</code> parameters were added."
+                        "description": "The <code>$comment_id</code> and <code>$comment</code> parameters were added."
                     },
                     {
                         "name": "param",
@@ -12723,7 +12723,7 @@
                         "types": [
                             "string"
                         ],
-                        "variable": "$comment_ID"
+                        "variable": "$comment_id"
                     },
                     {
                         "name": "param",
@@ -12753,7 +12753,7 @@
                     {
                         "name": "since",
                         "content": "4.1.0",
-                        "description": "The <code>$comment_ID</code> and <code>$comment</code> parameters were added."
+                        "description": "The <code>$comment_id</code> and <code>$comment</code> parameters were added."
                     },
                     {
                         "name": "param",
@@ -12769,7 +12769,7 @@
                         "types": [
                             "string"
                         ],
-                        "variable": "$comment_ID"
+                        "variable": "$comment_id"
                     },
                     {
                         "name": "param",
@@ -12799,7 +12799,7 @@
                     {
                         "name": "since",
                         "content": "4.1.0",
-                        "description": "The <code>$comment_ID</code> and <code>$comment</code> parameters were added."
+                        "description": "The <code>$comment_id</code> and <code>$comment</code> parameters were added."
                     },
                     {
                         "name": "param",
@@ -12815,7 +12815,7 @@
                         "types": [
                             "string"
                         ],
-                        "variable": "$comment_ID"
+                        "variable": "$comment_id"
                     },
                     {
                         "name": "param",
@@ -12845,7 +12845,7 @@
                     {
                         "name": "since",
                         "content": "4.1.0",
-                        "description": "The <code>$author</code> and <code>$comment_ID</code> parameters were added."
+                        "description": "The <code>$author</code> and <code>$comment_id</code> parameters were added."
                     },
                     {
                         "name": "param",
@@ -12869,7 +12869,7 @@
                         "types": [
                             "string"
                         ],
-                        "variable": "$comment_ID"
+                        "variable": "$comment_id"
                     }
                 ],
                 "long_description_html": ""
@@ -12891,7 +12891,7 @@
                     {
                         "name": "since",
                         "content": "4.1.0",
-                        "description": "The <code>$comment_ID</code> and <code>$comment</code> parameters were added."
+                        "description": "The <code>$comment_id</code> and <code>$comment</code> parameters were added."
                     },
                     {
                         "name": "param",
@@ -12908,7 +12908,7 @@
                             "string",
                             "int"
                         ],
-                        "variable": "$comment_ID"
+                        "variable": "$comment_id"
                     },
                     {
                         "name": "param",
@@ -13006,7 +13006,7 @@
                     {
                         "name": "since",
                         "content": "4.1.0",
-                        "description": "The <code>$comment_ID</code> and <code>$comment</code> parameters were added."
+                        "description": "The <code>$comment_id</code> and <code>$comment</code> parameters were added."
                     },
                     {
                         "name": "param",
@@ -13022,7 +13022,7 @@
                         "types": [
                             "string"
                         ],
-                        "variable": "$comment_ID"
+                        "variable": "$comment_id"
                     },
                     {
                         "name": "param",
@@ -13215,7 +13215,7 @@
                     {
                         "name": "since",
                         "content": "4.1.0",
-                        "description": "The <code>$comment_ID</code> and <code>$comment</code> parameters were added."
+                        "description": "The <code>$comment_id</code> and <code>$comment</code> parameters were added."
                     },
                     {
                         "name": "param",
@@ -13231,7 +13231,7 @@
                         "types": [
                             "string"
                         ],
-                        "variable": "$comment_ID"
+                        "variable": "$comment_id"
                     },
                     {
                         "name": "param",
@@ -14391,7 +14391,7 @@
                     {
                         "name": "since",
                         "content": "4.7.0",
-                        "description": "Introduced the <code>$comment_ID</code> parameter."
+                        "description": "Introduced the <code>$comment_id</code> parameter."
                     },
                     {
                         "name": "param",
@@ -14423,7 +14423,7 @@
                         "types": [
                             "int"
                         ],
-                        "variable": "$comment_ID"
+                        "variable": "$comment_id"
                     }
                 ],
                 "long_description_html": ""
@@ -14943,7 +14943,7 @@
             "file": "wp-includes/cron.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the schedule for a hook.",
+                "description": "Filters the schedule name for a hook.",
                 "long_description": "",
                 "tags": [
                     {
@@ -16326,7 +16326,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Whether post should be in a same taxonomy term.",
+                        "content": "Whether post should be in the same taxonomy term.",
                         "types": [
                             "bool"
                         ],
@@ -16448,7 +16448,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Whether post should be in a same taxonomy term.",
+                        "content": "Whether post should be in the same taxonomy term.",
                         "types": [
                             "bool"
                         ],
@@ -17888,9 +17888,10 @@
                     },
                     {
                         "name": "param",
-                        "content": "Whether to verify the SSL connection. Default true.",
+                        "content": "Boolean to control whether to verify the SSL connection or path to an SSL certificate.",
                         "types": [
-                            "bool"
+                            "bool",
+                            "string"
                         ],
                         "variable": "$ssl_verify"
                     },
@@ -17926,9 +17927,10 @@
                     },
                     {
                         "name": "param",
-                        "content": "Whether to verify the SSL connection. Default true.",
+                        "content": "Boolean to control whether to verify the SSL connection or path to an SSL certificate.",
                         "types": [
-                            "bool"
+                            "bool",
+                            "string"
                         ],
                         "variable": "$ssl_verify"
                     },
@@ -18682,11 +18684,16 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the list of allowed file extensions when sideloading an image from a URL.",
-                "long_description": "The default allowed extensions are:\n\n  - `jpg`\n  - `jpeg`\n  - `jpe`\n  - `png`\n  - `gif`",
+                "long_description": "The default allowed extensions are:\n\n  - `jpg`\n  - `jpeg`\n  - `jpe`\n  - `png`\n  - `gif`\n  - `webp`",
                 "tags": [
                     {
                         "name": "since",
                         "content": "5.6.0"
+                    },
+                    {
+                        "name": "since",
+                        "content": "5.8.0",
+                        "description": "Added 'webp' to the default list of allowed file extensions."
                     },
                     {
                         "name": "param",
@@ -18705,7 +18712,7 @@
                         "variable": "$file"
                     }
                 ],
-                "long_description_html": "<p>The default allowed extensions are:</p> <ul> <li><code>jpg</code></li> <li><code>jpeg</code></li> <li><code>jpe</code></li> <li><code>png</code></li> <li><code>gif</code></li> </ul>"
+                "long_description_html": "<p>The default allowed extensions are:</p> <ul> <li><code>jpg</code></li> <li><code>jpeg</code></li> <li><code>jpe</code></li> <li><code>png</code></li> <li><code>gif</code></li> <li><code>webp</code></li> </ul>"
             },
             "args": 2
         },
@@ -23950,7 +23957,7 @@
                         "types": [
                             "string"
                         ],
-                        "variable": "$class"
+                        "variable": "$css_class"
                     },
                     {
                         "name": "return",
@@ -25186,11 +25193,11 @@
                     },
                     {
                         "name": "param",
-                        "content": "The id of the comment for the notification.",
+                        "content": "The ID of the comment for the notification.",
                         "types": [
                             "int"
                         ],
-                        "variable": "$comment_ID"
+                        "variable": "$comment_id"
                     }
                 ],
                 "long_description_html": ""
@@ -25223,7 +25230,7 @@
                         "types": [
                             "int"
                         ],
-                        "variable": "$comment_ID"
+                        "variable": "$comment_id"
                     }
                 ],
                 "long_description_html": ""
@@ -25559,7 +25566,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the list of sanctioned oEmbed providers.",
-                "long_description": "Since WordPress 4.4, oEmbed discovery is enabled for all users and allows embedding of sanitized iframes. The providers in this list are sanctioned, meaning they are trusted and allowed to embed any content, such as iframes, videos, JavaScript, and arbitrary HTML.\n Supported providers:\n |   Provider   |                     Flavor                |  Since  | | ------------ | ----------------------------------------- | ------- | | Dailymotion  | dailymotion.com                           | 2.9.0   | | Flickr       | flickr.com                                | 2.9.0   | | Scribd       | scribd.com                                | 2.9.0   | | Vimeo        | vimeo.com                                 | 2.9.0   | | WordPress.tv | wordpress.tv                              | 2.9.0   | | YouTube      | youtube.com/watch                         | 2.9.0   | | Crowdsignal  | polldaddy.com                             | 3.0.0   | | SmugMug      | smugmug.com                               | 3.0.0   | | YouTube      | youtu.be                                  | 3.0.0   | | Twitter      | twitter.com                               | 3.4.0   | | Slideshare   | slideshare.net                            | 3.5.0   | | SoundCloud   | soundcloud.com                            | 3.5.0   | | Dailymotion  | dai.ly                                    | 3.6.0   | | Flickr       | flic.kr                                   | 3.6.0   | | Spotify      | spotify.com                               | 3.6.0   | | Imgur        | imgur.com                                 | 3.9.0   | | Animoto      | animoto.com                               | 4.0.0   | | Animoto      | video214.com                              | 4.0.0   | | Issuu        | issuu.com                                 | 4.0.0   | | Mixcloud     | mixcloud.com                              | 4.0.0   | | Crowdsignal  | poll.fm                                   | 4.0.0   | | TED          | ted.com                                   | 4.0.0   | | YouTube      | youtube.com/playlist                      | 4.0.0   | | Tumblr       | tumblr.com                                | 4.2.0   | | Kickstarter  | kickstarter.com                           | 4.2.0   | | Kickstarter  | kck.st                                    | 4.2.0   | | Cloudup      | cloudup.com                               | 4.3.0   | | ReverbNation | reverbnation.com                          | 4.4.0   | | VideoPress   | videopress.com                            | 4.4.0   | | Reddit       | reddit.com                                | 4.4.0   | | Speaker Deck | speakerdeck.com                           | 4.4.0   | | Twitter      | twitter.com/timelines                     | 4.5.0   | | Twitter      | twitter.com/moments                       | 4.5.0   | | Twitter      | twitter.com/user                          | 4.7.0   | | Twitter      | twitter.com/likes                         | 4.7.0   | | Twitter      | twitter.com/lists                         | 4.7.0   | | Screencast   | screencast.com                            | 4.8.0   | | Amazon       | amazon.com (com.mx, com.br, ca)           | 4.9.0   | | Amazon       | amazon.de (fr, it, es, in, nl, ru, co.uk) | 4.9.0   | | Amazon       | amazon.co.jp (com.au)                     | 4.9.0   | | Amazon       | amazon.cn                                 | 4.9.0   | | Amazon       | a.co                                      | 4.9.0   | | Amazon       | amzn.to (eu, in, asia)                    | 4.9.0   | | Amazon       | z.cn                                      | 4.9.0   | | Someecards   | someecards.com                            | 4.9.0   | | Someecards   | some.ly                                   | 4.9.0   | | Crowdsignal  | survey.fm                                 | 5.1.0   | | TikTok       | tiktok.com                                | 5.4.0   | | Pinterest    | pinterest.com                             | 5.9.0   | | WolframCloud | wolframcloud.com                          | 5.9.0   | | Pocket Casts | pocketcasts.com                           | 6.1.0   |\n No longer supported providers:\n |   Provider   |        Flavor        |   Since   |  Removed  | | ------------ | -------------------- | --------- | --------- | | Qik          | qik.com              | 2.9.0     | 3.9.0     | | Viddler      | viddler.com          | 2.9.0     | 4.0.0     | | Revision3    | revision3.com        | 2.9.0     | 4.2.0     | | Blip         | blip.tv              | 2.9.0     | 4.4.0     | | Rdio         | rdio.com             | 3.6.0     | 4.4.1     | | Rdio         | rd.io                | 3.6.0     | 4.4.1     | | Vine         | vine.co              | 4.1.0     | 4.9.0     | | Photobucket  | photobucket.com      | 2.9.0     | 5.1.0     | | Funny or Die | funnyordie.com       | 3.0.0     | 5.1.0     | | CollegeHumor | collegehumor.com     | 4.0.0     | 5.3.1     | | Hulu         | hulu.com             | 2.9.0     | 5.5.0     | | Instagram    | instagram.com        | 3.5.0     | 5.5.2     | | Instagram    | instagr.am           | 3.5.0     | 5.5.2     | | Instagram TV | instagram.com        | 5.1.0     | 5.5.2     | | Instagram TV | instagr.am           | 5.1.0     | 5.5.2     | | Facebook     | facebook.com         | 4.7.0     | 5.5.2     | | Meetup.com   | meetup.com           | 3.9.0     | 6.0.1     | | Meetup.com   | meetu.ps             | 3.9.0     | 6.0.1     |",
+                "long_description": "Since WordPress 4.4, oEmbed discovery is enabled for all users and allows embedding of sanitized iframes. The providers in this list are sanctioned, meaning they are trusted and allowed to embed any content, such as iframes, videos, JavaScript, and arbitrary HTML.\n Supported providers:\n |   Provider   |                     Flavor                |  Since  | | ------------ | ----------------------------------------- | ------- | | Dailymotion  | dailymotion.com                           | 2.9.0   | | Flickr       | flickr.com                                | 2.9.0   | | Scribd       | scribd.com                                | 2.9.0   | | Vimeo        | vimeo.com                                 | 2.9.0   | | WordPress.tv | wordpress.tv                              | 2.9.0   | | YouTube      | youtube.com/watch                         | 2.9.0   | | Crowdsignal  | polldaddy.com                             | 3.0.0   | | SmugMug      | smugmug.com                               | 3.0.0   | | YouTube      | youtu.be                                  | 3.0.0   | | Twitter      | twitter.com                               | 3.4.0   | | Slideshare   | slideshare.net                            | 3.5.0   | | SoundCloud   | soundcloud.com                            | 3.5.0   | | Dailymotion  | dai.ly                                    | 3.6.0   | | Flickr       | flic.kr                                   | 3.6.0   | | Spotify      | spotify.com                               | 3.6.0   | | Imgur        | imgur.com                                 | 3.9.0   | | Animoto      | animoto.com                               | 4.0.0   | | Animoto      | video214.com                              | 4.0.0   | | Issuu        | issuu.com                                 | 4.0.0   | | Mixcloud     | mixcloud.com                              | 4.0.0   | | Crowdsignal  | poll.fm                                   | 4.0.0   | | TED          | ted.com                                   | 4.0.0   | | YouTube      | youtube.com/playlist                      | 4.0.0   | | Tumblr       | tumblr.com                                | 4.2.0   | | Kickstarter  | kickstarter.com                           | 4.2.0   | | Kickstarter  | kck.st                                    | 4.2.0   | | Cloudup      | cloudup.com                               | 4.3.0   | | ReverbNation | reverbnation.com                          | 4.4.0   | | VideoPress   | videopress.com                            | 4.4.0   | | Reddit       | reddit.com                                | 4.4.0   | | Speaker Deck | speakerdeck.com                           | 4.4.0   | | Twitter      | twitter.com/timelines                     | 4.5.0   | | Twitter      | twitter.com/moments                       | 4.5.0   | | Twitter      | twitter.com/user                          | 4.7.0   | | Twitter      | twitter.com/likes                         | 4.7.0   | | Twitter      | twitter.com/lists                         | 4.7.0   | | Screencast   | screencast.com                            | 4.8.0   | | Amazon       | amazon.com (com.mx, com.br, ca)           | 4.9.0   | | Amazon       | amazon.de (fr, it, es, in, nl, ru, co.uk) | 4.9.0   | | Amazon       | amazon.co.jp (com.au)                     | 4.9.0   | | Amazon       | amazon.cn                                 | 4.9.0   | | Amazon       | a.co                                      | 4.9.0   | | Amazon       | amzn.to (eu, in, asia)                    | 4.9.0   | | Amazon       | z.cn                                      | 4.9.0   | | Someecards   | someecards.com                            | 4.9.0   | | Someecards   | some.ly                                   | 4.9.0   | | Crowdsignal  | survey.fm                                 | 5.1.0   | | TikTok       | tiktok.com                                | 5.4.0   | | Pinterest    | pinterest.com                             | 5.9.0   | | WolframCloud | wolframcloud.com                          | 5.9.0   | | Pocket Casts | pocketcasts.com                           | 6.1.0   | | Crowdsignal  | crowdsignal.net                           | 6.2.0   |\n No longer supported providers:\n |   Provider   |        Flavor        |   Since   |  Removed  | | ------------ | -------------------- | --------- | --------- | | Qik          | qik.com              | 2.9.0     | 3.9.0     | | Viddler      | viddler.com          | 2.9.0     | 4.0.0     | | Revision3    | revision3.com        | 2.9.0     | 4.2.0     | | Blip         | blip.tv              | 2.9.0     | 4.4.0     | | Rdio         | rdio.com             | 3.6.0     | 4.4.1     | | Rdio         | rd.io                | 3.6.0     | 4.4.1     | | Vine         | vine.co              | 4.1.0     | 4.9.0     | | Photobucket  | photobucket.com      | 2.9.0     | 5.1.0     | | Funny or Die | funnyordie.com       | 3.0.0     | 5.1.0     | | CollegeHumor | collegehumor.com     | 4.0.0     | 5.3.1     | | Hulu         | hulu.com             | 2.9.0     | 5.5.0     | | Instagram    | instagram.com        | 3.5.0     | 5.5.2     | | Instagram    | instagr.am           | 3.5.0     | 5.5.2     | | Instagram TV | instagram.com        | 5.1.0     | 5.5.2     | | Instagram TV | instagr.am           | 5.1.0     | 5.5.2     | | Facebook     | facebook.com         | 4.7.0     | 5.5.2     | | Meetup.com   | meetup.com           | 3.9.0     | 6.0.1     | | Meetup.com   | meetu.ps             | 3.9.0     | 6.0.1     |",
                 "tags": [
                     {
                         "name": "see",
@@ -25579,7 +25586,7 @@
                         "variable": "$providers"
                     }
                 ],
-                "long_description_html": "<p>Since WordPress 4.4, oEmbed discovery is enabled for all users and allows embedding of sanitized iframes. The providers in this list are sanctioned, meaning they are trusted and allowed to embed any content, such as iframes, videos, JavaScript, and arbitrary HTML.</p> <p>Supported providers:</p> <table> <thead> <tr> <th>Provider</th> <th>Flavor</th> <th>Since</th> </tr> </thead> <tbody> <tr> <td>Dailymotion</td> <td>dailymotion.com</td> <td>2.9.0</td> </tr> <tr> <td>Flickr</td> <td>flickr.com</td> <td>2.9.0</td> </tr> <tr> <td>Scribd</td> <td>scribd.com</td> <td>2.9.0</td> </tr> <tr> <td>Vimeo</td> <td>vimeo.com</td> <td>2.9.0</td> </tr> <tr> <td>WordPress.tv</td> <td>wordpress.tv</td> <td>2.9.0</td> </tr> <tr> <td>YouTube</td> <td>youtube.com/watch</td> <td>2.9.0</td> </tr> <tr> <td>Crowdsignal</td> <td>polldaddy.com</td> <td>3.0.0</td> </tr> <tr> <td>SmugMug</td> <td>smugmug.com</td> <td>3.0.0</td> </tr> <tr> <td>YouTube</td> <td>youtu.be</td> <td>3.0.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com</td> <td>3.4.0</td> </tr> <tr> <td>Slideshare</td> <td>slideshare.net</td> <td>3.5.0</td> </tr> <tr> <td>SoundCloud</td> <td>soundcloud.com</td> <td>3.5.0</td> </tr> <tr> <td>Dailymotion</td> <td>dai.ly</td> <td>3.6.0</td> </tr> <tr> <td>Flickr</td> <td>flic.kr</td> <td>3.6.0</td> </tr> <tr> <td>Spotify</td> <td>spotify.com</td> <td>3.6.0</td> </tr> <tr> <td>Imgur</td> <td>imgur.com</td> <td>3.9.0</td> </tr> <tr> <td>Animoto</td> <td>animoto.com</td> <td>4.0.0</td> </tr> <tr> <td>Animoto</td> <td>video214.com</td> <td>4.0.0</td> </tr> <tr> <td>Issuu</td> <td>issuu.com</td> <td>4.0.0</td> </tr> <tr> <td>Mixcloud</td> <td>mixcloud.com</td> <td>4.0.0</td> </tr> <tr> <td>Crowdsignal</td> <td>poll.fm</td> <td>4.0.0</td> </tr> <tr> <td>TED</td> <td>ted.com</td> <td>4.0.0</td> </tr> <tr> <td>YouTube</td> <td>youtube.com/playlist</td> <td>4.0.0</td> </tr> <tr> <td>Tumblr</td> <td>tumblr.com</td> <td>4.2.0</td> </tr> <tr> <td>Kickstarter</td> <td>kickstarter.com</td> <td>4.2.0</td> </tr> <tr> <td>Kickstarter</td> <td>kck.st</td> <td>4.2.0</td> </tr> <tr> <td>Cloudup</td> <td>cloudup.com</td> <td>4.3.0</td> </tr> <tr> <td>ReverbNation</td> <td>reverbnation.com</td> <td>4.4.0</td> </tr> <tr> <td>VideoPress</td> <td>videopress.com</td> <td>4.4.0</td> </tr> <tr> <td>Reddit</td> <td>reddit.com</td> <td>4.4.0</td> </tr> <tr> <td>Speaker Deck</td> <td>speakerdeck.com</td> <td>4.4.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/timelines</td> <td>4.5.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/moments</td> <td>4.5.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/user</td> <td>4.7.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/likes</td> <td>4.7.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/lists</td> <td>4.7.0</td> </tr> <tr> <td>Screencast</td> <td>screencast.com</td> <td>4.8.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.com (com.mx, com.br, ca)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.de (fr, it, es, in, nl, ru, co.uk)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.co.jp (com.au)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.cn</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>a.co</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amzn.to (eu, in, asia)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>z.cn</td> <td>4.9.0</td> </tr> <tr> <td>Someecards</td> <td>someecards.com</td> <td>4.9.0</td> </tr> <tr> <td>Someecards</td> <td>some.ly</td> <td>4.9.0</td> </tr> <tr> <td>Crowdsignal</td> <td>survey.fm</td> <td>5.1.0</td> </tr> <tr> <td>TikTok</td> <td>tiktok.com</td> <td>5.4.0</td> </tr> <tr> <td>Pinterest</td> <td>pinterest.com</td> <td>5.9.0</td> </tr> <tr> <td>WolframCloud</td> <td>wolframcloud.com</td> <td>5.9.0</td> </tr> <tr> <td>Pocket Casts</td> <td>pocketcasts.com</td> <td>6.1.0</td> </tr> </tbody> </table> <p>No longer supported providers:</p> <table> <thead> <tr> <th>Provider</th> <th>Flavor</th> <th>Since</th> <th>Removed</th> </tr> </thead> <tbody> <tr> <td>Qik</td> <td>qik.com</td> <td>2.9.0</td> <td>3.9.0</td> </tr> <tr> <td>Viddler</td> <td>viddler.com</td> <td>2.9.0</td> <td>4.0.0</td> </tr> <tr> <td>Revision3</td> <td>revision3.com</td> <td>2.9.0</td> <td>4.2.0</td> </tr> <tr> <td>Blip</td> <td>blip.tv</td> <td>2.9.0</td> <td>4.4.0</td> </tr> <tr> <td>Rdio</td> <td>rdio.com</td> <td>3.6.0</td> <td>4.4.1</td> </tr> <tr> <td>Rdio</td> <td>rd.io</td> <td>3.6.0</td> <td>4.4.1</td> </tr> <tr> <td>Vine</td> <td>vine.co</td> <td>4.1.0</td> <td>4.9.0</td> </tr> <tr> <td>Photobucket</td> <td>photobucket.com</td> <td>2.9.0</td> <td>5.1.0</td> </tr> <tr> <td>Funny or Die</td> <td>funnyordie.com</td> <td>3.0.0</td> <td>5.1.0</td> </tr> <tr> <td>CollegeHumor</td> <td>collegehumor.com</td> <td>4.0.0</td> <td>5.3.1</td> </tr> <tr> <td>Hulu</td> <td>hulu.com</td> <td>2.9.0</td> <td>5.5.0</td> </tr> <tr> <td>Instagram</td> <td>instagram.com</td> <td>3.5.0</td> <td>5.5.2</td> </tr> <tr> <td>Instagram</td> <td>instagr.am</td> <td>3.5.0</td> <td>5.5.2</td> </tr> <tr> <td>Instagram TV</td> <td>instagram.com</td> <td>5.1.0</td> <td>5.5.2</td> </tr> <tr> <td>Instagram TV</td> <td>instagr.am</td> <td>5.1.0</td> <td>5.5.2</td> </tr> <tr> <td>Facebook</td> <td>facebook.com</td> <td>4.7.0</td> <td>5.5.2</td> </tr> <tr> <td>Meetup.com</td> <td>meetup.com</td> <td>3.9.0</td> <td>6.0.1</td> </tr> <tr> <td>Meetup.com</td> <td>meetu.ps</td> <td>3.9.0</td> <td>6.0.1</td> </tr> </tbody> </table>"
+                "long_description_html": "<p>Since WordPress 4.4, oEmbed discovery is enabled for all users and allows embedding of sanitized iframes. The providers in this list are sanctioned, meaning they are trusted and allowed to embed any content, such as iframes, videos, JavaScript, and arbitrary HTML.</p> <p>Supported providers:</p> <table> <thead> <tr> <th>Provider</th> <th>Flavor</th> <th>Since</th> </tr> </thead> <tbody> <tr> <td>Dailymotion</td> <td>dailymotion.com</td> <td>2.9.0</td> </tr> <tr> <td>Flickr</td> <td>flickr.com</td> <td>2.9.0</td> </tr> <tr> <td>Scribd</td> <td>scribd.com</td> <td>2.9.0</td> </tr> <tr> <td>Vimeo</td> <td>vimeo.com</td> <td>2.9.0</td> </tr> <tr> <td>WordPress.tv</td> <td>wordpress.tv</td> <td>2.9.0</td> </tr> <tr> <td>YouTube</td> <td>youtube.com/watch</td> <td>2.9.0</td> </tr> <tr> <td>Crowdsignal</td> <td>polldaddy.com</td> <td>3.0.0</td> </tr> <tr> <td>SmugMug</td> <td>smugmug.com</td> <td>3.0.0</td> </tr> <tr> <td>YouTube</td> <td>youtu.be</td> <td>3.0.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com</td> <td>3.4.0</td> </tr> <tr> <td>Slideshare</td> <td>slideshare.net</td> <td>3.5.0</td> </tr> <tr> <td>SoundCloud</td> <td>soundcloud.com</td> <td>3.5.0</td> </tr> <tr> <td>Dailymotion</td> <td>dai.ly</td> <td>3.6.0</td> </tr> <tr> <td>Flickr</td> <td>flic.kr</td> <td>3.6.0</td> </tr> <tr> <td>Spotify</td> <td>spotify.com</td> <td>3.6.0</td> </tr> <tr> <td>Imgur</td> <td>imgur.com</td> <td>3.9.0</td> </tr> <tr> <td>Animoto</td> <td>animoto.com</td> <td>4.0.0</td> </tr> <tr> <td>Animoto</td> <td>video214.com</td> <td>4.0.0</td> </tr> <tr> <td>Issuu</td> <td>issuu.com</td> <td>4.0.0</td> </tr> <tr> <td>Mixcloud</td> <td>mixcloud.com</td> <td>4.0.0</td> </tr> <tr> <td>Crowdsignal</td> <td>poll.fm</td> <td>4.0.0</td> </tr> <tr> <td>TED</td> <td>ted.com</td> <td>4.0.0</td> </tr> <tr> <td>YouTube</td> <td>youtube.com/playlist</td> <td>4.0.0</td> </tr> <tr> <td>Tumblr</td> <td>tumblr.com</td> <td>4.2.0</td> </tr> <tr> <td>Kickstarter</td> <td>kickstarter.com</td> <td>4.2.0</td> </tr> <tr> <td>Kickstarter</td> <td>kck.st</td> <td>4.2.0</td> </tr> <tr> <td>Cloudup</td> <td>cloudup.com</td> <td>4.3.0</td> </tr> <tr> <td>ReverbNation</td> <td>reverbnation.com</td> <td>4.4.0</td> </tr> <tr> <td>VideoPress</td> <td>videopress.com</td> <td>4.4.0</td> </tr> <tr> <td>Reddit</td> <td>reddit.com</td> <td>4.4.0</td> </tr> <tr> <td>Speaker Deck</td> <td>speakerdeck.com</td> <td>4.4.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/timelines</td> <td>4.5.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/moments</td> <td>4.5.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/user</td> <td>4.7.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/likes</td> <td>4.7.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/lists</td> <td>4.7.0</td> </tr> <tr> <td>Screencast</td> <td>screencast.com</td> <td>4.8.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.com (com.mx, com.br, ca)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.de (fr, it, es, in, nl, ru, co.uk)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.co.jp (com.au)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.cn</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>a.co</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amzn.to (eu, in, asia)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>z.cn</td> <td>4.9.0</td> </tr> <tr> <td>Someecards</td> <td>someecards.com</td> <td>4.9.0</td> </tr> <tr> <td>Someecards</td> <td>some.ly</td> <td>4.9.0</td> </tr> <tr> <td>Crowdsignal</td> <td>survey.fm</td> <td>5.1.0</td> </tr> <tr> <td>TikTok</td> <td>tiktok.com</td> <td>5.4.0</td> </tr> <tr> <td>Pinterest</td> <td>pinterest.com</td> <td>5.9.0</td> </tr> <tr> <td>WolframCloud</td> <td>wolframcloud.com</td> <td>5.9.0</td> </tr> <tr> <td>Pocket Casts</td> <td>pocketcasts.com</td> <td>6.1.0</td> </tr> <tr> <td>Crowdsignal</td> <td>crowdsignal.net</td> <td>6.2.0</td> </tr> </tbody> </table> <p>No longer supported providers:</p> <table> <thead> <tr> <th>Provider</th> <th>Flavor</th> <th>Since</th> <th>Removed</th> </tr> </thead> <tbody> <tr> <td>Qik</td> <td>qik.com</td> <td>2.9.0</td> <td>3.9.0</td> </tr> <tr> <td>Viddler</td> <td>viddler.com</td> <td>2.9.0</td> <td>4.0.0</td> </tr> <tr> <td>Revision3</td> <td>revision3.com</td> <td>2.9.0</td> <td>4.2.0</td> </tr> <tr> <td>Blip</td> <td>blip.tv</td> <td>2.9.0</td> <td>4.4.0</td> </tr> <tr> <td>Rdio</td> <td>rdio.com</td> <td>3.6.0</td> <td>4.4.1</td> </tr> <tr> <td>Rdio</td> <td>rd.io</td> <td>3.6.0</td> <td>4.4.1</td> </tr> <tr> <td>Vine</td> <td>vine.co</td> <td>4.1.0</td> <td>4.9.0</td> </tr> <tr> <td>Photobucket</td> <td>photobucket.com</td> <td>2.9.0</td> <td>5.1.0</td> </tr> <tr> <td>Funny or Die</td> <td>funnyordie.com</td> <td>3.0.0</td> <td>5.1.0</td> </tr> <tr> <td>CollegeHumor</td> <td>collegehumor.com</td> <td>4.0.0</td> <td>5.3.1</td> </tr> <tr> <td>Hulu</td> <td>hulu.com</td> <td>2.9.0</td> <td>5.5.0</td> </tr> <tr> <td>Instagram</td> <td>instagram.com</td> <td>3.5.0</td> <td>5.5.2</td> </tr> <tr> <td>Instagram</td> <td>instagr.am</td> <td>3.5.0</td> <td>5.5.2</td> </tr> <tr> <td>Instagram TV</td> <td>instagram.com</td> <td>5.1.0</td> <td>5.5.2</td> </tr> <tr> <td>Instagram TV</td> <td>instagr.am</td> <td>5.1.0</td> <td>5.5.2</td> </tr> <tr> <td>Facebook</td> <td>facebook.com</td> <td>4.7.0</td> <td>5.5.2</td> </tr> <tr> <td>Meetup.com</td> <td>meetup.com</td> <td>3.9.0</td> <td>6.0.1</td> </tr> <tr> <td>Meetup.com</td> <td>meetu.ps</td> <td>3.9.0</td> <td>6.0.1</td> </tr> </tbody> </table>"
             },
             "args": 1
         },
@@ -25788,7 +25795,7 @@
                         "types": [
                             "int"
                         ],
-                        "variable": "$post_ID"
+                        "variable": "$post_id"
                     }
                 ],
                 "long_description_html": ""
@@ -25926,6 +25933,11 @@
                         "content": "2.9.0"
                     },
                     {
+                        "name": "since",
+                        "content": "6.2.0",
+                        "description": "Added the <code>$locale</code> parameter."
+                    },
+                    {
                         "name": "param",
                         "content": "Whether to override the .mo file loading. Default false.",
                         "types": [
@@ -25948,11 +25960,20 @@
                             "string"
                         ],
                         "variable": "$mofile"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Locale.",
+                        "types": [
+                            "string",
+                            "null"
+                        ],
+                        "variable": "$locale"
                     }
                 ],
                 "long_description_html": ""
             },
-            "args": 3
+            "args": 4
         },
         {
             "name": "override_post_lock",
@@ -27482,7 +27503,7 @@
                         "types": [
                             "string[]"
                         ],
-                        "variable": "$class"
+                        "variable": "$css_class"
                     },
                     {
                         "name": "param",
@@ -27539,7 +27560,7 @@
                         "types": [
                             "string[]"
                         ],
-                        "variable": "$class"
+                        "variable": "$css_class"
                     }
                 ],
                 "long_description_html": "<p>Default is all public taxonomies registered to the post type.</p>"
@@ -30017,7 +30038,7 @@
                             "false",
                             "string"
                         ],
-                        "variable": "$return"
+                        "variable": "$output"
                     },
                     {
                         "name": "param",
@@ -30817,7 +30838,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the preemptive return value of an HTTP request.",
-                "long_description": "Returning a non-false value from the filter will short-circuit the HTTP request and return early with that value. A filter should return one of:\n\n  - An array containing 'headers', 'body', 'response', 'cookies', and 'filename' elements\n  - A WP_Error instance\n  - boolean false to avoid short-circuiting the response\n Returning any other value may result in unexpected behaviour.",
+                "long_description": "Returning a non-false value from the filter will short-circuit the HTTP request and return early with that value. A filter should return one of:\n\n  - An array containing 'headers', 'body', 'response', 'cookies', and 'filename' elements\n  - A WP_Error instance\n  - boolean false to avoid short-circuiting the response\n Returning any other value may result in unexpected behavior.",
                 "tags": [
                     {
                         "name": "since",
@@ -30831,7 +30852,7 @@
                             "array",
                             "\\WP_Error"
                         ],
-                        "variable": "$preempt"
+                        "variable": "$response"
                     },
                     {
                         "name": "param",
@@ -30850,7 +30871,7 @@
                         "variable": "$url"
                     }
                 ],
-                "long_description_html": "<p>Returning a non-false value from the filter will short-circuit the HTTP request and return early with that value. A filter should return one of:</p> <ul> <li>An array containing 'headers', 'body', 'response', 'cookies', and 'filename' elements</li> <li>A WP_Error instance</li> <li>boolean false to avoid short-circuiting the response</li> </ul> <p>Returning any other value may result in unexpected behaviour.</p>"
+                "long_description_html": "<p>Returning a non-false value from the filter will short-circuit the HTTP request and return early with that value. A filter should return one of:</p> <ul> <li>An array containing 'headers', 'body', 'response', 'cookies', and 'filename' elements</li> <li>A WP_Error instance</li> <li>boolean false to avoid short-circuiting the response</li> </ul> <p>Returning any other value may result in unexpected behavior.</p>"
             },
             "args": 3
         },
@@ -30970,7 +30991,7 @@
                         "types": [
                             "string"
                         ],
-                        "variable": "$string"
+                        "variable": "$content"
                     },
                     {
                         "name": "param",
@@ -31186,7 +31207,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The value to return instead of the option value. This differs from <code>$default</code>, which is used as the fallback value in the event the option doesn't exist elsewhere in get_option(). Default false (to skip past the short-circuit).",
+                        "content": "The value to return instead of the option value. This differs from <code>$default_value</code>, which is used as the fallback value in the event the option doesn't exist elsewhere in get_option(). Default false (to skip past the short-circuit).",
                         "types": [
                             "mixed"
                         ],
@@ -31206,7 +31227,7 @@
                         "types": [
                             "mixed"
                         ],
-                        "variable": "$default"
+                        "variable": "$default_value"
                     }
                 ],
                 "long_description_html": "<p>Returning a truthy value from the filter will effectively short-circuit retrieval and return the passed value instead.</p>"
@@ -31233,11 +31254,11 @@
                     {
                         "name": "since",
                         "content": "4.9.0",
-                        "description": "The <code>$default</code> parameter was added."
+                        "description": "The <code>$default_value</code> parameter was added."
                     },
                     {
                         "name": "param",
-                        "content": "The value to return instead of the option value. This differs from <code>$default</code>, which is used as the fallback value in the event the option doesn't exist elsewhere in get_option(). Default false (to skip past the short-circuit).",
+                        "content": "The value to return instead of the option value. This differs from <code>$default_value</code>, which is used as the fallback value in the event the option doesn't exist elsewhere in get_option(). Default false (to skip past the short-circuit).",
                         "types": [
                             "mixed"
                         ],
@@ -31257,7 +31278,7 @@
                         "types": [
                             "mixed"
                         ],
-                        "variable": "$default"
+                        "variable": "$default_value"
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$option</code>, refers to the option name.</p> <p>Returning a value other than false from the filter will short-circuit retrieval and return that value instead.</p>"
@@ -31546,7 +31567,7 @@
                         "name": "param",
                         "content": "{ An object containing an event's data. @type string $hook      Action hook to execute when the event is run. @type int    $timestamp Unix timestamp (UTC) for when to next run the event. @type string $schedule  How often the event should subsequently recur. @type array  $args      Array containing each separate argument to pass to the hook's callback function. @type int    $interval  The interval time in seconds for the schedule.\n}",
                         "types": [
-                            "\\stdClass"
+                            "object"
                         ],
                         "variable": "$event"
                     },
@@ -31582,19 +31603,19 @@
                     },
                     {
                         "name": "param",
-                        "content": "Value to return instead. Default null to continue adding the event.",
+                        "content": "The value to return instead. Default null to continue adding the event.",
                         "types": [
                             "null",
                             "bool",
                             "\\WP_Error"
                         ],
-                        "variable": "$pre"
+                        "variable": "$result"
                     },
                     {
                         "name": "param",
-                        "content": "{ An object containing an event's data. @type string       $hook      Action hook to execute when the event is run. @type int          $timestamp Unix timestamp (UTC) for when to next run the event. @type string|false $schedule  How often the event should subsequently recur. @type array        $args      Array containing each separate argument to pass to the hook's callback function. @type int          $interval  The interval time in seconds for the schedule. Only present for recurring events.\n}",
+                        "content": "{ An object containing an event's data. @type string       $hook      Action hook to execute when the event is run. @type int          $timestamp Unix timestamp (UTC) for when to next run the event. @type string|false $schedule  How often the event should subsequently recur. @type array        $args      Array containing each separate argument to pass to the hook's callback function. @type int          $interval  Optional. The interval time in seconds for the schedule. Only present for recurring events.\n}",
                         "types": [
-                            "\\stdClass"
+                            "object"
                         ],
                         "variable": "$event"
                     },
@@ -31763,11 +31784,11 @@
                     {
                         "name": "since",
                         "content": "4.9.0",
-                        "description": "The <code>$default</code> parameter was added."
+                        "description": "The <code>$default_value</code> parameter was added."
                     },
                     {
                         "name": "param",
-                        "content": "The value to return instead of the option value. This differs from <code>$default</code>, which is used as the fallback value in the event the option doesn't exist elsewhere in get_network_option(). Default false (to skip past the short-circuit).",
+                        "content": "The value to return instead of the option value. This differs from <code>$default_value</code>, which is used as the fallback value in the event the option doesn't exist elsewhere in get_network_option(). Default false (to skip past the short-circuit).",
                         "types": [
                             "mixed"
                         ],
@@ -31795,7 +31816,7 @@
                         "types": [
                             "mixed"
                         ],
-                        "variable": "$default"
+                        "variable": "$default_value"
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$option</code>, refers to the option name.</p> <p>Returning a value other than false from the filter will short-circuit retrieval and return that value instead.</p>"
@@ -32841,7 +32862,7 @@
                         "types": [
                             "int"
                         ],
-                        "variable": "$post_ID"
+                        "variable": "$post_id"
                     },
                     {
                         "name": "param",
@@ -38324,7 +38345,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the classic RSS widget's feed icon link.",
-                "long_description": "Themes can remove the icon link by using `add_filter( 'rss_widget_feed_link', '__return_false' );`.",
+                "long_description": "Themes can remove the icon link by using `add_filter( 'rss_widget_feed_link', '__return_empty_string' );`.",
                 "tags": [
                     {
                         "name": "since",
@@ -38334,7 +38355,8 @@
                         "name": "param",
                         "content": "HTML for link to RSS feed.",
                         "types": [
-                            "string"
+                            "string",
+                            "false"
                         ],
                         "variable": "$feed_link"
                     },
@@ -38347,7 +38369,7 @@
                         "variable": "$instance"
                     }
                 ],
-                "long_description_html": "<p>Themes can remove the icon link by using <code>add_filter( 'rss_widget_feed_link', '__return_false' );</code>.</p>"
+                "long_description_html": "<p>Themes can remove the icon link by using <code>add_filter( 'rss_widget_feed_link', '__return_empty_string' );</code>.</p>"
             },
             "args": 2
         },
@@ -38606,7 +38628,7 @@
                         "types": [
                             "string"
                         ],
-                        "variable": "$class"
+                        "variable": "$classname"
                     },
                     {
                         "name": "param",
@@ -39018,9 +39040,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "{ An object containing an event's data, or boolean false to prevent the event from being scheduled. @type string       $hook      Action hook to execute when the event is run. @type int          $timestamp Unix timestamp (UTC) for when to next run the event. @type string|false $schedule  How often the event should subsequently recur. @type array        $args      Array containing each separate argument to pass to the hook's callback function. @type int          $interval  The interval time in seconds for the schedule. Only present for recurring events.\n}",
+                        "content": "{ An object containing an event's data, or boolean false to prevent the event from being scheduled. @type string       $hook      Action hook to execute when the event is run. @type int          $timestamp Unix timestamp (UTC) for when to next run the event. @type string|false $schedule  How often the event should subsequently recur. @type array        $args      Array containing each separate argument to pass to the hook's callback function. @type int          $interval  Optional. The interval time in seconds for the schedule. Only present for recurring events.\n}",
                         "types": [
-                            "\\stdClass",
+                            "object",
                             "false"
                         ],
                         "variable": "$event"
@@ -39627,17 +39649,62 @@
                         "content": "4.7.4"
                     },
                     {
+                        "name": "since",
+                        "content": "6.2.0",
+                        "description": "The <code>$expire</code>, <code>$expiration</code>, <code>$user_id</code>, <code>$scheme</code>, and <code>$token</code> parameters were added."
+                    },
+                    {
                         "name": "param",
-                        "content": "Whether to send auth cookies to the client.",
+                        "content": "Whether to send auth cookies to the client. Default true.",
                         "types": [
                             "bool"
                         ],
                         "variable": "$send"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The time the login grace period expires as a UNIX timestamp. Default is 12 hours past the cookie's expiration time. Zero when clearing cookies.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$expire"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The time when the logged-in authentication cookie expires as a UNIX timestamp. Default is 14 days from now. Zero when clearing cookies.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$expiration"
+                    },
+                    {
+                        "name": "param",
+                        "content": "User ID. Zero when clearing cookies.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$user_id"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Authentication scheme. Values include 'auth' or 'secure_auth'. Empty string when clearing cookies.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$scheme"
+                    },
+                    {
+                        "name": "param",
+                        "content": "User's session token to use for this cookie. Empty string when clearing cookies.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$token"
                     }
                 ],
                 "long_description_html": ""
             },
-            "args": 1
+            "args": 6
         },
         {
             "name": "send_core_update_notification_email",
@@ -42813,7 +42880,7 @@
                             "int",
                             "null"
                         ],
-                        "variable": "$parent"
+                        "variable": "$parent_term"
                     }
                 ],
                 "long_description_html": ""
@@ -48231,7 +48298,7 @@
                         "types": [
                             "string"
                         ],
-                        "variable": "$string"
+                        "variable": "$url"
                     },
                     {
                         "name": "param",
@@ -50634,7 +50701,7 @@
             "file": "wp-includes/post.php",
             "type": "filter",
             "doc": {
-                "description": "Modifies returned attachment counts by mime type.",
+                "description": "Filters the attachment counts by mime type.",
                 "long_description": "",
                 "tags": [
                     {
@@ -50702,7 +50769,7 @@
             "file": "wp-includes/post.php",
             "type": "filter",
             "doc": {
-                "description": "Modifies returned post counts by status for the current post type.",
+                "description": "Filters the post counts by status for the current post type.",
                 "long_description": "",
                 "tags": [
                     {
@@ -53631,7 +53698,7 @@
                         "types": [
                             "int"
                         ],
-                        "variable": "$post_ID"
+                        "variable": "$post_id"
                     },
                     {
                         "name": "param",
@@ -55465,7 +55532,7 @@
                         "types": [
                             "array"
                         ],
-                        "variable": "$array"
+                        "variable": "$result"
                     }
                 ],
                 "long_description_html": ""
@@ -57452,7 +57519,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Whether XML Sitemaps are enabled or not. Defaults\nto true for public sites.",
+                        "content": "Whether XML Sitemaps are enabled or not. Defaults to true for public sites.",
                         "types": [
                             "bool"
                         ],
@@ -58857,7 +58924,7 @@
                         "types": [
                             "int"
                         ],
-                        "variable": "$post_ID"
+                        "variable": "$post_id"
                     },
                     {
                         "name": "param",
@@ -59364,7 +59431,7 @@
                         "types": [
                             "int"
                         ],
-                        "variable": "$parent"
+                        "variable": "$parent_term"
                     },
                     {
                         "name": "param",
@@ -61610,9 +61677,10 @@
                     },
                     {
                         "name": "param",
-                        "content": "The adjacent post.",
+                        "content": "The adjacent post. Empty string if no corresponding post exists.",
                         "types": [
-                            "\\WP_Post"
+                            "\\WP_Post",
+                            "string"
                         ],
                         "variable": "$post"
                     },
