@@ -2000,7 +2000,7 @@
                         "types": [
                             "string"
                         ],
-                        "variable": "$author_email"
+                        "variable": "$comment_author_email"
                     },
                     {
                         "name": "param",
@@ -3346,7 +3346,7 @@
                         "types": [
                             "string"
                         ],
-                        "variable": "$formatted_link"
+                        "variable": "$cancel_comment_reply_link"
                     },
                     {
                         "name": "param",
@@ -3354,7 +3354,7 @@
                         "types": [
                             "string"
                         ],
-                        "variable": "$link"
+                        "variable": "$link_url"
                     },
                     {
                         "name": "param",
@@ -3362,7 +3362,7 @@
                         "types": [
                             "string"
                         ],
-                        "variable": "$text"
+                        "variable": "$link_text"
                     }
                 ],
                 "long_description_html": ""
@@ -3761,7 +3761,7 @@
                         "types": [
                             "string"
                         ],
-                        "variable": "$author"
+                        "variable": "$comment_author"
                     },
                     {
                         "name": "param",
@@ -4594,7 +4594,7 @@
                         "types": [
                             "string"
                         ],
-                        "variable": "$result"
+                        "variable": "$comment_id_fields"
                     },
                     {
                         "name": "param",
@@ -5041,7 +5041,7 @@
                         "types": [
                             "string"
                         ],
-                        "variable": "$link"
+                        "variable": "$comment_reply_link"
                     },
                     {
                         "name": "param",
@@ -5296,7 +5296,7 @@
                         "types": [
                             "string"
                         ],
-                        "variable": "$author_url"
+                        "variable": "$comment_author_url"
                     },
                     {
                         "name": "param",
@@ -5450,7 +5450,7 @@
                         "types": [
                             "string"
                         ],
-                        "variable": "$output"
+                        "variable": "$comments_number_text"
                     },
                     {
                         "name": "param",
@@ -5458,7 +5458,7 @@
                         "types": [
                             "int"
                         ],
-                        "variable": "$number"
+                        "variable": "$comments_number"
                     }
                 ],
                 "long_description_html": ""
@@ -5483,7 +5483,7 @@
                         "types": [
                             "bool"
                         ],
-                        "variable": "$open"
+                        "variable": "$comments_open"
                     },
                     {
                         "name": "param",
@@ -5549,7 +5549,7 @@
                         "types": [
                             "string"
                         ],
-                        "variable": "$attributes"
+                        "variable": "$link_attributes"
                     }
                 ],
                 "long_description_html": ""
@@ -7830,7 +7830,7 @@
                         "name": "param",
                         "content": "An array of template types, formatted as [ slug =&gt; [ title, description ] ].",
                         "types": [
-                            "array"
+                            "array[]"
                         ],
                         "variable": "$default_template_types"
                     }
@@ -7888,7 +7888,7 @@
                         "name": "param",
                         "content": "An array of supported area objects.",
                         "types": [
-                            "array"
+                            "array[]"
                         ],
                         "variable": "$default_area_definitions"
                     }
@@ -12774,7 +12774,7 @@
                         "types": [
                             "string"
                         ],
-                        "variable": "$author"
+                        "variable": "$comment_author"
                     },
                     {
                         "name": "param",
@@ -12904,7 +12904,7 @@
                     {
                         "name": "since",
                         "content": "4.1.0",
-                        "description": "The <code>$author</code> and <code>$comment_id</code> parameters were added."
+                        "description": "The <code>$comment_author</code> and <code>$comment_id</code> parameters were added."
                     },
                     {
                         "name": "param",
@@ -12912,7 +12912,7 @@
                         "types": [
                             "string"
                         ],
-                        "variable": "$return"
+                        "variable": "$comment_author_link"
                     },
                     {
                         "name": "param",
@@ -12920,7 +12920,7 @@
                         "types": [
                             "string"
                         ],
-                        "variable": "$author"
+                        "variable": "$comment_author"
                     },
                     {
                         "name": "param",
@@ -12958,7 +12958,7 @@
                         "types": [
                             "string"
                         ],
-                        "variable": "$url"
+                        "variable": "$comment_author_url"
                     },
                     {
                         "name": "param",
@@ -13001,7 +13001,7 @@
                         "types": [
                             "string"
                         ],
-                        "variable": "$return"
+                        "variable": "$comment_author_url_link"
                     }
                 ],
                 "long_description_html": ""
@@ -13027,7 +13027,7 @@
                             "string",
                             "int"
                         ],
-                        "variable": "$date"
+                        "variable": "$comment_date"
                     },
                     {
                         "name": "param",
@@ -13073,7 +13073,7 @@
                         "types": [
                             "string"
                         ],
-                        "variable": "$excerpt"
+                        "variable": "$comment_excerpt"
                     },
                     {
                         "name": "param",
@@ -13124,7 +13124,7 @@
                         "types": [
                             "string"
                         ],
-                        "variable": "$link"
+                        "variable": "$comment_link"
                     },
                     {
                         "name": "param",
@@ -13178,7 +13178,7 @@
                         "types": [
                             "string"
                         ],
-                        "variable": "$comment_content"
+                        "variable": "$comment_text"
                     },
                     {
                         "name": "param",
@@ -13220,7 +13220,7 @@
                             "string",
                             "int"
                         ],
-                        "variable": "$date"
+                        "variable": "$comment_time"
                     },
                     {
                         "name": "param",
@@ -13358,7 +13358,7 @@
                             "string",
                             "int"
                         ],
-                        "variable": "$count"
+                        "variable": "$comments_number"
                     },
                     {
                         "name": "param",
@@ -15005,7 +15005,8 @@
                         "name": "param",
                         "content": "New sample permalink title.",
                         "types": [
-                            "string"
+                            "string",
+                            "null"
                         ],
                         "variable": "$new_title"
                     },
@@ -15013,7 +15014,8 @@
                         "name": "param",
                         "content": "New sample permalink slug.",
                         "types": [
-                            "string"
+                            "string",
+                            "null"
                         ],
                         "variable": "$new_slug"
                     },
@@ -17565,7 +17567,7 @@
                         "name": "param",
                         "content": "Array of integers for valid ports.",
                         "types": [
-                            "array"
+                            "int[]"
                         ],
                         "variable": "$allowed_ports"
                     },
@@ -26938,7 +26940,7 @@
                         "types": [
                             "bool"
                         ],
-                        "variable": "$open"
+                        "variable": "$pings_open"
                     },
                     {
                         "name": "param",
@@ -27924,7 +27926,7 @@
                         "types": [
                             "string"
                         ],
-                        "variable": "$formatted"
+                        "variable": "$post_reply_link"
                     },
                     {
                         "name": "param",
@@ -34140,7 +34142,7 @@
                         "types": [
                             "array"
                         ],
-                        "variable": "$qtInit"
+                        "variable": "$qt_init"
                     },
                     {
                         "name": "param",
@@ -43051,7 +43053,7 @@
                         "types": [
                             "array"
                         ],
-                        "variable": "$mceInit"
+                        "variable": "$mce_init"
                     },
                     {
                         "name": "param",
@@ -43757,8 +43759,7 @@
                         "name": "param",
                         "content": "The author's display name.",
                         "types": [
-                            "string",
-                            "null"
+                            "string"
                         ],
                         "variable": "$display_name"
                     }
@@ -46125,7 +46126,7 @@
                         "types": [
                             "array"
                         ],
-                        "variable": "$mceInit"
+                        "variable": "$mce_init"
                     },
                     {
                         "name": "param",
@@ -48877,7 +48878,7 @@
                         "types": [
                             "int[]"
                         ],
-                        "variable": "$userids"
+                        "variable": "$user_ids"
                     }
                 ],
                 "long_description_html": ""
@@ -50889,7 +50890,8 @@
                         "name": "param",
                         "content": "Array of mime types keyed by their file extension regex, or null if none were provided.",
                         "types": [
-                            "string[]"
+                            "string[]",
+                            "null"
                         ],
                         "variable": "$mimes"
                     },
@@ -54388,7 +54390,7 @@
                         "name": "param",
                         "content": "An array of internal URL hostnames.",
                         "types": [
-                            "array"
+                            "string[]"
                         ],
                         "variable": "$internal_hosts"
                     }
@@ -55947,8 +55949,13 @@
                         "content": "5.9.0"
                     },
                     {
+                        "name": "since",
+                        "content": "6.3.0",
+                        "description": "The default threshold was changed from 1 to 3."
+                    },
+                    {
                         "name": "param",
-                        "content": "The number of media elements where the <code>loading</code> attribute will not be added. Default 1.",
+                        "content": "The number of media elements where the <code>loading</code> attribute will not be added. Default 3.",
                         "types": [
                             "int"
                         ],

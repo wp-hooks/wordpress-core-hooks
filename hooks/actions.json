@@ -5753,7 +5753,7 @@
                     {
                         "name": "since",
                         "content": "4.5.0",
-                        "description": "The <code>$userids</code> parameter was added."
+                        "description": "The <code>$user_ids</code> parameter was added."
                     },
                     {
                         "name": "param",
@@ -5769,7 +5769,7 @@
                         "types": [
                             "int[]"
                         ],
-                        "variable": "$userids"
+                        "variable": "$user_ids"
                     }
                 ],
                 "long_description_html": ""
