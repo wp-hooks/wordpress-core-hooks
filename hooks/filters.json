@@ -9109,32 +9109,6 @@
             "args": 2
         },
         {
-            "name": "edit_custom_thumbnail_sizes",
-            "file": "wp-admin/includes/image-edit.php",
-            "type": "filter",
-            "doc": {
-                "description": "Filters whether custom sizes are available options for image editing.",
-                "long_description": "",
-                "tags": [
-                    {
-                        "name": "since",
-                        "content": "6.0.0"
-                    },
-                    {
-                        "name": "param",
-                        "content": "True if custom sizes can be edited or array of custom size names.",
-                        "types": [
-                            "bool",
-                            "string[]"
-                        ],
-                        "variable": "$edit_custom_sizes"
-                    }
-                ],
-                "long_description_html": ""
-            },
-            "args": 1
-        },
-        {
             "name": "edit_post_link",
             "file": "wp-includes/link-template.php",
             "type": "filter",
