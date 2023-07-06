@@ -5823,6 +5823,32 @@
             "args": 1
         },
         {
+            "name": "cron_memory_limit",
+            "file": "wp-includes/functions.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the memory limit allocated for WP-Cron event processing.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.3.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Maximum memory limit to allocate for WP-Cron. Default <code>WP_MAX_MEMORY_LIMIT</code> or the original php.ini <code>memory_limit</code>, whichever is higher. Accepts an integer (bytes), or a shorthand string notation, such as '256M'.",
+                        "types": [
+                            "int",
+                            "string"
+                        ],
+                        "variable": "$filtered_limit"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 1
+        },
+        {
             "name": "cron_request",
             "file": "wp-includes/cron.php",
             "type": "filter",
@@ -14598,6 +14624,39 @@
             "args": 2
         },
         {
+            "name": "get_pages_query_args",
+            "file": "wp-includes/post.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters query arguments passed to WP_Query in get_pages.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.3.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Array of arguments passed to WP_Query.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$query_args"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Array of get_pages() arguments.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$parsed_args"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 2
+        },
+        {
             "name": "get_post_galleries",
             "file": "wp-includes/media.php",
             "type": "filter",
@@ -18287,6 +18346,31 @@
                 "long_description_html": "<p>Returning a truthy value from the filter will effectively short-circuit down-sizing the image, returning that value instead.</p>"
             },
             "args": 3
+        },
+        {
+            "name": "image_edit_thumbnails_separately",
+            "file": "wp-admin/includes/image-edit.php",
+            "type": "filter",
+            "doc": {
+                "description": "Shows the settings in the Image Editor that allow selecting to edit only the thumbnail of an image.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.3.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether to show the settings in the Image Editor. Default false.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": ""
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 1
         },
         {
             "name": "image_editor_default_mime_type",
@@ -23628,6 +23712,55 @@
             "args": 3
         },
         {
+            "name": "nav_menu_item_attributes",
+            "file": "wp-includes/class-walker-nav-menu.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the HTML attributes applied to a menu's list item element.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.3.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "{ The HTML attributes applied to the menu item's <code>&lt;li&gt;</code> element, empty strings are ignored. @type string $class        HTML CSS class attribute. @type string $id           HTML id attribute.\n}",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$li_atts"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The current menu item object.",
+                        "types": [
+                            "\\WP_Post"
+                        ],
+                        "variable": "$menu_item"
+                    },
+                    {
+                        "name": "param",
+                        "content": "An object of wp_nav_menu() arguments.",
+                        "types": [
+                            "\\stdClass"
+                        ],
+                        "variable": "$args"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Depth of menu item. Used for padding.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$depth"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 4
+        },
+        {
             "name": "nav_menu_item_id",
             "file": "wp-includes/class-walker-nav-menu.php",
             "type": "filter",
@@ -23922,6 +24055,47 @@
                 "long_description_html": "<p>If a falsey value is returned instead of an object, the menu items meta box for the current meta box object will not be added.</p>"
             },
             "args": 1
+        },
+        {
+            "name": "nav_menu_submenu_attributes",
+            "file": "wp-includes/class-walker-nav-menu.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the HTML attributes applied to a menu list element.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.3.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "{ The HTML attributes applied to the <code>&lt;ul&gt;</code> element, empty strings are ignored. @type string $class    HTML CSS class attribute.\n}",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$atts"
+                    },
+                    {
+                        "name": "param",
+                        "content": "An object of <code>wp_nav_menu()</code> arguments.",
+                        "types": [
+                            "\\stdClass"
+                        ],
+                        "variable": "$args"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Depth of menu item. Used for padding.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$depth"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 3
         },
         {
             "name": "nav_menu_submenu_css_class",
@@ -27292,6 +27466,31 @@
                             "bool"
                         ],
                         "variable": "$enabled"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 1
+        },
+        {
+            "name": "plugins_list",
+            "file": "wp-admin/includes/class-wp-plugins-list-table.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the array of plugins for the list table.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.3.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "An array of arrays of plugin data, keyed by context.",
+                        "types": [
+                            "array[]"
+                        ],
+                        "variable": "$plugins"
                     }
                 ],
                 "long_description_html": ""
@@ -31142,6 +31341,57 @@
             "args": 4
         },
         {
+            "name": "pre_load_textdomain",
+            "file": "wp-includes/l10n.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters whether to short-circuit loading .mo file.",
+                "long_description": "Returning a non-null value from the filter will effectively short-circuit the loading, returning the passed value instead.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.3.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The result of loading a .mo file. Default null.",
+                        "types": [
+                            "bool",
+                            "null"
+                        ],
+                        "variable": "$loaded"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Text domain. Unique identifier for retrieving translated strings.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$domain"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Path to the MO file.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$mofile"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Locale.",
+                        "types": [
+                            "string",
+                            "null"
+                        ],
+                        "variable": "$locale"
+                    }
+                ],
+                "long_description_html": "<p>Returning a non-null value from the filter will effectively short-circuit the loading, returning the passed value instead.</p>"
+            },
+            "args": 4
+        },
+        {
             "name": "pre_months_dropdown_query",
             "file": "wp-admin/includes/class-wp-list-table.php",
             "type": "filter",
@@ -32052,6 +32302,11 @@
                         "content": "4.9.0"
                     },
                     {
+                        "name": "since",
+                        "content": "6.3.0",
+                        "description": "Added the <code>$previous_status</code> parameter."
+                    },
+                    {
                         "name": "param",
                         "content": "Whether to go forward with trashing.",
                         "types": [
@@ -32067,11 +32322,19 @@
                             "\\WP_Post"
                         ],
                         "variable": "$post"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The status of the post about to be trashed.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$previous_status"
                     }
                 ],
                 "long_description_html": ""
             },
-            "args": 2
+            "args": 3
         },
         {
             "name": "pre_unschedule_event",
@@ -32890,6 +33153,40 @@
                     }
                 ],
                 "long_description_html": "<p>Returning a non-null value from the filter will short-circuit wp_nav_menu(), echoing that value if $args-&gt;echo is true, returning that value otherwise.</p>"
+            },
+            "args": 2
+        },
+        {
+            "name": "pre_wp_setup_nav_menu_item",
+            "file": "wp-includes/nav-menu.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters whether to short-circuit the wp_setup_nav_menu_item() output.",
+                "long_description": "Returning a non-null value from the filter will short-circuit wp_setup_nav_menu_item(), returning that value instead.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.3.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Modified menu item. Default null.",
+                        "types": [
+                            "object",
+                            "null"
+                        ],
+                        "variable": "$modified_menu_item"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The menu item to modify.",
+                        "types": [
+                            "object"
+                        ],
+                        "variable": "$menu_item"
+                    }
+                ],
+                "long_description_html": "<p>Returning a non-null value from the filter will short-circuit wp_setup_nav_menu_item(), returning that value instead.</p>"
             },
             "args": 2
         },
@@ -41174,6 +41471,39 @@
                 "long_description_html": ""
             },
             "args": 1
+        },
+        {
+            "name": "site_editor_no_javascript_message",
+            "file": "wp-admin/site-editor.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the message displayed in the site editor interface when JavaScript is not enabled in the browser.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.3.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The message being displayed.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$message"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The post being edited.",
+                        "types": [
+                            "\\WP_Post"
+                        ],
+                        "variable": "$post"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 2
         },
         {
             "name": "site_health_navigation_tabs",
@@ -52168,6 +52498,31 @@
             "args": 3
         },
         {
+            "name": "wp_get_attachment_image_context",
+            "file": "wp-includes/media.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the context in which wp_get_attachment_image() is used.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.3.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The context. Default 'wp_get_attachment_image'.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$context"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 1
+        },
+        {
             "name": "wp_get_attachment_image_src",
             "file": "wp-includes/media.php",
             "type": "filter",
@@ -55194,6 +55549,31 @@
                 "long_description_html": ""
             },
             "args": 3
+        },
+        {
+            "name": "wp_min_priority_img_pixels",
+            "file": "wp-includes/media.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the minimum square-pixels threshold for an image to be eligible as the high-priority image.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.3.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Minimum square-pixels threshold. Default 50000.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$threshold"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 1
         },
         {
             "name": "wp_nav_locations_listed_per_menu",

@@ -2876,6 +2876,39 @@
             "args": 2
         },
         {
+            "name": "bulk_edit_posts",
+            "file": "wp-admin/includes/post.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires after processing the post data for bulk edit.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.3.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "An array of updated post IDs.",
+                        "types": [
+                            "int[]"
+                        ],
+                        "variable": "$updated"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Associative array containing the post data.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$shared_post_data"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 2
+        },
+        {
             "name": "change_locale",
             "file": "wp-includes/class-wp-locale-switcher.php",
             "type": "action",
@@ -15960,17 +15993,30 @@
                         "content": "2.9.0"
                     },
                     {
+                        "name": "since",
+                        "content": "6.3.0",
+                        "description": "Added the <code>$previous_status</code> parameter."
+                    },
+                    {
                         "name": "param",
                         "content": "Post ID.",
                         "types": [
                             "int"
                         ],
                         "variable": "$post_id"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The status of the post at the point where it was trashed.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$previous_status"
                     }
                 ],
                 "long_description_html": ""
             },
-            "args": 1
+            "args": 2
         },
         {
             "name": "trashed_post_comments",
@@ -18001,6 +18047,48 @@
             "args": 0
         },
         {
+            "name": "wp_cache_set_last_changed",
+            "file": "wp-includes/functions.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires after a cache group `last_changed` time is updated.",
+                "long_description": "This may occur multiple times per page load and registered actions must be performant.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.3.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The cache group name.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$group"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The new last changed time.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$time"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The previous last changed time. False if not previously set.",
+                        "types": [
+                            "int",
+                            "false"
+                        ],
+                        "variable": "$previous_time"
+                    }
+                ],
+                "long_description_html": "<p>This may occur multiple times per page load and registered actions must be performant.</p>"
+            },
+            "args": 3
+        },
+        {
             "name": "wp_check_comment_disallowed_list",
             "file": "wp-includes/comment.php",
             "type": "action",
@@ -19550,17 +19638,30 @@
                         "content": "3.3.0"
                     },
                     {
+                        "name": "since",
+                        "content": "6.3.0",
+                        "description": "Added the <code>$previous_status</code> parameter."
+                    },
+                    {
                         "name": "param",
                         "content": "Post ID.",
                         "types": [
                             "int"
                         ],
                         "variable": "$post_id"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The status of the post about to be trashed.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$previous_status"
                     }
                 ],
                 "long_description_html": ""
             },
-            "args": 1
+            "args": 2
         },
         {
             "name": "wp_uninitialize_site",
@@ -19806,6 +19907,47 @@
                 "long_description_html": ""
             },
             "args": 2
+        },
+        {
+            "name": "wp_update_user",
+            "file": "wp-includes/user.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires after the user has been updated and emails have been sent.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.3.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The ID of the user that was just updated.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$user_id"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The array of user data that was updated.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$userdata"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The unedited array of user data that was updated.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$userdata_raw"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 3
         },
         {
             "name": "wp_upgrade",
