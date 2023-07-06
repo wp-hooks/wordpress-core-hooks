@@ -39084,6 +39084,39 @@
             "args": 2
         },
         {
+            "name": "sanitize_locale_name",
+            "file": "wp-includes/formatting.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters a sanitized locale name string.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.2.1"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The sanitized locale name.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$sanitized"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The locale name before sanitization.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$locale_name"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 2
+        },
+        {
             "name": "sanitize_mime_type",
             "file": "wp-includes/formatting.php",
             "type": "filter",
