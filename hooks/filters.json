@@ -5220,7 +5220,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Text of the current comment.",
+                        "content": "Text of the comment.",
                         "types": [
                             "string"
                         ],
@@ -8599,7 +8599,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Shortcode attributes array or empty string.",
+                        "content": "Shortcode attributes array or the original arguments string if it cannot be parsed.",
                         "types": [
                             "array",
                             "string"
@@ -11495,7 +11495,7 @@
             "file": "wp-admin/admin.php",
             "type": "filter",
             "doc": {
-                "description": "Whether to filter imported data through kses on import.",
+                "description": "Filters whether to filter imported data through kses on import.",
                 "long_description": "Multisite uses this hook to filter all data through kses by default, as a super administrator may be assisting an untrusted user.",
                 "tags": [
                     {
@@ -12346,7 +12346,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Template unique identifier (example: theme_slug//template_slug).",
+                        "content": "Template unique identifier (example: 'theme_slug//template_slug').",
                         "types": [
                             "string"
                         ],
@@ -12354,7 +12354,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Template type: <code>'wp_template'</code> or '<code>wp_template_part'</code>.",
+                        "content": "Template type: 'wp_template' or 'wp_template_part'.",
                         "types": [
                             "string"
                         ],
@@ -12388,7 +12388,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Template unique identifier (example: theme_slug//template_slug).",
+                        "content": "Template unique identifier (example: 'theme_slug//template_slug').",
                         "types": [
                             "string"
                         ],
@@ -12396,7 +12396,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Template type: <code>'wp_template'</code> or '<code>wp_template_part'</code>.",
+                        "content": "Template type: 'wp_template' or 'wp_template_part'.",
                         "types": [
                             "array"
                         ],
@@ -12429,7 +12429,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "{ Optional. Arguments to retrieve templates. @type array  $slug__in List of slugs to include. @type int    $wp_id Post ID of customized template.\n}",
+                        "content": "{ Arguments to retrieve templates. All arguments are optional. @type string[] $slug__in  List of slugs to include. @type int      $wp_id     Post ID of customized template. @type string   $area      A 'wp_template_part_area' taxonomy value to filter by (for 'wp_template_part' template type only). @type string   $post_type Post type to get the templates for.\n}",
                         "types": [
                             "array"
                         ],
@@ -17985,7 +17985,7 @@
             "file": "wp-includes/formatting.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the human readable difference between two timestamps.",
+                "description": "Filters the human-readable difference between two timestamps.",
                 "long_description": "",
                 "tags": [
                     {
@@ -17994,7 +17994,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The difference in human readable text.",
+                        "content": "The difference in human-readable text.",
                         "types": [
                             "string"
                         ],
@@ -18488,7 +18488,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Maximum memory limit to allocate for images. Default <code>WP_MAX_MEMORY_LIMIT</code> or the original php.ini <code>memory_limit</code>, whichever is higher. Accepts an integer (bytes), or a shorthand string notation, such as '256M'.",
+                        "content": "Maximum memory limit to allocate for image processing. Default <code>WP_MAX_MEMORY_LIMIT</code> or the original php.ini <code>memory_limit</code>, whichever is higher. Accepts an integer (bytes), or a shorthand string notation, such as '256M'.",
                         "types": [
                             "int",
                             "string"
@@ -21296,7 +21296,7 @@
             "file": "wp-login.php",
             "type": "filter",
             "doc": {
-                "description": "Filter the \"Go to site\" link displayed in the login page footer.",
+                "description": "Filters the \"Go to site\" link displayed in the login page footer.",
                 "long_description": "",
                 "tags": [
                     {
@@ -22621,7 +22621,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "An array of action links for each attachment. Default 'Edit', 'Delete Permanently', 'View'.",
+                        "content": "An array of action links for each attachment. Includes 'Edit', 'Delete Permanently', 'View', 'Copy URL' and 'Download file'.",
                         "types": [
                             "string[]"
                         ],
@@ -23453,7 +23453,7 @@
             "file": "wp-admin/my-sites.php",
             "type": "filter",
             "doc": {
-                "description": "Enable the Global Settings section on the My Sites screen.",
+                "description": "Filters the settings HTML markup in the Global Settings section on the My Sites screen.",
                 "long_description": "By default, the Global Settings section is hidden. Passing a non-empty string to this filter will enable the section, and allow new settings to be added, either globally or for specific sites.",
                 "tags": [
                     {
@@ -25106,7 +25106,7 @@
             "file": "wp-includes/functions.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the cache-controlling headers.",
+                "description": "Filters the cache-controlling HTTP headers that are used to prevent caching.",
                 "long_description": "",
                 "tags": [
                     {
@@ -25599,7 +25599,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the list of sanctioned oEmbed providers.",
-                "long_description": "Since WordPress 4.4, oEmbed discovery is enabled for all users and allows embedding of sanitized iframes. The providers in this list are sanctioned, meaning they are trusted and allowed to embed any content, such as iframes, videos, JavaScript, and arbitrary HTML.\n Supported providers:\n |   Provider   |                     Flavor                |  Since  | | ------------ | ----------------------------------------- | ------- | | Dailymotion  | dailymotion.com                           | 2.9.0   | | Flickr       | flickr.com                                | 2.9.0   | | Scribd       | scribd.com                                | 2.9.0   | | Vimeo        | vimeo.com                                 | 2.9.0   | | WordPress.tv | wordpress.tv                              | 2.9.0   | | YouTube      | youtube.com/watch                         | 2.9.0   | | Crowdsignal  | polldaddy.com                             | 3.0.0   | | SmugMug      | smugmug.com                               | 3.0.0   | | YouTube      | youtu.be                                  | 3.0.0   | | Twitter      | twitter.com                               | 3.4.0   | | Slideshare   | slideshare.net                            | 3.5.0   | | SoundCloud   | soundcloud.com                            | 3.5.0   | | Dailymotion  | dai.ly                                    | 3.6.0   | | Flickr       | flic.kr                                   | 3.6.0   | | Spotify      | spotify.com                               | 3.6.0   | | Imgur        | imgur.com                                 | 3.9.0   | | Animoto      | animoto.com                               | 4.0.0   | | Animoto      | video214.com                              | 4.0.0   | | Issuu        | issuu.com                                 | 4.0.0   | | Mixcloud     | mixcloud.com                              | 4.0.0   | | Crowdsignal  | poll.fm                                   | 4.0.0   | | TED          | ted.com                                   | 4.0.0   | | YouTube      | youtube.com/playlist                      | 4.0.0   | | Tumblr       | tumblr.com                                | 4.2.0   | | Kickstarter  | kickstarter.com                           | 4.2.0   | | Kickstarter  | kck.st                                    | 4.2.0   | | Cloudup      | cloudup.com                               | 4.3.0   | | ReverbNation | reverbnation.com                          | 4.4.0   | | VideoPress   | videopress.com                            | 4.4.0   | | Reddit       | reddit.com                                | 4.4.0   | | Speaker Deck | speakerdeck.com                           | 4.4.0   | | Twitter      | twitter.com/timelines                     | 4.5.0   | | Twitter      | twitter.com/moments                       | 4.5.0   | | Twitter      | twitter.com/user                          | 4.7.0   | | Twitter      | twitter.com/likes                         | 4.7.0   | | Twitter      | twitter.com/lists                         | 4.7.0   | | Screencast   | screencast.com                            | 4.8.0   | | Amazon       | amazon.com (com.mx, com.br, ca)           | 4.9.0   | | Amazon       | amazon.de (fr, it, es, in, nl, ru, co.uk) | 4.9.0   | | Amazon       | amazon.co.jp (com.au)                     | 4.9.0   | | Amazon       | amazon.cn                                 | 4.9.0   | | Amazon       | a.co                                      | 4.9.0   | | Amazon       | amzn.to (eu, in, asia)                    | 4.9.0   | | Amazon       | z.cn                                      | 4.9.0   | | Someecards   | someecards.com                            | 4.9.0   | | Someecards   | some.ly                                   | 4.9.0   | | Crowdsignal  | survey.fm                                 | 5.1.0   | | TikTok       | tiktok.com                                | 5.4.0   | | Pinterest    | pinterest.com                             | 5.9.0   | | WolframCloud | wolframcloud.com                          | 5.9.0   | | Pocket Casts | pocketcasts.com                           | 6.1.0   | | Crowdsignal  | crowdsignal.net                           | 6.2.0   |\n No longer supported providers:\n |   Provider   |        Flavor        |   Since   |  Removed  | | ------------ | -------------------- | --------- | --------- | | Qik          | qik.com              | 2.9.0     | 3.9.0     | | Viddler      | viddler.com          | 2.9.0     | 4.0.0     | | Revision3    | revision3.com        | 2.9.0     | 4.2.0     | | Blip         | blip.tv              | 2.9.0     | 4.4.0     | | Rdio         | rdio.com             | 3.6.0     | 4.4.1     | | Rdio         | rd.io                | 3.6.0     | 4.4.1     | | Vine         | vine.co              | 4.1.0     | 4.9.0     | | Photobucket  | photobucket.com      | 2.9.0     | 5.1.0     | | Funny or Die | funnyordie.com       | 3.0.0     | 5.1.0     | | CollegeHumor | collegehumor.com     | 4.0.0     | 5.3.1     | | Hulu         | hulu.com             | 2.9.0     | 5.5.0     | | Instagram    | instagram.com        | 3.5.0     | 5.5.2     | | Instagram    | instagr.am           | 3.5.0     | 5.5.2     | | Instagram TV | instagram.com        | 5.1.0     | 5.5.2     | | Instagram TV | instagr.am           | 5.1.0     | 5.5.2     | | Facebook     | facebook.com         | 4.7.0     | 5.5.2     | | Meetup.com   | meetup.com           | 3.9.0     | 6.0.1     | | Meetup.com   | meetu.ps             | 3.9.0     | 6.0.1     |",
+                "long_description": "Since WordPress 4.4, oEmbed discovery is enabled for all users and allows embedding of sanitized iframes. The providers in this list are sanctioned, meaning they are trusted and allowed to embed any content, such as iframes, videos, JavaScript, and arbitrary HTML.\n Supported providers:\n |   Provider   |                     Flavor                |  Since  | | ------------ | ----------------------------------------- | ------- | | Dailymotion  | dailymotion.com                           | 2.9.0   | | Flickr       | flickr.com                                | 2.9.0   | | Scribd       | scribd.com                                | 2.9.0   | | Vimeo        | vimeo.com                                 | 2.9.0   | | WordPress.tv | wordpress.tv                              | 2.9.0   | | YouTube      | youtube.com/watch                         | 2.9.0   | | Crowdsignal  | polldaddy.com                             | 3.0.0   | | SmugMug      | smugmug.com                               | 3.0.0   | | YouTube      | youtu.be                                  | 3.0.0   | | Twitter      | twitter.com                               | 3.4.0   | | Slideshare   | slideshare.net                            | 3.5.0   | | SoundCloud   | soundcloud.com                            | 3.5.0   | | Dailymotion  | dai.ly                                    | 3.6.0   | | Flickr       | flic.kr                                   | 3.6.0   | | Spotify      | spotify.com                               | 3.6.0   | | Imgur        | imgur.com                                 | 3.9.0   | | Animoto      | animoto.com                               | 4.0.0   | | Animoto      | video214.com                              | 4.0.0   | | Issuu        | issuu.com                                 | 4.0.0   | | Mixcloud     | mixcloud.com                              | 4.0.0   | | Crowdsignal  | poll.fm                                   | 4.0.0   | | TED          | ted.com                                   | 4.0.0   | | YouTube      | youtube.com/playlist                      | 4.0.0   | | Tumblr       | tumblr.com                                | 4.2.0   | | Kickstarter  | kickstarter.com                           | 4.2.0   | | Kickstarter  | kck.st                                    | 4.2.0   | | Cloudup      | cloudup.com                               | 4.3.0   | | ReverbNation | reverbnation.com                          | 4.4.0   | | VideoPress   | videopress.com                            | 4.4.0   | | Reddit       | reddit.com                                | 4.4.0   | | Speaker Deck | speakerdeck.com                           | 4.4.0   | | Twitter      | twitter.com/timelines                     | 4.5.0   | | Twitter      | twitter.com/moments                       | 4.5.0   | | Twitter      | twitter.com/user                          | 4.7.0   | | Twitter      | twitter.com/likes                         | 4.7.0   | | Twitter      | twitter.com/lists                         | 4.7.0   | | Screencast   | screencast.com                            | 4.8.0   | | Amazon       | amazon.com (com.mx, com.br, ca)           | 4.9.0   | | Amazon       | amazon.de (fr, it, es, in, nl, ru, co.uk) | 4.9.0   | | Amazon       | amazon.co.jp (com.au)                     | 4.9.0   | | Amazon       | amazon.cn                                 | 4.9.0   | | Amazon       | a.co                                      | 4.9.0   | | Amazon       | amzn.to (eu, in, asia)                    | 4.9.0   | | Amazon       | z.cn                                      | 4.9.0   | | Someecards   | someecards.com                            | 4.9.0   | | Someecards   | some.ly                                   | 4.9.0   | | Crowdsignal  | survey.fm                                 | 5.1.0   | | TikTok       | tiktok.com                                | 5.4.0   | | Pinterest    | pinterest.com                             | 5.9.0   | | WolframCloud | wolframcloud.com                          | 5.9.0   | | Pocket Casts | pocketcasts.com                           | 6.1.0   | | Crowdsignal  | crowdsignal.net                           | 6.2.0   | | Anghami      | anghami.com                               | 6.3.0   |\n No longer supported providers:\n |   Provider   |        Flavor        |   Since   |  Removed  | | ------------ | -------------------- | --------- | --------- | | Qik          | qik.com              | 2.9.0     | 3.9.0     | | Viddler      | viddler.com          | 2.9.0     | 4.0.0     | | Revision3    | revision3.com        | 2.9.0     | 4.2.0     | | Blip         | blip.tv              | 2.9.0     | 4.4.0     | | Rdio         | rdio.com             | 3.6.0     | 4.4.1     | | Rdio         | rd.io                | 3.6.0     | 4.4.1     | | Vine         | vine.co              | 4.1.0     | 4.9.0     | | Photobucket  | photobucket.com      | 2.9.0     | 5.1.0     | | Funny or Die | funnyordie.com       | 3.0.0     | 5.1.0     | | CollegeHumor | collegehumor.com     | 4.0.0     | 5.3.1     | | Hulu         | hulu.com             | 2.9.0     | 5.5.0     | | Instagram    | instagram.com        | 3.5.0     | 5.5.2     | | Instagram    | instagr.am           | 3.5.0     | 5.5.2     | | Instagram TV | instagram.com        | 5.1.0     | 5.5.2     | | Instagram TV | instagr.am           | 5.1.0     | 5.5.2     | | Facebook     | facebook.com         | 4.7.0     | 5.5.2     | | Meetup.com   | meetup.com           | 3.9.0     | 6.0.1     | | Meetup.com   | meetu.ps             | 3.9.0     | 6.0.1     |",
                 "tags": [
                     {
                         "name": "see",
@@ -25619,7 +25619,7 @@
                         "variable": "$providers"
                     }
                 ],
-                "long_description_html": "<p>Since WordPress 4.4, oEmbed discovery is enabled for all users and allows embedding of sanitized iframes. The providers in this list are sanctioned, meaning they are trusted and allowed to embed any content, such as iframes, videos, JavaScript, and arbitrary HTML.</p> <p>Supported providers:</p> <table> <thead> <tr> <th>Provider</th> <th>Flavor</th> <th>Since</th> </tr> </thead> <tbody> <tr> <td>Dailymotion</td> <td>dailymotion.com</td> <td>2.9.0</td> </tr> <tr> <td>Flickr</td> <td>flickr.com</td> <td>2.9.0</td> </tr> <tr> <td>Scribd</td> <td>scribd.com</td> <td>2.9.0</td> </tr> <tr> <td>Vimeo</td> <td>vimeo.com</td> <td>2.9.0</td> </tr> <tr> <td>WordPress.tv</td> <td>wordpress.tv</td> <td>2.9.0</td> </tr> <tr> <td>YouTube</td> <td>youtube.com/watch</td> <td>2.9.0</td> </tr> <tr> <td>Crowdsignal</td> <td>polldaddy.com</td> <td>3.0.0</td> </tr> <tr> <td>SmugMug</td> <td>smugmug.com</td> <td>3.0.0</td> </tr> <tr> <td>YouTube</td> <td>youtu.be</td> <td>3.0.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com</td> <td>3.4.0</td> </tr> <tr> <td>Slideshare</td> <td>slideshare.net</td> <td>3.5.0</td> </tr> <tr> <td>SoundCloud</td> <td>soundcloud.com</td> <td>3.5.0</td> </tr> <tr> <td>Dailymotion</td> <td>dai.ly</td> <td>3.6.0</td> </tr> <tr> <td>Flickr</td> <td>flic.kr</td> <td>3.6.0</td> </tr> <tr> <td>Spotify</td> <td>spotify.com</td> <td>3.6.0</td> </tr> <tr> <td>Imgur</td> <td>imgur.com</td> <td>3.9.0</td> </tr> <tr> <td>Animoto</td> <td>animoto.com</td> <td>4.0.0</td> </tr> <tr> <td>Animoto</td> <td>video214.com</td> <td>4.0.0</td> </tr> <tr> <td>Issuu</td> <td>issuu.com</td> <td>4.0.0</td> </tr> <tr> <td>Mixcloud</td> <td>mixcloud.com</td> <td>4.0.0</td> </tr> <tr> <td>Crowdsignal</td> <td>poll.fm</td> <td>4.0.0</td> </tr> <tr> <td>TED</td> <td>ted.com</td> <td>4.0.0</td> </tr> <tr> <td>YouTube</td> <td>youtube.com/playlist</td> <td>4.0.0</td> </tr> <tr> <td>Tumblr</td> <td>tumblr.com</td> <td>4.2.0</td> </tr> <tr> <td>Kickstarter</td> <td>kickstarter.com</td> <td>4.2.0</td> </tr> <tr> <td>Kickstarter</td> <td>kck.st</td> <td>4.2.0</td> </tr> <tr> <td>Cloudup</td> <td>cloudup.com</td> <td>4.3.0</td> </tr> <tr> <td>ReverbNation</td> <td>reverbnation.com</td> <td>4.4.0</td> </tr> <tr> <td>VideoPress</td> <td>videopress.com</td> <td>4.4.0</td> </tr> <tr> <td>Reddit</td> <td>reddit.com</td> <td>4.4.0</td> </tr> <tr> <td>Speaker Deck</td> <td>speakerdeck.com</td> <td>4.4.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/timelines</td> <td>4.5.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/moments</td> <td>4.5.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/user</td> <td>4.7.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/likes</td> <td>4.7.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/lists</td> <td>4.7.0</td> </tr> <tr> <td>Screencast</td> <td>screencast.com</td> <td>4.8.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.com (com.mx, com.br, ca)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.de (fr, it, es, in, nl, ru, co.uk)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.co.jp (com.au)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.cn</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>a.co</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amzn.to (eu, in, asia)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>z.cn</td> <td>4.9.0</td> </tr> <tr> <td>Someecards</td> <td>someecards.com</td> <td>4.9.0</td> </tr> <tr> <td>Someecards</td> <td>some.ly</td> <td>4.9.0</td> </tr> <tr> <td>Crowdsignal</td> <td>survey.fm</td> <td>5.1.0</td> </tr> <tr> <td>TikTok</td> <td>tiktok.com</td> <td>5.4.0</td> </tr> <tr> <td>Pinterest</td> <td>pinterest.com</td> <td>5.9.0</td> </tr> <tr> <td>WolframCloud</td> <td>wolframcloud.com</td> <td>5.9.0</td> </tr> <tr> <td>Pocket Casts</td> <td>pocketcasts.com</td> <td>6.1.0</td> </tr> <tr> <td>Crowdsignal</td> <td>crowdsignal.net</td> <td>6.2.0</td> </tr> </tbody> </table> <p>No longer supported providers:</p> <table> <thead> <tr> <th>Provider</th> <th>Flavor</th> <th>Since</th> <th>Removed</th> </tr> </thead> <tbody> <tr> <td>Qik</td> <td>qik.com</td> <td>2.9.0</td> <td>3.9.0</td> </tr> <tr> <td>Viddler</td> <td>viddler.com</td> <td>2.9.0</td> <td>4.0.0</td> </tr> <tr> <td>Revision3</td> <td>revision3.com</td> <td>2.9.0</td> <td>4.2.0</td> </tr> <tr> <td>Blip</td> <td>blip.tv</td> <td>2.9.0</td> <td>4.4.0</td> </tr> <tr> <td>Rdio</td> <td>rdio.com</td> <td>3.6.0</td> <td>4.4.1</td> </tr> <tr> <td>Rdio</td> <td>rd.io</td> <td>3.6.0</td> <td>4.4.1</td> </tr> <tr> <td>Vine</td> <td>vine.co</td> <td>4.1.0</td> <td>4.9.0</td> </tr> <tr> <td>Photobucket</td> <td>photobucket.com</td> <td>2.9.0</td> <td>5.1.0</td> </tr> <tr> <td>Funny or Die</td> <td>funnyordie.com</td> <td>3.0.0</td> <td>5.1.0</td> </tr> <tr> <td>CollegeHumor</td> <td>collegehumor.com</td> <td>4.0.0</td> <td>5.3.1</td> </tr> <tr> <td>Hulu</td> <td>hulu.com</td> <td>2.9.0</td> <td>5.5.0</td> </tr> <tr> <td>Instagram</td> <td>instagram.com</td> <td>3.5.0</td> <td>5.5.2</td> </tr> <tr> <td>Instagram</td> <td>instagr.am</td> <td>3.5.0</td> <td>5.5.2</td> </tr> <tr> <td>Instagram TV</td> <td>instagram.com</td> <td>5.1.0</td> <td>5.5.2</td> </tr> <tr> <td>Instagram TV</td> <td>instagr.am</td> <td>5.1.0</td> <td>5.5.2</td> </tr> <tr> <td>Facebook</td> <td>facebook.com</td> <td>4.7.0</td> <td>5.5.2</td> </tr> <tr> <td>Meetup.com</td> <td>meetup.com</td> <td>3.9.0</td> <td>6.0.1</td> </tr> <tr> <td>Meetup.com</td> <td>meetu.ps</td> <td>3.9.0</td> <td>6.0.1</td> </tr> </tbody> </table>"
+                "long_description_html": "<p>Since WordPress 4.4, oEmbed discovery is enabled for all users and allows embedding of sanitized iframes. The providers in this list are sanctioned, meaning they are trusted and allowed to embed any content, such as iframes, videos, JavaScript, and arbitrary HTML.</p> <p>Supported providers:</p> <table> <thead> <tr> <th>Provider</th> <th>Flavor</th> <th>Since</th> </tr> </thead> <tbody> <tr> <td>Dailymotion</td> <td>dailymotion.com</td> <td>2.9.0</td> </tr> <tr> <td>Flickr</td> <td>flickr.com</td> <td>2.9.0</td> </tr> <tr> <td>Scribd</td> <td>scribd.com</td> <td>2.9.0</td> </tr> <tr> <td>Vimeo</td> <td>vimeo.com</td> <td>2.9.0</td> </tr> <tr> <td>WordPress.tv</td> <td>wordpress.tv</td> <td>2.9.0</td> </tr> <tr> <td>YouTube</td> <td>youtube.com/watch</td> <td>2.9.0</td> </tr> <tr> <td>Crowdsignal</td> <td>polldaddy.com</td> <td>3.0.0</td> </tr> <tr> <td>SmugMug</td> <td>smugmug.com</td> <td>3.0.0</td> </tr> <tr> <td>YouTube</td> <td>youtu.be</td> <td>3.0.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com</td> <td>3.4.0</td> </tr> <tr> <td>Slideshare</td> <td>slideshare.net</td> <td>3.5.0</td> </tr> <tr> <td>SoundCloud</td> <td>soundcloud.com</td> <td>3.5.0</td> </tr> <tr> <td>Dailymotion</td> <td>dai.ly</td> <td>3.6.0</td> </tr> <tr> <td>Flickr</td> <td>flic.kr</td> <td>3.6.0</td> </tr> <tr> <td>Spotify</td> <td>spotify.com</td> <td>3.6.0</td> </tr> <tr> <td>Imgur</td> <td>imgur.com</td> <td>3.9.0</td> </tr> <tr> <td>Animoto</td> <td>animoto.com</td> <td>4.0.0</td> </tr> <tr> <td>Animoto</td> <td>video214.com</td> <td>4.0.0</td> </tr> <tr> <td>Issuu</td> <td>issuu.com</td> <td>4.0.0</td> </tr> <tr> <td>Mixcloud</td> <td>mixcloud.com</td> <td>4.0.0</td> </tr> <tr> <td>Crowdsignal</td> <td>poll.fm</td> <td>4.0.0</td> </tr> <tr> <td>TED</td> <td>ted.com</td> <td>4.0.0</td> </tr> <tr> <td>YouTube</td> <td>youtube.com/playlist</td> <td>4.0.0</td> </tr> <tr> <td>Tumblr</td> <td>tumblr.com</td> <td>4.2.0</td> </tr> <tr> <td>Kickstarter</td> <td>kickstarter.com</td> <td>4.2.0</td> </tr> <tr> <td>Kickstarter</td> <td>kck.st</td> <td>4.2.0</td> </tr> <tr> <td>Cloudup</td> <td>cloudup.com</td> <td>4.3.0</td> </tr> <tr> <td>ReverbNation</td> <td>reverbnation.com</td> <td>4.4.0</td> </tr> <tr> <td>VideoPress</td> <td>videopress.com</td> <td>4.4.0</td> </tr> <tr> <td>Reddit</td> <td>reddit.com</td> <td>4.4.0</td> </tr> <tr> <td>Speaker Deck</td> <td>speakerdeck.com</td> <td>4.4.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/timelines</td> <td>4.5.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/moments</td> <td>4.5.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/user</td> <td>4.7.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/likes</td> <td>4.7.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/lists</td> <td>4.7.0</td> </tr> <tr> <td>Screencast</td> <td>screencast.com</td> <td>4.8.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.com (com.mx, com.br, ca)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.de (fr, it, es, in, nl, ru, co.uk)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.co.jp (com.au)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.cn</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>a.co</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amzn.to (eu, in, asia)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>z.cn</td> <td>4.9.0</td> </tr> <tr> <td>Someecards</td> <td>someecards.com</td> <td>4.9.0</td> </tr> <tr> <td>Someecards</td> <td>some.ly</td> <td>4.9.0</td> </tr> <tr> <td>Crowdsignal</td> <td>survey.fm</td> <td>5.1.0</td> </tr> <tr> <td>TikTok</td> <td>tiktok.com</td> <td>5.4.0</td> </tr> <tr> <td>Pinterest</td> <td>pinterest.com</td> <td>5.9.0</td> </tr> <tr> <td>WolframCloud</td> <td>wolframcloud.com</td> <td>5.9.0</td> </tr> <tr> <td>Pocket Casts</td> <td>pocketcasts.com</td> <td>6.1.0</td> </tr> <tr> <td>Crowdsignal</td> <td>crowdsignal.net</td> <td>6.2.0</td> </tr> <tr> <td>Anghami</td> <td>anghami.com</td> <td>6.3.0</td> </tr> </tbody> </table> <p>No longer supported providers:</p> <table> <thead> <tr> <th>Provider</th> <th>Flavor</th> <th>Since</th> <th>Removed</th> </tr> </thead> <tbody> <tr> <td>Qik</td> <td>qik.com</td> <td>2.9.0</td> <td>3.9.0</td> </tr> <tr> <td>Viddler</td> <td>viddler.com</td> <td>2.9.0</td> <td>4.0.0</td> </tr> <tr> <td>Revision3</td> <td>revision3.com</td> <td>2.9.0</td> <td>4.2.0</td> </tr> <tr> <td>Blip</td> <td>blip.tv</td> <td>2.9.0</td> <td>4.4.0</td> </tr> <tr> <td>Rdio</td> <td>rdio.com</td> <td>3.6.0</td> <td>4.4.1</td> </tr> <tr> <td>Rdio</td> <td>rd.io</td> <td>3.6.0</td> <td>4.4.1</td> </tr> <tr> <td>Vine</td> <td>vine.co</td> <td>4.1.0</td> <td>4.9.0</td> </tr> <tr> <td>Photobucket</td> <td>photobucket.com</td> <td>2.9.0</td> <td>5.1.0</td> </tr> <tr> <td>Funny or Die</td> <td>funnyordie.com</td> <td>3.0.0</td> <td>5.1.0</td> </tr> <tr> <td>CollegeHumor</td> <td>collegehumor.com</td> <td>4.0.0</td> <td>5.3.1</td> </tr> <tr> <td>Hulu</td> <td>hulu.com</td> <td>2.9.0</td> <td>5.5.0</td> </tr> <tr> <td>Instagram</td> <td>instagram.com</td> <td>3.5.0</td> <td>5.5.2</td> </tr> <tr> <td>Instagram</td> <td>instagr.am</td> <td>3.5.0</td> <td>5.5.2</td> </tr> <tr> <td>Instagram TV</td> <td>instagram.com</td> <td>5.1.0</td> <td>5.5.2</td> </tr> <tr> <td>Instagram TV</td> <td>instagr.am</td> <td>5.1.0</td> <td>5.5.2</td> </tr> <tr> <td>Facebook</td> <td>facebook.com</td> <td>4.7.0</td> <td>5.5.2</td> </tr> <tr> <td>Meetup.com</td> <td>meetup.com</td> <td>3.9.0</td> <td>6.0.1</td> </tr> <tr> <td>Meetup.com</td> <td>meetu.ps</td> <td>3.9.0</td> <td>6.0.1</td> </tr> </tbody> </table>"
             },
             "args": 1
         },
@@ -30124,7 +30124,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Shortcode attributes array or empty string.",
+                        "content": "Shortcode attributes array or the original arguments string if it cannot be parsed.",
                         "types": [
                             "array",
                             "string"
@@ -30276,7 +30276,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Template unique identifier (example: theme_slug//template_slug).",
+                        "content": "Template unique identifier (example: 'theme_slug//template_slug').",
                         "types": [
                             "string"
                         ],
@@ -30284,7 +30284,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Template type: <code>'wp_template'</code> or '<code>wp_template_part'</code>.",
+                        "content": "Template type: 'wp_template' or 'wp_template_part'.",
                         "types": [
                             "string"
                         ],
@@ -30318,7 +30318,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Template unique identifier (example: theme_slug//template_slug).",
+                        "content": "Template unique identifier (example: 'theme_slug//template_slug').",
                         "types": [
                             "string"
                         ],
@@ -30326,7 +30326,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Template type: <code>'wp_template'</code> or '<code>wp_template_part'</code>.",
+                        "content": "Template type: 'wp_template' or 'wp_template_part'.",
                         "types": [
                             "string"
                         ],
@@ -30351,7 +30351,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Return an array of block templates to short-circuit the default query, or null to allow WP to run it's normal queries.",
+                        "content": "Return an array of block templates to short-circuit the default query, or null to allow WP to run its normal queries.",
                         "types": [
                             "\\WP_Block_Template[]",
                             "null"
@@ -30360,7 +30360,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "{ Optional. Arguments to retrieve templates. @type array  $slug__in List of slugs to include. @type int    $wp_id Post ID of customized template. @type string $post_type Post type to get the templates for.\n}",
+                        "content": "{ Arguments to retrieve templates. All arguments are optional. @type string[] $slug__in  List of slugs to include. @type int      $wp_id     Post ID of customized template. @type string   $area      A 'wp_template_part_area' taxonomy value to filter by (for 'wp_template_part' template type only). @type string   $post_type Post type to get the templates for.\n}",
                         "types": [
                             "array"
                         ],
@@ -30368,7 +30368,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "wp_template or wp_template_part.",
+                        "content": "'wp_template' or 'wp_template_part'.",
                         "types": [
                             "string"
                         ],
@@ -32201,7 +32201,7 @@
                     {
                         "name": "since",
                         "content": "5.6.0",
-                        "description": "The <code>$previous_status</code> parameter was added."
+                        "description": "Added the <code>$previous_status</code> parameter."
                     },
                     {
                         "name": "param",
@@ -41180,7 +41180,7 @@
             "file": "wp-admin/site-health.php",
             "type": "filter",
             "doc": {
-                "description": "An associative array of extra tabs for the Site Health navigation bar.",
+                "description": "Filters the extra tabs for the Site Health navigation bar.",
                 "long_description": "Add a custom page to the Site Health screen, based on a tab slug and label. The label you provide will also be used as part of the site title.",
                 "tags": [
                     {
@@ -50557,7 +50557,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Array of mime types keyed by their file extension regex.",
+                        "content": "Array of mime types keyed by their file extension regex, or null if none were provided.",
                         "types": [
                             "string[]"
                         ],
@@ -60596,7 +60596,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "{ Array of domain, path, blog name, blog title, user and error messages. @type string         $domain     Domain for the site. @type string         $path       Path for the site. Used in subdirectory installations. @type string         $blogname   The unique site name (slug). @type string         $blog_title Blog title. @type string|WP_User $user       By default, an empty string. A user object if provided. @type WP_Error       $errors     WP_Error containing any errors found.\n}",
+                        "content": "{ Array of domain, path, site name, site title, user and error messages. @type string         $domain     Domain for the site. @type string         $path       Path for the site. Used in subdirectory installations. @type string         $blogname   The unique site name (slug). @type string         $blog_title Site title. @type string|WP_User $user       By default, an empty string. A user object if provided. @type WP_Error       $errors     WP_Error containing any errors found.\n}",
                         "types": [
                             "array"
                         ],
@@ -61016,7 +61016,7 @@
             "file": "wp-includes/class-wp-xmlrpc-server.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the list of post query fields used by the given XML-RPC method.",
+                "description": "Filters the default post query fields used by the given XML-RPC method.",
                 "long_description": "",
                 "tags": [
                     {
@@ -61025,7 +61025,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Array of post fields. Default array contains 'post', 'terms', and 'custom_fields'.",
+                        "content": "An array of post fields to retrieve. By default, contains 'post', 'terms', and 'custom_fields'.",
                         "types": [
                             "array"
                         ],
@@ -61049,7 +61049,7 @@
             "file": "wp-includes/class-wp-xmlrpc-server.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the default query fields used by the given XML-RPC method.",
+                "description": "Filters the default post type query fields used by the given XML-RPC method.",
                 "long_description": "",
                 "tags": [
                     {
@@ -61058,7 +61058,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "An array of post type query fields for the given method.",
+                        "content": "An array of post type fields to retrieve. By default, contains 'labels', 'cap', and 'taxonomies'.",
                         "types": [
                             "array"
                         ],
@@ -61091,7 +61091,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "An array of revision query fields.",
+                        "content": "An array of revision fields to retrieve. By default, contains 'post_date' and 'post_date_gmt'.",
                         "types": [
                             "array"
                         ],
@@ -61115,7 +61115,7 @@
             "file": "wp-includes/class-wp-xmlrpc-server.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the taxonomy query fields used by the given XML-RPC method.",
+                "description": "Filters the default taxonomy query fields used by the given XML-RPC method.",
                 "long_description": "",
                 "tags": [
                     {
@@ -61124,7 +61124,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "An array of taxonomy fields to retrieve.",
+                        "content": "An array of taxonomy fields to retrieve. By default, contains 'labels', 'cap', and 'object_type'.",
                         "types": [
                             "array"
                         ],
@@ -61157,7 +61157,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "User query fields for given method. Default 'all'.",
+                        "content": "An array of user fields to retrieve. By default, contains 'all'.",
                         "types": [
                             "array"
                         ],
@@ -61930,7 +61930,7 @@
             "file": "wp-includes/functions.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the memory limit allocated for arbitrary contexts.",
+                "description": "Filters the memory limit allocated for an arbitrary context.",
                 "long_description": "The dynamic portion of the hook name, `$context`, refers to an arbitrary context passed on calling the function. This allows for plugins to define their own contexts for raising the memory limit.",
                 "tags": [
                     {
@@ -61939,7 +61939,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Maximum memory limit to allocate for images. Default '256M' or the original php.ini <code>memory_limit</code>, whichever is higher. Accepts an integer (bytes), or a shorthand string notation, such as '256M'.",
+                        "content": "Maximum memory limit to allocate for this context. Default WP_MAX_MEMORY_LIMIT<code>or the original php.ini</code>memory_limit`, whichever is higher. Accepts an integer (bytes), or a shorthand string notation, such as '256M'.",
                         "types": [
                             "int",
                             "string"

@@ -195,7 +195,7 @@
             "file": "wp-activate.php",
             "type": "action",
             "doc": {
-                "description": "Fires before the Site Activation page is loaded.",
+                "description": "Fires within the `<head>` section of the Site Activation page.",
                 "long_description": "Fires on the {@see 'wp_head'} action.",
                 "tags": [
                     {
@@ -1161,7 +1161,7 @@
             "file": "wp-admin/admin-header.php",
             "type": "action",
             "doc": {
-                "description": "Enqueue scripts for all admin pages.",
+                "description": "Fires when enqueuing scripts for all admin pages.",
                 "long_description": "",
                 "tags": [
                     {
@@ -2048,8 +2048,8 @@
             "file": "wp-includes/theme.php",
             "type": "action",
             "doc": {
-                "description": "Fires on the first WP load after a theme switch if the old theme still exists.",
-                "long_description": "This action fires multiple times and the parameters differs according to the context, if the old theme exists or not. If the old theme is missing, the parameter will be the slug of the old theme.",
+                "description": "Fires on the next WP load after the theme has been switched.",
+                "long_description": "The parameters differ according to whether the old theme exists or not. If the old theme is missing, the old name will instead be the slug of the old theme.\n See {@see 'switch_theme'}.",
                 "tags": [
                     {
                         "name": "since",
@@ -2072,7 +2072,7 @@
                         "variable": "$old_theme"
                     }
                 ],
-                "long_description_html": "<p>This action fires multiple times and the parameters differs according to the context, if the old theme exists or not. If the old theme is missing, the parameter will be the slug of the old theme.</p>"
+                "long_description_html": "<p>The parameters differ according to whether the old theme exists or not. If the old theme is missing, the old name will instead be the slug of the old theme.</p> <p>See {@see 'switch_theme'}.</p>"
             },
             "args": 2
         },
@@ -4384,7 +4384,7 @@
             "file": "wp-admin/customize.php",
             "type": "action",
             "doc": {
-                "description": "Enqueue Customizer control scripts.",
+                "description": "Fires when enqueuing Customizer control scripts.",
                 "long_description": "",
                 "tags": [
                     {
@@ -5663,8 +5663,8 @@
             "file": "wp-admin/includes/user.php",
             "type": "action",
             "doc": {
-                "description": "Fires immediately before a user is deleted from the database.",
-                "long_description": "",
+                "description": "Fires immediately before a user is deleted from the site.",
+                "long_description": "Note that on a Multisite installation the user only gets removed from the site and does not get deleted from the database.",
                 "tags": [
                     {
                         "name": "since",
@@ -5701,7 +5701,7 @@
                         "variable": "$user"
                     }
                 ],
-                "long_description_html": ""
+                "long_description_html": "<p>Note that on a Multisite installation the user only gets removed from the site and does not get deleted from the database.</p>"
             },
             "args": 3
         },
@@ -6271,8 +6271,8 @@
             "file": "wp-admin/includes/user.php",
             "type": "action",
             "doc": {
-                "description": "Fires immediately after a user is deleted from the database.",
-                "long_description": "",
+                "description": "Fires immediately after a user is deleted from the site.",
+                "long_description": "Note that on a Multisite installation the user may not have been deleted from the database depending on whether `wp_delete_user()` or `wpmu_delete_user()` was called.",
                 "tags": [
                     {
                         "name": "since",
@@ -6309,7 +6309,7 @@
                         "variable": "$user"
                     }
                 ],
-                "long_description_html": ""
+                "long_description_html": "<p>Note that on a Multisite installation the user may not have been deleted from the database depending on whether <code>wp_delete_user()</code> or <code>wpmu_delete_user()</code> was called.</p>"
             },
             "args": 3
         },
@@ -8185,7 +8185,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The name of the specialized template.",
+                        "content": "The name of the specialized template or an empty string if there is none.",
                         "types": [
                             "string"
                         ],
@@ -8239,7 +8239,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The name of the specialized template.",
+                        "content": "The name of the specialized template or null if there is none.",
                         "types": [
                             "string",
                             "null"
@@ -9027,7 +9027,7 @@
             "file": "wp-login.php",
             "type": "action",
             "doc": {
-                "description": "Enqueue scripts and styles for the login page.",
+                "description": "Enqueues scripts and styles for the login page.",
                 "long_description": "",
                 "tags": [
                     {
@@ -11951,7 +11951,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Blog name.",
+                        "content": "Site name.",
                         "types": [
                             "string"
                         ],
@@ -14599,7 +14599,7 @@
             "file": "wp-comments-post.php",
             "type": "action",
             "doc": {
-                "description": "Perform other actions when comment cookies are set.",
+                "description": "Fires after comment cookies are set.",
                 "long_description": "",
                 "tags": [
                     {
@@ -15204,7 +15204,7 @@
             "file": "wp-signup.php",
             "type": "action",
             "doc": {
-                "description": "Hidden sign-up form fields output when creating another site or user.",
+                "description": "Fires when hidden sign-up form fields output when creating another site or user.",
                 "long_description": "",
                 "tags": [
                     {
@@ -15230,7 +15230,7 @@
             "file": "wp-admin/site-health.php",
             "type": "action",
             "doc": {
-                "description": "Output content of a custom Site Health tab.",
+                "description": "Fires when outputting the content of a custom Site Health tab.",
                 "long_description": "This action fires right after the Site Health header, and users are still subject to the capability checks for the Site Health page to view any custom tabs and their contents.",
                 "tags": [
                     {
@@ -15584,7 +15584,7 @@
             "type": "action",
             "doc": {
                 "description": "Fires after the theme is switched.",
-                "long_description": "",
+                "long_description": "See {@see 'after_switch_theme'}.",
                 "tags": [
                     {
                         "name": "since",
@@ -15620,7 +15620,7 @@
                         "variable": "$old_theme"
                     }
                 ],
-                "long_description_html": ""
+                "long_description_html": "<p>See {@see 'after_switch_theme'}.</p>"
             },
             "args": 3
         },
@@ -16356,7 +16356,7 @@
                     {
                         "name": "since",
                         "content": "5.6.0",
-                        "description": "The <code>$previous_status</code> parameter was added."
+                        "description": "Added the <code>$previous_status</code> parameter."
                     },
                     {
                         "name": "param",
@@ -16457,7 +16457,7 @@
                     {
                         "name": "since",
                         "content": "5.6.0",
-                        "description": "The <code>$previous_status</code> parameter was added."
+                        "description": "Added the <code>$previous_status</code> parameter."
                     },
                     {
                         "name": "param",
@@ -17385,7 +17385,7 @@
             "file": "wp-admin/index.php",
             "type": "action",
             "doc": {
-                "description": "Add content to the welcome panel on the admin dashboard.",
+                "description": "Fires when adding content to the welcome panel on the admin dashboard.",
                 "long_description": "To remove the default welcome panel, use remove_action():\n     remove_action( 'welcome_panel', 'wp_welcome_panel' );",
                 "tags": [
                     {
@@ -20824,13 +20824,13 @@
             "file": "xmlrpc.php",
             "type": "action",
             "doc": {
-                "description": "Add additional APIs to the Really Simple Discovery (RSD) endpoint.",
+                "description": "Fires when adding APIs to the Really Simple Discovery (RSD) endpoint.",
                 "long_description": "",
                 "tags": [
                     {
                         "name": "link",
-                        "content": "<a href=\"http://cyber.law.harvard.edu/blogs/gems/tech/rsd.html\">http://cyber.law.harvard.edu/blogs/gems/tech/rsd.html</a>",
-                        "link": "http://cyber.law.harvard.edu/blogs/gems/tech/rsd.html"
+                        "content": "<a href=\"https://cyber.harvard.edu/blogs/gems/tech/rsd.html\">https://cyber.harvard.edu/blogs/gems/tech/rsd.html</a>",
+                        "link": "https://cyber.harvard.edu/blogs/gems/tech/rsd.html"
                     },
                     {
                         "name": "since",
