@@ -18341,7 +18341,7 @@
                         "types": [
                             "bool"
                         ],
-                        "variable": ""
+                        "variable": "$show"
                     }
                 ],
                 "long_description_html": ""
@@ -20985,7 +20985,7 @@
             "file": "wp-login.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the Languages select input activation on the login screen.",
+                "description": "Filters whether to display the Language selector on the login screen.",
                 "long_description": "",
                 "tags": [
                     {
@@ -20994,11 +20994,11 @@
                     },
                     {
                         "name": "param",
-                        "content": "Whether to display the Languages select input on the login screen.",
+                        "content": "Whether to display the Language selector on the login screen.",
                         "types": [
                             "bool"
                         ],
-                        "variable": ""
+                        "variable": "$display"
                     }
                 ],
                 "long_description_html": ""
@@ -35412,17 +35412,30 @@
                         "content": "5.5.0"
                     },
                     {
+                        "name": "since",
+                        "content": "6.3.0",
+                        "description": "The <code>$request</code> parameter was added."
+                    },
+                    {
                         "name": "param",
                         "content": "The list of request headers to allow.",
                         "types": [
                             "string[]"
                         ],
                         "variable": "$allow_headers"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The request in context.",
+                        "types": [
+                            "\\WP_REST_Request"
+                        ],
+                        "variable": "$request"
                     }
                 ],
                 "long_description_html": "<p>The allowed headers are passed to the browser to specify which headers can be passed to the REST API. By default, we allow the Content-* headers needed to upload files to the media endpoints. As well as the Authorization and Nonce headers for allowing authentication.</p>"
             },
-            "args": 1
+            "args": 2
         },
         {
             "name": "rest_authentication_errors",
@@ -35747,17 +35760,30 @@
                         "content": "5.5.0"
                     },
                     {
+                        "name": "since",
+                        "content": "6.3.0",
+                        "description": "The <code>$request</code> parameter was added."
+                    },
+                    {
                         "name": "param",
                         "content": "The list of response headers to expose.",
                         "types": [
                             "string[]"
                         ],
                         "variable": "$expose_headers"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The request in context.",
+                        "types": [
+                            "\\WP_REST_Request"
+                        ],
+                        "variable": "$request"
                     }
                 ],
                 "long_description_html": ""
             },
-            "args": 1
+            "args": 2
         },
         {
             "name": "rest_get_max_batch_size",
@@ -55812,6 +55838,31 @@
             "args": 2
         },
         {
+            "name": "wp_navigation_should_create_fallback",
+            "file": "wp-includes/class-wp-navigation-fallback.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters whether or not a fallback should be created.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.3.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether to create a fallback navigation menu. Default true.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": ""
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 1
+        },
+        {
             "name": "wp_network_dashboard_widgets",
             "file": "wp-admin/includes/dashboard.php",
             "type": "filter",
@@ -59096,7 +59147,7 @@
                         "types": [
                             "\\WP_Theme_JSON_Data"
                         ],
-                        "variable": ""
+                        "variable": "$theme_json"
                     }
                 ],
                 "long_description_html": ""
@@ -59121,7 +59172,7 @@
                         "types": [
                             "\\WP_Theme_JSON_Data"
                         ],
-                        "variable": ""
+                        "variable": "$theme_json"
                     }
                 ],
                 "long_description_html": ""
@@ -59146,7 +59197,7 @@
                         "types": [
                             "\\WP_Theme_JSON_Data"
                         ],
-                        "variable": ""
+                        "variable": "$theme_json"
                     }
                 ],
                 "long_description_html": ""
@@ -59171,7 +59222,7 @@
                         "types": [
                             "\\WP_Theme_JSON_Data"
                         ],
-                        "variable": ""
+                        "variable": "$theme_json"
                     }
                 ],
                 "long_description_html": ""
