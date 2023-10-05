@@ -102,17 +102,30 @@
                         "content": "2.6.0"
                     },
                     {
+                        "name": "since",
+                        "content": "6.4.0",
+                        "description": "The post_id parameter was added."
+                    },
+                    {
                         "name": "param",
                         "content": "Post revision ID.",
                         "types": [
                             "int"
                         ],
                         "variable": "$revision_id"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Post ID.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$post_id"
                     }
                 ],
                 "long_description_html": ""
             },
-            "args": 1
+            "args": 2
         },
         {
             "name": "activate_blog",
@@ -6463,6 +6476,47 @@
                     {
                         "name": "param",
                         "content": "The version of WordPress that deprecated the argument used.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$version"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 3
+        },
+        {
+            "name": "deprecated_class_run",
+            "file": "wp-includes/functions.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires when a deprecated class is called.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.4.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The name of the class being instantiated.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$class_name"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The class or function that should have been called.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$replacement"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The version of WordPress that deprecated the class.",
                         "types": [
                             "string"
                         ],
@@ -17583,6 +17637,39 @@
             "args": 3
         },
         {
+            "name": "wp_admin_notice",
+            "file": "wp-includes/functions.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires before an admin notice is output.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.4.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The message for the admin notice.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$message"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The arguments for the admin notice.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$args"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 2
+        },
+        {
             "name": "wp_after_admin_bar_render",
             "file": "wp-includes/admin-bar.php",
             "type": "action",
@@ -18306,17 +18393,30 @@
                         "content": "4.1.0"
                     },
                     {
+                        "name": "since",
+                        "content": "6.4.0",
+                        "description": "The <code>$is_update</code> parameter was added to indicate if the autosave is being updated or was newly created."
+                    },
+                    {
                         "name": "param",
                         "content": "Post array - the autosave that is about to be saved.",
                         "types": [
                             "array"
                         ],
                         "variable": "$new_autosave"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether this is an existing autosave.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$is_update"
                     }
                 ],
                 "long_description_html": ""
             },
-            "args": 1
+            "args": 2
         },
         {
             "name": "wp_dashboard_setup",
@@ -19662,6 +19762,47 @@
                 "long_description_html": ""
             },
             "args": 2
+        },
+        {
+            "name": "wp_trigger_error_run",
+            "file": "wp-includes/functions.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires when the given function triggers a user-level error/warning/notice/deprecation message.",
+                "long_description": "Can be used for debug backtracking.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.4.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The function that was called.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$function_name"
+                    },
+                    {
+                        "name": "param",
+                        "content": "A message explaining what has been done incorrectly.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$message"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The designated error type for this error.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$error_level"
+                    }
+                ],
+                "long_description_html": "<p>Can be used for debug backtracking.</p>"
+            },
+            "args": 3
         },
         {
             "name": "wp_uninitialize_site",

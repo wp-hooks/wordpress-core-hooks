@@ -2759,6 +2759,11 @@
                         "content": "5.0.3"
                     },
                     {
+                        "name": "since",
+                        "content": "6.4.0",
+                        "description": "Added <code>$installed</code> parameter."
+                    },
+                    {
                         "name": "param",
                         "content": "The message being displayed.",
                         "types": [
@@ -2773,11 +2778,19 @@
                             "\\WP_Post"
                         ],
                         "variable": "$post"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether the classic editor is installed.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$installed"
                     }
                 ],
                 "long_description_html": ""
             },
-            "args": 2
+            "args": 3
         },
         {
             "name": "block_editor_rest_api_preload_paths",
@@ -2947,6 +2960,39 @@
                             "array"
                         ],
                         "variable": "$metadata"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 2
+        },
+        {
+            "name": "block_widgets_no_javascript_message",
+            "file": "wp-admin/widgets-form-blocks.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the message displayed in the block widget interface when JavaScript is not enabled in the browser.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.4.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The message being displayed.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$message"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether the Classic Widget plugin is installed.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$installed"
                     }
                 ],
                 "long_description_html": ""
@@ -8109,6 +8155,31 @@
             "args": 1
         },
         {
+            "name": "deprecated_class_trigger_error",
+            "file": "wp-includes/functions.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters whether to trigger an error for a deprecated class.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.4.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether to trigger an error for a deprecated class. Default true.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$trigger"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 1
+        },
+        {
             "name": "deprecated_constructor_trigger_error",
             "file": "wp-includes/functions.php",
             "type": "filter",
@@ -12169,7 +12240,7 @@
                     {
                         "name": "since",
                         "content": "4.2.0",
-                        "description": "The <code>$args</code> parameter was added."
+                        "description": "Added the <code>$args</code> parameter."
                     },
                     {
                         "name": "param",
@@ -12181,7 +12252,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The avatar to retrieve. Accepts a user_id, Gravatar MD5 hash, user email, WP_User object, WP_Post object, or WP_Comment object.",
+                        "content": "The avatar to retrieve. Accepts a user ID, Gravatar MD5 hash, user email, WP_User object, WP_Post object, or WP_Comment object.",
                         "types": [
                             "mixed"
                         ],
@@ -12189,7 +12260,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Square avatar width and height in pixels to retrieve.",
+                        "content": "Height and width of the avatar in pixels.",
                         "types": [
                             "int"
                         ],
@@ -12197,7 +12268,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "URL for the default image or a default type. Accepts '404', 'retro', 'monsterid', 'wavatar', 'indenticon', 'mystery', 'mm', 'mysteryman', 'blank', or 'gravatar_default'.",
+                        "content": "URL for the default image or a default type. Accepts: - '404' (return a 404 instead of a default image) - 'retro' (a 8-bit arcade-style pixelated face) - 'robohash' (a robot) - 'monsterid' (a monster) - 'wavatar' (a cartoon face) - 'identicon' (the \"quilt\", a geometric pattern) - 'mystery', 'mm', or 'mysteryman' (The Oyster Man) - 'blank' (transparent GIF) - 'gravatar_default' (the Gravatar logo)",
                         "types": [
                             "string"
                         ],
@@ -15275,7 +15346,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "An array of arguments. @see get_terms()",
+                        "content": "An array of arguments. See {@see get_terms()}.",
                         "types": [
                             "array"
                         ],
@@ -17526,6 +17597,56 @@
             "args": 4
         },
         {
+            "name": "hooked_block_types",
+            "file": "wp-includes/blocks.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the list of hooked block types for a given anchor block type and relative position.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.4.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The list of hooked block types.",
+                        "types": [
+                            "string[]"
+                        ],
+                        "variable": "$hooked_block_types"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The relative position of the hooked blocks. Can be one of 'before', 'after', 'first_child', or 'last_child'.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$relative_position"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The anchor block type.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$anchor_block_type"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The block template, template part, or pattern that the anchor block belongs to.",
+                        "types": [
+                            "\\WP_Block_Template",
+                            "array"
+                        ],
+                        "variable": "$context"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 4
+        },
+        {
             "name": "http_allowed_safe_ports",
             "file": "wp-includes/http.php",
             "type": "filter",
@@ -17563,47 +17684,6 @@
                     }
                 ],
                 "long_description_html": "<p>Allows to change and allow external requests for the HTTP request.</p>"
-            },
-            "args": 3
-        },
-        {
-            "name": "http_api_transports",
-            "file": "wp-includes/class-wp-http.php",
-            "type": "filter",
-            "doc": {
-                "description": "Filters which HTTP transports are available and in what order.",
-                "long_description": "",
-                "tags": [
-                    {
-                        "name": "since",
-                        "content": "3.7.0"
-                    },
-                    {
-                        "name": "param",
-                        "content": "Array of HTTP transports to check. Default array contains 'curl' and 'streams', in that order.",
-                        "types": [
-                            "string[]"
-                        ],
-                        "variable": "$transports"
-                    },
-                    {
-                        "name": "param",
-                        "content": "HTTP request arguments.",
-                        "types": [
-                            "array"
-                        ],
-                        "variable": "$args"
-                    },
-                    {
-                        "name": "param",
-                        "content": "The URL to request.",
-                        "types": [
-                            "string"
-                        ],
-                        "variable": "$url"
-                    }
-                ],
-                "long_description_html": ""
             },
             "args": 3
         },
@@ -27970,7 +28050,7 @@
             "file": "wp-admin/includes/class-wp-posts-list-table.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the published time of the post.",
+                "description": "Filters the published, scheduled, or unpublished time of the post.",
                 "long_description": "",
                 "tags": [
                     {
@@ -29872,7 +29952,7 @@
             "file": "wp-includes/cron.php",
             "type": "filter",
             "doc": {
-                "description": "Filter to preflight or hijack clearing a scheduled hook.",
+                "description": "Filter to override clearing a scheduled hook.",
                 "long_description": "Returning a non-null value will short-circuit the normal unscheduling process, causing the function to return the filtered value instead.\n For plugins replacing wp-cron, return the number of events successfully unscheduled (zero if no events were registered with the hook) or false or a WP_Error if unscheduling one or more events fails.",
                 "tags": [
                     {
@@ -30354,6 +30434,40 @@
             "args": 2
         },
         {
+            "name": "pre_get_available_post_mime_types",
+            "file": "wp-includes/post.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the list of available post MIME types for the given post type.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.4.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "An array of MIME types. Default null.",
+                        "types": [
+                            "string[]",
+                            "null"
+                        ],
+                        "variable": "$mime_types"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The post type name. Usually 'attachment' but can be any post type.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$type"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 2
+        },
+        {
             "name": "pre_get_avatar",
             "file": "wp-includes/pluggable.php",
             "type": "filter",
@@ -30376,7 +30490,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The avatar to retrieve. Accepts a user_id, Gravatar MD5 hash, user email, WP_User object, WP_Post object, or WP_Comment object.",
+                        "content": "The avatar to retrieve. Accepts a user ID, Gravatar MD5 hash, user email, WP_User object, WP_Post object, or WP_Comment object.",
                         "types": [
                             "mixed"
                         ],
@@ -30613,7 +30727,9 @@
                         "content": "The character set to use. Default null.",
                         "types": [
                             "string",
-                            "null"
+                            "null",
+                            "false",
+                            "\\WP_Error"
                         ],
                         "variable": "$charset"
                     },
@@ -30804,7 +30920,7 @@
             "file": "wp-includes/cron.php",
             "type": "filter",
             "doc": {
-                "description": "Filter to preflight or hijack retrieving ready cron jobs.",
+                "description": "Filter to override retrieving ready cron jobs.",
                 "long_description": "Returning an array will short-circuit the normal retrieval of ready cron jobs, causing the function to return the filtered value instead.",
                 "tags": [
                     {
@@ -30830,7 +30946,7 @@
             "file": "wp-includes/cron.php",
             "type": "filter",
             "doc": {
-                "description": "Filter to preflight or hijack retrieving a scheduled event.",
+                "description": "Filter to override retrieving a scheduled event.",
                 "long_description": "Returning a non-null value will short-circuit the normal process, returning the filtered value instead.\n Return false if the event does not exist, otherwise an event object should be returned.",
                 "tags": [
                     {
@@ -31841,7 +31957,7 @@
             "file": "wp-includes/cron.php",
             "type": "filter",
             "doc": {
-                "description": "Filter to preflight or hijack rescheduling of a recurring event.",
+                "description": "Filter to override rescheduling of a recurring event.",
                 "long_description": "Returning a non-null value will short-circuit the normal rescheduling process, causing the function to return the filtered value instead.\n For plugins replacing wp-cron, return true if the event was successfully rescheduled, false or a WP_Error if not.",
                 "tags": [
                     {
@@ -31889,7 +32005,7 @@
             "file": "wp-includes/cron.php",
             "type": "filter",
             "doc": {
-                "description": "Filter to preflight or hijack scheduling an event.",
+                "description": "Filter to override scheduling an event.",
                 "long_description": "Returning a non-null value will short-circuit adding the event to the cron array, causing the function to return the filtered value instead.\n Both single events and recurring events are passed through this filter; single events have `$event->schedule` as false, whereas recurring events have this set to a recurrence from wp_get_schedules(). Recurring events also have the integer recurrence interval set as `$event->interval`.\n For plugins replacing wp-cron, it is recommended you check for an identical event within ten minutes and apply the {@see 'schedule_event'} filter to check if another plugin has disallowed the event before scheduling.\n Return true if the event was scheduled, false or a WP_Error if not.",
                 "tags": [
                     {
@@ -32317,7 +32433,7 @@
             "file": "wp-includes/cron.php",
             "type": "filter",
             "doc": {
-                "description": "Filter to preflight or hijack unscheduling of events.",
+                "description": "Filter to override unscheduling of events.",
                 "long_description": "Returning a non-null value will short-circuit the normal unscheduling process, causing the function to return the filtered value instead.\n For plugins replacing wp-cron, return true if the event was successfully unscheduled, false or a WP_Error if not.",
                 "tags": [
                     {
@@ -32381,7 +32497,7 @@
             "file": "wp-includes/cron.php",
             "type": "filter",
             "doc": {
-                "description": "Filter to preflight or hijack clearing all events attached to the hook.",
+                "description": "Filter to override clearing all events attached to the hook.",
                 "long_description": "Returning a non-null value will short-circuit the normal unscheduling process, causing the function to return the filtered value instead.\n For plugins replacing wp-cron, return the number of events successfully unscheduled (zero if no events were registered with the hook) or false if unscheduling one or more events fails.",
                 "tags": [
                     {
@@ -32471,6 +32587,65 @@
                 "long_description_html": ""
             },
             "args": 3
+        },
+        {
+            "name": "pre_unzip_file",
+            "file": "wp-admin/includes/file.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters archive unzipping to override with a custom process.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.4.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The result of the override. True on success, otherwise WP Error. Default null.",
+                        "types": [
+                            "null",
+                            "true",
+                            "\\WP_Error"
+                        ],
+                        "variable": "$result"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Full path and filename of ZIP archive.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$file"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Full path on the filesystem to extract archive to.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$to"
+                    },
+                    {
+                        "name": "param",
+                        "content": "A full list of required folders that need to be created.",
+                        "types": [
+                            "string[]"
+                        ],
+                        "variable": "$needed_dirs"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The space required to unzip the file and copy its contents, with a 10% buffer.",
+                        "types": [
+                            "float"
+                        ],
+                        "variable": "$required_space"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 5
         },
         {
             "name": "pre_update_option",
@@ -32958,6 +33133,90 @@
             "args": 2
         },
         {
+            "name": "pre_wp_get_https_detection_errors",
+            "file": "wp-includes/https-detection.php",
+            "type": "filter",
+            "doc": {
+                "description": "Short-circuits the process of detecting errors related to HTTPS support.",
+                "long_description": "Returning a `WP_Error` from the filter will effectively short-circuit the default logic of trying a remote request to the site over HTTPS, storing the errors array from the returned `WP_Error` instead.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.4.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Error object to short-circuit detection, or null to continue with the default behavior.",
+                        "types": [
+                            "null",
+                            "\\WP_Error"
+                        ],
+                        "variable": "$pre"
+                    },
+                    {
+                        "name": "return",
+                        "content": "Error object if HTTPS detection errors are found, null otherwise.",
+                        "types": [
+                            "null",
+                            "\\WP_Error"
+                        ]
+                    }
+                ],
+                "long_description_html": "<p>Returning a <code>WP_Error</code> from the filter will effectively short-circuit the default logic of trying a remote request to the site over HTTPS, storing the errors array from the returned <code>WP_Error</code> instead.</p>"
+            },
+            "args": 1
+        },
+        {
+            "name": "pre_wp_get_loading_optimization_attributes",
+            "file": "wp-includes/media.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters whether to short-circuit loading optimization attributes.",
+                "long_description": "Returning an array from the filter will effectively short-circuit the loading of optimization attributes, returning that value instead.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.4.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "False by default, or array of loading optimization attributes to short-circuit.",
+                        "types": [
+                            "array",
+                            "false"
+                        ],
+                        "variable": "$loading_attrs"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The tag name.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$tag_name"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Array of the attributes for the tag.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$attr"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Context for the element for which the loading optimization attribute is requested.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$context"
+                    }
+                ],
+                "long_description_html": "<p>Returning an array from the filter will effectively short-circuit the loading of optimization attributes, returning that value instead.</p>"
+            },
+            "args": 4
+        },
+        {
             "name": "pre_wp_is_site_initialized",
             "file": "wp-includes/ms-site.php",
             "type": "filter",
@@ -33315,32 +33574,6 @@
                 "long_description_html": ""
             },
             "args": 3
-        },
-        {
-            "name": "pre_wp_update_https_detection_errors",
-            "file": "wp-includes/https-detection.php",
-            "type": "filter",
-            "doc": {
-                "description": "Short-circuits the process of detecting errors related to HTTPS support.",
-                "long_description": "Returning a `WP_Error` from the filter will effectively short-circuit the default logic of trying a remote request to the site over HTTPS, storing the errors array from the returned `WP_Error` instead.",
-                "tags": [
-                    {
-                        "name": "since",
-                        "content": "5.7.0"
-                    },
-                    {
-                        "name": "param",
-                        "content": "Error object to short-circuit detection, or null to continue with the default behavior.",
-                        "types": [
-                            "null",
-                            "\\WP_Error"
-                        ],
-                        "variable": "$pre"
-                    }
-                ],
-                "long_description_html": "<p>Returning a <code>WP_Error</code> from the filter will effectively short-circuit the default logic of trying a remote request to the site over HTTPS, storing the errors array from the returned <code>WP_Error</code> instead.</p>"
-            },
-            "args": 1
         },
         {
             "name": "pre_{$field}",
@@ -34051,6 +34284,72 @@
                             "bool"
                         ],
                         "variable": "$bulk"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 2
+        },
+        {
+            "name": "quick_edit_enabled_for_post_type",
+            "file": "wp-admin/includes/class-wp-posts-list-table.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters whether Quick Edit should be enabled for the given post type.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.4.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether to enable the Quick Edit functionality. Default true.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$enable"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Post type name.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$post_type"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 2
+        },
+        {
+            "name": "quick_edit_enabled_for_taxonomy",
+            "file": "wp-admin/includes/class-wp-terms-list-table.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters whether Quick Edit should be enabled for the given taxonomy.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.4.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether to enable the Quick Edit functionality. Default true.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$enable"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Taxonomy name.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$taxonomy"
                     }
                 ],
                 "long_description_html": ""
@@ -46385,6 +46684,64 @@
             "args": 1
         },
         {
+            "name": "unzip_file",
+            "file": "wp-admin/includes/file.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the result of unzipping an archive.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.4.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The result of unzipping the archive. True on success, otherwise WP_Error. Default true.",
+                        "types": [
+                            "true",
+                            "\\WP_Error"
+                        ],
+                        "variable": "$result"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Full path and filename of ZIP archive.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$file"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Full path on the filesystem the archive was extracted to.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$to"
+                    },
+                    {
+                        "name": "param",
+                        "content": "A full list of required folders that were created.",
+                        "types": [
+                            "string[]"
+                        ],
+                        "variable": "$needed_dirs"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The space required to unzip the file and copy its contents, with a 10% buffer.",
+                        "types": [
+                            "float"
+                        ],
+                        "variable": "$required_space"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 5
+        },
+        {
             "name": "unzip_file_use_ziparchive",
             "file": "wp-admin/includes/file.php",
             "type": "filter",
@@ -50239,6 +50596,80 @@
             "args": 2
         },
         {
+            "name": "wp_admin_notice_args",
+            "file": "wp-includes/functions.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the arguments for an admin notice.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.4.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The arguments for the admin notice.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$args"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The message for the admin notice.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$message"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 2
+        },
+        {
+            "name": "wp_admin_notice_markup",
+            "file": "wp-includes/functions.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the markup for an admin notice.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.4.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The HTML markup for the admin notice.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$markup"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The message for the admin notice.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$message"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The arguments for the admin notice.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$args"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 3
+        },
+        {
             "name": "wp_ajax_cropped_attachment_id",
             "file": "wp-admin/includes/ajax-actions.php",
             "type": "filter",
@@ -50560,7 +50991,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Attributes of the shortcode. @see wp_audio_shortcode()",
+                        "content": "Attributes of the shortcode. See {@see wp_audio_shortcode()}.",
                         "types": [
                             "array"
                         ],
@@ -52906,6 +53337,55 @@
             "args": 2
         },
         {
+            "name": "wp_get_loading_optimization_attributes",
+            "file": "wp-includes/media.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the loading optimization attributes.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.4.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The loading optimization attributes.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$loading_attrs"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The tag name.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$tag_name"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Array of the attributes for the tag.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$attr"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Context for the element for which the loading optimization attribute is requested.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$context"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 4
+        },
+        {
             "name": "wp_get_missing_image_subsizes",
             "file": "wp-admin/includes/image.php",
             "type": "filter",
@@ -53809,7 +54289,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The <code>decoding</code> attribute value. Returning a falsey value will result in the attribute being omitted for the image. Otherwise, it may be: 'async' (default), 'sync', or 'auto'.",
+                        "content": "The <code>decoding</code> attribute value. Returning a falsey value will result in the attribute being omitted for the image. Otherwise, it may be: 'async', 'sync', or 'auto'. Defaults to false.",
                         "types": [
                             "string",
                             "false",
@@ -55296,6 +55776,31 @@
             "args": 2
         },
         {
+            "name": "wp_loading_optimization_force_header_contexts",
+            "file": "wp-includes/media.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the header-specific contexts.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.4.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Map of contexts for which elements should be considered in the header of the page, as $context =&gt; $enabled pairs. The $enabled should always be true.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$default_header_enforced_contexts"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 1
+        },
+        {
             "name": "wp_login_errors",
             "file": "wp-login.php",
             "type": "filter",
@@ -55855,7 +56360,7 @@
                         "types": [
                             "bool"
                         ],
-                        "variable": ""
+                        "variable": "$create"
                     }
                 ],
                 "long_description_html": ""
@@ -56258,6 +56763,39 @@
             "args": 2
         },
         {
+            "name": "wp_post_revision_meta_keys",
+            "file": "wp-includes/revision.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filter the list of post meta keys to be revisioned.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.4.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "An array of meta fields to be revisioned.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$keys"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The post type being revisioned.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$post_type"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 2
+        },
+        {
             "name": "wp_post_revision_title_expanded",
             "file": "wp-includes/post-template.php",
             "type": "filter",
@@ -56392,7 +56930,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Array of prepared attachment data. @see wp_prepare_attachment_for_js().",
+                        "content": "Array of prepared attachment data. See {@see wp_prepare_attachment_for_js()}.",
                         "types": [
                             "array"
                         ],
@@ -56845,7 +57383,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "{ An array of callable erasers of personal data. Default empty array. @type array ...$0 { Array of personal data exporters. @type callable $callback               Callable eraser that accepts an email address and a page and returns an array with boolean values for whether items were removed or retained and any messages from the eraser, as well as if additional pages are available. @type string   $exporter_friendly_name Translated user facing friendly name for the eraser. }\n}",
+                        "content": "{ An array of callable erasers of personal data. Default empty array. @type array ...$0 { Array of personal data exporters. @type callable $callback               Callable eraser that accepts an email address and a page number, and returns an array with boolean values for whether items were removed or retained and any messages from the eraser, as well as if additional pages are available. @type string   $exporter_friendly_name Translated user facing friendly name for the eraser. }\n}",
                         "types": [
                             "array"
                         ],
@@ -56870,7 +57408,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The personal data for the given exporter and page.",
+                        "content": "{ The personal data for the given exporter and page number. @type bool     $items_removed  Whether items were actually removed or not. @type bool     $items_retained Whether items were retained or not. @type string[] $messages       An array of messages to add to the personal data export file. @type bool     $done           Whether the eraser is finished or not.\n}",
                         "types": [
                             "array"
                         ],
@@ -56894,7 +57432,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The page for this response.",
+                        "content": "The page number for this response.",
                         "types": [
                             "int"
                         ],
@@ -56935,7 +57473,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The personal data for the given exporter and page.",
+                        "content": "The personal data for the given exporter and page number.",
                         "types": [
                             "array"
                         ],
@@ -56959,7 +57497,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The page for this response.",
+                        "content": "The page number for this response.",
                         "types": [
                             "int"
                         ],
@@ -57008,7 +57546,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "{ An array of callable exporters of personal data. Default empty array. @type array ...$0 { Array of personal data exporters. @type callable $callback               Callable exporter function that accepts an email address and a page and returns an array of name =&gt; value pairs of personal data. @type string   $exporter_friendly_name Translated user facing friendly name for the exporter. }\n}",
+                        "content": "{ An array of callable exporters of personal data. Default empty array. @type array ...$0 { Array of personal data exporters. @type callable $callback               Callable exporter function that accepts an email address and a page number and returns an array of name =&gt; value pairs of personal data. @type string   $exporter_friendly_name Translated user facing friendly name for the exporter. }\n}",
                         "types": [
                             "array"
                         ],
@@ -60387,7 +60925,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Attributes of the shortcode. @see wp_video_shortcode()",
+                        "content": "Attributes of the shortcode. See {@see wp_video_shortcode()}.",
                         "types": [
                             "array"
                         ],
@@ -60542,7 +61080,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Uploads path without subdirectory. @see wp_upload_dir()",
+                        "content": "Uploads path without subdirectory. See {@see wp_upload_dir()}.",
                         "types": [
                             "string"
                         ],
@@ -62165,7 +62703,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "An array of override parameters for this file. Boolean false if none are provided. @see _wp_handle_upload().",
+                        "content": "An array of override parameters for this file. Boolean false if none are provided. See {@see _wp_handle_upload()}.",
                         "types": [
                             "array",
                             "false"
