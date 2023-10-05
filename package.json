@@ -29,8 +29,13 @@
 	},
 	"scripts": {
 		"check": "npm-run-all validate:** check:**",
+		"show": "npm-run-all show:**",
 		"check:duplicate-actions": "jq --exit-status '[reduce .hooks[].name as $n ({}; .[$n] += 1) | to_entries[] | select(.value > 1)] == []' hooks/actions.json",
 		"check:duplicate-filters": "jq --exit-status '[reduce .hooks[].name as $n ({}; .[$n] += 1) | to_entries[] | select(.value > 1)] == []' hooks/filters.json",
+		"show:empty-variables-in-actions": "jq '.hooks[] | select(.doc.tags[] .variable == \"\")' hooks/actions.json",
+		"show:empty-variables-in-filters": "jq '.hooks[] | select(.doc.tags[] .variable == \"\")' hooks/filters.json",
+		"show:duplicate-actions": "jq '[reduce .hooks[].name as $n ({}; .[$n] += 1) | to_entries[] | select(.value > 1)]' hooks/actions.json",
+		"show:duplicate-filters": "jq '[reduce .hooks[].name as $n ({}; .[$n] += 1) | to_entries[] | select(.value > 1)]' hooks/filters.json",
 		"validate:schema": "ajv validate -s node_modules/ajv/lib/refs/json-schema-draft-07.json -d hooks/schema.json",
 		"validate:actions": "ajv validate -s hooks/schema.json -d hooks/actions.json",
 		"validate:filters": "ajv validate -s hooks/schema.json -d hooks/filters.json"
