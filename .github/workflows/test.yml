@@ -14,14 +14,14 @@ jobs:
     name: Tests
     runs-on: ubuntu-latest
     steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
     - name: Install Nodejs
       uses: actions/setup-node@v3
       with:
         node-version-file: '.nvmrc'
         cache: npm
-
-    - name: Checkout repository
-      uses: actions/checkout@v3
 
     - name: Install dependencies
       run: |
