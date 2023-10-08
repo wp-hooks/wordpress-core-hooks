@@ -2,6 +2,9 @@
 	"name": "@wp-hooks/wordpress-core",
 	"version": "1.5.0",
 	"description": "All the actions and filters from WordPress core in machine-readable JSON format.",
+	"engines": {
+		"node": "18"
+	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/wp-hooks/wordpress-core.git"
