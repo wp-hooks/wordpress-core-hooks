@@ -35139,6 +35139,11 @@
                         "content": "6.0.0"
                     },
                     {
+                        "name": "since",
+                        "content": "6.4.0",
+                        "description": "Added <code>late_route_registration</code>, <code>autosave_rest_controller_class</code> and <code>revisions_rest_controller_class</code> arguments."
+                    },
+                    {
                         "name": "param",
                         "content": "Array of arguments for registering a post type. See the register_post_type() function for accepted arguments.",
                         "types": [
@@ -38168,6 +38173,11 @@
                     {
                         "name": "since",
                         "content": "4.4.0"
+                    },
+                    {
+                        "name": "since",
+                        "content": "6.3.2",
+                        "description": "Moved the block to catch the filter added on rest_cookie_check_errors() from rest-api.php"
                     },
                     {
                         "name": "param",
@@ -51111,6 +51121,39 @@
             "args": 2
         },
         {
+            "name": "wp_authorize_application_redirect_url_invalid_protocols",
+            "file": "wp-admin/includes/user.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the list of invalid protocols used in applications redirect URLs.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.3.2"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Array of invalid protocols.",
+                        "types": [
+                            "string[]"
+                        ],
+                        "variable": "$bad_protocols"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The redirect URL to be validated.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$url"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 2
+        },
+        {
             "name": "wp_cache_themes_persistently",
             "file": "wp-includes/theme.php",
             "type": "filter",
@@ -51708,6 +51751,39 @@
                 "long_description_html": ""
             },
             "args": 3
+        },
+        {
+            "name": "wp_create_file_in_uploads",
+            "file": "wp-admin/includes/class-custom-image-header.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the attachment file path after the custom header or background image is set.",
+                "long_description": "Used for file replication.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "2.1.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Path to the file.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$file"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Attachment ID.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$attachment_id"
+                    }
+                ],
+                "long_description_html": "<p>Used for file replication.</p>"
+            },
+            "args": 2
         },
         {
             "name": "wp_dashboard_widgets",

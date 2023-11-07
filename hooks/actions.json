@@ -18315,39 +18315,6 @@
             "args": 1
         },
         {
-            "name": "wp_create_file_in_uploads",
-            "file": "wp-admin/includes/class-custom-image-header.php",
-            "type": "action",
-            "doc": {
-                "description": "Fires after the header image is set or an error is returned.",
-                "long_description": "",
-                "tags": [
-                    {
-                        "name": "since",
-                        "content": "2.1.0"
-                    },
-                    {
-                        "name": "param",
-                        "content": "Path to the file.",
-                        "types": [
-                            "string"
-                        ],
-                        "variable": "$file"
-                    },
-                    {
-                        "name": "param",
-                        "content": "Attachment ID.",
-                        "types": [
-                            "int"
-                        ],
-                        "variable": "$attachment_id"
-                    }
-                ],
-                "long_description_html": ""
-            },
-            "args": 2
-        },
-        {
             "name": "wp_create_nav_menu",
             "file": "wp-includes/nav-menu.php",
             "type": "action",
