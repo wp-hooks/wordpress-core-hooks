@@ -77,7 +77,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The context of whether the current revision is the old or the new one. Values are 'to' or 'from'.",
+                        "content": "The context of whether the current revision is the old or the new one. Either 'to' or 'from'.",
                         "types": [
                             "string"
                         ],
@@ -2681,7 +2681,7 @@
                         "types": [
                             "array[]"
                         ],
-                        "variable": ""
+                        "variable": "$fallback_blocks"
                     }
                 ],
                 "long_description_html": "<p>Returning a falsey value will opt out of the fallback and cause the block not to render. To customise the blocks provided return an array of blocks - these should be valid children of the <code>core/navigation</code> block.</p>"
@@ -7865,7 +7865,7 @@
             "file": "wp-includes/block-template-utils.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the list of template types.",
+                "description": "Filters the list of default template types.",
                 "long_description": "",
                 "tags": [
                     {
@@ -8323,7 +8323,7 @@
                         "types": [
                             "string"
                         ],
-                        "variable": "$locale"
+                        "variable": "$determined_locale"
                     }
                 ],
                 "long_description_html": ""
@@ -12425,7 +12425,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Template type: 'wp_template' or 'wp_template_part'.",
+                        "content": "Template type. Either 'wp_template' or 'wp_template_part'.",
                         "types": [
                             "string"
                         ],
@@ -12467,9 +12467,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "Template type: 'wp_template' or 'wp_template_part'.",
+                        "content": "Template type. Either 'wp_template' or 'wp_template_part'.",
                         "types": [
-                            "array"
+                            "string"
                         ],
                         "variable": "$template_type"
                     }
@@ -17634,9 +17634,10 @@
                     },
                     {
                         "name": "param",
-                        "content": "The block template, template part, or pattern that the anchor block belongs to.",
+                        "content": "The block template, template part, <code>wp_navigation</code> post type, or pattern that the anchor block belongs to.",
                         "types": [
                             "\\WP_Block_Template",
+                            "\\WP_Post",
                             "array"
                         ],
                         "variable": "$context"
@@ -21099,7 +21100,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Login error message.",
+                        "content": "Login error messages.",
                         "types": [
                             "string"
                         ],
@@ -23409,7 +23410,7 @@
             "file": "wp-admin/includes/class-wp-ms-users-list-table.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the span class for a site listing on the mulisite user list table.",
+                "description": "Filters the span class for a site listing on the multisite user list table.",
                 "long_description": "",
                 "tags": [
                     {
@@ -24741,7 +24742,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the text of the email sent when a change of site admin email address is attempted.",
-                "long_description": "The following strings have a special meaning and will get replaced dynamically: ###USERNAME###  The current user's username. ###ADMIN_URL### The link to click on to confirm the email change. ###EMAIL###     The proposed new site admin email address. ###SITENAME###  The name of the site. ###SITEURL###   The URL to the site.",
+                "long_description": "The following strings have a special meaning and will get replaced dynamically:\n  - ###USERNAME###  The current user's username.\n  - ###ADMIN_URL### The link to click on to confirm the email change.\n  - ###EMAIL###     The proposed new site admin email address.\n  - ###SITENAME###  The name of the site.\n  - ###SITEURL###   The URL to the site.",
                 "tags": [
                     {
                         "name": "since",
@@ -24770,7 +24771,7 @@
                         "variable": "$new_admin_email"
                     }
                 ],
-                "long_description_html": "<p>The following strings have a special meaning and will get replaced dynamically:</p> <h3>USERNAME###  The current user's username.</h3> <h3>ADMIN_URL### The link to click on to confirm the email change.</h3> <h3>EMAIL###     The proposed new site admin email address.</h3> <h3>SITENAME###  The name of the site.</h3> <h3>SITEURL###   The URL to the site.</h3>"
+                "long_description_html": "<p>The following strings have a special meaning and will get replaced dynamically:</p> <ul> <li> <h3>USERNAME###  The current user's username.</h3> </li> <li> <h3>ADMIN_URL### The link to click on to confirm the email change.</h3> </li> <li> <h3>EMAIL###     The proposed new site admin email address.</h3> </li> <li> <h3>SITENAME###  The name of the site.</h3> </li> <li> <h3>SITEURL###   The URL to the site.</h3> </li> </ul>"
             },
             "args": 2
         },
@@ -30573,7 +30574,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Template type: 'wp_template' or 'wp_template_part'.",
+                        "content": "Template type. Either 'wp_template' or 'wp_template_part'.",
                         "types": [
                             "string"
                         ],
@@ -30615,7 +30616,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Template type: 'wp_template' or 'wp_template_part'.",
+                        "content": "Template type. Either 'wp_template' or 'wp_template_part'.",
                         "types": [
                             "string"
                         ],
@@ -30657,7 +30658,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "'wp_template' or 'wp_template_part'.",
+                        "content": "Template type. Either 'wp_template' or 'wp_template_part'.",
                         "types": [
                             "string"
                         ],
@@ -36360,7 +36361,7 @@
             "file": "wp-includes/rest-api/search/class-wp-rest-post-format-search-handler.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the query arguments for a REST API search request.",
+                "description": "Filters the query arguments for a REST API post format search request.",
                 "long_description": "Enables adding extra arguments or setting defaults for a post format search request.",
                 "tags": [
                     {
@@ -36393,7 +36394,7 @@
             "file": "wp-includes/rest-api/search/class-wp-rest-post-search-handler.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the query arguments for a REST API search request.",
+                "description": "Filters the query arguments for a REST API post search request.",
                 "long_description": "Enables adding extra arguments or setting defaults for a post search request.",
                 "tags": [
                     {
@@ -38167,7 +38168,7 @@
             "file": "wp-includes/rest-api/class-wp-rest-server.php",
             "type": "filter",
             "doc": {
-                "description": "Filters whether to send nocache headers on a REST API request.",
+                "description": "Filters whether to send no-cache headers on a REST API request.",
                 "long_description": "",
                 "tags": [
                     {
@@ -38177,7 +38178,7 @@
                     {
                         "name": "since",
                         "content": "6.3.2",
-                        "description": "Moved the block to catch the filter added on rest_cookie_check_errors() from rest-api.php"
+                        "description": "Moved the block to catch the filter added on rest_cookie_check_errors() from wp-includes/rest-api.php."
                     },
                     {
                         "name": "param",
@@ -38197,7 +38198,7 @@
             "file": "wp-includes/rest-api/search/class-wp-rest-term-search-handler.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the query arguments for a REST API search request.",
+                "description": "Filters the query arguments for a REST API term search request.",
                 "long_description": "Enables adding extra arguments or setting defaults for a term search request.",
                 "tags": [
                     {
@@ -39479,7 +39480,7 @@
                         "name": "param",
                         "content": "The sanitized option value.",
                         "types": [
-                            "string"
+                            "mixed"
                         ],
                         "variable": "$value"
                     },
@@ -39495,7 +39496,7 @@
                         "name": "param",
                         "content": "The original value passed to the function.",
                         "types": [
-                            "string"
+                            "mixed"
                         ],
                         "variable": "$original_value"
                     }
@@ -54597,11 +54598,11 @@
                     },
                     {
                         "name": "param",
-                        "content": "Inline JavaScript code.",
+                        "content": "Inline data.",
                         "types": [
                             "string"
                         ],
-                        "variable": "$javascript"
+                        "variable": "$data"
                     }
                 ],
                 "long_description_html": ""
@@ -58037,7 +58038,7 @@
             "file": "wp-includes/general-template.php",
             "type": "filter",
             "doc": {
-                "description": "Filters domains and URLs for resource hints of relation type.",
+                "description": "Filters domains and URLs for resource hints of the given relation type.",
                 "long_description": "",
                 "tags": [
                     {
@@ -58059,7 +58060,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The relation type the URLs are printed for, e.g. 'preconnect' or 'prerender'.",
+                        "content": "The relation type the URLs are printed for. One of 'dns-prefetch', 'preconnect', 'prefetch', or 'prerender'.",
                         "types": [
                             "string"
                         ],
@@ -59898,7 +59899,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Location of the separator ('left' or 'right').",
+                        "content": "Location of the separator (either 'left' or 'right').",
                         "types": [
                             "string"
                         ],
@@ -61968,9 +61969,10 @@
                     },
                     {
                         "name": "param",
-                        "content": "The application doing the redirect.",
+                        "content": "The application doing the redirect or false to omit the header.",
                         "types": [
-                            "string"
+                            "string",
+                            "false"
                         ],
                         "variable": "$x_redirect_by"
                     },
