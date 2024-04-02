@@ -2664,6 +2664,38 @@
             "args": 2
         },
         {
+            "name": "block_core_navigation_listable_blocks",
+            "file": "wp-includes/blocks/navigation.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filter the list of blocks that need a list item wrapper.",
+                "long_description": "Affords the ability to customize which blocks need a list item wrapper when rendered within a core/navigation block. This is useful for blocks that are not list items but should be wrapped in a list item when used as a child of a navigation block.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.5.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The list of blocks that need a list item wrapper.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$needs_list_item_wrapper"
+                    },
+                    {
+                        "name": "return",
+                        "content": "The list of blocks that need a list item wrapper.",
+                        "types": [
+                            "array"
+                        ]
+                    }
+                ],
+                "long_description_html": "<p>Affords the ability to customize which blocks need a list item wrapper when rendered within a core/navigation block. This is useful for blocks that are not list items but should be wrapped in a list item when used as a child of a navigation block.</p>"
+            },
+            "args": 1
+        },
+        {
             "name": "block_core_navigation_render_fallback",
             "file": "wp-includes/blocks/navigation.php",
             "type": "filter",
@@ -11562,6 +11594,31 @@
             "args": 1
         },
         {
+            "name": "font_dir",
+            "file": "wp-includes/fonts.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the fonts directory data.",
+                "long_description": "This filter allows developers to modify the fonts directory data.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.5.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "{ Array of information about the font upload directory. @type string       $path    Base directory and subdirectory or full path to the fonts upload directory. @type string       $url     Base URL and subdirectory or absolute URL to the fonts upload directory. @type string       $subdir  Subdirectory @type string       $basedir Path without subdir. @type string       $baseurl URL path without subdir. @type string|false $error   False or error message.\n}",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$font_dir"
+                    }
+                ],
+                "long_description_html": "<p>This filter allows developers to modify the fonts directory data.</p>"
+            },
+            "args": 1
+        },
+        {
             "name": "force_filtered_html_on_import",
             "file": "wp-admin/admin.php",
             "type": "filter",
@@ -12518,6 +12575,72 @@
                 "long_description_html": ""
             },
             "args": 3
+        },
+        {
+            "name": "get_block_type_uses_context",
+            "file": "wp-includes/class-wp-block-type.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the registered uses context for a block type.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.5.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Array of registered uses context for a block type.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$uses_context"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The full block type object.",
+                        "types": [
+                            "\\WP_Block_Type"
+                        ],
+                        "variable": "$block_type"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 2
+        },
+        {
+            "name": "get_block_type_variations",
+            "file": "wp-includes/class-wp-block-type.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the registered variations for a block type.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.5.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Array of registered variations for a block type.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$variations"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The full block type object.",
+                        "types": [
+                            "\\WP_Block_Type"
+                        ],
+                        "variable": "$block_type"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 2
         },
         {
             "name": "get_bloginfo_rss",
@@ -17597,6 +17720,66 @@
             "args": 4
         },
         {
+            "name": "hooked_block",
+            "file": "wp-includes/blocks.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the parsed block array for a given hooked block.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.5.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The parsed block array for the given hooked block type, or null to suppress the block.",
+                        "types": [
+                            "array",
+                            "null"
+                        ],
+                        "variable": "$parsed_hooked_block"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The hooked block type name.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$hooked_block_type"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The relative position of the hooked block.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$relative_position"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The anchor block, in parsed block array format.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$parsed_anchor_block"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The block template, template part, <code>wp_navigation</code> post type, or pattern that the anchor block belongs to.",
+                        "types": [
+                            "\\WP_Block_Template",
+                            "\\WP_Post",
+                            "array"
+                        ],
+                        "variable": "$context"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 5
+        },
+        {
             "name": "hooked_block_types",
             "file": "wp-includes/blocks.php",
             "type": "filter",
@@ -17646,6 +17829,66 @@
                 "long_description_html": ""
             },
             "args": 4
+        },
+        {
+            "name": "hooked_block_{$hooked_block_type}",
+            "file": "wp-includes/blocks.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the parsed block array for a given hooked block.",
+                "long_description": "The dynamic portion of the hook name, `$hooked_block_type`, refers to the block type name of the specific hooked block.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.5.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The parsed block array for the given hooked block type, or null to suppress the block.",
+                        "types": [
+                            "array",
+                            "null"
+                        ],
+                        "variable": "$parsed_hooked_block"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The hooked block type name.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$hooked_block_type"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The relative position of the hooked block.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$relative_position"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The anchor block, in parsed block array format.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$parsed_anchor_block"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The block template, template part, <code>wp_navigation</code> post type, or pattern that the anchor block belongs to.",
+                        "types": [
+                            "\\WP_Block_Template",
+                            "\\WP_Post",
+                            "array"
+                        ],
+                        "variable": "$context"
+                    }
+                ],
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$hooked_block_type</code>, refers to the block type name of the specific hooked block.</p>"
+            },
+            "args": 5
         },
         {
             "name": "http_allowed_safe_ports",
@@ -18707,6 +18950,39 @@
                 "long_description_html": "<p>Returning a non-null value from the filter will effectively short-circuit image_resize_dimensions(), returning that value instead.</p>"
             },
             "args": 6
+        },
+        {
+            "name": "image_save_progressive",
+            "file": "wp-includes/class-wp-image-editor-gd.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters whether to output progressive images (if available).",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.5.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether to use progressive images for output if available. Default false.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$interlace"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The mime type being saved.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$mime_type"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 2
         },
         {
             "name": "image_send_to_editor",
@@ -20910,6 +21186,39 @@
                     }
                 ],
                 "long_description_html": ""
+            },
+            "args": 2
+        },
+        {
+            "name": "load_translation_file",
+            "file": "wp-includes/l10n.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the file path for loading translations for the given text domain.",
+                "long_description": "Similar to the {@see 'load_textdomain_mofile'} filter with the difference that the file path could be for an MO or PHP file.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.5.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Path to the translation file to load.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$file"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The text domain.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$domain"
+                    }
+                ],
+                "long_description_html": "<p>Similar to the {@see 'load_textdomain_mofile'} filter with the difference that the file path could be for an MO or PHP file.</p>"
             },
             "args": 2
         },
@@ -24774,6 +25083,31 @@
                 "long_description_html": "<p>The following strings have a special meaning and will get replaced dynamically:</p> <ul> <li> <h3>USERNAME###  The current user's username.</h3> </li> <li> <h3>ADMIN_URL### The link to click on to confirm the email change.</h3> </li> <li> <h3>EMAIL###     The proposed new site admin email address.</h3> </li> <li> <h3>SITENAME###  The name of the site.</h3> </li> <li> <h3>SITEURL###   The URL to the site.</h3> </li> </ul>"
             },
             "args": 2
+        },
+        {
+            "name": "new_admin_email_subject",
+            "file": "wp-admin/includes/misc.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the subject of the email sent when a change of site admin email address is attempted.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.5.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Subject of the email.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$subject"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 1
         },
         {
             "name": "new_network_admin_email_content",
@@ -30781,6 +31115,40 @@
             "args": 1
         },
         {
+            "name": "pre_get_language_files_from_path",
+            "file": "wp-includes/class-wp-textdomain-registry.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the translation files retrieved from a specified path before the actual lookup.",
+                "long_description": "Returning a non-null value from the filter will effectively short-circuit the MO files lookup, returning that value instead.\n This can be useful in situations where the directory contains a large number of files and the default glob() function becomes expensive in terms of performance.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.5.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "List of translation files. Default null.",
+                        "types": [
+                            "null",
+                            "array"
+                        ],
+                        "variable": "$files"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The path from which translation files are being fetched.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$path"
+                    }
+                ],
+                "long_description_html": "<p>Returning a non-null value from the filter will effectively short-circuit the MO files lookup, returning that value instead.</p> <p>This can be useful in situations where the directory contains a large number of files and the default glob() function becomes expensive in terms of performance.</p>"
+            },
+            "args": 2
+        },
+        {
             "name": "pre_get_lastpostmodified",
             "file": "wp-includes/post.php",
             "type": "filter",
@@ -36091,6 +36459,31 @@
             "args": 2
         },
         {
+            "name": "rest_font_collections_collection_params",
+            "file": "wp-includes/rest-api/endpoints/class-wp-rest-font-collections-controller.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters REST API collection parameters for the font collections controller.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.5.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "JSON Schema-formatted collection parameters.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$query_params"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 1
+        },
+        {
             "name": "rest_get_max_batch_size",
             "file": "wp-includes/rest-api/class-wp-rest-server.php",
             "type": "filter",
@@ -37103,6 +37496,47 @@
             "args": 3
         },
         {
+            "name": "rest_prepare_font_collection",
+            "file": "wp-includes/rest-api/endpoints/class-wp-rest-font-collections-controller.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the font collection data for a REST API response.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.5.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The response object.",
+                        "types": [
+                            "\\WP_REST_Response"
+                        ],
+                        "variable": "$response"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The font collection object.",
+                        "types": [
+                            "\\WP_Font_Collection"
+                        ],
+                        "variable": "$item"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Request used to generate the response.",
+                        "types": [
+                            "\\WP_REST_Request"
+                        ],
+                        "variable": "$request"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 3
+        },
+        {
             "name": "rest_prepare_menu_location",
             "file": "wp-includes/rest-api/endpoints/class-wp-rest-menu-locations-controller.php",
             "type": "filter",
@@ -37634,6 +38068,88 @@
                     {
                         "name": "param",
                         "content": "The request object.",
+                        "types": [
+                            "\\WP_REST_Request"
+                        ],
+                        "variable": "$request"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 3
+        },
+        {
+            "name": "rest_prepare_wp_font_face",
+            "file": "wp-includes/rest-api/endpoints/class-wp-rest-font-faces-controller.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the font face data for a REST API response.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.5.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The response object.",
+                        "types": [
+                            "\\WP_REST_Response"
+                        ],
+                        "variable": "$response"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Font face post object.",
+                        "types": [
+                            "\\WP_Post"
+                        ],
+                        "variable": "$post"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Request object.",
+                        "types": [
+                            "\\WP_REST_Request"
+                        ],
+                        "variable": "$request"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 3
+        },
+        {
+            "name": "rest_prepare_wp_font_family",
+            "file": "wp-includes/rest-api/endpoints/class-wp-rest-font-families-controller.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the font family data for a REST API response.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.5.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The response object.",
+                        "types": [
+                            "\\WP_REST_Response"
+                        ],
+                        "variable": "$response"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Font family post object.",
+                        "types": [
+                            "\\WP_Post"
+                        ],
+                        "variable": "$post"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Request object.",
                         "types": [
                             "\\WP_REST_Request"
                         ],
@@ -38446,6 +38962,56 @@
                 "long_description_html": ""
             },
             "args": 2
+        },
+        {
+            "name": "rest_wp_font_face_collection_params",
+            "file": "wp-includes/rest-api/endpoints/class-wp-rest-font-faces-controller.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters collection parameters for the font face controller.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.5.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "JSON Schema-formatted collection parameters.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$query_params"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 1
+        },
+        {
+            "name": "rest_wp_font_family_collection_params",
+            "file": "wp-includes/rest-api/endpoints/class-wp-rest-font-families-controller.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters collection parameters for the font family controller.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.5.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "JSON Schema-formatted collection parameters.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$query_params"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 1
         },
         {
             "name": "rest_{$this->post_type}_collection_params",
@@ -40015,6 +40581,39 @@
                 "long_description_html": ""
             },
             "args": 3
+        },
+        {
+            "name": "script_module_loader_src",
+            "file": "wp-includes/class-wp-script-modules.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the script module source.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.5.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Module source url.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$src"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Module identifier.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$id"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 2
         },
         {
             "name": "search_feed_link",
@@ -46586,6 +47185,39 @@
             "args": 2
         },
         {
+            "name": "translation_file_format",
+            "file": "wp-includes/l10n.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the preferred file format for translation files.",
+                "long_description": "Can be used to disable the use of PHP files for translations.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.5.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Preferred file format. Possible values: 'php', 'mo'. Default: 'php'.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$preferred_format"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The text domain.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$domain"
+                    }
+                ],
+                "long_description_html": "<p>Can be used to disable the use of PHP files for translations.</p>"
+            },
+            "args": 2
+        },
+        {
             "name": "translations_api",
             "file": "wp-admin/includes/translation-install.php",
             "type": "filter",
@@ -50537,6 +51169,31 @@
                     }
                 ],
                 "long_description_html": "<p>Returning false to this hook is the recommended way to hide site icons in the toolbar. A truthy return may have negative performance impact on large multisites.</p>"
+            },
+            "args": 1
+        },
+        {
+            "name": "wp_admin_canonical_url",
+            "file": "wp-admin/includes/misc.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the admin canonical url value.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.5.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The admin canonical url value.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$filtered_url"
+                    }
+                ],
+                "long_description_html": ""
             },
             "args": 1
         },
@@ -55264,6 +55921,31 @@
             "args": 2
         },
         {
+            "name": "wp_is_rest_endpoint",
+            "file": "wp-includes/rest-api.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters whether a REST endpoint request is currently being handled.",
+                "long_description": "This may be a standalone REST API request, or an internal request dispatched from within a regular page load.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.5.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether a REST endpoint request is currently being handled.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$is_request_endpoint"
+                    }
+                ],
+                "long_description_html": "<p>This may be a standalone REST API request, or an internal request dispatched from within a regular page load.</p>"
+            },
+            "args": 1
+        },
+        {
             "name": "wp_is_site_protected_by_basic_auth",
             "file": "wp-includes/load.php",
             "type": "filter",
@@ -56838,6 +57520,31 @@
                 "long_description_html": ""
             },
             "args": 2
+        },
+        {
+            "name": "wp_plugin_dependencies_slug",
+            "file": "wp-includes/class-wp-plugin-dependencies.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters a plugin dependency's slug before matching to the WordPress.org slug format.",
+                "long_description": "Can be used to switch between free and premium plugin slugs, for example.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.5.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The slug.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$slug"
+                    }
+                ],
+                "long_description_html": "<p>Can be used to switch between free and premium plugin slugs, for example.</p>"
+            },
+            "args": 1
         },
         {
             "name": "wp_post_revision_meta_keys",
