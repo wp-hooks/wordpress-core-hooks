@@ -1855,6 +1855,39 @@
             "args": 3
         },
         {
+            "name": "after_plugin_row_meta",
+            "file": "wp-admin/includes/class-wp-plugins-list-table.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires after plugin row meta.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.5.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Refer to {@see 'plugin_row_meta'} filter.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$plugin_file"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Refer to {@see 'plugin_row_meta'} filter.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$plugin_data"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 2
+        },
+        {
             "name": "after_plugin_row_{$plugin_file}",
             "file": "wp-admin/includes/class-wp-plugins-list-table.php",
             "type": "action",
@@ -9620,7 +9653,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The location of the extra table nav markup: 'top' or 'bottom'.",
+                        "content": "The location of the extra table nav markup: Either 'top' or 'bottom'.",
                         "types": [
                             "string"
                         ],
@@ -9876,7 +9909,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The location of the extra table nav markup: 'top' or 'bottom'.",
+                        "content": "The location of the extra table nav markup: Either 'top' or 'bottom'.",
                         "types": [
                             "string"
                         ],
@@ -14045,7 +14078,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The location of the extra table nav markup: 'top' or 'bottom'.",
+                        "content": "The location of the extra table nav markup: Either 'top' or 'bottom'.",
                         "types": [
                             "string"
                         ],
