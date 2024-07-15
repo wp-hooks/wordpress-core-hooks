@@ -126,6 +126,6 @@ The time that I spend maintaining this library and others is in part sponsored b
 
 Plus all my kind sponsors on GitHub:
 
-[![Sponsors](assets/gh/everyone.png)](https://github.com/sponsors/johnbillion)
+[![Sponsors](https://cdn.jsdelivr.net/gh/johnbillion/johnbillion/sponsors.svg)](https://github.com/sponsors/johnbillion)
 
 [Click here to find out about supporting this library and my other WordPress development tools and plugins](https://github.com/sponsors/johnbillion).
