@@ -4013,8 +4013,13 @@
                         "content": "2.8.0"
                     },
                     {
+                        "name": "since",
+                        "content": "6.6.0",
+                        "description": "The default $seconds value changed from 30000000 to YEAR_IN_SECONDS."
+                    },
+                    {
                         "name": "param",
-                        "content": "Comment cookie lifetime. Default 30000000.",
+                        "content": "Comment cookie lifetime. Default YEAR_IN_SECONDS.",
                         "types": [
                             "int"
                         ],
@@ -21294,6 +21299,11 @@
                         "content": "6.5.0"
                     },
                     {
+                        "name": "since",
+                        "content": "6.6.0",
+                        "description": "Added the <code>$locale</code> parameter."
+                    },
+                    {
                         "name": "param",
                         "content": "Path to the translation file to load.",
                         "types": [
@@ -21308,11 +21318,19 @@
                             "string"
                         ],
                         "variable": "$domain"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The locale.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$locale"
                     }
                 ],
                 "long_description_html": "<p>Similar to the {@see 'load_textdomain_mofile'} filter with the difference that the file path could be for an MO or PHP file.</p>"
             },
-            "args": 2
+            "args": 3
         },
         {
             "name": "locale",
@@ -26256,7 +26274,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the list of sanctioned oEmbed providers.",
-                "long_description": "Since WordPress 4.4, oEmbed discovery is enabled for all users and allows embedding of sanitized iframes. The providers in this list are sanctioned, meaning they are trusted and allowed to embed any content, such as iframes, videos, JavaScript, and arbitrary HTML.\n Supported providers:\n |   Provider   |                     Flavor                |  Since  | | ------------ | ----------------------------------------- | ------- | | Dailymotion  | dailymotion.com                           | 2.9.0   | | Flickr       | flickr.com                                | 2.9.0   | | Scribd       | scribd.com                                | 2.9.0   | | Vimeo        | vimeo.com                                 | 2.9.0   | | WordPress.tv | wordpress.tv                              | 2.9.0   | | YouTube      | youtube.com/watch                         | 2.9.0   | | Crowdsignal  | polldaddy.com                             | 3.0.0   | | SmugMug      | smugmug.com                               | 3.0.0   | | YouTube      | youtu.be                                  | 3.0.0   | | Twitter      | twitter.com                               | 3.4.0   | | Slideshare   | slideshare.net                            | 3.5.0   | | SoundCloud   | soundcloud.com                            | 3.5.0   | | Dailymotion  | dai.ly                                    | 3.6.0   | | Flickr       | flic.kr                                   | 3.6.0   | | Spotify      | spotify.com                               | 3.6.0   | | Imgur        | imgur.com                                 | 3.9.0   | | Animoto      | animoto.com                               | 4.0.0   | | Animoto      | video214.com                              | 4.0.0   | | Issuu        | issuu.com                                 | 4.0.0   | | Mixcloud     | mixcloud.com                              | 4.0.0   | | Crowdsignal  | poll.fm                                   | 4.0.0   | | TED          | ted.com                                   | 4.0.0   | | YouTube      | youtube.com/playlist                      | 4.0.0   | | Tumblr       | tumblr.com                                | 4.2.0   | | Kickstarter  | kickstarter.com                           | 4.2.0   | | Kickstarter  | kck.st                                    | 4.2.0   | | Cloudup      | cloudup.com                               | 4.3.0   | | ReverbNation | reverbnation.com                          | 4.4.0   | | VideoPress   | videopress.com                            | 4.4.0   | | Reddit       | reddit.com                                | 4.4.0   | | Speaker Deck | speakerdeck.com                           | 4.4.0   | | Twitter      | twitter.com/timelines                     | 4.5.0   | | Twitter      | twitter.com/moments                       | 4.5.0   | | Twitter      | twitter.com/user                          | 4.7.0   | | Twitter      | twitter.com/likes                         | 4.7.0   | | Twitter      | twitter.com/lists                         | 4.7.0   | | Screencast   | screencast.com                            | 4.8.0   | | Amazon       | amazon.com (com.mx, com.br, ca)           | 4.9.0   | | Amazon       | amazon.de (fr, it, es, in, nl, ru, co.uk) | 4.9.0   | | Amazon       | amazon.co.jp (com.au)                     | 4.9.0   | | Amazon       | amazon.cn                                 | 4.9.0   | | Amazon       | a.co                                      | 4.9.0   | | Amazon       | amzn.to (eu, in, asia)                    | 4.9.0   | | Amazon       | z.cn                                      | 4.9.0   | | Someecards   | someecards.com                            | 4.9.0   | | Someecards   | some.ly                                   | 4.9.0   | | Crowdsignal  | survey.fm                                 | 5.1.0   | | TikTok       | tiktok.com                                | 5.4.0   | | Pinterest    | pinterest.com                             | 5.9.0   | | WolframCloud | wolframcloud.com                          | 5.9.0   | | Pocket Casts | pocketcasts.com                           | 6.1.0   | | Crowdsignal  | crowdsignal.net                           | 6.2.0   | | Anghami      | anghami.com                               | 6.3.0   |\n No longer supported providers:\n |   Provider   |        Flavor        |   Since   |  Removed  | | ------------ | -------------------- | --------- | --------- | | Qik          | qik.com              | 2.9.0     | 3.9.0     | | Viddler      | viddler.com          | 2.9.0     | 4.0.0     | | Revision3    | revision3.com        | 2.9.0     | 4.2.0     | | Blip         | blip.tv              | 2.9.0     | 4.4.0     | | Rdio         | rdio.com             | 3.6.0     | 4.4.1     | | Rdio         | rd.io                | 3.6.0     | 4.4.1     | | Vine         | vine.co              | 4.1.0     | 4.9.0     | | Photobucket  | photobucket.com      | 2.9.0     | 5.1.0     | | Funny or Die | funnyordie.com       | 3.0.0     | 5.1.0     | | CollegeHumor | collegehumor.com     | 4.0.0     | 5.3.1     | | Hulu         | hulu.com             | 2.9.0     | 5.5.0     | | Instagram    | instagram.com        | 3.5.0     | 5.5.2     | | Instagram    | instagr.am           | 3.5.0     | 5.5.2     | | Instagram TV | instagram.com        | 5.1.0     | 5.5.2     | | Instagram TV | instagr.am           | 5.1.0     | 5.5.2     | | Facebook     | facebook.com         | 4.7.0     | 5.5.2     | | Meetup.com   | meetup.com           | 3.9.0     | 6.0.1     | | Meetup.com   | meetu.ps             | 3.9.0     | 6.0.1     |",
+                "long_description": "Since WordPress 4.4, oEmbed discovery is enabled for all users and allows embedding of sanitized iframes. The providers in this list are sanctioned, meaning they are trusted and allowed to embed any content, such as iframes, videos, JavaScript, and arbitrary HTML.\n Supported providers:\n |   Provider   |                     Flavor                |  Since  | | ------------ | ----------------------------------------- | ------- | | Dailymotion  | dailymotion.com                           | 2.9.0   | | Flickr       | flickr.com                                | 2.9.0   | | Scribd       | scribd.com                                | 2.9.0   | | Vimeo        | vimeo.com                                 | 2.9.0   | | WordPress.tv | wordpress.tv                              | 2.9.0   | | YouTube      | youtube.com/watch                         | 2.9.0   | | Crowdsignal  | polldaddy.com                             | 3.0.0   | | SmugMug      | smugmug.com                               | 3.0.0   | | YouTube      | youtu.be                                  | 3.0.0   | | Twitter      | twitter.com                               | 3.4.0   | | SoundCloud   | soundcloud.com                            | 3.5.0   | | Dailymotion  | dai.ly                                    | 3.6.0   | | Flickr       | flic.kr                                   | 3.6.0   | | Spotify      | spotify.com                               | 3.6.0   | | Imgur        | imgur.com                                 | 3.9.0   | | Animoto      | animoto.com                               | 4.0.0   | | Animoto      | video214.com                              | 4.0.0   | | Issuu        | issuu.com                                 | 4.0.0   | | Mixcloud     | mixcloud.com                              | 4.0.0   | | Crowdsignal  | poll.fm                                   | 4.0.0   | | TED          | ted.com                                   | 4.0.0   | | YouTube      | youtube.com/playlist                      | 4.0.0   | | Tumblr       | tumblr.com                                | 4.2.0   | | Kickstarter  | kickstarter.com                           | 4.2.0   | | Kickstarter  | kck.st                                    | 4.2.0   | | Cloudup      | cloudup.com                               | 4.3.0   | | ReverbNation | reverbnation.com                          | 4.4.0   | | VideoPress   | videopress.com                            | 4.4.0   | | Reddit       | reddit.com                                | 4.4.0   | | Speaker Deck | speakerdeck.com                           | 4.4.0   | | Twitter      | twitter.com/timelines                     | 4.5.0   | | Twitter      | twitter.com/moments                       | 4.5.0   | | Twitter      | twitter.com/user                          | 4.7.0   | | Twitter      | twitter.com/likes                         | 4.7.0   | | Twitter      | twitter.com/lists                         | 4.7.0   | | Screencast   | screencast.com                            | 4.8.0   | | Amazon       | amazon.com (com.mx, com.br, ca)           | 4.9.0   | | Amazon       | amazon.de (fr, it, es, in, nl, ru, co.uk) | 4.9.0   | | Amazon       | amazon.co.jp (com.au)                     | 4.9.0   | | Amazon       | amazon.cn                                 | 4.9.0   | | Amazon       | a.co                                      | 4.9.0   | | Amazon       | amzn.to (eu, in, asia)                    | 4.9.0   | | Amazon       | z.cn                                      | 4.9.0   | | Someecards   | someecards.com                            | 4.9.0   | | Someecards   | some.ly                                   | 4.9.0   | | Crowdsignal  | survey.fm                                 | 5.1.0   | | TikTok       | tiktok.com                                | 5.4.0   | | Pinterest    | pinterest.com                             | 5.9.0   | | WolframCloud | wolframcloud.com                          | 5.9.0   | | Pocket Casts | pocketcasts.com                           | 6.1.0   | | Crowdsignal  | crowdsignal.net                           | 6.2.0   | | Anghami      | anghami.com                               | 6.3.0   | | Bluesky      | bsky.app                                  | 6.6.0   |\n No longer supported providers:\n |   Provider   |        Flavor        |   Since   |  Removed  | | ------------ | -------------------- | --------- | --------- | | Qik          | qik.com              | 2.9.0     | 3.9.0     | | Viddler      | viddler.com          | 2.9.0     | 4.0.0     | | Revision3    | revision3.com        | 2.9.0     | 4.2.0     | | Blip         | blip.tv              | 2.9.0     | 4.4.0     | | Rdio         | rdio.com             | 3.6.0     | 4.4.1     | | Rdio         | rd.io                | 3.6.0     | 4.4.1     | | Vine         | vine.co              | 4.1.0     | 4.9.0     | | Photobucket  | photobucket.com      | 2.9.0     | 5.1.0     | | Funny or Die | funnyordie.com       | 3.0.0     | 5.1.0     | | CollegeHumor | collegehumor.com     | 4.0.0     | 5.3.1     | | Hulu         | hulu.com             | 2.9.0     | 5.5.0     | | Instagram    | instagram.com        | 3.5.0     | 5.5.2     | | Instagram    | instagr.am           | 3.5.0     | 5.5.2     | | Instagram TV | instagram.com        | 5.1.0     | 5.5.2     | | Instagram TV | instagr.am           | 5.1.0     | 5.5.2     | | Facebook     | facebook.com         | 4.7.0     | 5.5.2     | | Meetup.com   | meetup.com           | 3.9.0     | 6.0.1     | | Meetup.com   | meetu.ps             | 3.9.0     | 6.0.1     | | SlideShare   | slideshare.net       | 3.5.0     | 6.6.0     |",
                 "tags": [
                     {
                         "name": "see",
@@ -26276,7 +26294,7 @@
                         "variable": "$providers"
                     }
                 ],
-                "long_description_html": "<p>Since WordPress 4.4, oEmbed discovery is enabled for all users and allows embedding of sanitized iframes. The providers in this list are sanctioned, meaning they are trusted and allowed to embed any content, such as iframes, videos, JavaScript, and arbitrary HTML.</p> <p>Supported providers:</p> <table> <thead> <tr> <th>Provider</th> <th>Flavor</th> <th>Since</th> </tr> </thead> <tbody> <tr> <td>Dailymotion</td> <td>dailymotion.com</td> <td>2.9.0</td> </tr> <tr> <td>Flickr</td> <td>flickr.com</td> <td>2.9.0</td> </tr> <tr> <td>Scribd</td> <td>scribd.com</td> <td>2.9.0</td> </tr> <tr> <td>Vimeo</td> <td>vimeo.com</td> <td>2.9.0</td> </tr> <tr> <td>WordPress.tv</td> <td>wordpress.tv</td> <td>2.9.0</td> </tr> <tr> <td>YouTube</td> <td>youtube.com/watch</td> <td>2.9.0</td> </tr> <tr> <td>Crowdsignal</td> <td>polldaddy.com</td> <td>3.0.0</td> </tr> <tr> <td>SmugMug</td> <td>smugmug.com</td> <td>3.0.0</td> </tr> <tr> <td>YouTube</td> <td>youtu.be</td> <td>3.0.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com</td> <td>3.4.0</td> </tr> <tr> <td>Slideshare</td> <td>slideshare.net</td> <td>3.5.0</td> </tr> <tr> <td>SoundCloud</td> <td>soundcloud.com</td> <td>3.5.0</td> </tr> <tr> <td>Dailymotion</td> <td>dai.ly</td> <td>3.6.0</td> </tr> <tr> <td>Flickr</td> <td>flic.kr</td> <td>3.6.0</td> </tr> <tr> <td>Spotify</td> <td>spotify.com</td> <td>3.6.0</td> </tr> <tr> <td>Imgur</td> <td>imgur.com</td> <td>3.9.0</td> </tr> <tr> <td>Animoto</td> <td>animoto.com</td> <td>4.0.0</td> </tr> <tr> <td>Animoto</td> <td>video214.com</td> <td>4.0.0</td> </tr> <tr> <td>Issuu</td> <td>issuu.com</td> <td>4.0.0</td> </tr> <tr> <td>Mixcloud</td> <td>mixcloud.com</td> <td>4.0.0</td> </tr> <tr> <td>Crowdsignal</td> <td>poll.fm</td> <td>4.0.0</td> </tr> <tr> <td>TED</td> <td>ted.com</td> <td>4.0.0</td> </tr> <tr> <td>YouTube</td> <td>youtube.com/playlist</td> <td>4.0.0</td> </tr> <tr> <td>Tumblr</td> <td>tumblr.com</td> <td>4.2.0</td> </tr> <tr> <td>Kickstarter</td> <td>kickstarter.com</td> <td>4.2.0</td> </tr> <tr> <td>Kickstarter</td> <td>kck.st</td> <td>4.2.0</td> </tr> <tr> <td>Cloudup</td> <td>cloudup.com</td> <td>4.3.0</td> </tr> <tr> <td>ReverbNation</td> <td>reverbnation.com</td> <td>4.4.0</td> </tr> <tr> <td>VideoPress</td> <td>videopress.com</td> <td>4.4.0</td> </tr> <tr> <td>Reddit</td> <td>reddit.com</td> <td>4.4.0</td> </tr> <tr> <td>Speaker Deck</td> <td>speakerdeck.com</td> <td>4.4.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/timelines</td> <td>4.5.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/moments</td> <td>4.5.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/user</td> <td>4.7.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/likes</td> <td>4.7.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/lists</td> <td>4.7.0</td> </tr> <tr> <td>Screencast</td> <td>screencast.com</td> <td>4.8.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.com (com.mx, com.br, ca)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.de (fr, it, es, in, nl, ru, co.uk)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.co.jp (com.au)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.cn</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>a.co</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amzn.to (eu, in, asia)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>z.cn</td> <td>4.9.0</td> </tr> <tr> <td>Someecards</td> <td>someecards.com</td> <td>4.9.0</td> </tr> <tr> <td>Someecards</td> <td>some.ly</td> <td>4.9.0</td> </tr> <tr> <td>Crowdsignal</td> <td>survey.fm</td> <td>5.1.0</td> </tr> <tr> <td>TikTok</td> <td>tiktok.com</td> <td>5.4.0</td> </tr> <tr> <td>Pinterest</td> <td>pinterest.com</td> <td>5.9.0</td> </tr> <tr> <td>WolframCloud</td> <td>wolframcloud.com</td> <td>5.9.0</td> </tr> <tr> <td>Pocket Casts</td> <td>pocketcasts.com</td> <td>6.1.0</td> </tr> <tr> <td>Crowdsignal</td> <td>crowdsignal.net</td> <td>6.2.0</td> </tr> <tr> <td>Anghami</td> <td>anghami.com</td> <td>6.3.0</td> </tr> </tbody> </table> <p>No longer supported providers:</p> <table> <thead> <tr> <th>Provider</th> <th>Flavor</th> <th>Since</th> <th>Removed</th> </tr> </thead> <tbody> <tr> <td>Qik</td> <td>qik.com</td> <td>2.9.0</td> <td>3.9.0</td> </tr> <tr> <td>Viddler</td> <td>viddler.com</td> <td>2.9.0</td> <td>4.0.0</td> </tr> <tr> <td>Revision3</td> <td>revision3.com</td> <td>2.9.0</td> <td>4.2.0</td> </tr> <tr> <td>Blip</td> <td>blip.tv</td> <td>2.9.0</td> <td>4.4.0</td> </tr> <tr> <td>Rdio</td> <td>rdio.com</td> <td>3.6.0</td> <td>4.4.1</td> </tr> <tr> <td>Rdio</td> <td>rd.io</td> <td>3.6.0</td> <td>4.4.1</td> </tr> <tr> <td>Vine</td> <td>vine.co</td> <td>4.1.0</td> <td>4.9.0</td> </tr> <tr> <td>Photobucket</td> <td>photobucket.com</td> <td>2.9.0</td> <td>5.1.0</td> </tr> <tr> <td>Funny or Die</td> <td>funnyordie.com</td> <td>3.0.0</td> <td>5.1.0</td> </tr> <tr> <td>CollegeHumor</td> <td>collegehumor.com</td> <td>4.0.0</td> <td>5.3.1</td> </tr> <tr> <td>Hulu</td> <td>hulu.com</td> <td>2.9.0</td> <td>5.5.0</td> </tr> <tr> <td>Instagram</td> <td>instagram.com</td> <td>3.5.0</td> <td>5.5.2</td> </tr> <tr> <td>Instagram</td> <td>instagr.am</td> <td>3.5.0</td> <td>5.5.2</td> </tr> <tr> <td>Instagram TV</td> <td>instagram.com</td> <td>5.1.0</td> <td>5.5.2</td> </tr> <tr> <td>Instagram TV</td> <td>instagr.am</td> <td>5.1.0</td> <td>5.5.2</td> </tr> <tr> <td>Facebook</td> <td>facebook.com</td> <td>4.7.0</td> <td>5.5.2</td> </tr> <tr> <td>Meetup.com</td> <td>meetup.com</td> <td>3.9.0</td> <td>6.0.1</td> </tr> <tr> <td>Meetup.com</td> <td>meetu.ps</td> <td>3.9.0</td> <td>6.0.1</td> </tr> </tbody> </table>"
+                "long_description_html": "<p>Since WordPress 4.4, oEmbed discovery is enabled for all users and allows embedding of sanitized iframes. The providers in this list are sanctioned, meaning they are trusted and allowed to embed any content, such as iframes, videos, JavaScript, and arbitrary HTML.</p> <p>Supported providers:</p> <table> <thead> <tr> <th>Provider</th> <th>Flavor</th> <th>Since</th> </tr> </thead> <tbody> <tr> <td>Dailymotion</td> <td>dailymotion.com</td> <td>2.9.0</td> </tr> <tr> <td>Flickr</td> <td>flickr.com</td> <td>2.9.0</td> </tr> <tr> <td>Scribd</td> <td>scribd.com</td> <td>2.9.0</td> </tr> <tr> <td>Vimeo</td> <td>vimeo.com</td> <td>2.9.0</td> </tr> <tr> <td>WordPress.tv</td> <td>wordpress.tv</td> <td>2.9.0</td> </tr> <tr> <td>YouTube</td> <td>youtube.com/watch</td> <td>2.9.0</td> </tr> <tr> <td>Crowdsignal</td> <td>polldaddy.com</td> <td>3.0.0</td> </tr> <tr> <td>SmugMug</td> <td>smugmug.com</td> <td>3.0.0</td> </tr> <tr> <td>YouTube</td> <td>youtu.be</td> <td>3.0.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com</td> <td>3.4.0</td> </tr> <tr> <td>SoundCloud</td> <td>soundcloud.com</td> <td>3.5.0</td> </tr> <tr> <td>Dailymotion</td> <td>dai.ly</td> <td>3.6.0</td> </tr> <tr> <td>Flickr</td> <td>flic.kr</td> <td>3.6.0</td> </tr> <tr> <td>Spotify</td> <td>spotify.com</td> <td>3.6.0</td> </tr> <tr> <td>Imgur</td> <td>imgur.com</td> <td>3.9.0</td> </tr> <tr> <td>Animoto</td> <td>animoto.com</td> <td>4.0.0</td> </tr> <tr> <td>Animoto</td> <td>video214.com</td> <td>4.0.0</td> </tr> <tr> <td>Issuu</td> <td>issuu.com</td> <td>4.0.0</td> </tr> <tr> <td>Mixcloud</td> <td>mixcloud.com</td> <td>4.0.0</td> </tr> <tr> <td>Crowdsignal</td> <td>poll.fm</td> <td>4.0.0</td> </tr> <tr> <td>TED</td> <td>ted.com</td> <td>4.0.0</td> </tr> <tr> <td>YouTube</td> <td>youtube.com/playlist</td> <td>4.0.0</td> </tr> <tr> <td>Tumblr</td> <td>tumblr.com</td> <td>4.2.0</td> </tr> <tr> <td>Kickstarter</td> <td>kickstarter.com</td> <td>4.2.0</td> </tr> <tr> <td>Kickstarter</td> <td>kck.st</td> <td>4.2.0</td> </tr> <tr> <td>Cloudup</td> <td>cloudup.com</td> <td>4.3.0</td> </tr> <tr> <td>ReverbNation</td> <td>reverbnation.com</td> <td>4.4.0</td> </tr> <tr> <td>VideoPress</td> <td>videopress.com</td> <td>4.4.0</td> </tr> <tr> <td>Reddit</td> <td>reddit.com</td> <td>4.4.0</td> </tr> <tr> <td>Speaker Deck</td> <td>speakerdeck.com</td> <td>4.4.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/timelines</td> <td>4.5.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/moments</td> <td>4.5.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/user</td> <td>4.7.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/likes</td> <td>4.7.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/lists</td> <td>4.7.0</td> </tr> <tr> <td>Screencast</td> <td>screencast.com</td> <td>4.8.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.com (com.mx, com.br, ca)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.de (fr, it, es, in, nl, ru, co.uk)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.co.jp (com.au)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.cn</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>a.co</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amzn.to (eu, in, asia)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>z.cn</td> <td>4.9.0</td> </tr> <tr> <td>Someecards</td> <td>someecards.com</td> <td>4.9.0</td> </tr> <tr> <td>Someecards</td> <td>some.ly</td> <td>4.9.0</td> </tr> <tr> <td>Crowdsignal</td> <td>survey.fm</td> <td>5.1.0</td> </tr> <tr> <td>TikTok</td> <td>tiktok.com</td> <td>5.4.0</td> </tr> <tr> <td>Pinterest</td> <td>pinterest.com</td> <td>5.9.0</td> </tr> <tr> <td>WolframCloud</td> <td>wolframcloud.com</td> <td>5.9.0</td> </tr> <tr> <td>Pocket Casts</td> <td>pocketcasts.com</td> <td>6.1.0</td> </tr> <tr> <td>Crowdsignal</td> <td>crowdsignal.net</td> <td>6.2.0</td> </tr> <tr> <td>Anghami</td> <td>anghami.com</td> <td>6.3.0</td> </tr> <tr> <td>Bluesky</td> <td>bsky.app</td> <td>6.6.0</td> </tr> </tbody> </table> <p>No longer supported providers:</p> <table> <thead> <tr> <th>Provider</th> <th>Flavor</th> <th>Since</th> <th>Removed</th> </tr> </thead> <tbody> <tr> <td>Qik</td> <td>qik.com</td> <td>2.9.0</td> <td>3.9.0</td> </tr> <tr> <td>Viddler</td> <td>viddler.com</td> <td>2.9.0</td> <td>4.0.0</td> </tr> <tr> <td>Revision3</td> <td>revision3.com</td> <td>2.9.0</td> <td>4.2.0</td> </tr> <tr> <td>Blip</td> <td>blip.tv</td> <td>2.9.0</td> <td>4.4.0</td> </tr> <tr> <td>Rdio</td> <td>rdio.com</td> <td>3.6.0</td> <td>4.4.1</td> </tr> <tr> <td>Rdio</td> <td>rd.io</td> <td>3.6.0</td> <td>4.4.1</td> </tr> <tr> <td>Vine</td> <td>vine.co</td> <td>4.1.0</td> <td>4.9.0</td> </tr> <tr> <td>Photobucket</td> <td>photobucket.com</td> <td>2.9.0</td> <td>5.1.0</td> </tr> <tr> <td>Funny or Die</td> <td>funnyordie.com</td> <td>3.0.0</td> <td>5.1.0</td> </tr> <tr> <td>CollegeHumor</td> <td>collegehumor.com</td> <td>4.0.0</td> <td>5.3.1</td> </tr> <tr> <td>Hulu</td> <td>hulu.com</td> <td>2.9.0</td> <td>5.5.0</td> </tr> <tr> <td>Instagram</td> <td>instagram.com</td> <td>3.5.0</td> <td>5.5.2</td> </tr> <tr> <td>Instagram</td> <td>instagr.am</td> <td>3.5.0</td> <td>5.5.2</td> </tr> <tr> <td>Instagram TV</td> <td>instagram.com</td> <td>5.1.0</td> <td>5.5.2</td> </tr> <tr> <td>Instagram TV</td> <td>instagr.am</td> <td>5.1.0</td> <td>5.5.2</td> </tr> <tr> <td>Facebook</td> <td>facebook.com</td> <td>4.7.0</td> <td>5.5.2</td> </tr> <tr> <td>Meetup.com</td> <td>meetup.com</td> <td>3.9.0</td> <td>6.0.1</td> </tr> <tr> <td>Meetup.com</td> <td>meetu.ps</td> <td>3.9.0</td> <td>6.0.1</td> </tr> <tr> <td>SlideShare</td> <td>slideshare.net</td> <td>3.5.0</td> <td>6.6.0</td> </tr> </tbody> </table>"
             },
             "args": 1
         },
@@ -43361,6 +43379,11 @@
                         "content": "3.4.0"
                     },
                     {
+                        "name": "since",
+                        "content": "6.6.0",
+                        "description": "Added the <code>$old_request</code> and <code>$clauses</code> parameters."
+                    },
+                    {
                         "name": "param",
                         "content": "Whether or not to split the query.",
                         "types": [
@@ -43375,11 +43398,27 @@
                             "\\WP_Query"
                         ],
                         "variable": "$query"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The complete SQL query before filtering.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$old_request"
+                    },
+                    {
+                        "name": "param",
+                        "content": "{ Associative array of the clauses for the query. @type string $where    The WHERE clause of the query. @type string $groupby  The GROUP BY clause of the query. @type string $join     The JOIN clause of the query. @type string $orderby  The ORDER BY clause of the query. @type string $distinct The DISTINCT clause of the query. @type string $fields   The SELECT clause of the query. @type string $limits   The LIMIT clause of the query.\n}",
+                        "types": [
+                            "string[]"
+                        ],
+                        "variable": "$clauses"
                     }
                 ],
                 "long_description_html": "<p>Splitting the query will cause it to fetch just the IDs of the found posts (and then individually fetch each post by ID), rather than fetching every complete row at once. One massive result vs. many small results.</p>"
             },
-            "args": 2
+            "args": 4
         },
         {
             "name": "status_header",
@@ -57955,8 +57994,13 @@
                         "content": "6.1.0"
                     },
                     {
+                        "name": "since",
+                        "content": "6.6.0",
+                        "description": "Added the <code>$fetchpriority</code> attribute."
+                    },
+                    {
                         "name": "param",
-                        "content": "{ Array of resources and their attributes, or URLs to print for resource preloads. @type array ...$0 { Array of resource attributes. @type string $href        URL to include in resource preloads. Required. @type string $as          How the browser should treat the resource (<code>script</code>, <code>style</code>, <code>image</code>, <code>document</code>, etc). @type string $crossorigin Indicates the CORS policy of the specified resource. @type string $type        Type of the resource (<code>text/html</code>, <code>text/css</code>, etc). @type string $media       Accepts media types or media queries. Allows responsive preloading. @type string $imagesizes  Responsive source size to the source Set. @type string $imagesrcset Responsive image sources to the source set. }\n}",
+                        "content": "{ Array of resources and their attributes, or URLs to print for resource preloads. @type array ...$0 { Array of resource attributes. @type string $href          URL to include in resource preloads. Required. @type string $as            How the browser should treat the resource (<code>script</code>, <code>style</code>, <code>image</code>, <code>document</code>, etc). @type string $crossorigin   Indicates the CORS policy of the specified resource. @type string $type          Type of the resource (<code>text/html</code>, <code>text/css</code>, etc). @type string $media         Accepts media types or media queries. Allows responsive preloading. @type string $imagesizes    Responsive source size to the source Set. @type string $imagesrcset   Responsive image sources to the source set. @type string $fetchpriority Fetchpriority value for the resource. }\n}",
                         "types": [
                             "array"
                         ],
@@ -60712,6 +60756,39 @@
                             "\\WP_Theme"
                         ],
                         "variable": "$theme"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 2
+        },
+        {
+            "name": "wp_theme_files_cache_ttl",
+            "file": "wp-includes/class-wp-theme.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the cache expiration time for theme files.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.6.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Cache expiration time in seconds.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$cache_expiration"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Type of cache being set.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$cache_type"
                     }
                 ],
                 "long_description_html": ""
