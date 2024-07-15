@@ -10,12 +10,12 @@
                 "long_description": "The hook fires before menus and sub-menus are removed based on user privileges.",
                 "tags": [
                     {
-                        "name": "private",
-                        "content": ""
-                    },
-                    {
                         "name": "since",
                         "content": "2.2.0"
+                    },
+                    {
+                        "name": "access",
+                        "content": "private"
                     }
                 ],
                 "long_description_html": "<p>The hook fires before menus and sub-menus are removed based on user privileges.</p>"
@@ -56,12 +56,12 @@
                 "long_description": "The hook fires before menus and sub-menus are removed based on user privileges.",
                 "tags": [
                     {
-                        "name": "private",
-                        "content": ""
-                    },
-                    {
                         "name": "since",
                         "content": "3.1.0"
+                    },
+                    {
+                        "name": "access",
+                        "content": "private"
                     }
                 ],
                 "long_description_html": "<p>The hook fires before menus and sub-menus are removed based on user privileges.</p>"
@@ -77,12 +77,12 @@
                 "long_description": "The hook fires before menus and sub-menus are removed based on user privileges.",
                 "tags": [
                     {
-                        "name": "private",
-                        "content": ""
-                    },
-                    {
                         "name": "since",
                         "content": "3.1.0"
+                    },
+                    {
+                        "name": "access",
+                        "content": "private"
                     }
                 ],
                 "long_description_html": "<p>The hook fires before menus and sub-menus are removed based on user privileges.</p>"
@@ -1717,7 +1717,7 @@
                         "types": [
                             "int"
                         ],
-                        "variable": "$postid"
+                        "variable": "$post_id"
                     },
                     {
                         "name": "param",
@@ -2730,7 +2730,7 @@
                         "types": [
                             "int"
                         ],
-                        "variable": "$postid"
+                        "variable": "$post_id"
                     },
                     {
                         "name": "param",
@@ -5408,7 +5408,7 @@
                         "types": [
                             "int"
                         ],
-                        "variable": "$postid"
+                        "variable": "$post_id"
                     },
                     {
                         "name": "param",
@@ -6184,7 +6184,7 @@
                         "types": [
                             "int"
                         ],
-                        "variable": "$postid"
+                        "variable": "$post_id"
                     },
                     {
                         "name": "param",
@@ -19061,8 +19061,8 @@
                 "tags": [
                     {
                         "name": "link",
-                        "content": "<a href=\"https://codex.wordpress.org/AJAX_in_Plugins\">https://codex.wordpress.org/AJAX_in_Plugins</a>",
-                        "link": "https://codex.wordpress.org/AJAX_in_Plugins"
+                        "content": "<a href=\"https://developer.wordpress.org/plugins/javascript/ajax\">https://developer.wordpress.org/plugins/javascript/ajax</a>",
+                        "link": "https://developer.wordpress.org/plugins/javascript/ajax"
                     },
                     {
                         "name": "since",

@@ -1152,7 +1152,7 @@
             "file": "wp-includes/http.php",
             "type": "filter",
             "doc": {
-                "description": "Change the allowed HTTP origin result.",
+                "description": "Changes the allowed HTTP origin result.",
                 "long_description": "",
                 "tags": [
                     {
@@ -1185,7 +1185,7 @@
             "file": "wp-includes/http.php",
             "type": "filter",
             "doc": {
-                "description": "Change the origin types allowed for HTTP requests.",
+                "description": "Changes the origin types allowed for HTTP requests.",
                 "long_description": "",
                 "tags": [
                     {
@@ -5466,7 +5466,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "An associative array of comment query clauses.",
+                        "content": "{ Associative array of the clauses for the query. @type string $fields   The SELECT clause of the query. @type string $join     The JOIN clause of the query. @type string $where    The WHERE clause of the query. @type string $orderby  The ORDER BY clause of the query. @type string $limits   The LIMIT clause of the query. @type string $groupby  The GROUP BY clause of the query.\n}",
                         "types": [
                             "string[]"
                         ],
@@ -7936,7 +7936,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "An array of template types, formatted as [ slug =&gt; [ title, description ] ].",
+                        "content": "{ The default template types. @type array ...$0 { Data for the template type. @type string $title       Template type title. @type string $description Template type description. }\n}",
                         "types": [
                             "array[]"
                         ],
@@ -7994,7 +7994,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "An array of supported area objects.",
+                        "content": "{ The allowed template part area values. @type array ...$0 { Data for the template part area. @type string $area        Template part area name. @type string $label       Template part area label. @type string $description Template part area description. @type string $icon        Template part area icon. @type string $area_tag    Template part area tag. }\n}",
                         "types": [
                             "array[]"
                         ],
@@ -8741,6 +8741,11 @@
                         "content": "4.7.0"
                     },
                     {
+                        "name": "since",
+                        "content": "6.5.0",
+                        "description": "The <code>$attr</code> parameter is always an array."
+                    },
+                    {
                         "name": "param",
                         "content": "Shortcode output.",
                         "types": [
@@ -8758,10 +8763,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "Shortcode attributes array or the original arguments string if it cannot be parsed.",
+                        "content": "Shortcode attributes array, can be empty if the original arguments string cannot be parsed.",
                         "types": [
-                            "array",
-                            "string"
+                            "array"
                         ],
                         "variable": "$attr"
                     },
@@ -12622,7 +12626,7 @@
                         "name": "param",
                         "content": "Array of registered uses context for a block type.",
                         "types": [
-                            "array"
+                            "string[]"
                         ],
                         "variable": "$uses_context"
                     },
@@ -18004,7 +18008,7 @@
             "file": "wp-includes/http.php",
             "type": "filter",
             "doc": {
-                "description": "Change the origin of an HTTP request.",
+                "description": "Changes the origin of an HTTP request.",
                 "long_description": "",
                 "tags": [
                     {
@@ -18062,7 +18066,7 @@
             "file": "wp-includes/http.php",
             "type": "filter",
             "doc": {
-                "description": "Check if HTTP request is external or not.",
+                "description": "Checks if HTTP request is external or not.",
                 "long_description": "Allows to change and allow external requests for the HTTP request.",
                 "tags": [
                     {
@@ -25096,7 +25100,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "An associative array of network query clauses.",
+                        "content": "{ Associative array of the clauses for the query. @type string $fields   The SELECT clause of the query. @type string $join     The JOIN clause of the query. @type string $where    The WHERE clause of the query. @type string $orderby  The ORDER BY clause of the query. @type string $limits   The LIMIT clause of the query. @type string $groupby  The GROUP BY clause of the query.\n}",
                         "types": [
                             "string[]"
                         ],
@@ -30806,6 +30810,11 @@
                         "content": "4.7.0"
                     },
                     {
+                        "name": "since",
+                        "content": "6.5.0",
+                        "description": "The <code>$attr</code> parameter is always an array."
+                    },
+                    {
                         "name": "param",
                         "content": "Short-circuit return value. Either false or the value to replace the shortcode with.",
                         "types": [
@@ -30824,10 +30833,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "Shortcode attributes array or the original arguments string if it cannot be parsed.",
+                        "content": "Shortcode attributes array, can be empty if the original arguments string cannot be parsed.",
                         "types": [
-                            "array",
-                            "string"
+                            "array"
                         ],
                         "variable": "$attr"
                     },
@@ -32411,7 +32419,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The block being rendered.",
+                        "content": "{ A representative array of the block being rendered. See WP_Block_Parser_Block. @type string   $blockName    Name of block. @type array    $attrs        Attributes from block comment delimiters. @type array[]  $innerBlocks  List of inner blocks. An array of arrays that have the same structure as this one. @type string   $innerHTML    HTML from inside block comment delimiters. @type array    $innerContent List of string fragments and null markers where inner blocks were found.\n}",
                         "types": [
                             "array"
                         ],
@@ -32977,7 +32985,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filter to override clearing all events attached to the hook.",
-                "long_description": "Returning a non-null value will short-circuit the normal unscheduling process, causing the function to return the filtered value instead.\n For plugins replacing wp-cron, return the number of events successfully unscheduled (zero if no events were registered with the hook) or false if unscheduling one or more events fails.",
+                "long_description": "Returning a non-null value will short-circuit the normal unscheduling process, causing the function to return the filtered value instead.\n For plugins replacing wp-cron, return the number of events successfully unscheduled (zero if no events were registered with the hook). If unscheduling one or more events fails then return either a WP_Error object or false depending on the value of the `$wp_error` parameter.",
                 "tags": [
                     {
                         "name": "since",
@@ -33016,7 +33024,7 @@
                         "variable": "$wp_error"
                     }
                 ],
-                "long_description_html": "<p>Returning a non-null value will short-circuit the normal unscheduling process, causing the function to return the filtered value instead.</p> <p>For plugins replacing wp-cron, return the number of events successfully unscheduled (zero if no events were registered with the hook) or false if unscheduling one or more events fails.</p>"
+                "long_description_html": "<p>Returning a non-null value will short-circuit the normal unscheduling process, causing the function to return the filtered value instead.</p> <p>For plugins replacing wp-cron, return the number of events successfully unscheduled (zero if no events were registered with the hook). If unscheduling one or more events fails then return either a WP_Error object or false depending on the value of the <code>$wp_error</code> parameter.</p>"
             },
             "args": 3
         },
@@ -35866,7 +35874,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Block being rendered, filtered by <code>render_block_data</code>.",
+                        "content": "{ A representative array of the block being rendered. See WP_Block_Parser_Block. @type string   $blockName    Name of block. @type array    $attrs        Attributes from block comment delimiters. @type array[]  $innerBlocks  List of inner blocks. An array of arrays that have the same structure as this one. @type string   $innerHTML    HTML from inside block comment delimiters. @type array    $innerContent List of string fragments and null markers where inner blocks were found.\n}",
                         "types": [
                             "array"
                         ],
@@ -35905,7 +35913,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The block being rendered.",
+                        "content": "{ A representative array of the block being rendered. See WP_Block_Parser_Block. @type string   $blockName    Name of block. @type array    $attrs        Attributes from block comment delimiters. @type array[]  $innerBlocks  List of inner blocks. An array of arrays that have the same structure as this one. @type string   $innerHTML    HTML from inside block comment delimiters. @type array    $innerContent List of string fragments and null markers where inner blocks were found.\n}",
                         "types": [
                             "array"
                         ],
@@ -35913,7 +35921,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "An un-modified copy of $parsed_block, as it appeared in the source content.",
+                        "content": "{ An un-modified copy of <code>$parsed_block</code>, as it appeared in the source content. See WP_Block_Parser_Block. @type string   $blockName    Name of block. @type array    $attrs        Attributes from block comment delimiters. @type array[]  $innerBlocks  List of inner blocks. An array of arrays that have the same structure as this one. @type string   $innerHTML    HTML from inside block comment delimiters. @type array    $innerContent List of string fragments and null markers where inner blocks were found.\n}",
                         "types": [
                             "array"
                         ],
@@ -39422,16 +39430,28 @@
                         "variable": "$defaults"
                     },
                     {
-                        "name": "type",
-                        "content": "string  $key        The activation key."
+                        "name": "param",
+                        "content": "The activation key.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$key"
                     },
                     {
-                        "name": "type",
-                        "content": "string  $user_login The username for the user."
+                        "name": "param",
+                        "content": "The username for the user.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$user_login"
                     },
                     {
-                        "name": "type",
-                        "content": "WP_User $user_data  WP_User object."
+                        "name": "param",
+                        "content": "WP_User object.",
+                        "types": [
+                            "\\WP_User"
+                        ],
+                        "variable": "$user_data"
                     }
                 ],
                 "long_description_html": ""
@@ -40706,7 +40726,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Module source url.",
+                        "content": "Module source URL.",
                         "types": [
                             "string"
                         ],
@@ -41493,7 +41513,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters a screen option value before it is set.",
-                "long_description": "The filter can also be used to modify non-standard [items]_per_page settings. See the parent function for a full list of standard options.\n Returning false from the filter will skip saving the current option.",
+                "long_description": "The filter can also be used to modify non-standard `[items]_per_page` settings. See the parent function for a full list of standard options.\n Returning false from the filter will skip saving the current option.",
                 "tags": [
                     {
                         "name": "since",
@@ -41534,7 +41554,7 @@
                         "variable": "$value"
                     }
                 ],
-                "long_description_html": "<p>The filter can also be used to modify non-standard [items]_per_page settings. See the parent function for a full list of standard options.</p> <p>Returning false from the filter will skip saving the current option.</p>"
+                "long_description_html": "<p>The filter can also be used to modify non-standard <code>[items]_per_page</code> settings. See the parent function for a full list of standard options.</p> <p>Returning false from the filter will skip saving the current option.</p>"
             },
             "args": 3
         },
@@ -43241,7 +43261,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "An associative array of site query clauses.",
+                        "content": "{ Associative array of the clauses for the query. @type string $fields   The SELECT clause of the query. @type string $join     The JOIN clause of the query. @type string $where    The WHERE clause of the query. @type string $orderby  The ORDER BY clause of the query. @type string $limits   The LIMIT clause of the query. @type string $groupby  The GROUP BY clause of the query.\n}",
                         "types": [
                             "string[]"
                         ],
@@ -51383,7 +51403,7 @@
             "file": "wp-admin/includes/misc.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the admin canonical url value.",
+                "description": "Filters the admin canonical URL value.",
                 "long_description": "",
                 "tags": [
                     {
@@ -51392,7 +51412,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The admin canonical url value.",
+                        "content": "The admin canonical URL value.",
                         "types": [
                             "string"
                         ],
@@ -53513,7 +53533,7 @@
             "file": "wp-includes/embed.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the YoutTube embed output.",
+                "description": "Filters the YouTube embed output.",
                 "long_description": "",
                 "tags": [
                     {
@@ -57086,7 +57106,7 @@
             "file": "wp-includes/media.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the Mediaelement fallback output for no-JS.",
+                "description": "Filters the MediaElement fallback output for no-JS.",
                 "long_description": "",
                 "tags": [
                     {
@@ -64193,7 +64213,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the number of items to be displayed on each page of the list table.",
-                "long_description": "The dynamic hook name, `$option`, refers to the `per_page` option depending on the type of list table in use. Possible filter names include:\n\n  - `edit_comments_per_page`\n  - `sites_network_per_page`\n  - `site_themes_network_per_page`\n  - `themes_network_per_page'`\n  - `users_network_per_page`\n  - `edit_post_per_page`\n  - `edit_page_per_page'`\n  - `edit_{$post_type}_per_page`\n  - `edit_post_tag_per_page`\n  - `edit_category_per_page`\n  - `edit_{$taxonomy}_per_page`\n  - `site_users_network_per_page`\n  - `users_per_page`",
+                "long_description": "The dynamic hook name, `$option`, refers to the `per_page` option depending on the type of list table in use. Possible filter names include:\n\n  - `edit_comments_per_page`\n  - `sites_network_per_page`\n  - `site_themes_network_per_page`\n  - `themes_network_per_page`\n  - `users_network_per_page`\n  - `edit_post_per_page`\n  - `edit_page_per_page`\n  - `edit_{$post_type}_per_page`\n  - `edit_post_tag_per_page`\n  - `edit_category_per_page`\n  - `edit_{$taxonomy}_per_page`\n  - `site_users_network_per_page`\n  - `users_per_page`",
                 "tags": [
                     {
                         "name": "since",
@@ -64208,7 +64228,7 @@
                         "variable": "$per_page"
                     }
                 ],
-                "long_description_html": "<p>The dynamic hook name, <code>$option</code>, refers to the <code>per_page</code> option depending on the type of list table in use. Possible filter names include:</p> <ul> <li><code>edit_comments_per_page</code></li> <li><code>sites_network_per_page</code></li> <li><code>site_themes_network_per_page</code></li> <li><code>themes_network_per_page'</code></li> <li><code>users_network_per_page</code></li> <li><code>edit_post_per_page</code></li> <li><code>edit_page_per_page'</code></li> <li><code>edit_{$post_type}_per_page</code></li> <li><code>edit_post_tag_per_page</code></li> <li><code>edit_category_per_page</code></li> <li><code>edit_{$taxonomy}_per_page</code></li> <li><code>site_users_network_per_page</code></li> <li><code>users_per_page</code></li> </ul>"
+                "long_description_html": "<p>The dynamic hook name, <code>$option</code>, refers to the <code>per_page</code> option depending on the type of list table in use. Possible filter names include:</p> <ul> <li><code>edit_comments_per_page</code></li> <li><code>sites_network_per_page</code></li> <li><code>site_themes_network_per_page</code></li> <li><code>themes_network_per_page</code></li> <li><code>users_network_per_page</code></li> <li><code>edit_post_per_page</code></li> <li><code>edit_page_per_page</code></li> <li><code>edit_{$post_type}_per_page</code></li> <li><code>edit_post_tag_per_page</code></li> <li><code>edit_category_per_page</code></li> <li><code>edit_{$taxonomy}_per_page</code></li> <li><code>site_users_network_per_page</code></li> <li><code>users_per_page</code></li> </ul>"
             },
             "args": 1
         },
