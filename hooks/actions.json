@@ -5424,6 +5424,39 @@
             "args": 2
         },
         {
+            "name": "delete_post_{$post->post_type}",
+            "file": "wp-includes/post.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires immediately before a post is deleted from the database.",
+                "long_description": "The dynamic portion of the hook name, `$post->post_type`, refers to the post type slug.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.6.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Post ID.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$post_id"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Post object.",
+                        "types": [
+                            "\\WP_Post"
+                        ],
+                        "variable": "$post"
+                    }
+                ],
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$post-&gt;post_type</code>, refers to the post type slug.</p>"
+            },
+            "args": 2
+        },
+        {
             "name": "delete_postmeta",
             "file": "wp-includes/meta.php",
             "type": "action",
@@ -6163,6 +6196,39 @@
                     }
                 ],
                 "long_description_html": ""
+            },
+            "args": 2
+        },
+        {
+            "name": "deleted_post_{$post->post_type}",
+            "file": "wp-includes/post.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires immediately after a post is deleted from the database.",
+                "long_description": "The dynamic portion of the hook name, `$post->post_type`, refers to the post type slug.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.6.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Post ID.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$post_id"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Post object.",
+                        "types": [
+                            "\\WP_Post"
+                        ],
+                        "variable": "$post"
+                    }
+                ],
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$post-&gt;post_type</code>, refers to the post type slug.</p>"
             },
             "args": 2
         },

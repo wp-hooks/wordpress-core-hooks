@@ -160,6 +160,31 @@
             "args": 2
         },
         {
+            "name": "activate_tinymce_for_media_description",
+            "file": "wp-admin/includes/media.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the TinyMCE argument for the media description field on the attachment details screen.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.6.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether to activate TinyMCE in media description field. Default false.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$tinymce"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 1
+        },
+        {
             "name": "add_menu_classes",
             "file": "wp-admin/includes/menu.php",
             "type": "filter",
@@ -19970,6 +19995,31 @@
             "args": 1
         },
         {
+            "name": "interactivity_process_directives",
+            "file": "wp-includes/class-wp-block.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters whether Interactivity API should process directives.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.6.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether the directives processing is enabled.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$enabled"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 1
+        },
+        {
             "name": "intermediate_image_sizes",
             "file": "wp-includes/media.php",
             "type": "filter",
@@ -20575,6 +20625,48 @@
                 "long_description_html": ""
             },
             "args": 2
+        },
+        {
+            "name": "lang_dir_for_domain",
+            "file": "wp-includes/class-wp-textdomain-registry.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the determined languages directory path for a specific domain and locale.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.6.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Languages directory path for the given domain and locale.",
+                        "types": [
+                            "string",
+                            "false"
+                        ],
+                        "variable": "$path"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Text domain.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$domain"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Locale.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$locale"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 3
         },
         {
             "name": "language_attributes",
@@ -42685,6 +42777,81 @@
             "args": 3
         },
         {
+            "name": "site_status_autoloaded_options_action_to_perform",
+            "file": "wp-admin/includes/class-wp-site-health.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters actionable information to tackle the problem. It can be a link to an external guide.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.6.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Call to Action to be used to point to the right direction to solve the issue.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$actions"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 1
+        },
+        {
+            "name": "site_status_autoloaded_options_limit_description",
+            "file": "wp-admin/includes/class-wp-site-health.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters description to be shown on Site Health warning when threshold is met.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.6.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Description message when autoloaded options bigger than threshold.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$description"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 1
+        },
+        {
+            "name": "site_status_autoloaded_options_size_limit",
+            "file": "wp-admin/includes/class-wp-site-health.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters max bytes threshold to trigger warning in Site Health.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.6.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Autoloaded options threshold size. Default 800000.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$limit"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 1
+        },
+        {
             "name": "site_status_available_object_cache_services",
             "file": "wp-admin/includes/class-wp-site-health.php",
             "type": "filter",
@@ -51812,6 +51979,31 @@
             "args": 2
         },
         {
+            "name": "wp_autoload_values_to_autoload",
+            "file": "wp-includes/option.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the autoload values that should be considered for autoloading from the options table.",
+                "long_description": "The filter can only be used to remove autoload values from the default list.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.6.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Autoload values used to autoload option. Default list contains 'yes', 'on', 'auto-on', and 'auto'.",
+                        "types": [
+                            "string[]"
+                        ],
+                        "variable": "$autoload_values"
+                    }
+                ],
+                "long_description_html": "<p>The filter can only be used to remove autoload values from the default list.</p>"
+            },
+            "args": 1
+        },
+        {
             "name": "wp_cache_themes_persistently",
             "file": "wp-includes/theme.php",
             "type": "filter",
@@ -52511,6 +52703,48 @@
                             "\\DateTimeZone"
                         ],
                         "variable": "$timezone"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 4
+        },
+        {
+            "name": "wp_default_autoload_value",
+            "file": "wp-includes/option.php",
+            "type": "filter",
+            "doc": {
+                "description": "Allows to determine the default autoload value for an option where no explicit value is passed.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.6.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The default autoload value to set. Returning true will be set as 'auto-on' in the database, false will be set as 'auto-off', and null will be set as 'auto'.",
+                        "types": [
+                            "bool",
+                            "null"
+                        ],
+                        "variable": "$autoload"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The passed option name.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$option"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The passed option value to be saved.",
+                        "types": [
+                            "mixed"
+                        ],
+                        "variable": "$value"
                     }
                 ],
                 "long_description_html": ""
@@ -56741,6 +56975,39 @@
                 "long_description_html": "<p>Give Post-By-Email extending plugins full access to the content, either the raw content, or the content of the last quoted-printable section.</p>"
             },
             "args": 1
+        },
+        {
+            "name": "wp_max_autoloaded_option_size",
+            "file": "wp-includes/option.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the maximum size of option value in bytes.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.6.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The option-size threshold, in bytes. Default 150000.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$max_option_size"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The name of the option.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$option"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 2
         },
         {
             "name": "wp_mce_translation",
