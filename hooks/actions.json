@@ -1661,7 +1661,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "{ Array of core auto-update settings. @type bool $dev   Whether to enable automatic updates for development versions. @type bool $minor Whether to enable minor automatic core updates. @type bool $major Whether to enable major automatic core updates.\n}",
+                        "content": "{ Array of core auto-update settings. @type bool $dev   Whether to enable automatic updates for development versions. @type bool $minor Whether to enable minor automatic core updates. @type bool $major Whether to enable major automatic core updates. }",
                         "types": [
                             "array"
                         ],
@@ -1823,7 +1823,7 @@
                     {
                         "name": "since",
                         "content": "5.5.0",
-                        "description": "Added 'auto-update-enabled' and 'auto-update-disabled'              to possible values for <code>$status</code>."
+                        "description": "Added 'auto-update-enabled' and 'auto-update-disabled' to possible values for <code>$status</code>."
                     },
                     {
                         "name": "param",
@@ -1902,7 +1902,7 @@
                     {
                         "name": "since",
                         "content": "5.5.0",
-                        "description": "Added 'auto-update-enabled' and 'auto-update-disabled'              to possible values for <code>$status</code>."
+                        "description": "Added 'auto-update-enabled' and 'auto-update-disabled' to possible values for <code>$status</code>."
                     },
                     {
                         "name": "param",
@@ -2500,7 +2500,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "{ Authentication cookie components. None of the components should be assumed to be valid as they come directly from a client-provided cookie value. @type string $username   User's username. @type string $expiration The time the cookie expires as a UNIX timestamp. @type string $token      User's session token used. @type string $hmac       The security hash for the cookie. @type string $scheme     The cookie scheme to use.\n}",
+                        "content": "{ Authentication cookie components. None of the components should be assumed to be valid as they come directly from a client-provided cookie value. @type string $username   User's username. @type string $expiration The time the cookie expires as a UNIX timestamp. @type string $token      User's session token used. @type string $hmac       The security hash for the cookie. @type string $scheme     The cookie scheme to use. }",
                         "types": [
                             "string[]"
                         ],
@@ -2525,7 +2525,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "{ Authentication cookie components. None of the components should be assumed to be valid as they come directly from a client-provided cookie value. @type string $username   User's username. @type string $expiration The time the cookie expires as a UNIX timestamp. @type string $token      User's session token used. @type string $hmac       The security hash for the cookie. @type string $scheme     The cookie scheme to use.\n}",
+                        "content": "{ Authentication cookie components. None of the components should be assumed to be valid as they come directly from a client-provided cookie value. @type string $username   User's username. @type string $expiration The time the cookie expires as a UNIX timestamp. @type string $token      User's session token used. @type string $hmac       The security hash for the cookie. @type string $scheme     The cookie scheme to use. }",
                         "types": [
                             "string[]"
                         ],
@@ -2550,7 +2550,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "{ Authentication cookie components. None of the components should be assumed to be valid as they come directly from a client-provided cookie value. @type string $username   User's username. @type string $expiration The time the cookie expires as a UNIX timestamp. @type string $token      User's session token used. @type string $hmac       The security hash for the cookie. @type string $scheme     The cookie scheme to use.\n}",
+                        "content": "{ Authentication cookie components. None of the components should be assumed to be valid as they come directly from a client-provided cookie value. @type string $username   User's username. @type string $expiration The time the cookie expires as a UNIX timestamp. @type string $token      User's session token used. @type string $hmac       The security hash for the cookie. @type string $scheme     The cookie scheme to use. }",
                         "types": [
                             "string[]"
                         ],
@@ -2575,7 +2575,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "{ Authentication cookie components. None of the components should be assumed to be valid as they come directly from a client-provided cookie value. @type string $username   User's username. @type string $expiration The time the cookie expires as a UNIX timestamp. @type string $token      User's session token used. @type string $hmac       The security hash for the cookie. @type string $scheme     The cookie scheme to use.\n}",
+                        "content": "{ Authentication cookie components. None of the components should be assumed to be valid as they come directly from a client-provided cookie value. @type string $username   User's username. @type string $expiration The time the cookie expires as a UNIX timestamp. @type string $token      User's session token used. @type string $hmac       The security hash for the cookie. @type string $scheme     The cookie scheme to use. }",
                         "types": [
                             "string[]"
                         ],
@@ -2633,7 +2633,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "{ Authentication cookie components. @type string $username   User's username. @type string $expiration The time the cookie expires as a UNIX timestamp. @type string $token      User's session token used. @type string $hmac       The security hash for the cookie. @type string $scheme     The cookie scheme to use.\n}",
+                        "content": "{ Authentication cookie components. @type string $username   User's username. @type string $expiration The time the cookie expires as a UNIX timestamp. @type string $token      User's session token used. @type string $hmac       The security hash for the cookie. @type string $scheme     The cookie scheme to use. }",
                         "types": [
                             "string[]"
                         ],
@@ -7038,7 +7038,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "{ An associative array of widget arguments. @type string   $name        Name of the widget. @type string   $id          Widget ID. @type callable $callback    When the hook is fired on the front end, <code>$callback</code> is an array containing the widget object. Fired on the back end, <code>$callback</code> is 'wp_widget_control', see <code>$_callback</code>. @type array    $params      An associative array of multi-widget arguments. @type string   $classname   CSS class applied to the widget container. @type string   $description The widget description. @type array    $_callback   When the hook is fired on the back end, <code>$_callback</code> is populated with an array containing the widget object, see <code>$callback</code>.\n}",
+                        "content": "{ An associative array of widget arguments. @type string   $name        Name of the widget. @type string   $id          Widget ID. @type callable $callback    When the hook is fired on the front end, <code>$callback</code> is an array containing the widget object. Fired on the back end, <code>$callback</code> is 'wp_widget_control', see <code>$_callback</code>. @type array    $params      An associative array of multi-widget arguments. @type string   $classname   CSS class applied to the widget container. @type string   $description The widget description. @type array    $_callback   When the hook is fired on the back end, <code>$_callback</code> is populated with an array containing the widget object, see <code>$callback</code>. }",
                         "types": [
                             "array"
                         ],
@@ -8716,7 +8716,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "{ An object of metadata about the available plugin update. @type string   $id           Plugin ID, e.g. <code>w.org/plugins/[plugin-name]</code>. @type string   $slug         Plugin slug. @type string   $plugin       Plugin basename. @type string   $new_version  New plugin version. @type string   $url          Plugin URL. @type string   $package      Plugin update package URL. @type string[] $icons        An array of plugin icon URLs. @type string[] $banners      An array of plugin banner URLs. @type string[] $banners_rtl  An array of plugin RTL banner URLs. @type string   $requires     The version of WordPress which the plugin requires. @type string   $tested       The version of WordPress the plugin is tested against. @type string   $requires_php The version of PHP which the plugin requires.\n}",
+                        "content": "{ An object of metadata about the available plugin update. @type string   $id           Plugin ID, e.g. <code>w.org/plugins/[plugin-name]</code>. @type string   $slug         Plugin slug. @type string   $plugin       Plugin basename. @type string   $new_version  New plugin version. @type string   $url          Plugin URL. @type string   $package      Plugin update package URL. @type string[] $icons        An array of plugin icon URLs. @type string[] $banners      An array of plugin banner URLs. @type string[] $banners_rtl  An array of plugin RTL banner URLs. @type string   $requires     The version of WordPress which the plugin requires. @type string   $tested       The version of WordPress the plugin is tested against. @type string   $requires_php The version of PHP which the plugin requires. }",
                         "types": [
                             "object"
                         ],
@@ -8749,7 +8749,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "{ An array of metadata about the available theme update. @type string $new_version New theme version. @type string $url         Theme URL. @type string $package     Theme update package URL.\n}",
+                        "content": "{ An array of metadata about the available theme update. @type string $new_version New theme version. @type string $url         Theme URL. @type string $package     Theme update package URL. }",
                         "types": [
                             "array"
                         ],
@@ -17312,7 +17312,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "{ Array of bulk item update data. @type string $action       Type of action. Default 'update'. @type string $type         Type of update process. Accepts 'plugin', 'theme', 'translation', or 'core'. @type bool   $bulk         Whether the update process is a bulk update. Default true. @type array  $plugins      Array of the basename paths of the plugins' main files. @type array  $themes       The theme slugs. @type array  $translations { Array of translations update data. @type string $language The locale the translation is for. @type string $type     Type of translation. Accepts 'plugin', 'theme', or 'core'. @type string $slug     Text domain the translation is for. The slug of a theme/plugin or 'default' for core translations. @type string $version  The version of a theme, plugin, or core. }\n}",
+                        "content": "{ Array of bulk item update data. @type string $action       Type of action. Default 'update'. @type string $type         Type of update process. Accepts 'plugin', 'theme', 'translation', or 'core'. @type bool   $bulk         Whether the update process is a bulk update. Default true. @type array  $plugins      Array of the basename paths of the plugins' main files. @type array  $themes       The theme slugs. @type array  $translations { Array of translations update data. @type string $language The locale the translation is for. @type string $type     Type of translation. Accepts 'plugin', 'theme', or 'core'. @type string $slug     Text domain the translation is for. The slug of a theme/plugin or 'default' for core translations. @type string $version  The version of a theme, plugin, or core. } }",
                         "types": [
                             "array"
                         ],
@@ -17585,14 +17585,14 @@
             "type": "action",
             "doc": {
                 "description": "Fires when adding content to the welcome panel on the admin dashboard.",
-                "long_description": "To remove the default welcome panel, use remove_action():\n     remove_action( 'welcome_panel', 'wp_welcome_panel' );",
+                "long_description": "To remove the default welcome panel, use remove_action():\n remove_action( 'welcome_panel', 'wp_welcome_panel' );",
                 "tags": [
                     {
                         "name": "since",
                         "content": "3.5.0"
                     }
                 ],
-                "long_description_html": "<p>To remove the default welcome panel, use remove_action():</p> <pre><code>remove_action( 'welcome_panel', 'wp_welcome_panel' );</code></pre>"
+                "long_description_html": "<p>To remove the default welcome panel, use remove_action():</p> <p>remove_action( 'welcome_panel', 'wp_welcome_panel' );</p>"
             },
             "args": 0
         },
@@ -18051,7 +18051,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "{ The array of request data. All arguments are optional and may be empty. @type string $app_name    The suggested name of the application. @type string $success_url The URL the user will be redirected to after approving the application. @type string $reject_url  The URL the user will be redirected to after rejecting the application.\n}",
+                        "content": "{ The array of request data. All arguments are optional and may be empty. @type string $app_name    The suggested name of the application. @type string $success_url The URL the user will be redirected to after approving the application. @type string $reject_url  The URL the user will be redirected to after rejecting the application. }",
                         "types": [
                             "array"
                         ],
@@ -18361,7 +18361,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "{ The details about the created password. @type string $uuid      The unique identifier for the application password. @type string $app_id    A UUID provided by the application to uniquely identify it. @type string $name      The name of the application password. @type string $password  A one-way hash of the password. @type int    $created   Unix timestamp of when the password was created. @type null   $last_used Null. @type null   $last_ip   Null.\n}",
+                        "content": "{ The details about the created password. @type string $uuid      The unique identifier for the application password. @type string $app_id    A UUID provided by the application to uniquely identify it. @type string $name      The name of the application password. @type string $password  A one-way hash of the password. @type int    $created   Unix timestamp of when the password was created. @type null   $last_used Null. @type null   $last_ip   Null. }",
                         "types": [
                             "array"
                         ],
@@ -18377,7 +18377,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "{ Arguments used to create the application password. @type string $name   The name of the application password. @type string $app_id A UUID provided by the application to uniquely identify it.\n}",
+                        "content": "{ Arguments used to create the application password. @type string $name   The name of the application password. @type string $app_id A UUID provided by the application to uniquely identify it. }",
                         "types": [
                             "array"
                         ],
@@ -19218,7 +19218,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "{ An array containing the email recipient(s), subject, message, headers, and attachments. @type string[] $to          Email addresses to send message. @type string   $subject     Email subject. @type string   $message     Message contents. @type string[] $headers     Additional headers. @type string[] $attachments Paths to files to attach.\n}",
+                        "content": "{ An array containing the email recipient(s), subject, message, headers, and attachments. @type string[] $to          Email addresses to send message. @type string   $subject     Email subject. @type string   $message     Message contents. @type string[] $headers     Additional headers. @type string[] $attachments Paths to files to attach. }",
                         "types": [
                             "array"
                         ],
@@ -20228,7 +20228,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Associative array of complete site data. See {@see wp_insert_site()} for the included data.",
+                        "content": "Associative array of complete site data. See {@see \\wp_insert_site()} for the included data.",
                         "types": [
                             "array"
                         ],
@@ -21281,28 +21281,6 @@
                 "long_description_html": "<p>The dynamic portions of the hook name, <code>$new_status</code> and <code>$old_status</code>, refer to the old and new post statuses, respectively.</p> <p>Possible hook names include:</p> <ul> <li><code>draft_to_publish</code></li> <li><code>publish_to_trash</code></li> <li><code>pending_to_draft</code></li> </ul>"
             },
             "args": 1
-        },
-        {
-            "name": "{$page_hook}",
-            "file": "wp-admin/admin.php",
-            "type": "action",
-            "doc": {
-                "description": "Used to call the registered callback for a plugin screen.",
-                "long_description": "This hook uses a dynamic hook name, `$page_hook`, which refers to a mixture of plugin page information including:\n 1. The page type. If the plugin page is registered as a submenu page, such as for    Settings, the page type would be 'settings'. Otherwise the type is 'toplevel'.\n 2. A separator of '_page_'.\n 3. The plugin basename minus the file extension.\n Together, the three parts form the `$page_hook`. Citing the example above, the hook name used would be 'settings_page_pluginbasename'.",
-                "tags": [
-                    {
-                        "name": "see",
-                        "content": "",
-                        "refers": "get_plugin_page_hook()"
-                    },
-                    {
-                        "name": "since",
-                        "content": "1.5.0"
-                    }
-                ],
-                "long_description_html": "<p>This hook uses a dynamic hook name, <code>$page_hook</code>, which refers to a mixture of plugin page information including:</p> <ol> <li>The page type. If the plugin page is registered as a submenu page, such as for Settings, the page type would be 'settings'. Otherwise the type is 'toplevel'.</li> <li>A separator of '<em>page</em>'.</li> <li>The plugin basename minus the file extension.</li> </ol> <p>Together, the three parts form the <code>$page_hook</code>. Citing the example above, the hook name used would be 'settings_page_pluginbasename'.</p>"
-            },
-            "args": 0
         },
         {
             "name": "{$taxonomy}_add_form",
