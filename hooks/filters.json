@@ -1,5 +1,5 @@
 {
-    "$schema": "https://raw.githubusercontent.com/wp-hooks/generator/0.9.0/schema.json",
+    "$schema": "https://raw.githubusercontent.com/wp-hooks/generator/1.0.0/schema.json",
     "hooks": [
         {
             "name": "_get_page_link",
@@ -2656,6 +2656,63 @@
             "args": 4
         },
         {
+            "name": "block_bindings_source_value",
+            "file": "wp-includes/class-wp-block-bindings-source.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the output of a block bindings source.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.7.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The computed value for the source.",
+                        "types": [
+                            "mixed"
+                        ],
+                        "variable": "$value"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The name of the source.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$name"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Array containing source arguments used to look up the override value, i.e. { \"key\": \"foo\" }.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$source_args"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The block instance.",
+                        "types": [
+                            "\\WP_Block"
+                        ],
+                        "variable": "$block_instance"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The name of an attribute.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$attribute_name"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 5
+        },
+        {
             "name": "block_categories_all",
             "file": "wp-includes/block-editor.php",
             "type": "filter",
@@ -5220,10 +5277,10 @@
         },
         {
             "name": "comment_row_actions",
-            "file": "wp-admin/includes/dashboard.php",
+            "file": "wp-admin/includes/class-wp-comments-list-table.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the action links displayed for each comment in the 'Recent Comments' dashboard widget.",
+                "description": "Filters the action links displayed for each comment in the Comments list table.",
                 "long_description": "",
                 "tags": [
                     {
@@ -9520,7 +9577,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the value of a specific post field to edit.",
-                "long_description": "The dynamic portion of the hook name, `$field`, refers to the post field name.",
+                "long_description": "The dynamic portion of the hook name, `$field`, refers to the post field name. Possible filter names include:\n\n  - `edit_post_author`\n  - `edit_post_date`\n  - `edit_post_date_gmt`\n  - `edit_post_content`\n  - `edit_post_title`\n  - `edit_post_excerpt`\n  - `edit_post_status`\n  - `edit_post_password`\n  - `edit_post_name`\n  - `edit_post_modified`\n  - `edit_post_modified_gmt`\n  - `edit_post_content_filtered`\n  - `edit_post_parent`\n  - `edit_post_type`\n  - `edit_post_mime_type`",
                 "tags": [
                     {
                         "name": "since",
@@ -9543,7 +9600,7 @@
                         "variable": "$post_id"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$field</code>, refers to the post field name.</p>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$field</code>, refers to the post field name. Possible filter names include:</p> <ul> <li><code>edit_post_author</code></li> <li><code>edit_post_date</code></li> <li><code>edit_post_date_gmt</code></li> <li><code>edit_post_content</code></li> <li><code>edit_post_title</code></li> <li><code>edit_post_excerpt</code></li> <li><code>edit_post_status</code></li> <li><code>edit_post_password</code></li> <li><code>edit_post_name</code></li> <li><code>edit_post_modified</code></li> <li><code>edit_post_modified_gmt</code></li> <li><code>edit_post_content_filtered</code></li> <li><code>edit_post_parent</code></li> <li><code>edit_post_type</code></li> <li><code>edit_post_mime_type</code></li> </ul>"
             },
             "args": 2
         },
@@ -10359,31 +10416,6 @@
             "args": 1
         },
         {
-            "name": "enable_edit_any_user_configuration",
-            "file": "wp-admin/user-edit.php",
-            "type": "filter",
-            "doc": {
-                "description": "Filters whether to allow administrators on Multisite to edit every user.",
-                "long_description": "Enabling the user editing form via this filter also hinges on the user holding the 'manage_network_users' cap, and the logged-in user not matching the user profile open for editing.\n The filter was introduced to replace the EDIT_ANY_USER constant.",
-                "tags": [
-                    {
-                        "name": "since",
-                        "content": "3.0.0"
-                    },
-                    {
-                        "name": "param",
-                        "content": "Whether to allow editing of any user. Default true.",
-                        "types": [
-                            "bool"
-                        ],
-                        "variable": "$allow"
-                    }
-                ],
-                "long_description_html": "<p>Enabling the user editing form via this filter also hinges on the user holding the 'manage_network_users' cap, and the logged-in user not matching the user profile open for editing.</p> <p>The filter was introduced to replace the EDIT_ANY_USER constant.</p>"
-            },
-            "args": 1
-        },
-        {
             "name": "enable_live_network_counts",
             "file": "wp-includes/ms-functions.php",
             "type": "filter",
@@ -11195,6 +11227,56 @@
                 "long_description_html": ""
             },
             "args": 2
+        },
+        {
+            "name": "feed_links_args",
+            "file": "wp-includes/general-template.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the feed links arguments.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.7.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "An array of feed links arguments.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$args"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 1
+        },
+        {
+            "name": "feed_links_extra_args",
+            "file": "wp-includes/general-template.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the extra feed links arguments.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.7.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "An array of extra feed links arguments.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$args"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 1
         },
         {
             "name": "feed_links_extra_show_author_feed",
@@ -13837,17 +13919,38 @@
                         "content": "2.3.0"
                     },
                     {
+                        "name": "since",
+                        "content": "6.7.0",
+                        "description": "The $comment_id and $context parameters are now being passed to the filter."
+                    },
+                    {
                         "name": "param",
                         "content": "The edit link.",
                         "types": [
                             "string"
                         ],
                         "variable": "$location"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Unique ID of the comment to generate an edit link.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$comment_id"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Context to include HTML entities in link. Default 'display'.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$context"
                     }
                 ],
                 "long_description_html": ""
             },
-            "args": 1
+            "args": 3
         },
         {
             "name": "get_edit_post_link",
@@ -18735,11 +18838,11 @@
         },
         {
             "name": "image_editor_output_format",
-            "file": "wp-includes/class-wp-image-editor.php",
+            "file": "wp-includes/media.php",
             "type": "filter",
             "doc": {
                 "description": "Filters the image editor output format mapping.",
-                "long_description": "Enables filtering the mime type used to save images. By default, the mapping array is empty, so the mime type matches the source image.",
+                "long_description": "Enables filtering the mime type used to save images. By default HEIC/HEIF images are converted to JPEGs.",
                 "tags": [
                     {
                         "name": "see",
@@ -18751,8 +18854,13 @@
                         "content": "5.8.0"
                     },
                     {
+                        "name": "since",
+                        "content": "6.7.0",
+                        "description": "The default was changed from an empty array to an array containing the HEIC/HEIF images mime types."
+                    },
+                    {
                         "name": "param",
-                        "content": "{ An array of mime type mappings. Maps a source mime type to a new destination mime type. Default empty array. @type string ...$0 The new mime type. }",
+                        "content": "{ An array of mime type mappings. Maps a source mime type to a new destination mime type. By default maps HEIC/HEIF input to JPEG output. @type string ...$0 The new mime type. }",
                         "types": [
                             "string[]"
                         ],
@@ -18775,7 +18883,7 @@
                         "variable": "$mime_type"
                     }
                 ],
-                "long_description_html": "<p>Enables filtering the mime type used to save images. By default, the mapping array is empty, so the mime type matches the source image.</p>"
+                "long_description_html": "<p>Enables filtering the mime type used to save images. By default HEIC/HEIF images are converted to JPEGs.</p>"
             },
             "args": 3
         },
@@ -22290,7 +22398,7 @@
                         "types": [
                             "string[]"
                         ],
-                        "variable": "$post_columns"
+                        "variable": "$posts_columns"
                     }
                 ],
                 "long_description_html": ""
@@ -22315,7 +22423,7 @@
                         "types": [
                             "string[]"
                         ],
-                        "variable": "$post_columns"
+                        "variable": "$posts_columns"
                     },
                     {
                         "name": "param",
@@ -22504,7 +22612,7 @@
                         "types": [
                             "string[]"
                         ],
-                        "variable": "$post_columns"
+                        "variable": "$posts_columns"
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$post_type</code>, refers to the post type slug.</p> <p>Possible hook names include:</p> <ul> <li><code>manage_post_posts_columns</code></li> <li><code>manage_page_posts_columns</code></li> </ul>"
@@ -27747,39 +27855,6 @@
             "args": 2
         },
         {
-            "name": "plugin_locale",
-            "file": "wp-includes/l10n.php",
-            "type": "filter",
-            "doc": {
-                "description": "Filters a plugin's locale.",
-                "long_description": "",
-                "tags": [
-                    {
-                        "name": "since",
-                        "content": "3.0.0"
-                    },
-                    {
-                        "name": "param",
-                        "content": "The plugin's current locale.",
-                        "types": [
-                            "string"
-                        ],
-                        "variable": "$locale"
-                    },
-                    {
-                        "name": "param",
-                        "content": "Text domain. Unique identifier for retrieving translated strings.",
-                        "types": [
-                            "string"
-                        ],
-                        "variable": "$domain"
-                    }
-                ],
-                "long_description_html": ""
-            },
-            "args": 2
-        },
-        {
             "name": "plugin_row_meta",
             "file": "wp-admin/includes/class-wp-plugins-list-table.php",
             "type": "filter",
@@ -27834,7 +27909,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the response for the current WordPress.org Plugin Installation API request.",
-                "long_description": "Returning a non-false value will effectively short-circuit the WordPress.org API request.\n If `$action` is 'query_plugins' or 'plugin_information', an object MUST be passed. If `$action` is 'hot_tags' or 'hot_categories', an array should be passed.",
+                "long_description": "Returning a non-false value will effectively short-circuit the WordPress.org API request.\n If `$action` is 'query_plugins' or 'plugin_information', an object MUST be passed. If `$action` is 'hot_tags', an array should be passed.",
                 "tags": [
                     {
                         "name": "since",
@@ -27867,7 +27942,7 @@
                         "variable": "$args"
                     }
                 ],
-                "long_description_html": "<p>Returning a non-false value will effectively short-circuit the WordPress.org API request.</p> <p>If <code>$action</code> is 'query_plugins' or 'plugin_information', an object MUST be passed. If <code>$action</code> is 'hot_tags' or 'hot_categories', an array should be passed.</p>"
+                "long_description_html": "<p>Returning a non-false value will effectively short-circuit the WordPress.org API request.</p> <p>If <code>$action</code> is 'query_plugins' or 'plugin_information', an object MUST be passed. If <code>$action</code> is 'hot_tags', an array should be passed.</p>"
             },
             "args": 3
         },
@@ -30341,6 +30416,36 @@
             "args": 3
         },
         {
+            "name": "pre_attachment_url_to_postid",
+            "file": "wp-includes/media.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the attachment ID to allow short-circuit the function.",
+                "long_description": "Allows plugins to short-circuit attachment ID lookups. Plugins making use of this function should return:\n - 0 (integer) to indicate the attachment is not found, - attachment ID (integer) to indicate the attachment ID found, - null to indicate WordPress should proceed with the lookup.\n Warning: The post ID may be null or zero, both of which cast to a boolean false. For information about casting to booleans see the {@link https://www.php.net/manual/en/language.types.boolean.php PHP documentation}. Use the === operator for testing the post ID when developing filters using this hook.",
+                "tags": [
+                    {
+                        "name": "param",
+                        "content": "The result of the post ID lookup. Null to indicate no lookup has been attempted. Default null.",
+                        "types": [
+                            "int",
+                            "null"
+                        ],
+                        "variable": "$post_id"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The URL being looked up.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$url"
+                    }
+                ],
+                "long_description_html": "<p>Allows plugins to short-circuit attachment ID lookups. Plugins making use of this function should return:</p> <ul> <li>0 (integer) to indicate the attachment is not found,</li> <li>attachment ID (integer) to indicate the attachment ID found,</li> <li>null to indicate WordPress should proceed with the lookup.</li> </ul> <p>Warning: The post ID may be null or zero, both of which cast to a boolean false. For information about casting to booleans see the {@link <a href=\"https://www.php.net/manual/en/language.types.boolean.php\">https://www.php.net/manual/en/language.types.boolean.php</a> PHP documentation}. Use the === operator for testing the post ID when developing filters using this hook.</p>"
+            },
+            "args": 2
+        },
+        {
             "name": "pre_cache_alloptions",
             "file": "wp-includes/option.php",
             "type": "filter",
@@ -32413,7 +32518,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "{ A representative array of the block being rendered. See WP_Block_Parser_Block. @type string   $blockName    Name of block. @type array    $attrs        Attributes from block comment delimiters. @type array[]  $innerBlocks  List of inner blocks. An array of arrays that have the same structure as this one. @type string   $innerHTML    HTML from inside block comment delimiters. @type array    $innerContent List of string fragments and null markers where inner blocks were found. }",
+                        "content": "{ An associative array of the block being rendered. See WP_Block_Parser_Block. @type string   $blockName    Name of block. @type array    $attrs        Attributes from block comment delimiters. @type array[]  $innerBlocks  List of inner blocks. An array of arrays that have the same structure as this one. @type string   $innerHTML    HTML from inside block comment delimiters. @type array    $innerContent List of string fragments and null markers where inner blocks were found. }",
                         "types": [
                             "array"
                         ],
@@ -32689,7 +32794,7 @@
                         "types": [
                             "mixed"
                         ],
-                        "variable": "$pre_option"
+                        "variable": "$pre_site_option"
                     },
                     {
                         "name": "param",
@@ -34058,7 +34163,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the value of a specific post field before saving.",
-                "long_description": "The dynamic portion of the hook name, `$field`, refers to the post field name.",
+                "long_description": "Only applied to post fields with a name which is prefixed with `post_`.\n The dynamic portion of the hook name, `$field`, refers to the post field name. Possible filter names include:\n\n  - `pre_post_author`\n  - `pre_post_date`\n  - `pre_post_date_gmt`\n  - `pre_post_content`\n  - `pre_post_title`\n  - `pre_post_excerpt`\n  - `pre_post_status`\n  - `pre_post_password`\n  - `pre_post_name`\n  - `pre_post_modified`\n  - `pre_post_modified_gmt`\n  - `pre_post_content_filtered`\n  - `pre_post_parent`\n  - `pre_post_type`\n  - `pre_post_mime_type`",
                 "tags": [
                     {
                         "name": "since",
@@ -34073,7 +34178,7 @@
                         "variable": "$value"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$field</code>, refers to the post field name.</p>"
+                "long_description_html": "<p>Only applied to post fields with a name which is prefixed with <code>post_</code>.</p> <p>The dynamic portion of the hook name, <code>$field</code>, refers to the post field name. Possible filter names include:</p> <ul> <li><code>pre_post_author</code></li> <li><code>pre_post_date</code></li> <li><code>pre_post_date_gmt</code></li> <li><code>pre_post_content</code></li> <li><code>pre_post_title</code></li> <li><code>pre_post_excerpt</code></li> <li><code>pre_post_status</code></li> <li><code>pre_post_password</code></li> <li><code>pre_post_name</code></li> <li><code>pre_post_modified</code></li> <li><code>pre_post_modified_gmt</code></li> <li><code>pre_post_content_filtered</code></li> <li><code>pre_post_parent</code></li> <li><code>pre_post_type</code></li> <li><code>pre_post_mime_type</code></li> </ul>"
             },
             "args": 1
         },
@@ -35864,7 +35969,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "{ A representative array of the block being rendered. See WP_Block_Parser_Block. @type string   $blockName    Name of block. @type array    $attrs        Attributes from block comment delimiters. @type array[]  $innerBlocks  List of inner blocks. An array of arrays that have the same structure as this one. @type string   $innerHTML    HTML from inside block comment delimiters. @type array    $innerContent List of string fragments and null markers where inner blocks were found. }",
+                        "content": "{ An associative array of the block being rendered. See WP_Block_Parser_Block. @type string   $blockName    Name of block. @type array    $attrs        Attributes from block comment delimiters. @type array[]  $innerBlocks  List of inner blocks. An array of arrays that have the same structure as this one. @type string   $innerHTML    HTML from inside block comment delimiters. @type array    $innerContent List of string fragments and null markers where inner blocks were found. }",
                         "types": [
                             "array"
                         ],
@@ -35903,7 +36008,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "{ A representative array of the block being rendered. See WP_Block_Parser_Block. @type string   $blockName    Name of block. @type array    $attrs        Attributes from block comment delimiters. @type array[]  $innerBlocks  List of inner blocks. An array of arrays that have the same structure as this one. @type string   $innerHTML    HTML from inside block comment delimiters. @type array    $innerContent List of string fragments and null markers where inner blocks were found. }",
+                        "content": "{ An associative array of the block being rendered. See WP_Block_Parser_Block. @type string   $blockName    Name of block. @type array    $attrs        Attributes from block comment delimiters. @type array[]  $innerBlocks  List of inner blocks. An array of arrays that have the same structure as this one. @type string   $innerHTML    HTML from inside block comment delimiters. @type array    $innerContent List of string fragments and null markers where inner blocks were found. }",
                         "types": [
                             "array"
                         ],
@@ -40703,6 +40808,39 @@
             "args": 3
         },
         {
+            "name": "script_module_data_{$module_id}",
+            "file": "wp-includes/class-wp-script-modules.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters data associated with a given Script Module.",
+                "long_description": "Script Modules may require data that is required for initialization or is essential to have immediately available on page load. These are suitable use cases for this data.\n The dynamic portion of the hook name, `$module_id`, refers to the Script Module ID that the data is associated with.\n This is best suited to pass essential data that must be available to the module for initialization or immediately on page load. It does not replace the REST API or fetching data from the client.",
+                "tags": [
+                    {
+                        "name": "example",
+                        "content": "add_filter( 'script_module_data_MyScriptModuleID', function ( array $data ): array { $data['script-needs-this-data'] = 'ok'; return $data; } ); If the filter returns no data (an empty array), nothing will be embedded in the page. The data for a given Script Module, if provided, will be JSON serialized in a script tag with an ID of the form `wp-script-module-data-{$module_id}`. The data can be read on the client with a pattern like this:"
+                    },
+                    {
+                        "name": "example",
+                        "content": "const dataContainer = document.getElementById( 'wp-script-module-data-MyScriptModuleID' ); let data = }; if ( dataContainer ) { try { data = JSON.parse( dataContainer.textContent ); } catch } } initMyScriptModuleWithData( data );"
+                    },
+                    {
+                        "name": "since",
+                        "content": "6.7.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The data associated with the Script Module.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$data"
+                    }
+                ],
+                "long_description_html": "<p>Script Modules may require data that is required for initialization or is essential to have immediately available on page load. These are suitable use cases for this data.</p> <p>The dynamic portion of the hook name, <code>$module_id</code>, refers to the Script Module ID that the data is associated with.</p> <p>This is best suited to pass essential data that must be available to the module for initialization or immediately on page load. It does not replace the REST API or fetching data from the client.</p>"
+            },
+            "args": 1
+        },
+        {
             "name": "script_module_loader_src",
             "file": "wp-includes/class-wp-script-modules.php",
             "type": "filter",
@@ -43291,7 +43429,8 @@
                         "name": "param",
                         "content": "Return an array of site data to short-circuit WP's site query, the site count as an integer if <code>$this-&gt;query_vars['count']</code> is set, or null to run the normal queries.",
                         "types": [
-                            "array",
+                            "\\WP_Site[]",
+                            "int[]",
                             "int",
                             "null"
                         ],
@@ -45788,7 +45927,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the HTML output for the protected post password form.",
-                "long_description": "If modifying the password field, please note that the core database schema limits the password field to 20 characters regardless of the value of the size attribute in the form input.",
+                "long_description": "If modifying the password field, please note that the WordPress database schema limits the password field to 255 characters regardless of the value of the `minlength` or `maxlength` attributes or other validation that may be added to the input.",
                 "tags": [
                     {
                         "name": "since",
@@ -45816,7 +45955,7 @@
                         "variable": "$post"
                     }
                 ],
-                "long_description_html": "<p>If modifying the password field, please note that the core database schema limits the password field to 20 characters regardless of the value of the size attribute in the form input.</p>"
+                "long_description_html": "<p>If modifying the password field, please note that the WordPress database schema limits the password field to 255 characters regardless of the value of the <code>minlength</code> or <code>maxlength</code> attributes or other validation that may be added to the input.</p>"
             },
             "args": 2
         },
@@ -46725,39 +46864,6 @@
             "args": 2
         },
         {
-            "name": "theme_locale",
-            "file": "wp-includes/l10n.php",
-            "type": "filter",
-            "doc": {
-                "description": "Filters a theme's locale.",
-                "long_description": "",
-                "tags": [
-                    {
-                        "name": "since",
-                        "content": "3.0.0"
-                    },
-                    {
-                        "name": "param",
-                        "content": "The theme's current locale.",
-                        "types": [
-                            "string"
-                        ],
-                        "variable": "$locale"
-                    },
-                    {
-                        "name": "param",
-                        "content": "Text domain. Unique identifier for retrieving translated strings.",
-                        "types": [
-                            "string"
-                        ],
-                        "variable": "$domain"
-                    }
-                ],
-                "long_description_html": ""
-            },
-            "args": 2
-        },
-        {
             "name": "theme_mod_{$name}",
             "file": "wp-includes/theme.php",
             "type": "filter",
@@ -47489,7 +47595,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Response as an associative array or WP_Error.",
+                        "content": "{ On success an associative array of translations, WP_Error on failure. @type array $translations { List of translations, each an array of data. @type array ...$0 { @type string   $language     Language code. @type string   $version      WordPress version. @type string   $updated      Date the translation was last updated, in MySQL datetime format. @type string   $english_name English name of the language. @type string   $native_name  Native name of the language. @type string   $package      URL to download the translation package. @type string[] $iso          Array of ISO language codes. @type array    $strings      Array of translated strings used in the installation process. } } }",
                         "types": [
                             "array",
                             "\\WP_Error"
@@ -49726,7 +49832,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "{ Data relating to the account action email. @type WP_User_Request $request     User request object. @type string          $user_email  The email address confirming a request @type string          $description Description of the action being performed so the user knows what the email is for. @type string          $manage_url  The link to click manage privacy requests of this type. @type string          $sitename    The site name sending the mail. @type string          $siteurl     The site URL sending the mail. @type string          $admin_email The administrator email receiving the mail. }",
+                        "content": "{ Data relating to the account action email. @type WP_User_Request $request     User request object. @type string          $user_email  The email address confirming a request. @type string          $description Description of the action being performed so the user knows what the email is for. @type string          $manage_url  The link to click manage privacy requests of this type. @type string          $sitename    The site name sending the mail. @type string          $siteurl     The site URL sending the mail. @type string          $admin_email The administrator email receiving the mail. }",
                         "types": [
                             "array"
                         ],
@@ -49784,7 +49890,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "{ Data relating to the account action email. @type WP_User_Request $request     User request object. @type string          $user_email  The email address confirming a request @type string          $description Description of the action being performed so the user knows what the email is for. @type string          $manage_url  The link to click manage privacy requests of this type. @type string          $sitename    The site name sending the mail. @type string          $siteurl     The site URL sending the mail. @type string          $admin_email The administrator email receiving the mail. }",
+                        "content": "{ Data relating to the account action email. @type WP_User_Request $request     User request object. @type string          $user_email  The email address confirming a request. @type string          $description Description of the action being performed so the user knows what the email is for. @type string          $manage_url  The link to click manage privacy requests of this type. @type string          $sitename    The site name sending the mail. @type string          $siteurl     The site URL sending the mail. @type string          $admin_email The administrator email receiving the mail. }",
                         "types": [
                             "array"
                         ],
@@ -49825,7 +49931,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "{ Data relating to the account action email. @type WP_User_Request $request     User request object. @type string          $user_email  The email address confirming a request @type string          $description Description of the action being performed so the user knows what the email is for. @type string          $manage_url  The link to click manage privacy requests of this type. @type string          $sitename    The site name sending the mail. @type string          $siteurl     The site URL sending the mail. @type string          $admin_email The administrator email receiving the mail. }",
+                        "content": "{ Data relating to the account action email. @type WP_User_Request $request     User request object. @type string          $user_email  The email address confirming a request. @type string          $description Description of the action being performed so the user knows what the email is for. @type string          $manage_url  The link to click manage privacy requests of this type. @type string          $sitename    The site name sending the mail. @type string          $siteurl     The site URL sending the mail. @type string          $admin_email The administrator email receiving the mail. }",
                         "types": [
                             "array"
                         ],
@@ -53623,7 +53729,7 @@
                         "types": [
                             "string"
                         ],
-                        "variable": "$filename"
+                        "variable": "$name"
                     }
                 ],
                 "long_description_html": ""
@@ -57954,7 +58060,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "{ Values and keys for the user. @type string $user_login      The user's login. Only included if $update == false @type string $user_pass       The user's password. @type string $user_email      The user's email. @type string $user_url        The user's url. @type string $user_nicename   The user's nice name. Defaults to a URL-safe version of user's login @type string $display_name    The user's display name. @type string $user_registered MySQL timestamp describing the moment when the user registered. Defaults to the current UTC timestamp. }",
+                        "content": "{ Values and keys for the user. @type string $user_login      The user's login. Only included if $update == false @type string $user_pass       The user's password. @type string $user_email      The user's email. @type string $user_url        The user's url. @type string $user_nicename   The user's nice name. Defaults to a URL-safe version of user's login. @type string $display_name    The user's display name. @type string $user_registered MySQL timestamp describing the moment when the user registered. Defaults to the current UTC timestamp. }",
                         "types": [
                             "array"
                         ],
@@ -64078,7 +64184,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the value of a specific post field to edit.",
-                "long_description": "The dynamic portion of the hook name, `$field_no_prefix`, refers to the post field name.",
+                "long_description": "Only applied to post fields with a name which is prefixed with `post_`.\n The dynamic portion of the hook name, `$field_no_prefix`, refers to the post field name minus the `post_` prefix. Possible filter names include:\n\n  - `author_edit_pre`\n  - `date_edit_pre`\n  - `date_gmt_edit_pre`\n  - `content_edit_pre`\n  - `title_edit_pre`\n  - `excerpt_edit_pre`\n  - `status_edit_pre`\n  - `password_edit_pre`\n  - `name_edit_pre`\n  - `modified_edit_pre`\n  - `modified_gmt_edit_pre`\n  - `content_filtered_edit_pre`\n  - `parent_edit_pre`\n  - `type_edit_pre`\n  - `mime_type_edit_pre`",
                 "tags": [
                     {
                         "name": "since",
@@ -64101,7 +64207,7 @@
                         "variable": "$post_id"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$field_no_prefix</code>, refers to the post field name.</p>"
+                "long_description_html": "<p>Only applied to post fields with a name which is prefixed with <code>post_</code>.</p> <p>The dynamic portion of the hook name, <code>$field_no_prefix</code>, refers to the post field name minus the <code>post_</code> prefix. Possible filter names include:</p> <ul> <li><code>author_edit_pre</code></li> <li><code>date_edit_pre</code></li> <li><code>date_gmt_edit_pre</code></li> <li><code>content_edit_pre</code></li> <li><code>title_edit_pre</code></li> <li><code>excerpt_edit_pre</code></li> <li><code>status_edit_pre</code></li> <li><code>password_edit_pre</code></li> <li><code>name_edit_pre</code></li> <li><code>modified_edit_pre</code></li> <li><code>modified_gmt_edit_pre</code></li> <li><code>content_filtered_edit_pre</code></li> <li><code>parent_edit_pre</code></li> <li><code>type_edit_pre</code></li> <li><code>mime_type_edit_pre</code></li> </ul>"
             },
             "args": 2
         },
@@ -64111,7 +64217,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the value of a specific field before saving.",
-                "long_description": "The dynamic portion of the hook name, `$field_no_prefix`, refers to the post field name.",
+                "long_description": "Only applied to post fields with a name which is prefixed with `post_`.\n The dynamic portion of the hook name, `$field_no_prefix`, refers to the post field name minus the `post_` prefix. Possible filter names include:\n\n  - `author_save_pre`\n  - `date_save_pre`\n  - `date_gmt_save_pre`\n  - `content_save_pre`\n  - `title_save_pre`\n  - `excerpt_save_pre`\n  - `status_save_pre`\n  - `password_save_pre`\n  - `name_save_pre`\n  - `modified_save_pre`\n  - `modified_gmt_save_pre`\n  - `content_filtered_save_pre`\n  - `parent_save_pre`\n  - `type_save_pre`\n  - `mime_type_save_pre`",
                 "tags": [
                     {
                         "name": "since",
@@ -64126,7 +64232,7 @@
                         "variable": "$value"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$field_no_prefix</code>, refers to the post field name.</p>"
+                "long_description_html": "<p>Only applied to post fields with a name which is prefixed with <code>post_</code>.</p> <p>The dynamic portion of the hook name, <code>$field_no_prefix</code>, refers to the post field name minus the <code>post_</code> prefix. Possible filter names include:</p> <ul> <li><code>author_save_pre</code></li> <li><code>date_save_pre</code></li> <li><code>date_gmt_save_pre</code></li> <li><code>content_save_pre</code></li> <li><code>title_save_pre</code></li> <li><code>excerpt_save_pre</code></li> <li><code>status_save_pre</code></li> <li><code>password_save_pre</code></li> <li><code>name_save_pre</code></li> <li><code>modified_save_pre</code></li> <li><code>modified_gmt_save_pre</code></li> <li><code>content_filtered_save_pre</code></li> <li><code>parent_save_pre</code></li> <li><code>type_save_pre</code></li> <li><code>mime_type_save_pre</code></li> </ul>"
             },
             "args": 1
         },
@@ -64136,7 +64242,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the value of a specific post field for display.",
-                "long_description": "The dynamic portion of the hook name, `$field`, refers to the post field name.",
+                "long_description": "Only applied to post fields with a name which is prefixed with `post_`.\n The dynamic portion of the hook name, `$field`, refers to the post field name. Possible filter names include:\n\n  - `post_author`\n  - `post_date`\n  - `post_date_gmt`\n  - `post_content`\n  - `post_title`\n  - `post_excerpt`\n  - `post_status`\n  - `post_password`\n  - `post_name`\n  - `post_modified`\n  - `post_modified_gmt`\n  - `post_content_filtered`\n  - `post_parent`\n  - `post_type`\n  - `post_mime_type`",
                 "tags": [
                     {
                         "name": "since",
@@ -64167,7 +64273,7 @@
                         "variable": "$context"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$field</code>, refers to the post field name.</p>"
+                "long_description_html": "<p>Only applied to post fields with a name which is prefixed with <code>post_</code>.</p> <p>The dynamic portion of the hook name, <code>$field</code>, refers to the post field name. Possible filter names include:</p> <ul> <li><code>post_author</code></li> <li><code>post_date</code></li> <li><code>post_date_gmt</code></li> <li><code>post_content</code></li> <li><code>post_title</code></li> <li><code>post_excerpt</code></li> <li><code>post_status</code></li> <li><code>post_password</code></li> <li><code>post_name</code></li> <li><code>post_modified</code></li> <li><code>post_modified_gmt</code></li> <li><code>post_content_filtered</code></li> <li><code>post_parent</code></li> <li><code>post_type</code></li> <li><code>post_mime_type</code></li> </ul>"
             },
             "args": 3
         },
@@ -64177,7 +64283,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the value of a specific post field before saving.",
-                "long_description": "The dynamic portion of the hook name, `$field`, refers to the post field name.",
+                "long_description": "Only applied to post fields with a name which is *not* prefixed with `post_`.\n The dynamic portion of the hook name, `$field`, refers to the post field name. Possible filter names include:\n\n  - `ID_pre`\n  - `comment_status_pre`\n  - `ping_status_pre`\n  - `to_ping_pre`\n  - `pinged_pre`\n  - `guid_pre`\n  - `menu_order_pre`\n  - `comment_count_pre`",
                 "tags": [
                     {
                         "name": "since",
@@ -64192,7 +64298,7 @@
                         "variable": "$value"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$field</code>, refers to the post field name.</p>"
+                "long_description_html": "<p>Only applied to post fields with a name which is <em>not</em> prefixed with <code>post_</code>.</p> <p>The dynamic portion of the hook name, <code>$field</code>, refers to the post field name. Possible filter names include:</p> <ul> <li><code>ID_pre</code></li> <li><code>comment_status_pre</code></li> <li><code>ping_status_pre</code></li> <li><code>to_ping_pre</code></li> <li><code>pinged_pre</code></li> <li><code>guid_pre</code></li> <li><code>menu_order_pre</code></li> <li><code>comment_count_pre</code></li> </ul>"
             },
             "args": 1
         },

@@ -28,7 +28,7 @@
 		"wp-hooks/generator": "1.0.0",
 		"oomphinc/composer-installers-extender": "^2",
 		"roots/wordpress-core-installer": "^1.0.0",
-		"roots/wordpress-full": "6.6"
+		"roots/wordpress-full": "6.7"
 	},
 	"extra": {
 		"wordpress-install-dir": "vendor/wordpress/wordpress",

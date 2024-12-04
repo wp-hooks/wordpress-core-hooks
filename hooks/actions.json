@@ -1,5 +1,5 @@
 {
-    "$schema": "https://raw.githubusercontent.com/wp-hooks/generator/0.9.0/schema.json",
+    "$schema": "https://raw.githubusercontent.com/wp-hooks/generator/1.0.0/schema.json",
     "hooks": [
         {
             "name": "_admin_menu",
@@ -1078,7 +1078,7 @@
             "type": "action_reference",
             "doc": {
                 "description": "Loads all necessary admin bar items.",
-                "long_description": "This is the hook used to add, remove, or manipulate admin bar items.",
+                "long_description": "This hook can add, remove, or manipulate admin bar items. The priority determines the placement for new items, and changes to existing items would require a high priority. To remove or manipulate existing nodes without a specific priority, use `wp_before_admin_bar_render`.",
                 "tags": [
                     {
                         "name": "since",
@@ -1093,7 +1093,7 @@
                         "variable": "$wp_admin_bar"
                     }
                 ],
-                "long_description_html": "<p>This is the hook used to add, remove, or manipulate admin bar items.</p>"
+                "long_description_html": "<p>This hook can add, remove, or manipulate admin bar items. The priority determines the placement for new items, and changes to existing items would require a high priority. To remove or manipulate existing nodes without a specific priority, use <code>wp_before_admin_bar_render</code>.</p>"
             },
             "args": 1
         },
@@ -4339,7 +4339,7 @@
             "file": "wp-cron.php",
             "type": "action",
             "doc": {
-                "description": "Fires when an error happens rescheduling a cron event.",
+                "description": "Fires if an error happens when rescheduling a cron event.",
                 "long_description": "",
                 "tags": [
                     {
@@ -4380,7 +4380,7 @@
             "file": "wp-cron.php",
             "type": "action",
             "doc": {
-                "description": "Fires when an error happens unscheduling a cron event.",
+                "description": "Fires if an error happens when unscheduling a cron event.",
                 "long_description": "",
                 "tags": [
                     {
@@ -18369,7 +18369,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The unhashed generated application password.",
+                        "content": "The generated application password in plain text.",
                         "types": [
                             "string"
                         ],
@@ -18842,7 +18842,7 @@
                         "name": "param",
                         "content": "SimplePie feed object (passed by reference).",
                         "types": [
-                            "\\SimplePie"
+                            "\\SimplePie\\SimplePie"
                         ],
                         "variable": "$feed"
                     },
@@ -19721,6 +19721,11 @@
                         "content": "6.2.0"
                     },
                     {
+                        "name": "since",
+                        "content": "6.7.0",
+                        "description": "The <code>$old_user_data</code> parameter was added."
+                    },
+                    {
                         "name": "param",
                         "content": "The plaintext password just set.",
                         "types": [
@@ -19735,11 +19740,19 @@
                             "int"
                         ],
                         "variable": "$user_id"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Object containing user's data prior to update.",
+                        "types": [
+                            "\\WP_User"
+                        ],
+                        "variable": "$old_user_data"
                     }
                 ],
                 "long_description_html": ""
             },
-            "args": 2
+            "args": 3
         },
         {
             "name": "wp_sitemaps_init",
@@ -19943,7 +19956,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The updated app password details.",
+                        "content": "{ The updated application password details. @type string      $uuid      The unique identifier for the application password. @type string      $app_id    A UUID provided by the application to uniquely identify it. @type string      $name      The name of the application password. @type string      $password  A one-way hash of the password. @type int         $created   Unix timestamp of when the password was created. @type int|null    $last_used The Unix timestamp of the GMT date the application password was last used. @type string|null $last_ip   The IP address the application password was last used by. }",
                         "types": [
                             "array"
                         ],
