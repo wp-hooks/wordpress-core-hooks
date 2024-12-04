@@ -29,7 +29,7 @@ $filters = json_decode( $filters_json, true )['hooks'];
 // Search for filters matching a string:
 $search = 'permalink';
 $results = array_filter( $filters, function( array $hook ) use ( $search ) {
-    return ( false !== strpos( $hook['name'], $search ) );
+    return ( strpos( $hook['name'], $search ) !== false );
 } );
 
 var_dump( $results );
@@ -44,7 +44,7 @@ const filters = require('@wp-hooks/wordpress-core/hooks/filters.json').hooks;
 
 // Search for actions matching a string:
 const search = 'menu';
-const results = actions.filter( hook => ( null !== hook.name.match( search ) ) );
+const results = actions.filter( hook => ( hook.name.match( search ) !== null ) );
 
 console.log(results);
 ```
