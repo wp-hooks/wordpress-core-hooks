@@ -122,7 +122,7 @@ Do you want the same hook files for your favourite plugins? The hook files in th
 
 The time that I spend maintaining this library and others is in part sponsored by:
 
-[![Automattic](assets/gh/automattic.png)](https://automattic.com)
+[![Automattic](https://cdn.jsdelivr.net/gh/johnbillion/johnbillion/assets/sponsors/automattic.png)](https://automattic.com)
 
 Plus all my kind sponsors on GitHub:
 
