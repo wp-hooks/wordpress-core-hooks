@@ -7374,6 +7374,11 @@
                         "description": "Replaced the <code>Y/m/d</code> format with <code>Y-m-d</code> (ISO date standard YYYY-MM-DD)."
                     },
                     {
+                        "name": "since",
+                        "content": "6.8.0",
+                        "description": "Added the <code>d.m.Y</code> format."
+                    },
+                    {
                         "name": "param",
                         "content": "Array of default date formats.",
                         "types": [
@@ -9998,10 +10003,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "The HTML result of the shortcode, or false on failure.",
+                        "content": "The HTML result of the shortcode.",
                         "types": [
-                            "string",
-                            "false"
+                            "string"
                         ],
                         "variable": "$return"
                     },
@@ -12900,12 +12904,54 @@
                         "content": "3.0.0"
                     },
                     {
+                        "name": "since",
+                        "content": "6.8.0",
+                        "description": "Added the <code>$args</code> parameter."
+                    },
+                    {
                         "name": "param",
                         "content": "HTML output of the calendar.",
                         "types": [
                             "string"
                         ],
                         "variable": "$calendar_output"
+                    },
+                    {
+                        "name": "param",
+                        "content": "{ Optional. Array of display arguments. @type bool   $initial   Whether to use initial calendar names. Default true. @type bool   $display   Whether to display the calendar output. Default true. @type string $post_type Optional. Post type. Default 'post'. }",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$args"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 2
+        },
+        {
+            "name": "get_calendar_args",
+            "file": "wp-includes/general-template.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filter the `get_calendar` function arguments before they are used.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.8.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "{ Optional. Arguments for the <code>get_calendar</code> function. @type bool   $initial   Whether to use initial calendar names. Default true. @type bool   $display   Whether to display the calendar output. Default true. @type string $post_type Optional. Post type. Default 'post'. }",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$args"
+                    },
+                    {
+                        "name": "return",
+                        "content": "The arguments for the `get_calendar` function."
                     }
                 ],
                 "long_description_html": ""
@@ -19002,6 +19048,39 @@
             "args": 1
         },
         {
+            "name": "image_max_bit_depth",
+            "file": "wp-includes/class-wp-image-editor-imagick.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the maximum bit depth of resized images.",
+                "long_description": "This filter only applies when resizing using the Imagick editor since GD does not support getting or setting bit depth.\n Use this to adjust the maximum bit depth of resized images.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.8.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The maximum bit depth. Default is the input depth.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$max_depth"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The bit depth of the original image.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$image_depth"
+                    }
+                ],
+                "long_description_html": "<p>This filter only applies when resizing using the Imagick editor since GD does not support getting or setting bit depth.</p> <p>Use this to adjust the maximum bit depth of resized images.</p>"
+            },
+            "args": 2
+        },
+        {
             "name": "image_memory_limit",
             "file": "wp-includes/functions.php",
             "type": "filter",
@@ -20425,6 +20504,39 @@
                 "long_description_html": ""
             },
             "args": 1
+        },
+        {
+            "name": "is_post_embeddable",
+            "file": "wp-includes/post.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filter whether a post is embeddable.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.8.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether the post is embeddable.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$is_embeddable"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Post object.",
+                        "types": [
+                            "\\WP_Post"
+                        ],
+                        "variable": "$post"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 2
         },
         {
             "name": "is_post_status_viewable",
@@ -22557,6 +22669,47 @@
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$post_type</code>, refers to the post type slug.</p> <p>Possible hook names include:</p> <ul> <li><code>manage_taxonomies_for_post_columns</code></li> <li><code>manage_taxonomies_for_page_columns</code></li> </ul>"
             },
             "args": 2
+        },
+        {
+            "name": "manage_users-network_custom_column",
+            "file": "wp-admin/includes/class-wp-ms-users-list-table.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the display output of custom columns in the Network Users list table.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.8.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Custom column output. Default empty.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$output"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Name of the custom column.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$column_name"
+                    },
+                    {
+                        "name": "param",
+                        "content": "ID of the currently-listed user.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$user_id"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 3
         },
         {
             "name": "manage_users_custom_column",
@@ -27354,6 +27507,48 @@
             "args": 1
         },
         {
+            "name": "password_needs_rehash",
+            "file": "wp-includes/pluggable.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters whether the password hash needs to be rehashed.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.8.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether the password hash needs to be rehashed.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$needs_rehash"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The password hash.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$hash"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Optional. ID of a user associated with the password.",
+                        "types": [
+                            "string",
+                            "int"
+                        ],
+                        "variable": "$user_id"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 3
+        },
+        {
             "name": "password_reset_expiration",
             "file": "wp-includes/user.php",
             "type": "filter",
@@ -30750,6 +30945,57 @@
                 "long_description_html": ""
             },
             "args": 1
+        },
+        {
+            "name": "pre_count_many_users_posts",
+            "file": "wp-includes/user.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters whether to short-circuit performing the post counts.",
+                "long_description": "When filtering, return an array of posts counts as strings, keyed by the user ID.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.8.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The post counts. Return a non-null value to short-circuit.",
+                        "types": [
+                            "string[]",
+                            "null"
+                        ],
+                        "variable": "$count"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Array of user IDs.",
+                        "types": [
+                            "int[]"
+                        ],
+                        "variable": "$users"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Single post type or array of post types to check.",
+                        "types": [
+                            "string",
+                            "string[]"
+                        ],
+                        "variable": "$post_type"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether to only return counts for public posts.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$public_only"
+                    }
+                ],
+                "long_description_html": "<p>When filtering, return an array of posts counts as strings, keyed by the user ID.</p>"
+            },
+            "args": 4
         },
         {
             "name": "pre_count_users",
@@ -35995,6 +36241,47 @@
             "args": 3
         },
         {
+            "name": "render_block_core_navigation_link_allowed_post_status",
+            "file": "wp-includes/blocks/navigation-link.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filter allowed post_status for navigation link block to render.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.8.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$post_status"
+                    },
+                    {
+                        "name": "param",
+                        "content": "",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$attributes"
+                    },
+                    {
+                        "name": "param",
+                        "content": "",
+                        "types": [
+                            "\\WP_Block"
+                        ],
+                        "variable": "$block"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 3
+        },
+        {
             "name": "render_block_data",
             "file": "wp-includes/blocks.php",
             "type": "filter",
@@ -36821,6 +37108,47 @@
                 "long_description_html": ""
             },
             "args": 1
+        },
+        {
+            "name": "rest_menu_read_access",
+            "file": "wp-includes/rest-api/endpoints/class-wp-rest-menu-items-controller.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters whether the current user has read access to menu items via the REST API.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.8.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether the current user has read access to menu items via the REST API.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$read_only_access"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Full details about the request.",
+                        "types": [
+                            "\\WP_REST_Request"
+                        ],
+                        "variable": "$request"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The current instance of the controller.",
+                        "types": [
+                            "\\WP_REST_Controller"
+                        ],
+                        "variable": "$controller"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 3
         },
         {
             "name": "rest_namespace_index",
@@ -41851,6 +42179,31 @@
             "args": 4
         },
         {
+            "name": "should_load_block_assets_on_demand",
+            "file": "wp-includes/script-loader.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters whether block styles should be loaded on demand.",
+                "long_description": "Returning false loads all block assets, regardless of whether they are rendered in a page or not. Returning true loads block assets only when they are rendered.\n The default value of the filter depends on the result of {@see \\wp_should_load_separate_core_block_assets()}, which controls whether Core block stylesheets should be loaded separately or via a combined 'wp-block-library' stylesheet.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.8.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether to load block assets only when they are rendered.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$load_assets_on_demand"
+                    }
+                ],
+                "long_description_html": "<p>Returning false loads all block assets, regardless of whether they are rendered in a page or not. Returning true loads block assets only when they are rendered.</p> <p>The default value of the filter depends on the result of {@see \\wp_should_load_separate_core_block_assets()}, which controls whether Core block stylesheets should be loaded separately or via a combined 'wp-block-library' stylesheet.</p>"
+            },
+            "args": 1
+        },
+        {
             "name": "should_load_block_editor_scripts_and_styles",
             "file": "wp-includes/script-loader.php",
             "type": "filter",
@@ -45935,6 +46288,11 @@
                         "description": "Added the <code>$post</code> parameter."
                     },
                     {
+                        "name": "since",
+                        "content": "6.8.0",
+                        "description": "Added the <code>$invalid_password</code> parameter."
+                    },
+                    {
                         "name": "param",
                         "content": "The password form HTML output.",
                         "types": [
@@ -45949,9 +46307,50 @@
                             "\\WP_Post"
                         ],
                         "variable": "$post"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The invalid password message.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$invalid_password"
                     }
                 ],
                 "long_description_html": "<p>If modifying the password field, please note that the WordPress database schema limits the password field to 255 characters regardless of the value of the <code>minlength</code> or <code>maxlength</code> attributes or other validation that may be added to the input.</p>"
+            },
+            "args": 3
+        },
+        {
+            "name": "the_password_form_incorrect_password",
+            "file": "wp-includes/post-template.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the invalid password message shown on password-protected posts.",
+                "long_description": "The filter is only applied if the post is password protected.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.8.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The message shown to users when entering an invalid password.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$text"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Post object.",
+                        "types": [
+                            "\\WP_Post"
+                        ],
+                        "variable": "$post"
+                    }
+                ],
+                "long_description_html": "<p>The filter is only applied if the post is password protected.</p>"
             },
             "args": 2
         },
@@ -46759,6 +47158,39 @@
                 "long_description_html": "<p>See {@see \\wp_prepare_themes_for_js()} for the properties of the <code>data</code> object.</p>"
             },
             "args": 1
+        },
+        {
+            "name": "theme_block_pattern_files",
+            "file": "wp-includes/class-wp-theme.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters list of block pattern files for a theme.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.8.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Array of theme files found within <code>patterns</code> directory.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$files"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Path of theme <code>patterns</code> directory being scanned.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$dirpath"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 2
         },
         {
             "name": "theme_file_path",
@@ -54973,6 +55405,64 @@
             "args": 2
         },
         {
+            "name": "wp_hash_password_algorithm",
+            "file": "wp-includes/pluggable.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the hashing algorithm to use in the password_hash() and password_needs_rehash() functions.",
+                "long_description": "The default is the value of the `PASSWORD_BCRYPT` constant which means bcrypt is used.\n **Important:** The only password hashing algorithm that is guaranteed to be available across PHP installations is bcrypt. If you use any other algorithm you must make sure that it is available on the server. The `password_algos()` function can be used to check which hashing algorithms are available.\n The hashing options can be controlled via the {@see 'wp_hash_password_options'} filter.\n Other available constants include:\n - `PASSWORD_ARGON2I` - `PASSWORD_ARGON2ID` - `PASSWORD_DEFAULT`",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.8.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The hashing algorithm. Default is the value of the <code>PASSWORD_BCRYPT</code> constant.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$algorithm"
+                    }
+                ],
+                "long_description_html": "<p>The default is the value of the <code>PASSWORD_BCRYPT</code> constant which means bcrypt is used.</p> <p><strong>Important:</strong> The only password hashing algorithm that is guaranteed to be available across PHP installations is bcrypt. If you use any other algorithm you must make sure that it is available on the server. The <code>password_algos()</code> function can be used to check which hashing algorithms are available.</p> <p>The hashing options can be controlled via the {@see 'wp_hash_password_options'} filter.</p> <p>Other available constants include:</p> <ul> <li><code>PASSWORD_ARGON2I</code></li> <li><code>PASSWORD_ARGON2ID</code></li> <li><code>PASSWORD_DEFAULT</code></li> </ul>"
+            },
+            "args": 1
+        },
+        {
+            "name": "wp_hash_password_options",
+            "file": "wp-includes/pluggable.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the options passed to the password_hash() and password_needs_rehash() functions.",
+                "long_description": "The default hashing algorithm is bcrypt, but this can be changed via the {@see 'wp_hash_password_algorithm'} filter. You must ensure that the options are appropriate for the algorithm in use.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.8.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Array of options to pass to the password hashing functions. By default this is an empty array which means the default options will be used.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$options"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The hashing algorithm in use.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$algorithm"
+                    }
+                ],
+                "long_description_html": "<p>The default hashing algorithm is bcrypt, but this can be changed via the {@see 'wp_hash_password_algorithm'} filter. You must ensure that the options are appropriate for the algorithm in use.</p>"
+            },
+            "args": 2
+        },
+        {
             "name": "wp_header_image_attachment_metadata",
             "file": "wp-admin/includes/class-custom-image-header.php",
             "type": "filter",
@@ -57664,6 +58154,47 @@
             "args": 3
         },
         {
+            "name": "wp_next_scheduled",
+            "file": "wp-includes/cron.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the timestamp of the next scheduled event for the given hook.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.8.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Unix timestamp (UTC) for when to next run the event.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$timestamp"
+                    },
+                    {
+                        "name": "param",
+                        "content": "{ An object containing an event's data. @type string $hook      Action hook of the event. @type int    $timestamp Unix timestamp (UTC) for when to next run the event. @type string $schedule  How often the event should subsequently recur. @type array  $args      Array containing each separate argument to pass to the hook callback function. @type int    $interval  Optional. The interval time in seconds for the schedule. Only present for recurring events. }",
+                        "types": [
+                            "object"
+                        ],
+                        "variable": "$next_event"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Array containing each separate argument to pass to the hook callback function.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$args"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 4
+        },
+        {
             "name": "wp_normalize_site_data",
             "file": "wp-includes/ms-site.php",
             "type": "filter",
@@ -58247,6 +58778,40 @@
                 "long_description_html": "<p>Could be useful for changing the order, which is by name by default.</p>"
             },
             "args": 1
+        },
+        {
+            "name": "wp_prevent_unsupported_mime_type_uploads",
+            "file": "wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filter whether the server should prevent uploads for image types it doesn't support. Default true.",
+                "long_description": "Developers can use this filter to enable uploads of certain image types. By default image types that are not supported by the server are prevented from being uploaded.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.8.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether to prevent uploads of unsupported image types.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$check_mime"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The mime type of the file being uploaded (if available).",
+                        "types": [
+                            "string",
+                            "null"
+                        ],
+                        "variable": "$mime_type"
+                    }
+                ],
+                "long_description_html": "<p>Developers can use this filter to enable uploads of certain image types. By default image types that are not supported by the server are prevented from being uploaded.</p>"
+            },
+            "args": 2
         },
         {
             "name": "wp_privacy_additional_user_profile_data",
@@ -60693,6 +61258,70 @@
                 "long_description_html": "<p>This string is substituted for the \\s sequence as needed in regular expressions. For websites not written in English, different characters may represent whitespace. For websites not encoded in UTF-8, the 0xC2 0xA0 sequence may not be in use.</p>"
             },
             "args": 1
+        },
+        {
+            "name": "wp_speculation_rules_configuration",
+            "file": "wp-includes/speculative-loading.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the way that speculation rules are configured.",
+                "long_description": "The Speculation Rules API is a web API that allows to automatically prefetch or prerender certain URLs on the page, which can lead to near-instant page load times. This is also referred to as speculative loading.\n There are two aspects to the configuration: * The \"mode\" (whether to \"prefetch\" or \"prerender\" URLs). * The \"eagerness\" (whether to speculatively load URLs in an \"eager\", \"moderate\", or \"conservative\" way).\n By default, the speculation rules configuration is decided by WordPress Core (\"auto\"). This filter can be used to force a certain configuration, which could for instance load URLs more or less eagerly.\n For logged-in users or for sites that are not configured to use pretty permalinks, the default value is `null`, indicating that speculative loading is entirely disabled.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.8.0"
+                    },
+                    {
+                        "name": "see",
+                        "content": "",
+                        "refers": "https://developer.chrome.com/docs/web-platform/prerender-pages"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Associative array with 'mode' and 'eagerness' keys, or <code>null</code>. The default value for both of the keys is 'auto'. Other possible values for 'mode' are 'prefetch' and 'prerender'. Other possible values for 'eagerness' are 'eager', 'moderate', and 'conservative'. The value <code>null</code> is used to disable speculative loading entirely.",
+                        "types": [
+                            "array<string,string>",
+                            "null"
+                        ],
+                        "variable": "$config"
+                    }
+                ],
+                "long_description_html": "<p>The Speculation Rules API is a web API that allows to automatically prefetch or prerender certain URLs on the page, which can lead to near-instant page load times. This is also referred to as speculative loading.</p> <p>There are two aspects to the configuration:</p> <ul> <li>The \"mode\" (whether to \"prefetch\" or \"prerender\" URLs).</li> <li>The \"eagerness\" (whether to speculatively load URLs in an \"eager\", \"moderate\", or \"conservative\" way).</li> </ul> <p>By default, the speculation rules configuration is decided by WordPress Core (\"auto\"). This filter can be used to force a certain configuration, which could for instance load URLs more or less eagerly.</p> <p>For logged-in users or for sites that are not configured to use pretty permalinks, the default value is <code>null</code>, indicating that speculative loading is entirely disabled.</p>"
+            },
+            "args": 1
+        },
+        {
+            "name": "wp_speculation_rules_href_exclude_paths",
+            "file": "wp-includes/speculative-loading.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the paths for which speculative loading should be disabled.",
+                "long_description": "All paths should start in a forward slash, relative to the root document. The `*` can be used as a wildcard. If the WordPress site is in a subdirectory, the exclude paths will automatically be prefixed as necessary.\n Note that WordPress always excludes certain path patterns such as `/wp-login.php` and `/wp-admin/*`, and those cannot be modified using the filter.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.8.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Additional path patterns to disable speculative loading for.",
+                        "types": [
+                            "string[]"
+                        ],
+                        "variable": "$href_exclude_paths"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Mode used to apply speculative loading. Either 'prefetch' or 'prerender'.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$mode"
+                    }
+                ],
+                "long_description_html": "<p>All paths should start in a forward slash, relative to the root document. The <code>*</code> can be used as a wildcard. If the WordPress site is in a subdirectory, the exclude paths will automatically be prefixed as necessary.</p> <p>Note that WordPress always excludes certain path patterns such as <code>/wp-login.php</code> and <code>/wp-admin/*</code>, and those cannot be modified using the filter.</p>"
+            },
+            "args": 2
         },
         {
             "name": "wp_sprintf",

@@ -8661,6 +8661,23 @@
             "args": 5
         },
         {
+            "name": "import_filters",
+            "file": "wp-admin/import.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires at the end of the Import screen.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.8.0"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 0
+        },
+        {
             "name": "in_admin_footer",
             "file": "wp-admin/admin-footer.php",
             "type": "action",
@@ -18350,6 +18367,11 @@
                         "content": "5.6.0"
                     },
                     {
+                        "name": "since",
+                        "content": "6.8.0",
+                        "description": "The hashed password value now uses wp_fast_hash() instead of phpass."
+                    },
+                    {
                         "name": "param",
                         "content": "The user ID.",
                         "types": [
@@ -19043,6 +19065,31 @@
                             "\\WP_User"
                         ],
                         "variable": "$user"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 1
+        },
+        {
+            "name": "wp_load_speculation_rules",
+            "file": "wp-includes/speculative-loading.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires when speculation rules data is loaded, allowing to amend the rules.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.8.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Object representing the speculation rules to use.",
+                        "types": [
+                            "\\WP_Speculation_Rules"
+                        ],
+                        "variable": "$speculation_rules"
                     }
                 ],
                 "long_description_html": ""
@@ -19943,6 +19990,11 @@
                     {
                         "name": "since",
                         "content": "5.6.0"
+                    },
+                    {
+                        "name": "since",
+                        "content": "6.8.0",
+                        "description": "The password is now hashed using wp_fast_hash() instead of phpass. Existing passwords may still be hashed using phpass."
                     },
                     {
                         "name": "param",
