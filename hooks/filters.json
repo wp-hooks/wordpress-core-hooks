@@ -52176,6 +52176,31 @@
             "args": 1
         },
         {
+            "name": "wp_allowed_block_metadata_collection_roots",
+            "file": "wp-includes/class-wp-block-metadata-registry.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the root directory paths for block metadata collections.",
+                "long_description": "Any block metadata collection that is registered must not use any of these paths, or any parent directory path of them. Most commonly, block metadata collections should reside within one of these paths, though in some scenarios they may also reside in entirely different directories (e.g. in case of symlinked plugins).\n Example: * It is allowed to register a collection with path `WP_PLUGIN_DIR . '/my-plugin'`. * It is not allowed to register a collection with path `WP_PLUGIN_DIR`. * It is not allowed to register a collection with path `dirname( WP_PLUGIN_DIR )`.\n The default list encompasses the `wp-includes` directory, as well as the root directories for plugins, must-use plugins, and themes. This filter can be used to expand the list, e.g. to custom directories that contain symlinked plugins, so that these root directories cannot be used themselves for a block metadata collection either.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.7.2"
+                    },
+                    {
+                        "name": "param",
+                        "content": "List of allowed metadata collection root paths.",
+                        "types": [
+                            "string[]"
+                        ],
+                        "variable": "$collection_roots"
+                    }
+                ],
+                "long_description_html": "<p>Any block metadata collection that is registered must not use any of these paths, or any parent directory path of them. Most commonly, block metadata collections should reside within one of these paths, though in some scenarios they may also reside in entirely different directories (e.g. in case of symlinked plugins).</p> <p>Example:</p> <ul> <li>It is allowed to register a collection with path <code>WP_PLUGIN_DIR . '/my-plugin'</code>.</li> <li>It is not allowed to register a collection with path <code>WP_PLUGIN_DIR</code>.</li> <li>It is not allowed to register a collection with path <code>dirname( WP_PLUGIN_DIR )</code>.</li> </ul> <p>The default list encompasses the <code>wp-includes</code> directory, as well as the root directories for plugins, must-use plugins, and themes. This filter can be used to expand the list, e.g. to custom directories that contain symlinked plugins, so that these root directories cannot be used themselves for a block metadata collection either.</p>"
+            },
+            "args": 1
+        },
+        {
             "name": "wp_anonymize_comment",
             "file": "wp-includes/comment.php",
             "type": "filter",
