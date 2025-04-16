@@ -14996,6 +14996,47 @@
             "args": 6
         },
         {
+            "name": "set_site_transient",
+            "file": "wp-includes/option.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires after the value for a site transient has been set.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.8.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The name of the site transient.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$transient"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Site transient value.",
+                        "types": [
+                            "mixed"
+                        ],
+                        "variable": "$value"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Time until expiration in seconds.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$expiration"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 3
+        },
+        {
             "name": "set_site_transient_{$transient}",
             "file": "wp-includes/option.php",
             "type": "action",
@@ -15038,6 +15079,47 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$transient</code>, refers to the transient name.</p>"
+            },
+            "args": 3
+        },
+        {
+            "name": "set_transient",
+            "file": "wp-includes/option.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires after the value for a transient has been set.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.8.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The name of the transient.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$transient"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Transient value.",
+                        "types": [
+                            "mixed"
+                        ],
+                        "variable": "$value"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Time until expiration in seconds.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$expiration"
+                    }
+                ],
+                "long_description_html": ""
             },
             "args": 3
         },
@@ -15132,93 +15214,6 @@
                             "string[]"
                         ],
                         "variable": "$old_roles"
-                    }
-                ],
-                "long_description_html": ""
-            },
-            "args": 3
-        },
-        {
-            "name": "setted_site_transient",
-            "file": "wp-includes/option.php",
-            "type": "action",
-            "doc": {
-                "description": "Fires after the value for a site transient has been set.",
-                "long_description": "",
-                "tags": [
-                    {
-                        "name": "since",
-                        "content": "3.0.0"
-                    },
-                    {
-                        "name": "param",
-                        "content": "The name of the site transient.",
-                        "types": [
-                            "string"
-                        ],
-                        "variable": "$transient"
-                    },
-                    {
-                        "name": "param",
-                        "content": "Site transient value.",
-                        "types": [
-                            "mixed"
-                        ],
-                        "variable": "$value"
-                    },
-                    {
-                        "name": "param",
-                        "content": "Time until expiration in seconds.",
-                        "types": [
-                            "int"
-                        ],
-                        "variable": "$expiration"
-                    }
-                ],
-                "long_description_html": ""
-            },
-            "args": 3
-        },
-        {
-            "name": "setted_transient",
-            "file": "wp-includes/option.php",
-            "type": "action",
-            "doc": {
-                "description": "Fires after the value for a transient has been set.",
-                "long_description": "",
-                "tags": [
-                    {
-                        "name": "since",
-                        "content": "3.0.0"
-                    },
-                    {
-                        "name": "since",
-                        "content": "3.6.0",
-                        "description": "The <code>$value</code> and <code>$expiration</code> parameters were added."
-                    },
-                    {
-                        "name": "param",
-                        "content": "The name of the transient.",
-                        "types": [
-                            "string"
-                        ],
-                        "variable": "$transient"
-                    },
-                    {
-                        "name": "param",
-                        "content": "Transient value.",
-                        "types": [
-                            "mixed"
-                        ],
-                        "variable": "$value"
-                    },
-                    {
-                        "name": "param",
-                        "content": "Time until expiration in seconds.",
-                        "types": [
-                            "int"
-                        ],
-                        "variable": "$expiration"
                     }
                 ],
                 "long_description_html": ""
