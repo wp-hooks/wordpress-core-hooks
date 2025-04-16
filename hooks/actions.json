@@ -552,7 +552,7 @@
                     {
                         "name": "since",
                         "content": "2.5.0",
-                        "description": "As \"add<em>option</em>{$name}\""
+                        "description": "As <code>add_option_{$name}</code>"
                     },
                     {
                         "name": "since",
@@ -15964,7 +15964,6 @@
                         "name": "param",
                         "content": "The new comment status.",
                         "types": [
-                            "int",
                             "string"
                         ],
                         "variable": "$new_status"
@@ -15973,7 +15972,6 @@
                         "name": "param",
                         "content": "The old comment status.",
                         "types": [
-                            "int",
                             "string"
                         ],
                         "variable": "$old_status"
@@ -18254,9 +18252,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "The new last changed time.",
+                        "content": "The new last changed time (msec sec).",
                         "types": [
-                            "int"
+                            "string"
                         ],
                         "variable": "$time"
                     },
@@ -18264,7 +18262,7 @@
                         "name": "param",
                         "content": "The previous last changed time. False if not previously set.",
                         "types": [
-                            "int",
+                            "string",
                             "false"
                         ],
                         "variable": "$previous_time"
@@ -20910,7 +20908,7 @@
                         "types": [
                             "int"
                         ],
-                        "variable": "$id"
+                        "variable": "$attachment_id"
                     },
                     {
                         "name": "param",

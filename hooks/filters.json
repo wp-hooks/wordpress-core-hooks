@@ -649,7 +649,7 @@
         },
         {
             "name": "admin_referrer_policy",
-            "file": "wp-admin/includes/misc.php",
+            "file": "wp-includes/functions.php",
             "type": "filter",
             "doc": {
                 "description": "Filters the admin referrer policy header value.",
@@ -3784,12 +3784,17 @@
             "file": "wp-includes/pluggable.php",
             "type": "filter",
             "doc": {
-                "description": "Filters whether the plaintext password matches the encrypted password.",
+                "description": "Filters whether the plaintext password matches the hashed password.",
                 "long_description": "",
                 "tags": [
                     {
                         "name": "since",
                         "content": "2.5.0"
+                    },
+                    {
+                        "name": "since",
+                        "content": "6.8.0",
+                        "description": "Passwords are now hashed with bcrypt by default. Old passwords may still be hashed with phpass or md5."
                     },
                     {
                         "name": "param",
@@ -3817,7 +3822,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "User ID. Can be empty.",
+                        "content": "Optional ID of a user associated with the password. Can be empty.",
                         "types": [
                             "string",
                             "int"
@@ -5972,8 +5977,13 @@
                         "content": "4.9.0"
                     },
                     {
+                        "name": "since",
+                        "content": "6.1.0",
+                        "description": "Added <code>$extensions</code>, <code>$platform_flags</code>, and <code>$image_support</code> to the <code>$query</code> parameter."
+                    },
+                    {
                         "name": "param",
-                        "content": "{ Version check query arguments. @type string $version            WordPress version number. @type string $php                PHP version number. @type string $locale             The locale to retrieve updates for. @type string $mysql              MySQL version number. @type string $local_package      The value of the $wp_local_package global, when set. @type int    $blogs              Number of sites on this WordPress installation. @type int    $users              Number of users on this WordPress installation. @type int    $multisite_enabled  Whether this WordPress installation uses Multisite. @type int    $initial_db_version Database version of WordPress at time of installation. }",
+                        "content": "{ Version check query arguments. @type string $version            WordPress version number. @type string $php                PHP version number. @type string $locale             The locale to retrieve updates for. @type string $mysql              MySQL version number. @type string $local_package      The value of the $wp_local_package global, when set. @type int    $blogs              Number of sites on this WordPress installation. @type int    $users              Number of users on this WordPress installation. @type int    $multisite_enabled  Whether this WordPress installation uses Multisite. @type int    $initial_db_version Database version of WordPress at time of installation. @type array  $extensions         List of PHP extensions and their versions. @type array  $platform_flags     List containing the operating system name and bit support. @type array  $image_support      List of image formats supported by GD and Imagick. }",
                         "types": [
                             "array"
                         ],
@@ -6037,7 +6047,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The unix timestamp of the cron lock.",
+                        "content": "The Unix timestamp (UTC) of the cron lock.",
                         "types": [
                             "string"
                         ],
@@ -7361,7 +7371,7 @@
                     {
                         "name": "since",
                         "content": "4.0.0",
-                        "description": "Added ISO date standard YYYY-MM-DD format."
+                        "description": "Replaced the <code>Y/m/d</code> format with <code>Y-m-d</code> (ISO date standard YYYY-MM-DD)."
                     },
                     {
                         "name": "param",
@@ -10154,8 +10164,7 @@
                         "name": "param",
                         "content": "The cached HTML result, stored in post meta.",
                         "types": [
-                            "string",
-                            "false"
+                            "string"
                         ],
                         "variable": "$cache"
                     },
@@ -12512,7 +12521,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The avatar to retrieve. Accepts a user ID, Gravatar MD5 hash, user email, WP_User object, WP_Post object, or WP_Comment object.",
+                        "content": "The avatar to retrieve. Accepts a user ID, Gravatar SHA-256 or MD5 hash, user email, WP_User object, WP_Post object, or WP_Comment object.",
                         "types": [
                             "mixed"
                         ],
@@ -12545,7 +12554,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The avatar to retrieve. Accepts a user ID, Gravatar MD5 hash, user email, WP_User object, WP_Post object, or WP_Comment object.",
+                        "content": "The avatar to retrieve. Accepts a user ID, Gravatar SHA-256 or MD5 hash, user email, WP_User object, WP_Post object, or WP_Comment object.",
                         "types": [
                             "mixed"
                         ],
@@ -15118,7 +15127,7 @@
             "file": "wp-includes/general-template.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the localized time a post was written.",
+                "description": "Filters the localized time of the post.",
                 "long_description": "",
                 "tags": [
                     {
@@ -15136,7 +15145,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Format to use for retrieving the time the post was written. Accepts 'G', 'U', or PHP date format.",
+                        "content": "Format to use for retrieving the date of the post. Accepts 'G', 'U', or PHP date format.",
                         "types": [
                             "string"
                         ],
@@ -16042,7 +16051,7 @@
             "file": "wp-includes/general-template.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the date a post was published.",
+                "description": "Filters the date of the post.",
                 "long_description": "",
                 "tags": [
                     {
@@ -16402,7 +16411,7 @@
             "file": "wp-includes/general-template.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the time a post was written.",
+                "description": "Filters the time of the post.",
                 "long_description": "",
                 "tags": [
                     {
@@ -16603,7 +16612,7 @@
             "file": "wp-admin/includes/user.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the user's drafts query string.",
+                "description": "Filters the SQL query string for the user's drafts query.",
                 "long_description": "",
                 "tags": [
                     {
@@ -17900,7 +17909,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The block template, template part, <code>wp_navigation</code> post type, or pattern that the anchor block belongs to.",
+                        "content": "The block template, template part, post object, or pattern that the anchor block belongs to.",
                         "types": [
                             "\\WP_Block_Template",
                             "\\WP_Post",
@@ -17951,7 +17960,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The block template, template part, <code>wp_navigation</code> post type, or pattern that the anchor block belongs to.",
+                        "content": "The block template, template part, post object, or pattern that the anchor block belongs to.",
                         "types": [
                             "\\WP_Block_Template",
                             "\\WP_Post",
@@ -18011,7 +18020,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The block template, template part, <code>wp_navigation</code> post type, or pattern that the anchor block belongs to.",
+                        "content": "The block template, template part, post object, or pattern that the anchor block belongs to.",
                         "types": [
                             "\\WP_Block_Template",
                             "\\WP_Post",
@@ -24750,10 +24759,6 @@
                             "string"
                         ],
                         "variable": "$css_class"
-                    },
-                    {
-                        "name": "return",
-                        "content": "Navigation template."
                     }
                 ],
                 "long_description_html": "<p>Note: The filtered template HTML must contain specifiers for the navigation class (%1$s), the screen-reader-text value (%2$s), placement of the navigation links (%3$s), and ARIA label text if screen-reader-text does not fit that (%4$s):</p> <pre><code>&lt;nav class=\"navigation %1$s\" aria-label=\"%4$s\"&gt;     &lt;h2 class=\"screen-reader-text\"&gt;%2$s&lt;/h2&gt;     &lt;div class=\"nav-links\"&gt;%3$s&lt;/div&gt; &lt;/nav&gt;</code></pre>"
@@ -26380,7 +26385,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the list of sanctioned oEmbed providers.",
-                "long_description": "Since WordPress 4.4, oEmbed discovery is enabled for all users and allows embedding of sanitized iframes. The providers in this list are sanctioned, meaning they are trusted and allowed to embed any content, such as iframes, videos, JavaScript, and arbitrary HTML.\n Supported providers:\n |   Provider   |                     Flavor                |  Since  | | ------------ | ----------------------------------------- | ------- | | Dailymotion  | dailymotion.com                           | 2.9.0   | | Flickr       | flickr.com                                | 2.9.0   | | Scribd       | scribd.com                                | 2.9.0   | | Vimeo        | vimeo.com                                 | 2.9.0   | | WordPress.tv | wordpress.tv                              | 2.9.0   | | YouTube      | youtube.com/watch                         | 2.9.0   | | Crowdsignal  | polldaddy.com                             | 3.0.0   | | SmugMug      | smugmug.com                               | 3.0.0   | | YouTube      | youtu.be                                  | 3.0.0   | | Twitter      | twitter.com                               | 3.4.0   | | SoundCloud   | soundcloud.com                            | 3.5.0   | | Dailymotion  | dai.ly                                    | 3.6.0   | | Flickr       | flic.kr                                   | 3.6.0   | | Spotify      | spotify.com                               | 3.6.0   | | Imgur        | imgur.com                                 | 3.9.0   | | Animoto      | animoto.com                               | 4.0.0   | | Animoto      | video214.com                              | 4.0.0   | | Issuu        | issuu.com                                 | 4.0.0   | | Mixcloud     | mixcloud.com                              | 4.0.0   | | Crowdsignal  | poll.fm                                   | 4.0.0   | | TED          | ted.com                                   | 4.0.0   | | YouTube      | youtube.com/playlist                      | 4.0.0   | | Tumblr       | tumblr.com                                | 4.2.0   | | Kickstarter  | kickstarter.com                           | 4.2.0   | | Kickstarter  | kck.st                                    | 4.2.0   | | Cloudup      | cloudup.com                               | 4.3.0   | | ReverbNation | reverbnation.com                          | 4.4.0   | | VideoPress   | videopress.com                            | 4.4.0   | | Reddit       | reddit.com                                | 4.4.0   | | Speaker Deck | speakerdeck.com                           | 4.4.0   | | Twitter      | twitter.com/timelines                     | 4.5.0   | | Twitter      | twitter.com/moments                       | 4.5.0   | | Twitter      | twitter.com/user                          | 4.7.0   | | Twitter      | twitter.com/likes                         | 4.7.0   | | Twitter      | twitter.com/lists                         | 4.7.0   | | Screencast   | screencast.com                            | 4.8.0   | | Amazon       | amazon.com (com.mx, com.br, ca)           | 4.9.0   | | Amazon       | amazon.de (fr, it, es, in, nl, ru, co.uk) | 4.9.0   | | Amazon       | amazon.co.jp (com.au)                     | 4.9.0   | | Amazon       | amazon.cn                                 | 4.9.0   | | Amazon       | a.co                                      | 4.9.0   | | Amazon       | amzn.to (eu, in, asia)                    | 4.9.0   | | Amazon       | z.cn                                      | 4.9.0   | | Someecards   | someecards.com                            | 4.9.0   | | Someecards   | some.ly                                   | 4.9.0   | | Crowdsignal  | survey.fm                                 | 5.1.0   | | TikTok       | tiktok.com                                | 5.4.0   | | Pinterest    | pinterest.com                             | 5.9.0   | | WolframCloud | wolframcloud.com                          | 5.9.0   | | Pocket Casts | pocketcasts.com                           | 6.1.0   | | Crowdsignal  | crowdsignal.net                           | 6.2.0   | | Anghami      | anghami.com                               | 6.3.0   | | Bluesky      | bsky.app                                  | 6.6.0   |\n No longer supported providers:\n |   Provider   |        Flavor        |   Since   |  Removed  | | ------------ | -------------------- | --------- | --------- | | Qik          | qik.com              | 2.9.0     | 3.9.0     | | Viddler      | viddler.com          | 2.9.0     | 4.0.0     | | Revision3    | revision3.com        | 2.9.0     | 4.2.0     | | Blip         | blip.tv              | 2.9.0     | 4.4.0     | | Rdio         | rdio.com             | 3.6.0     | 4.4.1     | | Rdio         | rd.io                | 3.6.0     | 4.4.1     | | Vine         | vine.co              | 4.1.0     | 4.9.0     | | Photobucket  | photobucket.com      | 2.9.0     | 5.1.0     | | Funny or Die | funnyordie.com       | 3.0.0     | 5.1.0     | | CollegeHumor | collegehumor.com     | 4.0.0     | 5.3.1     | | Hulu         | hulu.com             | 2.9.0     | 5.5.0     | | Instagram    | instagram.com        | 3.5.0     | 5.5.2     | | Instagram    | instagr.am           | 3.5.0     | 5.5.2     | | Instagram TV | instagram.com        | 5.1.0     | 5.5.2     | | Instagram TV | instagr.am           | 5.1.0     | 5.5.2     | | Facebook     | facebook.com         | 4.7.0     | 5.5.2     | | Meetup.com   | meetup.com           | 3.9.0     | 6.0.1     | | Meetup.com   | meetu.ps             | 3.9.0     | 6.0.1     | | SlideShare   | slideshare.net       | 3.5.0     | 6.6.0     |",
+                "long_description": "Since WordPress 4.4, oEmbed discovery is enabled for all users and allows embedding of sanitized iframes. The providers in this list are sanctioned, meaning they are trusted and allowed to embed any content, such as iframes, videos, JavaScript, and arbitrary HTML.\n Supported providers:\n |   Provider   |                     Flavor                |  Since  | | ------------ | ----------------------------------------- | ------- | | Dailymotion  | dailymotion.com                           | 2.9.0   | | Flickr       | flickr.com                                | 2.9.0   | | Scribd       | scribd.com                                | 2.9.0   | | Vimeo        | vimeo.com                                 | 2.9.0   | | WordPress.tv | wordpress.tv                              | 2.9.0   | | YouTube      | youtube.com/watch                         | 2.9.0   | | Crowdsignal  | polldaddy.com                             | 3.0.0   | | SmugMug      | smugmug.com                               | 3.0.0   | | YouTube      | youtu.be                                  | 3.0.0   | | Twitter      | twitter.com                               | 3.4.0   | | SoundCloud   | soundcloud.com                            | 3.5.0   | | Dailymotion  | dai.ly                                    | 3.6.0   | | Flickr       | flic.kr                                   | 3.6.0   | | Spotify      | spotify.com                               | 3.6.0   | | Imgur        | imgur.com                                 | 3.9.0   | | Animoto      | animoto.com                               | 4.0.0   | | Animoto      | video214.com                              | 4.0.0   | | Issuu        | issuu.com                                 | 4.0.0   | | Mixcloud     | mixcloud.com                              | 4.0.0   | | Crowdsignal  | poll.fm                                   | 4.0.0   | | TED          | ted.com                                   | 4.0.0   | | YouTube      | youtube.com/playlist                      | 4.0.0   | | Tumblr       | tumblr.com                                | 4.2.0   | | Kickstarter  | kickstarter.com                           | 4.2.0   | | Kickstarter  | kck.st                                    | 4.2.0   | | Cloudup      | cloudup.com                               | 4.3.0   | | ReverbNation | reverbnation.com                          | 4.4.0   | | VideoPress   | videopress.com                            | 4.4.0   | | Reddit       | reddit.com                                | 4.4.0   | | Speaker Deck | speakerdeck.com                           | 4.4.0   | | Twitter      | twitter.com/timelines                     | 4.5.0   | | Twitter      | twitter.com/moments                       | 4.5.0   | | Twitter      | twitter.com/user                          | 4.7.0   | | Twitter      | twitter.com/likes                         | 4.7.0   | | Twitter      | twitter.com/lists                         | 4.7.0   | | Screencast   | screencast.com                            | 4.8.0   | | Amazon       | amazon.com (com.mx, com.br, ca)           | 4.9.0   | | Amazon       | amazon.de (fr, it, es, in, nl, ru, co.uk) | 4.9.0   | | Amazon       | amazon.co.jp (com.au)                     | 4.9.0   | | Amazon       | amazon.cn                                 | 4.9.0   | | Amazon       | a.co                                      | 4.9.0   | | Amazon       | amzn.to (eu, in, asia)                    | 4.9.0   | | Amazon       | z.cn                                      | 4.9.0   | | Someecards   | someecards.com                            | 4.9.0   | | Someecards   | some.ly                                   | 4.9.0   | | Crowdsignal  | survey.fm                                 | 5.1.0   | | TikTok       | tiktok.com                                | 5.4.0   | | Pinterest    | pinterest.com                             | 5.9.0   | | WolframCloud | wolframcloud.com                          | 5.9.0   | | Pocket Casts | pocketcasts.com                           | 6.1.0   | | Crowdsignal  | crowdsignal.net                           | 6.2.0   | | Anghami      | anghami.com                               | 6.3.0   | | Bluesky      | bsky.app                                  | 6.6.0   | | Canva        | canva.com                                 | 6.8.0   |\n No longer supported providers:\n |   Provider   |        Flavor        |   Since   |  Removed  | | ------------ | -------------------- | --------- | --------- | | Qik          | qik.com              | 2.9.0     | 3.9.0     | | Viddler      | viddler.com          | 2.9.0     | 4.0.0     | | Revision3    | revision3.com        | 2.9.0     | 4.2.0     | | Blip         | blip.tv              | 2.9.0     | 4.4.0     | | Rdio         | rdio.com             | 3.6.0     | 4.4.1     | | Rdio         | rd.io                | 3.6.0     | 4.4.1     | | Vine         | vine.co              | 4.1.0     | 4.9.0     | | Photobucket  | photobucket.com      | 2.9.0     | 5.1.0     | | Funny or Die | funnyordie.com       | 3.0.0     | 5.1.0     | | CollegeHumor | collegehumor.com     | 4.0.0     | 5.3.1     | | Hulu         | hulu.com             | 2.9.0     | 5.5.0     | | Instagram    | instagram.com        | 3.5.0     | 5.5.2     | | Instagram    | instagr.am           | 3.5.0     | 5.5.2     | | Instagram TV | instagram.com        | 5.1.0     | 5.5.2     | | Instagram TV | instagr.am           | 5.1.0     | 5.5.2     | | Facebook     | facebook.com         | 4.7.0     | 5.5.2     | | Meetup.com   | meetup.com           | 3.9.0     | 6.0.1     | | Meetup.com   | meetu.ps             | 3.9.0     | 6.0.1     | | SlideShare   | slideshare.net       | 3.5.0     | 6.6.0     |",
                 "tags": [
                     {
                         "name": "see",
@@ -26400,7 +26405,7 @@
                         "variable": "$providers"
                     }
                 ],
-                "long_description_html": "<p>Since WordPress 4.4, oEmbed discovery is enabled for all users and allows embedding of sanitized iframes. The providers in this list are sanctioned, meaning they are trusted and allowed to embed any content, such as iframes, videos, JavaScript, and arbitrary HTML.</p> <p>Supported providers:</p> <table> <thead> <tr> <th>Provider</th> <th>Flavor</th> <th>Since</th> </tr> </thead> <tbody> <tr> <td>Dailymotion</td> <td>dailymotion.com</td> <td>2.9.0</td> </tr> <tr> <td>Flickr</td> <td>flickr.com</td> <td>2.9.0</td> </tr> <tr> <td>Scribd</td> <td>scribd.com</td> <td>2.9.0</td> </tr> <tr> <td>Vimeo</td> <td>vimeo.com</td> <td>2.9.0</td> </tr> <tr> <td>WordPress.tv</td> <td>wordpress.tv</td> <td>2.9.0</td> </tr> <tr> <td>YouTube</td> <td>youtube.com/watch</td> <td>2.9.0</td> </tr> <tr> <td>Crowdsignal</td> <td>polldaddy.com</td> <td>3.0.0</td> </tr> <tr> <td>SmugMug</td> <td>smugmug.com</td> <td>3.0.0</td> </tr> <tr> <td>YouTube</td> <td>youtu.be</td> <td>3.0.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com</td> <td>3.4.0</td> </tr> <tr> <td>SoundCloud</td> <td>soundcloud.com</td> <td>3.5.0</td> </tr> <tr> <td>Dailymotion</td> <td>dai.ly</td> <td>3.6.0</td> </tr> <tr> <td>Flickr</td> <td>flic.kr</td> <td>3.6.0</td> </tr> <tr> <td>Spotify</td> <td>spotify.com</td> <td>3.6.0</td> </tr> <tr> <td>Imgur</td> <td>imgur.com</td> <td>3.9.0</td> </tr> <tr> <td>Animoto</td> <td>animoto.com</td> <td>4.0.0</td> </tr> <tr> <td>Animoto</td> <td>video214.com</td> <td>4.0.0</td> </tr> <tr> <td>Issuu</td> <td>issuu.com</td> <td>4.0.0</td> </tr> <tr> <td>Mixcloud</td> <td>mixcloud.com</td> <td>4.0.0</td> </tr> <tr> <td>Crowdsignal</td> <td>poll.fm</td> <td>4.0.0</td> </tr> <tr> <td>TED</td> <td>ted.com</td> <td>4.0.0</td> </tr> <tr> <td>YouTube</td> <td>youtube.com/playlist</td> <td>4.0.0</td> </tr> <tr> <td>Tumblr</td> <td>tumblr.com</td> <td>4.2.0</td> </tr> <tr> <td>Kickstarter</td> <td>kickstarter.com</td> <td>4.2.0</td> </tr> <tr> <td>Kickstarter</td> <td>kck.st</td> <td>4.2.0</td> </tr> <tr> <td>Cloudup</td> <td>cloudup.com</td> <td>4.3.0</td> </tr> <tr> <td>ReverbNation</td> <td>reverbnation.com</td> <td>4.4.0</td> </tr> <tr> <td>VideoPress</td> <td>videopress.com</td> <td>4.4.0</td> </tr> <tr> <td>Reddit</td> <td>reddit.com</td> <td>4.4.0</td> </tr> <tr> <td>Speaker Deck</td> <td>speakerdeck.com</td> <td>4.4.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/timelines</td> <td>4.5.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/moments</td> <td>4.5.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/user</td> <td>4.7.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/likes</td> <td>4.7.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/lists</td> <td>4.7.0</td> </tr> <tr> <td>Screencast</td> <td>screencast.com</td> <td>4.8.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.com (com.mx, com.br, ca)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.de (fr, it, es, in, nl, ru, co.uk)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.co.jp (com.au)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.cn</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>a.co</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amzn.to (eu, in, asia)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>z.cn</td> <td>4.9.0</td> </tr> <tr> <td>Someecards</td> <td>someecards.com</td> <td>4.9.0</td> </tr> <tr> <td>Someecards</td> <td>some.ly</td> <td>4.9.0</td> </tr> <tr> <td>Crowdsignal</td> <td>survey.fm</td> <td>5.1.0</td> </tr> <tr> <td>TikTok</td> <td>tiktok.com</td> <td>5.4.0</td> </tr> <tr> <td>Pinterest</td> <td>pinterest.com</td> <td>5.9.0</td> </tr> <tr> <td>WolframCloud</td> <td>wolframcloud.com</td> <td>5.9.0</td> </tr> <tr> <td>Pocket Casts</td> <td>pocketcasts.com</td> <td>6.1.0</td> </tr> <tr> <td>Crowdsignal</td> <td>crowdsignal.net</td> <td>6.2.0</td> </tr> <tr> <td>Anghami</td> <td>anghami.com</td> <td>6.3.0</td> </tr> <tr> <td>Bluesky</td> <td>bsky.app</td> <td>6.6.0</td> </tr> </tbody> </table> <p>No longer supported providers:</p> <table> <thead> <tr> <th>Provider</th> <th>Flavor</th> <th>Since</th> <th>Removed</th> </tr> </thead> <tbody> <tr> <td>Qik</td> <td>qik.com</td> <td>2.9.0</td> <td>3.9.0</td> </tr> <tr> <td>Viddler</td> <td>viddler.com</td> <td>2.9.0</td> <td>4.0.0</td> </tr> <tr> <td>Revision3</td> <td>revision3.com</td> <td>2.9.0</td> <td>4.2.0</td> </tr> <tr> <td>Blip</td> <td>blip.tv</td> <td>2.9.0</td> <td>4.4.0</td> </tr> <tr> <td>Rdio</td> <td>rdio.com</td> <td>3.6.0</td> <td>4.4.1</td> </tr> <tr> <td>Rdio</td> <td>rd.io</td> <td>3.6.0</td> <td>4.4.1</td> </tr> <tr> <td>Vine</td> <td>vine.co</td> <td>4.1.0</td> <td>4.9.0</td> </tr> <tr> <td>Photobucket</td> <td>photobucket.com</td> <td>2.9.0</td> <td>5.1.0</td> </tr> <tr> <td>Funny or Die</td> <td>funnyordie.com</td> <td>3.0.0</td> <td>5.1.0</td> </tr> <tr> <td>CollegeHumor</td> <td>collegehumor.com</td> <td>4.0.0</td> <td>5.3.1</td> </tr> <tr> <td>Hulu</td> <td>hulu.com</td> <td>2.9.0</td> <td>5.5.0</td> </tr> <tr> <td>Instagram</td> <td>instagram.com</td> <td>3.5.0</td> <td>5.5.2</td> </tr> <tr> <td>Instagram</td> <td>instagr.am</td> <td>3.5.0</td> <td>5.5.2</td> </tr> <tr> <td>Instagram TV</td> <td>instagram.com</td> <td>5.1.0</td> <td>5.5.2</td> </tr> <tr> <td>Instagram TV</td> <td>instagr.am</td> <td>5.1.0</td> <td>5.5.2</td> </tr> <tr> <td>Facebook</td> <td>facebook.com</td> <td>4.7.0</td> <td>5.5.2</td> </tr> <tr> <td>Meetup.com</td> <td>meetup.com</td> <td>3.9.0</td> <td>6.0.1</td> </tr> <tr> <td>Meetup.com</td> <td>meetu.ps</td> <td>3.9.0</td> <td>6.0.1</td> </tr> <tr> <td>SlideShare</td> <td>slideshare.net</td> <td>3.5.0</td> <td>6.6.0</td> </tr> </tbody> </table>"
+                "long_description_html": "<p>Since WordPress 4.4, oEmbed discovery is enabled for all users and allows embedding of sanitized iframes. The providers in this list are sanctioned, meaning they are trusted and allowed to embed any content, such as iframes, videos, JavaScript, and arbitrary HTML.</p> <p>Supported providers:</p> <table> <thead> <tr> <th>Provider</th> <th>Flavor</th> <th>Since</th> </tr> </thead> <tbody> <tr> <td>Dailymotion</td> <td>dailymotion.com</td> <td>2.9.0</td> </tr> <tr> <td>Flickr</td> <td>flickr.com</td> <td>2.9.0</td> </tr> <tr> <td>Scribd</td> <td>scribd.com</td> <td>2.9.0</td> </tr> <tr> <td>Vimeo</td> <td>vimeo.com</td> <td>2.9.0</td> </tr> <tr> <td>WordPress.tv</td> <td>wordpress.tv</td> <td>2.9.0</td> </tr> <tr> <td>YouTube</td> <td>youtube.com/watch</td> <td>2.9.0</td> </tr> <tr> <td>Crowdsignal</td> <td>polldaddy.com</td> <td>3.0.0</td> </tr> <tr> <td>SmugMug</td> <td>smugmug.com</td> <td>3.0.0</td> </tr> <tr> <td>YouTube</td> <td>youtu.be</td> <td>3.0.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com</td> <td>3.4.0</td> </tr> <tr> <td>SoundCloud</td> <td>soundcloud.com</td> <td>3.5.0</td> </tr> <tr> <td>Dailymotion</td> <td>dai.ly</td> <td>3.6.0</td> </tr> <tr> <td>Flickr</td> <td>flic.kr</td> <td>3.6.0</td> </tr> <tr> <td>Spotify</td> <td>spotify.com</td> <td>3.6.0</td> </tr> <tr> <td>Imgur</td> <td>imgur.com</td> <td>3.9.0</td> </tr> <tr> <td>Animoto</td> <td>animoto.com</td> <td>4.0.0</td> </tr> <tr> <td>Animoto</td> <td>video214.com</td> <td>4.0.0</td> </tr> <tr> <td>Issuu</td> <td>issuu.com</td> <td>4.0.0</td> </tr> <tr> <td>Mixcloud</td> <td>mixcloud.com</td> <td>4.0.0</td> </tr> <tr> <td>Crowdsignal</td> <td>poll.fm</td> <td>4.0.0</td> </tr> <tr> <td>TED</td> <td>ted.com</td> <td>4.0.0</td> </tr> <tr> <td>YouTube</td> <td>youtube.com/playlist</td> <td>4.0.0</td> </tr> <tr> <td>Tumblr</td> <td>tumblr.com</td> <td>4.2.0</td> </tr> <tr> <td>Kickstarter</td> <td>kickstarter.com</td> <td>4.2.0</td> </tr> <tr> <td>Kickstarter</td> <td>kck.st</td> <td>4.2.0</td> </tr> <tr> <td>Cloudup</td> <td>cloudup.com</td> <td>4.3.0</td> </tr> <tr> <td>ReverbNation</td> <td>reverbnation.com</td> <td>4.4.0</td> </tr> <tr> <td>VideoPress</td> <td>videopress.com</td> <td>4.4.0</td> </tr> <tr> <td>Reddit</td> <td>reddit.com</td> <td>4.4.0</td> </tr> <tr> <td>Speaker Deck</td> <td>speakerdeck.com</td> <td>4.4.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/timelines</td> <td>4.5.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/moments</td> <td>4.5.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/user</td> <td>4.7.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/likes</td> <td>4.7.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/lists</td> <td>4.7.0</td> </tr> <tr> <td>Screencast</td> <td>screencast.com</td> <td>4.8.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.com (com.mx, com.br, ca)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.de (fr, it, es, in, nl, ru, co.uk)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.co.jp (com.au)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.cn</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>a.co</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amzn.to (eu, in, asia)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>z.cn</td> <td>4.9.0</td> </tr> <tr> <td>Someecards</td> <td>someecards.com</td> <td>4.9.0</td> </tr> <tr> <td>Someecards</td> <td>some.ly</td> <td>4.9.0</td> </tr> <tr> <td>Crowdsignal</td> <td>survey.fm</td> <td>5.1.0</td> </tr> <tr> <td>TikTok</td> <td>tiktok.com</td> <td>5.4.0</td> </tr> <tr> <td>Pinterest</td> <td>pinterest.com</td> <td>5.9.0</td> </tr> <tr> <td>WolframCloud</td> <td>wolframcloud.com</td> <td>5.9.0</td> </tr> <tr> <td>Pocket Casts</td> <td>pocketcasts.com</td> <td>6.1.0</td> </tr> <tr> <td>Crowdsignal</td> <td>crowdsignal.net</td> <td>6.2.0</td> </tr> <tr> <td>Anghami</td> <td>anghami.com</td> <td>6.3.0</td> </tr> <tr> <td>Bluesky</td> <td>bsky.app</td> <td>6.6.0</td> </tr> <tr> <td>Canva</td> <td>canva.com</td> <td>6.8.0</td> </tr> </tbody> </table> <p>No longer supported providers:</p> <table> <thead> <tr> <th>Provider</th> <th>Flavor</th> <th>Since</th> <th>Removed</th> </tr> </thead> <tbody> <tr> <td>Qik</td> <td>qik.com</td> <td>2.9.0</td> <td>3.9.0</td> </tr> <tr> <td>Viddler</td> <td>viddler.com</td> <td>2.9.0</td> <td>4.0.0</td> </tr> <tr> <td>Revision3</td> <td>revision3.com</td> <td>2.9.0</td> <td>4.2.0</td> </tr> <tr> <td>Blip</td> <td>blip.tv</td> <td>2.9.0</td> <td>4.4.0</td> </tr> <tr> <td>Rdio</td> <td>rdio.com</td> <td>3.6.0</td> <td>4.4.1</td> </tr> <tr> <td>Rdio</td> <td>rd.io</td> <td>3.6.0</td> <td>4.4.1</td> </tr> <tr> <td>Vine</td> <td>vine.co</td> <td>4.1.0</td> <td>4.9.0</td> </tr> <tr> <td>Photobucket</td> <td>photobucket.com</td> <td>2.9.0</td> <td>5.1.0</td> </tr> <tr> <td>Funny or Die</td> <td>funnyordie.com</td> <td>3.0.0</td> <td>5.1.0</td> </tr> <tr> <td>CollegeHumor</td> <td>collegehumor.com</td> <td>4.0.0</td> <td>5.3.1</td> </tr> <tr> <td>Hulu</td> <td>hulu.com</td> <td>2.9.0</td> <td>5.5.0</td> </tr> <tr> <td>Instagram</td> <td>instagram.com</td> <td>3.5.0</td> <td>5.5.2</td> </tr> <tr> <td>Instagram</td> <td>instagr.am</td> <td>3.5.0</td> <td>5.5.2</td> </tr> <tr> <td>Instagram TV</td> <td>instagram.com</td> <td>5.1.0</td> <td>5.5.2</td> </tr> <tr> <td>Instagram TV</td> <td>instagr.am</td> <td>5.1.0</td> <td>5.5.2</td> </tr> <tr> <td>Facebook</td> <td>facebook.com</td> <td>4.7.0</td> <td>5.5.2</td> </tr> <tr> <td>Meetup.com</td> <td>meetup.com</td> <td>3.9.0</td> <td>6.0.1</td> </tr> <tr> <td>Meetup.com</td> <td>meetu.ps</td> <td>3.9.0</td> <td>6.0.1</td> </tr> <tr> <td>SlideShare</td> <td>slideshare.net</td> <td>3.5.0</td> <td>6.6.0</td> </tr> </tbody> </table>"
             },
             "args": 1
         },
@@ -27378,7 +27383,7 @@
             "file": "wp-includes/user.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the return value of check_password_reset_key() when an old-style key is used.",
+                "description": "Filters the return value of check_password_reset_key() when an old-style key or an expired key is used.",
                 "long_description": "",
                 "tags": [
                     {
@@ -30424,6 +30429,10 @@
                 "long_description": "Allows plugins to short-circuit attachment ID lookups. Plugins making use of this function should return:\n - 0 (integer) to indicate the attachment is not found, - attachment ID (integer) to indicate the attachment ID found, - null to indicate WordPress should proceed with the lookup.\n Warning: The post ID may be null or zero, both of which cast to a boolean false. For information about casting to booleans see the {@link https://www.php.net/manual/en/language.types.boolean.php PHP documentation}. Use the === operator for testing the post ID when developing filters using this hook.",
                 "tags": [
                     {
+                        "name": "since",
+                        "content": "6.7.0"
+                    },
+                    {
                         "name": "param",
                         "content": "The result of the post ID lookup. Null to indicate no lookup has been attempted. Default null.",
                         "types": [
@@ -31083,7 +31092,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The avatar to retrieve. Accepts a user ID, Gravatar MD5 hash, user email, WP_User object, WP_Post object, or WP_Comment object.",
+                        "content": "The avatar to retrieve. Accepts a user ID, Gravatar SHA-256 or MD5 hash, user email, WP_User object, WP_Post object, or WP_Comment object.",
                         "types": [
                             "mixed"
                         ],
@@ -33043,7 +33052,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Timestamp for when to run the event.",
+                        "content": "Unix timestamp (UTC) for when to run the event.",
                         "types": [
                             "int"
                         ],
@@ -33738,10 +33747,6 @@
                             "\\WP_Error"
                         ],
                         "variable": "$pre"
-                    },
-                    {
-                        "name": "return",
-                        "content": "Error object if HTTPS detection errors are found, null otherwise."
                     }
                 ],
                 "long_description_html": "<p>Returning a <code>WP_Error</code> from the filter will effectively short-circuit the default logic of trying a remote request to the site over HTTPS, storing the errors array from the returned <code>WP_Error</code> instead.</p>"
@@ -40813,16 +40818,8 @@
             "type": "filter",
             "doc": {
                 "description": "Filters data associated with a given Script Module.",
-                "long_description": "Script Modules may require data that is required for initialization or is essential to have immediately available on page load. These are suitable use cases for this data.\n The dynamic portion of the hook name, `$module_id`, refers to the Script Module ID that the data is associated with.\n This is best suited to pass essential data that must be available to the module for initialization or immediately on page load. It does not replace the REST API or fetching data from the client.",
+                "long_description": "Script Modules may require data that is required for initialization or is essential to have immediately available on page load. These are suitable use cases for this data.\n The dynamic portion of the hook name, `$module_id`, refers to the Script Module ID that the data is associated with.\n This is best suited to pass essential data that must be available to the module for initialization or immediately on page load. It does not replace the REST API or fetching data from the client.\n Example:\n     add_filter(         'script_module_data_MyScriptModuleID',         function ( array $data ): array {             $data['dataForClient'] = 'ok';             return $data;         }     );\n If the filter returns no data (an empty array), nothing will be embedded in the page.\n The data for a given Script Module, if provided, will be JSON serialized in a script tag with an ID of the form `wp-script-module-data-{$module_id}`.\n The data can be read on the client with a pattern like this:\n Example:\n     const dataContainer = document.getElementById( 'wp-script-module-data-MyScriptModuleID' );     let data = };     if ( dataContainer ) {         try {             data = JSON.parse( dataContainer.textContent );         } catch }     }     // data.dataForClient === 'ok';     initMyScriptModuleWithData( data );",
                 "tags": [
-                    {
-                        "name": "example",
-                        "content": "add_filter( 'script_module_data_MyScriptModuleID', function ( array $data ): array { $data['script-needs-this-data'] = 'ok'; return $data; } ); If the filter returns no data (an empty array), nothing will be embedded in the page. The data for a given Script Module, if provided, will be JSON serialized in a script tag with an ID of the form `wp-script-module-data-{$module_id}`. The data can be read on the client with a pattern like this:"
-                    },
-                    {
-                        "name": "example",
-                        "content": "const dataContainer = document.getElementById( 'wp-script-module-data-MyScriptModuleID' ); let data = }; if ( dataContainer ) { try { data = JSON.parse( dataContainer.textContent ); } catch } } initMyScriptModuleWithData( data );"
-                    },
                     {
                         "name": "since",
                         "content": "6.7.0"
@@ -40836,7 +40833,7 @@
                         "variable": "$data"
                     }
                 ],
-                "long_description_html": "<p>Script Modules may require data that is required for initialization or is essential to have immediately available on page load. These are suitable use cases for this data.</p> <p>The dynamic portion of the hook name, <code>$module_id</code>, refers to the Script Module ID that the data is associated with.</p> <p>This is best suited to pass essential data that must be available to the module for initialization or immediately on page load. It does not replace the REST API or fetching data from the client.</p>"
+                "long_description_html": "<p>Script Modules may require data that is required for initialization or is essential to have immediately available on page load. These are suitable use cases for this data.</p> <p>The dynamic portion of the hook name, <code>$module_id</code>, refers to the Script Module ID that the data is associated with.</p> <p>This is best suited to pass essential data that must be available to the module for initialization or immediately on page load. It does not replace the REST API or fetching data from the client.</p> <p>Example:</p> <pre><code>add_filter(     'script_module_data_MyScriptModuleID',     function ( array $data ): array {         $data['dataForClient'] = 'ok';         return $data;     } );</code></pre> <p>If the filter returns no data (an empty array), nothing will be embedded in the page.</p> <p>The data for a given Script Module, if provided, will be JSON serialized in a script tag with an ID of the form <code>wp-script-module-data-{$module_id}</code>.</p> <p>The data can be read on the client with a pattern like this:</p> <p>Example:</p> <pre><code>const dataContainer = document.getElementById( 'wp-script-module-data-MyScriptModuleID' ); let data = }; if ( dataContainer ) {     try {         data = JSON.parse( dataContainer.textContent );     } catch } } // data.dataForClient === 'ok'; initMyScriptModuleWithData( data );</code></pre>"
             },
             "args": 1
         },
@@ -42042,7 +42039,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters whether to show the Add New User form on the Multisite Users screen.",
-                "long_description": "",
+                "long_description": "Note: While WordPress is moving towards simplifying labels by removing \"New\" from \"Add New X\" labels, we keep \"Add New User\" here to maintain a clear distinction from the \"Add Existing User\" section above.",
                 "tags": [
                     {
                         "name": "since",
@@ -42057,7 +42054,7 @@
                         "variable": "$bool"
                     }
                 ],
-                "long_description_html": ""
+                "long_description_html": "<p>Note: While WordPress is moving towards simplifying labels by removing \"New\" from \"Add New X\" labels, we keep \"Add New User\" here to maintain a clear distinction from the \"Add Existing User\" section above.</p>"
             },
             "args": 1
         },
@@ -44370,7 +44367,7 @@
             "file": "wp-includes/class-wp-editor.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the list of teenyMCE buttons (Text tab).",
+                "description": "Filters the list of teenyMCE buttons (Code tab).",
                 "long_description": "",
                 "tags": [
                     {
@@ -45427,7 +45424,7 @@
             "file": "wp-includes/general-template.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the date a post was published for display.",
+                "description": "Filters the date of the post, for display.",
                 "long_description": "",
                 "tags": [
                     {
@@ -45672,7 +45669,7 @@
             "file": "wp-includes/general-template.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the output of the XHTML generator tag for display.",
+                "description": "Filters the output of the XHTML generator tag, for display.",
                 "long_description": "",
                 "tags": [
                     {
@@ -45809,7 +45806,7 @@
             "file": "wp-includes/general-template.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the date a post was last modified for display.",
+                "description": "Filters the date a post was last modified, for display.",
                 "long_description": "",
                 "tags": [
                     {
@@ -45818,10 +45815,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "The last modified date or false if no post is found.",
+                        "content": "The last modified date.",
                         "types": [
-                            "string",
-                            "false"
+                            "string"
                         ],
                         "variable": "$the_modified_date"
                     },
@@ -46177,7 +46173,7 @@
             "file": "wp-includes/general-template.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the contents of the search query variable for display.",
+                "description": "Filters the contents of the search query variable, for display.",
                 "long_description": "",
                 "tags": [
                     {
@@ -46235,7 +46231,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Shortlink's title attribute.",
+                        "content": "Shortlink's title attribute. Unused.",
                         "types": [
                             "string"
                         ],
@@ -46398,7 +46394,7 @@
             "file": "wp-includes/general-template.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the time a post was written for display.",
+                "description": "Filters the time of the post, for display.",
                 "long_description": "",
                 "tags": [
                     {
@@ -46514,7 +46510,7 @@
             "file": "wp-includes/general-template.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the weekday on which the post was written, for display.",
+                "description": "Filters the localized weekday of the post, for display.",
                 "long_description": "",
                 "tags": [
                     {
@@ -46539,7 +46535,7 @@
             "file": "wp-includes/general-template.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the localized date on which the post was written, for display.",
+                "description": "Filters the localized weekday of the post, for display.",
                 "long_description": "",
                 "tags": [
                     {
@@ -47965,7 +47961,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "{ The plugin update data with the latest details. Default false. @type string $id           Optional. ID of the plugin for update purposes, should be a URI specified in the <code>Update URI</code> header field. @type string $slug         Slug of the plugin. @type string $version      The version of the plugin. @type string $url          The URL for details of the plugin. @type string $package      Optional. The update ZIP for the plugin. @type string $tested       Optional. The version of WordPress the plugin is tested against. @type string $requires_php Optional. The version of PHP which the plugin requires. @type bool   $autoupdate   Optional. Whether the plugin should automatically update. @type array  $icons        Optional. Array of plugin icons. @type array  $banners      Optional. Array of plugin banners. @type array  $banners_rtl  Optional. Array of plugin RTL banners. @type array  $translations { Optional. List of translation updates for the plugin. @type string $language   The language the translation update is for. @type string $version    The version of the plugin this translation is for. This is not the version of the language file. @type string $updated    The update timestamp of the translation file. Should be a date in the <code>YYYY-MM-DD HH:MM:SS</code> format. @type string $package    The ZIP location containing the translation update. @type string $autoupdate Whether the translation should be automatically installed. } }",
+                        "content": "{ The plugin update data with the latest details. Default false. @type string   $id           Optional. ID of the plugin for update purposes, should be a URI specified in the <code>Update URI</code> header field. @type string   $slug         Slug of the plugin. @type string   $version      The version of the plugin. @type string   $url          The URL for details of the plugin. @type string   $package      Optional. The update ZIP for the plugin. @type string   $tested       Optional. The version of WordPress the plugin is tested against. @type string   $requires_php Optional. The version of PHP which the plugin requires. @type bool     $autoupdate   Optional. Whether the plugin should automatically update. @type string[] $icons        Optional. Array of plugin icons. @type string[] $banners      Optional. Array of plugin banners. @type string[] $banners_rtl  Optional. Array of plugin RTL banners. @type array    $translations { Optional. List of translation updates for the plugin. @type string $language   The language the translation update is for. @type string $version    The version of the plugin this translation is for. This is not the version of the language file. @type string $updated    The update timestamp of the translation file. Should be a date in the <code>YYYY-MM-DD HH:MM:SS</code> format. @type string $package    The ZIP location containing the translation update. @type string $autoupdate Whether the translation should be automatically installed. } }",
                         "types": [
                             "array",
                             "false"
@@ -53468,6 +53464,11 @@
                         "content": "3.5.0"
                     },
                     {
+                        "name": "since",
+                        "content": "6.8.0",
+                        "description": "Added the size parameter."
+                    },
+                    {
                         "name": "param",
                         "content": "Quality level between 1 (low) and 100 (high).",
                         "types": [
@@ -53482,11 +53483,19 @@
                             "string"
                         ],
                         "variable": "$mime_type"
+                    },
+                    {
+                        "name": "param",
+                        "content": "{ Dimensions of the image. @type int $width  The image width. @type int $height The image height. }",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$size"
                     }
                 ],
                 "long_description_html": "<p>Applies only during initial editor instantiation, or when set_quality() is run manually without the <code>$quality</code> argument.</p> <p>The WP_Image_Editor::set_quality() method has priority over the filter.</p>"
             },
-            "args": 2
+            "args": 3
         },
         {
             "name": "wp_editor_settings",
@@ -54911,7 +54920,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "{ Fetched update data. @type array   $counts       An array of counts for available plugin, theme, and WordPress updates. @type string  $update_title Titles of available updates. }",
+                        "content": "{ Fetched update data. @type int[]   $counts       An array of counts for available plugin, theme, and WordPress updates. @type string  $update_title Titles of available updates. }",
                         "types": [
                             "array"
                         ],
@@ -58057,6 +58066,11 @@
                         "name": "since",
                         "content": "5.8.0",
                         "description": "The <code>$userdata</code> parameter was added."
+                    },
+                    {
+                        "name": "since",
+                        "content": "6.8.0",
+                        "description": "The user's password is now hashed using bcrypt by default instead of phpass."
                     },
                     {
                         "name": "param",
