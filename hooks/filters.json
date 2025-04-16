@@ -55898,6 +55898,31 @@
             "args": 4
         },
         {
+            "name": "wp_img_tag_add_auto_sizes",
+            "file": "wp-includes/media.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters whether auto-sizes for lazy loaded images is enabled.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.7.1"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether auto-sizes for lazy loaded images is enabled.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$enabled"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 1
+        },
+        {
             "name": "wp_img_tag_add_decoding_attr",
             "file": "wp-includes/media.php",
             "type": "filter",
