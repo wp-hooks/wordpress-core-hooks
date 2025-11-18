@@ -79,7 +79,11 @@ Anything that needs programmatic access to a list of available hooks, for exampl
 
 ## Regenerating the Hook Files
 
-Change the `roots/wordpress-full` version in composer.json to the required WordPress version, or `dev-main` for nightly.
+Change the `roots/wordpress-full` version in composer.json to one of:
+
+- The required major version, such as `6.8`
+- `dev-main` for nightlies prior to RC
+- An RC version, such as `6.9-RC1`
 
 Install the dependencies:
 
