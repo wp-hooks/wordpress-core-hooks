@@ -101,8 +101,9 @@ echo "" >> "$OUTPUT_FILE"
 echo "Hooks where the number of \`@param\` tags does not match the \`args\` count." >> "$OUTPUT_FILE"
 echo "" >> "$OUTPUT_FILE"
 
-PARAM_MISMATCH_ACTIONS=$(jq -r '.hooks[] | select(.args != ([.doc.tags[] | select(.name == "param")] | length)) | "- `\(.name)` — args: \(.args), params: \([.doc.tags[] | select(.name == "param")] | length) (\(.file))"' hooks/actions.json)
-PARAM_MISMATCH_FILTERS=$(jq -r '.hooks[] | select(.args != ([.doc.tags[] | select(.name == "param")] | length)) | "- `\(.name)` — args: \(.args), params: \([.doc.tags[] | select(.name == "param")] | length) (\(.file))"' hooks/filters.json)
+# Exclude action_reference and filter_reference types as they use ref_array functions which always report args as 1
+PARAM_MISMATCH_ACTIONS=$(jq -r '.hooks[] | select(.type != "action_reference" and .type != "filter_reference") | select(.args != ([.doc.tags[] | select(.name == "param")] | length)) | "- `\(.name)` — args: \(.args), params: \([.doc.tags[] | select(.name == "param")] | length) (\(.file))"' hooks/actions.json)
+PARAM_MISMATCH_FILTERS=$(jq -r '.hooks[] | select(.type != "action_reference" and .type != "filter_reference") | select(.args != ([.doc.tags[] | select(.name == "param")] | length)) | "- `\(.name)` — args: \(.args), params: \([.doc.tags[] | select(.name == "param")] | length) (\(.file))"' hooks/filters.json)
 
 PARAM_MISMATCH=$(echo -e "${PARAM_MISMATCH_ACTIONS}\n${PARAM_MISMATCH_FILTERS}" | grep -v '^$' | sort)
 
