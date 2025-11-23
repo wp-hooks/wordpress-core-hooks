@@ -28,7 +28,7 @@ _No hooks with empty variables._
 
 Hooks with `@param` tags where the variable is not a valid PHP variable name.
 
-_No hooks with invalid variable names._
+- `rest_menu_read_access` — $this (wp-includes/rest-api/endpoints/class-wp-rest-menu-items-controller.php)
 
 ## Empty Param Descriptions
 
@@ -61,8 +61,9 @@ Hooks with `@param` tags that have empty or missing type arrays.
 
 _No hooks with empty param types._
 
-## Malformed Param Types
+## Invalid Param Types
 
-Hooks with `@param` tags where types contain unexpected characters.
+Hooks with `@param` tags where types are not valid PHP docblock types.
 
-_No hooks with malformed param types._
+- `block_editor_rest_api_preload_paths` — $preload_paths: `(string`  (wp-includes/block-editor.php)
+- `block_editor_rest_api_preload_paths` — $preload_paths: `string[])[]`  (wp-includes/block-editor.php)

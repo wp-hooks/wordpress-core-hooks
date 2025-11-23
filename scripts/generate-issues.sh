@@ -101,9 +101,9 @@ echo "" >> "$OUTPUT_FILE"
 echo "Hooks with \`@param\` tags where the variable is not a valid PHP variable name." >> "$OUTPUT_FILE"
 echo "" >> "$OUTPUT_FILE"
 
-# Valid variable names match $[a-zA-Z_][a-zA-Z0-9_]*
-INVALID_VAR_NAMES_ACTIONS=$(jq -r '.hooks[] | .name as $name | .file as $file | .doc.tags[] | select(.name == "param" and .variable != "" and .variable != null and (.variable | test("^\\$[a-zA-Z_][a-zA-Z0-9_]*$") | not)) | "- `\($name)` — \(.variable) (\($file))"' hooks/actions.json 2>/dev/null | sort -u)
-INVALID_VAR_NAMES_FILTERS=$(jq -r '.hooks[] | .name as $name | .file as $file | .doc.tags[] | select(.name == "param" and .variable != "" and .variable != null and (.variable | test("^\\$[a-zA-Z_][a-zA-Z0-9_]*$") | not)) | "- `\($name)` — \(.variable) (\($file))"' hooks/filters.json 2>/dev/null | sort -u)
+# Valid variable names match $[a-zA-Z_][a-zA-Z0-9_]* but not $this
+INVALID_VAR_NAMES_ACTIONS=$(jq -r '.hooks[] | .name as $name | .file as $file | .doc.tags[] | select(.name == "param" and .variable != "" and .variable != null and ((.variable | test("^\\$[a-zA-Z_][a-zA-Z0-9_]*$") | not) or .variable == "$this")) | "- `\($name)` — \(.variable) (\($file))"' hooks/actions.json 2>/dev/null | sort -u)
+INVALID_VAR_NAMES_FILTERS=$(jq -r '.hooks[] | .name as $name | .file as $file | .doc.tags[] | select(.name == "param" and .variable != "" and .variable != null and ((.variable | test("^\\$[a-zA-Z_][a-zA-Z0-9_]*$") | not) or .variable == "$this")) | "- `\($name)` — \(.variable) (\($file))"' hooks/filters.json 2>/dev/null | sort -u)
 
 INVALID_VAR_NAMES=$(echo -e "${INVALID_VAR_NAMES_ACTIONS}\n${INVALID_VAR_NAMES_FILTERS}" | grep -v '^$' | sort -u)
 
@@ -193,22 +193,23 @@ fi
 
 echo "" >> "$OUTPUT_FILE"
 
-# Malformed Param Types
-echo "## Malformed Param Types" >> "$OUTPUT_FILE"
+# Invalid Param Types
+echo "## Invalid Param Types" >> "$OUTPUT_FILE"
 echo "" >> "$OUTPUT_FILE"
-echo "Hooks with \`@param\` tags where types contain unexpected characters." >> "$OUTPUT_FILE"
+echo "Hooks with \`@param\` tags where types are not valid PHP docblock types." >> "$OUTPUT_FILE"
 echo "" >> "$OUTPUT_FILE"
 
-# Types should not contain spaces (except for specific patterns like "array<string, mixed>")
-MALFORMED_TYPES_ACTIONS=$(jq -r '.hooks[] | .name as $name | .file as $file | .doc.tags[] | select(.name == "param") | .variable as $var | .types[]? | select(test("^ | $|  ")) | "- `\($name)` — \($var): \(.) (\($file))"' hooks/actions.json 2>/dev/null | sort -u)
-MALFORMED_TYPES_FILTERS=$(jq -r '.hooks[] | .name as $name | .file as $file | .doc.tags[] | select(.name == "param") | .variable as $var | .types[]? | select(test("^ | $|  ")) | "- `\($name)` — \($var): \(.) (\($file))"' hooks/filters.json 2>/dev/null | sort -u)
+# Valid types: primitives, class names (with optional leading backslash), array modifiers [], generic syntax like array<type>
+# This regex matches: word chars, backslashes, [], <>, commas, spaces (for generics), pipes, parentheses, $this
+INVALID_TYPES_ACTIONS=$(jq -r '.hooks[] | .name as $name | .file as $file | .doc.tags[] | select(.name == "param") | .variable as $var | .types[]? | select(test("^[a-zA-Z_\\\\][a-zA-Z0-9_\\\\]*(<[^>]+>)?(\\[\\])*$") | not) | "- `\($name)` — \($var): `\(.)`  (\($file))"' hooks/actions.json 2>/dev/null | sort -u)
+INVALID_TYPES_FILTERS=$(jq -r '.hooks[] | .name as $name | .file as $file | .doc.tags[] | select(.name == "param") | .variable as $var | .types[]? | select(test("^[a-zA-Z_\\\\][a-zA-Z0-9_\\\\]*(<[^>]+>)?(\\[\\])*$") | not) | "- `\($name)` — \($var): `\(.)`  (\($file))"' hooks/filters.json 2>/dev/null | sort -u)
 
-MALFORMED_TYPES=$(echo -e "${MALFORMED_TYPES_ACTIONS}\n${MALFORMED_TYPES_FILTERS}" | grep -v '^$' | sort -u)
+INVALID_TYPES=$(echo -e "${INVALID_TYPES_ACTIONS}\n${INVALID_TYPES_FILTERS}" | grep -v '^$' | sort -u)
 
-if [ -n "$MALFORMED_TYPES" ]; then
-    echo "$MALFORMED_TYPES" >> "$OUTPUT_FILE"
+if [ -n "$INVALID_TYPES" ]; then
+    echo "$INVALID_TYPES" >> "$OUTPUT_FILE"
 else
-    echo "_No hooks with malformed param types._" >> "$OUTPUT_FILE"
+    echo "_No hooks with invalid param types._" >> "$OUTPUT_FILE"
 fi
 
 echo "Generated $OUTPUT_FILE"
