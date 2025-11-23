@@ -24,6 +24,12 @@ Hooks with `@param` tags that have an empty variable name.
 
 _No hooks with empty variables._
 
+## Invalid Variable Names
+
+Hooks with `@param` tags where the variable is not a valid PHP variable name.
+
+_No hooks with invalid variable names._
+
 ## Empty Param Descriptions
 
 Hooks with `@param` tags that have an empty description.
@@ -48,3 +54,15 @@ Hooks where the number of `@param` tags does not match the `args` count.
 
 - `wp_default_autoload_value` — args: 4, params: 3 (wp-includes/option.php)
 - `wp_next_scheduled` — args: 4, params: 3 (wp-includes/cron.php)
+
+## Empty Param Types
+
+Hooks with `@param` tags that have empty or missing type arrays.
+
+_No hooks with empty param types._
+
+## Malformed Param Types
+
+Hooks with `@param` tags where types contain unexpected characters.
+
+_No hooks with malformed param types._
