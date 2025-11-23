@@ -7,6 +7,73 @@ ACTIONS_FILE="hooks/actions.json"
 FILTERS_FILE="hooks/filters.json"
 OUTPUT_FILE="CHANGELOG.md"
 
+# jq function to convert hook name to URL slug
+JQ_SLUG='def slug: gsub("\\{\\$"; "") | gsub("\\}"; "") | gsub("\\$"; "") | gsub("->"; "-") | gsub("<"; "") | gsub(">"; "");'
+
+# Find new hooks where first @since tag matches version
+find_new_hooks() {
+    local file="$1"
+    local version="$2"
+    jq -r --arg ver "$version" "${JQ_SLUG}"'
+        .hooks[]
+        | select(
+            .doc.tags
+            | map(select(.name == "since"))
+            | .[0].content
+            | startswith($ver)
+        )
+        | . as $hook
+        | ($hook.doc.tags | map(select(.name == "since")) | .[0].content) as $since
+        | ($hook.name | slug) as $url_slug
+        | if ($since | test("^[0-9]+\\.[0-9]+\\.[1-9]")) then
+            "- [`\($hook.name)`](https://developer.wordpress.org/reference/hooks/\($url_slug)/) (\($since)) - \($hook.doc.description)"
+          else
+            "- [`\($hook.name)`](https://developer.wordpress.org/reference/hooks/\($url_slug)/) - \($hook.doc.description)"
+          end
+    ' "$file"
+}
+
+# Find changes (hooks with @since tag with description matching version)
+find_changes() {
+    local file="$1"
+    local version="$2"
+    jq -r --arg ver "$version" "${JQ_SLUG}"'
+        .hooks[]
+        | select(
+            .doc.tags
+            | any(.name == "since" and .description != null and (.content | startswith($ver)))
+        )
+        | . as $hook
+        | ($hook.name | slug) as $url_slug
+        | .doc.tags
+        | map(select(.name == "since" and .description != null and (.content | startswith($ver))))
+        | map(
+            if (.content | test("^[0-9]+\\.[0-9]+\\.[1-9]")) then
+                "- [`\($hook.name)`](https://developer.wordpress.org/reference/hooks/\($url_slug)/) (\(.content)) - \(.description)"
+            else
+                "- [`\($hook.name)`](https://developer.wordpress.org/reference/hooks/\($url_slug)/) - \(.description)"
+            end
+        )
+        | .[]
+    ' "$file"
+}
+
+# Write a section to output file
+write_section() {
+    local title="$1"
+    local empty_message="$2"
+    local results="$3"
+
+    echo "### $title" >> "$OUTPUT_FILE"
+    echo "" >> "$OUTPUT_FILE"
+    if [ -n "$results" ]; then
+        echo "$results" >> "$OUTPUT_FILE"
+    else
+        echo "_${empty_message}_" >> "$OUTPUT_FILE"
+    fi
+    echo "" >> "$OUTPUT_FILE"
+}
+
 # Extract all versions from both files and sort them in descending order
 VERSIONS=($(jq -r '
     [.hooks[].doc.tags[] | select(.name == "since") | .content]
@@ -33,133 +100,16 @@ for VERSION in "${VERSIONS[@]}"; do
     echo "## WordPress $VERSION" >> "$OUTPUT_FILE"
     echo "" >> "$OUTPUT_FILE"
 
-    # Find new actions (first @since tag matches the version)
-    echo "### New Actions" >> "$OUTPUT_FILE"
-    echo "" >> "$OUTPUT_FILE"
+    NEW_ACTIONS=$(find_new_hooks "$ACTIONS_FILE" "$VERSION")
+    write_section "New Actions" "No new actions in this version." "$NEW_ACTIONS"
 
-    NEW_ACTIONS=$(jq -r --arg ver "${VERSION}" '
-        # Function to convert hook name to URL slug
-        def slug: gsub("\\{\\$"; "") | gsub("\\}"; "") | gsub("\\$"; "") | gsub("->"; "-") | gsub("<"; "") | gsub(">"; "");
-        .hooks[]
-        | select(
-            .doc.tags
-            | map(select(.name == "since"))
-            | .[0].content
-            | startswith($ver)
-        )
-        | . as $hook
-        | ($hook.doc.tags | map(select(.name == "since")) | .[0].content) as $since
-        | ($hook.name | slug) as $url_slug
-        | if ($since | test("^[0-9]+\\.[0-9]+\\.[1-9]")) then
-            "- [`\($hook.name)`](https://developer.wordpress.org/reference/hooks/\($url_slug)/) (\($since)) - \($hook.doc.description)"
-          else
-            "- [`\($hook.name)`](https://developer.wordpress.org/reference/hooks/\($url_slug)/) - \($hook.doc.description)"
-          end
-    ' "$ACTIONS_FILE")
+    NEW_FILTERS=$(find_new_hooks "$FILTERS_FILE" "$VERSION")
+    write_section "New Filters" "No new filters in this version." "$NEW_FILTERS"
 
-    if [ -n "$NEW_ACTIONS" ]; then
-        echo "$NEW_ACTIONS" >> "$OUTPUT_FILE"
-    else
-        echo "_No new actions in this version._" >> "$OUTPUT_FILE"
-    fi
-
-    echo "" >> "$OUTPUT_FILE"
-
-    # Find new filters (first @since tag matches the version)
-    echo "### New Filters" >> "$OUTPUT_FILE"
-    echo "" >> "$OUTPUT_FILE"
-
-    NEW_FILTERS=$(jq -r --arg ver "${VERSION}" '
-        # Function to convert hook name to URL slug
-        def slug: gsub("\\{\\$"; "") | gsub("\\}"; "") | gsub("\\$"; "") | gsub("->"; "-") | gsub("<"; "") | gsub(">"; "");
-        .hooks[]
-        | select(
-            .doc.tags
-            | map(select(.name == "since"))
-            | .[0].content
-            | startswith($ver)
-        )
-        | . as $hook
-        | ($hook.doc.tags | map(select(.name == "since")) | .[0].content) as $since
-        | ($hook.name | slug) as $url_slug
-        | if ($since | test("^[0-9]+\\.[0-9]+\\.[1-9]")) then
-            "- [`\($hook.name)`](https://developer.wordpress.org/reference/hooks/\($url_slug)/) (\($since)) - \($hook.doc.description)"
-          else
-            "- [`\($hook.name)`](https://developer.wordpress.org/reference/hooks/\($url_slug)/) - \($hook.doc.description)"
-          end
-    ' "$FILTERS_FILE")
-
-    if [ -n "$NEW_FILTERS" ]; then
-        echo "$NEW_FILTERS" >> "$OUTPUT_FILE"
-    else
-        echo "_No new filters in this version._" >> "$OUTPUT_FILE"
-    fi
-
-    echo "" >> "$OUTPUT_FILE"
-
-    # Find changes from both actions and filters
-    echo "### Changes" >> "$OUTPUT_FILE"
-    echo "" >> "$OUTPUT_FILE"
-
-    ACTION_PARAM_CHANGES=$(jq -r --arg ver "${VERSION}" '
-        # Function to convert hook name to URL slug
-        def slug: gsub("\\{\\$"; "") | gsub("\\}"; "") | gsub("\\$"; "") | gsub("->"; "-") | gsub("<"; "") | gsub(">"; "");
-        # Function to wrap $param style strings in <code> tags if not already wrapped
-        def format_params: gsub("(?<p>\\$[a-z_]+)"; "<code>\(.p)</code>") | gsub("<code><code>"; "<code>") | gsub("</code></code>"; "</code>");
-        .hooks[]
-        | select(
-            .doc.tags
-            | any(.name == "since" and .description != null and (.content | startswith($ver)))
-        )
-        | . as $hook
-        | ($hook.name | slug) as $url_slug
-        | .doc.tags
-        | map(select(.name == "since" and .description != null and (.content | startswith($ver))))
-        | map(
-            (.description | format_params) as $desc
-            | if (.content | test("^[0-9]+\\.[0-9]+\\.[1-9]")) then
-                "- [`\($hook.name)`](https://developer.wordpress.org/reference/hooks/\($url_slug)/) (\(.content)) - \($desc)"
-            else
-                "- [`\($hook.name)`](https://developer.wordpress.org/reference/hooks/\($url_slug)/) - \($desc)"
-            end
-        )
-        | .[]
-    ' "$ACTIONS_FILE")
-
-    FILTER_PARAM_CHANGES=$(jq -r --arg ver "${VERSION}" '
-        # Function to convert hook name to URL slug
-        def slug: gsub("\\{\\$"; "") | gsub("\\}"; "") | gsub("\\$"; "") | gsub("->"; "-") | gsub("<"; "") | gsub(">"; "");
-        # Function to wrap $param style strings in <code> tags if not already wrapped
-        def format_params: gsub("(?<p>\\$[a-z_]+)"; "<code>\(.p)</code>") | gsub("<code><code>"; "<code>") | gsub("</code></code>"; "</code>");
-        .hooks[]
-        | select(
-            .doc.tags
-            | any(.name == "since" and .description != null and (.content | startswith($ver)))
-        )
-        | . as $hook
-        | ($hook.name | slug) as $url_slug
-        | .doc.tags
-        | map(select(.name == "since" and .description != null and (.content | startswith($ver))))
-        | map(
-            (.description | format_params) as $desc
-            | if (.content | test("^[0-9]+\\.[0-9]+\\.[1-9]")) then
-                "- [`\($hook.name)`](https://developer.wordpress.org/reference/hooks/\($url_slug)/) (\(.content)) - \($desc)"
-            else
-                "- [`\($hook.name)`](https://developer.wordpress.org/reference/hooks/\($url_slug)/) - \($desc)"
-            end
-        )
-        | .[]
-    ' "$FILTERS_FILE")
-
-    PARAM_CHANGES=$(echo -e "${ACTION_PARAM_CHANGES}\n${FILTER_PARAM_CHANGES}" | grep -v '^$' | sort)
-
-    if [ -n "$PARAM_CHANGES" ]; then
-        echo "$PARAM_CHANGES" >> "$OUTPUT_FILE"
-    else
-        echo "_No changes in this version._" >> "$OUTPUT_FILE"
-    fi
-
-    echo "" >> "$OUTPUT_FILE"
+    ACTION_CHANGES=$(find_changes "$ACTIONS_FILE" "$VERSION")
+    FILTER_CHANGES=$(find_changes "$FILTERS_FILE" "$VERSION")
+    CHANGES=$(echo -e "${ACTION_CHANGES}\n${FILTER_CHANGES}" | grep -v '^$' | sort)
+    write_section "Changes" "No changes in this version." "$CHANGES"
 done
 
 echo "Generated $OUTPUT_FILE"

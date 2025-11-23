@@ -60,7 +60,7 @@ _No new actions in this version._
 
 ### Changes
 
-- [`get_edit_comment_link`](https://developer.wordpress.org/reference/hooks/get_edit_comment_link/) - The <code>$comment_id</code> and <code>$context</code> parameters are now being passed to the filter.
+- [`get_edit_comment_link`](https://developer.wordpress.org/reference/hooks/get_edit_comment_link/) - The $comment_id and $context parameters are now being passed to the filter.
 - [`image_editor_output_format`](https://developer.wordpress.org/reference/hooks/image_editor_output_format/) - The default was changed from an empty array to an array containing the HEIC/HEIF images mime types.
 - [`wp_set_password`](https://developer.wordpress.org/reference/hooks/wp_set_password/) - The <code>$old_user_data</code> parameter was added.
 
@@ -86,7 +86,7 @@ _No new actions in this version._
 
 ### Changes
 
-- [`comment_cookie_lifetime`](https://developer.wordpress.org/reference/hooks/comment_cookie_lifetime/) - The default <code>$seconds</code> value changed from 30000000 to YEAR_IN_SECONDS.
+- [`comment_cookie_lifetime`](https://developer.wordpress.org/reference/hooks/comment_cookie_lifetime/) - The default $seconds value changed from 30000000 to YEAR_IN_SECONDS.
 - [`load_translation_file`](https://developer.wordpress.org/reference/hooks/load_translation_file/) - Added the <code>$locale</code> parameter.
 - [`split_the_query`](https://developer.wordpress.org/reference/hooks/split_the_query/) - Added the <code>$old_request</code> and <code>$clauses</code> parameters.
 - [`wp_preload_resources`](https://developer.wordpress.org/reference/hooks/wp_preload_resources/) - Added the <code>$fetchpriority</code> attribute.
@@ -700,7 +700,7 @@ _No new actions in this version._
 - [`category_link`](https://developer.wordpress.org/reference/hooks/category_link/) (5.4.1) - Restored (un-deprecated).
 - [`lostpassword_post`](https://developer.wordpress.org/reference/hooks/lostpassword_post/) - Added the <code>$user_data</code> parameter.
 - [`newblog_notify_siteadmin`](https://developer.wordpress.org/reference/hooks/newblog_notify_siteadmin/) - The <code>$blog_id</code> parameter was added.
-- [`post_locked_dialog`](https://developer.wordpress.org/reference/hooks/post_locked_dialog/) - The <code>$user</code> parameter was added.
+- [`post_locked_dialog`](https://developer.wordpress.org/reference/hooks/post_locked_dialog/) - The $user parameter was added.
 - [`remove_user_from_blog`](https://developer.wordpress.org/reference/hooks/remove_user_from_blog/) - Added the <code>$reassign</code> parameter.
 - [`set-screen-option`](https://developer.wordpress.org/reference/hooks/set-screen-option/) (5.4.2) - Only applied to options ending with '_page', or the 'layout_columns' option.
 - [`switch_blog`](https://developer.wordpress.org/reference/hooks/switch_blog/) - The <code>$context</code> parameter was added.
@@ -859,7 +859,7 @@ _No new actions in this version._
 ### Changes
 
 - [`comment_status_links`](https://developer.wordpress.org/reference/hooks/comment_status_links/) - The 'Mine' link was added.
-- [`doing_it_wrong_trigger_error`](https://developer.wordpress.org/reference/hooks/doing_it_wrong_trigger_error/) - Added the <code>$function_name</code>, <code>$message</code> and <code>$version</code> parameters.
+- [`doing_it_wrong_trigger_error`](https://developer.wordpress.org/reference/hooks/doing_it_wrong_trigger_error/) - Added the $function_name, $message and $version parameters.
 - [`found_users_query`](https://developer.wordpress.org/reference/hooks/found_users_query/) - Added the <code>$this</code> parameter.
 - [`http_headers_useragent`](https://developer.wordpress.org/reference/hooks/http_headers_useragent/) - The <code>$url</code> parameter was added.
 - [`http_request_redirection_count`](https://developer.wordpress.org/reference/hooks/http_request_redirection_count/) - The <code>$url</code> parameter was added.
@@ -869,7 +869,7 @@ _No new actions in this version._
 - [`https_local_ssl_verify`](https://developer.wordpress.org/reference/hooks/https_local_ssl_verify/) - The <code>$url</code> parameter was added.
 - [`https_ssl_verify`](https://developer.wordpress.org/reference/hooks/https_ssl_verify/) - The <code>$url</code> parameter was added.
 - [`lost_password`](https://developer.wordpress.org/reference/hooks/lost_password/) - Added the <code>$errors</code> parameter.
-- [`wp_check_filetype_and_ext`](https://developer.wordpress.org/reference/hooks/wp_check_filetype_and_ext/) - The <code>$real_mime</code> parameter was added.
+- [`wp_check_filetype_and_ext`](https://developer.wordpress.org/reference/hooks/wp_check_filetype_and_ext/) - The $real_mime parameter was added.
 - [`wp_get_attachment_link`](https://developer.wordpress.org/reference/hooks/wp_get_attachment_link/) - Added the <code>$attr</code> parameter.
 
 ## WordPress 5.0
@@ -1504,7 +1504,7 @@ _No new actions in this version._
 - [`theme_{$post_type}_templates`](https://developer.wordpress.org/reference/hooks/theme_post_type_templates/) - Converted to allow complete control over the <code>$page_templates</code> array.
 - [`transient_{$transient}`](https://developer.wordpress.org/reference/hooks/transient_transient/) - The <code>$transient</code> parameter was added
 - [`update_option_{$option}`](https://developer.wordpress.org/reference/hooks/update_option_option/) - The <code>$option</code> parameter was added.
-- [`upgrader_source_selection`](https://developer.wordpress.org/reference/hooks/upgrader_source_selection/) - The <code>$hook_extra</code> parameter became available.
+- [`upgrader_source_selection`](https://developer.wordpress.org/reference/hooks/upgrader_source_selection/) - The $hook_extra parameter became available.
 - [`widget_links_args`](https://developer.wordpress.org/reference/hooks/widget_links_args/) - Added the <code>$instance</code> parameter.
 - [`widget_nav_menu_args`](https://developer.wordpress.org/reference/hooks/widget_nav_menu_args/) - Added the <code>$instance</code> parameter.
 - [`widget_text`](https://developer.wordpress.org/reference/hooks/widget_text/) - Added the <code>$widget</code> parameter.
@@ -1893,7 +1893,7 @@ _No changes in this version._
 
 - [`display_post_states`](https://developer.wordpress.org/reference/hooks/display_post_states/) - Added the <code>$post</code> parameter.
 - [`set_transient_{$transient}`](https://developer.wordpress.org/reference/hooks/set_transient_transient/) - The <code>$value</code> and <code>$expiration</code> parameters were added.
-- [`set_user_role`](https://developer.wordpress.org/reference/hooks/set_user_role/) - Added <code>$old_roles</code> to include an array of the user's previous roles.
+- [`set_user_role`](https://developer.wordpress.org/reference/hooks/set_user_role/) - Added $old_roles to include an array of the user's previous roles.
 
 ## WordPress 3.5
 
@@ -2077,7 +2077,7 @@ _No changes in this version._
 
 ### Changes
 
-- [`auth_{$object_type}_meta_{$meta_key}`](https://developer.wordpress.org/reference/hooks/auth_object_type_meta_meta_key/) - As <code>auth_post_meta_{<code>$meta_key</code>}</code>.
+- [`auth_{$object_type}_meta_{$meta_key}`](https://developer.wordpress.org/reference/hooks/auth_object_type_meta_meta_key/) - As <code>auth_post_meta_{$meta_key}</code>.
 - [`mce_buttons_2`](https://developer.wordpress.org/reference/hooks/mce_buttons_2/) - The <code>$editor_id</code> parameter was added.
 - [`mce_buttons_3`](https://developer.wordpress.org/reference/hooks/mce_buttons_3/) - The <code>$editor_id</code> parameter was added.
 - [`mce_buttons_4`](https://developer.wordpress.org/reference/hooks/mce_buttons_4/) - The <code>$editor_id</code> parameter was added.
@@ -2415,7 +2415,7 @@ _No changes in this version._
 
 ### Changes
 
-- [`tag_row_actions`](https://developer.wordpress.org/reference/hooks/tag_row_actions/) - Deprecated in favor of {@see '{<code>$taxonomy</code>}_row_actions'} filter.
+- [`tag_row_actions`](https://developer.wordpress.org/reference/hooks/tag_row_actions/) - Deprecated in favor of {@see '{$taxonomy}_row_actions'} filter.
 - [`widget_tag_cloud_args`](https://developer.wordpress.org/reference/hooks/widget_tag_cloud_args/) - Added taxonomy drop-down.
 
 ## WordPress 2.9
@@ -2542,13 +2542,13 @@ _No changes in this version._
 ### Changes
 
 - [`{$action}_prefilter`](https://developer.wordpress.org/reference/hooks/action_prefilter/) - as 'wp_handle_upload_prefilter'.
-- [`add_site_option_{$option}`](https://developer.wordpress.org/reference/hooks/add_site_option_option/) - As "add_site<em>option</em>{<code>$key</code>}"
-- [`delete_site_option_{$option}`](https://developer.wordpress.org/reference/hooks/delete_site_option_option/) - As "delete_site<em>option</em>{<code>$key</code>}"
-- [`pre_add_site_option_{$option}`](https://developer.wordpress.org/reference/hooks/pre_add_site_option_option/) - As 'pre_add_site<em>option</em>' . <code>$key</code>
-- [`pre_site_option_{$option}`](https://developer.wordpress.org/reference/hooks/pre_site_option_option/) - As 'pre_site<em>option</em>' . <code>$key</code>
-- [`pre_update_site_option_{$option}`](https://developer.wordpress.org/reference/hooks/pre_update_site_option_option/) - As 'pre_update_site<em>option</em>' . <code>$key</code>
-- [`site_option_{$option}`](https://developer.wordpress.org/reference/hooks/site_option_option/) - As 'site<em>option</em>' . <code>$key</code>
-- [`update_site_option_{$option}`](https://developer.wordpress.org/reference/hooks/update_site_option_option/) - As "update_site<em>option</em>{<code>$key</code>}"
+- [`add_site_option_{$option}`](https://developer.wordpress.org/reference/hooks/add_site_option_option/) - As "add_site<em>option</em>{$key}"
+- [`delete_site_option_{$option}`](https://developer.wordpress.org/reference/hooks/delete_site_option_option/) - As "delete_site<em>option</em>{$key}"
+- [`pre_add_site_option_{$option}`](https://developer.wordpress.org/reference/hooks/pre_add_site_option_option/) - As 'pre_add_site<em>option</em>' . $key
+- [`pre_site_option_{$option}`](https://developer.wordpress.org/reference/hooks/pre_site_option_option/) - As 'pre_site<em>option</em>' . $key
+- [`pre_update_site_option_{$option}`](https://developer.wordpress.org/reference/hooks/pre_update_site_option_option/) - As 'pre_update_site<em>option</em>' . $key
+- [`site_option_{$option}`](https://developer.wordpress.org/reference/hooks/site_option_option/) - As 'site<em>option</em>' . $key
+- [`update_site_option_{$option}`](https://developer.wordpress.org/reference/hooks/update_site_option_option/) - As "update_site<em>option</em>{$key}"
 
 ## WordPress 2.8
 
@@ -2970,7 +2970,7 @@ _No changes in this version._
 
 ### Changes
 
-- [`add_option_{$option}`](https://developer.wordpress.org/reference/hooks/add_option_option/) - As <code>add_option_{<code>$name</code>}</code>
+- [`add_option_{$option}`](https://developer.wordpress.org/reference/hooks/add_option_option/) - As <code>add_option_{$name}</code>
 - [`category_link`](https://developer.wordpress.org/reference/hooks/category_link/) - Deprecated in favor of {@see 'term_link'} filter.
 - [`tag_link`](https://developer.wordpress.org/reference/hooks/tag_link/) - Deprecated in favor of {@see 'term_link'} filter.
 
@@ -3411,7 +3411,7 @@ _No changes in this version._
 
 ### Changes
 
-- [`option_{$option}`](https://developer.wordpress.org/reference/hooks/option_option/) - As 'option_' . <code>$setting</code>
+- [`option_{$option}`](https://developer.wordpress.org/reference/hooks/option_option/) - As 'option_' . $setting
 
 ## WordPress 1.2
 
