@@ -95,6 +95,45 @@ fi
 
 echo "" >> "$OUTPUT_FILE"
 
+# Empty Param Descriptions
+echo "## Empty Param Descriptions" >> "$OUTPUT_FILE"
+echo "" >> "$OUTPUT_FILE"
+echo "Hooks with \`@param\` tags that have an empty description." >> "$OUTPUT_FILE"
+echo "" >> "$OUTPUT_FILE"
+
+EMPTY_PARAM_DESC_ACTIONS=$(jq -r '.hooks[] | .name as $name | .file as $file | .doc.tags[] | select(.name == "param" and (.content == "" or .content == null)) | "- `\($name)` — \(.variable) (\($file))"' hooks/actions.json 2>/dev/null | sort -u)
+EMPTY_PARAM_DESC_FILTERS=$(jq -r '.hooks[] | .name as $name | .file as $file | .doc.tags[] | select(.name == "param" and (.content == "" or .content == null)) | "- `\($name)` — \(.variable) (\($file))"' hooks/filters.json 2>/dev/null | sort -u)
+
+EMPTY_PARAM_DESC=$(echo -e "${EMPTY_PARAM_DESC_ACTIONS}\n${EMPTY_PARAM_DESC_FILTERS}" | grep -v '^$' | sort -u)
+
+if [ -n "$EMPTY_PARAM_DESC" ]; then
+    echo "$EMPTY_PARAM_DESC" >> "$OUTPUT_FILE"
+else
+    echo "_No hooks with empty param descriptions._" >> "$OUTPUT_FILE"
+fi
+
+echo "" >> "$OUTPUT_FILE"
+
+# Missing Original Since
+echo "## Missing Original Since" >> "$OUTPUT_FILE"
+echo "" >> "$OUTPUT_FILE"
+echo "Hooks where all \`@since\` tags have descriptions, indicating the original version is missing." >> "$OUTPUT_FILE"
+echo "" >> "$OUTPUT_FILE"
+
+# Exclude hooks with @since MU (3.0.0) as this indicates the original multisite version
+MISSING_ORIG_SINCE_ACTIONS=$(jq -r '.hooks[] | select((.doc.tags | map(select(.name == "since" and .description == "MU (3.0.0)")) | length == 0) and (.doc.tags | map(select(.name == "since")) | length > 0) and (.doc.tags | map(select(.name == "since" and (.description == null or .description == ""))) | length == 0)) | "- `\(.name)` (\(.file))"' hooks/actions.json 2>/dev/null | sort -u)
+MISSING_ORIG_SINCE_FILTERS=$(jq -r '.hooks[] | select((.doc.tags | map(select(.name == "since" and .description == "MU (3.0.0)")) | length == 0) and (.doc.tags | map(select(.name == "since")) | length > 0) and (.doc.tags | map(select(.name == "since" and (.description == null or .description == ""))) | length == 0)) | "- `\(.name)` (\(.file))"' hooks/filters.json 2>/dev/null | sort -u)
+
+MISSING_ORIG_SINCE=$(echo -e "${MISSING_ORIG_SINCE_ACTIONS}\n${MISSING_ORIG_SINCE_FILTERS}" | grep -v '^$' | sort -u)
+
+if [ -n "$MISSING_ORIG_SINCE" ]; then
+    echo "$MISSING_ORIG_SINCE" >> "$OUTPUT_FILE"
+else
+    echo "_No hooks with missing original since version._" >> "$OUTPUT_FILE"
+fi
+
+echo "" >> "$OUTPUT_FILE"
+
 # Param Count Mismatches
 echo "## Param Count Mismatches" >> "$OUTPUT_FILE"
 echo "" >> "$OUTPUT_FILE"

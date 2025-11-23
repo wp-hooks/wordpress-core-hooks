@@ -24,6 +24,24 @@ Hooks with `@param` tags that have an empty variable name.
 
 _No hooks with empty variables._
 
+## Empty Param Descriptions
+
+Hooks with `@param` tags that have an empty description.
+
+- `block_core_navigation_render_inner_blocks` — $inner_blocks (wp-includes/blocks/navigation.php)
+- `render_block_core_navigation_link_allowed_post_status` — $attributes (wp-includes/blocks/navigation-link.php)
+- `render_block_core_navigation_link_allowed_post_status` — $block (wp-includes/blocks/navigation-link.php)
+- `render_block_core_navigation_link_allowed_post_status` — $post_status (wp-includes/blocks/navigation-link.php)
+- `should_load_remote_block_patterns` — $should_load_remote (wp-includes/block-patterns.php)
+- `the_weekday` — $the_weekday (wp-includes/general-template.php)
+
+## Missing Original Since
+
+Hooks where all `@since` tags have descriptions, indicating the original version is missing.
+
+- `{$action}_prefilter` (wp-admin/includes/file.php)
+- `password_reset_key_expired` (wp-includes/user.php)
+
 ## Param Count Mismatches
 
 Hooks where the number of `@param` tags does not match the `args` count.
