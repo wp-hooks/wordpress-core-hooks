@@ -18,10 +18,14 @@
 		}
 	},
 	"scripts": {
-		"generate": "wp-hooks-generator --input=vendor/wordpress/wordpress --output=hooks"
+		"generate": [
+			"wp-hooks-generator --input=vendor/wordpress/wordpress --output=hooks",
+			"./scripts/generate-changelog.sh",
+			"./scripts/generate-issues.sh"
+		]
 	},
 	"scripts-descriptions": {
-		"generate": "Generates the hook files for WordPress core"
+		"generate": "Generates the hook files, changelog, and issues report for WordPress core"
 	},
 	"require-dev": {
 		"erusev/parsedown": "1.8.0-beta-7",

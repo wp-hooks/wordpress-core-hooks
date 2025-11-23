@@ -97,26 +97,7 @@ Then run:
 composer generate
 ```
 
-Some scripts are available for checking the data:
-
-* Check everything:
-  ```shell
-  npm run check
-  ```
-* Find hooks with missing `@since` tags:
-  ```shell
-  jq '.hooks[] | . as $d | .doc .tags | map(.name) | select( contains(["since"]) | not ) | $d' hooks/filters.json
-  ```
-  ```shell
-  jq '.hooks[] | . as $d | .doc .tags | map(.name) | select( contains(["since"]) | not ) | $d' hooks/actions.json
-  ```
-* Find hooks with incorrect number of `@param` tags (not completely accurate, not sure why):
-  ```shell
-  jq '.hooks[] | select( .args == ( .doc.tags | map(.name) | select( contains(["param"]) ) | length ) ) | .name' hooks/filters.json
-  ```
-  ```shell
-  jq '.hooks[] | select( .args == ( .doc.tags | map(.name) | select( contains(["param"]) ) | length ) ) | .name' hooks/actions.json
-  ```
+During generation, a change and data integrity issues are saved in CHANGELOG.md and ISSUES.md respectively.
 
 ## Hook Files for Plugins
 
