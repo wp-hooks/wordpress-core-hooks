@@ -21,7 +21,8 @@
 		"generate": [
 			"wp-hooks-generator --input=vendor/wordpress/wordpress --output=hooks",
 			"./scripts/generate-changelog.sh",
-			"./scripts/generate-issues.sh"
+			"./scripts/generate-issues.sh",
+			"npm run check"
 		]
 	},
 	"scripts-descriptions": {

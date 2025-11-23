@@ -29,5 +29,4 @@ jobs:
         npm ci
 
     - name: Validate Schemas
-      run: |
-        npm exec -- npm-run-all 'validate:**'
+      run: npm run check
