@@ -1,6 +1,6 @@
 # WordPress Hooks Changelog
 
-This document lists new actions, new filters, and parameter changes by WordPress version.
+This document is automatically generated from the hooks extracted from WordPress and lists new actions, new filters, and parameter changes by version.
 
 ## WordPress 6.8
 

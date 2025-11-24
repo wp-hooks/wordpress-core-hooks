@@ -91,7 +91,7 @@ done | sort -rn | cut -d' ' -f2))
 
 echo "# WordPress Hooks Changelog" > "$OUTPUT_FILE"
 echo "" >> "$OUTPUT_FILE"
-echo "This document lists new actions, new filters, and parameter changes by WordPress version." >> "$OUTPUT_FILE"
+echo "This document is automatically generated from the hooks extracted from WordPress and lists new actions, new filters, and parameter changes by version." >> "$OUTPUT_FILE"
 echo "" >> "$OUTPUT_FILE"
 
 for VERSION in "${VERSIONS[@]}"; do
