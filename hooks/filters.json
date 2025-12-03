@@ -303,6 +303,7 @@
         {
             "name": "add_{$meta_type}_metadata",
             "aliases": [
+                "add_blog_metadata",
                 "add_comment_metadata",
                 "add_post_metadata",
                 "add_term_metadata",
@@ -312,7 +313,7 @@
             "type": "filter",
             "doc": {
                 "description": "Short-circuits adding metadata of a specific type.",
-                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible hook names include:\n\n  - `add_post_metadata`\n  - `add_comment_metadata`\n  - `add_term_metadata`\n  - `add_user_metadata`",
+                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (blog, post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible hook names include:\n\n  - `add_blog_metadata`\n  - `add_post_metadata`\n  - `add_comment_metadata`\n  - `add_term_metadata`\n  - `add_user_metadata`",
                 "tags": [
                     {
                         "name": "since",
@@ -320,10 +321,11 @@
                     },
                     {
                         "name": "param",
-                        "content": "Whether to allow adding metadata for the given type.",
+                        "content": "Whether to allow adding metadata for the given type. Return false or a meta ID to short-circuit the function. Return null to continue with the default behavior.",
                         "types": [
                             "null",
-                            "bool"
+                            "int",
+                            "false"
                         ],
                         "variable": "$check"
                     },
@@ -360,7 +362,7 @@
                         "variable": "$unique"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.</p> <p>Possible hook names include:</p> <ul> <li><code>add_post_metadata</code></li> <li><code>add_comment_metadata</code></li> <li><code>add_term_metadata</code></li> <li><code>add_user_metadata</code></li> </ul>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (blog, post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.</p> <p>Possible hook names include:</p> <ul> <li><code>add_blog_metadata</code></li> <li><code>add_post_metadata</code></li> <li><code>add_comment_metadata</code></li> <li><code>add_term_metadata</code></li> <li><code>add_user_metadata</code></li> </ul>"
             },
             "args": 5
         },
@@ -666,8 +668,8 @@
                     },
                     {
                         "name": "link",
-                        "content": "<a href=\"https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy\">https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy</a>",
-                        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy"
+                        "content": "<a href=\"https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Referrer-Policy\">https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Referrer-Policy</a>",
+                        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Referrer-Policy"
                     },
                     {
                         "name": "param",
@@ -1194,7 +1196,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "{ Array of default allowed HTTP origins. @type string $0 Non-secure URL for admin origin. @type string $1 Secure URL for admin origin. @type string $2 Non-secure URL for home origin. @type string $3 Secure URL for home origin. }",
+                        "content": "Array of allowed HTTP origins.",
                         "types": [
                             "string[]"
                         ],
@@ -2713,6 +2715,64 @@
             "args": 5
         },
         {
+            "name": "block_bindings_supported_attributes",
+            "file": "wp-includes/block-bindings.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the supported block attributes for block bindings.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.9.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The block's attributes that are supported by block bindings.",
+                        "types": [
+                            "string[]"
+                        ],
+                        "variable": "$supported_block_attributes"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The block type whose attributes are being filtered.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$block_type"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 2
+        },
+        {
+            "name": "block_bindings_supported_attributes_{$block_type}",
+            "file": "wp-includes/block-bindings.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the supported block attributes for block bindings.",
+                "long_description": "The dynamic portion of the hook name, `$block_type`, refers to the block type whose attributes are being filtered.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.9.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The block's attributes that are supported by block bindings.",
+                        "types": [
+                            "string[]"
+                        ],
+                        "variable": "$supported_block_attributes"
+                    }
+                ],
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$block_type</code>, refers to the block type whose attributes are being filtered.</p>"
+            },
+            "args": 1
+        },
+        {
             "name": "block_categories_all",
             "file": "wp-includes/block-editor.php",
             "type": "filter",
@@ -2764,10 +2824,6 @@
                             "array"
                         ],
                         "variable": "$needs_list_item_wrapper"
-                    },
-                    {
-                        "name": "return",
-                        "content": "The list of blocks that need a list item wrapper."
                     }
                 ],
                 "long_description_html": "<p>Affords the ability to customize which blocks need a list item wrapper when rendered within a core/navigation block. This is useful for blocks that are not list items but should be wrapped in a list item when used as a child of a navigation block.</p>"
@@ -2821,6 +2877,35 @@
                     }
                 ],
                 "long_description_html": "<p>Allows modification of a navigation block menu items.</p>"
+            },
+            "args": 1
+        },
+        {
+            "name": "block_core_social_link_get_services",
+            "file": "wp-includes/blocks/social-link.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filter the list of available social service.",
+                "long_description": "This can be used to change icons or add custom icons (additionally to variations in the editor). Icons should be directly renderable - therefore SVGs work best.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.9.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The list of services. Each item is an array containing a 'name' and 'icon' key.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$services_data"
+                    },
+                    {
+                        "name": "return",
+                        "content": "The list of social services."
+                    }
+                ],
+                "long_description_html": "<p>This can be used to change icons or add custom icons (additionally to variations in the editor). Icons should be directly renderable - therefore SVGs work best.</p>"
             },
             "args": 1
         },
@@ -3338,6 +3423,31 @@
                 "long_description_html": ""
             },
             "args": 2
+        },
+        {
+            "name": "bulk_action_observer_ids",
+            "file": "wp-includes/script-loader.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the array of field name attributes for bulk actions.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.8.1"
+                    },
+                    {
+                        "name": "param",
+                        "content": "{ An array of field name attributes for bulk actions. @type string $bulk_action The bulk action field name. Default 'action'. @type string $changeit    The new role field name. Default 'new_role'. }",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$bulk_action_observer_ids"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 1
         },
         {
             "name": "bulk_actions-{$this->screen->id}",
@@ -6039,7 +6149,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "{ An array of cron request URL arguments. @type string $url  The cron request URL. @type int    $key  The 22 digit GMT microtime. @type array  $args { An array of cron request arguments. @type int  $timeout   The request timeout in seconds. Default .01 seconds. @type bool $blocking  Whether to set blocking for the request. Default false. @type bool $sslverify Whether SSL should be verified for the request. Default false. } }",
+                        "content": "{ An array of cron request URL arguments. @type string $url  The cron request URL. @type string $key  The Unix timestamp (UTC) of the cron lock with microseconds. @type array  $args { An array of cron request arguments. @type int  $timeout   The request timeout in seconds. Default .01 seconds. @type bool $blocking  Whether to set blocking for the request. Default false. @type bool $sslverify Whether SSL should be verified for the request. Default false. } }",
                         "types": [
                             "array"
                         ],
@@ -6047,7 +6157,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The Unix timestamp (UTC) of the cron lock.",
+                        "content": "The Unix timestamp (UTC) of the cron lock with microseconds.",
                         "types": [
                             "string"
                         ],
@@ -7429,7 +7539,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Whether to use GMT timezone. Only applies if timestamp was not provided. Default false.",
+                        "content": "Whether to use GMT timezone. Only applies if timestamp was not provided.",
                         "types": [
                             "bool"
                         ],
@@ -8080,7 +8190,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the default metadata value for a specified meta key and object.",
-                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).\n Possible filter names include:\n\n  - `default_post_metadata`\n  - `default_comment_metadata`\n  - `default_term_metadata`\n  - `default_user_metadata`",
+                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (blog, post, comment, term, user, or any other type with an associated meta table).\n Possible filter names include:\n\n  - `default_blog_metadata`\n  - `default_post_metadata`\n  - `default_comment_metadata`\n  - `default_term_metadata`\n  - `default_user_metadata`",
                 "tags": [
                     {
                         "name": "since",
@@ -8120,14 +8230,14 @@
                     },
                     {
                         "name": "param",
-                        "content": "Type of object metadata is for. Accepts 'post', 'comment', 'term', 'user', or any other object type with an associated meta table.",
+                        "content": "Type of object metadata is for. Accepts 'blog', 'post', 'comment', 'term', 'user', or any other object type with an associated meta table.",
                         "types": [
                             "string"
                         ],
                         "variable": "$meta_type"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).</p> <p>Possible filter names include:</p> <ul> <li><code>default_post_metadata</code></li> <li><code>default_comment_metadata</code></li> <li><code>default_term_metadata</code></li> <li><code>default_user_metadata</code></li> </ul>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (blog, post, comment, term, user, or any other type with an associated meta table).</p> <p>Possible filter names include:</p> <ul> <li><code>default_blog_metadata</code></li> <li><code>default_post_metadata</code></li> <li><code>default_comment_metadata</code></li> <li><code>default_term_metadata</code></li> <li><code>default_user_metadata</code></li> </ul>"
             },
             "args": 5
         },
@@ -8137,7 +8247,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the text for the email sent to the site admin when a request to delete a site in a Multisite network is submitted.",
-                "long_description": "",
+                "long_description": "The following strings have a special meaning and will get replaced dynamically:\n - `###USERNAME###`   The current user's username. - `###URL_DELETE###` The link to click on to confirm the site deletion. - `###SITENAME###`   The name of the site. - `###SITEURL###`    The URL to the site.",
                 "tags": [
                     {
                         "name": "since",
@@ -8152,13 +8262,14 @@
                         "variable": "$content"
                     }
                 ],
-                "long_description_html": ""
+                "long_description_html": "<p>The following strings have a special meaning and will get replaced dynamically:</p> <ul> <li><code>###USERNAME###</code>   The current user's username.</li> <li><code>###URL_DELETE###</code> The link to click on to confirm the site deletion.</li> <li><code>###SITENAME###</code>   The name of the site.</li> <li><code>###SITEURL###</code>    The URL to the site.</li> </ul>"
             },
             "args": 1
         },
         {
             "name": "delete_{$meta_type}_metadata",
             "aliases": [
+                "delete_blog_metadata",
                 "delete_comment_metadata",
                 "delete_post_metadata",
                 "delete_term_metadata",
@@ -8168,7 +8279,7 @@
             "type": "filter",
             "doc": {
                 "description": "Short-circuits deleting metadata of a specific type.",
-                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible hook names include:\n\n  - `delete_post_metadata`\n  - `delete_comment_metadata`\n  - `delete_term_metadata`\n  - `delete_user_metadata`",
+                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (blog, post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible hook names include:\n\n  - `delete_blog_metadata`\n  - `delete_post_metadata`\n  - `delete_comment_metadata`\n  - `delete_term_metadata`\n  - `delete_user_metadata`",
                 "tags": [
                     {
                         "name": "since",
@@ -8216,13 +8327,14 @@
                         "variable": "$delete_all"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.</p> <p>Possible hook names include:</p> <ul> <li><code>delete_post_metadata</code></li> <li><code>delete_comment_metadata</code></li> <li><code>delete_term_metadata</code></li> <li><code>delete_user_metadata</code></li> </ul>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (blog, post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.</p> <p>Possible hook names include:</p> <ul> <li><code>delete_blog_metadata</code></li> <li><code>delete_post_metadata</code></li> <li><code>delete_comment_metadata</code></li> <li><code>delete_term_metadata</code></li> <li><code>delete_user_metadata</code></li> </ul>"
             },
             "args": 5
         },
         {
             "name": "delete_{$meta_type}_metadata_by_mid",
             "aliases": [
+                "delete_blog_metadata_by_mid",
                 "delete_comment_metadata_by_mid",
                 "delete_post_metadata_by_mid",
                 "delete_term_metadata_by_mid",
@@ -8232,7 +8344,7 @@
             "type": "filter",
             "doc": {
                 "description": "Short-circuits deleting metadata of a specific type by meta ID.",
-                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible hook names include:\n\n  - `delete_post_metadata_by_mid`\n  - `delete_comment_metadata_by_mid`\n  - `delete_term_metadata_by_mid`\n  - `delete_user_metadata_by_mid`",
+                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (blog, post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible hook names include:\n\n  - `delete_blog_metadata_by_mid`\n  - `delete_post_metadata_by_mid`\n  - `delete_comment_metadata_by_mid`\n  - `delete_term_metadata_by_mid`\n  - `delete_user_metadata_by_mid`",
                 "tags": [
                     {
                         "name": "since",
@@ -8256,7 +8368,7 @@
                         "variable": "$meta_id"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.</p> <p>Possible hook names include:</p> <ul> <li><code>delete_post_metadata_by_mid</code></li> <li><code>delete_comment_metadata_by_mid</code></li> <li><code>delete_term_metadata_by_mid</code></li> <li><code>delete_user_metadata_by_mid</code></li> </ul>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (blog, post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.</p> <p>Possible hook names include:</p> <ul> <li><code>delete_blog_metadata_by_mid</code></li> <li><code>delete_post_metadata_by_mid</code></li> <li><code>delete_comment_metadata_by_mid</code></li> <li><code>delete_term_metadata_by_mid</code></li> <li><code>delete_user_metadata_by_mid</code></li> </ul>"
             },
             "args": 2
         },
@@ -8652,9 +8764,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "An array of post display states.",
+                        "content": "A mapping of post state slugs to translated post state labels. E.g. <code>array( 'draft' =&gt; __( 'Draft' ), 'sticky' =&gt; __( 'Sticky' ), ... )</code>.",
                         "types": [
-                            "string[]"
+                            "array<string,string>"
                         ],
                         "variable": "$post_states"
                     },
@@ -8685,7 +8797,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "An array of site states. Default 'Main', 'Archived', 'Mature', 'Spam', 'Deleted'.",
+                        "content": "An array of site states. Default 'Main', 'Archived', 'Mature', 'Spam', 'Flagged for Deletion'.",
                         "types": [
                             "string[]"
                         ],
@@ -9865,7 +9977,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "{ Used to build wp_mail(). @type string $to      The intended recipients. @type string $subject The subject of the email. @type string $message The content of the email. The following strings have a special meaning and will get replaced dynamically: - ###USERNAME###    The current user's username. - ###ADMIN_EMAIL### The admin email in case this was unexpected. - ###NEW_EMAIL###   The new email address. - ###EMAIL###       The old email address. - ###SITENAME###    The name of the site. - ###SITEURL###     The URL to the site. @type string $headers Headers. }",
+                        "content": "{ Used to build wp_mail(). @type string $to      The intended recipients. @type string $subject The subject of the email. @type string $message The content of the email. The following strings have a special meaning and will get replaced dynamically: - <code>###USERNAME###</code>    The current user's username. - <code>###ADMIN_EMAIL###</code> The admin email in case this was unexpected. - <code>###NEW_EMAIL###</code>   The new email address. - <code>###EMAIL###</code>       The old email address. - <code>###SITENAME###</code>    The name of the site. - <code>###SITEURL###</code>     The URL to the site. @type string $headers Headers. }",
                         "types": [
                             "array"
                         ],
@@ -10679,6 +10791,39 @@
                     }
                 ],
                 "long_description_html": "<p>Allows for the addition and/or removal of potential enclosures to save to postmeta before checking the database for existing enclosures.</p>"
+            },
+            "args": 2
+        },
+        {
+            "name": "enqueue_empty_block_content_assets",
+            "file": "wp-includes/class-wp-block.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters whether to enqueue assets for a block which has no rendered content.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.9.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether to enqueue assets.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$enqueue"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Block name.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$block_name"
+                    }
+                ],
+                "long_description_html": ""
             },
             "args": 2
         },
@@ -12491,8 +12636,13 @@
                         "content": "3.0.0"
                     },
                     {
+                        "name": "since",
+                        "content": "6.9.0",
+                        "description": "The 'note' comment type was added."
+                    },
+                    {
                         "name": "param",
-                        "content": "An array of content types. Default only contains 'comment'.",
+                        "content": "An array of content types. Default contains 'comment' and 'note'.",
                         "types": [
                             "array"
                         ],
@@ -12842,7 +12992,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Whether the returned sites array should contain all sites, including those marked 'deleted', 'archived', or 'spam'. Default false.",
+                        "content": "Whether the returned sites array should contain all sites, including those flagged for deletion, archived, or marked as spam.",
                         "types": [
                             "bool"
                         ],
@@ -12948,10 +13098,6 @@
                             "array"
                         ],
                         "variable": "$args"
-                    },
-                    {
-                        "name": "return",
-                        "content": "The arguments for the `get_calendar` function."
                     }
                 ],
                 "long_description_html": ""
@@ -14704,6 +14850,7 @@
         {
             "name": "get_object_subtype_{$object_type}",
             "aliases": [
+                "get_object_subtype_blog",
                 "get_object_subtype_comment",
                 "get_object_subtype_post",
                 "get_object_subtype_term",
@@ -14712,8 +14859,8 @@
             "file": "wp-includes/meta.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the object subtype identifier for a non-standard object type.",
-                "long_description": "The dynamic portion of the hook name, `$object_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).\n Possible hook names include:\n\n  - `get_object_subtype_post`\n  - `get_object_subtype_comment`\n  - `get_object_subtype_term`\n  - `get_object_subtype_user`",
+                "description": "Filters the object subtype identifier.",
+                "long_description": "The dynamic portion of the hook name, `$object_type`, refers to the meta object type (blog, post, comment, term, user, or any other type with an associated meta table).\n Possible hook names include:\n\n  - `get_object_subtype_blog`\n  - `get_object_subtype_post`\n  - `get_object_subtype_comment`\n  - `get_object_subtype_term`\n  - `get_object_subtype_user`",
                 "tags": [
                     {
                         "name": "since",
@@ -14721,7 +14868,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Empty string to override.",
+                        "content": "Object subtype or empty string to override.",
                         "types": [
                             "string"
                         ],
@@ -14736,7 +14883,7 @@
                         "variable": "$object_id"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$object_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).</p> <p>Possible hook names include:</p> <ul> <li><code>get_object_subtype_post</code></li> <li><code>get_object_subtype_comment</code></li> <li><code>get_object_subtype_term</code></li> <li><code>get_object_subtype_user</code></li> </ul>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$object_type</code>, refers to the meta object type (blog, post, comment, term, user, or any other type with an associated meta table).</p> <p>Possible hook names include:</p> <ul> <li><code>get_object_subtype_blog</code></li> <li><code>get_object_subtype_post</code></li> <li><code>get_object_subtype_comment</code></li> <li><code>get_object_subtype_term</code></li> <li><code>get_object_subtype_user</code></li> </ul>"
             },
             "args": 2
         },
@@ -16617,9 +16764,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "The user's post count.",
+                        "content": "The user's post count as a numeric string.",
                         "types": [
-                            "int"
+                            "string"
                         ],
                         "variable": "$count"
                     },
@@ -16840,6 +16987,11 @@
                         "description": "Added the <code>$order</code> parameter."
                     },
                     {
+                        "name": "since",
+                        "content": "6.9.0",
+                        "description": "Adds ID sort to ensure deterministic ordering for posts with identical dates."
+                    },
+                    {
                         "name": "param",
                         "content": "The <code>ORDER BY</code> clause in the SQL.",
                         "types": [
@@ -16888,6 +17040,11 @@
                         "name": "since",
                         "content": "4.4.0",
                         "description": "Added the <code>$taxonomy</code> and <code>$post</code> parameters."
+                    },
+                    {
+                        "name": "since",
+                        "content": "6.9.0",
+                        "description": "Adds ID-based fallback for posts with identical dates in adjacent post queries."
                     },
                     {
                         "name": "param",
@@ -16941,7 +17098,7 @@
             "type": "filter",
             "doc": {
                 "description": "Short-circuits the return value of a meta field.",
-                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible filter names include:\n\n  - `get_post_metadata`\n  - `get_comment_metadata`\n  - `get_term_metadata`\n  - `get_user_metadata`",
+                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (blog, post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible filter names include:\n\n  - `get_blog_metadata`\n  - `get_post_metadata`\n  - `get_comment_metadata`\n  - `get_term_metadata`\n  - `get_user_metadata`",
                 "tags": [
                     {
                         "name": "since",
@@ -16986,20 +17143,21 @@
                     },
                     {
                         "name": "param",
-                        "content": "Type of object metadata is for. Accepts 'post', 'comment', 'term', 'user', or any other object type with an associated meta table.",
+                        "content": "Type of object metadata is for. Accepts 'blog', 'post', 'comment', 'term', 'user', or any other object type with an associated meta table.",
                         "types": [
                             "string"
                         ],
                         "variable": "$meta_type"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.</p> <p>Possible filter names include:</p> <ul> <li><code>get_post_metadata</code></li> <li><code>get_comment_metadata</code></li> <li><code>get_term_metadata</code></li> <li><code>get_user_metadata</code></li> </ul>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (blog, post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.</p> <p>Possible filter names include:</p> <ul> <li><code>get_blog_metadata</code></li> <li><code>get_post_metadata</code></li> <li><code>get_comment_metadata</code></li> <li><code>get_term_metadata</code></li> <li><code>get_user_metadata</code></li> </ul>"
             },
             "args": 5
         },
         {
             "name": "get_{$meta_type}_metadata_by_mid",
             "aliases": [
+                "get_blog_metadata_by_mid",
                 "get_comment_metadata_by_mid",
                 "get_post_metadata_by_mid",
                 "get_term_metadata_by_mid",
@@ -17009,7 +17167,7 @@
             "type": "filter",
             "doc": {
                 "description": "Short-circuits the return value when fetching a meta field by meta ID.",
-                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible hook names include:\n\n  - `get_post_metadata_by_mid`\n  - `get_comment_metadata_by_mid`\n  - `get_term_metadata_by_mid`\n  - `get_user_metadata_by_mid`",
+                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (blog, post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible hook names include:\n\n  - `get_blog_metadata_by_mid`\n  - `get_post_metadata_by_mid`\n  - `get_comment_metadata_by_mid`\n  - `get_term_metadata_by_mid`\n  - `get_user_metadata_by_mid`",
                 "tags": [
                     {
                         "name": "since",
@@ -17033,7 +17191,7 @@
                         "variable": "$meta_id"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.</p> <p>Possible hook names include:</p> <ul> <li><code>get_post_metadata_by_mid</code></li> <li><code>get_comment_metadata_by_mid</code></li> <li><code>get_term_metadata_by_mid</code></li> <li><code>get_user_metadata_by_mid</code></li> </ul>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (blog, post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.</p> <p>Possible hook names include:</p> <ul> <li><code>get_blog_metadata_by_mid</code></li> <li><code>get_post_metadata_by_mid</code></li> <li><code>get_comment_metadata_by_mid</code></li> <li><code>get_term_metadata_by_mid</code></li> <li><code>get_user_metadata_by_mid</code></li> </ul>"
             },
             "args": 2
         },
@@ -18093,7 +18251,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Array of integers for valid ports.",
+                        "content": "Array of integers for valid ports. Default allowed ports are 80, 443, and 8080.",
                         "types": [
                             "int[]"
                         ],
@@ -18172,7 +18330,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The original origin for the request.",
+                        "content": "The HTTP origin for the request.",
                         "types": [
                             "string"
                         ],
@@ -20659,7 +20817,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Type of object metadata is for. Accepts 'post', 'comment', 'term', 'user', or any other object type with an associated meta table.",
+                        "content": "Type of object metadata is for. Accepts 'blog', 'post', 'comment', 'term', 'user', or any other object type with an associated meta table.",
                         "types": [
                             "string"
                         ],
@@ -22565,7 +22723,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the action links displayed for each site in the Sites list table.",
-                "long_description": "The 'Edit', 'Dashboard', 'Delete', and 'Visit' links are displayed by default for each site. The site's status determines whether to show the 'Activate' or 'Deactivate' link, 'Unarchive' or 'Archive' links, and 'Not Spam' or 'Spam' link for each site.",
+                "long_description": "The 'Edit', 'Dashboard', 'Delete Permanently', and 'Visit' links are displayed by default for each site. The site's status determines whether to show the 'Remove Deletion Flag' or 'Flag for Deletion' link, 'Unarchive' or 'Archive' links, and 'Not Spam' or 'Spam' link for each site.",
                 "tags": [
                     {
                         "name": "since",
@@ -22596,7 +22754,7 @@
                         "variable": "$blogname"
                     }
                 ],
-                "long_description_html": "<p>The 'Edit', 'Dashboard', 'Delete', and 'Visit' links are displayed by default for each site. The site's status determines whether to show the 'Activate' or 'Deactivate' link, 'Unarchive' or 'Archive' links, and 'Not Spam' or 'Spam' link for each site.</p>"
+                "long_description_html": "<p>The 'Edit', 'Dashboard', 'Delete Permanently', and 'Visit' links are displayed by default for each site. The site's status determines whether to show the 'Remove Deletion Flag' or 'Flag for Deletion' link, 'Unarchive' or 'Archive' links, and 'Not Spam' or 'Spam' link for each site.</p>"
             },
             "args": 3
         },
@@ -24957,7 +25115,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "{ Used to build wp_mail(). @type string $to      The intended recipient. @type string $subject The subject of the email. @type string $message The content of the email. The following strings have a special meaning and will get replaced dynamically: - ###OLD_EMAIL### The old network admin email address. - ###NEW_EMAIL### The new network admin email address. - ###SITENAME###  The name of the network. - ###SITEURL###   The URL to the site. @type string $headers Headers. }",
+                        "content": "{ Used to build wp_mail(). @type string $to      The intended recipient. @type string $subject The subject of the email. @type string $message The content of the email. The following strings have a special meaning and will get replaced dynamically: - <code>###OLD_EMAIL###</code> The old network admin email address. - <code>###NEW_EMAIL###</code> The new network admin email address. - <code>###SITENAME###</code>  The name of the network. - <code>###SITEURL###</code>   The URL to the site. @type string $headers Headers. }",
                         "types": [
                             "array"
                         ],
@@ -25425,7 +25583,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the text of the email sent when a change of site admin email address is attempted.",
-                "long_description": "The following strings have a special meaning and will get replaced dynamically: - ###USERNAME###  The current user's username. - ###ADMIN_URL### The link to click on to confirm the email change. - ###EMAIL###     The proposed new site admin email address. - ###SITENAME###  The name of the site. - ###SITEURL###   The URL to the site.",
+                "long_description": "The following strings have a special meaning and will get replaced dynamically:\n - `###USERNAME###`  The current user's username. - `###ADMIN_URL###` The link to click on to confirm the email change. - `###EMAIL###`     The proposed new site admin email address. - `###SITENAME###`  The name of the site. - `###SITEURL###`   The URL to the site.",
                 "tags": [
                     {
                         "name": "since",
@@ -25454,7 +25612,7 @@
                         "variable": "$new_admin_email"
                     }
                 ],
-                "long_description_html": "<p>The following strings have a special meaning and will get replaced dynamically:</p> <ul> <li> <h3>USERNAME###  The current user's username.</h3> </li> <li> <h3>ADMIN_URL### The link to click on to confirm the email change.</h3> </li> <li> <h3>EMAIL###     The proposed new site admin email address.</h3> </li> <li> <h3>SITENAME###  The name of the site.</h3> </li> <li> <h3>SITEURL###   The URL to the site.</h3> </li> </ul>"
+                "long_description_html": "<p>The following strings have a special meaning and will get replaced dynamically:</p> <ul> <li><code>###USERNAME###</code>  The current user's username.</li> <li><code>###ADMIN_URL###</code> The link to click on to confirm the email change.</li> <li><code>###EMAIL###</code>     The proposed new site admin email address.</li> <li><code>###SITENAME###</code>  The name of the site.</li> <li><code>###SITEURL###</code>   The URL to the site.</li> </ul>"
             },
             "args": 2
         },
@@ -25489,7 +25647,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the text of the email sent when a change of network admin email address is attempted.",
-                "long_description": "The following strings have a special meaning and will get replaced dynamically: ###USERNAME###  The current user's username. ###ADMIN_URL### The link to click on to confirm the email change. ###EMAIL###     The proposed new network admin email address. ###SITENAME###  The name of the network. ###SITEURL###   The URL to the network.",
+                "long_description": "The following strings have a special meaning and will get replaced dynamically:\n - `###USERNAME###`  The current user's username. - `###ADMIN_URL###` The link to click on to confirm the email change. - `###EMAIL###`     The proposed new network admin email address. - `###SITENAME###`  The name of the network. - `###SITEURL###`   The URL to the network.",
                 "tags": [
                     {
                         "name": "since",
@@ -25512,7 +25670,7 @@
                         "variable": "$new_admin_email"
                     }
                 ],
-                "long_description_html": "<p>The following strings have a special meaning and will get replaced dynamically:</p> <h3>USERNAME###  The current user's username.</h3> <h3>ADMIN_URL### The link to click on to confirm the email change.</h3> <h3>EMAIL###     The proposed new network admin email address.</h3> <h3>SITENAME###  The name of the network.</h3> <h3>SITEURL###   The URL to the network.</h3>"
+                "long_description_html": "<p>The following strings have a special meaning and will get replaced dynamically:</p> <ul> <li><code>###USERNAME###</code>  The current user's username.</li> <li><code>###ADMIN_URL###</code> The link to click on to confirm the email change.</li> <li><code>###EMAIL###</code>     The proposed new network admin email address.</li> <li><code>###SITENAME###</code>  The name of the network.</li> <li><code>###SITEURL###</code>   The URL to the network.</li> </ul>"
             },
             "args": 2
         },
@@ -25563,7 +25721,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the text of the email sent when a change of user email address is attempted.",
-                "long_description": "The following strings have a special meaning and will get replaced dynamically: - ###USERNAME###  The current user's username. - ###ADMIN_URL### The link to click on to confirm the email change. - ###EMAIL###     The new email. - ###SITENAME###  The name of the site. - ###SITEURL###   The URL to the site.",
+                "long_description": "The following strings have a special meaning and will get replaced dynamically:\n - `###USERNAME###`  The current user's username. - `###ADMIN_URL###` The link to click on to confirm the email change. - `###EMAIL###`     The new email. - `###SITENAME###`  The name of the site. - `###SITEURL###`   The URL to the site.",
                 "tags": [
                     {
                         "name": "since",
@@ -25592,7 +25750,7 @@
                         "variable": "$new_user_email"
                     }
                 ],
-                "long_description_html": "<p>The following strings have a special meaning and will get replaced dynamically:</p> <ul> <li> <h3>USERNAME###  The current user's username.</h3> </li> <li> <h3>ADMIN_URL### The link to click on to confirm the email change.</h3> </li> <li> <h3>EMAIL###     The new email.</h3> </li> <li> <h3>SITENAME###  The name of the site.</h3> </li> <li> <h3>SITEURL###   The URL to the site.</h3> </li> </ul>"
+                "long_description_html": "<p>The following strings have a special meaning and will get replaced dynamically:</p> <ul> <li><code>###USERNAME###</code>  The current user's username.</li> <li><code>###ADMIN_URL###</code> The link to click on to confirm the email change.</li> <li><code>###EMAIL###</code>     The new email.</li> <li><code>###SITENAME###</code>  The name of the site.</li> <li><code>###SITEURL###</code>   The URL to the site.</li> </ul>"
             },
             "args": 2
         },
@@ -26269,9 +26427,10 @@
                     },
                     {
                         "name": "param",
-                        "content": "The returned oEmbed HTML.",
+                        "content": "The returned oEmbed HTML, or false on failure.",
                         "types": [
-                            "string"
+                            "string",
+                            "false"
                         ],
                         "variable": "$return"
                     },
@@ -26538,7 +26697,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the list of sanctioned oEmbed providers.",
-                "long_description": "Since WordPress 4.4, oEmbed discovery is enabled for all users and allows embedding of sanitized iframes. The providers in this list are sanctioned, meaning they are trusted and allowed to embed any content, such as iframes, videos, JavaScript, and arbitrary HTML.\n Supported providers:\n |   Provider   |                     Flavor                |  Since  | | ------------ | ----------------------------------------- | ------- | | Dailymotion  | dailymotion.com                           | 2.9.0   | | Flickr       | flickr.com                                | 2.9.0   | | Scribd       | scribd.com                                | 2.9.0   | | Vimeo        | vimeo.com                                 | 2.9.0   | | WordPress.tv | wordpress.tv                              | 2.9.0   | | YouTube      | youtube.com/watch                         | 2.9.0   | | Crowdsignal  | polldaddy.com                             | 3.0.0   | | SmugMug      | smugmug.com                               | 3.0.0   | | YouTube      | youtu.be                                  | 3.0.0   | | Twitter      | twitter.com                               | 3.4.0   | | SoundCloud   | soundcloud.com                            | 3.5.0   | | Dailymotion  | dai.ly                                    | 3.6.0   | | Flickr       | flic.kr                                   | 3.6.0   | | Spotify      | spotify.com                               | 3.6.0   | | Imgur        | imgur.com                                 | 3.9.0   | | Animoto      | animoto.com                               | 4.0.0   | | Animoto      | video214.com                              | 4.0.0   | | Issuu        | issuu.com                                 | 4.0.0   | | Mixcloud     | mixcloud.com                              | 4.0.0   | | Crowdsignal  | poll.fm                                   | 4.0.0   | | TED          | ted.com                                   | 4.0.0   | | YouTube      | youtube.com/playlist                      | 4.0.0   | | Tumblr       | tumblr.com                                | 4.2.0   | | Kickstarter  | kickstarter.com                           | 4.2.0   | | Kickstarter  | kck.st                                    | 4.2.0   | | Cloudup      | cloudup.com                               | 4.3.0   | | ReverbNation | reverbnation.com                          | 4.4.0   | | VideoPress   | videopress.com                            | 4.4.0   | | Reddit       | reddit.com                                | 4.4.0   | | Speaker Deck | speakerdeck.com                           | 4.4.0   | | Twitter      | twitter.com/timelines                     | 4.5.0   | | Twitter      | twitter.com/moments                       | 4.5.0   | | Twitter      | twitter.com/user                          | 4.7.0   | | Twitter      | twitter.com/likes                         | 4.7.0   | | Twitter      | twitter.com/lists                         | 4.7.0   | | Screencast   | screencast.com                            | 4.8.0   | | Amazon       | amazon.com (com.mx, com.br, ca)           | 4.9.0   | | Amazon       | amazon.de (fr, it, es, in, nl, ru, co.uk) | 4.9.0   | | Amazon       | amazon.co.jp (com.au)                     | 4.9.0   | | Amazon       | amazon.cn                                 | 4.9.0   | | Amazon       | a.co                                      | 4.9.0   | | Amazon       | amzn.to (eu, in, asia)                    | 4.9.0   | | Amazon       | z.cn                                      | 4.9.0   | | Someecards   | someecards.com                            | 4.9.0   | | Someecards   | some.ly                                   | 4.9.0   | | Crowdsignal  | survey.fm                                 | 5.1.0   | | TikTok       | tiktok.com                                | 5.4.0   | | Pinterest    | pinterest.com                             | 5.9.0   | | WolframCloud | wolframcloud.com                          | 5.9.0   | | Pocket Casts | pocketcasts.com                           | 6.1.0   | | Crowdsignal  | crowdsignal.net                           | 6.2.0   | | Anghami      | anghami.com                               | 6.3.0   | | Bluesky      | bsky.app                                  | 6.6.0   | | Canva        | canva.com                                 | 6.8.0   |\n No longer supported providers:\n |   Provider   |        Flavor        |   Since   |  Removed  | | ------------ | -------------------- | --------- | --------- | | Qik          | qik.com              | 2.9.0     | 3.9.0     | | Viddler      | viddler.com          | 2.9.0     | 4.0.0     | | Revision3    | revision3.com        | 2.9.0     | 4.2.0     | | Blip         | blip.tv              | 2.9.0     | 4.4.0     | | Rdio         | rdio.com             | 3.6.0     | 4.4.1     | | Rdio         | rd.io                | 3.6.0     | 4.4.1     | | Vine         | vine.co              | 4.1.0     | 4.9.0     | | Photobucket  | photobucket.com      | 2.9.0     | 5.1.0     | | Funny or Die | funnyordie.com       | 3.0.0     | 5.1.0     | | CollegeHumor | collegehumor.com     | 4.0.0     | 5.3.1     | | Hulu         | hulu.com             | 2.9.0     | 5.5.0     | | Instagram    | instagram.com        | 3.5.0     | 5.5.2     | | Instagram    | instagr.am           | 3.5.0     | 5.5.2     | | Instagram TV | instagram.com        | 5.1.0     | 5.5.2     | | Instagram TV | instagr.am           | 5.1.0     | 5.5.2     | | Facebook     | facebook.com         | 4.7.0     | 5.5.2     | | Meetup.com   | meetup.com           | 3.9.0     | 6.0.1     | | Meetup.com   | meetu.ps             | 3.9.0     | 6.0.1     | | SlideShare   | slideshare.net       | 3.5.0     | 6.6.0     |",
+                "long_description": "Since WordPress 4.4, oEmbed discovery is enabled for all users and allows embedding of sanitized iframes. The providers in this list are sanctioned, meaning they are trusted and allowed to embed any content, such as iframes, videos, JavaScript, and arbitrary HTML.\n Supported providers:\n |   Provider   |                     Flavor                |  Since  | | ------------ | ----------------------------------------- | ------- | | Dailymotion  | dailymotion.com                           | 2.9.0   | | Flickr       | flickr.com                                | 2.9.0   | | Scribd       | scribd.com                                | 2.9.0   | | Vimeo        | vimeo.com                                 | 2.9.0   | | WordPress.tv | wordpress.tv                              | 2.9.0   | | YouTube      | youtube.com/watch                         | 2.9.0   | | Crowdsignal  | polldaddy.com                             | 3.0.0   | | SmugMug      | smugmug.com                               | 3.0.0   | | YouTube      | youtu.be                                  | 3.0.0   | | Twitter      | twitter.com                               | 3.4.0   | | SoundCloud   | soundcloud.com                            | 3.5.0   | | Dailymotion  | dai.ly                                    | 3.6.0   | | Flickr       | flic.kr                                   | 3.6.0   | | Spotify      | spotify.com                               | 3.6.0   | | Imgur        | imgur.com                                 | 3.9.0   | | Animoto      | animoto.com                               | 4.0.0   | | Animoto      | video214.com                              | 4.0.0   | | Issuu        | issuu.com                                 | 4.0.0   | | Mixcloud     | mixcloud.com                              | 4.0.0   | | Crowdsignal  | poll.fm                                   | 4.0.0   | | TED          | ted.com                                   | 4.0.0   | | YouTube      | youtube.com/playlist                      | 4.0.0   | | Tumblr       | tumblr.com                                | 4.2.0   | | Kickstarter  | kickstarter.com                           | 4.2.0   | | Kickstarter  | kck.st                                    | 4.2.0   | | Cloudup      | cloudup.com                               | 4.3.0   | | ReverbNation | reverbnation.com                          | 4.4.0   | | VideoPress   | videopress.com                            | 4.4.0   | | Reddit       | reddit.com                                | 4.4.0   | | Speaker Deck | speakerdeck.com                           | 4.4.0   | | Twitter      | twitter.com/timelines                     | 4.5.0   | | Twitter      | twitter.com/moments                       | 4.5.0   | | Twitter      | twitter.com/user                          | 4.7.0   | | Twitter      | twitter.com/likes                         | 4.7.0   | | Twitter      | twitter.com/lists                         | 4.7.0   | | Screencast   | screencast.com                            | 4.8.0   | | Amazon       | amazon.com (com.mx, com.br, ca)           | 4.9.0   | | Amazon       | amazon.de (fr, it, es, in, nl, ru, co.uk) | 4.9.0   | | Amazon       | amazon.co.jp (com.au)                     | 4.9.0   | | Amazon       | amazon.cn                                 | 4.9.0   | | Amazon       | a.co                                      | 4.9.0   | | Amazon       | amzn.to (eu, in, asia)                    | 4.9.0   | | Amazon       | z.cn                                      | 4.9.0   | | Someecards   | someecards.com                            | 4.9.0   | | Someecards   | some.ly                                   | 4.9.0   | | Crowdsignal  | survey.fm                                 | 5.1.0   | | TikTok       | tiktok.com                                | 5.4.0   | | Pinterest    | pinterest.com                             | 5.9.0   | | WolframCloud | wolframcloud.com                          | 5.9.0   | | Pocket Casts | pocketcasts.com                           | 6.1.0   | | Crowdsignal  | crowdsignal.net                           | 6.2.0   | | Anghami      | anghami.com                               | 6.3.0   | | Bluesky      | bsky.app                                  | 6.6.0   | | Canva        | canva.com                                 | 6.8.0   |\n No longer supported providers:\n |   Provider   |        Flavor        |   Since   |  Removed  | | ------------ | -------------------- | --------- | --------- | | Qik          | qik.com              | 2.9.0     | 3.9.0     | | Viddler      | viddler.com          | 2.9.0     | 4.0.0     | | Revision3    | revision3.com        | 2.9.0     | 4.2.0     | | Blip         | blip.tv              | 2.9.0     | 4.4.0     | | Rdio         | rdio.com             | 3.6.0     | 4.4.1     | | Rdio         | rd.io                | 3.6.0     | 4.4.1     | | Vine         | vine.co              | 4.1.0     | 4.9.0     | | Photobucket  | photobucket.com      | 2.9.0     | 5.1.0     | | Funny or Die | funnyordie.com       | 3.0.0     | 5.1.0     | | CollegeHumor | collegehumor.com     | 4.0.0     | 5.3.1     | | Hulu         | hulu.com             | 2.9.0     | 5.5.0     | | Instagram    | instagram.com        | 3.5.0     | 5.5.2     | | Instagram    | instagr.am           | 3.5.0     | 5.5.2     | | Instagram TV | instagram.com        | 5.1.0     | 5.5.2     | | Instagram TV | instagr.am           | 5.1.0     | 5.5.2     | | Facebook     | facebook.com         | 4.7.0     | 5.5.2     | | Meetup.com   | meetup.com           | 3.9.0     | 6.0.1     | | Meetup.com   | meetu.ps             | 3.9.0     | 6.0.1     | | SlideShare   | slideshare.net       | 3.5.0     | 6.6.0     | | Screencast   | screencast.com       | 4.8.0     | 6.8.2     |",
                 "tags": [
                     {
                         "name": "see",
@@ -26558,7 +26717,7 @@
                         "variable": "$providers"
                     }
                 ],
-                "long_description_html": "<p>Since WordPress 4.4, oEmbed discovery is enabled for all users and allows embedding of sanitized iframes. The providers in this list are sanctioned, meaning they are trusted and allowed to embed any content, such as iframes, videos, JavaScript, and arbitrary HTML.</p> <p>Supported providers:</p> <table> <thead> <tr> <th>Provider</th> <th>Flavor</th> <th>Since</th> </tr> </thead> <tbody> <tr> <td>Dailymotion</td> <td>dailymotion.com</td> <td>2.9.0</td> </tr> <tr> <td>Flickr</td> <td>flickr.com</td> <td>2.9.0</td> </tr> <tr> <td>Scribd</td> <td>scribd.com</td> <td>2.9.0</td> </tr> <tr> <td>Vimeo</td> <td>vimeo.com</td> <td>2.9.0</td> </tr> <tr> <td>WordPress.tv</td> <td>wordpress.tv</td> <td>2.9.0</td> </tr> <tr> <td>YouTube</td> <td>youtube.com/watch</td> <td>2.9.0</td> </tr> <tr> <td>Crowdsignal</td> <td>polldaddy.com</td> <td>3.0.0</td> </tr> <tr> <td>SmugMug</td> <td>smugmug.com</td> <td>3.0.0</td> </tr> <tr> <td>YouTube</td> <td>youtu.be</td> <td>3.0.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com</td> <td>3.4.0</td> </tr> <tr> <td>SoundCloud</td> <td>soundcloud.com</td> <td>3.5.0</td> </tr> <tr> <td>Dailymotion</td> <td>dai.ly</td> <td>3.6.0</td> </tr> <tr> <td>Flickr</td> <td>flic.kr</td> <td>3.6.0</td> </tr> <tr> <td>Spotify</td> <td>spotify.com</td> <td>3.6.0</td> </tr> <tr> <td>Imgur</td> <td>imgur.com</td> <td>3.9.0</td> </tr> <tr> <td>Animoto</td> <td>animoto.com</td> <td>4.0.0</td> </tr> <tr> <td>Animoto</td> <td>video214.com</td> <td>4.0.0</td> </tr> <tr> <td>Issuu</td> <td>issuu.com</td> <td>4.0.0</td> </tr> <tr> <td>Mixcloud</td> <td>mixcloud.com</td> <td>4.0.0</td> </tr> <tr> <td>Crowdsignal</td> <td>poll.fm</td> <td>4.0.0</td> </tr> <tr> <td>TED</td> <td>ted.com</td> <td>4.0.0</td> </tr> <tr> <td>YouTube</td> <td>youtube.com/playlist</td> <td>4.0.0</td> </tr> <tr> <td>Tumblr</td> <td>tumblr.com</td> <td>4.2.0</td> </tr> <tr> <td>Kickstarter</td> <td>kickstarter.com</td> <td>4.2.0</td> </tr> <tr> <td>Kickstarter</td> <td>kck.st</td> <td>4.2.0</td> </tr> <tr> <td>Cloudup</td> <td>cloudup.com</td> <td>4.3.0</td> </tr> <tr> <td>ReverbNation</td> <td>reverbnation.com</td> <td>4.4.0</td> </tr> <tr> <td>VideoPress</td> <td>videopress.com</td> <td>4.4.0</td> </tr> <tr> <td>Reddit</td> <td>reddit.com</td> <td>4.4.0</td> </tr> <tr> <td>Speaker Deck</td> <td>speakerdeck.com</td> <td>4.4.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/timelines</td> <td>4.5.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/moments</td> <td>4.5.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/user</td> <td>4.7.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/likes</td> <td>4.7.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/lists</td> <td>4.7.0</td> </tr> <tr> <td>Screencast</td> <td>screencast.com</td> <td>4.8.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.com (com.mx, com.br, ca)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.de (fr, it, es, in, nl, ru, co.uk)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.co.jp (com.au)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.cn</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>a.co</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amzn.to (eu, in, asia)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>z.cn</td> <td>4.9.0</td> </tr> <tr> <td>Someecards</td> <td>someecards.com</td> <td>4.9.0</td> </tr> <tr> <td>Someecards</td> <td>some.ly</td> <td>4.9.0</td> </tr> <tr> <td>Crowdsignal</td> <td>survey.fm</td> <td>5.1.0</td> </tr> <tr> <td>TikTok</td> <td>tiktok.com</td> <td>5.4.0</td> </tr> <tr> <td>Pinterest</td> <td>pinterest.com</td> <td>5.9.0</td> </tr> <tr> <td>WolframCloud</td> <td>wolframcloud.com</td> <td>5.9.0</td> </tr> <tr> <td>Pocket Casts</td> <td>pocketcasts.com</td> <td>6.1.0</td> </tr> <tr> <td>Crowdsignal</td> <td>crowdsignal.net</td> <td>6.2.0</td> </tr> <tr> <td>Anghami</td> <td>anghami.com</td> <td>6.3.0</td> </tr> <tr> <td>Bluesky</td> <td>bsky.app</td> <td>6.6.0</td> </tr> <tr> <td>Canva</td> <td>canva.com</td> <td>6.8.0</td> </tr> </tbody> </table> <p>No longer supported providers:</p> <table> <thead> <tr> <th>Provider</th> <th>Flavor</th> <th>Since</th> <th>Removed</th> </tr> </thead> <tbody> <tr> <td>Qik</td> <td>qik.com</td> <td>2.9.0</td> <td>3.9.0</td> </tr> <tr> <td>Viddler</td> <td>viddler.com</td> <td>2.9.0</td> <td>4.0.0</td> </tr> <tr> <td>Revision3</td> <td>revision3.com</td> <td>2.9.0</td> <td>4.2.0</td> </tr> <tr> <td>Blip</td> <td>blip.tv</td> <td>2.9.0</td> <td>4.4.0</td> </tr> <tr> <td>Rdio</td> <td>rdio.com</td> <td>3.6.0</td> <td>4.4.1</td> </tr> <tr> <td>Rdio</td> <td>rd.io</td> <td>3.6.0</td> <td>4.4.1</td> </tr> <tr> <td>Vine</td> <td>vine.co</td> <td>4.1.0</td> <td>4.9.0</td> </tr> <tr> <td>Photobucket</td> <td>photobucket.com</td> <td>2.9.0</td> <td>5.1.0</td> </tr> <tr> <td>Funny or Die</td> <td>funnyordie.com</td> <td>3.0.0</td> <td>5.1.0</td> </tr> <tr> <td>CollegeHumor</td> <td>collegehumor.com</td> <td>4.0.0</td> <td>5.3.1</td> </tr> <tr> <td>Hulu</td> <td>hulu.com</td> <td>2.9.0</td> <td>5.5.0</td> </tr> <tr> <td>Instagram</td> <td>instagram.com</td> <td>3.5.0</td> <td>5.5.2</td> </tr> <tr> <td>Instagram</td> <td>instagr.am</td> <td>3.5.0</td> <td>5.5.2</td> </tr> <tr> <td>Instagram TV</td> <td>instagram.com</td> <td>5.1.0</td> <td>5.5.2</td> </tr> <tr> <td>Instagram TV</td> <td>instagr.am</td> <td>5.1.0</td> <td>5.5.2</td> </tr> <tr> <td>Facebook</td> <td>facebook.com</td> <td>4.7.0</td> <td>5.5.2</td> </tr> <tr> <td>Meetup.com</td> <td>meetup.com</td> <td>3.9.0</td> <td>6.0.1</td> </tr> <tr> <td>Meetup.com</td> <td>meetu.ps</td> <td>3.9.0</td> <td>6.0.1</td> </tr> <tr> <td>SlideShare</td> <td>slideshare.net</td> <td>3.5.0</td> <td>6.6.0</td> </tr> </tbody> </table>"
+                "long_description_html": "<p>Since WordPress 4.4, oEmbed discovery is enabled for all users and allows embedding of sanitized iframes. The providers in this list are sanctioned, meaning they are trusted and allowed to embed any content, such as iframes, videos, JavaScript, and arbitrary HTML.</p> <p>Supported providers:</p> <table> <thead> <tr> <th>Provider</th> <th>Flavor</th> <th>Since</th> </tr> </thead> <tbody> <tr> <td>Dailymotion</td> <td>dailymotion.com</td> <td>2.9.0</td> </tr> <tr> <td>Flickr</td> <td>flickr.com</td> <td>2.9.0</td> </tr> <tr> <td>Scribd</td> <td>scribd.com</td> <td>2.9.0</td> </tr> <tr> <td>Vimeo</td> <td>vimeo.com</td> <td>2.9.0</td> </tr> <tr> <td>WordPress.tv</td> <td>wordpress.tv</td> <td>2.9.0</td> </tr> <tr> <td>YouTube</td> <td>youtube.com/watch</td> <td>2.9.0</td> </tr> <tr> <td>Crowdsignal</td> <td>polldaddy.com</td> <td>3.0.0</td> </tr> <tr> <td>SmugMug</td> <td>smugmug.com</td> <td>3.0.0</td> </tr> <tr> <td>YouTube</td> <td>youtu.be</td> <td>3.0.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com</td> <td>3.4.0</td> </tr> <tr> <td>SoundCloud</td> <td>soundcloud.com</td> <td>3.5.0</td> </tr> <tr> <td>Dailymotion</td> <td>dai.ly</td> <td>3.6.0</td> </tr> <tr> <td>Flickr</td> <td>flic.kr</td> <td>3.6.0</td> </tr> <tr> <td>Spotify</td> <td>spotify.com</td> <td>3.6.0</td> </tr> <tr> <td>Imgur</td> <td>imgur.com</td> <td>3.9.0</td> </tr> <tr> <td>Animoto</td> <td>animoto.com</td> <td>4.0.0</td> </tr> <tr> <td>Animoto</td> <td>video214.com</td> <td>4.0.0</td> </tr> <tr> <td>Issuu</td> <td>issuu.com</td> <td>4.0.0</td> </tr> <tr> <td>Mixcloud</td> <td>mixcloud.com</td> <td>4.0.0</td> </tr> <tr> <td>Crowdsignal</td> <td>poll.fm</td> <td>4.0.0</td> </tr> <tr> <td>TED</td> <td>ted.com</td> <td>4.0.0</td> </tr> <tr> <td>YouTube</td> <td>youtube.com/playlist</td> <td>4.0.0</td> </tr> <tr> <td>Tumblr</td> <td>tumblr.com</td> <td>4.2.0</td> </tr> <tr> <td>Kickstarter</td> <td>kickstarter.com</td> <td>4.2.0</td> </tr> <tr> <td>Kickstarter</td> <td>kck.st</td> <td>4.2.0</td> </tr> <tr> <td>Cloudup</td> <td>cloudup.com</td> <td>4.3.0</td> </tr> <tr> <td>ReverbNation</td> <td>reverbnation.com</td> <td>4.4.0</td> </tr> <tr> <td>VideoPress</td> <td>videopress.com</td> <td>4.4.0</td> </tr> <tr> <td>Reddit</td> <td>reddit.com</td> <td>4.4.0</td> </tr> <tr> <td>Speaker Deck</td> <td>speakerdeck.com</td> <td>4.4.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/timelines</td> <td>4.5.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/moments</td> <td>4.5.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/user</td> <td>4.7.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/likes</td> <td>4.7.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/lists</td> <td>4.7.0</td> </tr> <tr> <td>Screencast</td> <td>screencast.com</td> <td>4.8.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.com (com.mx, com.br, ca)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.de (fr, it, es, in, nl, ru, co.uk)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.co.jp (com.au)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.cn</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>a.co</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amzn.to (eu, in, asia)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>z.cn</td> <td>4.9.0</td> </tr> <tr> <td>Someecards</td> <td>someecards.com</td> <td>4.9.0</td> </tr> <tr> <td>Someecards</td> <td>some.ly</td> <td>4.9.0</td> </tr> <tr> <td>Crowdsignal</td> <td>survey.fm</td> <td>5.1.0</td> </tr> <tr> <td>TikTok</td> <td>tiktok.com</td> <td>5.4.0</td> </tr> <tr> <td>Pinterest</td> <td>pinterest.com</td> <td>5.9.0</td> </tr> <tr> <td>WolframCloud</td> <td>wolframcloud.com</td> <td>5.9.0</td> </tr> <tr> <td>Pocket Casts</td> <td>pocketcasts.com</td> <td>6.1.0</td> </tr> <tr> <td>Crowdsignal</td> <td>crowdsignal.net</td> <td>6.2.0</td> </tr> <tr> <td>Anghami</td> <td>anghami.com</td> <td>6.3.0</td> </tr> <tr> <td>Bluesky</td> <td>bsky.app</td> <td>6.6.0</td> </tr> <tr> <td>Canva</td> <td>canva.com</td> <td>6.8.0</td> </tr> </tbody> </table> <p>No longer supported providers:</p> <table> <thead> <tr> <th>Provider</th> <th>Flavor</th> <th>Since</th> <th>Removed</th> </tr> </thead> <tbody> <tr> <td>Qik</td> <td>qik.com</td> <td>2.9.0</td> <td>3.9.0</td> </tr> <tr> <td>Viddler</td> <td>viddler.com</td> <td>2.9.0</td> <td>4.0.0</td> </tr> <tr> <td>Revision3</td> <td>revision3.com</td> <td>2.9.0</td> <td>4.2.0</td> </tr> <tr> <td>Blip</td> <td>blip.tv</td> <td>2.9.0</td> <td>4.4.0</td> </tr> <tr> <td>Rdio</td> <td>rdio.com</td> <td>3.6.0</td> <td>4.4.1</td> </tr> <tr> <td>Rdio</td> <td>rd.io</td> <td>3.6.0</td> <td>4.4.1</td> </tr> <tr> <td>Vine</td> <td>vine.co</td> <td>4.1.0</td> <td>4.9.0</td> </tr> <tr> <td>Photobucket</td> <td>photobucket.com</td> <td>2.9.0</td> <td>5.1.0</td> </tr> <tr> <td>Funny or Die</td> <td>funnyordie.com</td> <td>3.0.0</td> <td>5.1.0</td> </tr> <tr> <td>CollegeHumor</td> <td>collegehumor.com</td> <td>4.0.0</td> <td>5.3.1</td> </tr> <tr> <td>Hulu</td> <td>hulu.com</td> <td>2.9.0</td> <td>5.5.0</td> </tr> <tr> <td>Instagram</td> <td>instagram.com</td> <td>3.5.0</td> <td>5.5.2</td> </tr> <tr> <td>Instagram</td> <td>instagr.am</td> <td>3.5.0</td> <td>5.5.2</td> </tr> <tr> <td>Instagram TV</td> <td>instagram.com</td> <td>5.1.0</td> <td>5.5.2</td> </tr> <tr> <td>Instagram TV</td> <td>instagr.am</td> <td>5.1.0</td> <td>5.5.2</td> </tr> <tr> <td>Facebook</td> <td>facebook.com</td> <td>4.7.0</td> <td>5.5.2</td> </tr> <tr> <td>Meetup.com</td> <td>meetup.com</td> <td>3.9.0</td> <td>6.0.1</td> </tr> <tr> <td>Meetup.com</td> <td>meetu.ps</td> <td>3.9.0</td> <td>6.0.1</td> </tr> <tr> <td>SlideShare</td> <td>slideshare.net</td> <td>3.5.0</td> <td>6.6.0</td> </tr> <tr> <td>Screencast</td> <td>screencast.com</td> <td>4.8.0</td> <td>6.8.2</td> </tr> </tbody> </table>"
             },
             "args": 1
         },
@@ -27454,7 +27613,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "{ Used to build wp_mail(). @type string $to      The intended recipients. Add emails in a comma separated string. @type string $subject The subject of the email. @type string $message The content of the email. The following strings have a special meaning and will get replaced dynamically: - ###USERNAME###    The current user's username. - ###ADMIN_EMAIL### The admin email in case this was unexpected. - ###EMAIL###       The user's email address. - ###SITENAME###    The name of the site. - ###SITEURL###     The URL to the site. @type string $headers Headers. Add headers in a newline (\\r\\n) separated string. }",
+                        "content": "{ Used to build wp_mail(). @type string $to      The intended recipients. Add emails in a comma separated string. @type string $subject The subject of the email. @type string $message The content of the email. The following strings have a special meaning and will get replaced dynamically: - <code>###USERNAME###</code>    The current user's username. - <code>###ADMIN_EMAIL###</code> The admin email in case this was unexpected. - <code>###EMAIL###</code>       The user's email address. - <code>###SITENAME###</code>    The name of the site. - <code>###SITEURL###</code>     The URL to the site. @type string $headers Headers. Add headers in a newline (\\r\\n) separated string. }",
                         "types": [
                             "array"
                         ],
@@ -29328,6 +29487,47 @@
             "args": 3
         },
         {
+            "name": "post_states_html",
+            "file": "wp-admin/includes/template.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the HTML string of post states.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.9.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "All relevant post states combined into an HTML string for display. E.g. <code>&amp;mdash; &lt;span class='post-state'&gt;Draft, &lt;/span&gt;&lt;span class='post-state'&gt;Sticky&lt;/span&gt;</code>.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$post_states_html"
+                    },
+                    {
+                        "name": "param",
+                        "content": "A mapping of post state slugs to translated post state labels. E.g. <code>array( 'draft' =&gt; __( 'Draft' ), 'sticky' =&gt; __( 'Sticky' ), ... )</code>.",
+                        "types": [
+                            "array<string,string>"
+                        ],
+                        "variable": "$post_states"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The current post object.",
+                        "types": [
+                            "\\WP_Post"
+                        ],
+                        "variable": "$post"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 3
+        },
+        {
             "name": "post_thumbnail_html",
             "file": "wp-includes/post-thumbnail-template.php",
             "type": "filter",
@@ -31096,13 +31296,13 @@
                     },
                     {
                         "name": "param",
-                        "content": "Whether to go forward with deletion.",
+                        "content": "Whether to go forward with deletion. Anything other than null will short-circuit deletion.",
                         "types": [
                             "\\WP_Post",
                             "false",
                             "null"
                         ],
-                        "variable": "$delete"
+                        "variable": "$check"
                     },
                     {
                         "name": "param",
@@ -32044,7 +32244,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the preemptive return value of an HTTP request.",
-                "long_description": "Returning a non-false value from the filter will short-circuit the HTTP request and return early with that value. A filter should return one of:\n\n  - An array containing 'headers', 'body', 'response', 'cookies', and 'filename' elements\n  - A WP_Error instance\n  - boolean false to avoid short-circuiting the response\n Returning any other value may result in unexpected behavior.",
+                "long_description": "Returning a non-false value from the filter will short-circuit the HTTP request and return early with that value. A filter should return one of:\n\n  - An array containing 'headers', 'body', 'response', 'cookies', and 'filename' elements\n  - A WP_Error instance\n  - Boolean false to avoid short-circuiting the response\n Returning any other value may result in unexpected behavior.",
                 "tags": [
                     {
                         "name": "since",
@@ -32077,7 +32277,7 @@
                         "variable": "$url"
                     }
                 ],
-                "long_description_html": "<p>Returning a non-false value from the filter will short-circuit the HTTP request and return early with that value. A filter should return one of:</p> <ul> <li>An array containing 'headers', 'body', 'response', 'cookies', and 'filename' elements</li> <li>A WP_Error instance</li> <li>boolean false to avoid short-circuiting the response</li> </ul> <p>Returning any other value may result in unexpected behavior.</p>"
+                "long_description_html": "<p>Returning a non-false value from the filter will short-circuit the HTTP request and return early with that value. A filter should return one of:</p> <ul> <li>An array containing 'headers', 'body', 'response', 'cookies', and 'filename' elements</li> <li>A WP_Error instance</li> <li>Boolean false to avoid short-circuiting the response</li> </ul> <p>Returning any other value may result in unexpected behavior.</p>"
             },
             "args": 3
         },
@@ -32455,8 +32655,8 @@
             "file": "wp-includes/option.php",
             "type": "filter",
             "doc": {
-                "description": "Filters the value of all existing options before it is retrieved.",
-                "long_description": "Returning a truthy value from the filter will effectively short-circuit retrieval and return the passed value instead.",
+                "description": "Filters the value of any existing option before it is retrieved.",
+                "long_description": "Returning a value other than false from the filter will short-circuit retrieval and return that value instead.",
                 "tags": [
                     {
                         "name": "since",
@@ -32487,7 +32687,7 @@
                         "variable": "$default_value"
                     }
                 ],
-                "long_description_html": "<p>Returning a truthy value from the filter will effectively short-circuit retrieval and return the passed value instead.</p>"
+                "long_description_html": "<p>Returning a value other than false from the filter will short-circuit retrieval and return that value instead.</p>"
             },
             "args": 3
         },
@@ -32773,7 +32973,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "{ An associative array of the block being rendered. See WP_Block_Parser_Block. @type string   $blockName    Name of block. @type array    $attrs        Attributes from block comment delimiters. @type array[]  $innerBlocks  List of inner blocks. An array of arrays that have the same structure as this one. @type string   $innerHTML    HTML from inside block comment delimiters. @type array    $innerContent List of string fragments and null markers where inner blocks were found. }",
+                        "content": "{ An associative array of the block being rendered. See WP_Block_Parser_Block. @type string|null $blockName    Name of block. @type array       $attrs        Attributes from block comment delimiters. @type array[]     $innerBlocks  List of inner blocks. An array of arrays that have the same structure as this one. @type string      $innerHTML    HTML from inside block comment delimiters. @type array       $innerContent List of string fragments and null markers where inner blocks were found. }",
                         "types": [
                             "array"
                         ],
@@ -33010,6 +33210,55 @@
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$transient</code>, refers to the transient name.</p>"
             },
             "args": 3
+        },
+        {
+            "name": "pre_site_option",
+            "file": "wp-includes/option.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the value of any existing network option before it is retrieved.",
+                "long_description": "Returning a value other than false from the filter will short-circuit retrieval and return that value instead.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.9.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The value to return instead of the network option value. This differs from <code>$default_value</code>, which is used as the fallback value in the event the option doesn't exist elsewhere in get_network_option(). Default false (to skip past the short-circuit).",
+                        "types": [
+                            "mixed"
+                        ],
+                        "variable": "$pre_option"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Name of the option.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$option"
+                    },
+                    {
+                        "name": "param",
+                        "content": "ID of the network.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$network_id"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The fallback value to return if the option does not exist. Default false.",
+                        "types": [
+                            "mixed"
+                        ],
+                        "variable": "$default_value"
+                    }
+                ],
+                "long_description_html": "<p>Returning a value other than false from the filter will short-circuit retrieval and return that value instead.</p>"
+            },
+            "args": 4
         },
         {
             "name": "pre_site_option_{$option}",
@@ -34174,7 +34423,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "{ Array of the <code>wp_mail()</code> arguments. @type string|string[] $to          Array or comma-separated list of email addresses to send message. @type string          $subject     Email subject. @type string          $message     Message contents. @type string|string[] $headers     Additional headers. @type string|string[] $attachments Paths to files to attach. }",
+                        "content": "{ Array of the <code>wp_mail()</code> arguments. @type string|string[] $to          Array or comma-separated list of email addresses to send message. @type string          $subject     Email subject. @type string          $message     Message contents. @type string|string[] $headers     Additional headers. @type string|string[] $attachments Paths to files to attach. @type string|string[] $embeds      Paths to files to embed. }",
                         "types": [
                             "array"
                         ],
@@ -35231,6 +35480,55 @@
             "args": 3
         },
         {
+            "name": "quick_edit_statuses",
+            "file": "wp-admin/includes/class-wp-posts-list-table.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the statuses available in the Quick Edit and Bulk Edit UI.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.9.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "An array of statuses available in the Quick Edit UI.",
+                        "types": [
+                            "array<string,string>"
+                        ],
+                        "variable": "$inline_edit_statuses"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The post type slug.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$post_type"
+                    },
+                    {
+                        "name": "param",
+                        "content": "A flag to denote if it's a bulk action.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$bulk"
+                    },
+                    {
+                        "name": "param",
+                        "content": "A flag to denote if the user can publish posts.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$can_publish"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 4
+        },
+        {
             "name": "quicktags_settings",
             "file": "wp-includes/class-wp-editor.php",
             "type": "filter",
@@ -35758,7 +36056,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Type of object metadata is for. Accepts 'post', 'comment', 'term', 'user', or any other object type with an associated meta table.",
+                        "content": "Type of object metadata is for. Accepts 'blog', 'post', 'comment', 'term', 'user', or any other object type with an associated meta table.",
                         "types": [
                             "string"
                         ],
@@ -36220,7 +36518,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "{ An associative array of the block being rendered. See WP_Block_Parser_Block. @type string   $blockName    Name of block. @type array    $attrs        Attributes from block comment delimiters. @type array[]  $innerBlocks  List of inner blocks. An array of arrays that have the same structure as this one. @type string   $innerHTML    HTML from inside block comment delimiters. @type array    $innerContent List of string fragments and null markers where inner blocks were found. }",
+                        "content": "{ An associative array of the block being rendered. See WP_Block_Parser_Block. @type string|null $blockName    Name of block. @type array       $attrs        Attributes from block comment delimiters. @type array[]     $innerBlocks  List of inner blocks. An array of arrays that have the same structure as this one. @type string      $innerHTML    HTML from inside block comment delimiters. @type array       $innerContent List of string fragments and null markers where inner blocks were found. }",
                         "types": [
                             "array"
                         ],
@@ -36300,7 +36598,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "{ An associative array of the block being rendered. See WP_Block_Parser_Block. @type string   $blockName    Name of block. @type array    $attrs        Attributes from block comment delimiters. @type array[]  $innerBlocks  List of inner blocks. An array of arrays that have the same structure as this one. @type string   $innerHTML    HTML from inside block comment delimiters. @type array    $innerContent List of string fragments and null markers where inner blocks were found. }",
+                        "content": "{ An associative array of the block being rendered. See WP_Block_Parser_Block. @type string|null $blockName    Name of block. @type array       $attrs        Attributes from block comment delimiters. @type array[]     $innerBlocks  List of inner blocks. An array of arrays that have the same structure as this one. @type string      $innerHTML    HTML from inside block comment delimiters. @type array       $innerContent List of string fragments and null markers where inner blocks were found. }",
                         "types": [
                             "array"
                         ],
@@ -36308,7 +36606,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "{ An un-modified copy of <code>$parsed_block</code>, as it appeared in the source content. See WP_Block_Parser_Block. @type string   $blockName    Name of block. @type array    $attrs        Attributes from block comment delimiters. @type array[]  $innerBlocks  List of inner blocks. An array of arrays that have the same structure as this one. @type string   $innerHTML    HTML from inside block comment delimiters. @type array    $innerContent List of string fragments and null markers where inner blocks were found. }",
+                        "content": "{ An un-modified copy of <code>$parsed_block</code>, as it appeared in the source content. See WP_Block_Parser_Block. @type string|null $blockName    Name of block. @type array       $attrs        Attributes from block comment delimiters. @type array[]     $innerBlocks  List of inner blocks. An array of arrays that have the same structure as this one. @type string      $innerHTML    HTML from inside block comment delimiters. @type array       $innerContent List of string fragments and null markers where inner blocks were found. }",
                         "types": [
                             "array"
                         ],
@@ -36629,7 +36927,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "WP_Error if authentication error, null if authentication method wasn't used, true if authentication succeeded.",
+                        "content": "WP_Error if authentication error occurred, null if authentication method wasn't used, true if authentication succeeded.",
                         "types": [
                             "\\WP_Error",
                             "null",
@@ -40816,7 +41114,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the sanitization of a specific meta key of a specific meta type.",
-                "long_description": "The dynamic portions of the hook name, `$meta_type`, and `$meta_key`, refer to the metadata object type (comment, post, term, or user) and the meta key value, respectively.",
+                "long_description": "The dynamic portions of the hook name, `$meta_type`, and `$meta_key`, refer to the metadata object type (blog, comment, post, term, or user) and the meta key value, respectively.",
                 "tags": [
                     {
                         "name": "since",
@@ -40840,14 +41138,14 @@
                     },
                     {
                         "name": "param",
-                        "content": "Type of object metadata is for. Accepts 'post', 'comment', 'term', 'user', or any other object type with an associated meta table.",
+                        "content": "Type of object metadata is for. Accepts 'blog', 'post', 'comment', 'term', 'user', or any other object type with an associated meta table.",
                         "types": [
                             "string"
                         ],
                         "variable": "$object_type"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portions of the hook name, <code>$meta_type</code>, and <code>$meta_key</code>, refer to the metadata object type (comment, post, term, or user) and the meta key value, respectively.</p>"
+                "long_description_html": "<p>The dynamic portions of the hook name, <code>$meta_type</code>, and <code>$meta_key</code>, refer to the metadata object type (blog, comment, post, term, or user) and the meta key value, respectively.</p>"
             },
             "args": 3
         },
@@ -40857,7 +41155,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the sanitization of a specific meta key of a specific meta type and subtype.",
-                "long_description": "The dynamic portions of the hook name, `$object_type`, `$meta_key`, and `$object_subtype`, refer to the metadata object type (comment, post, term, or user), the meta key value, and the object subtype respectively.",
+                "long_description": "The dynamic portions of the hook name, `$object_type`, `$meta_key`, and `$object_subtype`, refer to the metadata object type (blog, comment, post, term, or user), the meta key value, and the object subtype respectively.",
                 "tags": [
                     {
                         "name": "since",
@@ -40881,7 +41179,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Type of object metadata is for. Accepts 'post', 'comment', 'term', 'user', or any other object type with an associated meta table.",
+                        "content": "Type of object metadata is for. Accepts 'blog', 'post', 'comment', 'term', 'user', or any other object type with an associated meta table.",
                         "types": [
                             "string"
                         ],
@@ -40896,7 +41194,7 @@
                         "variable": "$object_subtype"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portions of the hook name, <code>$object_type</code>, <code>$meta_key</code>, and <code>$object_subtype</code>, refer to the metadata object type (comment, post, term, or user), the meta key value, and the object subtype respectively.</p>"
+                "long_description_html": "<p>The dynamic portions of the hook name, <code>$object_type</code>, <code>$meta_key</code>, and <code>$object_subtype</code>, refer to the metadata object type (blog, comment, post, term, or user), the meta key value, and the object subtype respectively.</p>"
             },
             "args": 4
         },
@@ -42897,7 +43195,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "{ Used to build wp_mail(). @type string $to      The intended recipient. @type string $subject The subject of the email. @type string $message The content of the email. The following strings have a special meaning and will get replaced dynamically: - ###OLD_EMAIL### The old site admin email address. - ###NEW_EMAIL### The new site admin email address. - ###SITENAME###  The name of the site. - ###SITEURL###   The URL to the site. @type string $headers Headers. }",
+                        "content": "{ Used to build wp_mail(). @type string $to      The intended recipient. @type string $subject The subject of the email. @type string $message The content of the email. The following strings have a special meaning and will get replaced dynamically: - <code>###OLD_EMAIL###</code> The old site admin email address. - <code>###NEW_EMAIL###</code> The new site admin email address. - <code>###SITENAME###</code>  The name of the site. - <code>###SITEURL###</code>   The URL to the site. @type string $headers Headers. }",
                         "types": [
                             "array"
                         ],
@@ -43401,16 +43699,16 @@
                 "long_description": "The default is based on https://web.dev/time-to-first-byte/.",
                 "tags": [
                     {
+                        "name": "since",
+                        "content": "6.1.0"
+                    },
+                    {
                         "name": "param",
                         "content": "Threshold in milliseconds. Default 600.",
                         "types": [
                             "int"
                         ],
                         "variable": "$threshold"
-                    },
-                    {
-                        "name": "since",
-                        "content": "6.1.0"
                     }
                 ],
                 "long_description_html": "<p>The default is based on <a href=\"https://web.dev/time-to-first-byte/\">https://web.dev/time-to-first-byte/</a>.</p>"
@@ -44131,8 +44429,13 @@
                         "content": "5.8.0"
                     },
                     {
+                        "name": "since",
+                        "content": "6.9.0",
+                        "description": "The default limit increased from 20K to 40K."
+                    },
+                    {
                         "name": "param",
-                        "content": "The file-size threshold, in bytes. Default 20000.",
+                        "content": "The file-size threshold, in bytes. Default 40000.",
                         "types": [
                             "int"
                         ],
@@ -46143,7 +46446,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The author's display name, empty string if unknown.",
+                        "content": "The author's display name, empty string if user is unavailable.",
                         "types": [
                             "string"
                         ],
@@ -46327,7 +46630,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the invalid password message shown on password-protected posts.",
-                "long_description": "The filter is only applied if the post is password protected.",
+                "long_description": "The filter is only applied if the post is password-protected.",
                 "tags": [
                     {
                         "name": "since",
@@ -46350,7 +46653,7 @@
                         "variable": "$post"
                     }
                 ],
-                "long_description_html": "<p>The filter is only applied if the post is password protected.</p>"
+                "long_description_html": "<p>The filter is only applied if the post is password-protected.</p>"
             },
             "args": 2
         },
@@ -48766,6 +49069,7 @@
         {
             "name": "update_{$meta_type}_metadata",
             "aliases": [
+                "update_blog_metadata",
                 "update_comment_metadata",
                 "update_post_metadata",
                 "update_term_metadata",
@@ -48775,7 +49079,7 @@
             "type": "filter",
             "doc": {
                 "description": "Short-circuits updating metadata of a specific type.",
-                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible hook names include:\n\n  - `update_post_metadata`\n  - `update_comment_metadata`\n  - `update_term_metadata`\n  - `update_user_metadata`",
+                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (blog, post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible hook names include:\n\n  - `update_blog_metadata`\n  - `update_post_metadata`\n  - `update_comment_metadata`\n  - `update_term_metadata`\n  - `update_user_metadata`",
                 "tags": [
                     {
                         "name": "since",
@@ -48823,13 +49127,14 @@
                         "variable": "$prev_value"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.</p> <p>Possible hook names include:</p> <ul> <li><code>update_post_metadata</code></li> <li><code>update_comment_metadata</code></li> <li><code>update_term_metadata</code></li> <li><code>update_user_metadata</code></li> </ul>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (blog, post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.</p> <p>Possible hook names include:</p> <ul> <li><code>update_blog_metadata</code></li> <li><code>update_post_metadata</code></li> <li><code>update_comment_metadata</code></li> <li><code>update_term_metadata</code></li> <li><code>update_user_metadata</code></li> </ul>"
             },
             "args": 5
         },
         {
             "name": "update_{$meta_type}_metadata_by_mid",
             "aliases": [
+                "update_blog_metadata_by_mid",
                 "update_comment_metadata_by_mid",
                 "update_post_metadata_by_mid",
                 "update_term_metadata_by_mid",
@@ -48839,7 +49144,7 @@
             "type": "filter",
             "doc": {
                 "description": "Short-circuits updating metadata of a specific type by meta ID.",
-                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible hook names include:\n\n  - `update_post_metadata_by_mid`\n  - `update_comment_metadata_by_mid`\n  - `update_term_metadata_by_mid`\n  - `update_user_metadata_by_mid`",
+                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (blog, post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible hook names include:\n\n  - `update_blog_metadata_by_mid`\n  - `update_post_metadata_by_mid`\n  - `update_comment_metadata_by_mid`\n  - `update_term_metadata_by_mid`\n  - `update_user_metadata_by_mid`",
                 "tags": [
                     {
                         "name": "since",
@@ -48880,13 +49185,14 @@
                         "variable": "$meta_key"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.</p> <p>Possible hook names include:</p> <ul> <li><code>update_post_metadata_by_mid</code></li> <li><code>update_comment_metadata_by_mid</code></li> <li><code>update_term_metadata_by_mid</code></li> <li><code>update_user_metadata_by_mid</code></li> </ul>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (blog, post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.</p> <p>Possible hook names include:</p> <ul> <li><code>update_blog_metadata_by_mid</code></li> <li><code>update_post_metadata_by_mid</code></li> <li><code>update_comment_metadata_by_mid</code></li> <li><code>update_term_metadata_by_mid</code></li> <li><code>update_user_metadata_by_mid</code></li> </ul>"
             },
             "args": 4
         },
         {
             "name": "update_{$meta_type}_metadata_cache",
             "aliases": [
+                "update_blog_metadata_cache",
                 "update_comment_metadata_cache",
                 "update_post_metadata_cache",
                 "update_term_metadata_cache",
@@ -48896,7 +49202,7 @@
             "type": "filter",
             "doc": {
                 "description": "Short-circuits updating the metadata cache of a specific type.",
-                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible hook names include:\n\n  - `update_post_metadata_cache`\n  - `update_comment_metadata_cache`\n  - `update_term_metadata_cache`\n  - `update_user_metadata_cache`",
+                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (blog, post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.\n Possible hook names include:\n\n  - `update_blog_metadata_cache`\n  - `update_post_metadata_cache`\n  - `update_comment_metadata_cache`\n  - `update_term_metadata_cache`\n  - `update_user_metadata_cache`",
                 "tags": [
                     {
                         "name": "since",
@@ -48919,7 +49225,7 @@
                         "variable": "$object_ids"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.</p> <p>Possible hook names include:</p> <ul> <li><code>update_post_metadata_cache</code></li> <li><code>update_comment_metadata_cache</code></li> <li><code>update_term_metadata_cache</code></li> <li><code>update_user_metadata_cache</code></li> </ul>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (blog, post, comment, term, user, or any other type with an associated meta table). Returning a non-null value will effectively short-circuit the function.</p> <p>Possible hook names include:</p> <ul> <li><code>update_blog_metadata_cache</code></li> <li><code>update_post_metadata_cache</code></li> <li><code>update_comment_metadata_cache</code></li> <li><code>update_term_metadata_cache</code></li> <li><code>update_user_metadata_cache</code></li> </ul>"
             },
             "args": 2
         },
@@ -49764,7 +50070,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the body of the data erasure fulfillment notification.",
-                "long_description": "The email is sent to a user when their data erasure request is fulfilled by an administrator.\n The following strings have a special meaning and will get replaced dynamically:\n ###SITENAME###           The name of the site. ###PRIVACY_POLICY_URL### Privacy policy page URL. ###SITEURL###            The URL to the site.",
+                "long_description": "The email is sent to a user when their data erasure request is fulfilled by an administrator.\n The following strings have a special meaning and will get replaced dynamically:\n\n  - `###SITENAME###`           The name of the site.\n  - `###PRIVACY_POLICY_URL###` Privacy policy page URL.\n  - `###SITEURL###`            The URL to the site.",
                 "tags": [
                     {
                         "name": "since",
@@ -49787,7 +50093,7 @@
                         "variable": "$email_data"
                     }
                 ],
-                "long_description_html": "<p>The email is sent to a user when their data erasure request is fulfilled by an administrator.</p> <p>The following strings have a special meaning and will get replaced dynamically:</p> <h3>SITENAME###           The name of the site.</h3> <h3>PRIVACY_POLICY_URL### Privacy policy page URL.</h3> <h3>SITEURL###            The URL to the site.</h3>"
+                "long_description_html": "<p>The email is sent to a user when their data erasure request is fulfilled by an administrator.</p> <p>The following strings have a special meaning and will get replaced dynamically:</p> <ul> <li><code>###SITENAME###</code>           The name of the site.</li> <li><code>###PRIVACY_POLICY_URL###</code> Privacy policy page URL.</li> <li><code>###SITEURL###</code>            The URL to the site.</li> </ul>"
             },
             "args": 2
         },
@@ -50112,7 +50418,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the text of the email sent when an account action is attempted.",
-                "long_description": "The following strings have a special meaning and will get replaced dynamically:\n ###DESCRIPTION### Description of the action being performed so the user knows what the email is for. ###CONFIRM_URL### The link to click on to confirm the account action. ###SITENAME###    The name of the site. ###SITEURL###     The URL to the site.",
+                "long_description": "The following strings have a special meaning and will get replaced dynamically:\n - `###DESCRIPTION###` Description of the action being performed so the user knows what the email is for. - `###CONFIRM_URL###` The link to click on to confirm the account action. - `###SITENAME###`    The name of the site. - `###SITEURL###`     The URL to the site.",
                 "tags": [
                     {
                         "name": "since",
@@ -50135,7 +50441,7 @@
                         "variable": "$email_data"
                     }
                 ],
-                "long_description_html": "<p>The following strings have a special meaning and will get replaced dynamically:</p> <h3>DESCRIPTION### Description of the action being performed so the user knows what the email is for.</h3> <h3>CONFIRM_URL### The link to click on to confirm the account action.</h3> <h3>SITENAME###    The name of the site.</h3> <h3>SITEURL###     The URL to the site.</h3>"
+                "long_description_html": "<p>The following strings have a special meaning and will get replaced dynamically:</p> <ul> <li><code>###DESCRIPTION###</code> Description of the action being performed so the user knows what the email is for.</li> <li><code>###CONFIRM_URL###</code> The link to click on to confirm the account action.</li> <li><code>###SITENAME###</code>    The name of the site.</li> <li><code>###SITEURL###</code>     The URL to the site.</li> </ul>"
             },
             "args": 2
         },
@@ -50244,7 +50550,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the body of the user request confirmation email.",
-                "long_description": "The email is sent to an administrator when a user request is confirmed. The following strings have a special meaning and will get replaced dynamically:\n ###SITENAME###    The name of the site. ###USER_EMAIL###  The user email for the request. ###DESCRIPTION### Description of the action being performed so the user knows what the email is for. ###MANAGE_URL###  The URL to manage requests. ###SITEURL###     The URL to the site.",
+                "long_description": "The email is sent to an administrator when a user request is confirmed. The following strings have a special meaning and will get replaced dynamically:\n\n  - `###SITENAME###`    The name of the site.\n  - `###USER_EMAIL###`  The user email for the request.\n  - `###DESCRIPTION###` Description of the action being performed so the user knows what the email is for.\n  - `###MANAGE_URL###`  The URL to manage requests.\n  - `###SITEURL###`     The URL to the site.",
                 "tags": [
                     {
                         "name": "since",
@@ -50267,7 +50573,7 @@
                         "variable": "$email_data"
                     }
                 ],
-                "long_description_html": "<p>The email is sent to an administrator when a user request is confirmed. The following strings have a special meaning and will get replaced dynamically:</p> <h3>SITENAME###    The name of the site.</h3> <h3>USER_EMAIL###  The user email for the request.</h3> <h3>DESCRIPTION### Description of the action being performed so the user knows what the email is for.</h3> <h3>MANAGE_URL###  The URL to manage requests.</h3> <h3>SITEURL###     The URL to the site.</h3>"
+                "long_description_html": "<p>The email is sent to an administrator when a user request is confirmed. The following strings have a special meaning and will get replaced dynamically:</p> <ul> <li><code>###SITENAME###</code>    The name of the site.</li> <li><code>###USER_EMAIL###</code>  The user email for the request.</li> <li><code>###DESCRIPTION###</code> Description of the action being performed so the user knows what the email is for.</li> <li><code>###MANAGE_URL###</code>  The URL to manage requests.</li> <li><code>###SITEURL###</code>     The URL to the site.</li> </ul>"
             },
             "args": 2
         },
@@ -50751,6 +51057,74 @@
                 "long_description_html": ""
             },
             "args": 1
+        },
+        {
+            "name": "validate_plugin_requirements",
+            "file": "wp-admin/includes/plugin.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the plugin requirement validation response.",
+                "long_description": "If a plugin fails due to a Core-provided validation (incompatible WP, PHP versions), this filter will not fire. A WP_Error response will already be returned.\n This filter is intended to add additional validation steps by site administrators.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.9.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "True if the plugin meets requirements, WP_Error if not.",
+                        "types": [
+                            "bool",
+                            "\\WP_Error"
+                        ],
+                        "variable": "$met_requirements"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Path to the plugin file relative to the plugins directory.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$plugin"
+                    }
+                ],
+                "long_description_html": "<p>If a plugin fails due to a Core-provided validation (incompatible WP, PHP versions), this filter will not fire. A WP_Error response will already be returned.</p> <p>This filter is intended to add additional validation steps by site administrators.</p>"
+            },
+            "args": 2
+        },
+        {
+            "name": "validate_theme_requirements",
+            "file": "wp-includes/theme.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the theme requirement validation response.",
+                "long_description": "If a theme fails due to a Core-provided validation (incompatible WP, PHP versions), this filter will not fire. A WP_Error response will already be returned.\n This filter is intended to add additional validation steps by site administrators.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.9.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "True if the theme meets requirements, WP_Error if not.",
+                        "types": [
+                            "bool",
+                            "\\WP_Error"
+                        ],
+                        "variable": "$met_requirements"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Directory name for the theme.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$stylesheet"
+                    }
+                ],
+                "long_description_html": "<p>If a theme fails due to a Core-provided validation (incompatible WP, PHP versions), this filter will not fire. A WP_Error response will already be returned.</p> <p>This filter is intended to add additional validation steps by site administrators.</p>"
+            },
+            "args": 2
         },
         {
             "name": "validate_username",
@@ -52144,6 +52518,31 @@
                             "array"
                         ],
                         "variable": "$metadata"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 1
+        },
+        {
+            "name": "wp_ajax_menu_quick_search_args",
+            "file": "wp-admin/includes/nav-menu.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filter the menu quick search arguments.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.9.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "{ Menu quick search arguments. @type boolean      $no_found_rows          Whether to return found rows data. Default true. @type boolean      $update_post_meta_cache Whether to update post meta cache. Default false. @type boolean      $update_post_term_cache Whether to update post term cache. Default false. @type int          $posts_per_page         Number of posts to return. Default 10. @type string       $post_type              Type of post to return. @type string       $s                      Search query. @type array        $search_columns         Which post table columns to query. }",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$args"
                     }
                 ],
                 "long_description_html": ""
@@ -54523,6 +54922,11 @@
                         "content": "2.8.0"
                     },
                     {
+                        "name": "since",
+                        "content": "6.8.2",
+                        "description": "The <code>$attr</code> array includes <code>width</code> and <code>height</code> attributes."
+                    },
+                    {
                         "name": "param",
                         "content": "Array of attribute values for the image markup, keyed by attribute name. See wp_get_attachment_image().",
                         "types": [
@@ -55435,7 +55839,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the hashing algorithm to use in the password_hash() and password_needs_rehash() functions.",
-                "long_description": "The default is the value of the `PASSWORD_BCRYPT` constant which means bcrypt is used.\n **Important:** The only password hashing algorithm that is guaranteed to be available across PHP installations is bcrypt. If you use any other algorithm you must make sure that it is available on the server. The `password_algos()` function can be used to check which hashing algorithms are available.\n The hashing options can be controlled via the {@see 'wp_hash_password_options'} filter.\n Other available constants include:\n - `PASSWORD_ARGON2I` - `PASSWORD_ARGON2ID` - `PASSWORD_DEFAULT`",
+                "long_description": "The default is the value of the `PASSWORD_BCRYPT` constant which means bcrypt is used.\n **Important:** The only password hashing algorithm that is guaranteed to be available across PHP installations is bcrypt. If you use any other algorithm you must make sure that it is available on the server. The `password_algos()` function can be used to check which hashing algorithms are available.\n The hashing options can be controlled via the {@see 'wp_hash_password_options'} filter.\n Other available constants include:\n - `PASSWORD_ARGON2I` - `PASSWORD_ARGON2ID` - `PASSWORD_DEFAULT`\n The values of the algorithm constants are strings in PHP 7.4+ and integers in PHP 7.3 and earlier.",
                 "tags": [
                     {
                         "name": "since",
@@ -55445,12 +55849,13 @@
                         "name": "param",
                         "content": "The hashing algorithm. Default is the value of the <code>PASSWORD_BCRYPT</code> constant.",
                         "types": [
-                            "string"
+                            "string",
+                            "int"
                         ],
                         "variable": "$algorithm"
                     }
                 ],
-                "long_description_html": "<p>The default is the value of the <code>PASSWORD_BCRYPT</code> constant which means bcrypt is used.</p> <p><strong>Important:</strong> The only password hashing algorithm that is guaranteed to be available across PHP installations is bcrypt. If you use any other algorithm you must make sure that it is available on the server. The <code>password_algos()</code> function can be used to check which hashing algorithms are available.</p> <p>The hashing options can be controlled via the {@see 'wp_hash_password_options'} filter.</p> <p>Other available constants include:</p> <ul> <li><code>PASSWORD_ARGON2I</code></li> <li><code>PASSWORD_ARGON2ID</code></li> <li><code>PASSWORD_DEFAULT</code></li> </ul>"
+                "long_description_html": "<p>The default is the value of the <code>PASSWORD_BCRYPT</code> constant which means bcrypt is used.</p> <p><strong>Important:</strong> The only password hashing algorithm that is guaranteed to be available across PHP installations is bcrypt. If you use any other algorithm you must make sure that it is available on the server. The <code>password_algos()</code> function can be used to check which hashing algorithms are available.</p> <p>The hashing options can be controlled via the {@see 'wp_hash_password_options'} filter.</p> <p>Other available constants include:</p> <ul> <li><code>PASSWORD_ARGON2I</code></li> <li><code>PASSWORD_ARGON2ID</code></li> <li><code>PASSWORD_DEFAULT</code></li> </ul> <p>The values of the algorithm constants are strings in PHP 7.4+ and integers in PHP 7.3 and earlier.</p>"
             },
             "args": 1
         },
@@ -55460,7 +55865,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the options passed to the password_hash() and password_needs_rehash() functions.",
-                "long_description": "The default hashing algorithm is bcrypt, but this can be changed via the {@see 'wp_hash_password_algorithm'} filter. You must ensure that the options are appropriate for the algorithm in use.",
+                "long_description": "The default hashing algorithm is bcrypt, but this can be changed via the {@see 'wp_hash_password_algorithm'} filter. You must ensure that the options are appropriate for the algorithm in use.\n The values of the algorithm constants are strings in PHP 7.4+ and integers in PHP 7.3 and earlier.",
                 "tags": [
                     {
                         "name": "since",
@@ -55478,12 +55883,13 @@
                         "name": "param",
                         "content": "The hashing algorithm in use.",
                         "types": [
-                            "string"
+                            "string",
+                            "int"
                         ],
                         "variable": "$algorithm"
                     }
                 ],
-                "long_description_html": "<p>The default hashing algorithm is bcrypt, but this can be changed via the {@see 'wp_hash_password_algorithm'} filter. You must ensure that the options are appropriate for the algorithm in use.</p>"
+                "long_description_html": "<p>The default hashing algorithm is bcrypt, but this can be changed via the {@see 'wp_hash_password_algorithm'} filter. You must ensure that the options are appropriate for the algorithm in use.</p> <p>The values of the algorithm constants are strings in PHP 7.4+ and integers in PHP 7.3 and earlier.</p>"
             },
             "args": 2
         },
@@ -57543,7 +57949,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "{ Array of the <code>wp_mail()</code> arguments. @type string|string[] $to          Array or comma-separated list of email addresses to send message. @type string          $subject     Email subject. @type string          $message     Message contents. @type string|string[] $headers     Additional headers. @type string|string[] $attachments Paths to files to attach. }",
+                        "content": "{ Array of the <code>wp_mail()</code> arguments. @type string|string[] $to          Array or comma-separated list of email addresses to send message. @type string          $subject     Email subject. @type string          $message     Message contents. @type string|string[] $headers     Additional headers. @type string|string[] $attachments Paths to files to attach. @type string|string[] $embeds      Paths to files to embed. }",
                         "types": [
                             "array"
                         ],
@@ -57598,6 +58004,31 @@
                             "string"
                         ],
                         "variable": "$content_type"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 1
+        },
+        {
+            "name": "wp_mail_embed_args",
+            "file": "wp-includes/pluggable.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the arguments for PHPMailer's addEmbeddedImage() method.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.9.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "{ An array of arguments for <code>addEmbeddedImage()</code>. @type string $path        The path to the file. @type string $cid         The Content-ID of the image. Default: The key in the embeds array. @type string $name        The filename of the image. @type string $encoding    The encoding of the image. Default: 'base64'. @type string $type        The MIME type of the image. Default: empty string, which lets PHPMailer auto-detect. @type string $disposition The disposition of the image. Default: 'inline'. }",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$args"
                     }
                 ],
                 "long_description_html": ""
@@ -59036,7 +59467,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the text of the email sent with a personal data export file.",
-                "long_description": "The following strings have a special meaning and will get replaced dynamically: ###EXPIRATION###         The date when the URL will be automatically deleted. ###LINK###               URL of the personal data export file for the user. ###SITENAME###           The name of the site. ###SITEURL###            The URL to the site.",
+                "long_description": "The following strings have a special meaning and will get replaced dynamically:\n - `###EXPIRATION###` The date when the URL will be automatically deleted. - `###LINK###`       URL of the personal data export file for the user. - `###SITENAME###`   The name of the site. - `###SITEURL###`    The URL to the site.",
                 "tags": [
                     {
                         "name": "since",
@@ -59072,7 +59503,7 @@
                         "variable": "$email_data"
                     }
                 ],
-                "long_description_html": "<p>The following strings have a special meaning and will get replaced dynamically:</p> <h3>EXPIRATION###         The date when the URL will be automatically deleted.</h3> <h3>LINK###               URL of the personal data export file for the user.</h3> <h3>SITENAME###           The name of the site.</h3> <h3>SITEURL###            The URL to the site.</h3>"
+                "long_description_html": "<p>The following strings have a special meaning and will get replaced dynamically:</p> <ul> <li><code>###EXPIRATION###</code> The date when the URL will be automatically deleted.</li> <li><code>###LINK###</code>       URL of the personal data export file for the user.</li> <li><code>###SITENAME###</code>   The name of the site.</li> <li><code>###SITEURL###</code>    The URL to the site.</li> </ul>"
             },
             "args": 3
         },
@@ -59181,7 +59612,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the recipient of the personal data export email notification.",
-                "long_description": "Should be used with great caution to avoid sending the data export link to wrong emails.",
+                "long_description": "Should be used with great caution to avoid sending the data export link to the wrong email.",
                 "tags": [
                     {
                         "name": "since",
@@ -59204,7 +59635,7 @@
                         "variable": "$request"
                     }
                 ],
-                "long_description_html": "<p>Should be used with great caution to avoid sending the data export link to wrong emails.</p>"
+                "long_description_html": "<p>Should be used with great caution to avoid sending the data export link to the wrong email.</p>"
             },
             "args": 2
         },
@@ -59744,6 +60175,72 @@
                 "long_description_html": ""
             },
             "args": 3
+        },
+        {
+            "name": "wp_register_ability_args",
+            "file": "wp-includes/abilities-api/class-wp-abilities-registry.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the ability arguments before they are validated and used to instantiate the ability.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.9.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "{ An associative array of arguments for the ability. @type string               $label                 The human-readable label for the ability. @type string               $description           A detailed description of what the ability does. @type string               $category              The ability category slug this ability belongs to. @type callable             $execute_callback      A callback function to execute when the ability is invoked. Receives optional mixed input and returns mixed result or WP_Error. @type callable             $permission_callback   A callback function to check permissions before execution. Receives optional mixed input and returns bool or WP_Error. @type array&lt;string, mixed&gt; $input_schema          Optional. JSON Schema definition for the ability's input. @type array&lt;string, mixed&gt; $output_schema         Optional. JSON Schema definition for the ability's output. @type array&lt;string, mixed&gt; $meta                  { Optional. Additional metadata for the ability. @type array&lt;string, bool|string&gt; $annotations  Optional. Annotation metadata for the ability. @type bool                       $show_in_rest Optional. Whether to expose this ability in the REST API. Default false. } @type string               $ability_class         Optional. Custom class to instantiate instead of WP_Ability. }",
+                        "types": [
+                            "array<string,mixed>"
+                        ],
+                        "variable": "$args"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The name of the ability, with its namespace.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$name"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 2
+        },
+        {
+            "name": "wp_register_ability_category_args",
+            "file": "wp-includes/abilities-api/class-wp-ability-categories-registry.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the ability category arguments before they are validated and used to instantiate the ability category.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.9.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "{ The arguments used to instantiate the ability category. @type string               $label       The human-readable label for the ability category. @type string               $description A description of the ability category. @type array&lt;string, mixed&gt; $meta        Optional. Additional metadata for the ability category. }",
+                        "types": [
+                            "array<string,mixed>"
+                        ],
+                        "variable": "$args"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The slug of the ability category.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$slug"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 2
         },
         {
             "name": "wp_required_field_indicator",
@@ -60320,6 +60817,31 @@
                 "long_description_html": "<p>This filter is only fired if the error is not already configured to be handled by WordPress core. As such, it exclusively allows adding further rules for which errors should be handled, but not removing existing ones.</p>"
             },
             "args": 2
+        },
+        {
+            "name": "wp_should_output_buffer_template_for_enhancement",
+            "file": "wp-includes/template.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters whether the template should be output-buffered for enhancement.",
+                "long_description": "By default, an output buffer is only started if a {@see 'wp_template_enhancement_output_buffer'} filter has been added or if a plugin has added a {@see 'wp_finalized_template_enhancement_output_buffer'} action. For this default to apply, either of the hooks must be added by the time the template is included at the {@see 'wp_before_include_template'} action. This allows template responses to be streamed unless the there is code which depends on an output buffer being opened. This filter allows a site to opt in to adding such template enhancement filters later during the rendering of the template.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.9.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether an output buffer is started.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$use_output_buffer"
+                    }
+                ],
+                "long_description_html": "<p>By default, an output buffer is only started if a {@see 'wp_template_enhancement_output_buffer'} filter has been added or if a plugin has added a {@see 'wp_finalized_template_enhancement_output_buffer'} action. For this default to apply, either of the hooks must be added by the time the template is included at the {@see 'wp_before_include_template'} action. This allows template responses to be streamed unless the there is code which depends on an output buffer being opened. This filter allows a site to opt in to adding such template enhancement filters later during the rendering of the template.</p>"
+            },
+            "args": 1
         },
         {
             "name": "wp_should_replace_insecure_home_url",
@@ -61495,6 +62017,39 @@
                     }
                 ],
                 "long_description_html": ""
+            },
+            "args": 2
+        },
+        {
+            "name": "wp_template_enhancement_output_buffer",
+            "file": "wp-includes/template.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the template enhancement output buffer prior to sending to the client.",
+                "long_description": "This filter only applies the HTML output of an included template. This filter is a progressive enhancement intended for applications such as optimizing markup to improve frontend page load performance. Sites must not depend on this filter applying since they may opt to stream the responses instead. Callbacks for this filter are highly discouraged from using regular expressions to do any kind of replacement on the output. Use the HTML API (either `WP_HTML_Tag_Processor` or `WP_HTML_Processor`), or else use {@see \\DOM\\HtmlDocument} as of PHP 8.4 which fully supports HTML5.\n Do not print any output during this filter. While filters normally don't print anything, this is especially important since this applies during an output buffer callback. Prior to PHP 8.5, the output will be silently omitted, whereas afterward a deprecation notice will be emitted.\n Important: Because this filter is applied inside an output buffer callback (i.e. display handler), any callbacks added to the filter must not attempt to start their own output buffers. Otherwise, PHP will raise a fatal error: \"Cannot use output buffering in output buffering display handlers.\"",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.9.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "HTML template enhancement output buffer.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$filtered_output"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Original HTML template output buffer.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$output"
+                    }
+                ],
+                "long_description_html": "<p>This filter only applies the HTML output of an included template. This filter is a progressive enhancement intended for applications such as optimizing markup to improve frontend page load performance. Sites must not depend on this filter applying since they may opt to stream the responses instead. Callbacks for this filter are highly discouraged from using regular expressions to do any kind of replacement on the output. Use the HTML API (either <code>WP_HTML_Tag_Processor</code> or <code>WP_HTML_Processor</code>), or else use {@see \\DOM\\HtmlDocument} as of PHP 8.4 which fully supports HTML5.</p> <p>Do not print any output during this filter. While filters normally don't print anything, this is especially important since this applies during an output buffer callback. Prior to PHP 8.5, the output will be silently omitted, whereas afterward a deprecation notice will be emitted.</p> <p>Important: Because this filter is applied inside an output buffer callback (i.e. display handler), any callbacks added to the filter must not attempt to start their own output buffers. Otherwise, PHP will raise a fatal error: \"Cannot use output buffering in output buffering display handlers.\"</p>"
             },
             "args": 2
         },

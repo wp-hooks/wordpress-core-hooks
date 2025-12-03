@@ -132,7 +132,7 @@
             "file": "wp-admin/network/sites.php",
             "type": "action",
             "doc": {
-                "description": "Fires after a network site is activated.",
+                "description": "Fires after a network site has its deletion flag removed.",
                 "long_description": "",
                 "tags": [
                     {
@@ -142,7 +142,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The ID of the activated site.",
+                        "content": "The ID of the reactivated site.",
                         "types": [
                             "int"
                         ],
@@ -825,6 +825,7 @@
         {
             "name": "add_{$meta_type}_meta",
             "aliases": [
+                "add_blog_meta",
                 "add_comment_meta",
                 "add_post_meta",
                 "add_term_meta",
@@ -834,7 +835,7 @@
             "type": "action",
             "doc": {
                 "description": "Fires immediately before meta of a specific type is added.",
-                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).\n Possible hook names include:\n\n  - `add_post_meta`\n  - `add_comment_meta`\n  - `add_term_meta`\n  - `add_user_meta`",
+                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (blog, post, comment, term, user, or any other type with an associated meta table).\n Possible hook names include:\n\n  - `add_blog_meta`\n  - `add_post_meta`\n  - `add_comment_meta`\n  - `add_term_meta`\n  - `add_user_meta`",
                 "tags": [
                     {
                         "name": "since",
@@ -865,7 +866,7 @@
                         "variable": "$_meta_value"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).</p> <p>Possible hook names include:</p> <ul> <li><code>add_post_meta</code></li> <li><code>add_comment_meta</code></li> <li><code>add_term_meta</code></li> <li><code>add_user_meta</code></li> </ul>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (blog, post, comment, term, user, or any other type with an associated meta table).</p> <p>Possible hook names include:</p> <ul> <li><code>add_blog_meta</code></li> <li><code>add_post_meta</code></li> <li><code>add_comment_meta</code></li> <li><code>add_term_meta</code></li> <li><code>add_user_meta</code></li> </ul>"
             },
             "args": 3
         },
@@ -986,6 +987,7 @@
         {
             "name": "added_{$meta_type}_meta",
             "aliases": [
+                "added_blog_meta",
                 "added_comment_meta",
                 "added_post_meta",
                 "added_term_meta",
@@ -995,7 +997,7 @@
             "type": "action",
             "doc": {
                 "description": "Fires immediately after meta of a specific type is added.",
-                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).\n Possible hook names include:\n\n  - `added_post_meta`\n  - `added_comment_meta`\n  - `added_term_meta`\n  - `added_user_meta`",
+                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (blog, post, comment, term, user, or any other type with an associated meta table).\n Possible hook names include:\n\n  - `added_blog_meta`\n  - `added_post_meta`\n  - `added_comment_meta`\n  - `added_term_meta`\n  - `added_user_meta`",
                 "tags": [
                     {
                         "name": "since",
@@ -1034,7 +1036,7 @@
                         "variable": "$_meta_value"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).</p> <p>Possible hook names include:</p> <ul> <li><code>added_post_meta</code></li> <li><code>added_comment_meta</code></li> <li><code>added_term_meta</code></li> <li><code>added_user_meta</code></li> </ul>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (blog, post, comment, term, user, or any other type with an associated meta table).</p> <p>Possible hook names include:</p> <ul> <li><code>added_blog_meta</code></li> <li><code>added_post_meta</code></li> <li><code>added_comment_meta</code></li> <li><code>added_term_meta</code></li> <li><code>added_user_meta</code></li> </ul>"
             },
             "args": 4
         },
@@ -1102,7 +1104,7 @@
             "file": "wp-admin/user-edit.php",
             "type": "action",
             "doc": {
-                "description": "Fires in the 'Admin Color Scheme' section of the user editing screen.",
+                "description": "Fires in the 'Administration Color Scheme' section of the user editing screen.",
                 "long_description": "The section is only enabled if a callback is hooked to the action, and if there is more than one defined color scheme for the admin.",
                 "tags": [
                     {
@@ -1934,6 +1936,71 @@
             "args": 3
         },
         {
+            "name": "after_populate_network",
+            "file": "wp-admin/includes/schema.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires after a network is fully populated.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.9.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "ID of network created.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$network_id"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The domain name for the network.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$domain"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Email address for the network administrator.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$email"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The name of the network.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$site_name"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The path to append to the network's domain name.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$path"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether the network is a subdomain installation or a subdirectory installation.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$subdomain_install"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 6
+        },
+        {
             "name": "after_setup_theme",
             "file": "wp-settings.php",
             "type": "action",
@@ -2203,6 +2270,71 @@
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$stylesheet</code>, refers to the directory name of the theme, most often synonymous with the template name of the theme.</p>"
             },
             "args": 3
+        },
+        {
+            "name": "after_upgrade_to_multisite",
+            "file": "wp-admin/includes/schema.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires after a network is created when converting a single site to multisite.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.9.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "ID of network created.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$network_id"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The domain name for the network.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$domain"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Email address for the network administrator.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$email"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The name of the network.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$site_name"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The path to append to the network's domain name.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$path"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether the network is a subdomain installation or a subdirectory installation.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$subdomain_install"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 6
         },
         {
             "name": "after_wp_tiny_mce",
@@ -2744,6 +2876,71 @@
                 "long_description_html": ""
             },
             "args": 2
+        },
+        {
+            "name": "before_populate_network",
+            "file": "wp-admin/includes/schema.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires before a network is populated.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.9.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "ID of network to populate.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$network_id"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The domain name for the network.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$domain"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Email address for the network administrator.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$email"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The name of the network.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$site_name"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The path to append to the network's domain name.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$path"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether the network is a subdomain installation or a subdirectory installation.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$subdomain_install"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 6
         },
         {
             "name": "before_signup_form",
@@ -5097,7 +5294,7 @@
             "file": "wp-admin/network/sites.php",
             "type": "action",
             "doc": {
-                "description": "Fires before a network site is deactivated.",
+                "description": "Fires before a network site is flagged for deletion.",
                 "long_description": "",
                 "tags": [
                     {
@@ -5107,7 +5304,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The ID of the site being deactivated.",
+                        "content": "The ID of the site being flagged for deletion.",
                         "types": [
                             "int"
                         ],
@@ -5899,6 +6096,7 @@
         {
             "name": "delete_{$meta_type}_meta",
             "aliases": [
+                "delete_blog_meta",
                 "delete_comment_meta",
                 "delete_post_meta",
                 "delete_term_meta",
@@ -5908,7 +6106,7 @@
             "type": "action",
             "doc": {
                 "description": "Fires immediately before deleting metadata of a specific type.",
-                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).\n Possible hook names include:\n\n  - `delete_post_meta`\n  - `delete_comment_meta`\n  - `delete_term_meta`\n  - `delete_user_meta`",
+                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (blog, post, comment, term, user, or any other type with an associated meta table).\n Possible hook names include:\n\n  - `delete_blog_meta`\n  - `delete_post_meta`\n  - `delete_comment_meta`\n  - `delete_term_meta`\n  - `delete_user_meta`",
                 "tags": [
                     {
                         "name": "since",
@@ -5947,7 +6145,7 @@
                         "variable": "$_meta_value"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).</p> <p>Possible hook names include:</p> <ul> <li><code>delete_post_meta</code></li> <li><code>delete_comment_meta</code></li> <li><code>delete_term_meta</code></li> <li><code>delete_user_meta</code></li> </ul>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (blog, post, comment, term, user, or any other type with an associated meta table).</p> <p>Possible hook names include:</p> <ul> <li><code>delete_blog_meta</code></li> <li><code>delete_post_meta</code></li> <li><code>delete_comment_meta</code></li> <li><code>delete_term_meta</code></li> <li><code>delete_user_meta</code></li> </ul>"
             },
             "args": 4
         },
@@ -5955,15 +6153,13 @@
             "name": "delete_{$meta_type}meta",
             "aliases": [
                 "delete_commentmeta",
-                "delete_postmeta",
-                "delete_termmeta",
-                "delete_usermeta"
+                "delete_postmeta"
             ],
             "file": "wp-includes/meta.php",
             "type": "action",
             "doc": {
                 "description": "Fires immediately before deleting post or comment metadata of a specific type.",
-                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (post or comment).\n Possible hook names include:\n\n  - `delete_postmeta`\n  - `delete_commentmeta`\n  - `delete_termmeta`\n  - `delete_usermeta`",
+                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (post or comment).\n Possible hook names include:\n\n  - `delete_postmeta`\n  - `delete_commentmeta`",
                 "tags": [
                     {
                         "name": "since",
@@ -5978,7 +6174,7 @@
                         "variable": "$meta_id"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (post or comment).</p> <p>Possible hook names include:</p> <ul> <li><code>delete_postmeta</code></li> <li><code>delete_commentmeta</code></li> <li><code>delete_termmeta</code></li> <li><code>delete_usermeta</code></li> </ul>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (post or comment).</p> <p>Possible hook names include:</p> <ul> <li><code>delete_postmeta</code></li> <li><code>delete_commentmeta</code></li> </ul>"
             },
             "args": 1
         },
@@ -6461,6 +6657,7 @@
         {
             "name": "deleted_{$meta_type}_meta",
             "aliases": [
+                "deleted_blog_meta",
                 "deleted_comment_meta",
                 "deleted_post_meta",
                 "deleted_term_meta",
@@ -6470,7 +6667,7 @@
             "type": "action",
             "doc": {
                 "description": "Fires immediately after deleting metadata of a specific type.",
-                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).\n Possible hook names include:\n\n  - `deleted_post_meta`\n  - `deleted_comment_meta`\n  - `deleted_term_meta`\n  - `deleted_user_meta`",
+                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (blog, post, comment, term, user, or any other type with an associated meta table).\n Possible hook names include:\n\n  - `deleted_blog_meta`\n  - `deleted_post_meta`\n  - `deleted_comment_meta`\n  - `deleted_term_meta`\n  - `deleted_user_meta`",
                 "tags": [
                     {
                         "name": "since",
@@ -6509,7 +6706,7 @@
                         "variable": "$_meta_value"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).</p> <p>Possible hook names include:</p> <ul> <li><code>deleted_post_meta</code></li> <li><code>deleted_comment_meta</code></li> <li><code>deleted_term_meta</code></li> <li><code>deleted_user_meta</code></li> </ul>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (blog, post, comment, term, user, or any other type with an associated meta table).</p> <p>Possible hook names include:</p> <ul> <li><code>deleted_blog_meta</code></li> <li><code>deleted_post_meta</code></li> <li><code>deleted_comment_meta</code></li> <li><code>deleted_term_meta</code></li> <li><code>deleted_user_meta</code></li> </ul>"
             },
             "args": 4
         },
@@ -6517,15 +6714,13 @@
             "name": "deleted_{$meta_type}meta",
             "aliases": [
                 "deleted_commentmeta",
-                "deleted_postmeta",
-                "deleted_termmeta",
-                "deleted_usermeta"
+                "deleted_postmeta"
             ],
             "file": "wp-includes/meta.php",
             "type": "action",
             "doc": {
                 "description": "Fires immediately after deleting post or comment metadata of a specific type.",
-                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (post or comment).\n Possible hook names include:\n\n  - `deleted_postmeta`\n  - `deleted_commentmeta`\n  - `deleted_termmeta`\n  - `deleted_usermeta`",
+                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (post or comment).\n Possible hook names include:\n\n  - `deleted_postmeta`\n  - `deleted_commentmeta`",
                 "tags": [
                     {
                         "name": "since",
@@ -6540,7 +6735,7 @@
                         "variable": "$meta_id"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (post or comment).</p> <p>Possible hook names include:</p> <ul> <li><code>deleted_postmeta</code></li> <li><code>deleted_commentmeta</code></li> <li><code>deleted_termmeta</code></li> <li><code>deleted_usermeta</code></li> </ul>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (post or comment).</p> <p>Possible hook names include:</p> <ul> <li><code>deleted_postmeta</code></li> <li><code>deleted_commentmeta</code></li> </ul>"
             },
             "args": 1
         },
@@ -7635,8 +7830,8 @@
             "file": "wp-admin/user-edit.php",
             "type": "action",
             "doc": {
-                "description": "Fires after the 'About the User' settings table on the 'Edit User' screen.",
-                "long_description": "",
+                "description": "Fires after the 'Application Passwords' section is loaded on 'Edit User' screen.",
+                "long_description": "The action only fires if the current user is editing another user's profile.",
                 "tags": [
                     {
                         "name": "since",
@@ -7651,7 +7846,7 @@
                         "variable": "$profile_user"
                     }
                 ],
-                "long_description_html": ""
+                "long_description_html": "<p>The action only fires if the current user is editing another user's profile.</p>"
             },
             "args": 1
         },
@@ -9529,7 +9724,7 @@
             "file": "wp-includes/ms-site.php",
             "type": "action",
             "doc": {
-                "description": "Fires when the 'deleted' status is added to a site.",
+                "description": "Fires when the 'flagged for deletion' status is added to a site.",
                 "long_description": "",
                 "tags": [
                     {
@@ -9656,7 +9851,7 @@
             "file": "wp-includes/ms-site.php",
             "type": "action",
             "doc": {
-                "description": "Fires when the 'deleted' status is removed from a site.",
+                "description": "Fires when the 'flagged for deletion' status is removed from a site.",
                 "long_description": "",
                 "tags": [
                     {
@@ -12061,6 +12256,31 @@
                             "int"
                         ],
                         "variable": "$post_id"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 1
+        },
+        {
+            "name": "pre_post_insert",
+            "file": "wp-includes/post.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires immediately before a new post is inserted in the database.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.9.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Array of unslashed post data.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$data"
                     }
                 ],
                 "long_description_html": ""
@@ -14683,7 +14903,7 @@
             "type": "action_reference",
             "doc": {
                 "description": "Fires once the requested HTTP headers for caching, content type, etc. have been sent.",
-                "long_description": "",
+                "long_description": "The {@see 'wp_finalized_template_enhancement_output_buffer'} action may be used to send headers after rendering the template into an output buffer.",
                 "tags": [
                     {
                         "name": "since",
@@ -14698,7 +14918,7 @@
                         "variable": "$wp"
                     }
                 ],
-                "long_description_html": ""
+                "long_description_html": "<p>The {@see 'wp_finalized_template_enhancement_output_buffer'} action may be used to send headers after rendering the template into an output buffer.</p>"
             },
             "args": 1
         },
@@ -15242,7 +15462,7 @@
             "file": "wp-admin/user-edit.php",
             "type": "action",
             "doc": {
-                "description": "Fires after the 'About Yourself' settings table on the 'Profile' editing screen.",
+                "description": "Fires after the 'Application Passwords' section is loaded on the 'Profile' editing screen.",
                 "long_description": "The action only fires if the current user is editing their own profile.",
                 "tags": [
                     {
@@ -15828,14 +16048,14 @@
             "type": "action",
             "doc": {
                 "description": "Fires before determining which template to load.",
-                "long_description": "",
+                "long_description": "This action hook executes just before WordPress determines which template page to load. It is a good hook to use if you need to do a redirect with full knowledge of the content that has been queried.\n Note: Loading a different template is not a good use of this hook. If you include another template and then use `exit()` or `die()`, no subsequent `template_redirect` hooks will be run, which could break the site\u2019s functionality. Instead, use the {@see 'template_include'} filter hook to return the path to the new template you want to use. This will allow an alternative template to be used without interfering with the WordPress loading process.",
                 "tags": [
                     {
                         "name": "since",
                         "content": "1.5.0"
                     }
                 ],
-                "long_description_html": ""
+                "long_description_html": "<p>This action hook executes just before WordPress determines which template page to load. It is a good hook to use if you need to do a redirect with full knowledge of the content that has been queried.</p> <p>Note: Loading a different template is not a good use of this hook. If you include another template and then use <code>exit()</code> or <code>die()</code>, no subsequent <code>template_redirect</code> hooks will be run, which could break the site\u2019s functionality. Instead, use the {@see 'template_include'} filter hook to return the path to the new template you want to use. This will allow an alternative template to be used without interfering with the WordPress loading process.</p>"
             },
             "args": 0
         },
@@ -17032,6 +17252,47 @@
             "args": 4
         },
         {
+            "name": "update_term_count",
+            "file": "wp-includes/taxonomy.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires when a term count is calculated, before it is updated in the database.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.9.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Term taxonomy ID.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$tt_id"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Taxonomy slug.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$taxonomy_name"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Term count.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$count"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 3
+        },
+        {
             "name": "update_wpmu_options",
             "file": "wp-admin/network/settings.php",
             "type": "action",
@@ -17052,6 +17313,7 @@
         {
             "name": "update_{$meta_type}_meta",
             "aliases": [
+                "update_blog_meta",
                 "update_comment_meta",
                 "update_post_meta",
                 "update_term_meta",
@@ -17061,7 +17323,7 @@
             "type": "action",
             "doc": {
                 "description": "Fires immediately before updating metadata of a specific type.",
-                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).\n Possible hook names include:\n\n  - `update_post_meta`\n  - `update_comment_meta`\n  - `update_term_meta`\n  - `update_user_meta`",
+                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (blog, post, comment, term, user, or any other type with an associated meta table).\n Possible hook names include:\n\n  - `update_blog_meta`\n  - `update_post_meta`\n  - `update_comment_meta`\n  - `update_term_meta`\n  - `update_user_meta`",
                 "tags": [
                     {
                         "name": "since",
@@ -17100,7 +17362,7 @@
                         "variable": "$_meta_value"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).</p> <p>Possible hook names include:</p> <ul> <li><code>update_post_meta</code></li> <li><code>update_comment_meta</code></li> <li><code>update_term_meta</code></li> <li><code>update_user_meta</code></li> </ul>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (blog, post, comment, term, user, or any other type with an associated meta table).</p> <p>Possible hook names include:</p> <ul> <li><code>update_blog_meta</code></li> <li><code>update_post_meta</code></li> <li><code>update_comment_meta</code></li> <li><code>update_term_meta</code></li> <li><code>update_user_meta</code></li> </ul>"
             },
             "args": 4
         },
@@ -17197,6 +17459,7 @@
         {
             "name": "updated_{$meta_type}_meta",
             "aliases": [
+                "updated_blog_meta",
                 "updated_comment_meta",
                 "updated_post_meta",
                 "updated_term_meta",
@@ -17206,7 +17469,7 @@
             "type": "action",
             "doc": {
                 "description": "Fires immediately after updating metadata of a specific type.",
-                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).\n Possible hook names include:\n\n  - `updated_post_meta`\n  - `updated_comment_meta`\n  - `updated_term_meta`\n  - `updated_user_meta`",
+                "long_description": "The dynamic portion of the hook name, `$meta_type`, refers to the meta object type (blog, post, comment, term, user, or any other type with an associated meta table).\n Possible hook names include:\n\n  - `updated_blog_meta`\n  - `updated_post_meta`\n  - `updated_comment_meta`\n  - `updated_term_meta`\n  - `updated_user_meta`",
                 "tags": [
                     {
                         "name": "since",
@@ -17245,7 +17508,7 @@
                         "variable": "$_meta_value"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (post, comment, term, user, or any other type with an associated meta table).</p> <p>Possible hook names include:</p> <ul> <li><code>updated_post_meta</code></li> <li><code>updated_comment_meta</code></li> <li><code>updated_term_meta</code></li> <li><code>updated_user_meta</code></li> </ul>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$meta_type</code>, refers to the meta object type (blog, post, comment, term, user, or any other type with an associated meta table).</p> <p>Possible hook names include:</p> <ul> <li><code>updated_blog_meta</code></li> <li><code>updated_post_meta</code></li> <li><code>updated_comment_meta</code></li> <li><code>updated_term_meta</code></li> <li><code>updated_user_meta</code></li> </ul>"
             },
             "args": 4
         },
@@ -17700,6 +17963,56 @@
             "args": 0
         },
         {
+            "name": "wp_abilities_api_categories_init",
+            "file": "wp-includes/abilities-api/class-wp-ability-categories-registry.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires when preparing ability categories registry.",
+                "long_description": "Ability categories should be registered on this action to ensure they're available when needed.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.9.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Ability categories registry object.",
+                        "types": [
+                            "\\WP_Ability_Categories_Registry"
+                        ],
+                        "variable": "$instance"
+                    }
+                ],
+                "long_description_html": "<p>Ability categories should be registered on this action to ensure they're available when needed.</p>"
+            },
+            "args": 1
+        },
+        {
+            "name": "wp_abilities_api_init",
+            "file": "wp-includes/abilities-api/class-wp-abilities-registry.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires when preparing abilities registry.",
+                "long_description": "Abilities should be created and register their hooks on this action rather than another action to ensure they're only loaded when needed.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.9.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Abilities registry object.",
+                        "types": [
+                            "\\WP_Abilities_Registry"
+                        ],
+                        "variable": "$instance"
+                    }
+                ],
+                "long_description_html": "<p>Abilities should be created and register their hooks on this action rather than another action to ensure they're only loaded when needed.</p>"
+            },
+            "args": 1
+        },
+        {
             "name": "wp_add_nav_menu_item",
             "file": "wp-includes/nav-menu.php",
             "type": "action",
@@ -17794,6 +18107,47 @@
                 "long_description_html": ""
             },
             "args": 0
+        },
+        {
+            "name": "wp_after_execute_ability",
+            "file": "wp-includes/abilities-api/class-wp-ability.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires immediately after an ability finished executing.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.9.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The name of the ability.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$ability_name"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The input data for the ability.",
+                        "types": [
+                            "mixed"
+                        ],
+                        "variable": "$input"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The result of the ability execution.",
+                        "types": [
+                            "mixed"
+                        ],
+                        "variable": "$result"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 3
         },
         {
             "name": "wp_after_insert_post",
@@ -18183,6 +18537,64 @@
                 "long_description_html": ""
             },
             "args": 0
+        },
+        {
+            "name": "wp_before_execute_ability",
+            "file": "wp-includes/abilities-api/class-wp-ability.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires before an ability gets executed, after input validation and permissions check.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.9.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The name of the ability.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$ability_name"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The input data for the ability.",
+                        "types": [
+                            "mixed"
+                        ],
+                        "variable": "$input"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 2
+        },
+        {
+            "name": "wp_before_include_template",
+            "file": "wp-includes/template-loader.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires immediately before including the template.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.9.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The path of the template about to be included.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$template"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 1
         },
         {
             "name": "wp_before_load_template",
@@ -18876,6 +19288,31 @@
             "args": 1
         },
         {
+            "name": "wp_finalized_template_enhancement_output_buffer",
+            "file": "wp-includes/template.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires after the template enhancement output buffer has been finalized.",
+                "long_description": "This happens immediately before the template enhancement output buffer is flushed. No output may be printed at this action; prior to PHP 8.5, the output will be silently omitted, whereas afterward a deprecation notice will be emitted. Nevertheless, HTTP headers may be sent, which makes this action complimentary to the {@see 'send_headers'} action, in which headers may be sent before the template has started rendering. In contrast, this `wp_finalized_template_enhancement_output_buffer` action is the possible point at which HTTP headers can be sent. This action does not fire if the \"template enhancement output buffer\" was not started. This output buffer is automatically started if this action is added before {@see \\wp_start_template_enhancement_output_buffer()} runs at the {@see 'wp_before_include_template'} action with priority 1000. Before this point, the output buffer will also be started automatically if there was a {@see 'wp_template_enhancement_output_buffer'} filter added, or if the {@see 'wp_should_output_buffer_template_for_enhancement'} filter is made to return `true`.\n Important: Because this action fires inside an output buffer callback (i.e. display handler), any callbacks added to the action must not attempt to start their own output buffers. Otherwise, PHP will raise a fatal error: \"Cannot use output buffering in output buffering display handlers.\"",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.9.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Finalized output buffer.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$output"
+                    }
+                ],
+                "long_description_html": "<p>This happens immediately before the template enhancement output buffer is flushed. No output may be printed at this action; prior to PHP 8.5, the output will be silently omitted, whereas afterward a deprecation notice will be emitted. Nevertheless, HTTP headers may be sent, which makes this action complimentary to the {@see 'send_headers'} action, in which headers may be sent before the template has started rendering. In contrast, this <code>wp_finalized_template_enhancement_output_buffer</code> action is the possible point at which HTTP headers can be sent. This action does not fire if the \"template enhancement output buffer\" was not started. This output buffer is automatically started if this action is added before {@see \\wp_start_template_enhancement_output_buffer()} runs at the {@see 'wp_before_include_template'} action with priority 1000. Before this point, the output buffer will also be started automatically if there was a {@see 'wp_template_enhancement_output_buffer'} filter added, or if the {@see 'wp_should_output_buffer_template_for_enhancement'} filter is made to return <code>true</code>.</p> <p>Important: Because this action fires inside an output buffer callback (i.e. display handler), any callbacks added to the action must not attempt to start their own output buffers. Otherwise, PHP will raise a fatal error: \"Cannot use output buffering in output buffering display handlers.\"</p>"
+            },
+            "args": 1
+        },
+        {
             "name": "wp_footer",
             "file": "wp-includes/general-template.php",
             "type": "action",
@@ -19258,7 +19695,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "{ An array containing the email recipient(s), subject, message, headers, and attachments. @type string[] $to          Email addresses to send message. @type string   $subject     Email subject. @type string   $message     Message contents. @type string[] $headers     Additional headers. @type string[] $attachments Paths to files to attach. }",
+                        "content": "{ An array containing the email recipient(s), subject, message, headers, and attachments. @type string[] $to          Email addresses to send message. @type string   $subject     Email subject. @type string   $message     Message contents. @type string[] $headers     Additional headers. @type string[] $attachments Paths to files to attach. @type string[] $embeds      Paths to files to embed. }",
                         "types": [
                             "array"
                         ],
@@ -19818,6 +20255,23 @@
                 "long_description_html": "<p>Additional sitemaps should be registered on this hook.</p>"
             },
             "args": 1
+        },
+        {
+            "name": "wp_template_enhancement_output_buffer_started",
+            "file": "wp-includes/template.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires when the template enhancement output buffer has started.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "6.9.0"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 0
         },
         {
             "name": "wp_tiny_mce_init",
