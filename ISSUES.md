@@ -28,7 +28,7 @@ _No hooks with empty variables._
 
 Hooks with `@param` tags where the variable is not a valid PHP variable name.
 
-- `rest_menu_read_access` — $this (wp-includes/rest-api/endpoints/class-wp-rest-menu-items-controller.php)
+_No hooks with invalid variable names._
 
 ## Empty Param Descriptions
 

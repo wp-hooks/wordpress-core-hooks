@@ -2,6 +2,48 @@
 
 This document is automatically generated from the hooks extracted from WordPress and lists new actions, new filters, and parameter changes by version.
 
+## WordPress 6.9
+
+### New Actions
+
+- [`after_populate_network`](https://developer.wordpress.org/reference/hooks/after_populate_network/) - Fires after a network is fully populated.
+- [`after_upgrade_to_multisite`](https://developer.wordpress.org/reference/hooks/after_upgrade_to_multisite/) - Fires after a network is created when converting a single site to multisite.
+- [`before_populate_network`](https://developer.wordpress.org/reference/hooks/before_populate_network/) - Fires before a network is populated.
+- [`pre_post_insert`](https://developer.wordpress.org/reference/hooks/pre_post_insert/) - Fires immediately before a new post is inserted in the database.
+- [`update_term_count`](https://developer.wordpress.org/reference/hooks/update_term_count/) - Fires when a term count is calculated, before it is updated in the database.
+- [`wp_abilities_api_categories_init`](https://developer.wordpress.org/reference/hooks/wp_abilities_api_categories_init/) - Fires when preparing ability categories registry.
+- [`wp_abilities_api_init`](https://developer.wordpress.org/reference/hooks/wp_abilities_api_init/) - Fires when preparing abilities registry.
+- [`wp_after_execute_ability`](https://developer.wordpress.org/reference/hooks/wp_after_execute_ability/) - Fires immediately after an ability finished executing.
+- [`wp_before_execute_ability`](https://developer.wordpress.org/reference/hooks/wp_before_execute_ability/) - Fires before an ability gets executed, after input validation and permissions check.
+- [`wp_before_include_template`](https://developer.wordpress.org/reference/hooks/wp_before_include_template/) - Fires immediately before including the template.
+- [`wp_finalized_template_enhancement_output_buffer`](https://developer.wordpress.org/reference/hooks/wp_finalized_template_enhancement_output_buffer/) - Fires after the template enhancement output buffer has been finalized.
+- [`wp_template_enhancement_output_buffer_started`](https://developer.wordpress.org/reference/hooks/wp_template_enhancement_output_buffer_started/) - Fires when the template enhancement output buffer has started.
+
+### New Filters
+
+- [`block_bindings_supported_attributes`](https://developer.wordpress.org/reference/hooks/block_bindings_supported_attributes/) - Filters the supported block attributes for block bindings.
+- [`block_bindings_supported_attributes_{$block_type}`](https://developer.wordpress.org/reference/hooks/block_bindings_supported_attributes_block_type/) - Filters the supported block attributes for block bindings.
+- [`block_core_social_link_get_services`](https://developer.wordpress.org/reference/hooks/block_core_social_link_get_services/) - Filter the list of available social service.
+- [`enqueue_empty_block_content_assets`](https://developer.wordpress.org/reference/hooks/enqueue_empty_block_content_assets/) - Filters whether to enqueue assets for a block which has no rendered content.
+- [`post_states_html`](https://developer.wordpress.org/reference/hooks/post_states_html/) - Filters the HTML string of post states.
+- [`pre_site_option`](https://developer.wordpress.org/reference/hooks/pre_site_option/) - Filters the value of any existing network option before it is retrieved.
+- [`quick_edit_statuses`](https://developer.wordpress.org/reference/hooks/quick_edit_statuses/) - Filters the statuses available in the Quick Edit and Bulk Edit UI.
+- [`validate_plugin_requirements`](https://developer.wordpress.org/reference/hooks/validate_plugin_requirements/) - Filters the plugin requirement validation response.
+- [`validate_theme_requirements`](https://developer.wordpress.org/reference/hooks/validate_theme_requirements/) - Filters the theme requirement validation response.
+- [`wp_ajax_menu_quick_search_args`](https://developer.wordpress.org/reference/hooks/wp_ajax_menu_quick_search_args/) - Filter the menu quick search arguments.
+- [`wp_mail_embed_args`](https://developer.wordpress.org/reference/hooks/wp_mail_embed_args/) - Filters the arguments for PHPMailer's addEmbeddedImage() method.
+- [`wp_register_ability_args`](https://developer.wordpress.org/reference/hooks/wp_register_ability_args/) - Filters the ability arguments before they are validated and used to instantiate the ability.
+- [`wp_register_ability_category_args`](https://developer.wordpress.org/reference/hooks/wp_register_ability_category_args/) - Filters the ability category arguments before they are validated and used to instantiate the ability category.
+- [`wp_should_output_buffer_template_for_enhancement`](https://developer.wordpress.org/reference/hooks/wp_should_output_buffer_template_for_enhancement/) - Filters whether the template should be output-buffered for enhancement.
+- [`wp_template_enhancement_output_buffer`](https://developer.wordpress.org/reference/hooks/wp_template_enhancement_output_buffer/) - Filters the template enhancement output buffer prior to sending to the client.
+
+### Changes
+
+- [`get_{$adjacent}_post_sort`](https://developer.wordpress.org/reference/hooks/get_adjacent_post_sort/) - Adds ID sort to ensure deterministic ordering for posts with identical dates.
+- [`get_{$adjacent}_post_where`](https://developer.wordpress.org/reference/hooks/get_adjacent_post_where/) - Adds ID-based fallback for posts with identical dates in adjacent post queries.
+- [`get_avatar_comment_types`](https://developer.wordpress.org/reference/hooks/get_avatar_comment_types/) - The 'note' comment type was added.
+- [`styles_inline_size_limit`](https://developer.wordpress.org/reference/hooks/styles_inline_size_limit/) - The default limit increased from 20K to 40K.
+
 ## WordPress 6.8
 
 ### New Actions
@@ -13,6 +55,7 @@ This document is automatically generated from the hooks extracted from WordPress
 
 ### New Filters
 
+- [`bulk_action_observer_ids`](https://developer.wordpress.org/reference/hooks/bulk_action_observer_ids/) (6.8.1) - Filters the array of field name attributes for bulk actions.
 - [`get_calendar_args`](https://developer.wordpress.org/reference/hooks/get_calendar_args/) - Filter the `get_calendar` function arguments before they are used.
 - [`image_max_bit_depth`](https://developer.wordpress.org/reference/hooks/image_max_bit_depth/) - Filters the maximum bit depth of resized images.
 - [`is_post_embeddable`](https://developer.wordpress.org/reference/hooks/is_post_embeddable/) - Filter whether a post is embeddable.
@@ -39,6 +82,7 @@ This document is automatically generated from the hooks extracted from WordPress
 - [`the_password_form`](https://developer.wordpress.org/reference/hooks/the_password_form/) - Added the <code>$invalid_password</code> parameter.
 - [`wp_create_application_password`](https://developer.wordpress.org/reference/hooks/wp_create_application_password/) - The hashed password value now uses wp_fast_hash() instead of phpass.
 - [`wp_editor_set_quality`](https://developer.wordpress.org/reference/hooks/wp_editor_set_quality/) - Added the size parameter.
+- [`wp_get_attachment_image_attributes`](https://developer.wordpress.org/reference/hooks/wp_get_attachment_image_attributes/) (6.8.2) - The <code>$attr</code> array includes <code>width</code> and <code>height</code> attributes.
 - [`wp_pre_insert_user_data`](https://developer.wordpress.org/reference/hooks/wp_pre_insert_user_data/) - The user's password is now hashed using bcrypt by default instead of phpass.
 - [`wp_update_application_password`](https://developer.wordpress.org/reference/hooks/wp_update_application_password/) - The password is now hashed using wp_fast_hash() instead of phpass. Existing passwords may still be hashed using phpass.
 
@@ -239,7 +283,7 @@ _No new actions in this version._
 - [`get_header_image`](https://developer.wordpress.org/reference/hooks/get_header_image/) - Filters the header image URL.
 - [`lost_password_html_link`](https://developer.wordpress.org/reference/hooks/lost_password_html_link/) - Filters the link that allows the user to reset the lost password.
 - [`post_class_taxonomies`](https://developer.wordpress.org/reference/hooks/post_class_taxonomies/) - Filters the taxonomies to generate classes for each individual term.
-- [`pre_option`](https://developer.wordpress.org/reference/hooks/pre_option/) - Filters the value of all existing options before it is retrieved.
+- [`pre_option`](https://developer.wordpress.org/reference/hooks/pre_option/) - Filters the value of any existing option before it is retrieved.
 - [`pre_wp_list_authors_post_counts_query`](https://developer.wordpress.org/reference/hooks/pre_wp_list_authors_post_counts_query/) - Filters whether to short-circuit performing the query for author post counts.
 - [`query_loop_block_query_vars`](https://developer.wordpress.org/reference/hooks/query_loop_block_query_vars/) - Filters the arguments which will be passed to `WP_Query` for the Query Loop Block.
 - [`rest_json_encode_options`](https://developer.wordpress.org/reference/hooks/rest_json_encode_options/) - Filters the JSON encoding options used to send the REST API response.
@@ -941,7 +985,7 @@ _No new actions in this version._
 - [`customize_changeset_branching`](https://developer.wordpress.org/reference/hooks/customize_changeset_branching/) - Filters whether or not changeset branching is allowed.
 - [`customize_load_themes`](https://developer.wordpress.org/reference/hooks/customize_load_themes/) - Filters the theme data loaded in the customizer.
 - [`embed_thumbnail_id`](https://developer.wordpress.org/reference/hooks/embed_thumbnail_id/) - Filters the thumbnail image ID for use in the embed template.
-- [`get_object_subtype_{$object_type}`](https://developer.wordpress.org/reference/hooks/get_object_subtype_object_type/) (4.9.8) - Filters the object subtype identifier for a non-standard object type.
+- [`get_object_subtype_{$object_type}`](https://developer.wordpress.org/reference/hooks/get_object_subtype_object_type/) (4.9.8) - Filters the object subtype identifier.
 - [`get_the_post_type_description`](https://developer.wordpress.org/reference/hooks/get_the_post_type_description/) - Filters the description for a post type archive.
 - [`login_link_separator`](https://developer.wordpress.org/reference/hooks/login_link_separator/) - Filters the separator used between login form navigation links.
 - [`login_title`](https://developer.wordpress.org/reference/hooks/login_title/) - Filters the title tag content for login page.
@@ -1905,8 +1949,8 @@ _No changes in this version._
 - [`edit_form_after_title`](https://developer.wordpress.org/reference/hooks/edit_form_after_title/) - Fires after the title field.
 - [`export_filters`](https://developer.wordpress.org/reference/hooks/export_filters/) - Fires at the end of the export filters form.
 - [`load-importer-{$importer}`](https://developer.wordpress.org/reference/hooks/load-importer-importer/) - Fires before an importer screen is loaded.
-- [`make_delete_blog`](https://developer.wordpress.org/reference/hooks/make_delete_blog/) - Fires when the 'deleted' status is added to a site.
-- [`make_undelete_blog`](https://developer.wordpress.org/reference/hooks/make_undelete_blog/) - Fires when the 'deleted' status is removed from a site.
+- [`make_delete_blog`](https://developer.wordpress.org/reference/hooks/make_delete_blog/) - Fires when the 'flagged for deletion' status is added to a site.
+- [`make_undelete_blog`](https://developer.wordpress.org/reference/hooks/make_undelete_blog/) - Fires when the 'flagged for deletion' status is removed from a site.
 - [`print_media_templates`](https://developer.wordpress.org/reference/hooks/print_media_templates/) - Fires when the custom Backbone media templates are printed.
 - [`restrict_manage_comments`](https://developer.wordpress.org/reference/hooks/restrict_manage_comments/) - Fires just before the Filter submit button for comment types.
 - [`restrict_manage_users`](https://developer.wordpress.org/reference/hooks/restrict_manage_users/) - Fires just before the closing div containing the bulk role-change controls in the Users list table.
@@ -2248,7 +2292,7 @@ _No changes in this version._
 - [`add_meta_boxes_{$post_type}`](https://developer.wordpress.org/reference/hooks/add_meta_boxes_post_type/) - Fires after all built-in meta boxes have been added, contextually for the given post type.
 - [`add_site_option`](https://developer.wordpress.org/reference/hooks/add_site_option/) - Fires after a network option has been successfully added.
 - [`add_tag_form_fields`](https://developer.wordpress.org/reference/hooks/add_tag_form_fields/) - Fires after the Add Tag form fields for non-hierarchical taxonomies.
-- [`admin_color_scheme_picker`](https://developer.wordpress.org/reference/hooks/admin_color_scheme_picker/) - Fires in the 'Admin Color Scheme' section of the user editing screen.
+- [`admin_color_scheme_picker`](https://developer.wordpress.org/reference/hooks/admin_color_scheme_picker/) - Fires in the 'Administration Color Scheme' section of the user editing screen.
 - [`after-{$taxonomy}-table`](https://developer.wordpress.org/reference/hooks/after-taxonomy-table/) - Fires after the taxonomy list table.
 - [`after_setup_theme`](https://developer.wordpress.org/reference/hooks/after_setup_theme/) - Fires after the theme is loaded.
 - [`after_signup_form`](https://developer.wordpress.org/reference/hooks/after_signup_form/) - Fires after the sign-up forms, before wp_footer.
@@ -3219,7 +3263,7 @@ _No changes in this version._
 - [`delete_user`](https://developer.wordpress.org/reference/hooks/delete_user/) - Fires immediately before a user is deleted from the site.
 - [`edit_attachment`](https://developer.wordpress.org/reference/hooks/edit_attachment/) - Fires once an existing attachment has been updated.
 - [`edit_link`](https://developer.wordpress.org/reference/hooks/edit_link/) - Fires after a link was updated in the database.
-- [`edit_user_profile`](https://developer.wordpress.org/reference/hooks/edit_user_profile/) - Fires after the 'About the User' settings table on the 'Edit User' screen.
+- [`edit_user_profile`](https://developer.wordpress.org/reference/hooks/edit_user_profile/) - Fires after the 'Application Passwords' section is loaded on 'Edit User' screen.
 - [`loop_end`](https://developer.wordpress.org/reference/hooks/loop_end/) - Fires once the loop has ended.
 - [`loop_start`](https://developer.wordpress.org/reference/hooks/loop_start/) - Fires once the loop is started.
 - [`personal_options_update`](https://developer.wordpress.org/reference/hooks/personal_options_update/) - Fires before the page loads on the 'Profile' editing screen.
@@ -3237,7 +3281,7 @@ _No changes in this version._
 - [`rss_item`](https://developer.wordpress.org/reference/hooks/rss_item/) - Fires at the end of each RSS feed item.
 - [`sanitize_comment_cookies`](https://developer.wordpress.org/reference/hooks/sanitize_comment_cookies/) (2.0.11) - Fires when comment cookies are sanitized.
 - [`set_current_user`](https://developer.wordpress.org/reference/hooks/set_current_user/) (2.0.1) - Fires after the current user is set.
-- [`show_user_profile`](https://developer.wordpress.org/reference/hooks/show_user_profile/) - Fires after the 'About Yourself' settings table on the 'Profile' editing screen.
+- [`show_user_profile`](https://developer.wordpress.org/reference/hooks/show_user_profile/) - Fires after the 'Application Passwords' section is loaded on the 'Profile' editing screen.
 - [`update_option_{$option}`](https://developer.wordpress.org/reference/hooks/update_option_option/) (2.0.1) - Fires after the value of a specific option has been successfully updated.
 - [`wp_insert_post`](https://developer.wordpress.org/reference/hooks/wp_insert_post/) - Fires once a post has been saved.
 
