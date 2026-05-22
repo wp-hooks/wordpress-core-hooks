@@ -2079,6 +2079,7 @@ _No changes in this version._
 
 - [`allowed_http_origin`](https://developer.wordpress.org/reference/hooks/allowed_http_origin/) - Changes the allowed HTTP origin result.
 - [`allowed_http_origins`](https://developer.wordpress.org/reference/hooks/allowed_http_origins/) - Changes the origin types allowed for HTTP requests.
+- [`autocomplete_users_for_site_admins`](https://developer.wordpress.org/reference/hooks/autocomplete_users_for_site_admins/) - Filters whether to enable user auto-complete for non-super admins in Multisite.
 - [`current_theme_supports-{$feature}`](https://developer.wordpress.org/reference/hooks/current_theme_supports-feature/) - Filters whether the active theme supports a specific feature.
 - [`customize_allowed_urls`](https://developer.wordpress.org/reference/hooks/customize_allowed_urls/) - Filters the list of URLs allowed to be clicked and followed in the Customizer preview.
 - [`customize_sanitize_js_{$this->id}`](https://developer.wordpress.org/reference/hooks/customize_sanitize_js_this-id/) - Filters a Customize setting value for use in JavaScript.
@@ -2286,6 +2287,7 @@ _No changes in this version._
 - [`show_admin_bar`](https://developer.wordpress.org/reference/hooks/show_admin_bar/) - Filters whether to show the admin bar.
 - [`show_network_site_users_add_existing_form`](https://developer.wordpress.org/reference/hooks/show_network_site_users_add_existing_form/) - Filters whether to show the Add Existing User form on the Multisite Users screen.
 - [`show_network_site_users_add_new_form`](https://developer.wordpress.org/reference/hooks/show_network_site_users_add_new_form/) - Filters whether to show the Add New User form on the Multisite Users screen.
+- [`show_recent_comments_widget_style`](https://developer.wordpress.org/reference/hooks/show_recent_comments_widget_style/) - Filters the Recent Comments default widget styles.
 - [`single_term_title`](https://developer.wordpress.org/reference/hooks/single_term_title/) - Filters the custom taxonomy archive page title.
 - [`terms_clauses`](https://developer.wordpress.org/reference/hooks/terms_clauses/) - Filters the terms query SQL clauses.
 - [`the_comments`](https://developer.wordpress.org/reference/hooks/the_comments/) - Filters the comment query results.
