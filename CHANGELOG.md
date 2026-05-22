@@ -2,6 +2,37 @@
 
 This document is automatically generated from the hooks extracted from WordPress and lists new actions, new filters, and parameter changes by version.
 
+## WordPress 7.0
+
+### New Actions
+
+- [`wp_ai_client_{$event_name}`](https://developer.wordpress.org/reference/hooks/wp_ai_client_event_name/) - Fires when an AI client event is dispatched.
+- [`wp_connectors_init`](https://developer.wordpress.org/reference/hooks/wp_connectors_init/) - Fires when the connector registry is ready for plugins to register connectors.
+- [`wp_trigger_error_always_run`](https://developer.wordpress.org/reference/hooks/wp_trigger_error_always_run/) - Always fires when the given function triggers a user-level error/warning/notice/deprecation message.
+
+### New Filters
+
+- [`block_core_breadcrumbs_items`](https://developer.wordpress.org/reference/hooks/block_core_breadcrumbs_items/) - Filters the breadcrumb items array before rendering.
+- [`block_core_breadcrumbs_post_type_settings`](https://developer.wordpress.org/reference/hooks/block_core_breadcrumbs_post_type_settings/) - Filters breadcrumb settings (taxonomy and term selection) for a post or post type.
+- [`default_role_dropdown_excluded_roles`](https://developer.wordpress.org/reference/hooks/default_role_dropdown_excluded_roles/) - Filters the roles to be excluded from the default_role option.
+- [`plugins_list_status_text`](https://developer.wordpress.org/reference/hooks/plugins_list_status_text/) - Filters the status text of default switch case in the plugins list table.
+- [`propagate_network_user_spam_to_blogs`](https://developer.wordpress.org/reference/hooks/propagate_network_user_spam_to_blogs/) - Filters whether to propagate the blog status when a user is marked as spam.
+- [`rest_block_hooks_post_types`](https://developer.wordpress.org/reference/hooks/rest_block_hooks_post_types/) - Filters which post types should have Block Hooks applied.
+- [`rest_block_hooks_post_types`](https://developer.wordpress.org/reference/hooks/rest_block_hooks_post_types/) - Filters which post types should have Block Hooks applied.
+- [`wp_ai_client_default_request_timeout`](https://developer.wordpress.org/reference/hooks/wp_ai_client_default_request_timeout/) - Filters the default request timeout in seconds for AI Client HTTP requests.
+- [`wp_ai_client_prevent_prompt`](https://developer.wordpress.org/reference/hooks/wp_ai_client_prevent_prompt/) - Filters whether to prevent the prompt from being executed.
+- [`wp_get_archives_args`](https://developer.wordpress.org/reference/hooks/wp_get_archives_args/) - Filters the arguments for displaying archive links.
+- [`wp_supports_ai`](https://developer.wordpress.org/reference/hooks/wp_supports_ai/) - Filters whether the current request can use AI.
+- [`wp_trigger_error_trigger_error`](https://developer.wordpress.org/reference/hooks/wp_trigger_error_trigger_error/) - Filters whether to trigger an error.
+
+### Changes
+
+- [`load_script_textdomain_relative_path`](https://developer.wordpress.org/reference/hooks/load_script_textdomain_relative_path/) - The <code>$is_module</code> parameter was added.
+- [`option_page_capability_{$option_page}`](https://developer.wordpress.org/reference/hooks/option_page_capability_option_page/) - Applied when <code>wp-admin/options.php</code> is accessed directly.
+- [`the_author_posts_link`](https://developer.wordpress.org/reference/hooks/the_author_posts_link/) - Added <code>$author</code> and <code>$title</code> parameters.
+- [`wp_hash_password_algorithm`](https://developer.wordpress.org/reference/hooks/wp_hash_password_algorithm/) - The <code>$algorithm</code> parameter is now always a string.
+- [`wp_hash_password_options`](https://developer.wordpress.org/reference/hooks/wp_hash_password_options/) - The <code>$algorithm</code> parameter is now always a string.
+
 ## WordPress 6.9
 
 ### New Actions
@@ -42,7 +73,10 @@ This document is automatically generated from the hooks extracted from WordPress
 - [`get_{$adjacent}_post_sort`](https://developer.wordpress.org/reference/hooks/get_adjacent_post_sort/) - Adds ID sort to ensure deterministic ordering for posts with identical dates.
 - [`get_{$adjacent}_post_where`](https://developer.wordpress.org/reference/hooks/get_adjacent_post_where/) - Adds ID-based fallback for posts with identical dates in adjacent post queries.
 - [`get_avatar_comment_types`](https://developer.wordpress.org/reference/hooks/get_avatar_comment_types/) - The 'note' comment type was added.
+- [`pre_wp_mail`](https://developer.wordpress.org/reference/hooks/pre_wp_mail/) - The <code>$embeds</code> element was added to the <code>$atts</code> array.
 - [`styles_inline_size_limit`](https://developer.wordpress.org/reference/hooks/styles_inline_size_limit/) - The default limit increased from 20K to 40K.
+- [`wp_mail_succeeded`](https://developer.wordpress.org/reference/hooks/wp_mail_succeeded/) - The <code>$embeds</code> element was added to the <code>$mail_data</code> array.
+- [`wp_mail`](https://developer.wordpress.org/reference/hooks/wp_mail/) - The <code>$embeds</code> element was added to the <code>$args</code> array.
 
 ## WordPress 6.8
 
@@ -81,7 +115,7 @@ This document is automatically generated from the hooks extracted from WordPress
 - [`get_calendar`](https://developer.wordpress.org/reference/hooks/get_calendar/) - Added the <code>$args</code> parameter.
 - [`the_password_form`](https://developer.wordpress.org/reference/hooks/the_password_form/) - Added the <code>$invalid_password</code> parameter.
 - [`wp_create_application_password`](https://developer.wordpress.org/reference/hooks/wp_create_application_password/) - The hashed password value now uses wp_fast_hash() instead of phpass.
-- [`wp_editor_set_quality`](https://developer.wordpress.org/reference/hooks/wp_editor_set_quality/) - Added the size parameter.
+- [`wp_editor_set_quality`](https://developer.wordpress.org/reference/hooks/wp_editor_set_quality/) - Added the <code>$size</code> parameter.
 - [`wp_get_attachment_image_attributes`](https://developer.wordpress.org/reference/hooks/wp_get_attachment_image_attributes/) (6.8.2) - The <code>$attr</code> array includes <code>width</code> and <code>height</code> attributes.
 - [`wp_pre_insert_user_data`](https://developer.wordpress.org/reference/hooks/wp_pre_insert_user_data/) - The user's password is now hashed using bcrypt by default instead of phpass.
 - [`wp_update_application_password`](https://developer.wordpress.org/reference/hooks/wp_update_application_password/) - The password is now hashed using wp_fast_hash() instead of phpass. Existing passwords may still be hashed using phpass.
@@ -104,7 +138,7 @@ _No new actions in this version._
 
 ### Changes
 
-- [`get_edit_comment_link`](https://developer.wordpress.org/reference/hooks/get_edit_comment_link/) - The $comment_id and $context parameters are now being passed to the filter.
+- [`get_edit_comment_link`](https://developer.wordpress.org/reference/hooks/get_edit_comment_link/) - The <code>$comment_id</code> and <code>$context</code> parameters are now being passed to the filter.
 - [`image_editor_output_format`](https://developer.wordpress.org/reference/hooks/image_editor_output_format/) - The default was changed from an empty array to an array containing the HEIC/HEIF images mime types.
 - [`wp_set_password`](https://developer.wordpress.org/reference/hooks/wp_set_password/) - The <code>$old_user_data</code> parameter was added.
 
@@ -130,7 +164,7 @@ _No new actions in this version._
 
 ### Changes
 
-- [`comment_cookie_lifetime`](https://developer.wordpress.org/reference/hooks/comment_cookie_lifetime/) - The default $seconds value changed from 30000000 to YEAR_IN_SECONDS.
+- [`comment_cookie_lifetime`](https://developer.wordpress.org/reference/hooks/comment_cookie_lifetime/) - The default <code>$seconds</code> value changed from 30000000 to YEAR_IN_SECONDS.
 - [`load_translation_file`](https://developer.wordpress.org/reference/hooks/load_translation_file/) - Added the <code>$locale</code> parameter.
 - [`split_the_query`](https://developer.wordpress.org/reference/hooks/split_the_query/) - Added the <code>$old_request</code> and <code>$clauses</code> parameters.
 - [`wp_preload_resources`](https://developer.wordpress.org/reference/hooks/wp_preload_resources/) - Added the <code>$fetchpriority</code> attribute.
@@ -198,7 +232,7 @@ _No new actions in this version._
 
 ### Changes
 
-- [`_wp_put_post_revision`](https://developer.wordpress.org/reference/hooks/_wp_put_post_revision/) - The post_id parameter was added.
+- [`_wp_put_post_revision`](https://developer.wordpress.org/reference/hooks/_wp_put_post_revision/) - The <code>$post_id</code> parameter was added.
 - [`block_editor_no_javascript_message`](https://developer.wordpress.org/reference/hooks/block_editor_no_javascript_message/) - Added <code>$installed</code> parameter.
 - [`register_{$post_type}_post_type_args`](https://developer.wordpress.org/reference/hooks/register_post_type_post_type_args/) - Added <code>late_route_registration</code>, <code>autosave_rest_controller_class</code> and <code>revisions_rest_controller_class</code> arguments.
 - [`wp_creating_autosave`](https://developer.wordpress.org/reference/hooks/wp_creating_autosave/) - The <code>$is_update</code> parameter was added to indicate if the autosave is being updated or was newly created.
@@ -214,7 +248,7 @@ _No new actions in this version._
 ### New Filters
 
 - [`cron_memory_limit`](https://developer.wordpress.org/reference/hooks/cron_memory_limit/) - Filters the memory limit allocated for WP-Cron event processing.
-- [`get_pages_query_args`](https://developer.wordpress.org/reference/hooks/get_pages_query_args/) - Filters query arguments passed to WP_Query in get_pages.
+- [`get_pages_query_args`](https://developer.wordpress.org/reference/hooks/get_pages_query_args/) - Filters query arguments passed to WP_Query in get_pages().
 - [`image_edit_thumbnails_separately`](https://developer.wordpress.org/reference/hooks/image_edit_thumbnails_separately/) - Shows the settings in the Image Editor that allow selecting to edit only the thumbnail of an image.
 - [`nav_menu_item_attributes`](https://developer.wordpress.org/reference/hooks/nav_menu_item_attributes/) - Filters the HTML attributes applied to a menu's list item element.
 - [`nav_menu_submenu_attributes`](https://developer.wordpress.org/reference/hooks/nav_menu_submenu_attributes/) - Filters the HTML attributes applied to a menu list element.
@@ -296,7 +330,7 @@ _No new actions in this version._
 - [`site_status_should_suggest_persistent_object_cache`](https://developer.wordpress.org/reference/hooks/site_status_should_suggest_persistent_object_cache/) - Filters whether to suggest use of a persistent object cache and bypass default threshold checks.
 - [`the_posts_pagination_args`](https://developer.wordpress.org/reference/hooks/the_posts_pagination_args/) - Filters the arguments for posts pagination links.
 - [`update_themes_{$hostname}`](https://developer.wordpress.org/reference/hooks/update_themes_hostname/) - Filters the update response for a given theme hostname.
-- [`wp_img_tag_add_decoding_attr`](https://developer.wordpress.org/reference/hooks/wp_img_tag_add_decoding_attr/) - Filters the `decoding` attribute value to add to an image. Default `async`.
+- [`wp_img_tag_add_decoding_attr`](https://developer.wordpress.org/reference/hooks/wp_img_tag_add_decoding_attr/) - Filters the `decoding` attribute value to add to an image. Default 'async'.
 - [`wp_list_authors_args`](https://developer.wordpress.org/reference/hooks/wp_list_authors_args/) - Filters the query arguments for the list of all authors of the site.
 - [`wp_list_table_class_name`](https://developer.wordpress.org/reference/hooks/wp_list_table_class_name/) - Filters the list table class to instantiate.
 - [`wp_list_users_args`](https://developer.wordpress.org/reference/hooks/wp_list_users_args/) - Filters the query arguments for the list of all users of the site.
@@ -349,7 +383,7 @@ _No new actions in this version._
 
 - [`media_date_column_time`](https://developer.wordpress.org/reference/hooks/media_date_column_time/) - Filters the published time of an attachment displayed in the Media list table.
 - [`plugin_install_description`](https://developer.wordpress.org/reference/hooks/plugin_install_description/) - Filters the plugin card description on the Add Plugins screen.
-- [`pre_wp_filesize`](https://developer.wordpress.org/reference/hooks/pre_wp_filesize/) - Filters the result of wp_filesize before the PHP function is run.
+- [`pre_wp_filesize`](https://developer.wordpress.org/reference/hooks/pre_wp_filesize/) - Filters the result of wp_filesize() before the file_exists() PHP function is run.
 - [`register_{$post_type}_post_type_args`](https://developer.wordpress.org/reference/hooks/register_post_type_post_type_args/) - Filters the arguments for registering a specific post type.
 - [`register_{$taxonomy}_taxonomy_args`](https://developer.wordpress.org/reference/hooks/register_taxonomy_taxonomy_args/) - Filters the arguments for registering a specific taxonomy.
 - [`retrieve_password_notification_email`](https://developer.wordpress.org/reference/hooks/retrieve_password_notification_email/) - Filters the contents of the reset password notification email sent to the user.
@@ -395,7 +429,7 @@ _No new actions in this version._
 - [`is_post_status_viewable`](https://developer.wordpress.org/reference/hooks/is_post_status_viewable/) - Filters whether a post status is considered "viewable".
 - [`is_post_type_viewable`](https://developer.wordpress.org/reference/hooks/is_post_type_viewable/) - Filters whether a post type is considered "viewable".
 - [`login_display_language_dropdown`](https://developer.wordpress.org/reference/hooks/login_display_language_dropdown/) - Filters whether to display the Language selector on the login screen.
-- [`login_language_dropdown_args`](https://developer.wordpress.org/reference/hooks/login_language_dropdown_args/) - Filters default arguments for the Languages select input on the login screen.
+- [`login_language_dropdown_args`](https://developer.wordpress.org/reference/hooks/login_language_dropdown_args/) - Filters default arguments for the Language select input on the login screen.
 - [`post_thumbnail_id`](https://developer.wordpress.org/reference/hooks/post_thumbnail_id/) - Filters the post thumbnail ID.
 - [`post_thumbnail_url`](https://developer.wordpress.org/reference/hooks/post_thumbnail_url/) - Filters the post thumbnail URL.
 - [`pre_get_block_file_template`](https://developer.wordpress.org/reference/hooks/pre_get_block_file_template/) - Filters the block template object before the theme file discovery takes place.
@@ -499,8 +533,8 @@ _No new actions in this version._
 - [`update_post_term_count_statuses`](https://developer.wordpress.org/reference/hooks/update_post_term_count_statuses/) - Filters the post statuses for updating the term count.
 - [`upgrader_install_package_result`](https://developer.wordpress.org/reference/hooks/upgrader_install_package_result/) - Filters the result of WP_Upgrader::install_package().
 - [`wp_direct_update_https_url`](https://developer.wordpress.org/reference/hooks/wp_direct_update_https_url/) - Filters the URL for directly updating the PHP version the site is running on from the host.
-- [`wp_iframe_tag_add_loading_attr`](https://developer.wordpress.org/reference/hooks/wp_iframe_tag_add_loading_attr/) - Filters the `loading` attribute value to add to an iframe. Default `lazy`.
-- [`wp_image_src_get_dimensions`](https://developer.wordpress.org/reference/hooks/wp_image_src_get_dimensions/) - Filters the 'wp_image_src_get_dimensions' value.
+- [`wp_iframe_tag_add_loading_attr`](https://developer.wordpress.org/reference/hooks/wp_iframe_tag_add_loading_attr/) - Filters the `loading` attribute value to add to an iframe. Default 'lazy'.
+- [`wp_image_src_get_dimensions`](https://developer.wordpress.org/reference/hooks/wp_image_src_get_dimensions/) - Filters the wp_image_src_get_dimensions() value.
 - [`wp_inline_script_attributes`](https://developer.wordpress.org/reference/hooks/wp_inline_script_attributes/) - Filters attributes to be added to a script tag.
 - [`wp_list_table_show_post_checkbox`](https://developer.wordpress.org/reference/hooks/wp_list_table_show_post_checkbox/) - Filters whether to show the bulk edit checkbox for a post in its list table.
 - [`wp_robots`](https://developer.wordpress.org/reference/hooks/wp_robots/) - Filters the directives to be included in the 'robots' meta tag.
@@ -512,11 +546,11 @@ _No new actions in this version._
 ### Changes
 
 - [`get_post_status`](https://developer.wordpress.org/reference/hooks/get_post_status/) - The attachment post type is now passed through this filter.
-- [`pre_clear_scheduled_hook`](https://developer.wordpress.org/reference/hooks/pre_clear_scheduled_hook/) - The <code>$wp_error</code> parameter was added, and a <code>WP_Error</code> object can now be returned.
-- [`pre_reschedule_event`](https://developer.wordpress.org/reference/hooks/pre_reschedule_event/) - The <code>$wp_error</code> parameter was added, and a <code>WP_Error</code> object can now be returned.
-- [`pre_schedule_event`](https://developer.wordpress.org/reference/hooks/pre_schedule_event/) - The <code>$wp_error</code> parameter was added, and a <code>WP_Error</code> object can now be returned.
-- [`pre_unschedule_event`](https://developer.wordpress.org/reference/hooks/pre_unschedule_event/) - The <code>$wp_error</code> parameter was added, and a <code>WP_Error</code> object can now be returned.
-- [`pre_unschedule_hook`](https://developer.wordpress.org/reference/hooks/pre_unschedule_hook/) - The <code>$wp_error</code> parameter was added, and a <code>WP_Error</code> object can now be returned.
+- [`pre_clear_scheduled_hook`](https://developer.wordpress.org/reference/hooks/pre_clear_scheduled_hook/) - The <code>$wp_error</code> parameter was added, and a WP_Error object can now be returned.
+- [`pre_reschedule_event`](https://developer.wordpress.org/reference/hooks/pre_reschedule_event/) - The <code>$wp_error</code> parameter was added, and a WP_Error object can now be returned.
+- [`pre_schedule_event`](https://developer.wordpress.org/reference/hooks/pre_schedule_event/) - The <code>$wp_error</code> parameter was added, and a WP_Error object can now be returned.
+- [`pre_unschedule_event`](https://developer.wordpress.org/reference/hooks/pre_unschedule_event/) - The <code>$wp_error</code> parameter was added, and a WP_Error object can now be returned.
+- [`pre_unschedule_hook`](https://developer.wordpress.org/reference/hooks/pre_unschedule_hook/) - The <code>$wp_error</code> parameter was added, and a WP_Error object can now be returned.
 - [`rest_{$this->post_type}_query`](https://developer.wordpress.org/reference/hooks/rest_this-post_type_query/) - Moved after the <code>tax_query</code> query arg is generated.
 - [`xmlrpc_call`](https://developer.wordpress.org/reference/hooks/xmlrpc_call/) - Added the <code>$args</code> and <code>$server</code> parameters.
 
@@ -528,7 +562,7 @@ _No new actions in this version._
 - [`application_password_did_authenticate`](https://developer.wordpress.org/reference/hooks/application_password_did_authenticate/) - Fires after an application password was used for authentication.
 - [`application_password_failed_authentication`](https://developer.wordpress.org/reference/hooks/application_password_failed_authentication/) - Fires when an application password failed to authenticate the user.
 - [`do_all_pings`](https://developer.wordpress.org/reference/hooks/do_all_pings/) - Fires immediately after the `do_pings` event to hook services individually.
-- [`is_wp_error_instance`](https://developer.wordpress.org/reference/hooks/is_wp_error_instance/) - Fires when `is_wp_error()` is called and its parameter is an instance of `WP_Error`.
+- [`is_wp_error_instance`](https://developer.wordpress.org/reference/hooks/is_wp_error_instance/) - Fires when `is_wp_error()` is called and its parameter is an instance of WP_Error.
 - [`manage_{$this->screen->id}_custom_column`](https://developer.wordpress.org/reference/hooks/manage_this-screen-id_custom_column/) - Fires for each custom column in the Application Passwords list table.
 - [`manage_{$this->screen->id}_custom_column_js_template`](https://developer.wordpress.org/reference/hooks/manage_this-screen-id_custom_column_js_template/) - Fires in the JavaScript row template for each custom column in the Application Passwords list table.
 - [`network_site_info_form`](https://developer.wordpress.org/reference/hooks/network_site_info_form/) - Fires at the end of the site info form in network admin.
@@ -651,7 +685,7 @@ _No new actions in this version._
 - [`themes_auto_update_enabled`](https://developer.wordpress.org/reference/hooks/themes_auto_update_enabled/) - Filters whether themes auto-update is enabled.
 - [`wp_edited_image_metadata`](https://developer.wordpress.org/reference/hooks/wp_edited_image_metadata/) - Filters the meta data for the new image created by editing an existing image.
 - [`wp_image_file_matches_image_meta`](https://developer.wordpress.org/reference/hooks/wp_image_file_matches_image_meta/) - Filters whether an image path or URI matches image meta.
-- [`wp_img_tag_add_loading_attr`](https://developer.wordpress.org/reference/hooks/wp_img_tag_add_loading_attr/) - Filters the `loading` attribute value to add to an image. Default `lazy`.
+- [`wp_img_tag_add_loading_attr`](https://developer.wordpress.org/reference/hooks/wp_img_tag_add_loading_attr/) - Filters the `loading` attribute value to add to an image. Default 'lazy'.
 - [`wp_img_tag_add_srcset_and_sizes_attr`](https://developer.wordpress.org/reference/hooks/wp_img_tag_add_srcset_and_sizes_attr/) - Filters whether to add the `srcset` and `sizes` HTML attributes to the img tag. Default `true`.
 - [`wp_img_tag_add_width_and_height_attr`](https://developer.wordpress.org/reference/hooks/wp_img_tag_add_width_and_height_attr/) - Filters whether to add the missing `width` and `height` HTML attributes to the img tag. Default `true`.
 - [`wp_lazy_loading_enabled`](https://developer.wordpress.org/reference/hooks/wp_lazy_loading_enabled/) - Filters whether to add the `loading` attribute to the specified tag in the specified context.
@@ -731,7 +765,7 @@ _No new actions in this version._
 
 ### New Filters
 
-- [`add_trashed_suffix_to_trashed_posts`](https://developer.wordpress.org/reference/hooks/add_trashed_suffix_to_trashed_posts/) - Filters whether or not to add a `__trashed` suffix to trashed posts that match the name of the updated post.
+- [`add_trashed_suffix_to_trashed_posts`](https://developer.wordpress.org/reference/hooks/add_trashed_suffix_to_trashed_posts/) - Filters whether or not to add a `__trashed` suffix to the name of trashed posts that match the name of the updated post.
 - [`rest_{$this->post_type}_item_schema`](https://developer.wordpress.org/reference/hooks/rest_this-post_type_item_schema/) - Filters the post's schema.
 - [`set_screen_option_{$option}`](https://developer.wordpress.org/reference/hooks/set_screen_option_option/) (5.4.2) - Filters a screen option value before it is set.
 - [`user_request_action_email_headers`](https://developer.wordpress.org/reference/hooks/user_request_action_email_headers/) - Filters the headers of the email sent when an account action is attempted.
@@ -744,7 +778,7 @@ _No new actions in this version._
 - [`category_link`](https://developer.wordpress.org/reference/hooks/category_link/) (5.4.1) - Restored (un-deprecated).
 - [`lostpassword_post`](https://developer.wordpress.org/reference/hooks/lostpassword_post/) - Added the <code>$user_data</code> parameter.
 - [`newblog_notify_siteadmin`](https://developer.wordpress.org/reference/hooks/newblog_notify_siteadmin/) - The <code>$blog_id</code> parameter was added.
-- [`post_locked_dialog`](https://developer.wordpress.org/reference/hooks/post_locked_dialog/) - The $user parameter was added.
+- [`post_locked_dialog`](https://developer.wordpress.org/reference/hooks/post_locked_dialog/) - The <code>$user</code> parameter was added.
 - [`remove_user_from_blog`](https://developer.wordpress.org/reference/hooks/remove_user_from_blog/) - Added the <code>$reassign</code> parameter.
 - [`set-screen-option`](https://developer.wordpress.org/reference/hooks/set-screen-option/) (5.4.2) - Only applied to options ending with '_page', or the 'layout_columns' option.
 - [`switch_blog`](https://developer.wordpress.org/reference/hooks/switch_blog/) - The <code>$context</code> parameter was added.
@@ -898,13 +932,13 @@ _No new actions in this version._
 - [`wp_targeted_link_rel`](https://developer.wordpress.org/reference/hooks/wp_targeted_link_rel/) - Filters the rel values that are added to links with `target` attribute.
 - [`wp_update_php_url`](https://developer.wordpress.org/reference/hooks/wp_update_php_url/) - Filters the URL to learn more about updating the PHP version the site is running on.
 - [`wp_using_themes`](https://developer.wordpress.org/reference/hooks/wp_using_themes/) - Filters whether the current request should use themes.
-- [`x_redirect_by`](https://developer.wordpress.org/reference/hooks/x_redirect_by/) - Filters the X-Redirect-By header.
+- [`x_redirect_by`](https://developer.wordpress.org/reference/hooks/x_redirect_by/) - Filters the value of the `X-Redirect-By` HTTP header.
 
 ### Changes
 
 - [`comment_status_links`](https://developer.wordpress.org/reference/hooks/comment_status_links/) - The 'Mine' link was added.
-- [`doing_it_wrong_trigger_error`](https://developer.wordpress.org/reference/hooks/doing_it_wrong_trigger_error/) - Added the $function_name, $message and $version parameters.
-- [`found_users_query`](https://developer.wordpress.org/reference/hooks/found_users_query/) - Added the <code>$this</code> parameter.
+- [`doing_it_wrong_trigger_error`](https://developer.wordpress.org/reference/hooks/doing_it_wrong_trigger_error/) - Added the <code>$function_name</code>, <code>$message</code>, and <code>$version</code> parameters.
+- [`found_users_query`](https://developer.wordpress.org/reference/hooks/found_users_query/) - Added the <code>$query</code> parameter.
 - [`http_headers_useragent`](https://developer.wordpress.org/reference/hooks/http_headers_useragent/) - The <code>$url</code> parameter was added.
 - [`http_request_redirection_count`](https://developer.wordpress.org/reference/hooks/http_request_redirection_count/) - The <code>$url</code> parameter was added.
 - [`http_request_reject_unsafe_urls`](https://developer.wordpress.org/reference/hooks/http_request_reject_unsafe_urls/) - The <code>$url</code> parameter was added.
@@ -913,7 +947,7 @@ _No new actions in this version._
 - [`https_local_ssl_verify`](https://developer.wordpress.org/reference/hooks/https_local_ssl_verify/) - The <code>$url</code> parameter was added.
 - [`https_ssl_verify`](https://developer.wordpress.org/reference/hooks/https_ssl_verify/) - The <code>$url</code> parameter was added.
 - [`lost_password`](https://developer.wordpress.org/reference/hooks/lost_password/) - Added the <code>$errors</code> parameter.
-- [`wp_check_filetype_and_ext`](https://developer.wordpress.org/reference/hooks/wp_check_filetype_and_ext/) - The $real_mime parameter was added.
+- [`wp_check_filetype_and_ext`](https://developer.wordpress.org/reference/hooks/wp_check_filetype_and_ext/) - The <code>$real_mime</code> parameter was added.
 - [`wp_get_attachment_link`](https://developer.wordpress.org/reference/hooks/wp_get_attachment_link/) - Added the <code>$attr</code> parameter.
 
 ## WordPress 5.0
@@ -946,6 +980,7 @@ _No new actions in this version._
 - [`render_block`](https://developer.wordpress.org/reference/hooks/render_block/) - Filters the content of a single block.
 - [`rest_prepare_autosave`](https://developer.wordpress.org/reference/hooks/rest_prepare_autosave/) - Filters a revision returned from the REST API.
 - [`rest_prepare_theme`](https://developer.wordpress.org/reference/hooks/rest_prepare_theme/) - Filters theme data returned from the REST API.
+- [`rest_revision_query`](https://developer.wordpress.org/reference/hooks/rest_revision_query/) - Filters WP_Query arguments when querying revisions via the REST API.
 - [`rest_themes_collection_params`](https://developer.wordpress.org/reference/hooks/rest_themes_collection_params/) - Filters REST API collection parameters for the themes controller.
 - [`update_{$meta_type}_metadata_by_mid`](https://developer.wordpress.org/reference/hooks/update_meta_type_metadata_by_mid/) - Short-circuits updating metadata of a specific type by meta ID.
 - [`update_{$meta_type}_metadata_cache`](https://developer.wordpress.org/reference/hooks/update_meta_type_metadata_cache/) - Short-circuits updating the metadata cache of a specific type.
@@ -1290,7 +1325,7 @@ _No new actions in this version._
 
 - [`admin_memory_limit`](https://developer.wordpress.org/reference/hooks/admin_memory_limit/) - The default now takes the original <code>memory_limit</code> into account.
 - [`admin_post_thumbnail_html`](https://developer.wordpress.org/reference/hooks/admin_post_thumbnail_html/) - Added the <code>$thumbnail_id</code> parameter.
-- [`customize_value_{$id_base}`](https://developer.wordpress.org/reference/hooks/customize_value_id_base/) - Added the <code>$this</code> setting instance as the second parameter.
+- [`customize_value_{$id_base}`](https://developer.wordpress.org/reference/hooks/customize_value_id_base/) - Added the <code>$setting</code> instance as the second parameter.
 - [`date_query_valid_columns`](https://developer.wordpress.org/reference/hooks/date_query_valid_columns/) - Added 'registered' and 'last_updated' to the default recognized columns.
 - [`edit_comment`](https://developer.wordpress.org/reference/hooks/edit_comment/) - Added the <code>$data</code> parameter.
 - [`fs_ftp_connection_types`](https://developer.wordpress.org/reference/hooks/fs_ftp_connection_types/) - The <code>$context</code> parameter default changed from <code>false</code> to an empty string.
@@ -1300,7 +1335,7 @@ _No new actions in this version._
 - [`get_the_modified_time`](https://developer.wordpress.org/reference/hooks/get_the_modified_time/) - Added the <code>$post</code> parameter.
 - [`image_memory_limit`](https://developer.wordpress.org/reference/hooks/image_memory_limit/) - The default now takes the original <code>memory_limit</code> into account.
 - [`nav_menu_items_{$post_type_name}`](https://developer.wordpress.org/reference/hooks/nav_menu_items_post_type_name/) - Converted the <code>$post_type</code> parameter to accept a WP_Post_Type object.
-- [`registered_post_type`](https://developer.wordpress.org/reference/hooks/registered_post_type/) - Converted the <code>$post_type</code> parameter to accept a <code>WP_Post_Type</code> object.
+- [`registered_post_type`](https://developer.wordpress.org/reference/hooks/registered_post_type/) - Converted the <code>$post_type</code> parameter to accept a WP_Post_Type object.
 - [`request_filesystem_credentials`](https://developer.wordpress.org/reference/hooks/request_filesystem_credentials/) - The <code>$context</code> parameter default changed from <code>false</code> to an empty string.
 - [`restrict_manage_posts`](https://developer.wordpress.org/reference/hooks/restrict_manage_posts/) - The <code>$which</code> parameter was added.
 - [`restrict_manage_users`](https://developer.wordpress.org/reference/hooks/restrict_manage_users/) - The <code>$which</code> parameter was added.
@@ -1403,7 +1438,7 @@ _No new actions in this version._
 - [`register_new_user`](https://developer.wordpress.org/reference/hooks/register_new_user/) - Fires after a new user registration has been recorded.
 - [`rest_api_init`](https://developer.wordpress.org/reference/hooks/rest_api_init/) - Fires when preparing to serve a REST API request.
 - [`wp_add_nav_menu_item`](https://developer.wordpress.org/reference/hooks/wp_add_nav_menu_item/) - Fires immediately after a new navigation menu item has been added.
-- [`wp_mail_failed`](https://developer.wordpress.org/reference/hooks/wp_mail_failed/) - Fires after a PHPMailer\PHPMailer\Exception is caught.
+- [`wp_mail_failed`](https://developer.wordpress.org/reference/hooks/wp_mail_failed/) - Fires after a PHPMailer exception is caught.
 - [`wp_verify_nonce_failed`](https://developer.wordpress.org/reference/hooks/wp_verify_nonce_failed/) - Fires when nonce verification fails.
 
 ### New Filters
@@ -1494,7 +1529,7 @@ _No new actions in this version._
 - [`user_profile_picture_description`](https://developer.wordpress.org/reference/hooks/user_profile_picture_description/) - Filters the user profile picture description displayed under the Gravatar.
 - [`users_list_table_query_args`](https://developer.wordpress.org/reference/hooks/users_list_table_query_args/) - Filters the query arguments used to retrieve users for the current users list table.
 - [`view_mode_post_types`](https://developer.wordpress.org/reference/hooks/view_mode_post_types/) - Filters the post types that have different view mode options.
-- [`wp_calculate_image_sizes`](https://developer.wordpress.org/reference/hooks/wp_calculate_image_sizes/) - Filters the output of 'wp_calculate_image_sizes()'.
+- [`wp_calculate_image_sizes`](https://developer.wordpress.org/reference/hooks/wp_calculate_image_sizes/) - Filters the output of wp_calculate_image_sizes().
 - [`wp_calculate_image_srcset`](https://developer.wordpress.org/reference/hooks/wp_calculate_image_srcset/) - Filters an image's 'srcset' sources.
 - [`wp_dropdown_users_args`](https://developer.wordpress.org/reference/hooks/wp_dropdown_users_args/) - Filters the query arguments for the list of users in the dropdown.
 - [`wp_http_ixr_client_headers`](https://developer.wordpress.org/reference/hooks/wp_http_ixr_client_headers/) - Filters the headers collection to be sent to the XML-RPC server.
@@ -1514,10 +1549,10 @@ _No new actions in this version._
 - [`get_{$adjacent}_post_join`](https://developer.wordpress.org/reference/hooks/get_adjacent_post_join/) - Added the <code>$taxonomy</code> and <code>$post</code> parameters.
 - [`get_{$adjacent}_post_sort`](https://developer.wordpress.org/reference/hooks/get_adjacent_post_sort/) - Added the <code>$post</code> parameter.
 - [`get_{$adjacent}_post_where`](https://developer.wordpress.org/reference/hooks/get_adjacent_post_where/) - Added the <code>$taxonomy</code> and <code>$post</code> parameters.
-- [`get_{$taxonomy}`](https://developer.wordpress.org/reference/hooks/get_taxonomy/) - <code>$_term</code> is now a <code>WP_Term</code> object.
+- [`get_{$taxonomy}`](https://developer.wordpress.org/reference/hooks/get_taxonomy/) - <code>$_term</code> is now a WP_Term object.
 - [`get_comment_link`](https://developer.wordpress.org/reference/hooks/get_comment_link/) - Added the <code>$cpage</code> parameter.
 - [`get_sample_permalink_html`](https://developer.wordpress.org/reference/hooks/get_sample_permalink_html/) - Added <code>$post</code> parameter.
-- [`get_term`](https://developer.wordpress.org/reference/hooks/get_term/) - <code>$_term</code> is now a <code>WP_Term</code> object.
+- [`get_term`](https://developer.wordpress.org/reference/hooks/get_term/) - <code>$_term</code> is now a WP_Term object.
 - [`get_the_categories`](https://developer.wordpress.org/reference/hooks/get_the_categories/) - Added the <code>$post_id</code> parameter.
 - [`get_wp_title_rss`](https://developer.wordpress.org/reference/hooks/get_wp_title_rss/) - The <code>$sep</code> parameter was deprecated and renamed to <code>$deprecated</code>.
 - [`hidden_columns`](https://developer.wordpress.org/reference/hooks/hidden_columns/) (4.4.1) - Added the <code>use_defaults</code> parameter.
@@ -1548,7 +1583,7 @@ _No new actions in this version._
 - [`theme_{$post_type}_templates`](https://developer.wordpress.org/reference/hooks/theme_post_type_templates/) - Converted to allow complete control over the <code>$page_templates</code> array.
 - [`transient_{$transient}`](https://developer.wordpress.org/reference/hooks/transient_transient/) - The <code>$transient</code> parameter was added
 - [`update_option_{$option}`](https://developer.wordpress.org/reference/hooks/update_option_option/) - The <code>$option</code> parameter was added.
-- [`upgrader_source_selection`](https://developer.wordpress.org/reference/hooks/upgrader_source_selection/) - The $hook_extra parameter became available.
+- [`upgrader_source_selection`](https://developer.wordpress.org/reference/hooks/upgrader_source_selection/) - The <code>$hook_extra</code> parameter became available.
 - [`widget_links_args`](https://developer.wordpress.org/reference/hooks/widget_links_args/) - Added the <code>$instance</code> parameter.
 - [`widget_nav_menu_args`](https://developer.wordpress.org/reference/hooks/widget_nav_menu_args/) - Added the <code>$instance</code> parameter.
 - [`widget_text`](https://developer.wordpress.org/reference/hooks/widget_text/) - Added the <code>$widget</code> parameter.
@@ -1856,7 +1891,7 @@ _No changes in this version._
 - [`term_updated_messages`](https://developer.wordpress.org/reference/hooks/term_updated_messages/) - Filters the messages displayed when a tag is updated.
 - [`themes_update_check_locales`](https://developer.wordpress.org/reference/hooks/themes_update_check_locales/) - Filters the locales requested for theme translations.
 - [`update_translations_complete_actions`](https://developer.wordpress.org/reference/hooks/update_translations_complete_actions/) - Filters the list of action links available following a translations update.
-- [`upgrader_pre_download`](https://developer.wordpress.org/reference/hooks/upgrader_pre_download/) - Filters whether to return the package.
+- [`upgrader_pre_download`](https://developer.wordpress.org/reference/hooks/upgrader_pre_download/) - Filters whether to download a package for a WordPress core, plugin, theme, or translation upgrade.
 - [`wp_count_attachments`](https://developer.wordpress.org/reference/hooks/wp_count_attachments/) - Filters the attachment counts by mime type.
 - [`wp_count_posts`](https://developer.wordpress.org/reference/hooks/wp_count_posts/) - Filters the post counts by status for the current post type.
 - [`wp_link_query`](https://developer.wordpress.org/reference/hooks/wp_link_query/) - Filters the link query results.
@@ -1865,7 +1900,6 @@ _No changes in this version._
 
 ### Changes
 
-- [`password_reset_key_expired`](https://developer.wordpress.org/reference/hooks/password_reset_key_expired/) - Previously plain-text keys were stored in the database.
 - [`upgrader_process_complete`](https://developer.wordpress.org/reference/hooks/upgrader_process_complete/) - Added to WP_Upgrader::run().
 - [`user_has_cap`](https://developer.wordpress.org/reference/hooks/user_has_cap/) - Added the <code>$user</code> parameter.
 
@@ -1937,7 +1971,7 @@ _No changes in this version._
 
 - [`display_post_states`](https://developer.wordpress.org/reference/hooks/display_post_states/) - Added the <code>$post</code> parameter.
 - [`set_transient_{$transient}`](https://developer.wordpress.org/reference/hooks/set_transient_transient/) - The <code>$value</code> and <code>$expiration</code> parameters were added.
-- [`set_user_role`](https://developer.wordpress.org/reference/hooks/set_user_role/) - Added $old_roles to include an array of the user's previous roles.
+- [`set_user_role`](https://developer.wordpress.org/reference/hooks/set_user_role/) - Added <code>$old_roles</code> to include an array of the user's previous roles.
 
 ## WordPress 3.5
 
@@ -2045,6 +2079,7 @@ _No changes in this version._
 
 - [`allowed_http_origin`](https://developer.wordpress.org/reference/hooks/allowed_http_origin/) - Changes the allowed HTTP origin result.
 - [`allowed_http_origins`](https://developer.wordpress.org/reference/hooks/allowed_http_origins/) - Changes the origin types allowed for HTTP requests.
+- [`autocomplete_users_for_site_admins`](https://developer.wordpress.org/reference/hooks/autocomplete_users_for_site_admins/) - Filters whether to enable user auto-complete for non-super admins in Multisite.
 - [`current_theme_supports-{$feature}`](https://developer.wordpress.org/reference/hooks/current_theme_supports-feature/) - Filters whether the active theme supports a specific feature.
 - [`customize_allowed_urls`](https://developer.wordpress.org/reference/hooks/customize_allowed_urls/) - Filters the list of URLs allowed to be clicked and followed in the Customizer preview.
 - [`customize_sanitize_js_{$this->id}`](https://developer.wordpress.org/reference/hooks/customize_sanitize_js_this-id/) - Filters a Customize setting value for use in JavaScript.
@@ -2252,6 +2287,7 @@ _No changes in this version._
 - [`show_admin_bar`](https://developer.wordpress.org/reference/hooks/show_admin_bar/) - Filters whether to show the admin bar.
 - [`show_network_site_users_add_existing_form`](https://developer.wordpress.org/reference/hooks/show_network_site_users_add_existing_form/) - Filters whether to show the Add Existing User form on the Multisite Users screen.
 - [`show_network_site_users_add_new_form`](https://developer.wordpress.org/reference/hooks/show_network_site_users_add_new_form/) - Filters whether to show the Add New User form on the Multisite Users screen.
+- [`show_recent_comments_widget_style`](https://developer.wordpress.org/reference/hooks/show_recent_comments_widget_style/) - Filters the Recent Comments default widget styles.
 - [`single_term_title`](https://developer.wordpress.org/reference/hooks/single_term_title/) - Filters the custom taxonomy archive page title.
 - [`terms_clauses`](https://developer.wordpress.org/reference/hooks/terms_clauses/) - Filters the terms query SQL clauses.
 - [`the_comments`](https://developer.wordpress.org/reference/hooks/the_comments/) - Filters the comment query results.
@@ -2586,12 +2622,12 @@ _No changes in this version._
 ### Changes
 
 - [`{$action}_prefilter`](https://developer.wordpress.org/reference/hooks/action_prefilter/) - as 'wp_handle_upload_prefilter'.
-- [`add_site_option_{$option}`](https://developer.wordpress.org/reference/hooks/add_site_option_option/) - As "add_site<em>option</em>{$key}"
-- [`delete_site_option_{$option}`](https://developer.wordpress.org/reference/hooks/delete_site_option_option/) - As "delete_site<em>option</em>{$key}"
-- [`pre_add_site_option_{$option}`](https://developer.wordpress.org/reference/hooks/pre_add_site_option_option/) - As 'pre_add_site<em>option</em>' . $key
-- [`pre_site_option_{$option}`](https://developer.wordpress.org/reference/hooks/pre_site_option_option/) - As 'pre_site<em>option</em>' . $key
+- [`add_site_option_{$option}`](https://developer.wordpress.org/reference/hooks/add_site_option_option/) - As <code>add_site_option_{$key}</code>.
+- [`delete_site_option_{$option}`](https://developer.wordpress.org/reference/hooks/delete_site_option_option/) - As <code>delete_site_option_{$key}</code>.
+- [`pre_add_site_option_{$option}`](https://developer.wordpress.org/reference/hooks/pre_add_site_option_option/) - As <code>pre_add_site_option_{$key}</code>.
+- [`pre_site_option_{$option}`](https://developer.wordpress.org/reference/hooks/pre_site_option_option/) - As <code>pre_site_option_{$key}</code>.
 - [`pre_update_site_option_{$option}`](https://developer.wordpress.org/reference/hooks/pre_update_site_option_option/) - As 'pre_update_site<em>option</em>' . $key
-- [`site_option_{$option}`](https://developer.wordpress.org/reference/hooks/site_option_option/) - As 'site<em>option</em>' . $key
+- [`site_option_{$option}`](https://developer.wordpress.org/reference/hooks/site_option_option/) - As <code>site_option_{$key}</code>.
 - [`update_site_option_{$option}`](https://developer.wordpress.org/reference/hooks/update_site_option_option/) - As "update_site<em>option</em>{$key}"
 
 ## WordPress 2.8
@@ -3455,7 +3491,7 @@ _No changes in this version._
 
 ### Changes
 
-- [`option_{$option}`](https://developer.wordpress.org/reference/hooks/option_option/) - As 'option_' . $setting
+- [`option_{$option}`](https://developer.wordpress.org/reference/hooks/option_option/) - As <code>option_{$setting}</code>.
 
 ## WordPress 1.2
 

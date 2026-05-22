@@ -33,7 +33,7 @@
 		"wp-hooks/generator": "1.0.0",
 		"oomphinc/composer-installers-extender": "^2",
 		"roots/wordpress-core-installer": "^1.0.0",
-		"roots/wordpress-full": "6.9"
+		"roots/wordpress-full": "7.0"
 	},
 	"extra": {
 		"wordpress-install-dir": "vendor/wordpress/wordpress",
@@ -42,6 +42,7 @@
 				"wp-admin/includes/deprecated.php",
 				"wp-admin/includes/ms-deprecated.php",
 				"wp-content/",
+				"wp-includes/build/pages/",
 				"wp-includes/deprecated.php",
 				"wp-includes/ID3/",
 				"wp-includes/ms-deprecated.php",

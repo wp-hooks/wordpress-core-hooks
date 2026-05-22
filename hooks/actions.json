@@ -104,7 +104,7 @@
                     {
                         "name": "since",
                         "content": "6.4.0",
-                        "description": "The post_id parameter was added."
+                        "description": "The <code>$post_id</code> parameter was added."
                     },
                     {
                         "name": "param",
@@ -409,19 +409,21 @@
                     },
                     {
                         "name": "param",
-                        "content": "Post type.",
+                        "content": "The type of the current object that meta boxes were added to. Can be 'post', 'page', custom post types, 'comment', or 'link'.",
                         "types": [
                             "string"
                         ],
-                        "variable": "$post_type"
+                        "variable": "$object_type"
                     },
                     {
                         "name": "param",
-                        "content": "Post object.",
+                        "content": "The post, comment, or link object. Type varies depending on <code>$object_type</code>.",
                         "types": [
-                            "\\WP_Post"
+                            "\\WP_Post",
+                            "\\WP_Comment",
+                            "object"
                         ],
-                        "variable": "$post"
+                        "variable": "$object"
                     }
                 ],
                 "long_description_html": ""
@@ -482,6 +484,8 @@
             "name": "add_meta_boxes_{$post_type}",
             "aliases": [
                 "add_meta_boxes_attachment",
+                "add_meta_boxes_comment",
+                "add_meta_boxes_link",
                 "add_meta_boxes_page",
                 "add_meta_boxes_post"
             ],
@@ -489,7 +493,7 @@
             "type": "action",
             "doc": {
                 "description": "Fires after all built-in meta boxes have been added, contextually for the given post type.",
-                "long_description": "The dynamic portion of the hook name, `$post_type`, refers to the post type of the post.\n Possible hook names include:\n\n  - `add_meta_boxes_post`\n  - `add_meta_boxes_page`\n  - `add_meta_boxes_attachment`",
+                "long_description": "The dynamic portion of the hook name, `$post_type`, refers to the post type of the post, or the object type (comment, link).\n Possible hook names include:\n\n  - `add_meta_boxes_post`\n  - `add_meta_boxes_page`\n  - `add_meta_boxes_attachment`\n  - `add_meta_boxes_comment`\n  - `add_meta_boxes_link`",
                 "tags": [
                     {
                         "name": "since",
@@ -497,14 +501,16 @@
                     },
                     {
                         "name": "param",
-                        "content": "Post object.",
+                        "content": "The post, comment, or link object. Type varies depending on the hook name.",
                         "types": [
-                            "\\WP_Post"
+                            "\\WP_Post",
+                            "\\WP_Comment",
+                            "object"
                         ],
-                        "variable": "$post"
+                        "variable": "$object"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$post_type</code>, refers to the post type of the post.</p> <p>Possible hook names include:</p> <ul> <li><code>add_meta_boxes_post</code></li> <li><code>add_meta_boxes_page</code></li> <li><code>add_meta_boxes_attachment</code></li> </ul>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$post_type</code>, refers to the post type of the post, or the object type (comment, link).</p> <p>Possible hook names include:</p> <ul> <li><code>add_meta_boxes_post</code></li> <li><code>add_meta_boxes_page</code></li> <li><code>add_meta_boxes_attachment</code></li> <li><code>add_meta_boxes_comment</code></li> <li><code>add_meta_boxes_link</code></li> </ul>"
             },
             "args": 1
         },
@@ -636,7 +642,7 @@
                     {
                         "name": "since",
                         "content": "2.9.0",
-                        "description": "As \"add_site<em>option</em>{$key}\""
+                        "description": "As <code>add_site_option_{$key}</code>."
                     },
                     {
                         "name": "since",
@@ -5727,7 +5733,7 @@
                     {
                         "name": "since",
                         "content": "2.9.0",
-                        "description": "As \"delete_site<em>option</em>{$key}\""
+                        "description": "As <code>delete_site_option_{$key}</code>."
                     },
                     {
                         "name": "since",
@@ -7119,7 +7125,7 @@
                         "types": [
                             "string"
                         ],
-                        "variable": "$post_type"
+                        "variable": "$object_type"
                     },
                     {
                         "name": "param",
@@ -7137,7 +7143,7 @@
                             "object",
                             "string"
                         ],
-                        "variable": "$post"
+                        "variable": "$object"
                     }
                 ],
                 "long_description_html": "<p>Fires once for each of the default meta box contexts: normal, advanced, and side.</p>"
@@ -8994,9 +9000,10 @@
                     },
                     {
                         "name": "param",
-                        "content": "Return null if new fields are added.",
+                        "content": "Default 'noform'. Return null if new fields are added.",
                         "types": [
-                            "null"
+                            "null",
+                            "string"
                         ],
                         "variable": "$return"
                     },
@@ -9242,7 +9249,7 @@
             "file": "wp-includes/load.php",
             "type": "action",
             "doc": {
-                "description": "Fires when `is_wp_error()` is called and its parameter is an instance of `WP_Error`.",
+                "description": "Fires when `is_wp_error()` is called and its parameter is an instance of WP_Error.",
                 "long_description": "",
                 "tags": [
                     {
@@ -10298,6 +10305,43 @@
                     }
                 ],
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$post-&gt;post_type</code>, refers to the post type.</p> <p>Possible hook names include:</p> <ul> <li><code>manage_post_posts_custom_column</code></li> <li><code>manage_page_posts_custom_column</code></li> </ul>"
+            },
+            "args": 2
+        },
+        {
+            "name": "manage_{$this->screen->id}_custom_column",
+            "aliases": [
+                "manage_erase-personal-data_custom_column",
+                "manage_export-personal-data_custom_column"
+            ],
+            "file": "wp-admin/includes/class-wp-privacy-requests-table.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires for each custom column of a specific request type in the Privacy Requests list table.",
+                "long_description": "Custom columns are registered using the {@see 'manage_export-personal-data_columns'} and the {@see 'manage_erase-personal-data_columns'} filters.\n The dynamic portion of the hook name, `$this->screen->id`, refers to the ID given to the list table according to which screen it's displayed on.\n Possible hook names include:\n\n  - `manage_export-personal-data_custom_column`\n  - `manage_erase-personal-data_custom_column`",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.7.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The name of the column to display.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$column_name"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The item being shown.",
+                        "types": [
+                            "\\WP_User_Request"
+                        ],
+                        "variable": "$item"
+                    }
+                ],
+                "long_description_html": "<p>Custom columns are registered using the {@see 'manage_export-personal-data_columns'} and the {@see 'manage_erase-personal-data_columns'} filters.</p> <p>The dynamic portion of the hook name, <code>$this-&gt;screen-&gt;id</code>, refers to the ID given to the list table according to which screen it's displayed on.</p> <p>Possible hook names include:</p> <ul> <li><code>manage_export-personal-data_custom_column</code></li> <li><code>manage_erase-personal-data_custom_column</code></li> </ul>"
             },
             "args": 2
         },
@@ -11558,7 +11602,7 @@
                     {
                         "name": "since",
                         "content": "5.4.0",
-                        "description": "The $user parameter was added."
+                        "description": "The <code>$user</code> parameter was added."
                     },
                     {
                         "name": "param",
@@ -12062,7 +12106,7 @@
             "type": "action_reference",
             "doc": {
                 "description": "Fires after the query variable object is created, but before the actual query is run.",
-                "long_description": "Note: If using conditional tags, use the method versions within the passed instance (e.g. $this->is_main_query() instead of is_main_query()). This is because the functions like is_main_query() test against the global $wp_query instance, not the passed one.",
+                "long_description": "Note: If using conditional tags, use the method versions within the passed instance (e.g. `$query->is_main_query()` instead of `is_main_query()`). This is because the functions like `is_main_query()` test against the global `$wp_query` instance, not the passed one.",
                 "tags": [
                     {
                         "name": "since",
@@ -12077,7 +12121,7 @@
                         "variable": "$query"
                     }
                 ],
-                "long_description_html": "<p>Note: If using conditional tags, use the method versions within the passed instance (e.g. $this-&gt;is_main_query() instead of is_main_query()). This is because the functions like is_main_query() test against the global $wp_query instance, not the passed one.</p>"
+                "long_description_html": "<p>Note: If using conditional tags, use the method versions within the passed instance (e.g. <code>$query-&gt;is_main_query()</code> instead of <code>is_main_query()</code>). This is because the functions like <code>is_main_query()</code> test against the global <code>$wp_query</code> instance, not the passed one.</p>"
             },
             "args": 1
         },
@@ -12846,7 +12890,7 @@
                     {
                         "name": "since",
                         "content": "4.6.0",
-                        "description": "Converted the <code>$post_type</code> parameter to accept a <code>WP_Post_Type</code> object."
+                        "description": "Converted the <code>$post_type</code> parameter to accept a WP_Post_Type object."
                     },
                     {
                         "name": "param",
@@ -15409,7 +15453,7 @@
                     {
                         "name": "since",
                         "content": "3.6.0",
-                        "description": "Added $old_roles to include an array of the user's previous roles."
+                        "description": "Added <code>$old_roles</code> to include an array of the user's previous roles."
                     },
                     {
                         "name": "param",
@@ -18241,6 +18285,31 @@
             "args": 3
         },
         {
+            "name": "wp_ai_client_{$event_name}",
+            "file": "wp-includes/ai-client/adapters/class-wp-ai-client-event-dispatcher.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires when an AI client event is dispatched.",
+                "long_description": "The dynamic portion of the hook name, `$event_name`, refers to the snake_case version of the event class name, without the `_event` suffix.\n For example, an event class named `BeforeGenerateResultEvent` will fire the `wp_ai_client_before_generate_result` action hook.\n In practice, the available action hook names are:\n - wp_ai_client_before_generate_result - wp_ai_client_after_generate_result",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "7.0.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The event object.",
+                        "types": [
+                            "object"
+                        ],
+                        "variable": "$event"
+                    }
+                ],
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$event_name</code>, refers to the snake_case version of the event class name, without the <code>_event</code> suffix.</p> <p>For example, an event class named <code>BeforeGenerateResultEvent</code> will fire the <code>wp_ai_client_before_generate_result</code> action hook.</p> <p>In practice, the available action hook names are:</p> <ul> <li>wp_ai_client_before_generate_result</li> <li>wp_ai_client_after_generate_result</li> </ul>"
+            },
+            "args": 1
+        },
+        {
             "name": "wp_ajax_crop_image_pre_save",
             "file": "wp-admin/includes/ajax-actions.php",
             "type": "action",
@@ -18760,6 +18829,31 @@
                 "long_description_html": ""
             },
             "args": 6
+        },
+        {
+            "name": "wp_connectors_init",
+            "file": "wp-includes/connectors.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires when the connector registry is ready for plugins to register connectors.",
+                "long_description": "Built-in connectors and any AI providers auto-discovered from the WP AI Client registry have already been registered at this point and cannot be unhooked.\n AI provider plugins that register with the WP AI Client do not need to use this action \u2014 their connectors are created automatically. This action is primarily for registering non-AI-provider connectors or overriding metadata on existing connectors.\n Use `$registry->register()` within this action to add new connectors. To override an existing connector, unregister it first, then re-register with updated data.\n Example \u2014 overriding metadata on an auto-discovered connector:\n     add_action( 'wp_connectors_init', function ( WP_Connector_Registry $registry ) {         if ( $registry->is_registered( 'anthropic' ) ) {             $connector = $registry->unregister( 'anthropic' );             $connector['description'] = __( 'Custom description for Anthropic.', 'my-plugin' );             $registry->register( 'anthropic', $connector );         }     } );",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "7.0.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Connector registry instance.",
+                        "types": [
+                            "\\WP_Connector_Registry"
+                        ],
+                        "variable": "$registry"
+                    }
+                ],
+                "long_description_html": "<p>Built-in connectors and any AI providers auto-discovered from the WP AI Client registry have already been registered at this point and cannot be unhooked.</p> <p>AI provider plugins that register with the WP AI Client do not need to use this action \u2014 their connectors are created automatically. This action is primarily for registering non-AI-provider connectors or overriding metadata on existing connectors.</p> <p>Use <code>$registry-&gt;register()</code> within this action to add new connectors. To override an existing connector, unregister it first, then re-register with updated data.</p> <p>Example \u2014 overriding metadata on an auto-discovered connector:</p> <pre><code>add_action( 'wp_connectors_init', function ( WP_Connector_Registry $registry ) {     if ( $registry-&gt;is_registered( 'anthropic' ) ) {         $connector = $registry-&gt;unregister( 'anthropic' );         $connector['description'] = __( 'Custom description for Anthropic.', 'my-plugin' );         $registry-&gt;register( 'anthropic', $connector );     } } );</code></pre>"
+            },
+            "args": 1
         },
         {
             "name": "wp_create_application_password",
@@ -19661,7 +19755,7 @@
             "file": "wp-includes/pluggable.php",
             "type": "action",
             "doc": {
-                "description": "Fires after a PHPMailer\\PHPMailer\\Exception is caught.",
+                "description": "Fires after a PHPMailer exception is caught.",
                 "long_description": "",
                 "tags": [
                     {
@@ -19670,7 +19764,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "A WP_Error object with the PHPMailer\\PHPMailer\\Exception message, and an array containing the mail recipient, subject, message, headers, and attachments.",
+                        "content": "A WP_Error object with the PHPMailer\\PHPMailer\\Exception message, and an array containing the mail recipient, subject, message, headers, attachments, and embeds.",
                         "types": [
                             "\\WP_Error"
                         ],
@@ -19694,8 +19788,13 @@
                         "content": "5.9.0"
                     },
                     {
+                        "name": "since",
+                        "content": "6.9.0",
+                        "description": "The <code>$embeds</code> element was added to the <code>$mail_data</code> array."
+                    },
+                    {
                         "name": "param",
-                        "content": "{ An array containing the email recipient(s), subject, message, headers, and attachments. @type string[] $to          Email addresses to send message. @type string   $subject     Email subject. @type string   $message     Message contents. @type string[] $headers     Additional headers. @type string[] $attachments Paths to files to attach. @type string[] $embeds      Paths to files to embed. }",
+                        "content": "{ An array containing the email recipient(s), subject, message, headers, attachments, and embeds. @type string[] $to          Email addresses to send message. @type string   $subject     Email subject. @type string   $message     Message contents. @type string[] $headers     Additional headers. @type string[] $attachments Paths to files to attach. @type string[] $embeds      Paths to files to embed. }",
                         "types": [
                             "array"
                         ],
@@ -20337,6 +20436,47 @@
             "args": 2
         },
         {
+            "name": "wp_trigger_error_always_run",
+            "file": "wp-includes/functions.php",
+            "type": "action",
+            "doc": {
+                "description": "Always fires when the given function triggers a user-level error/warning/notice/deprecation message.",
+                "long_description": "Can be used to attach custom error handlers even if WP_DEBUG is not truthy.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "7.0.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The function that triggered the error.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$function_name"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The message explaining the error.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$message"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The designated error type for this error.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$error_level"
+                    }
+                ],
+                "long_description_html": "<p>Can be used to attach custom error handlers even if WP_DEBUG is not truthy.</p>"
+            },
+            "args": 3
+        },
+        {
             "name": "wp_trigger_error_run",
             "file": "wp-includes/functions.php",
             "type": "action",
@@ -20350,7 +20490,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The function that was called.",
+                        "content": "The function that triggered the error.",
                         "types": [
                             "string"
                         ],
@@ -20358,7 +20498,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "A message explaining what has been done incorrectly.",
+                        "content": "The message explaining the error.",
                         "types": [
                             "string"
                         ],
