@@ -3070,7 +3070,7 @@
                         "name": "param",
                         "content": "Array of paths to preload.",
                         "types": [
-                            "string[]"
+                            "(string|string[])[]"
                         ],
                         "variable": "$preload_paths"
                     },
@@ -55191,9 +55191,7 @@
                         "name": "param",
                         "content": "Arguments.",
                         "types": [
-                            "array<string,string",
-                            "int",
-                            "bool>"
+                            "array<string,string|int|bool>"
                         ],
                         "variable": "$args"
                     }
@@ -57026,7 +57024,7 @@
                         "name": "param",
                         "content": "Key-value pairs representing <code>&lt;script&gt;</code> tag attributes. Only the attribute name is added to the <code>&lt;script&gt;</code> tag for entries with a boolean value, and that are true.",
                         "types": [
-                            "array"
+                            "array<string,string|bool>"
                         ],
                         "variable": "$attributes"
                     },

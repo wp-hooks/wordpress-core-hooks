@@ -60,6 +60,5 @@ _No hooks with empty param types._
 
 Hooks with `@param` tags where types are not valid PHP docblock types.
 
-- `block_editor_rest_api_preload_paths` — $preload_paths: `(string`  (wp-includes/block-editor.php)
-- `block_editor_rest_api_preload_paths` — $preload_paths: `string[])[]`  (wp-includes/block-editor.php)
+- `block_editor_rest_api_preload_paths` — $preload_paths: `(string|string[])[]`  (wp-includes/block-editor.php)
 
