@@ -2806,6 +2806,72 @@
             "args": 2
         },
         {
+            "name": "block_core_breadcrumbs_items",
+            "file": "wp-includes/blocks/breadcrumbs.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the breadcrumb items array before rendering.",
+                "long_description": "Allows developers to modify, add, or remove breadcrumb items.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "7.0.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "{ Array of breadcrumb item data. @type string $label      The breadcrumb text. @type string $url        Optional. The breadcrumb link URL. @type bool   $allow_html Optional. Whether to allow HTML in the label. When true, the label will be sanitized with wp_kses_post(), allowing only safe HTML tags. When false or omitted, all HTML will be escaped with esc_html(). Default false. }",
+                        "types": [
+                            "array[]"
+                        ],
+                        "variable": "$breadcrumb_items"
+                    }
+                ],
+                "long_description_html": "<p>Allows developers to modify, add, or remove breadcrumb items.</p>"
+            },
+            "args": 1
+        },
+        {
+            "name": "block_core_breadcrumbs_post_type_settings",
+            "file": "wp-includes/blocks/breadcrumbs.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters breadcrumb settings (taxonomy and term selection) for a post or post type.",
+                "long_description": "Allows developers to specify which taxonomy and term should be used in the breadcrumb trail when a post type has multiple taxonomies or when a post is assigned to multiple terms within a taxonomy.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "7.0.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "{ Array of breadcrumb settings. Default empty array. @type string $taxonomy Optional. Taxonomy slug to use for breadcrumbs. The taxonomy must be registered for the post type and have terms assigned to the post. If not found or has no terms, fall back to the first available taxonomy with terms. @type string $term     Optional. Term slug to use when the post has multiple terms in the selected taxonomy. If the term is not found or not assigned to the post, fall back to the first term. If the post has only one term, that term is used regardless. }",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$settings"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The post type slug.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$post_type"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The post ID.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$post_id"
+                    }
+                ],
+                "long_description_html": "<p>Allows developers to specify which taxonomy and term should be used in the breadcrumb trail when a post type has multiple taxonomies or when a post is assigned to multiple terms within a taxonomy.</p>"
+            },
+            "args": 3
+        },
+        {
             "name": "block_core_navigation_listable_blocks",
             "file": "wp-includes/blocks/navigation.php",
             "type": "filter",
@@ -8049,6 +8115,31 @@
                 "long_description_html": ""
             },
             "args": 2
+        },
+        {
+            "name": "default_role_dropdown_excluded_roles",
+            "file": "wp-admin/options-general.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the roles to be excluded from the default_role option.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "7.0.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Array of roles to exclude from the dropdown. Defaults to administrator and editor.",
+                        "types": [
+                            "string[]"
+                        ],
+                        "variable": "$roles_to_exclude"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 1
         },
         {
             "name": "default_site_option_{$option}",
@@ -28431,6 +28522,47 @@
             "args": 1
         },
         {
+            "name": "plugins_list_status_text",
+            "file": "wp-admin/includes/class-wp-plugins-list-table.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the status text of default switch case in the plugins list table.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "7.0.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Plugins list status text. Default empty string.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$text"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Count of the number of plugins.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$count"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The status slug being filtered.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$type"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 3
+        },
+        {
             "name": "plugins_update_check_locales",
             "file": "wp-includes/update.php",
             "type": "filter",
@@ -35168,6 +35300,39 @@
             "args": 3
         },
         {
+            "name": "propagate_network_user_spam_to_blogs",
+            "file": "wp-admin/network/users.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters whether to propagate the blog status when a user is marked as spam.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "7.0.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether to propagate the blog status. Default false.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$propagate"
+                    },
+                    {
+                        "name": "param",
+                        "content": "User ID.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$user_id"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 2
+        },
+        {
             "name": "protected_title_format",
             "file": "wp-includes/post-template.php",
             "type": "filter",
@@ -36989,6 +37154,88 @@
                 "long_description_html": ""
             },
             "args": 1
+        },
+        {
+            "name": "rest_block_hooks_post_types",
+            "file": "wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters which post types should have Block Hooks applied.",
+                "long_description": "Allows themes and plugins to add or remove post types that should have Block Hooks functionality enabled in the REST API.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "7.0.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Array of post type names that support Block Hooks.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$content_like_post_types"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The current post type being processed.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$post_type"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The prepared post object.",
+                        "types": [
+                            "object"
+                        ],
+                        "variable": "$prepared_post"
+                    }
+                ],
+                "long_description_html": "<p>Allows themes and plugins to add or remove post types that should have Block Hooks functionality enabled in the REST API.</p>"
+            },
+            "args": 3
+        },
+        {
+            "name": "rest_block_hooks_post_types",
+            "file": "wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters which post types should have Block Hooks applied.",
+                "long_description": "Allows themes and plugins to add or remove post types that should have Block Hooks functionality enabled in the REST API.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "7.0.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Array of post type names that support Block Hooks.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$content_like_post_types"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The current post type being processed.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$post_type"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The post object.",
+                        "types": [
+                            "\\WP_Post"
+                        ],
+                        "variable": "$post"
+                    }
+                ],
+                "long_description_html": "<p>Allows themes and plugins to add or remove post types that should have Block Hooks functionality enabled in the REST API.</p>"
+            },
+            "args": 3
         },
         {
             "name": "rest_comment_collection_params",
@@ -52462,6 +52709,64 @@
             "args": 3
         },
         {
+            "name": "wp_ai_client_default_request_timeout",
+            "file": "wp-includes/ai-client/class-wp-ai-client-prompt-builder.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the default request timeout in seconds for AI Client HTTP requests.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "7.0.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The default timeout in seconds.",
+                        "types": [
+                            "float"
+                        ],
+                        "variable": "$default_timeout"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 1
+        },
+        {
+            "name": "wp_ai_client_prevent_prompt",
+            "file": "wp-includes/ai-client/class-wp-ai-client-prompt-builder.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters whether to prevent the prompt from being executed.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "7.0.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether to prevent the prompt. Default false.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$prevent"
+                    },
+                    {
+                        "name": "param",
+                        "content": "A clone of the prompt builder instance (read-only).",
+                        "types": [
+                            "\\WP_AI_Client_Prompt_Builder"
+                        ],
+                        "variable": "$builder"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 2
+        },
+        {
             "name": "wp_ajax_cropped_attachment_id",
             "file": "wp-admin/includes/ajax-actions.php",
             "type": "filter",
@@ -54771,6 +55076,38 @@
                             "string"
                         ],
                         "variable": "$generator_type"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 1
+        },
+        {
+            "name": "wp_get_archives_args",
+            "file": "wp-includes/general-template.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the arguments for displaying archive links.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "7.0.0"
+                    },
+                    {
+                        "name": "see",
+                        "content": "",
+                        "refers": "wp_get_archives()"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Arguments.",
+                        "types": [
+                            "array<string,string",
+                            "int",
+                            "bool>"
+                        ],
+                        "variable": "$args"
                     }
                 ],
                 "long_description_html": ""
@@ -61954,6 +62291,31 @@
             "args": 1
         },
         {
+            "name": "wp_supports_ai",
+            "file": "wp-includes/ai-client.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters whether the current request can use AI.",
+                "long_description": "This allows plugins and 3rd-party code to disable AI features on a per-request basis, or to even override explicit preferences defined by the site owner.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "7.0.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether AI is available. Default to true.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$is_enabled"
+                    }
+                ],
+                "long_description_html": "<p>This allows plugins and 3rd-party code to disable AI features on a per-request basis, or to even override explicit preferences defined by the site owner.</p>"
+            },
+            "args": 1
+        },
+        {
             "name": "wp_tag_cloud",
             "file": "wp-includes/category-template.php",
             "type": "filter",
@@ -62391,6 +62753,55 @@
                 "long_description_html": ""
             },
             "args": 2
+        },
+        {
+            "name": "wp_trigger_error_trigger_error",
+            "file": "wp-includes/functions.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters whether to trigger an error.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "7.0.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether to trigger the error. Default true.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$trigger"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The function that triggered the error.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$function_name"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The message explaining the error.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$message"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The designated error type for this error.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$error_level"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 4
         },
         {
             "name": "wp_trim_excerpt",

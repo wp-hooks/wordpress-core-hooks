@@ -10303,6 +10303,43 @@
         },
         {
             "name": "manage_{$this->screen->id}_custom_column",
+            "aliases": [
+                "manage_erase-personal-data_custom_column",
+                "manage_export-personal-data_custom_column"
+            ],
+            "file": "wp-admin/includes/class-wp-privacy-requests-table.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires for each custom column of a specific request type in the Privacy Requests list table.",
+                "long_description": "Custom columns are registered using the {@see 'manage_export-personal-data_columns'} and the {@see 'manage_erase-personal-data_columns'} filters.\n The dynamic portion of the hook name, `$this->screen->id`, refers to the ID given to the list table according to which screen it's displayed on.\n Possible hook names include:\n\n  - `manage_export-personal-data_custom_column`\n  - `manage_erase-personal-data_custom_column`",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.7.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The name of the column to display.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$column_name"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The item being shown.",
+                        "types": [
+                            "\\WP_User_Request"
+                        ],
+                        "variable": "$item"
+                    }
+                ],
+                "long_description_html": "<p>Custom columns are registered using the {@see 'manage_export-personal-data_columns'} and the {@see 'manage_erase-personal-data_columns'} filters.</p> <p>The dynamic portion of the hook name, <code>$this-&gt;screen-&gt;id</code>, refers to the ID given to the list table according to which screen it's displayed on.</p> <p>Possible hook names include:</p> <ul> <li><code>manage_export-personal-data_custom_column</code></li> <li><code>manage_erase-personal-data_custom_column</code></li> </ul>"
+            },
+            "args": 2
+        },
+        {
+            "name": "manage_{$this->screen->id}_custom_column",
             "file": "wp-admin/includes/class-wp-application-passwords-list-table.php",
             "type": "action",
             "doc": {
@@ -18241,6 +18278,31 @@
             "args": 3
         },
         {
+            "name": "wp_ai_client_{$event_name}",
+            "file": "wp-includes/ai-client/adapters/class-wp-ai-client-event-dispatcher.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires when an AI client event is dispatched.",
+                "long_description": "The dynamic portion of the hook name, `$event_name`, refers to the snake_case version of the event class name, without the `_event` suffix.\n For example, an event class named `BeforeGenerateResultEvent` will fire the `wp_ai_client_before_generate_result` action hook.\n In practice, the available action hook names are:\n - wp_ai_client_before_generate_result - wp_ai_client_after_generate_result",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "7.0.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The event object.",
+                        "types": [
+                            "object"
+                        ],
+                        "variable": "$event"
+                    }
+                ],
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$event_name</code>, refers to the snake_case version of the event class name, without the <code>_event</code> suffix.</p> <p>For example, an event class named <code>BeforeGenerateResultEvent</code> will fire the <code>wp_ai_client_before_generate_result</code> action hook.</p> <p>In practice, the available action hook names are:</p> <ul> <li>wp_ai_client_before_generate_result</li> <li>wp_ai_client_after_generate_result</li> </ul>"
+            },
+            "args": 1
+        },
+        {
             "name": "wp_ajax_crop_image_pre_save",
             "file": "wp-admin/includes/ajax-actions.php",
             "type": "action",
@@ -18760,6 +18822,31 @@
                 "long_description_html": ""
             },
             "args": 6
+        },
+        {
+            "name": "wp_connectors_init",
+            "file": "wp-includes/connectors.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires when the connector registry is ready for plugins to register connectors.",
+                "long_description": "Built-in connectors and any AI providers auto-discovered from the WP AI Client registry have already been registered at this point and cannot be unhooked.\n AI provider plugins that register with the WP AI Client do not need to use this action \u2014 their connectors are created automatically. This action is primarily for registering non-AI-provider connectors or overriding metadata on existing connectors.\n Use `$registry->register()` within this action to add new connectors. To override an existing connector, unregister it first, then re-register with updated data.\n Example \u2014 overriding metadata on an auto-discovered connector:\n     add_action( 'wp_connectors_init', function ( WP_Connector_Registry $registry ) {         if ( $registry->is_registered( 'anthropic' ) ) {             $connector = $registry->unregister( 'anthropic' );             $connector['description'] = __( 'Custom description for Anthropic.', 'my-plugin' );             $registry->register( 'anthropic', $connector );         }     } );",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "7.0.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Connector registry instance.",
+                        "types": [
+                            "\\WP_Connector_Registry"
+                        ],
+                        "variable": "$registry"
+                    }
+                ],
+                "long_description_html": "<p>Built-in connectors and any AI providers auto-discovered from the WP AI Client registry have already been registered at this point and cannot be unhooked.</p> <p>AI provider plugins that register with the WP AI Client do not need to use this action \u2014 their connectors are created automatically. This action is primarily for registering non-AI-provider connectors or overriding metadata on existing connectors.</p> <p>Use <code>$registry-&gt;register()</code> within this action to add new connectors. To override an existing connector, unregister it first, then re-register with updated data.</p> <p>Example \u2014 overriding metadata on an auto-discovered connector:</p> <pre><code>add_action( 'wp_connectors_init', function ( WP_Connector_Registry $registry ) {     if ( $registry-&gt;is_registered( 'anthropic' ) ) {         $connector = $registry-&gt;unregister( 'anthropic' );         $connector['description'] = __( 'Custom description for Anthropic.', 'my-plugin' );         $registry-&gt;register( 'anthropic', $connector );     } } );</code></pre>"
+            },
+            "args": 1
         },
         {
             "name": "wp_create_application_password",
@@ -20335,6 +20422,47 @@
                 "long_description_html": ""
             },
             "args": 2
+        },
+        {
+            "name": "wp_trigger_error_always_run",
+            "file": "wp-includes/functions.php",
+            "type": "action",
+            "doc": {
+                "description": "Always fires when the given function triggers a user-level error/warning/notice/deprecation message.",
+                "long_description": "Can be used to attach custom error handlers even if WP_DEBUG is not truthy.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "7.0.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The function that triggered the error.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$function_name"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The message explaining the error.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$message"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The designated error type for this error.",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$error_level"
+                    }
+                ],
+                "long_description_html": "<p>Can be used to attach custom error handlers even if WP_DEBUG is not truthy.</p>"
+            },
+            "args": 3
         },
         {
             "name": "wp_trigger_error_run",
