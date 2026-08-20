@@ -37331,50 +37331,10 @@
                         "name": "param",
                         "content": "The prepared post object.",
                         "types": [
-                            "object"
-                        ],
-                        "variable": "$prepared_post"
-                    }
-                ],
-                "long_description_html": "<p>Allows themes and plugins to add or remove post types that should have Block Hooks functionality enabled in the REST API.</p>"
-            },
-            "args": 3
-        },
-        {
-            "name": "rest_block_hooks_post_types",
-            "file": "wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php",
-            "type": "filter",
-            "doc": {
-                "description": "Filters which post types should have Block Hooks applied.",
-                "long_description": "Allows themes and plugins to add or remove post types that should have Block Hooks functionality enabled in the REST API.",
-                "tags": [
-                    {
-                        "name": "since",
-                        "content": "7.0.0"
-                    },
-                    {
-                        "name": "param",
-                        "content": "Array of post type names that support Block Hooks.",
-                        "types": [
-                            "array"
-                        ],
-                        "variable": "$content_like_post_types"
-                    },
-                    {
-                        "name": "param",
-                        "content": "The current post type being processed.",
-                        "types": [
-                            "string"
-                        ],
-                        "variable": "$post_type"
-                    },
-                    {
-                        "name": "param",
-                        "content": "The post object.",
-                        "types": [
+                            "\\stdClass",
                             "\\WP_Post"
                         ],
-                        "variable": "$post"
+                        "variable": "$prepared_post"
                     }
                 ],
                 "long_description_html": "<p>Allows themes and plugins to add or remove post types that should have Block Hooks functionality enabled in the REST API.</p>"

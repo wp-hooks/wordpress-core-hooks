@@ -63,6 +63,7 @@ This document is automatically generated from the hooks extracted from WordPress
 
 ### Changes
 
+- [`gallery_style`](https://developer.wordpress.org/reference/hooks/gallery_style/) - Removed the <code>type</code> attribute for any theme.
 - [`load_script_textdomain_relative_path`](https://developer.wordpress.org/reference/hooks/load_script_textdomain_relative_path/) - The <code>$is_module</code> parameter was added.
 - [`option_page_capability_{$option_page}`](https://developer.wordpress.org/reference/hooks/option_page_capability_option_page/) - Applied when <code>wp-admin/options.php</code> is accessed directly.
 - [`the_author_posts_link`](https://developer.wordpress.org/reference/hooks/the_author_posts_link/) - Added <code>$author</code> and <code>$title</code> parameters.
@@ -513,7 +514,7 @@ _No new actions in this version._
 - [`enable_loading_object_cache_dropin`](https://developer.wordpress.org/reference/hooks/enable_loading_object_cache_dropin/) - Filters whether to enable loading of the object-cache.php drop-in.
 - [`excerpt_allowed_wrapper_blocks`](https://developer.wordpress.org/reference/hooks/excerpt_allowed_wrapper_blocks/) - Filters the list of blocks that can be used as wrapper blocks, allowing excerpts to be generated from the `innerBlocks` of these wrappers.
 - [`image_editor_output_format`](https://developer.wordpress.org/reference/hooks/image_editor_output_format/) - Filters the image editor output format mapping.
-- [`media_library_infinite_scrolling`](https://developer.wordpress.org/reference/hooks/media_library_infinite_scrolling/) - Filters whether the Media Library grid has infinite scrolling. Default `false`.
+- [`media_library_infinite_scrolling`](https://developer.wordpress.org/reference/hooks/media_library_infinite_scrolling/) - Filters whether the Media Library grid has infinite scrolling. Default `true`.
 - [`rest_pattern_directory_collection_params`](https://developer.wordpress.org/reference/hooks/rest_pattern_directory_collection_params/) - Filter collection parameters for the block pattern directory controller.
 - [`rest_prepare_block_pattern`](https://developer.wordpress.org/reference/hooks/rest_prepare_block_pattern/) - Filters the REST API response for a block pattern.
 - [`rest_prepare_sidebar`](https://developer.wordpress.org/reference/hooks/rest_prepare_sidebar/) - Filters the REST API response for a sidebar.
@@ -860,6 +861,7 @@ _No new actions in this version._
 
 ### Changes
 
+- [`gallery_style`](https://developer.wordpress.org/reference/hooks/gallery_style/) - Removed the <code>type</code> attribute for <code>style</code> tags when the theme supports HTML5 style, and changed the quotes from single to double for other themes.
 - [`intermediate_image_sizes_advanced`](https://developer.wordpress.org/reference/hooks/intermediate_image_sizes_advanced/) - Added the <code>$attachment_id</code> argument.
 - [`mce_external_languages`](https://developer.wordpress.org/reference/hooks/mce_external_languages/) - The <code>$editor_id</code> parameter was added.
 - [`mce_external_plugins`](https://developer.wordpress.org/reference/hooks/mce_external_plugins/) - The <code>$editor_id</code> parameter was added.
@@ -892,7 +894,7 @@ _No new actions in this version._
 - [`oembed_iframe_title_attribute`](https://developer.wordpress.org/reference/hooks/oembed_iframe_title_attribute/) - Filters the title attribute of the given oEmbed HTML iframe.
 - [`populate_site_meta`](https://developer.wordpress.org/reference/hooks/populate_site_meta/) - Filters meta for a site on creation.
 - [`post_column_taxonomy_links`](https://developer.wordpress.org/reference/hooks/post_column_taxonomy_links/) - Filters the links in `$taxonomy` column of edit.php.
-- [`recovery_email_support_info`](https://developer.wordpress.org/reference/hooks/recovery_email_support_info/) - Filters the support message sent with the the fatal error protection email.
+- [`recovery_email_support_info`](https://developer.wordpress.org/reference/hooks/recovery_email_support_info/) - Filters the support message sent with the fatal error protection email.
 - [`recovery_mode_begin_url`](https://developer.wordpress.org/reference/hooks/recovery_mode_begin_url/) - Filters the URL to begin recovery mode.
 - [`recovery_mode_cookie_length`](https://developer.wordpress.org/reference/hooks/recovery_mode_cookie_length/) - Filters the length of time a Recovery Mode cookie is valid for.
 - [`recovery_mode_email`](https://developer.wordpress.org/reference/hooks/recovery_mode_email/) - Filters the contents of the Recovery Mode email.
@@ -1520,7 +1522,7 @@ _No new actions in this version._
 - [`nav_menu_item_title`](https://developer.wordpress.org/reference/hooks/nav_menu_item_title/) - Filters a menu item's title.
 - [`navigation_markup_template`](https://developer.wordpress.org/reference/hooks/navigation_markup_template/) - Filters the navigation markup template.
 - [`notify_moderator`](https://developer.wordpress.org/reference/hooks/notify_moderator/) - Filters whether to send the site moderator email notifications, overriding the site setting.
-- [`notify_post_author`](https://developer.wordpress.org/reference/hooks/notify_post_author/) - Filters whether to send the post author new comment notification emails, overriding the site setting.
+- [`notify_post_author`](https://developer.wordpress.org/reference/hooks/notify_post_author/) - Filters whether to send the post author new comment and note notification emails, overriding the site settings and defaults. By default, notifications are sent for all notes and for approved comments.
 - [`oembed_default_width`](https://developer.wordpress.org/reference/hooks/oembed_default_width/) - Filters the maxwidth oEmbed parameter.
 - [`oembed_discovery_links`](https://developer.wordpress.org/reference/hooks/oembed_discovery_links/) - Filters the oEmbed discovery links HTML.
 - [`oembed_endpoint_url`](https://developer.wordpress.org/reference/hooks/oembed_endpoint_url/) - Filters the oEmbed endpoint URL.
@@ -1859,7 +1861,7 @@ _No new actions in this version._
 
 ### Changes
 
-_No changes in this version._
+- [`use_default_gallery_style`](https://developer.wordpress.org/reference/hooks/use_default_gallery_style/) - Set the default to false when the theme supports HTML5 galleries.
 
 ## WordPress 3.8
 
@@ -2350,6 +2352,7 @@ _No changes in this version._
 
 ### Changes
 
+- [`gallery_style`](https://developer.wordpress.org/reference/hooks/gallery_style/) - Added classes for number of columns and size to opening div.
 - [`upload_post_params`](https://developer.wordpress.org/reference/hooks/upload_post_params/) - As 'swfupload_post_params'
 
 ## WordPress 3.0
@@ -3023,7 +3026,7 @@ _No changes in this version._
 - [`editor_max_image_size`](https://developer.wordpress.org/reference/hooks/editor_max_image_size/) - Filters the maximum image size dimensions for the editor.
 - [`ext2type`](https://developer.wordpress.org/reference/hooks/ext2type/) - Filters file type based on the extension name.
 - [`file_is_displayable_image`](https://developer.wordpress.org/reference/hooks/file_is_displayable_image/) - Filters whether the current image is displayable in the browser.
-- [`gallery_style`](https://developer.wordpress.org/reference/hooks/gallery_style/) - Filters the default gallery shortcode CSS styles.
+- [`gallery_style`](https://developer.wordpress.org/reference/hooks/gallery_style/) - Filters the gallery shortcode's default CSS styles and opening HTML div container.
 - [`get_avatar`](https://developer.wordpress.org/reference/hooks/get_avatar/) - Filters the HTML for a user's avatar.
 - [`get_pagenum_link`](https://developer.wordpress.org/reference/hooks/get_pagenum_link/) - Filters the page number link for the current request.
 - [`get_the_generator_{$type}`](https://developer.wordpress.org/reference/hooks/get_the_generator_type/) - Filters the HTML for the retrieved generator type.

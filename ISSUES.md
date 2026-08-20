@@ -8,7 +8,7 @@ This document lists known data quality issues in the hooks JSON files.
 
 ## Duplicate Filters
 
-- `rest_block_hooks_post_types`
+_No duplicate filters._
 
 ## Missing @since Tags
 
