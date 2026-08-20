@@ -2,7 +2,7 @@
 
 All the actions and filters from WordPress core in machine-readable JSON format.
 
-Last updated for WordPress 7.0.
+Last updated for WordPress 7.1.
 
 ## Installation
 

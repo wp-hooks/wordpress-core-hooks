@@ -18057,6 +18057,47 @@
             "args": 1
         },
         {
+            "name": "wp_ability_invoked",
+            "file": "wp-includes/abilities-api/class-wp-ability.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires when an ability is invoked, before any processing takes place.",
+                "long_description": "This action fires for every call regardless of outcome (validation failure, permission denial, short-circuit, or successful execution), and before input normalization so the raw input is captured as-is.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "7.1.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The name of the ability.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$ability_name"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The raw input data for the ability, before normalization.",
+                        "types": [
+                            "mixed"
+                        ],
+                        "variable": "$input"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The ability instance.",
+                        "types": [
+                            "\\WP_Ability"
+                        ],
+                        "variable": "$ability"
+                    }
+                ],
+                "long_description_html": "<p>This action fires for every call regardless of outcome (validation failure, permission denial, short-circuit, or successful execution), and before input normalization so the raw input is captured as-is.</p>"
+            },
+            "args": 3
+        },
+        {
             "name": "wp_add_nav_menu_item",
             "file": "wp-includes/nav-menu.php",
             "type": "action",
@@ -18165,6 +18206,11 @@
                         "content": "6.9.0"
                     },
                     {
+                        "name": "since",
+                        "content": "7.1.0",
+                        "description": "Added the <code>$ability</code> parameter."
+                    },
+                    {
                         "name": "param",
                         "content": "The name of the ability.",
                         "types": [
@@ -18187,11 +18233,19 @@
                             "mixed"
                         ],
                         "variable": "$result"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The ability instance.",
+                        "types": [
+                            "\\WP_Ability"
+                        ],
+                        "variable": "$ability"
                     }
                 ],
                 "long_description_html": ""
             },
-            "args": 3
+            "args": 4
         },
         {
             "name": "wp_after_insert_post",
@@ -18620,6 +18674,11 @@
                         "content": "6.9.0"
                     },
                     {
+                        "name": "since",
+                        "content": "7.1.0",
+                        "description": "Added the <code>$ability</code> parameter."
+                    },
+                    {
                         "name": "param",
                         "content": "The name of the ability.",
                         "types": [
@@ -18634,11 +18693,19 @@
                             "mixed"
                         ],
                         "variable": "$input"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The ability instance.",
+                        "types": [
+                            "\\WP_Ability"
+                        ],
+                        "variable": "$ability"
                     }
                 ],
                 "long_description_html": ""
             },
-            "args": 2
+            "args": 3
         },
         {
             "name": "wp_before_include_template",

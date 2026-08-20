@@ -2,6 +2,42 @@
 
 This document is automatically generated from the hooks extracted from WordPress and lists new actions, new filters, and parameter changes by version.
 
+## WordPress 7.1
+
+### New Actions
+
+- [`wp_ability_invoked`](https://developer.wordpress.org/reference/hooks/wp_ability_invoked/) - Fires when an ability is invoked, before any processing takes place.
+
+### New Filters
+
+- [`is_user_member_of_blog`](https://developer.wordpress.org/reference/hooks/is_user_member_of_blog/) - Filters whether the user is a member of a given blog.
+- [`login_remember_me_help_text`](https://developer.wordpress.org/reference/hooks/login_remember_me_help_text/) - Filters the help text shown in the "Remember Me" tooltip on the login form.
+- [`rest_abilities_collection_params`](https://developer.wordpress.org/reference/hooks/rest_abilities_collection_params/) - Filters REST API collection parameters for the abilities controller.
+- [`wp_ability_execute_result`](https://developer.wordpress.org/reference/hooks/wp_ability_execute_result/) - Filters the result returned by an ability's execute callback.
+- [`wp_ability_normalize_input`](https://developer.wordpress.org/reference/hooks/wp_ability_normalize_input/) - Filters the normalized input for an ability.
+- [`wp_ability_permission_result`](https://developer.wordpress.org/reference/hooks/wp_ability_permission_result/) - Filters the result of an ability's permission check.
+- [`wp_ability_validate_input`](https://developer.wordpress.org/reference/hooks/wp_ability_validate_input/) - Filters the input validation result for an ability.
+- [`wp_ability_validate_output`](https://developer.wordpress.org/reference/hooks/wp_ability_validate_output/) - Filters the output validation result for an ability.
+- [`wp_ai_client_cache_group`](https://developer.wordpress.org/reference/hooks/wp_ai_client_cache_group/) - Filters the cache group used by the WP AI Client cache adapter.
+- [`wp_auto_approve_ping`](https://developer.wordpress.org/reference/hooks/wp_auto_approve_ping/) - Filters whether a pingback is approved without being held for moderation.
+- [`wp_client_side_media_processing_enabled`](https://developer.wordpress.org/reference/hooks/wp_client_side_media_processing_enabled/) - Filters whether client-side media processing is enabled.
+- [`wp_get_abilities_item_include`](https://developer.wordpress.org/reference/hooks/wp_get_abilities_item_include/) - Filters whether an individual ability should be included in the result set.
+- [`wp_get_abilities_result`](https://developer.wordpress.org/reference/hooks/wp_get_abilities_result/) - Filters the full list of matched abilities after all per-item filtering is complete.
+- [`wp_get_entity_view_config_hook_name($kind, $name)`](https://developer.wordpress.org/reference/hooks/wp_get_entity_view_config_hook_name(kind, name)/) - Filters the view configuration for a given entity.
+- [`wp_json_schema_allowed_keywords`](https://developer.wordpress.org/reference/hooks/wp_json_schema_allowed_keywords/) - Filters the JSON Schema keywords allowed for a given schema profile.
+- [`wp_pre_execute_ability`](https://developer.wordpress.org/reference/hooks/wp_pre_execute_ability/) - Filters whether to short-circuit ability execution.
+- [`wp_should_disable_pings_for_environment`](https://developer.wordpress.org/reference/hooks/wp_should_disable_pings_for_environment/) - Filters whether pings should be disabled for the current environment.
+
+### Changes
+
+- [`media_library_infinite_scrolling`](https://developer.wordpress.org/reference/hooks/media_library_infinite_scrolling/) - Changed default to <code>true</code> and introduced per-user opt-out of infinite scrolling.
+- [`notify_post_author`](https://developer.wordpress.org/reference/hooks/notify_post_author/) - Comment approval status is checked before this filter, and the filter no longer fires for invalid comment IDs.
+- [`pre_wp_filesize`](https://developer.wordpress.org/reference/hooks/pre_wp_filesize/) - Negative values are now ignored, being treated the same as null. Numeric values are cast to integers.
+- [`safe_style_css`](https://developer.wordpress.org/reference/hooks/safe_style_css/) - Added support for SVG presentation attributes.
+- [`wp_after_execute_ability`](https://developer.wordpress.org/reference/hooks/wp_after_execute_ability/) - Added the <code>$ability</code> parameter.
+- [`wp_before_execute_ability`](https://developer.wordpress.org/reference/hooks/wp_before_execute_ability/) - Added the <code>$ability</code> parameter.
+- [`wp_filesize`](https://developer.wordpress.org/reference/hooks/wp_filesize/) - The return value is now always zero or greater. Numeric values are cast to integers.
+
 ## WordPress 7.0
 
 ### New Actions
