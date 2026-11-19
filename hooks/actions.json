@@ -1,5 +1,5 @@
 {
-    "$schema": "https://raw.githubusercontent.com/wp-hooks/generator/1.0.0/schema.json",
+    "$schema": "https://raw.githubusercontent.com/wp-hooks/generator/1.0.2/schema.json",
     "hooks": [
         {
             "name": "_admin_menu",
@@ -2491,14 +2491,14 @@
             "type": "action",
             "doc": {
                 "description": "Fires inside the feed tag in the Atom comment feed.",
-                "long_description": "",
+                "long_description": "Consider using the {@see 'wp_feed_namespaces'} filter instead, which prevents duplicate `xmlns` attributes.",
                 "tags": [
                     {
                         "name": "since",
                         "content": "2.8.0"
                     }
                 ],
-                "long_description_html": ""
+                "long_description_html": "<p>Consider using the {@see 'wp_feed_namespaces'} filter instead, which prevents duplicate <code>xmlns</code> attributes.</p>"
             },
             "args": 0
         },
@@ -2542,14 +2542,14 @@
             "type": "action",
             "doc": {
                 "description": "Fires at end of the Atom feed root to add namespaces.",
-                "long_description": "",
+                "long_description": "Consider using the {@see 'wp_feed_namespaces'} filter instead, which prevents duplicate `xmlns` attributes.",
                 "tags": [
                     {
                         "name": "since",
                         "content": "2.0.0"
                     }
                 ],
-                "long_description_html": ""
+                "long_description_html": "<p>Consider using the {@see 'wp_feed_namespaces'} filter instead, which prevents duplicate <code>xmlns</code> attributes.</p>"
             },
             "args": 0
         },
@@ -9879,6 +9879,64 @@
             "args": 1
         },
         {
+            "name": "manage_application-passwords-user_custom_column",
+            "file": "wp-admin/includes/class-wp-application-passwords-list-table.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires for each custom column in the Application Passwords list table.",
+                "long_description": "Custom columns are registered using the {@see 'manage_application-passwords-user_columns'} filter.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.6.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Name of the custom column.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$column_name"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The application password item.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$item"
+                    }
+                ],
+                "long_description_html": "<p>Custom columns are registered using the {@see 'manage_application-passwords-user_columns'} filter.</p>"
+            },
+            "args": 2
+        },
+        {
+            "name": "manage_application-passwords-user_custom_column_js_template",
+            "file": "wp-admin/includes/class-wp-application-passwords-list-table.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires in the JavaScript row template for each custom column in the Application Passwords list table.",
+                "long_description": "Custom columns are registered using the {@see 'manage_application-passwords-user_columns'} filter.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "5.6.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Name of the custom column.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$column_name"
+                    }
+                ],
+                "long_description_html": "<p>Custom columns are registered using the {@see 'manage_application-passwords-user_columns'} filter.</p>"
+            },
+            "args": 1
+        },
+        {
             "name": "manage_comments_custom_column",
             "file": "wp-admin/includes/class-wp-comments-list-table.php",
             "type": "action",
@@ -10344,64 +10402,6 @@
                 "long_description_html": "<p>Custom columns are registered using the {@see 'manage_export-personal-data_columns'} and the {@see 'manage_erase-personal-data_columns'} filters.</p> <p>The dynamic portion of the hook name, <code>$this-&gt;screen-&gt;id</code>, refers to the ID given to the list table according to which screen it's displayed on.</p> <p>Possible hook names include:</p> <ul> <li><code>manage_export-personal-data_custom_column</code></li> <li><code>manage_erase-personal-data_custom_column</code></li> </ul>"
             },
             "args": 2
-        },
-        {
-            "name": "manage_{$this->screen->id}_custom_column",
-            "file": "wp-admin/includes/class-wp-application-passwords-list-table.php",
-            "type": "action",
-            "doc": {
-                "description": "Fires for each custom column in the Application Passwords list table.",
-                "long_description": "Custom columns are registered using the {@see 'manage_application-passwords-user_columns'} filter.",
-                "tags": [
-                    {
-                        "name": "since",
-                        "content": "5.6.0"
-                    },
-                    {
-                        "name": "param",
-                        "content": "Name of the custom column.",
-                        "types": [
-                            "string"
-                        ],
-                        "variable": "$column_name"
-                    },
-                    {
-                        "name": "param",
-                        "content": "The application password item.",
-                        "types": [
-                            "array"
-                        ],
-                        "variable": "$item"
-                    }
-                ],
-                "long_description_html": "<p>Custom columns are registered using the {@see 'manage_application-passwords-user_columns'} filter.</p>"
-            },
-            "args": 2
-        },
-        {
-            "name": "manage_{$this->screen->id}_custom_column_js_template",
-            "file": "wp-admin/includes/class-wp-application-passwords-list-table.php",
-            "type": "action",
-            "doc": {
-                "description": "Fires in the JavaScript row template for each custom column in the Application Passwords list table.",
-                "long_description": "Custom columns are registered using the {@see 'manage_application-passwords-user_columns'} filter.",
-                "tags": [
-                    {
-                        "name": "since",
-                        "content": "5.6.0"
-                    },
-                    {
-                        "name": "param",
-                        "content": "Name of the custom column.",
-                        "types": [
-                            "string"
-                        ],
-                        "variable": "$column_name"
-                    }
-                ],
-                "long_description_html": "<p>Custom columns are registered using the {@see 'manage_application-passwords-user_columns'} filter.</p>"
-            },
-            "args": 1
         },
         {
             "name": "mature_blog",
@@ -12715,14 +12715,14 @@
             "type": "action",
             "doc": {
                 "description": "Fires at the end of the feed root to add namespaces.",
-                "long_description": "",
+                "long_description": "Consider using the {@see 'wp_feed_namespaces'} filter instead, which prevents duplicate `xmlns` attributes.",
                 "tags": [
                     {
                         "name": "since",
                         "content": "2.0.0"
                     }
                 ],
-                "long_description_html": ""
+                "long_description_html": "<p>Consider using the {@see 'wp_feed_namespaces'} filter instead, which prevents duplicate <code>xmlns</code> attributes.</p>"
             },
             "args": 0
         },
@@ -13299,13 +13299,13 @@
                 "long_description": "This action maps Requests internal hook to a native WordPress action.",
                 "tags": [
                     {
-                        "name": "see",
-                        "content": "",
-                        "refers": "https://github.com/WordPress/Requests/blob/master/docs/hooks.md"
-                    },
-                    {
                         "name": "since",
                         "content": "4.7.0"
+                    },
+                    {
+                        "name": "link",
+                        "content": "<a href=\"https://github.com/WordPress/Requests/blob/stable/docs/hooks.md\">https://github.com/WordPress/Requests/blob/stable/docs/hooks.md</a>",
+                        "link": "https://github.com/WordPress/Requests/blob/stable/docs/hooks.md"
                     },
                     {
                         "name": "param",
@@ -14597,14 +14597,14 @@
             "type": "action",
             "doc": {
                 "description": "Fires at the end of the RSS root to add namespaces.",
-                "long_description": "",
+                "long_description": "Consider using the {@see 'wp_feed_namespaces'} filter instead, which prevents duplicate `xmlns` attributes.",
                 "tags": [
                     {
                         "name": "since",
                         "content": "2.8.0"
                     }
                 ],
-                "long_description_html": ""
+                "long_description_html": "<p>Consider using the {@see 'wp_feed_namespaces'} filter instead, which prevents duplicate <code>xmlns</code> attributes.</p>"
             },
             "args": 0
         },
@@ -14648,14 +14648,14 @@
             "type": "action",
             "doc": {
                 "description": "Fires at the end of the RSS root to add namespaces.",
-                "long_description": "",
+                "long_description": "Consider using the {@see 'wp_feed_namespaces'} filter instead, which prevents duplicate `xmlns` attributes.",
                 "tags": [
                     {
                         "name": "since",
                         "content": "2.0.0"
                     }
                 ],
-                "long_description_html": ""
+                "long_description_html": "<p>Consider using the {@see 'wp_feed_namespaces'} filter instead, which prevents duplicate <code>xmlns</code> attributes.</p>"
             },
             "args": 0
         },
@@ -18177,6 +18177,23 @@
             "args": 2
         },
         {
+            "name": "wp_admin_page_not_found",
+            "file": "wp-admin/includes/menu.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires when a request is made to access an admin page that does not exist.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "7.2.0"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 0
+        },
+        {
             "name": "wp_after_admin_bar_render",
             "file": "wp-includes/admin-bar.php",
             "type": "action",
@@ -18220,7 +18237,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The input data for the ability.",
+                        "content": "The prepared input data for the ability.",
                         "types": [
                             "mixed"
                         ],
@@ -18344,11 +18361,16 @@
             "type": "action",
             "doc": {
                 "description": "Fires when an AI client event is dispatched.",
-                "long_description": "The dynamic portion of the hook name, `$event_name`, refers to the snake_case version of the event class name, without the `_event` suffix.\n For example, an event class named `BeforeGenerateResultEvent` will fire the `wp_ai_client_before_generate_result` action hook.\n In practice, the available action hook names are:\n - wp_ai_client_before_generate_result - wp_ai_client_after_generate_result",
+                "long_description": "The dynamic portion of the hook name, `$event_name`, refers to the snake_case version of the event class name, without the `_event` suffix.\n For example, an event class named `BeforeGenerateResultEvent` will fire the `wp_ai_client_before_generate_result` action hook.\n In practice, the available action hook names are:\n - wp_ai_client_before_generate_result - wp_ai_client_after_generate_result - wp_ai_client_before_generate_embedding - wp_ai_client_after_generate_embedding",
                 "tags": [
                     {
                         "name": "since",
                         "content": "7.0.0"
+                    },
+                    {
+                        "name": "since",
+                        "content": "7.2.0",
+                        "description": "Added the <code>wp_ai_client_before_generate_embedding</code> and <code>wp_ai_client_after_generate_embedding</code> action hooks."
                     },
                     {
                         "name": "param",
@@ -18359,7 +18381,7 @@
                         "variable": "$event"
                     }
                 ],
-                "long_description_html": "<p>The dynamic portion of the hook name, <code>$event_name</code>, refers to the snake_case version of the event class name, without the <code>_event</code> suffix.</p> <p>For example, an event class named <code>BeforeGenerateResultEvent</code> will fire the <code>wp_ai_client_before_generate_result</code> action hook.</p> <p>In practice, the available action hook names are:</p> <ul> <li>wp_ai_client_before_generate_result</li> <li>wp_ai_client_after_generate_result</li> </ul>"
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$event_name</code>, refers to the snake_case version of the event class name, without the <code>_event</code> suffix.</p> <p>For example, an event class named <code>BeforeGenerateResultEvent</code> will fire the <code>wp_ai_client_before_generate_result</code> action hook.</p> <p>In practice, the available action hook names are:</p> <ul> <li>wp_ai_client_before_generate_result</li> <li>wp_ai_client_after_generate_result</li> <li>wp_ai_client_before_generate_embedding</li> <li>wp_ai_client_after_generate_embedding</li> </ul>"
             },
             "args": 1
         },
@@ -18666,7 +18688,7 @@
             "file": "wp-includes/abilities-api/class-wp-ability.php",
             "type": "action",
             "doc": {
-                "description": "Fires before an ability gets executed, after input validation and permissions check.",
+                "description": "Fires before an ability gets executed, after input preparation and permissions check.",
                 "long_description": "",
                 "tags": [
                     {
@@ -18688,7 +18710,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The input data for the ability.",
+                        "content": "The prepared input data for the ability.",
                         "types": [
                             "mixed"
                         ],
@@ -18938,6 +18960,11 @@
                         "name": "since",
                         "content": "6.8.0",
                         "description": "The hashed password value now uses wp_fast_hash() instead of phpass."
+                    },
+                    {
+                        "name": "since",
+                        "content": "7.2.0",
+                        "description": "The values in <code>$new_item</code> and <code>$args</code> are unslashed."
                     },
                     {
                         "name": "param",
@@ -19361,6 +19388,40 @@
                     }
                 ],
                 "long_description_html": ""
+            },
+            "args": 0
+        },
+        {
+            "name": "wp_entity_actions_api_init",
+            "file": "wp-includes/class-wp-entity-actions-registry.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires the first time the registered actions are read, after `init`.",
+                "long_description": "Register or remove actions here, with wp_register_entity_actions() and wp_unregister_entity_actions(): it is the only time they run.\n The first read happens wherever the actions are needed: while handling a REST request as well as on `admin_footer` of the pages that load the editor script. A callback should register actions and nothing else; script modules, styles, and their enqueue hooks belong on `init`.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "7.2.0"
+                    }
+                ],
+                "long_description_html": "<p>Register or remove actions here, with wp_register_entity_actions() and wp_unregister_entity_actions(): it is the only time they run.</p> <p>The first read happens wherever the actions are needed: while handling a REST request as well as on <code>admin_footer</code> of the pages that load the editor script. A callback should register actions and nothing else; script modules, styles, and their enqueue hooks belong on <code>init</code>.</p>"
+            },
+            "args": 0
+        },
+        {
+            "name": "wp_entity_fields_api_init",
+            "file": "wp-includes/class-wp-entity-fields-registry.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires the first time the registered fields are read, after `init`.",
+                "long_description": "Register or adjust fields here, with wp_register_entity_fields(), wp_update_entity_fields(), and wp_unregister_entity_fields(): it is the only time they run.\n The first read happens wherever the fields are needed: while handling a REST request as well as on `admin_footer` of the pages that load the editor script. A callback should register fields and nothing else; script modules, styles, and their enqueue hooks belong on `init`.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "7.2.0"
+                    }
+                ],
+                "long_description_html": "<p>Register or adjust fields here, with wp_register_entity_fields(), wp_update_entity_fields(), and wp_unregister_entity_fields(): it is the only time they run.</p> <p>The first read happens wherever the fields are needed: while handling a REST request as well as on <code>admin_footer</code> of the pages that load the editor script. A callback should register fields and nothing else; script modules, styles, and their enqueue hooks belong on <code>init</code>.</p>"
             },
             "args": 0
         },
@@ -20651,6 +20712,11 @@
                         "name": "since",
                         "content": "6.8.0",
                         "description": "The password is now hashed using wp_fast_hash() instead of phpass. Existing passwords may still be hashed using phpass."
+                    },
+                    {
+                        "name": "since",
+                        "content": "7.2.0",
+                        "description": "The values in <code>$item</code> and <code>$update</code> are unslashed."
                     },
                     {
                         "name": "param",
