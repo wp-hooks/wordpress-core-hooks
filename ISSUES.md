@@ -4,7 +4,7 @@ This document lists known data quality issues in the hooks JSON files.
 
 ## Duplicate Actions
 
-- `manage_{$this->screen->id}_custom_column`
+_No duplicate actions._
 
 ## Duplicate Filters
 

@@ -1,5 +1,5 @@
 {
-    "$schema": "https://raw.githubusercontent.com/wp-hooks/generator/1.0.0/schema.json",
+    "$schema": "https://raw.githubusercontent.com/wp-hooks/generator/1.0.3/schema.json",
     "hooks": [
         {
             "name": "_get_page_link",
@@ -410,6 +410,11 @@
                     {
                         "name": "since",
                         "content": "2.3.0"
+                    },
+                    {
+                        "name": "since",
+                        "content": "7.2.0",
+                        "description": "Also applied in the Customizer context, where the body tag does not have the wp-admin class."
                     },
                     {
                         "name": "param",
@@ -1071,9 +1076,10 @@
                     },
                     {
                         "name": "param",
-                        "content": "Whether to allow the password to be reset. Default true.",
+                        "content": "Whether to allow the password to be reset, or a WP_Error to explain why it is not allowed. Default true.",
                         "types": [
-                            "bool"
+                            "bool",
+                            "\\WP_Error"
                         ],
                         "variable": "$allow"
                     },
@@ -2951,7 +2957,7 @@
             "file": "wp-includes/blocks/social-link.php",
             "type": "filter",
             "doc": {
-                "description": "Filter the list of available social service.",
+                "description": "Filters the list of available social service.",
                 "long_description": "This can be used to change icons or add custom icons (additionally to variations in the editor). Icons should be directly renderable - therefore SVGs work best.",
                 "tags": [
                     {
@@ -2965,10 +2971,6 @@
                             "array"
                         ],
                         "variable": "$services_data"
-                    },
-                    {
-                        "name": "return",
-                        "content": "The list of social services."
                     }
                 ],
                 "long_description_html": "<p>This can be used to change icons or add custom icons (additionally to variations in the editor). Icons should be directly renderable - therefore SVGs work best.</p>"
@@ -8645,7 +8647,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the locale for the current request.",
-                "long_description": "",
+                "long_description": "A non-string or empty value is ignored.",
                 "tags": [
                     {
                         "name": "since",
@@ -8660,7 +8662,7 @@
                         "variable": "$determined_locale"
                     }
                 ],
-                "long_description_html": ""
+                "long_description_html": "<p>A non-string or empty value is ignored.</p>"
             },
             "args": 1
         },
@@ -9374,7 +9376,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "{ @type array $args  { An array of widget display arguments. @type string $name          Name of the sidebar the widget is assigned to. @type string $id            ID of the sidebar the widget is assigned to. @type string $description   The sidebar description. @type string $class         CSS class applied to the sidebar container. @type string $before_widget HTML markup to prepend to each widget in the sidebar. @type string $after_widget  HTML markup to append to each widget in the sidebar. @type string $before_title  HTML markup to prepend to the widget title when displayed. @type string $after_title   HTML markup to append to the widget title when displayed. @type string $widget_id     ID of the widget. @type string $widget_name   Name of the widget. } @type array $widget_args { An array of multi-widget arguments. @type int $number Number increment used for multiples of the same widget. } }",
+                        "content": "{ The arguments the display callback is called with, in order. @type array $0 { An array of widget display arguments. @type string $name          Name of the sidebar the widget is assigned to. @type string $id            ID of the sidebar the widget is assigned to. @type string $description   The sidebar description. @type string $class         CSS class applied to the sidebar container. @type string $before_widget HTML markup to prepend to each widget in the sidebar. @type string $after_widget  HTML markup to append to each widget in the sidebar. @type string $before_title  HTML markup to prepend to the widget title when displayed. @type string $after_title   HTML markup to append to the widget title when displayed. @type string $widget_id     ID of the widget. @type string $widget_name   Name of the widget. } @type array ...$1 { The parameters the widget was registered with, such as the multi-widget arguments. @type int $number Number increment used for multiples of the same widget. } }",
                         "types": [
                             "array"
                         ],
@@ -10632,6 +10634,31 @@
             "args": 1
         },
         {
+            "name": "enable_edit_any_user_configuration",
+            "file": "wp-admin/user-edit.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters whether to allow administrators on Multisite to edit every user.",
+                "long_description": "Enabling the user editing form via this filter also hinges on the user holding the 'manage_network_users' cap, and the logged-in user not matching the user profile open for editing.\n The filter was introduced to replace the EDIT_ANY_USER constant.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "3.0.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether to allow editing of any user. Default true.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$allow"
+                    }
+                ],
+                "long_description_html": "<p>Enabling the user editing form via this filter also hinges on the user holding the 'manage_network_users' cap, and the logged-in user not matching the user profile open for editing.</p> <p>The filter was introduced to replace the EDIT_ANY_USER constant.</p>"
+            },
+            "args": 1
+        },
+        {
             "name": "enable_live_network_counts",
             "file": "wp-includes/ms-functions.php",
             "type": "filter",
@@ -11344,7 +11371,7 @@
                         "name": "param",
                         "content": "Multi-dimensional array of file extensions types keyed by the type of file.",
                         "types": [
-                            "array[]"
+                            "array<string,string[]>"
                         ],
                         "variable": "$ext2type"
                     }
@@ -12142,6 +12169,11 @@
                         "content": "2.1.0"
                     },
                     {
+                        "name": "since",
+                        "content": "7.2.0",
+                        "description": "A negative return value is clamped to zero, as is a negative count from the {@see 'found_posts_query'} query before it is passed to this filter."
+                    },
+                    {
                         "name": "param",
                         "content": "The number of posts found.",
                         "types": [
@@ -12156,6 +12188,10 @@
                             "\\WP_Query"
                         ],
                         "variable": "$query"
+                    },
+                    {
+                        "name": "phpstan-param",
+                        "content": "int<0, max> $found_posts"
                     }
                 ],
                 "long_description_html": ""
@@ -12747,8 +12783,13 @@
                         "description": "The 'note' comment type was added."
                     },
                     {
+                        "name": "since",
+                        "content": "7.2.0",
+                        "description": "The 'reaction' comment type was added."
+                    },
+                    {
                         "name": "param",
-                        "content": "An array of content types. Default contains 'comment' and 'note'.",
+                        "content": "An array of content types. Default contains 'comment', 'note', and 'reaction'.",
                         "types": [
                             "array"
                         ],
@@ -13611,10 +13652,11 @@
                     },
                     {
                         "name": "param",
-                        "content": "Formatted date string or Unix timestamp.",
+                        "content": "Formatted date string or Unix timestamp. False on failure.",
                         "types": [
                             "string",
-                            "int"
+                            "int",
+                            "false"
                         ],
                         "variable": "$comment_date"
                     },
@@ -13628,9 +13670,10 @@
                     },
                     {
                         "name": "param",
-                        "content": "The comment object.",
+                        "content": "The comment object, or null if it does not exist.",
                         "types": [
-                            "\\WP_Comment"
+                            "\\WP_Comment",
+                            "null"
                         ],
                         "variable": "$comment"
                     }
@@ -13804,10 +13847,11 @@
                     },
                     {
                         "name": "param",
-                        "content": "The comment time, formatted as a date string or Unix timestamp.",
+                        "content": "The comment time, formatted as a date string or Unix timestamp. False on failure.",
                         "types": [
                             "string",
-                            "int"
+                            "int",
+                            "false"
                         ],
                         "variable": "$comment_time"
                     },
@@ -14442,6 +14486,39 @@
             "args": 2
         },
         {
+            "name": "get_entity_view_config_{$kind}_{$name}",
+            "file": "wp-includes/class-wp-view-config-data.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the view configuration for a given entity.",
+                "long_description": "The dynamic portions of the hook name, `$kind` and `$name`, refer to the entity kind (e.g. `postType`) and the entity name (e.g. `page`), lowercased \u2014 so the `postType`/`page` entity maps to the `get_entity_view_config_posttype_page` hook.\n Callbacks receive a WP_View_Config_Data object and change the configuration through its methods. Each write method takes the schema version the change was authored against as its second argument, and returns the object for chaining:\n - `merge( $patch, $version )` merges a partial change into the current   configuration. It touches only the top-level keys the patch names, and   merges each named value into the current one by shape: a scalar   replaces, an associative array merges key by key, and a list merges by   member identity (`id`, `slug`, or `field`). A `null` value drops the   key it names, resetting it to its default. - `replace( $patch, $version )` applies a patch exactly like `merge()`,   but swaps any list it names wholesale instead of merging that list by   member identity. - `set( $patch, $version )` also touches only the keys the patch names,   but swaps each named value in wholesale, dropping whatever the key held   before \u2014 for a callback that owns those keys outright. - `remove( $spec, $version )` deletes named properties. The spec mirrors   the configuration shape: a list of names deletes entries at that level,   and a nested map recurses to prune from within a named value, down to   individual list members.\n A change that declares an unsupported schema version is rejected and does not alter anything. As with any filter, each callback's return value is passed to the next callback as `$data`, so callbacks must return the container they received: a callback that returns nothing, or any other value, hands that result to every callback hooked at a later priority instead of the container. Since the write methods return the container, a callback can end with `return $data->merge( $patch, $version );`.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "7.1.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The view configuration container for the entity, exposing the <code>default_view</code>, <code>default_layouts</code>, <code>view_list</code>, and <code>form</code> keys.",
+                        "types": [
+                            "\\WP_View_Config_Data"
+                        ],
+                        "variable": "$data"
+                    },
+                    {
+                        "name": "param",
+                        "content": "{ The entity the configuration is built for. @type string $kind The entity kind. @type string $name The entity name. }",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$entity"
+                    }
+                ],
+                "long_description_html": "<p>The dynamic portions of the hook name, <code>$kind</code> and <code>$name</code>, refer to the entity kind (e.g. <code>postType</code>) and the entity name (e.g. <code>page</code>), lowercased \u2014 so the <code>postType</code>/<code>page</code> entity maps to the <code>get_entity_view_config_posttype_page</code> hook.</p> <p>Callbacks receive a WP_View_Config_Data object and change the configuration through its methods. Each write method takes the schema version the change was authored against as its second argument, and returns the object for chaining:</p> <ul> <li><code>merge( $patch, $version )</code> merges a partial change into the current configuration. It touches only the top-level keys the patch names, and merges each named value into the current one by shape: a scalar replaces, an associative array merges key by key, and a list merges by member identity (<code>id</code>, <code>slug</code>, or <code>field</code>). A <code>null</code> value drops the key it names, resetting it to its default.</li> <li><code>replace( $patch, $version )</code> applies a patch exactly like <code>merge()</code>, but swaps any list it names wholesale instead of merging that list by member identity.</li> <li><code>set( $patch, $version )</code> also touches only the keys the patch names, but swaps each named value in wholesale, dropping whatever the key held before \u2014 for a callback that owns those keys outright.</li> <li><code>remove( $spec, $version )</code> deletes named properties. The spec mirrors the configuration shape: a list of names deletes entries at that level, and a nested map recurses to prune from within a named value, down to individual list members.</li> </ul> <p>A change that declares an unsupported schema version is rejected and does not alter anything. As with any filter, each callback's return value is passed to the next callback as <code>$data</code>, so callbacks must return the container they received: a callback that returns nothing, or any other value, hands that result to every callback hooked at a later priority instead of the container. Since the write methods return the container, a callback can end with <code>return $data-&gt;merge( $patch, $version );</code>.</p>"
+            },
+            "args": 2
+        },
+        {
             "name": "get_feed_build_date",
             "file": "wp-includes/feed.php",
             "type": "filter",
@@ -15035,7 +15112,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Array of arguments for retrieving terms for the given object(s). See wp_get_object_terms() for details.",
+                        "content": "Array of arguments for retrieving terms for the given object(s). See {@see \\wp_get_object_terms()} for details.",
                         "types": [
                             "array"
                         ],
@@ -15314,9 +15391,11 @@
                     },
                     {
                         "name": "param",
-                        "content": "The first-found post gallery.",
+                        "content": "The first-found post gallery, or false if the post has no gallery. An HTML string when <code>$html</code> is true, otherwise an array.",
                         "types": [
-                            "array"
+                            "string",
+                            "array",
+                            "false"
                         ],
                         "variable": "$gallery"
                     },
@@ -15428,11 +15507,21 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the localized time of the post.",
-                "long_description": "",
+                "long_description": "The filtered value should match the type and values that `$format` produces, for example, an integer for 'U' or 'G', or a numeric string from '0' to '6' for 'w'.",
                 "tags": [
                     {
                         "name": "since",
                         "content": "2.6.0"
+                    },
+                    {
+                        "name": "see",
+                        "content": "",
+                        "refers": "get_post_time()"
+                    },
+                    {
+                        "name": "link",
+                        "content": "<a href=\"https://www.php.net/manual/en/datetime.format.php\">https://www.php.net/manual/en/datetime.format.php</a>",
+                        "link": "https://www.php.net/manual/en/datetime.format.php"
                     },
                     {
                         "name": "param",
@@ -15460,7 +15549,7 @@
                         "variable": "$gmt"
                     }
                 ],
-                "long_description_html": ""
+                "long_description_html": "<p>The filtered value should match the type and values that <code>$format</code> produces, for example, an integer for 'U' or 'G', or a numeric string from '0' to '6' for 'w'.</p>"
             },
             "args": 3
         },
@@ -20235,9 +20324,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "The tabs shown on the Add Plugins screen. Defaults include 'featured', 'popular', 'recommended', 'favorites', and 'upload'.",
+                        "content": "Labels of the tabs shown on the Add Plugins screen, keyed by tab slug. Default keys include 'featured', 'popular', 'recommended', 'favorites', and 'upload'.",
                         "types": [
-                            "string[]"
+                            "array<string,string>"
                         ],
                         "variable": "$tabs"
                     }
@@ -21887,7 +21976,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the locale ID of the WordPress installation.",
-                "long_description": "",
+                "long_description": "A non-string or empty value is ignored.",
                 "tags": [
                     {
                         "name": "since",
@@ -21902,7 +21991,7 @@
                         "variable": "$locale"
                     }
                 ],
-                "long_description_html": ""
+                "long_description_html": "<p>A non-string or empty value is ignored.</p>"
             },
             "args": 1
         },
@@ -24067,9 +24156,10 @@
                     },
                     {
                         "name": "param",
-                        "content": "Post object.",
+                        "content": "Post object, or null if the media modal is not for a specific post.",
                         "types": [
-                            "\\WP_Post"
+                            "\\WP_Post",
+                            "null"
                         ],
                         "variable": "$post"
                     }
@@ -24100,9 +24190,10 @@
                     },
                     {
                         "name": "param",
-                        "content": "Post object.",
+                        "content": "Post object, or null if the media modal is not for a specific post.",
                         "types": [
-                            "\\WP_Post"
+                            "\\WP_Post",
+                            "null"
                         ],
                         "variable": "$post"
                     }
@@ -24227,7 +24318,7 @@
                         "name": "param",
                         "content": "Mime types keyed by the file extension regex corresponding to those types.",
                         "types": [
-                            "string[]"
+                            "array<string,string>"
                         ],
                         "variable": "$wp_get_mime_types"
                     }
@@ -24716,7 +24807,8 @@
                         "name": "param",
                         "content": "The current menu item object.",
                         "types": [
-                            "\\WP_Post"
+                            "\\WP_Post",
+                            "\\stdClass"
                         ],
                         "variable": "$menu_item"
                     },
@@ -24790,7 +24882,8 @@
                         "name": "param",
                         "content": "Menu item data object.",
                         "types": [
-                            "\\WP_Post"
+                            "\\WP_Post",
+                            "\\stdClass"
                         ],
                         "variable": "$menu_item"
                     },
@@ -24831,7 +24924,8 @@
                         "name": "param",
                         "content": "The current menu item object.",
                         "types": [
-                            "\\WP_Post"
+                            "\\WP_Post",
+                            "\\stdClass"
                         ],
                         "variable": "$menu_item"
                     },
@@ -24885,7 +24979,8 @@
                         "name": "param",
                         "content": "The current menu item.",
                         "types": [
-                            "\\WP_Post"
+                            "\\WP_Post",
+                            "\\stdClass"
                         ],
                         "variable": "$menu_item"
                     },
@@ -24934,7 +25029,8 @@
                         "name": "param",
                         "content": "The current menu item object.",
                         "types": [
-                            "\\WP_Post"
+                            "\\WP_Post",
+                            "\\stdClass"
                         ],
                         "variable": "$menu_item"
                     },
@@ -25101,7 +25197,8 @@
                         "name": "param",
                         "content": "The current menu item object.",
                         "types": [
-                            "\\WP_Post"
+                            "\\WP_Post",
+                            "\\stdClass"
                         ],
                         "variable": "$menu_item"
                     },
@@ -25749,7 +25846,8 @@
                         "name": "param",
                         "content": "Return an array of network data to short-circuit WP's network query, the network count as an integer if <code>$this-&gt;query_vars['count']</code> is set, or null to allow WP to run its normal queries.",
                         "types": [
-                            "array",
+                            "\\WP_Network[]",
+                            "int[]",
                             "int",
                             "null"
                         ],
@@ -26876,11 +26974,15 @@
                     },
                     {
                         "name": "param",
-                        "content": "{ Minimum and maximum widths for the oEmbed response. @type int $min Minimum width. Default 200. @type int $max Maximum width. Default 600. }",
+                        "content": "{ Minimum and maximum widths for the oEmbed response. @type int $min Minimum width. Default 200. Required. @type int $max Maximum width. Default 600. Required. }",
                         "types": [
                             "array"
                         ],
                         "variable": "$min_max_width"
+                    },
+                    {
+                        "name": "phpstan-param",
+                        "content": "array{ min: positive-int, max: positive-int } $min_max_width"
                     }
                 ],
                 "long_description_html": ""
@@ -26893,7 +26995,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the list of sanctioned oEmbed providers.",
-                "long_description": "Since WordPress 4.4, oEmbed discovery is enabled for all users and allows embedding of sanitized iframes. The providers in this list are sanctioned, meaning they are trusted and allowed to embed any content, such as iframes, videos, JavaScript, and arbitrary HTML.\n Supported providers:\n |   Provider   |                     Flavor                |  Since  | | ------------ | ----------------------------------------- | ------- | | Dailymotion  | dailymotion.com                           | 2.9.0   | | Flickr       | flickr.com                                | 2.9.0   | | Scribd       | scribd.com                                | 2.9.0   | | Vimeo        | vimeo.com                                 | 2.9.0   | | WordPress.tv | wordpress.tv                              | 2.9.0   | | YouTube      | youtube.com/watch                         | 2.9.0   | | Crowdsignal  | polldaddy.com                             | 3.0.0   | | SmugMug      | smugmug.com                               | 3.0.0   | | YouTube      | youtu.be                                  | 3.0.0   | | Twitter      | twitter.com                               | 3.4.0   | | SoundCloud   | soundcloud.com                            | 3.5.0   | | Dailymotion  | dai.ly                                    | 3.6.0   | | Flickr       | flic.kr                                   | 3.6.0   | | Spotify      | spotify.com                               | 3.6.0   | | Imgur        | imgur.com                                 | 3.9.0   | | Animoto      | animoto.com                               | 4.0.0   | | Animoto      | video214.com                              | 4.0.0   | | Issuu        | issuu.com                                 | 4.0.0   | | Mixcloud     | mixcloud.com                              | 4.0.0   | | Crowdsignal  | poll.fm                                   | 4.0.0   | | TED          | ted.com                                   | 4.0.0   | | YouTube      | youtube.com/playlist                      | 4.0.0   | | Tumblr       | tumblr.com                                | 4.2.0   | | Kickstarter  | kickstarter.com                           | 4.2.0   | | Kickstarter  | kck.st                                    | 4.2.0   | | Cloudup      | cloudup.com                               | 4.3.0   | | ReverbNation | reverbnation.com                          | 4.4.0   | | VideoPress   | videopress.com                            | 4.4.0   | | Reddit       | reddit.com                                | 4.4.0   | | Speaker Deck | speakerdeck.com                           | 4.4.0   | | Twitter      | twitter.com/timelines                     | 4.5.0   | | Twitter      | twitter.com/moments                       | 4.5.0   | | Twitter      | twitter.com/user                          | 4.7.0   | | Twitter      | twitter.com/likes                         | 4.7.0   | | Twitter      | twitter.com/lists                         | 4.7.0   | | Screencast   | screencast.com                            | 4.8.0   | | Amazon       | amazon.com (com.mx, com.br, ca)           | 4.9.0   | | Amazon       | amazon.de (fr, it, es, in, nl, ru, co.uk) | 4.9.0   | | Amazon       | amazon.co.jp (com.au)                     | 4.9.0   | | Amazon       | amazon.cn                                 | 4.9.0   | | Amazon       | a.co                                      | 4.9.0   | | Amazon       | amzn.to (eu, in, asia)                    | 4.9.0   | | Amazon       | z.cn                                      | 4.9.0   | | Someecards   | someecards.com                            | 4.9.0   | | Someecards   | some.ly                                   | 4.9.0   | | Crowdsignal  | survey.fm                                 | 5.1.0   | | TikTok       | tiktok.com                                | 5.4.0   | | Pinterest    | pinterest.com                             | 5.9.0   | | WolframCloud | wolframcloud.com                          | 5.9.0   | | Pocket Casts | pocketcasts.com                           | 6.1.0   | | Crowdsignal  | crowdsignal.net                           | 6.2.0   | | Anghami      | anghami.com                               | 6.3.0   | | Bluesky      | bsky.app                                  | 6.6.0   | | Canva        | canva.com                                 | 6.8.0   |\n No longer supported providers:\n |   Provider   |        Flavor        |   Since   |  Removed  | | ------------ | -------------------- | --------- | --------- | | Qik          | qik.com              | 2.9.0     | 3.9.0     | | Viddler      | viddler.com          | 2.9.0     | 4.0.0     | | Revision3    | revision3.com        | 2.9.0     | 4.2.0     | | Blip         | blip.tv              | 2.9.0     | 4.4.0     | | Rdio         | rdio.com             | 3.6.0     | 4.4.1     | | Rdio         | rd.io                | 3.6.0     | 4.4.1     | | Vine         | vine.co              | 4.1.0     | 4.9.0     | | Photobucket  | photobucket.com      | 2.9.0     | 5.1.0     | | Funny or Die | funnyordie.com       | 3.0.0     | 5.1.0     | | CollegeHumor | collegehumor.com     | 4.0.0     | 5.3.1     | | Hulu         | hulu.com             | 2.9.0     | 5.5.0     | | Instagram    | instagram.com        | 3.5.0     | 5.5.2     | | Instagram    | instagr.am           | 3.5.0     | 5.5.2     | | Instagram TV | instagram.com        | 5.1.0     | 5.5.2     | | Instagram TV | instagr.am           | 5.1.0     | 5.5.2     | | Facebook     | facebook.com         | 4.7.0     | 5.5.2     | | Meetup.com   | meetup.com           | 3.9.0     | 6.0.1     | | Meetup.com   | meetu.ps             | 3.9.0     | 6.0.1     | | SlideShare   | slideshare.net       | 3.5.0     | 6.6.0     | | Screencast   | screencast.com       | 4.8.0     | 6.8.2     |",
+                "long_description": "Since WordPress 4.4, oEmbed discovery is enabled for all users and allows embedding of sanitized iframes. The providers in this list are sanctioned, meaning they are trusted and allowed to embed any content, such as iframes, videos, JavaScript, and arbitrary HTML.\n Supported providers:\n |   Provider   |                     Flavor                |  Since  | | ------------ | ----------------------------------------- | ------- | | Dailymotion  | dailymotion.com                           | 2.9.0   | | Flickr       | flickr.com                                | 2.9.0   | | Scribd       | scribd.com                                | 2.9.0   | | Vimeo        | vimeo.com                                 | 2.9.0   | | WordPress.tv | wordpress.tv                              | 2.9.0   | | YouTube      | youtube.com/watch                         | 2.9.0   | | Crowdsignal  | polldaddy.com                             | 3.0.0   | | SmugMug      | smugmug.com                               | 3.0.0   | | YouTube      | youtu.be                                  | 3.0.0   | | Twitter      | twitter.com                               | 3.4.0   | | SoundCloud   | soundcloud.com                            | 3.5.0   | | Dailymotion  | dai.ly                                    | 3.6.0   | | Flickr       | flic.kr                                   | 3.6.0   | | Spotify      | spotify.com                               | 3.6.0   | | Animoto      | animoto.com                               | 4.0.0   | | Animoto      | video214.com                              | 4.0.0   | | Issuu        | issuu.com                                 | 4.0.0   | | Mixcloud     | mixcloud.com                              | 4.0.0   | | Crowdsignal  | poll.fm                                   | 4.0.0   | | TED          | ted.com                                   | 4.0.0   | | YouTube      | youtube.com/playlist                      | 4.0.0   | | Tumblr       | tumblr.com                                | 4.2.0   | | Kickstarter  | kickstarter.com                           | 4.2.0   | | Kickstarter  | kck.st                                    | 4.2.0   | | Cloudup      | cloudup.com                               | 4.3.0   | | ReverbNation | reverbnation.com                          | 4.4.0   | | VideoPress   | videopress.com                            | 4.4.0   | | Reddit       | reddit.com                                | 4.4.0   | | Speaker Deck | speakerdeck.com                           | 4.4.0   | | Twitter      | twitter.com/timelines                     | 4.5.0   | | Twitter      | twitter.com/moments                       | 4.5.0   | | Twitter      | twitter.com/user                          | 4.7.0   | | Twitter      | twitter.com/likes                         | 4.7.0   | | Twitter      | twitter.com/lists                         | 4.7.0   | | Amazon       | amazon.com (com.mx, com.br, ca)           | 4.9.0   | | Amazon       | amazon.de (fr, it, es, in, nl, ru, co.uk) | 4.9.0   | | Amazon       | amazon.co.jp (com.au)                     | 4.9.0   | | Amazon       | amazon.cn                                 | 4.9.0   | | Amazon       | a.co                                      | 4.9.0   | | Amazon       | amzn.to (eu, in, asia)                    | 4.9.0   | | Amazon       | z.cn                                      | 4.9.0   | | Crowdsignal  | survey.fm                                 | 5.1.0   | | TikTok       | tiktok.com                                | 5.4.0   | | Pinterest    | pinterest.com                             | 5.9.0   | | WolframCloud | wolframcloud.com                          | 5.9.0   | | Pocket Casts | pocketcasts.com                           | 6.1.0   | | Crowdsignal  | crowdsignal.net                           | 6.2.0   | | Anghami      | anghami.com                               | 6.3.0   | | Bluesky      | bsky.app                                  | 6.6.0   | | Canva        | canva.com                                 | 6.8.0   |\n No longer supported providers:\n |   Provider   |        Flavor        |   Since   |  Removed  | | ------------ | -------------------- | --------- | --------- | | Qik          | qik.com              | 2.9.0     | 3.9.0     | | Viddler      | viddler.com          | 2.9.0     | 4.0.0     | | Revision3    | revision3.com        | 2.9.0     | 4.2.0     | | Blip         | blip.tv              | 2.9.0     | 4.4.0     | | Rdio         | rdio.com             | 3.6.0     | 4.4.1     | | Rdio         | rd.io                | 3.6.0     | 4.4.1     | | Vine         | vine.co              | 4.1.0     | 4.9.0     | | Photobucket  | photobucket.com      | 2.9.0     | 5.1.0     | | Funny or Die | funnyordie.com       | 3.0.0     | 5.1.0     | | CollegeHumor | collegehumor.com     | 4.0.0     | 5.3.1     | | Hulu         | hulu.com             | 2.9.0     | 5.5.0     | | Instagram    | instagram.com        | 3.5.0     | 5.5.2     | | Instagram    | instagr.am           | 3.5.0     | 5.5.2     | | Instagram TV | instagram.com        | 5.1.0     | 5.5.2     | | Instagram TV | instagr.am           | 5.1.0     | 5.5.2     | | Facebook     | facebook.com         | 4.7.0     | 5.5.2     | | Meetup.com   | meetup.com           | 3.9.0     | 6.0.1     | | Meetup.com   | meetu.ps             | 3.9.0     | 6.0.1     | | SlideShare   | slideshare.net       | 3.5.0     | 6.6.0     | | Screencast   | screencast.com       | 4.8.0     | 6.8.2     | | Imgur        | imgur.com            | 3.9.0     | 7.1.3     | | Someecards   | someecards.com       | 4.9.0     | 7.1.3     | | Someecards   | some.ly              | 4.9.0     | 7.1.3     |",
                 "tags": [
                     {
                         "name": "see",
@@ -26913,7 +27015,7 @@
                         "variable": "$providers"
                     }
                 ],
-                "long_description_html": "<p>Since WordPress 4.4, oEmbed discovery is enabled for all users and allows embedding of sanitized iframes. The providers in this list are sanctioned, meaning they are trusted and allowed to embed any content, such as iframes, videos, JavaScript, and arbitrary HTML.</p> <p>Supported providers:</p> <table> <thead> <tr> <th>Provider</th> <th>Flavor</th> <th>Since</th> </tr> </thead> <tbody> <tr> <td>Dailymotion</td> <td>dailymotion.com</td> <td>2.9.0</td> </tr> <tr> <td>Flickr</td> <td>flickr.com</td> <td>2.9.0</td> </tr> <tr> <td>Scribd</td> <td>scribd.com</td> <td>2.9.0</td> </tr> <tr> <td>Vimeo</td> <td>vimeo.com</td> <td>2.9.0</td> </tr> <tr> <td>WordPress.tv</td> <td>wordpress.tv</td> <td>2.9.0</td> </tr> <tr> <td>YouTube</td> <td>youtube.com/watch</td> <td>2.9.0</td> </tr> <tr> <td>Crowdsignal</td> <td>polldaddy.com</td> <td>3.0.0</td> </tr> <tr> <td>SmugMug</td> <td>smugmug.com</td> <td>3.0.0</td> </tr> <tr> <td>YouTube</td> <td>youtu.be</td> <td>3.0.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com</td> <td>3.4.0</td> </tr> <tr> <td>SoundCloud</td> <td>soundcloud.com</td> <td>3.5.0</td> </tr> <tr> <td>Dailymotion</td> <td>dai.ly</td> <td>3.6.0</td> </tr> <tr> <td>Flickr</td> <td>flic.kr</td> <td>3.6.0</td> </tr> <tr> <td>Spotify</td> <td>spotify.com</td> <td>3.6.0</td> </tr> <tr> <td>Imgur</td> <td>imgur.com</td> <td>3.9.0</td> </tr> <tr> <td>Animoto</td> <td>animoto.com</td> <td>4.0.0</td> </tr> <tr> <td>Animoto</td> <td>video214.com</td> <td>4.0.0</td> </tr> <tr> <td>Issuu</td> <td>issuu.com</td> <td>4.0.0</td> </tr> <tr> <td>Mixcloud</td> <td>mixcloud.com</td> <td>4.0.0</td> </tr> <tr> <td>Crowdsignal</td> <td>poll.fm</td> <td>4.0.0</td> </tr> <tr> <td>TED</td> <td>ted.com</td> <td>4.0.0</td> </tr> <tr> <td>YouTube</td> <td>youtube.com/playlist</td> <td>4.0.0</td> </tr> <tr> <td>Tumblr</td> <td>tumblr.com</td> <td>4.2.0</td> </tr> <tr> <td>Kickstarter</td> <td>kickstarter.com</td> <td>4.2.0</td> </tr> <tr> <td>Kickstarter</td> <td>kck.st</td> <td>4.2.0</td> </tr> <tr> <td>Cloudup</td> <td>cloudup.com</td> <td>4.3.0</td> </tr> <tr> <td>ReverbNation</td> <td>reverbnation.com</td> <td>4.4.0</td> </tr> <tr> <td>VideoPress</td> <td>videopress.com</td> <td>4.4.0</td> </tr> <tr> <td>Reddit</td> <td>reddit.com</td> <td>4.4.0</td> </tr> <tr> <td>Speaker Deck</td> <td>speakerdeck.com</td> <td>4.4.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/timelines</td> <td>4.5.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/moments</td> <td>4.5.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/user</td> <td>4.7.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/likes</td> <td>4.7.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/lists</td> <td>4.7.0</td> </tr> <tr> <td>Screencast</td> <td>screencast.com</td> <td>4.8.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.com (com.mx, com.br, ca)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.de (fr, it, es, in, nl, ru, co.uk)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.co.jp (com.au)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.cn</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>a.co</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amzn.to (eu, in, asia)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>z.cn</td> <td>4.9.0</td> </tr> <tr> <td>Someecards</td> <td>someecards.com</td> <td>4.9.0</td> </tr> <tr> <td>Someecards</td> <td>some.ly</td> <td>4.9.0</td> </tr> <tr> <td>Crowdsignal</td> <td>survey.fm</td> <td>5.1.0</td> </tr> <tr> <td>TikTok</td> <td>tiktok.com</td> <td>5.4.0</td> </tr> <tr> <td>Pinterest</td> <td>pinterest.com</td> <td>5.9.0</td> </tr> <tr> <td>WolframCloud</td> <td>wolframcloud.com</td> <td>5.9.0</td> </tr> <tr> <td>Pocket Casts</td> <td>pocketcasts.com</td> <td>6.1.0</td> </tr> <tr> <td>Crowdsignal</td> <td>crowdsignal.net</td> <td>6.2.0</td> </tr> <tr> <td>Anghami</td> <td>anghami.com</td> <td>6.3.0</td> </tr> <tr> <td>Bluesky</td> <td>bsky.app</td> <td>6.6.0</td> </tr> <tr> <td>Canva</td> <td>canva.com</td> <td>6.8.0</td> </tr> </tbody> </table> <p>No longer supported providers:</p> <table> <thead> <tr> <th>Provider</th> <th>Flavor</th> <th>Since</th> <th>Removed</th> </tr> </thead> <tbody> <tr> <td>Qik</td> <td>qik.com</td> <td>2.9.0</td> <td>3.9.0</td> </tr> <tr> <td>Viddler</td> <td>viddler.com</td> <td>2.9.0</td> <td>4.0.0</td> </tr> <tr> <td>Revision3</td> <td>revision3.com</td> <td>2.9.0</td> <td>4.2.0</td> </tr> <tr> <td>Blip</td> <td>blip.tv</td> <td>2.9.0</td> <td>4.4.0</td> </tr> <tr> <td>Rdio</td> <td>rdio.com</td> <td>3.6.0</td> <td>4.4.1</td> </tr> <tr> <td>Rdio</td> <td>rd.io</td> <td>3.6.0</td> <td>4.4.1</td> </tr> <tr> <td>Vine</td> <td>vine.co</td> <td>4.1.0</td> <td>4.9.0</td> </tr> <tr> <td>Photobucket</td> <td>photobucket.com</td> <td>2.9.0</td> <td>5.1.0</td> </tr> <tr> <td>Funny or Die</td> <td>funnyordie.com</td> <td>3.0.0</td> <td>5.1.0</td> </tr> <tr> <td>CollegeHumor</td> <td>collegehumor.com</td> <td>4.0.0</td> <td>5.3.1</td> </tr> <tr> <td>Hulu</td> <td>hulu.com</td> <td>2.9.0</td> <td>5.5.0</td> </tr> <tr> <td>Instagram</td> <td>instagram.com</td> <td>3.5.0</td> <td>5.5.2</td> </tr> <tr> <td>Instagram</td> <td>instagr.am</td> <td>3.5.0</td> <td>5.5.2</td> </tr> <tr> <td>Instagram TV</td> <td>instagram.com</td> <td>5.1.0</td> <td>5.5.2</td> </tr> <tr> <td>Instagram TV</td> <td>instagr.am</td> <td>5.1.0</td> <td>5.5.2</td> </tr> <tr> <td>Facebook</td> <td>facebook.com</td> <td>4.7.0</td> <td>5.5.2</td> </tr> <tr> <td>Meetup.com</td> <td>meetup.com</td> <td>3.9.0</td> <td>6.0.1</td> </tr> <tr> <td>Meetup.com</td> <td>meetu.ps</td> <td>3.9.0</td> <td>6.0.1</td> </tr> <tr> <td>SlideShare</td> <td>slideshare.net</td> <td>3.5.0</td> <td>6.6.0</td> </tr> <tr> <td>Screencast</td> <td>screencast.com</td> <td>4.8.0</td> <td>6.8.2</td> </tr> </tbody> </table>"
+                "long_description_html": "<p>Since WordPress 4.4, oEmbed discovery is enabled for all users and allows embedding of sanitized iframes. The providers in this list are sanctioned, meaning they are trusted and allowed to embed any content, such as iframes, videos, JavaScript, and arbitrary HTML.</p> <p>Supported providers:</p> <table> <thead> <tr> <th>Provider</th> <th>Flavor</th> <th>Since</th> </tr> </thead> <tbody> <tr> <td>Dailymotion</td> <td>dailymotion.com</td> <td>2.9.0</td> </tr> <tr> <td>Flickr</td> <td>flickr.com</td> <td>2.9.0</td> </tr> <tr> <td>Scribd</td> <td>scribd.com</td> <td>2.9.0</td> </tr> <tr> <td>Vimeo</td> <td>vimeo.com</td> <td>2.9.0</td> </tr> <tr> <td>WordPress.tv</td> <td>wordpress.tv</td> <td>2.9.0</td> </tr> <tr> <td>YouTube</td> <td>youtube.com/watch</td> <td>2.9.0</td> </tr> <tr> <td>Crowdsignal</td> <td>polldaddy.com</td> <td>3.0.0</td> </tr> <tr> <td>SmugMug</td> <td>smugmug.com</td> <td>3.0.0</td> </tr> <tr> <td>YouTube</td> <td>youtu.be</td> <td>3.0.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com</td> <td>3.4.0</td> </tr> <tr> <td>SoundCloud</td> <td>soundcloud.com</td> <td>3.5.0</td> </tr> <tr> <td>Dailymotion</td> <td>dai.ly</td> <td>3.6.0</td> </tr> <tr> <td>Flickr</td> <td>flic.kr</td> <td>3.6.0</td> </tr> <tr> <td>Spotify</td> <td>spotify.com</td> <td>3.6.0</td> </tr> <tr> <td>Animoto</td> <td>animoto.com</td> <td>4.0.0</td> </tr> <tr> <td>Animoto</td> <td>video214.com</td> <td>4.0.0</td> </tr> <tr> <td>Issuu</td> <td>issuu.com</td> <td>4.0.0</td> </tr> <tr> <td>Mixcloud</td> <td>mixcloud.com</td> <td>4.0.0</td> </tr> <tr> <td>Crowdsignal</td> <td>poll.fm</td> <td>4.0.0</td> </tr> <tr> <td>TED</td> <td>ted.com</td> <td>4.0.0</td> </tr> <tr> <td>YouTube</td> <td>youtube.com/playlist</td> <td>4.0.0</td> </tr> <tr> <td>Tumblr</td> <td>tumblr.com</td> <td>4.2.0</td> </tr> <tr> <td>Kickstarter</td> <td>kickstarter.com</td> <td>4.2.0</td> </tr> <tr> <td>Kickstarter</td> <td>kck.st</td> <td>4.2.0</td> </tr> <tr> <td>Cloudup</td> <td>cloudup.com</td> <td>4.3.0</td> </tr> <tr> <td>ReverbNation</td> <td>reverbnation.com</td> <td>4.4.0</td> </tr> <tr> <td>VideoPress</td> <td>videopress.com</td> <td>4.4.0</td> </tr> <tr> <td>Reddit</td> <td>reddit.com</td> <td>4.4.0</td> </tr> <tr> <td>Speaker Deck</td> <td>speakerdeck.com</td> <td>4.4.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/timelines</td> <td>4.5.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/moments</td> <td>4.5.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/user</td> <td>4.7.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/likes</td> <td>4.7.0</td> </tr> <tr> <td>Twitter</td> <td>twitter.com/lists</td> <td>4.7.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.com (com.mx, com.br, ca)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.de (fr, it, es, in, nl, ru, co.uk)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.co.jp (com.au)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amazon.cn</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>a.co</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>amzn.to (eu, in, asia)</td> <td>4.9.0</td> </tr> <tr> <td>Amazon</td> <td>z.cn</td> <td>4.9.0</td> </tr> <tr> <td>Crowdsignal</td> <td>survey.fm</td> <td>5.1.0</td> </tr> <tr> <td>TikTok</td> <td>tiktok.com</td> <td>5.4.0</td> </tr> <tr> <td>Pinterest</td> <td>pinterest.com</td> <td>5.9.0</td> </tr> <tr> <td>WolframCloud</td> <td>wolframcloud.com</td> <td>5.9.0</td> </tr> <tr> <td>Pocket Casts</td> <td>pocketcasts.com</td> <td>6.1.0</td> </tr> <tr> <td>Crowdsignal</td> <td>crowdsignal.net</td> <td>6.2.0</td> </tr> <tr> <td>Anghami</td> <td>anghami.com</td> <td>6.3.0</td> </tr> <tr> <td>Bluesky</td> <td>bsky.app</td> <td>6.6.0</td> </tr> <tr> <td>Canva</td> <td>canva.com</td> <td>6.8.0</td> </tr> </tbody> </table> <p>No longer supported providers:</p> <table> <thead> <tr> <th>Provider</th> <th>Flavor</th> <th>Since</th> <th>Removed</th> </tr> </thead> <tbody> <tr> <td>Qik</td> <td>qik.com</td> <td>2.9.0</td> <td>3.9.0</td> </tr> <tr> <td>Viddler</td> <td>viddler.com</td> <td>2.9.0</td> <td>4.0.0</td> </tr> <tr> <td>Revision3</td> <td>revision3.com</td> <td>2.9.0</td> <td>4.2.0</td> </tr> <tr> <td>Blip</td> <td>blip.tv</td> <td>2.9.0</td> <td>4.4.0</td> </tr> <tr> <td>Rdio</td> <td>rdio.com</td> <td>3.6.0</td> <td>4.4.1</td> </tr> <tr> <td>Rdio</td> <td>rd.io</td> <td>3.6.0</td> <td>4.4.1</td> </tr> <tr> <td>Vine</td> <td>vine.co</td> <td>4.1.0</td> <td>4.9.0</td> </tr> <tr> <td>Photobucket</td> <td>photobucket.com</td> <td>2.9.0</td> <td>5.1.0</td> </tr> <tr> <td>Funny or Die</td> <td>funnyordie.com</td> <td>3.0.0</td> <td>5.1.0</td> </tr> <tr> <td>CollegeHumor</td> <td>collegehumor.com</td> <td>4.0.0</td> <td>5.3.1</td> </tr> <tr> <td>Hulu</td> <td>hulu.com</td> <td>2.9.0</td> <td>5.5.0</td> </tr> <tr> <td>Instagram</td> <td>instagram.com</td> <td>3.5.0</td> <td>5.5.2</td> </tr> <tr> <td>Instagram</td> <td>instagr.am</td> <td>3.5.0</td> <td>5.5.2</td> </tr> <tr> <td>Instagram TV</td> <td>instagram.com</td> <td>5.1.0</td> <td>5.5.2</td> </tr> <tr> <td>Instagram TV</td> <td>instagr.am</td> <td>5.1.0</td> <td>5.5.2</td> </tr> <tr> <td>Facebook</td> <td>facebook.com</td> <td>4.7.0</td> <td>5.5.2</td> </tr> <tr> <td>Meetup.com</td> <td>meetup.com</td> <td>3.9.0</td> <td>6.0.1</td> </tr> <tr> <td>Meetup.com</td> <td>meetu.ps</td> <td>3.9.0</td> <td>6.0.1</td> </tr> <tr> <td>SlideShare</td> <td>slideshare.net</td> <td>3.5.0</td> <td>6.6.0</td> </tr> <tr> <td>Screencast</td> <td>screencast.com</td> <td>4.8.0</td> <td>6.8.2</td> </tr> <tr> <td>Imgur</td> <td>imgur.com</td> <td>3.9.0</td> <td>7.1.3</td> </tr> <tr> <td>Someecards</td> <td>someecards.com</td> <td>4.9.0</td> <td>7.1.3</td> </tr> <tr> <td>Someecards</td> <td>some.ly</td> <td>4.9.0</td> <td>7.1.3</td> </tr> </tbody> </table>"
             },
             "args": 1
         },
@@ -28552,9 +28654,10 @@
                     },
                     {
                         "name": "param",
-                        "content": "Response object or WP_Error.",
+                        "content": "Response object or array, or WP_Error on failure.",
                         "types": [
                             "object",
+                            "array",
                             "\\WP_Error"
                         ],
                         "variable": "$res"
@@ -28808,7 +28911,7 @@
                         "name": "param",
                         "content": "An array of default settings used by Plupload.",
                         "types": [
-                            "array"
+                            "array<string,mixed>"
                         ],
                         "variable": "$plupload_init"
                     }
@@ -29513,11 +29616,15 @@
                     },
                     {
                         "name": "param",
-                        "content": "Default list of post mime types.",
+                        "content": "Default list of post mime types. See {@see \\get_post_mime_types()}.",
                         "types": [
-                            "array"
+                            "array<string,array{0: string, 1: string, 2: array}>"
                         ],
                         "variable": "$post_mime_types"
+                    },
+                    {
+                        "name": "phpstan-param",
+                        "content": "array<string, array{ 0: string, 1: string, 2: array{ singular: literal-string, plural: literal-string, context: literal-string|null, domain: literal-string|null, ... }, }> $post_mime_types"
                     }
                 ],
                 "long_description_html": ""
@@ -29571,9 +29678,10 @@
                     },
                     {
                         "name": "param",
-                        "content": "Post object.",
+                        "content": "Post object, or null if no post is found.",
                         "types": [
-                            "\\WP_Post"
+                            "\\WP_Post",
+                            "null"
                         ],
                         "variable": "$post"
                     }
@@ -34143,9 +34251,10 @@
                     },
                     {
                         "name": "param",
-                        "content": "Whether to pre-empt the media upload. Default false.",
+                        "content": "Error message to return instead of uploading, or false to allow the upload. Default false.",
                         "types": [
-                            "bool"
+                            "string",
+                            "false"
                         ],
                         "variable": "$error"
                     }
@@ -34428,6 +34537,83 @@
                 "long_description_html": "<p>The dynamic portion of the hook name, <code>$field</code>, refers to the prefixed user field being filtered, such as 'user_login', 'user_email', 'first_name', etc.</p>"
             },
             "args": 1
+        },
+        {
+            "name": "pre_wp_count_attachments",
+            "file": "wp-includes/post.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the attachment counts before the query is run.",
+                "long_description": "Returning a stdClass object short-circuits wp_count_attachments(), skipping both the object cache lookup and the database queries. This allows the counts to be served from another source, such as a value pre-computed in the background, when an exact real-time count is not required.\n If the filtered value does not contain a trash count, one is added to the result and set to zero. Missing MIME types are not added, as they depend on the attachments that exist. The filtered value should therefore contain a count for every MIME type matching `$mime_type` that has attachments, including types first uploaded after the value was computed, as callers may read the count for any MIME type that exists. It should also contain only MIME types matching `$mime_type`, with a trash count limited to attachments of those types, as the default query does.\n The returned value is not cached and passed through the {@see 'wp_count_attachments'} filter.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "7.2.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "An object containing the attachment counts by mime type, or null to run the default query. Default null.",
+                        "types": [
+                            "\\stdClass",
+                            "null"
+                        ],
+                        "variable": "$counts"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Array or comma-separated list of MIME patterns.",
+                        "types": [
+                            "string",
+                            "string[]"
+                        ],
+                        "variable": "$mime_type"
+                    }
+                ],
+                "long_description_html": "<p>Returning a stdClass object short-circuits wp_count_attachments(), skipping both the object cache lookup and the database queries. This allows the counts to be served from another source, such as a value pre-computed in the background, when an exact real-time count is not required.</p> <p>If the filtered value does not contain a trash count, one is added to the result and set to zero. Missing MIME types are not added, as they depend on the attachments that exist. The filtered value should therefore contain a count for every MIME type matching <code>$mime_type</code> that has attachments, including types first uploaded after the value was computed, as callers may read the count for any MIME type that exists. It should also contain only MIME types matching <code>$mime_type</code>, with a trash count limited to attachments of those types, as the default query does.</p> <p>The returned value is not cached and passed through the {@see 'wp_count_attachments'} filter.</p>"
+            },
+            "args": 2
+        },
+        {
+            "name": "pre_wp_count_posts",
+            "file": "wp-includes/post.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the post counts before the query is run.",
+                "long_description": "Returning a stdClass object short-circuits wp_count_posts(), skipping both the object cache lookup and the database query. This allows the counts to be served from another source, such as a value pre-computed in the background, when an exact real-time count is not required.\n Any registered post status missing from the filtered value is added to the result and set to zero.\n The returned value is not cached and passed through the {@see 'wp_count_posts'} filter.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "7.2.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "An object containing the post counts by status, or null to run the default query. Default null.",
+                        "types": [
+                            "\\stdClass",
+                            "null"
+                        ],
+                        "variable": "$counts"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Post type.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$type"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The permission to determine if the posts are 'readable' by the current user.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$perm"
+                    }
+                ],
+                "long_description_html": "<p>Returning a stdClass object short-circuits wp_count_posts(), skipping both the object cache lookup and the database query. This allows the counts to be served from another source, such as a value pre-computed in the background, when an exact real-time count is not required.</p> <p>Any registered post status missing from the filtered value is added to the result and set to zero.</p> <p>The returned value is not cached and passed through the {@see 'wp_count_posts'} filter.</p>"
+            },
+            "args": 3
         },
         {
             "name": "pre_wp_filesize",
@@ -35100,106 +35286,6 @@
                             "string"
                         ],
                         "variable": "$attributes"
-                    }
-                ],
-                "long_description_html": ""
-            },
-            "args": 1
-        },
-        {
-            "name": "print_admin_styles",
-            "file": "wp-includes/script-loader.php",
-            "type": "filter",
-            "doc": {
-                "description": "Filters whether to print the admin styles.",
-                "long_description": "",
-                "tags": [
-                    {
-                        "name": "since",
-                        "content": "2.8.0"
-                    },
-                    {
-                        "name": "param",
-                        "content": "Whether to print the admin styles. Default true.",
-                        "types": [
-                            "bool"
-                        ],
-                        "variable": "$print"
-                    }
-                ],
-                "long_description_html": ""
-            },
-            "args": 1
-        },
-        {
-            "name": "print_footer_scripts",
-            "file": "wp-includes/script-loader.php",
-            "type": "filter",
-            "doc": {
-                "description": "Filters whether to print the footer scripts.",
-                "long_description": "",
-                "tags": [
-                    {
-                        "name": "since",
-                        "content": "2.8.0"
-                    },
-                    {
-                        "name": "param",
-                        "content": "Whether to print the footer scripts. Default true.",
-                        "types": [
-                            "bool"
-                        ],
-                        "variable": "$print"
-                    }
-                ],
-                "long_description_html": ""
-            },
-            "args": 1
-        },
-        {
-            "name": "print_head_scripts",
-            "file": "wp-includes/script-loader.php",
-            "type": "filter",
-            "doc": {
-                "description": "Filters whether to print the head scripts.",
-                "long_description": "",
-                "tags": [
-                    {
-                        "name": "since",
-                        "content": "2.8.0"
-                    },
-                    {
-                        "name": "param",
-                        "content": "Whether to print the head scripts. Default true.",
-                        "types": [
-                            "bool"
-                        ],
-                        "variable": "$print"
-                    }
-                ],
-                "long_description_html": ""
-            },
-            "args": 1
-        },
-        {
-            "name": "print_late_styles",
-            "file": "wp-includes/script-loader.php",
-            "type": "filter",
-            "doc": {
-                "description": "Filters whether to print the styles queued too late for the HTML head.",
-                "long_description": "",
-                "tags": [
-                    {
-                        "name": "since",
-                        "content": "3.3.0"
-                    },
-                    {
-                        "name": "param",
-                        "content": "Whether to print the 'late' styles. Default true.",
-                        "types": [
-                            "bool"
-                        ],
-                        "variable": "$print"
                     }
                 ],
                 "long_description_html": ""
@@ -35898,6 +35984,31 @@
                 "long_description_html": ""
             },
             "args": 4
+        },
+        {
+            "name": "random_rewrite_rules",
+            "file": "wp-includes/class-wp-rewrite.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters rewrite rules used for random content redirects.",
+                "long_description": "Likely random content rules would include `/random/`, as well as term, author and post type archives prefixed with the random base, for example `/random/category/news/`.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "7.2.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Array of rewrite rules for random content redirects, keyed by their regex pattern.",
+                        "types": [
+                            "array<string,string>"
+                        ],
+                        "variable": "$random_rewrite"
+                    }
+                ],
+                "long_description_html": "<p>Likely random content rules would include <code>/random/</code>, as well as term, author and post type archives prefixed with the random base, for example <code>/random/category/news/</code>.</p>"
+            },
+            "args": 1
         },
         {
             "name": "recovery_email_debug_info",
@@ -37223,6 +37334,40 @@
             "args": 2
         },
         {
+            "name": "rest_allowed_cors_methods",
+            "file": "wp-includes/rest-api.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the list of HTTP methods advertised to REST API CORS requests.",
+                "long_description": "The allowed methods are passed to the browser to specify which methods may be used in a cross-origin request to the REST API. The list is a fixed default and is not derived from the registered routes, so a site serving routes that accept other methods can advertise them here.\n If the response already set its own `Access-Control-Allow-Methods` header naming valid methods, `$allow_methods` is those methods instead of the default list. Entries that are not valid method tokens are dropped, and an empty list omits the header. A value that is neither an array nor a string is ignored.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "7.2.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The list of HTTP methods to allow.",
+                        "types": [
+                            "string[]"
+                        ],
+                        "variable": "$allow_methods"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The request in context, if available.",
+                        "types": [
+                            "\\WP_REST_Request",
+                            "null"
+                        ],
+                        "variable": "$request"
+                    }
+                ],
+                "long_description_html": "<p>The allowed methods are passed to the browser to specify which methods may be used in a cross-origin request to the REST API. The list is a fixed default and is not derived from the registered routes, so a site serving routes that accept other methods can advertise them here.</p> <p>If the response already set its own <code>Access-Control-Allow-Methods</code> header naming valid methods, <code>$allow_methods</code> is those methods instead of the default list. Entries that are not valid method tokens are dropped, and an empty list omits the header. A value that is neither an array nor a string is ignored.</p>"
+            },
+            "args": 2
+        },
+        {
             "name": "rest_authentication_errors",
             "file": "wp-includes/rest-api/class-wp-rest-server.php",
             "type": "filter",
@@ -37482,9 +37627,13 @@
                         "name": "param",
                         "content": "Route handler used for the request.",
                         "types": [
-                            "array"
+                            "array<string,mixed>"
                         ],
                         "variable": "$handler"
+                    },
+                    {
+                        "name": "phpstan-param",
+                        "content": "Route_Handler $handler"
                     }
                 ],
                 "long_description_html": "<p>Allow plugins to override dispatching the request.</p>"
@@ -37505,11 +37654,15 @@
                     },
                     {
                         "name": "param",
-                        "content": "The available endpoints. An array of matching regex patterns, each mapped to an array of callbacks for the endpoint. These take the format <code>'/path/regex' =&gt; array( $callback, $bitmask )</code> or `'/path/regex' =&gt; array( array( $callback, $bitmask ).",
+                        "content": "The available endpoints, as registered and before normalization. An array of matching regex patterns, each mapped either to a single endpoint's arguments or to an array of them, alongside any route options under their own non-numeric keys.",
                         "types": [
                             "array"
                         ],
                         "variable": "$endpoints"
+                    },
+                    {
+                        "name": "phpstan-param",
+                        "content": "array<non-empty-string, array<array-key, mixed>> $endpoints"
                     }
                 ],
                 "long_description_html": ""
@@ -39556,7 +39709,7 @@
                         "name": "param",
                         "content": "Route handler used for the request.",
                         "types": [
-                            "array"
+                            "array<string,mixed>"
                         ],
                         "variable": "$handler"
                     },
@@ -39567,6 +39720,10 @@
                             "\\WP_REST_Request"
                         ],
                         "variable": "$request"
+                    },
+                    {
+                        "name": "phpstan-param",
+                        "content": "Route_Handler $handler"
                     }
                 ],
                 "long_description_html": "<p>Allows plugins to perform any needed cleanup, for example, to undo changes made during the {@see 'rest_request_before_callbacks'} filter.</p> <p>Note that this filter will not be called for requests that fail to authenticate or match to a registered route.</p> <p>Note that an endpoint's <code>permission_callback</code> can still be called after this filter - see <code>rest_send_allow_header()</code>.</p>"
@@ -39600,7 +39757,7 @@
                         "name": "param",
                         "content": "Route handler used for the request.",
                         "types": [
-                            "array"
+                            "array<string,mixed>"
                         ],
                         "variable": "$handler"
                     },
@@ -39611,6 +39768,10 @@
                             "\\WP_REST_Request"
                         ],
                         "variable": "$request"
+                    },
+                    {
+                        "name": "phpstan-param",
+                        "content": "Route_Handler $handler"
                     }
                 ],
                 "long_description_html": "<p>Allows plugins to perform additional validation after a request is initialized and matched to a registered route, but before it is executed.</p> <p>Note that this filter will not be called for requests that fail to authenticate or match to a registered route.</p>"
@@ -39678,6 +39839,10 @@
                             "\\WP_REST_Request"
                         ],
                         "variable": "$request"
+                    },
+                    {
+                        "name": "phpstan-param",
+                        "content": "list<Parameter_Type> $order"
                     }
                 ],
                 "long_description_html": "<p>The order affects which parameters are checked when using WP_REST_Request::get_param() and family. This acts similarly to PHP's <code>request_order</code> setting.</p>"
@@ -39700,9 +39865,13 @@
                         "name": "param",
                         "content": "Additional CURIEs to register with the REST API.",
                         "types": [
-                            "array"
+                            "array<string,string|bool>[]"
                         ],
                         "variable": "$additional"
+                    },
+                    {
+                        "name": "phpstan-param",
+                        "content": "array<Curie> $additional"
                     }
                 ],
                 "long_description_html": "<p>CURIEs allow a shortened version of URI relations. This allows a more usable form for custom relations than using the full URI. These work similarly to how XML namespaces work.</p> <p>Registered CURIES need to specify a name and URI template. This will automatically transform URI relations into their shortened version. The shortened relation follows the format <code>{name}:{rel}</code>. <code>{rel}</code> in the URI template will be replaced with the <code>{rel}</code> part of the shortened relation.</p> <p>For example, a CURIE with name <code>example</code> and URI template <code>http://w.org/{rel}</code> would transform a <code>http://w.org/term</code> relation into <code>example:term</code>.</p> <p>Well-behaved clients should expand and normalize these back to their full URI relation, however some naive clients may not resolve these correctly, so adding new CURIEs may break backward compatibility.</p>"
@@ -40039,6 +40208,10 @@
                             "string"
                         ],
                         "variable": "$scheme"
+                    },
+                    {
+                        "name": "phpstan-param",
+                        "content": "non-falsy-string $url"
                     }
                 ],
                 "long_description_html": "<p>Use this filter to adjust the url returned by the get_rest_url() function.</p>"
@@ -40679,7 +40852,7 @@
                         "name": "param",
                         "content": "The compiled array of rewrite rules, keyed by their regex pattern.",
                         "types": [
-                            "string[]"
+                            "array<string,string>"
                         ],
                         "variable": "$rules"
                     }
@@ -40944,6 +41117,11 @@
                         "description": "Added support for SVG presentation attributes."
                     },
                     {
+                        "name": "since",
+                        "content": "7.2.0",
+                        "description": "Added support for <code>background-clip</code> and its vendor prefixed companions."
+                    },
+                    {
                         "name": "param",
                         "content": "Array of allowed CSS attributes.",
                         "types": [
@@ -41195,9 +41373,13 @@
                         "name": "param",
                         "content": "The key prior to sanitization.",
                         "types": [
-                            "string"
+                            "mixed"
                         ],
                         "variable": "$key"
+                    },
+                    {
+                        "name": "phpstan-param",
+                        "content": "lowercase-string $sanitized_key"
                     }
                 ],
                 "long_description_html": ""
@@ -47015,9 +47197,10 @@
                     },
                     {
                         "name": "param",
-                        "content": "Post object.",
+                        "content": "Post object, or null if no post is found.",
                         "types": [
-                            "\\WP_Post"
+                            "\\WP_Post",
+                            "null"
                         ],
                         "variable": "$post"
                     },
@@ -47401,9 +47584,11 @@
                     },
                     {
                         "name": "param",
-                        "content": "List of tags.",
+                        "content": "A list of tags on success, false if there are no terms, WP_Error on failure.",
                         "types": [
-                            "string"
+                            "string",
+                            "false",
+                            "\\WP_Error"
                         ],
                         "variable": "$tag_list"
                     },
@@ -49975,7 +50160,7 @@
                         "name": "param",
                         "content": "Mime types keyed by the file extension regex corresponding to those types.",
                         "types": [
-                            "array"
+                            "array<string,string>"
                         ],
                         "variable": "$t"
                     },
@@ -51651,7 +51836,8 @@
                         "name": "param",
                         "content": "Menu item data object.",
                         "types": [
-                            "\\WP_Post"
+                            "\\WP_Post",
+                            "\\stdClass"
                         ],
                         "variable": "$menu_item"
                     },
@@ -51854,8 +52040,13 @@
                         "description": "Added the <code>$instance</code> parameter."
                     },
                     {
+                        "name": "since",
+                        "content": "7.2.0",
+                        "description": "The <code>show_count</code> and <code>hierarchical</code> arguments in <code>$cat_args</code> are now booleans instead of the numeric strings '0' and '1'."
+                    },
+                    {
                         "name": "param",
-                        "content": "An array of Categories widget options.",
+                        "content": "{ An array of Categories widget options. See {@see \\wp_list_categories()} for information on additional accepted arguments. @type string $orderby      Which column to use for ordering categories. See {@see \\get_terms()} for a list of accepted values. Default 'name'. @type bool   $show_count   Whether to include post counts. @type bool   $hierarchical Whether to traverse the taxonomy hierarchy. @type string $title_li     Text to use for the list title <code>&lt;li&gt;</code> element. Default empty string. }",
                         "types": [
                             "array"
                         ],
@@ -51863,7 +52054,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Array of settings for the current widget.",
+                        "content": "{ Array of settings for the current widget. @type string $title        Widget title. @type 0|1    $count        Whether to show post counts. @type 0|1    $hierarchical Whether to show the category hierarchy. @type 0|1    $dropdown     Whether to display the categories as a drop-down. }",
                         "types": [
                             "array"
                         ],
@@ -51892,13 +52083,18 @@
                         "description": "Added the <code>$instance</code> parameter."
                     },
                     {
+                        "name": "since",
+                        "content": "7.2.0",
+                        "description": "The <code>show_count</code> and <code>hierarchical</code> arguments in <code>$cat_args</code> are now booleans instead of the numeric strings '0' and '1'."
+                    },
+                    {
                         "name": "see",
                         "content": "",
                         "refers": "wp_dropdown_categories()"
                     },
                     {
                         "name": "param",
-                        "content": "An array of Categories widget drop-down arguments.",
+                        "content": "{ An array of Categories widget drop-down arguments. See {@see \\wp_dropdown_categories()} for information on additional accepted arguments. @type string $orderby          Which column to use for ordering categories. See {@see \\get_terms()} for a list of accepted values. Default 'name'. @type bool   $show_count       Whether to include post counts. @type bool   $hierarchical     Whether to traverse the taxonomy hierarchy. @type string $show_option_none Text to display for showing no categories. Set to 'Select Category'. @type string $id               Value for the 'id' attribute of the select element. }",
                         "types": [
                             "array"
                         ],
@@ -51906,7 +52102,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Array of settings for the current widget.",
+                        "content": "{ Array of settings for the current widget. @type string $title        Widget title. @type 0|1    $count        Whether to show post counts. @type 0|1    $hierarchical Whether to show the category hierarchy. @type 0|1    $dropdown     Whether to display the categories as a drop-down. }",
                         "types": [
                             "array"
                         ],
@@ -52694,7 +52890,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "The normalized input data.",
+                        "content": "The prepared input data.",
                         "types": [
                             "mixed"
                         ],
@@ -52760,15 +52956,20 @@
             "type": "filter",
             "doc": {
                 "description": "Filters the result of an ability's permission check.",
-                "long_description": "Fires after the registered `permission_callback` returns. Plugins can use this to layer additional authorization rules on top of the ability's own permission logic \u2014 for example, multi-factor authorization gates or temporary permission elevation for trusted contexts.\n Filters can return `true` to grant, `false` to deny, or a `WP_Error` to deny with a specific error code and message. The filter receives whatever the `permission_callback` produced. Any other return value is coerced to `false`.",
+                "long_description": "Fires after the required capabilities check and the `permission_callback`. Plugins can use this to layer additional authorization rules on top of the ability's own permission logic \u2014 for example, multi-factor authorization gates or temporary permission elevation for trusted contexts.\n The filter receives `false` when a required capability is missing. Otherwise, it receives the result of `permission_callback`, or `true` when there is none. Filters can return `true` to grant, `false` to deny, or a `WP_Error` to deny with a specific error code and message. Any other return value is coerced to `false`.",
                 "tags": [
                     {
                         "name": "since",
                         "content": "7.1.0"
                     },
                     {
+                        "name": "since",
+                        "content": "7.2.0",
+                        "description": "Also fires with <code>false</code> when a required capability is missing."
+                    },
+                    {
                         "name": "param",
-                        "content": "The permission result returned by <code>permission_callback</code>.",
+                        "content": "The result of the required capabilities check and the <code>permission_callback</code>.",
                         "types": [
                             "bool",
                             "\\WP_Error"
@@ -52800,7 +53001,7 @@
                         "variable": "$ability"
                     }
                 ],
-                "long_description_html": "<p>Fires after the registered <code>permission_callback</code> returns. Plugins can use this to layer additional authorization rules on top of the ability's own permission logic \u2014 for example, multi-factor authorization gates or temporary permission elevation for trusted contexts.</p> <p>Filters can return <code>true</code> to grant, <code>false</code> to deny, or a <code>WP_Error</code> to deny with a specific error code and message. The filter receives whatever the <code>permission_callback</code> produced. Any other return value is coerced to <code>false</code>.</p>"
+                "long_description_html": "<p>Fires after the required capabilities check and the <code>permission_callback</code>. Plugins can use this to layer additional authorization rules on top of the ability's own permission logic \u2014 for example, multi-factor authorization gates or temporary permission elevation for trusted contexts.</p> <p>The filter receives <code>false</code> when a required capability is missing. Otherwise, it receives the result of <code>permission_callback</code>, or <code>true</code> when there is none. Filters can return <code>true</code> to grant, <code>false</code> to deny, or a <code>WP_Error</code> to deny with a specific error code and message. Any other return value is coerced to <code>false</code>.</p>"
             },
             "args": 4
         },
@@ -53130,7 +53331,7 @@
         },
         {
             "name": "wp_ai_client_default_request_timeout",
-            "file": "wp-includes/ai-client/class-wp-ai-client-prompt-builder.php",
+            "file": "wp-includes/ai-client/class-wp-ai-client-builder.php",
             "type": "filter",
             "doc": {
                 "description": "Filters the default request timeout in seconds for AI Client HTTP requests.",
@@ -53141,17 +53342,63 @@
                         "content": "7.0.0"
                     },
                     {
+                        "name": "since",
+                        "content": "7.2.0",
+                        "description": "Added the <code>$builder_type</code> parameter."
+                    },
+                    {
                         "name": "param",
                         "content": "The default timeout in seconds.",
                         "types": [
                             "float"
                         ],
                         "variable": "$default_timeout"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The class name of the builder the timeout applies to, e.g. 'WP_AI_Client_Prompt_Builder' or 'WP_AI_Client_Embedding_Builder'.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$builder_type"
                     }
                 ],
                 "long_description_html": ""
             },
-            "args": 1
+            "args": 2
+        },
+        {
+            "name": "wp_ai_client_prevent_embedding",
+            "file": "wp-includes/ai-client/class-wp-ai-client-embedding-builder.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters whether to prevent the embedding generation from being executed.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "7.2.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether to prevent the embedding generation. Default false.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$prevent"
+                    },
+                    {
+                        "name": "param",
+                        "content": "A clone of the embedding builder instance (read-only).",
+                        "types": [
+                            "\\WP_AI_Client_Embedding_Builder"
+                        ],
+                        "variable": "$builder"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 2
         },
         {
             "name": "wp_ai_client_prevent_prompt",
@@ -53360,6 +53607,47 @@
                             "array"
                         ],
                         "variable": "$anonymized_comment"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 3
+        },
+        {
+            "name": "wp_application_password_created_email",
+            "file": "wp-includes/functions.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the contents of the email notification sent to a user when a new application password is created.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "7.2.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "{ Used to build wp_mail(). @type string $to      The email address of the intended recipient. @type string $subject The subject of the email. @type string $message The content of the email. The following strings have a special meaning and will get replaced dynamically: - <code>###USERNAME###</code>                  The user's display name. - <code>###APPLICATION_PASSWORD_NAME###</code> The name of the application password. - <code>###ADMIN_EMAIL###</code>               The admin email in case this was unexpected. - <code>###EMAIL###</code>                     The user's email address. - <code>###SITENAME###</code>                  The name of the site. - <code>###SITEURL###</code>                   The URL to the site. @type string $headers Headers. }",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$email"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The user object.",
+                        "types": [
+                            "\\WP_User"
+                        ],
+                        "variable": "$user"
+                    },
+                    {
+                        "name": "param",
+                        "content": "{ The details about the created password. @type string $uuid      The unique identifier for the application password. @type string $app_id    A UUID provided by the application to uniquely identify it. @type string $name      The name of the application password. @type string $password  A one-way hash of the password. @type int    $created   Unix timestamp of when the password was created. @type null   $last_used Null. @type null   $last_ip   Null. }",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$new_item"
                     }
                 ],
                 "long_description_html": ""
@@ -53976,6 +54264,31 @@
             "args": 4
         },
         {
+            "name": "wp_change_password_url",
+            "file": "wp-includes/canonical.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the well-known change password URL (/.well-known/change-password).",
+                "long_description": "By default visiting the well-known change password URL will redirect to the user's profile page when requested by a browser or password manager.\n Sites with a custom URL structure for modifying the passwords can modify the destination with this filter.\n The resulting URL is redirected using {@see \\wp_safe_redirect}, if the filtered URL is on an external host, that host will need to be included as an allowed host via the {@see 'allowed_redirect_hosts'} filter.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "7.2.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The URL to redirect to. Default is the user profile page.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$change_password_url"
+                    }
+                ],
+                "long_description_html": "<p>By default visiting the well-known change password URL will redirect to the user's profile page when requested by a browser or password manager.</p> <p>Sites with a custom URL structure for modifying the passwords can modify the destination with this filter.</p> <p>The resulting URL is redirected using {@see \\wp_safe_redirect}, if the filtered URL is on an external host, that host will need to be included as an allowed host via the {@see 'allowed_redirect_hosts'} filter.</p>"
+            },
+            "args": 1
+        },
+        {
             "name": "wp_check_filetype_and_ext",
             "file": "wp-includes/functions.php",
             "type": "filter",
@@ -54138,7 +54451,8 @@
                         "name": "param",
                         "content": "The array of settings passed to the code editor. A falsey value disables the editor.",
                         "types": [
-                            "array"
+                            "array",
+                            "false"
                         ],
                         "variable": "$settings"
                     },
@@ -54432,6 +54746,31 @@
                 "long_description_html": "<p>Used for file replication.</p>"
             },
             "args": 2
+        },
+        {
+            "name": "wp_dashboard_on_this_day_query_args",
+            "file": "wp-admin/includes/dashboard.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the arguments used to query posts for the On This Day section.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "7.2.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "WP_Query arguments.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$args"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 1
         },
         {
             "name": "wp_dashboard_widgets",
@@ -55343,6 +55682,31 @@
             "args": 4
         },
         {
+            "name": "wp_enable_random_content_redirect",
+            "file": "wp-includes/query.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters whether random content redirects are enabled.",
+                "long_description": "Random content redirects add rewrite rules for URLs such as `/random/`, so the rewrite rules need to be flushed after changing the value returned by this filter.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "7.2.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether random content redirects are enabled. Default true.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$enabled"
+                    }
+                ],
+                "long_description_html": "<p>Random content redirects add rewrite rules for URLs such as <code>/random/</code>, so the rewrite rules need to be flushed after changing the value returned by this filter.</p>"
+            },
+            "args": 1
+        },
+        {
             "name": "wp_fatal_error_handler_enabled",
             "file": "wp-includes/error-protection.php",
             "type": "filter",
@@ -55401,6 +55765,39 @@
             "args": 2
         },
         {
+            "name": "wp_feed_namespaces",
+            "file": "wp-includes/feed.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the XML namespaces of a feed's root element.",
+                "long_description": "Namespaces are keyed by their prefix, which makes duplicate `xmlns` attributes impossible.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "7.2.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Array of namespace URIs, keyed by their prefix.",
+                        "types": [
+                            "array<string,string>"
+                        ],
+                        "variable": "$namespaces"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Type of feed. Possible values include 'rss2', 'rss2-comments', 'rdf', 'atom', and 'atom-comments'.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$type"
+                    }
+                ],
+                "long_description_html": "<p>Namespaces are keyed by their prefix, which makes duplicate <code>xmlns</code> attributes impossible.</p>"
+            },
+            "args": 2
+        },
+        {
             "name": "wp_filesize",
             "file": "wp-includes/functions.php",
             "type": "filter",
@@ -55437,6 +55834,31 @@
                 "long_description_html": ""
             },
             "args": 2
+        },
+        {
+            "name": "wp_generate_animated_image_subsizes",
+            "file": "wp-includes/media.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters whether client-side media processing preserves animation in image sub-sizes.",
+                "long_description": "By default, sub-sizes of animated GIF and WebP images retain animation, including cropped sizes. Return false to generate static sub-sizes using only the first frame, reducing processing time in the browser.\n This setting applies only to client-side media processing. Server-side processing continues to generate static sub-sizes.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "7.2.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether to preserve animation in image sub-sizes. Default true.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$generate_animated_image_subsizes"
+                    }
+                ],
+                "long_description_html": "<p>By default, sub-sizes of animated GIF and WebP images retain animation, including cropped sizes. Return false to generate static sub-sizes using only the first frame, reducing processing time in the browser.</p> <p>This setting applies only to client-side media processing. Server-side processing continues to generate static sub-sizes.</p>"
+            },
+            "args": 1
         },
         {
             "name": "wp_generate_attachment_metadata",
@@ -55587,7 +56009,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters whether an individual ability should be included in the result set.",
-                "long_description": "Fires after the declarative filters and the caller-scoped item_include_callback. Plugins can use this to enforce universal inclusion rules regardless of what the caller passed in $args.",
+                "long_description": "Fires after the declarative filters and the caller-scoped item_include_callback. Only abilities that pass the declarative filters reach this hook. It can override the caller-scoped callback's result.",
                 "tags": [
                     {
                         "name": "since",
@@ -55595,7 +56017,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Whether to include the ability. Default true (after declarative filters pass).",
+                        "content": "The caller-scoped callback's result, or true when no callback is provided.",
                         "types": [
                             "bool"
                         ],
@@ -55618,7 +56040,7 @@
                         "variable": "$args"
                     }
                 ],
-                "long_description_html": "<p>Fires after the declarative filters and the caller-scoped item_include_callback. Plugins can use this to enforce universal inclusion rules regardless of what the caller passed in $args.</p>"
+                "long_description_html": "<p>Fires after the declarative filters and the caller-scoped item_include_callback. Only abilities that pass the declarative filters reach this hook. It can override the caller-scoped callback's result.</p>"
             },
             "args": 3
         },
@@ -55844,9 +56266,10 @@
                     },
                     {
                         "name": "param",
-                        "content": "Image attachment post.",
+                        "content": "Image attachment post, or null if no post is found.",
                         "types": [
-                            "\\WP_Post"
+                            "\\WP_Post",
+                            "null"
                         ],
                         "variable": "$attachment"
                     },
@@ -56516,7 +56939,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "Array of arguments for retrieving terms for the given object(s). See wp_get_object_terms() for details.",
+                        "content": "Array of arguments for retrieving terms for the given object(s). See {@see \\wp_get_object_terms()} for details.",
                         "types": [
                             "array"
                         ],
@@ -57499,7 +57922,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters attributes to be added to a script tag.",
-                "long_description": "",
+                "long_description": "Escaping and normalization can make the text a browser parses from the printed tag differ from `$data`. A callback that needs that text, such as one computing a CSP hash, can set `$data` as the modifiable text of a SCRIPT tag in a `WP_HTML_Tag_Processor` with the filtered attributes applied and then read {@see \\WP_HTML_Tag_Processor::get_modifiable_text()}, at a late priority so that the attributes are final.",
                 "tags": [
                     {
                         "name": "since",
@@ -57522,7 +57945,7 @@
                         "variable": "$data"
                     }
                 ],
-                "long_description_html": ""
+                "long_description_html": "<p>Escaping and normalization can make the text a browser parses from the printed tag differ from <code>$data</code>. A callback that needs that text, such as one computing a CSP hash, can set <code>$data</code> as the modifiable text of a SCRIPT tag in a <code>WP_HTML_Tag_Processor</code> with the filtered attributes applied and then read {@see \\WP_HTML_Tag_Processor::get_modifiable_text()}, at a late priority so that the attributes are final.</p>"
             },
             "args": 2
         },
@@ -58305,6 +58728,31 @@
             "args": 2
         },
         {
+            "name": "wp_kses_force_legacy_parser",
+            "file": "wp-includes/kses.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters whether to rely on the legacy parsing inside `wp_kses()`.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "7.2.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether to force using the legacy parser instead of relying on the HTML API.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$force_legacy_parser"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 1
+        },
+        {
             "name": "wp_kses_uri_attributes",
             "file": "wp-includes/kses.php",
             "type": "filter",
@@ -58721,6 +59169,10 @@
                             "string[]"
                         ],
                         "variable": "$exclude_array"
+                    },
+                    {
+                        "name": "phpstan-param",
+                        "content": "list<decimal-int-string> $exclude_array"
                     }
                 ],
                 "long_description_html": ""
@@ -58754,6 +59206,14 @@
                             "array"
                         ],
                         "variable": "$args"
+                    },
+                    {
+                        "name": "phpstan-template",
+                        "content": "T of WP_List_Table"
+                    },
+                    {
+                        "name": "phpstan-param",
+                        "content": "class-string<T> $class_name"
                     }
                 ],
                 "long_description_html": ""
@@ -59177,23 +59637,25 @@
                     },
                     {
                         "name": "param",
-                        "content": "Path to the mime type icon.",
+                        "content": "URL of the mime type icon, or false if no icon was found.",
                         "types": [
-                            "string"
+                            "string",
+                            "false"
                         ],
                         "variable": "$icon"
                     },
                     {
                         "name": "param",
-                        "content": "Mime type.",
+                        "content": "Mime type, or 0 if no post was found for the passed ID.",
                         "types": [
-                            "string"
+                            "string",
+                            "int"
                         ],
                         "variable": "$mime"
                     },
                     {
                         "name": "param",
-                        "content": "Attachment ID. Will equal 0 if the function passed the mime type.",
+                        "content": "Attachment ID. Will equal 0 if the function passed the mime type or no post was found for the passed ID.",
                         "types": [
                             "int"
                         ],
@@ -60030,7 +60492,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters whether to short-circuit ability execution.",
-                "long_description": "Returning a value other than the received default bypasses the rest of `execute()` \u2014 input normalization, input validation, permission checks, the registered execute callback, output validation, and the surrounding actions \u2014 and the value is returned to the caller as-is. Useful for cached responses, rate limiting, maintenance mode, and test mocking.\n To continue with normal execution, return `$pre` unchanged. This preserves any value (including `null`, `false`, or arbitrary objects) as a valid short-circuit result.\n Because validation is bypassed, callers that short-circuit are responsible for the integrity of any value they consume from `$input`.",
+                "long_description": "Returning a value other than the received default bypasses the rest of `execute()` \u2014 input preparation, permission checks, the registered execute callback, output validation, and the surrounding actions \u2014 and the value is returned to the caller as-is. Useful for cached responses, rate limiting, maintenance mode, and test mocking.\n To continue with normal execution, return `$pre` unchanged. This preserves any value (including `null`, `false`, or arbitrary objects) as a valid short-circuit result.\n Because validation is bypassed, callers that short-circuit are responsible for the integrity of any value they consume from `$input`.",
                 "tags": [
                     {
                         "name": "since",
@@ -60069,7 +60531,7 @@
                         "variable": "$ability"
                     }
                 ],
-                "long_description_html": "<p>Returning a value other than the received default bypasses the rest of <code>execute()</code> \u2014 input normalization, input validation, permission checks, the registered execute callback, output validation, and the surrounding actions \u2014 and the value is returned to the caller as-is. Useful for cached responses, rate limiting, maintenance mode, and test mocking.</p> <p>To continue with normal execution, return <code>$pre</code> unchanged. This preserves any value (including <code>null</code>, <code>false</code>, or arbitrary objects) as a valid short-circuit result.</p> <p>Because validation is bypassed, callers that short-circuit are responsible for the integrity of any value they consume from <code>$input</code>.</p>"
+                "long_description_html": "<p>Returning a value other than the received default bypasses the rest of <code>execute()</code> \u2014 input preparation, permission checks, the registered execute callback, output validation, and the surrounding actions \u2014 and the value is returned to the caller as-is. Useful for cached responses, rate limiting, maintenance mode, and test mocking.</p> <p>To continue with normal execution, return <code>$pre</code> unchanged. This preserves any value (including <code>null</code>, <code>false</code>, or arbitrary objects) as a valid short-circuit result.</p> <p>Because validation is bypassed, callers that short-circuit are responsible for the integrity of any value they consume from <code>$input</code>.</p>"
             },
             "args": 4
         },
@@ -60134,6 +60596,39 @@
             "args": 4
         },
         {
+            "name": "wp_prefetch_admin_assets",
+            "file": "wp-includes/script-loader.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the assets prefetched for the screen the user is expected to open next.",
+                "long_description": "Fires on any screen from which the next one can be predicted, so `$next_screen` is what distinguishes the contexts: the login screen passes the URL it is about to redirect to, and the Dashboard and post list tables pass the editor they expect the user to open.\n Only the `href` and `as` attributes below are printed; any other key is ignored. Resources sharing an `href` are collapsed to the first of them, so a callback may append without checking what is already there. Returning an empty array turns the prefetching off.\n On the login screen the URLs are built before the user is authenticated and outside the admin, so there is no current user and `is_admin()` is false. A {@see 'script_loader_src'} or {@see 'style_loader_src'} callback that depends on either can produce a URL the admin screen will not request, which wastes the prefetch; a callback on this filter can correct it.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "7.2.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "{ Array of resources and their attributes to prefetch. @type array ...$0 { Array of resource attributes. @type string $href URL to prefetch. Required. @type string $as   How the browser should treat the resource (<code>script</code>, <code>style</code>, <code>image</code>, <code>document</code>, etc). Required. } }",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$resources"
+                    },
+                    {
+                        "name": "param",
+                        "content": "URL of the screen the assets are being prefetched for. Always points into the admin, since nothing is prefetched otherwise. From the login screen this is the redirect target, already run through wp_validate_redirect() with the admin as the fallback, and it may be relative: it is the value as wp_safe_redirect() will receive it, so a request-supplied path is passed through unchanged and only the fallback is a full URL.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$next_screen"
+                    }
+                ],
+                "long_description_html": "<p>Fires on any screen from which the next one can be predicted, so <code>$next_screen</code> is what distinguishes the contexts: the login screen passes the URL it is about to redirect to, and the Dashboard and post list tables pass the editor they expect the user to open.</p> <p>Only the <code>href</code> and <code>as</code> attributes below are printed; any other key is ignored. Resources sharing an <code>href</code> are collapsed to the first of them, so a callback may append without checking what is already there. Returning an empty array turns the prefetching off.</p> <p>On the login screen the URLs are built before the user is authenticated and outside the admin, so there is no current user and <code>is_admin()</code> is false. A {@see 'script_loader_src'} or {@see 'style_loader_src'} callback that depends on either can produce a URL the admin screen will not request, which wastes the prefetch; a callback on this filter can correct it.</p>"
+            },
+            "args": 2
+        },
+        {
             "name": "wp_preload_resources",
             "file": "wp-includes/general-template.php",
             "type": "filter",
@@ -60152,7 +60647,7 @@
                     },
                     {
                         "name": "param",
-                        "content": "{ Array of resources and their attributes, or URLs to print for resource preloads. @type array ...$0 { Array of resource attributes. @type string $href          URL to include in resource preloads. Required. @type string $as            How the browser should treat the resource (<code>script</code>, <code>style</code>, <code>image</code>, <code>document</code>, etc). @type string $crossorigin   Indicates the CORS policy of the specified resource. @type string $type          Type of the resource (<code>text/html</code>, <code>text/css</code>, etc). @type string $media         Accepts media types or media queries. Allows responsive preloading. @type string $imagesizes    Responsive source size to the source Set. @type string $imagesrcset   Responsive image sources to the source set. @type string $fetchpriority Fetchpriority value for the resource. } }",
+                        "content": "{ Array of resources and their attributes, or URLs to print for resource preloads. @type array ...$0 { Array of resource attributes. @type string $href          URL to include in resource preloads. May be omitted for an image preloaded by its <code>$imagesrcset</code>. @type string $as            How the browser should treat the resource (<code>script</code>, <code>style</code>, <code>image</code>, <code>document</code>, etc). @type string $crossorigin   Indicates the CORS policy of the specified resource. @type string $type          Type of the resource (<code>text/html</code>, <code>text/css</code>, etc). @type string $media         Accepts media types or media queries. Allows responsive preloading. @type string $imagesizes    Responsive source size to the source Set. @type string $imagesrcset   Responsive image sources to the source set. @type string $fetchpriority Fetchpriority value for the resource. } }",
                         "types": [
                             "array"
                         ],
@@ -61200,8 +61695,18 @@
                         "content": "6.9.0"
                     },
                     {
+                        "name": "since",
+                        "content": "7.1.0",
+                        "description": "Added the <code>public</code> meta argument."
+                    },
+                    {
+                        "name": "since",
+                        "content": "7.2.0",
+                        "description": "Added the <code>required_capabilities</code> argument."
+                    },
+                    {
                         "name": "param",
-                        "content": "{ An associative array of arguments for the ability. @type string               $label                 The human-readable label for the ability. @type string               $description           A detailed description of what the ability does. @type string               $category              The ability category slug this ability belongs to. @type callable             $execute_callback      A callback function to execute when the ability is invoked. Receives optional mixed input and returns mixed result or WP_Error. @type callable             $permission_callback   A callback function to check permissions before execution. Receives optional mixed input and returns bool or WP_Error. @type array&lt;string, mixed&gt; $input_schema          Optional. JSON Schema definition for the ability's input. @type array&lt;string, mixed&gt; $output_schema         Optional. JSON Schema definition for the ability's output. @type array&lt;string, mixed&gt; $meta                  { Optional. Additional metadata for the ability. @type array&lt;string, bool|string&gt; $annotations  Optional. Annotation metadata for the ability. @type bool                       $public       Optional. Whether the ability is meant to be available to clients such as the REST API, MCP, or AI agents. Seeds the default for per-channel flags like <code>$show_in_rest</code>. Defaults to false. @type bool                       $show_in_rest Optional. Whether to expose this ability in the REST API. Default is the value of <code>$public</code> when set, false otherwise. } @type string               $ability_class         Optional. Custom class to instantiate instead of WP_Ability. }",
+                        "content": "{ An associative array of arguments for the ability. @type string               $label                 The human-readable label for the ability. @type string               $description           A detailed description of what the ability does. @type string               $category              The registered ability category slug this ability belongs to. @type callable             $execute_callback      A callback function to execute when the ability is invoked. Receives optional mixed input and returns mixed result or WP_Error. @type callable             $permission_callback   A callback function to check permissions before execution. Receives optional mixed input and returns bool or WP_Error. Required unless <code>$required_capabilities</code> lists at least one capability. @type list<string>         $required_capabilities Optional. Minimum capabilities required for every execution of the ability, regardless of input. They are checked before <code>$permission_callback</code>, which handles input-dependent requirements. @type array&lt;string, mixed&gt; $input_schema          Optional. JSON Schema definition for the ability's input. @type array&lt;string, mixed&gt; $output_schema         Optional. JSON Schema definition for the ability's output. @type array&lt;string, mixed&gt; $meta                  { Optional. Additional metadata for the ability. @type array&lt;string, bool|string&gt; $annotations  Optional. Annotation metadata for the ability. @type bool                       $public       Optional. Whether the ability is meant to be available to clients such as the REST API, MCP, or AI agents. Seeds the default for per-channel flags like <code>$show_in_rest</code>. Defaults to false. @type bool                       $show_in_rest Optional. Whether to expose this ability in the REST API. Default is the value of <code>$public</code> when set, false otherwise. } @type string               $ability_class         Optional. Custom class to instantiate instead of WP_Ability. }",
                         "types": [
                             "array<string,mixed>"
                         ],
@@ -61704,6 +62209,47 @@
                 "long_description_html": ""
             },
             "args": 1
+        },
+        {
+            "name": "wp_send_application_password_created_email",
+            "file": "wp-includes/functions.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters whether to send the application password created notification email.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "7.2.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether to send the email notification.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$send"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The user object.",
+                        "types": [
+                            "\\WP_User"
+                        ],
+                        "variable": "$user"
+                    },
+                    {
+                        "name": "param",
+                        "content": "{ The details about the created password. @type string $uuid      The unique identifier for the application password. @type string $app_id    A UUID provided by the application to uniquely identify it. @type string $name      The name of the application password. @type string $password  A one-way hash of the password. @type int    $created   Unix timestamp of when the password was created. @type null   $last_used Null. @type null   $last_ip   Null. }",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$new_item"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 3
         },
         {
             "name": "wp_send_new_user_notification_to_admin",
@@ -62215,7 +62761,7 @@
                         "name": "param",
                         "content": "Array of registered post type objects keyed by their name.",
                         "types": [
-                            "\\WP_Post_Type[]"
+                            "array<string,\\WP_Post_Type>"
                         ],
                         "variable": "$post_types"
                     }
@@ -62410,131 +62956,6 @@
             "args": 1
         },
         {
-            "name": "wp_sitemaps_stylesheet_content",
-            "file": "wp-includes/sitemaps/class-wp-sitemaps-stylesheet.php",
-            "type": "filter",
-            "doc": {
-                "description": "Filters the content of the sitemap stylesheet.",
-                "long_description": "",
-                "tags": [
-                    {
-                        "name": "since",
-                        "content": "5.5.0"
-                    },
-                    {
-                        "name": "param",
-                        "content": "Full content for the XML stylesheet.",
-                        "types": [
-                            "string"
-                        ],
-                        "variable": "$xsl_content"
-                    }
-                ],
-                "long_description_html": ""
-            },
-            "args": 1
-        },
-        {
-            "name": "wp_sitemaps_stylesheet_css",
-            "file": "wp-includes/sitemaps/class-wp-sitemaps-stylesheet.php",
-            "type": "filter",
-            "doc": {
-                "description": "Filters the CSS only for the sitemap stylesheet.",
-                "long_description": "",
-                "tags": [
-                    {
-                        "name": "since",
-                        "content": "5.5.0"
-                    },
-                    {
-                        "name": "param",
-                        "content": "CSS to be applied to default XSL file.",
-                        "types": [
-                            "string"
-                        ],
-                        "variable": "$css"
-                    }
-                ],
-                "long_description_html": ""
-            },
-            "args": 1
-        },
-        {
-            "name": "wp_sitemaps_stylesheet_index_content",
-            "file": "wp-includes/sitemaps/class-wp-sitemaps-stylesheet.php",
-            "type": "filter",
-            "doc": {
-                "description": "Filters the content of the sitemap index stylesheet.",
-                "long_description": "",
-                "tags": [
-                    {
-                        "name": "since",
-                        "content": "5.5.0"
-                    },
-                    {
-                        "name": "param",
-                        "content": "Full content for the XML stylesheet.",
-                        "types": [
-                            "string"
-                        ],
-                        "variable": "$xsl_content"
-                    }
-                ],
-                "long_description_html": ""
-            },
-            "args": 1
-        },
-        {
-            "name": "wp_sitemaps_stylesheet_index_url",
-            "file": "wp-includes/sitemaps/class-wp-sitemaps-renderer.php",
-            "type": "filter",
-            "doc": {
-                "description": "Filters the URL for the sitemap index stylesheet.",
-                "long_description": "If a falsey value is returned, no stylesheet will be used and the \"raw\" XML of the sitemap index will be displayed.",
-                "tags": [
-                    {
-                        "name": "since",
-                        "content": "5.5.0"
-                    },
-                    {
-                        "name": "param",
-                        "content": "Full URL for the sitemaps index XSL file.",
-                        "types": [
-                            "string"
-                        ],
-                        "variable": "$sitemap_url"
-                    }
-                ],
-                "long_description_html": "<p>If a falsey value is returned, no stylesheet will be used and the \"raw\" XML of the sitemap index will be displayed.</p>"
-            },
-            "args": 1
-        },
-        {
-            "name": "wp_sitemaps_stylesheet_url",
-            "file": "wp-includes/sitemaps/class-wp-sitemaps-renderer.php",
-            "type": "filter",
-            "doc": {
-                "description": "Filters the URL for the sitemap stylesheet.",
-                "long_description": "If a falsey value is returned, no stylesheet will be used and the \"raw\" XML of the sitemap will be displayed.",
-                "tags": [
-                    {
-                        "name": "since",
-                        "content": "5.5.0"
-                    },
-                    {
-                        "name": "param",
-                        "content": "Full URL for the sitemaps XSL file.",
-                        "types": [
-                            "string"
-                        ],
-                        "variable": "$sitemap_url"
-                    }
-                ],
-                "long_description_html": "<p>If a falsey value is returned, no stylesheet will be used and the \"raw\" XML of the sitemap will be displayed.</p>"
-            },
-            "args": 1
-        },
-        {
             "name": "wp_sitemaps_taxonomies",
             "file": "wp-includes/sitemaps/providers/class-wp-sitemaps-taxonomies.php",
             "type": "filter",
@@ -62550,7 +62971,7 @@
                         "name": "param",
                         "content": "Array of registered taxonomy objects keyed by their name.",
                         "types": [
-                            "\\WP_Taxonomy[]"
+                            "array<string,\\WP_Taxonomy>"
                         ],
                         "variable": "$taxonomies"
                     }
@@ -62888,9 +63309,9 @@
                         "content": "6.8.0"
                     },
                     {
-                        "name": "see",
-                        "content": "",
-                        "refers": "https://developer.chrome.com/docs/web-platform/prerender-pages"
+                        "name": "link",
+                        "content": "<a href=\"https://developer.chrome.com/docs/web-platform/prerender-pages\">https://developer.chrome.com/docs/web-platform/prerender-pages</a>",
+                        "link": "https://developer.chrome.com/docs/web-platform/prerender-pages"
                     },
                     {
                         "name": "param",
@@ -65162,9 +65583,9 @@
                     },
                     {
                         "name": "param",
-                        "content": "An array of user columns. Default 'cb', 'username', 'name', 'email', 'registered', 'blogs'.",
+                        "content": "Column titles keyed by column name. Default keys are 'cb', 'username', 'name', 'email', 'registered', and 'blogs'.",
                         "types": [
-                            "string[]"
+                            "array<string,string>"
                         ],
                         "variable": "$users_columns"
                     }
@@ -65553,6 +65974,39 @@
                 "long_description_html": ""
             },
             "args": 1
+        },
+        {
+            "name": "xmlrpc_allow_post_type_writes",
+            "file": "wp-includes/class-wp-xmlrpc-server.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters whether a post type accepts writes via XML-RPC.",
+                "long_description": "Defaults to false for internal-only builtin post types (public=false, show_in_rest=false, _builtin=true), such as customize_changeset, whose writes are meant to flow through dedicated helpers. Return true to opt a post type back in.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "7.1.1"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether the post type accepts XML-RPC writes.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$allowed"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The post type object.",
+                        "types": [
+                            "\\WP_Post_Type"
+                        ],
+                        "variable": "$post_type"
+                    }
+                ],
+                "long_description_html": "<p>Defaults to false for internal-only builtin post types (public=false, show_in_rest=false, _builtin=true), such as customize_changeset, whose writes are meant to flow through dedicated helpers. Return true to opt a post type back in.</p>"
+            },
+            "args": 2
         },
         {
             "name": "xmlrpc_blog_options",

@@ -2,6 +2,46 @@
 
 This document is automatically generated from the hooks extracted from WordPress and lists new actions, new filters, and parameter changes by version.
 
+## WordPress 7.2
+
+### New Actions
+
+- [`wp_admin_page_not_found`](https://developer.wordpress.org/reference/hooks/wp_admin_page_not_found/) - Fires when a request is made to access an admin page that does not exist.
+- [`wp_entity_actions_api_init`](https://developer.wordpress.org/reference/hooks/wp_entity_actions_api_init/) - Fires the first time the registered actions are read, after `init`.
+- [`wp_entity_fields_api_init`](https://developer.wordpress.org/reference/hooks/wp_entity_fields_api_init/) - Fires the first time the registered fields are read, after `init`.
+
+### New Filters
+
+- [`pre_wp_count_attachments`](https://developer.wordpress.org/reference/hooks/pre_wp_count_attachments/) - Filters the attachment counts before the query is run.
+- [`pre_wp_count_posts`](https://developer.wordpress.org/reference/hooks/pre_wp_count_posts/) - Filters the post counts before the query is run.
+- [`random_rewrite_rules`](https://developer.wordpress.org/reference/hooks/random_rewrite_rules/) - Filters rewrite rules used for random content redirects.
+- [`rest_allowed_cors_methods`](https://developer.wordpress.org/reference/hooks/rest_allowed_cors_methods/) - Filters the list of HTTP methods advertised to REST API CORS requests.
+- [`wp_ai_client_prevent_embedding`](https://developer.wordpress.org/reference/hooks/wp_ai_client_prevent_embedding/) - Filters whether to prevent the embedding generation from being executed.
+- [`wp_application_password_created_email`](https://developer.wordpress.org/reference/hooks/wp_application_password_created_email/) - Filters the contents of the email notification sent to a user when a new application password is created.
+- [`wp_change_password_url`](https://developer.wordpress.org/reference/hooks/wp_change_password_url/) - Filters the well-known change password URL (/.well-known/change-password).
+- [`wp_dashboard_on_this_day_query_args`](https://developer.wordpress.org/reference/hooks/wp_dashboard_on_this_day_query_args/) - Filters the arguments used to query posts for the On This Day section.
+- [`wp_enable_random_content_redirect`](https://developer.wordpress.org/reference/hooks/wp_enable_random_content_redirect/) - Filters whether random content redirects are enabled.
+- [`wp_feed_namespaces`](https://developer.wordpress.org/reference/hooks/wp_feed_namespaces/) - Filters the XML namespaces of a feed's root element.
+- [`wp_generate_animated_image_subsizes`](https://developer.wordpress.org/reference/hooks/wp_generate_animated_image_subsizes/) - Filters whether client-side media processing preserves animation in image sub-sizes.
+- [`wp_kses_force_legacy_parser`](https://developer.wordpress.org/reference/hooks/wp_kses_force_legacy_parser/) - Filters whether to rely on the legacy parsing inside `wp_kses()`.
+- [`wp_prefetch_admin_assets`](https://developer.wordpress.org/reference/hooks/wp_prefetch_admin_assets/) - Filters the assets prefetched for the screen the user is expected to open next.
+- [`wp_send_application_password_created_email`](https://developer.wordpress.org/reference/hooks/wp_send_application_password_created_email/) - Filters whether to send the application password created notification email.
+
+### Changes
+
+- [`admin_body_class`](https://developer.wordpress.org/reference/hooks/admin_body_class/) - Also applied in the Customizer context, where the body tag does not have the wp-admin class.
+- [`found_posts`](https://developer.wordpress.org/reference/hooks/found_posts/) - A negative return value is clamped to zero, as is a negative count from the {@see 'found_posts_query'} query before it is passed to this filter.
+- [`get_avatar_comment_types`](https://developer.wordpress.org/reference/hooks/get_avatar_comment_types/) - The 'reaction' comment type was added.
+- [`safe_style_css`](https://developer.wordpress.org/reference/hooks/safe_style_css/) - Added support for <code>background-clip</code> and its vendor prefixed companions.
+- [`widget_categories_args`](https://developer.wordpress.org/reference/hooks/widget_categories_args/) - The <code>show_count</code> and <code>hierarchical</code> arguments in <code>$cat_args</code> are now booleans instead of the numeric strings '0' and '1'.
+- [`widget_categories_dropdown_args`](https://developer.wordpress.org/reference/hooks/widget_categories_dropdown_args/) - The <code>show_count</code> and <code>hierarchical</code> arguments in <code>$cat_args</code> are now booleans instead of the numeric strings '0' and '1'.
+- [`wp_ability_permission_result`](https://developer.wordpress.org/reference/hooks/wp_ability_permission_result/) - Also fires with <code>false</code> when a required capability is missing.
+- [`wp_ai_client_default_request_timeout`](https://developer.wordpress.org/reference/hooks/wp_ai_client_default_request_timeout/) - Added the <code>$builder_type</code> parameter.
+- [`wp_ai_client_{$event_name}`](https://developer.wordpress.org/reference/hooks/wp_ai_client_event_name/) - Added the <code>wp_ai_client_before_generate_embedding</code> and <code>wp_ai_client_after_generate_embedding</code> action hooks.
+- [`wp_create_application_password`](https://developer.wordpress.org/reference/hooks/wp_create_application_password/) - The values in <code>$new_item</code> and <code>$args</code> are unslashed.
+- [`wp_register_ability_args`](https://developer.wordpress.org/reference/hooks/wp_register_ability_args/) - Added the <code>required_capabilities</code> argument.
+- [`wp_update_application_password`](https://developer.wordpress.org/reference/hooks/wp_update_application_password/) - The values in <code>$item</code> and <code>$update</code> are unslashed.
+
 ## WordPress 7.1
 
 ### New Actions
@@ -10,6 +50,7 @@ This document is automatically generated from the hooks extracted from WordPress
 
 ### New Filters
 
+- [`get_entity_view_config_{$kind}_{$name}`](https://developer.wordpress.org/reference/hooks/get_entity_view_config_kind_name/) - Filters the view configuration for a given entity.
 - [`is_user_member_of_blog`](https://developer.wordpress.org/reference/hooks/is_user_member_of_blog/) - Filters whether the user is a member of a given blog.
 - [`login_remember_me_help_text`](https://developer.wordpress.org/reference/hooks/login_remember_me_help_text/) - Filters the help text shown in the "Remember Me" tooltip on the login form.
 - [`rest_abilities_collection_params`](https://developer.wordpress.org/reference/hooks/rest_abilities_collection_params/) - Filters REST API collection parameters for the abilities controller.
@@ -23,10 +64,10 @@ This document is automatically generated from the hooks extracted from WordPress
 - [`wp_client_side_media_processing_enabled`](https://developer.wordpress.org/reference/hooks/wp_client_side_media_processing_enabled/) - Filters whether client-side media processing is enabled.
 - [`wp_get_abilities_item_include`](https://developer.wordpress.org/reference/hooks/wp_get_abilities_item_include/) - Filters whether an individual ability should be included in the result set.
 - [`wp_get_abilities_result`](https://developer.wordpress.org/reference/hooks/wp_get_abilities_result/) - Filters the full list of matched abilities after all per-item filtering is complete.
-- [`wp_get_entity_view_config_hook_name($kind, $name)`](https://developer.wordpress.org/reference/hooks/wp_get_entity_view_config_hook_name(kind, name)/) - Filters the view configuration for a given entity.
 - [`wp_json_schema_allowed_keywords`](https://developer.wordpress.org/reference/hooks/wp_json_schema_allowed_keywords/) - Filters the JSON Schema keywords allowed for a given schema profile.
 - [`wp_pre_execute_ability`](https://developer.wordpress.org/reference/hooks/wp_pre_execute_ability/) - Filters whether to short-circuit ability execution.
 - [`wp_should_disable_pings_for_environment`](https://developer.wordpress.org/reference/hooks/wp_should_disable_pings_for_environment/) - Filters whether pings should be disabled for the current environment.
+- [`xmlrpc_allow_post_type_writes`](https://developer.wordpress.org/reference/hooks/xmlrpc_allow_post_type_writes/) (7.1.1) - Filters whether a post type accepts writes via XML-RPC.
 
 ### Changes
 
@@ -37,6 +78,7 @@ This document is automatically generated from the hooks extracted from WordPress
 - [`wp_after_execute_ability`](https://developer.wordpress.org/reference/hooks/wp_after_execute_ability/) - Added the <code>$ability</code> parameter.
 - [`wp_before_execute_ability`](https://developer.wordpress.org/reference/hooks/wp_before_execute_ability/) - Added the <code>$ability</code> parameter.
 - [`wp_filesize`](https://developer.wordpress.org/reference/hooks/wp_filesize/) - The return value is now always zero or greater. Numeric values are cast to integers.
+- [`wp_register_ability_args`](https://developer.wordpress.org/reference/hooks/wp_register_ability_args/) - Added the <code>public</code> meta argument.
 
 ## WordPress 7.0
 
@@ -53,7 +95,6 @@ This document is automatically generated from the hooks extracted from WordPress
 - [`default_role_dropdown_excluded_roles`](https://developer.wordpress.org/reference/hooks/default_role_dropdown_excluded_roles/) - Filters the roles to be excluded from the default_role option.
 - [`plugins_list_status_text`](https://developer.wordpress.org/reference/hooks/plugins_list_status_text/) - Filters the status text of default switch case in the plugins list table.
 - [`propagate_network_user_spam_to_blogs`](https://developer.wordpress.org/reference/hooks/propagate_network_user_spam_to_blogs/) - Filters whether to propagate the blog status when a user is marked as spam.
-- [`rest_block_hooks_post_types`](https://developer.wordpress.org/reference/hooks/rest_block_hooks_post_types/) - Filters which post types should have Block Hooks applied.
 - [`rest_block_hooks_post_types`](https://developer.wordpress.org/reference/hooks/rest_block_hooks_post_types/) - Filters which post types should have Block Hooks applied.
 - [`wp_ai_client_default_request_timeout`](https://developer.wordpress.org/reference/hooks/wp_ai_client_default_request_timeout/) - Filters the default request timeout in seconds for AI Client HTTP requests.
 - [`wp_ai_client_prevent_prompt`](https://developer.wordpress.org/reference/hooks/wp_ai_client_prevent_prompt/) - Filters whether to prevent the prompt from being executed.
@@ -82,7 +123,7 @@ This document is automatically generated from the hooks extracted from WordPress
 - [`wp_abilities_api_categories_init`](https://developer.wordpress.org/reference/hooks/wp_abilities_api_categories_init/) - Fires when preparing ability categories registry.
 - [`wp_abilities_api_init`](https://developer.wordpress.org/reference/hooks/wp_abilities_api_init/) - Fires when preparing abilities registry.
 - [`wp_after_execute_ability`](https://developer.wordpress.org/reference/hooks/wp_after_execute_ability/) - Fires immediately after an ability finished executing.
-- [`wp_before_execute_ability`](https://developer.wordpress.org/reference/hooks/wp_before_execute_ability/) - Fires before an ability gets executed, after input validation and permissions check.
+- [`wp_before_execute_ability`](https://developer.wordpress.org/reference/hooks/wp_before_execute_ability/) - Fires before an ability gets executed, after input preparation and permissions check.
 - [`wp_before_include_template`](https://developer.wordpress.org/reference/hooks/wp_before_include_template/) - Fires immediately before including the template.
 - [`wp_finalized_template_enhancement_output_buffer`](https://developer.wordpress.org/reference/hooks/wp_finalized_template_enhancement_output_buffer/) - Fires after the template enhancement output buffer has been finalized.
 - [`wp_template_enhancement_output_buffer_started`](https://developer.wordpress.org/reference/hooks/wp_template_enhancement_output_buffer_started/) - Fires when the template enhancement output buffer has started.
@@ -91,7 +132,7 @@ This document is automatically generated from the hooks extracted from WordPress
 
 - [`block_bindings_supported_attributes`](https://developer.wordpress.org/reference/hooks/block_bindings_supported_attributes/) - Filters the supported block attributes for block bindings.
 - [`block_bindings_supported_attributes_{$block_type}`](https://developer.wordpress.org/reference/hooks/block_bindings_supported_attributes_block_type/) - Filters the supported block attributes for block bindings.
-- [`block_core_social_link_get_services`](https://developer.wordpress.org/reference/hooks/block_core_social_link_get_services/) - Filter the list of available social service.
+- [`block_core_social_link_get_services`](https://developer.wordpress.org/reference/hooks/block_core_social_link_get_services/) - Filters the list of available social service.
 - [`enqueue_empty_block_content_assets`](https://developer.wordpress.org/reference/hooks/enqueue_empty_block_content_assets/) - Filters whether to enqueue assets for a block which has no rendered content.
 - [`post_states_html`](https://developer.wordpress.org/reference/hooks/post_states_html/) - Filters the HTML string of post states.
 - [`pre_site_option`](https://developer.wordpress.org/reference/hooks/pre_site_option/) - Filters the value of any existing network option before it is retrieved.
@@ -107,9 +148,9 @@ This document is automatically generated from the hooks extracted from WordPress
 
 ### Changes
 
+- [`get_avatar_comment_types`](https://developer.wordpress.org/reference/hooks/get_avatar_comment_types/) - The 'note' comment type was added.
 - [`get_{$adjacent}_post_sort`](https://developer.wordpress.org/reference/hooks/get_adjacent_post_sort/) - Adds ID sort to ensure deterministic ordering for posts with identical dates.
 - [`get_{$adjacent}_post_where`](https://developer.wordpress.org/reference/hooks/get_adjacent_post_where/) - Adds ID-based fallback for posts with identical dates in adjacent post queries.
-- [`get_avatar_comment_types`](https://developer.wordpress.org/reference/hooks/get_avatar_comment_types/) - The 'note' comment type was added.
 - [`pre_wp_mail`](https://developer.wordpress.org/reference/hooks/pre_wp_mail/) - The <code>$embeds</code> element was added to the <code>$atts</code> array.
 - [`styles_inline_size_limit`](https://developer.wordpress.org/reference/hooks/styles_inline_size_limit/) - The default limit increased from 20K to 40K.
 - [`wp_mail_succeeded`](https://developer.wordpress.org/reference/hooks/wp_mail_succeeded/) - The <code>$embeds</code> element was added to the <code>$mail_data</code> array.
@@ -386,25 +427,25 @@ _No new actions in this version._
 ### Changes
 
 - [`core_version_check_query_args`](https://developer.wordpress.org/reference/hooks/core_version_check_query_args/) - Added <code>$extensions</code>, <code>$platform_flags</code>, and <code>$image_support</code> to the <code>$query</code> parameter.
-- [`create_{$taxonomy}`](https://developer.wordpress.org/reference/hooks/create_taxonomy/) - The <code>$args</code> parameter was added.
 - [`create_term`](https://developer.wordpress.org/reference/hooks/create_term/) - The <code>$args</code> parameter was added.
-- [`created_{$taxonomy}`](https://developer.wordpress.org/reference/hooks/created_taxonomy/) - The <code>$args</code> parameter was added.
+- [`create_{$taxonomy}`](https://developer.wordpress.org/reference/hooks/create_taxonomy/) - The <code>$args</code> parameter was added.
 - [`created_term`](https://developer.wordpress.org/reference/hooks/created_term/) - The <code>$args</code> parameter was added.
-- [`edit_{$taxonomy}`](https://developer.wordpress.org/reference/hooks/edit_taxonomy/) - The <code>$args</code> parameter was added.
+- [`created_{$taxonomy}`](https://developer.wordpress.org/reference/hooks/created_taxonomy/) - The <code>$args</code> parameter was added.
 - [`edit_term_taxonomy`](https://developer.wordpress.org/reference/hooks/edit_term_taxonomy/) - The <code>$args</code> parameter was added.
 - [`edit_term`](https://developer.wordpress.org/reference/hooks/edit_term/) - The <code>$args</code> parameter was added.
 - [`edit_terms`](https://developer.wordpress.org/reference/hooks/edit_terms/) - The <code>$args</code> parameter was added.
-- [`edited_{$taxonomy}`](https://developer.wordpress.org/reference/hooks/edited_taxonomy/) - The <code>$args</code> parameter was added.
+- [`edit_{$taxonomy}`](https://developer.wordpress.org/reference/hooks/edit_taxonomy/) - The <code>$args</code> parameter was added.
 - [`edited_term_taxonomy`](https://developer.wordpress.org/reference/hooks/edited_term_taxonomy/) - The <code>$args</code> parameter was added.
 - [`edited_term`](https://developer.wordpress.org/reference/hooks/edited_term/) - The <code>$args</code> parameter was added.
 - [`edited_terms`](https://developer.wordpress.org/reference/hooks/edited_terms/) - The <code>$args</code> parameter was added.
-- [`install_themes_{$tab}`](https://developer.wordpress.org/reference/hooks/install_themes_tab/) - Added the <code>install_themes_block-themes</code> hook name.
+- [`edited_{$taxonomy}`](https://developer.wordpress.org/reference/hooks/edited_taxonomy/) - The <code>$args</code> parameter was added.
 - [`install_themes_pre_{$tab}`](https://developer.wordpress.org/reference/hooks/install_themes_pre_tab/) - Added the <code>install_themes_pre_block-themes</code> hook name.
+- [`install_themes_{$tab}`](https://developer.wordpress.org/reference/hooks/install_themes_tab/) - Added the <code>install_themes_block-themes</code> hook name.
 - [`nonce_life`](https://developer.wordpress.org/reference/hooks/nonce_life/) - Added <code>$action</code> argument to allow for more targeted filters.
 - [`override_unload_textdomain`](https://developer.wordpress.org/reference/hooks/override_unload_textdomain/) - Added the <code>$reloadable</code> parameter.
 - [`pre_insert_term`](https://developer.wordpress.org/reference/hooks/pre_insert_term/) - The <code>$args</code> parameter was added.
-- [`saved_{$taxonomy}`](https://developer.wordpress.org/reference/hooks/saved_taxonomy/) - The <code>$args</code> parameter was added.
 - [`saved_term`](https://developer.wordpress.org/reference/hooks/saved_term/) - The <code>$args</code> parameter was added.
+- [`saved_{$taxonomy}`](https://developer.wordpress.org/reference/hooks/saved_taxonomy/) - The <code>$args</code> parameter was added.
 - [`term_id_filter`](https://developer.wordpress.org/reference/hooks/term_id_filter/) - The <code>$args</code> parameter was added.
 - [`unload_textdomain`](https://developer.wordpress.org/reference/hooks/unload_textdomain/) - Added the <code>$reloadable</code> parameter.
 - [`wp_sitemaps_posts_query_args`](https://developer.wordpress.org/reference/hooks/wp_sitemaps_posts_query_args/) - Added <code>ignore_sticky_posts</code> default parameter.
@@ -485,13 +526,13 @@ _No new actions in this version._
 
 ### Changes
 
-- [`{$new_status}_{$post->post_type}`](https://developer.wordpress.org/reference/hooks/new_status_post-post_type/) - Added <code>$old_status</code> parameter.
 - [`pre_render_block`](https://developer.wordpress.org/reference/hooks/pre_render_block/) - The <code>$parent_block</code> parameter was added.
 - [`registration_redirect`](https://developer.wordpress.org/reference/hooks/registration_redirect/) - Added the <code>$errors</code> parameter.
-- [`render_block_{$this->name}`](https://developer.wordpress.org/reference/hooks/render_block_this-name/) - The <code>$instance</code> parameter was added.
 - [`render_block_context`](https://developer.wordpress.org/reference/hooks/render_block_context/) - The <code>$parent_block</code> parameter was added.
 - [`render_block_data`](https://developer.wordpress.org/reference/hooks/render_block_data/) - The <code>$parent_block</code> parameter was added.
+- [`render_block_{$this->name}`](https://developer.wordpress.org/reference/hooks/render_block_this-name/) - The <code>$instance</code> parameter was added.
 - [`render_block`](https://developer.wordpress.org/reference/hooks/render_block/) - The <code>$instance</code> parameter was added.
+- [`{$new_status}_{$post->post_type}`](https://developer.wordpress.org/reference/hooks/new_status_post-post_type/) - Added <code>$old_status</code> parameter.
 
 ## WordPress 5.8
 
@@ -600,8 +641,8 @@ _No new actions in this version._
 - [`application_password_failed_authentication`](https://developer.wordpress.org/reference/hooks/application_password_failed_authentication/) - Fires when an application password failed to authenticate the user.
 - [`do_all_pings`](https://developer.wordpress.org/reference/hooks/do_all_pings/) - Fires immediately after the `do_pings` event to hook services individually.
 - [`is_wp_error_instance`](https://developer.wordpress.org/reference/hooks/is_wp_error_instance/) - Fires when `is_wp_error()` is called and its parameter is an instance of WP_Error.
-- [`manage_{$this->screen->id}_custom_column`](https://developer.wordpress.org/reference/hooks/manage_this-screen-id_custom_column/) - Fires for each custom column in the Application Passwords list table.
-- [`manage_{$this->screen->id}_custom_column_js_template`](https://developer.wordpress.org/reference/hooks/manage_this-screen-id_custom_column_js_template/) - Fires in the JavaScript row template for each custom column in the Application Passwords list table.
+- [`manage_application-passwords-user_custom_column`](https://developer.wordpress.org/reference/hooks/manage_application-passwords-user_custom_column/) - Fires for each custom column in the Application Passwords list table.
+- [`manage_application-passwords-user_custom_column_js_template`](https://developer.wordpress.org/reference/hooks/manage_application-passwords-user_custom_column_js_template/) - Fires in the JavaScript row template for each custom column in the Application Passwords list table.
 - [`network_site_info_form`](https://developer.wordpress.org/reference/hooks/network_site_info_form/) - Fires at the end of the site info form in network admin.
 - [`rest_after_insert_application_password`](https://developer.wordpress.org/reference/hooks/rest_after_insert_application_password/) - Fires after a single application password is completely created or updated via the REST API.
 - [`wp_after_insert_post`](https://developer.wordpress.org/reference/hooks/wp_after_insert_post/) - Fires once a post, its terms and meta data has been saved.
@@ -737,11 +778,6 @@ _No new actions in this version._
 - [`wp_sitemaps_posts_pre_url_list`](https://developer.wordpress.org/reference/hooks/wp_sitemaps_posts_pre_url_list/) - Filters the posts URL list before it is generated.
 - [`wp_sitemaps_posts_query_args`](https://developer.wordpress.org/reference/hooks/wp_sitemaps_posts_query_args/) - Filters the query arguments for post type sitemap queries.
 - [`wp_sitemaps_posts_show_on_front_entry`](https://developer.wordpress.org/reference/hooks/wp_sitemaps_posts_show_on_front_entry/) - Filters the sitemap entry for the home page when the 'show_on_front' option equals 'posts'.
-- [`wp_sitemaps_stylesheet_content`](https://developer.wordpress.org/reference/hooks/wp_sitemaps_stylesheet_content/) - Filters the content of the sitemap stylesheet.
-- [`wp_sitemaps_stylesheet_css`](https://developer.wordpress.org/reference/hooks/wp_sitemaps_stylesheet_css/) - Filters the CSS only for the sitemap stylesheet.
-- [`wp_sitemaps_stylesheet_index_content`](https://developer.wordpress.org/reference/hooks/wp_sitemaps_stylesheet_index_content/) - Filters the content of the sitemap index stylesheet.
-- [`wp_sitemaps_stylesheet_index_url`](https://developer.wordpress.org/reference/hooks/wp_sitemaps_stylesheet_index_url/) - Filters the URL for the sitemap index stylesheet.
-- [`wp_sitemaps_stylesheet_url`](https://developer.wordpress.org/reference/hooks/wp_sitemaps_stylesheet_url/) - Filters the URL for the sitemap stylesheet.
 - [`wp_sitemaps_taxonomies`](https://developer.wordpress.org/reference/hooks/wp_sitemaps_taxonomies/) - Filters the list of taxonomy object subtypes available within the sitemap.
 - [`wp_sitemaps_taxonomies_entry`](https://developer.wordpress.org/reference/hooks/wp_sitemaps_taxonomies_entry/) - Filters the sitemap entry for an individual term.
 - [`wp_sitemaps_taxonomies_pre_max_num_pages`](https://developer.wordpress.org/reference/hooks/wp_sitemaps_taxonomies_pre_max_num_pages/) - Filters the max number of pages for a taxonomy sitemap before it is generated.
@@ -770,7 +806,6 @@ _No new actions in this version._
 - [`deleted_user`](https://developer.wordpress.org/reference/hooks/deleted_user/) - Added the <code>$user</code> parameter.
 - [`disable_formats_dropdown`](https://developer.wordpress.org/reference/hooks/disable_formats_dropdown/) - The <code>$post_type</code> parameter was added.
 - [`display_post_states`](https://developer.wordpress.org/reference/hooks/display_post_states/) - Also applied in the Customizer context. If any admin functions are used within the filter, their existence should be checked with <code>function_exists()</code> before being used.
-- [`get_{$meta_type}_metadata`](https://developer.wordpress.org/reference/hooks/get_meta_type_metadata/) - Added the <code>$meta_type</code> parameter.
 - [`get_footer`](https://developer.wordpress.org/reference/hooks/get_footer/) - The <code>$args</code> parameter was added.
 - [`get_header`](https://developer.wordpress.org/reference/hooks/get_header/) - The <code>$args</code> parameter was added.
 - [`get_lastpostdate`](https://developer.wordpress.org/reference/hooks/get_lastpostdate/) - Added the <code>$post_type</code> parameter.
@@ -780,6 +815,7 @@ _No new actions in this version._
 - [`get_template_part_{$slug}`](https://developer.wordpress.org/reference/hooks/get_template_part_slug/) - The <code>$args</code> parameter was added.
 - [`get_template_part`](https://developer.wordpress.org/reference/hooks/get_template_part/) - The <code>$args</code> parameter was added.
 - [`get_the_archive_title`](https://developer.wordpress.org/reference/hooks/get_the_archive_title/) - Added the <code>$prefix</code> and <code>$original_title</code> parameters.
+- [`get_{$meta_type}_metadata`](https://developer.wordpress.org/reference/hooks/get_meta_type_metadata/) - Added the <code>$meta_type</code> parameter.
 - [`post_date_column_time`](https://developer.wordpress.org/reference/hooks/post_date_column_time/) - Removed the difference between 'excerpt' and 'list' modes. The published time and date are both displayed now, which is equivalent to the previous 'excerpt' mode.
 - [`pre_get_search_form`](https://developer.wordpress.org/reference/hooks/pre_get_search_form/) - The <code>$args</code> parameter was added.
 - [`search_form_format`](https://developer.wordpress.org/reference/hooks/search_form_format/) - The <code>$args</code> parameter was added.
@@ -1181,13 +1217,13 @@ _No new actions in this version._
 
 ### Changes
 
-- [`{$type}_template`](https://developer.wordpress.org/reference/hooks/type_template/) - The <code>$type</code> and <code>$templates</code> parameters were added.
 - [`display_media_states`](https://developer.wordpress.org/reference/hooks/display_media_states/) - Added the <code>$post</code> parameter.
 - [`media_library_show_audio_playlist`](https://developer.wordpress.org/reference/hooks/media_library_show_audio_playlist/) - The filter's default value is <code>true</code> rather than <code>null</code>.
 - [`media_library_show_video_playlist`](https://developer.wordpress.org/reference/hooks/media_library_show_video_playlist/) - The filter's default value is <code>true</code> rather than <code>null</code>.
 - [`rest_pre_insert_comment`](https://developer.wordpress.org/reference/hooks/rest_pre_insert_comment/) - <code>$prepared_comment</code> can now be a WP_Error to short-circuit insertion.
 - [`widget_text`](https://developer.wordpress.org/reference/hooks/widget_text/) (4.8.1) - The <code>$widget</code> param may now be a <code>WP_Widget_Custom_HTML</code> object in addition to a <code>WP_Widget_Text</code> object.
 - [`wp_is_large_network`](https://developer.wordpress.org/reference/hooks/wp_is_large_network/) - The <code>$network_id</code> parameter has been added.
+- [`{$type}_template`](https://developer.wordpress.org/reference/hooks/type_template/) - The <code>$type</code> and <code>$templates</code> parameters were added.
 
 ## WordPress 4.7
 
@@ -1426,9 +1462,9 @@ _No new actions in this version._
 - [`clean_term_cache`](https://developer.wordpress.org/reference/hooks/clean_term_cache/) - Added the <code>$clean_taxonomy</code> parameter.
 - [`comment_post`](https://developer.wordpress.org/reference/hooks/comment_post/) - The <code>$commentdata</code> parameter was added.
 - [`cron_request`](https://developer.wordpress.org/reference/hooks/cron_request/) - The <code>$doing_wp_cron</code> parameter was added.
-- [`delete_{$taxonomy}`](https://developer.wordpress.org/reference/hooks/delete_taxonomy/) - Introduced the <code>$object_ids</code> argument.
 - [`delete_term`](https://developer.wordpress.org/reference/hooks/delete_term/) - Introduced the <code>$object_ids</code> argument.
 - [`delete_user_form`](https://developer.wordpress.org/reference/hooks/delete_user_form/) - The <code>$user_ids</code> parameter was added.
+- [`delete_{$taxonomy}`](https://developer.wordpress.org/reference/hooks/delete_taxonomy/) - Introduced the <code>$object_ids</code> argument.
 - [`deprecated_constructor_run`](https://developer.wordpress.org/reference/hooks/deprecated_constructor_run/) - Added the <code>$parent_class</code> parameter.
 - [`embed_thumbnail_image_shape`](https://developer.wordpress.org/reference/hooks/embed_thumbnail_image_shape/) - Added <code>$thumbnail_id</code> parameter.
 - [`embed_thumbnail_image_size`](https://developer.wordpress.org/reference/hooks/embed_thumbnail_image_size/) - Added <code>$thumbnail_id</code> parameter.
@@ -1584,15 +1620,15 @@ _No new actions in this version._
 - [`do_feed_{$feed}`](https://developer.wordpress.org/reference/hooks/do_feed_feed/) - The <code>$feed</code> parameter was added.
 - [`editable_slug`](https://developer.wordpress.org/reference/hooks/editable_slug/) - The <code>$tag</code> parameter was added.
 - [`embed_oembed_discover`](https://developer.wordpress.org/reference/hooks/embed_oembed_discover/) - The default value changed to true.
-- [`get_{$adjacent}_post_join`](https://developer.wordpress.org/reference/hooks/get_adjacent_post_join/) - Added the <code>$taxonomy</code> and <code>$post</code> parameters.
-- [`get_{$adjacent}_post_sort`](https://developer.wordpress.org/reference/hooks/get_adjacent_post_sort/) - Added the <code>$post</code> parameter.
-- [`get_{$adjacent}_post_where`](https://developer.wordpress.org/reference/hooks/get_adjacent_post_where/) - Added the <code>$taxonomy</code> and <code>$post</code> parameters.
-- [`get_{$taxonomy}`](https://developer.wordpress.org/reference/hooks/get_taxonomy/) - <code>$_term</code> is now a WP_Term object.
 - [`get_comment_link`](https://developer.wordpress.org/reference/hooks/get_comment_link/) - Added the <code>$cpage</code> parameter.
 - [`get_sample_permalink_html`](https://developer.wordpress.org/reference/hooks/get_sample_permalink_html/) - Added <code>$post</code> parameter.
 - [`get_term`](https://developer.wordpress.org/reference/hooks/get_term/) - <code>$_term</code> is now a WP_Term object.
 - [`get_the_categories`](https://developer.wordpress.org/reference/hooks/get_the_categories/) - Added the <code>$post_id</code> parameter.
 - [`get_wp_title_rss`](https://developer.wordpress.org/reference/hooks/get_wp_title_rss/) - The <code>$sep</code> parameter was deprecated and renamed to <code>$deprecated</code>.
+- [`get_{$adjacent}_post_join`](https://developer.wordpress.org/reference/hooks/get_adjacent_post_join/) - Added the <code>$taxonomy</code> and <code>$post</code> parameters.
+- [`get_{$adjacent}_post_sort`](https://developer.wordpress.org/reference/hooks/get_adjacent_post_sort/) - Added the <code>$post</code> parameter.
+- [`get_{$adjacent}_post_where`](https://developer.wordpress.org/reference/hooks/get_adjacent_post_where/) - Added the <code>$taxonomy</code> and <code>$post</code> parameters.
+- [`get_{$taxonomy}`](https://developer.wordpress.org/reference/hooks/get_taxonomy/) - <code>$_term</code> is now a WP_Term object.
 - [`hidden_columns`](https://developer.wordpress.org/reference/hooks/hidden_columns/) (4.4.1) - Added the <code>use_defaults</code> parameter.
 - [`intermediate_image_sizes_advanced`](https://developer.wordpress.org/reference/hooks/intermediate_image_sizes_advanced/) - Added the <code>$image_meta</code> argument.
 - [`lostpassword_post`](https://developer.wordpress.org/reference/hooks/lostpassword_post/) - Added the <code>$errors</code> parameter.
@@ -1720,13 +1756,13 @@ _No new actions in this version._
 
 ### Changes
 
-- [`{$adjacent}_post_link`](https://developer.wordpress.org/reference/hooks/adjacent_post_link/) - Added the <code>$adjacent</code> parameter.
 - [`get_avatar`](https://developer.wordpress.org/reference/hooks/get_avatar/) - Added the <code>$args</code> parameter.
 - [`login_url`](https://developer.wordpress.org/reference/hooks/login_url/) - The <code>$force_reauth</code> parameter was added.
 - [`post_gallery`](https://developer.wordpress.org/reference/hooks/post_gallery/) - The <code>$instance</code> parameter was added.
 - [`post_playlist`](https://developer.wordpress.org/reference/hooks/post_playlist/) - The <code>$instance</code> parameter was added.
 - [`pre_set_transient_{$transient}`](https://developer.wordpress.org/reference/hooks/pre_set_transient_transient/) - The <code>$expiration</code> parameter was added.
 - [`taxonomy_parent_dropdown_args`](https://developer.wordpress.org/reference/hooks/taxonomy_parent_dropdown_args/) - Added <code>$context</code> parameter.
+- [`{$adjacent}_post_link`](https://developer.wordpress.org/reference/hooks/adjacent_post_link/) - Added the <code>$adjacent</code> parameter.
 
 ## WordPress 4.1
 
@@ -1764,13 +1800,13 @@ _No new actions in this version._
 - [`comment_url`](https://developer.wordpress.org/reference/hooks/comment_url/) - The <code>$comment_id</code> parameter was added.
 - [`date_query_valid_columns`](https://developer.wordpress.org/reference/hooks/date_query_valid_columns/) - Added 'user_registered' to the default recognized columns.
 - [`get_ancestors`](https://developer.wordpress.org/reference/hooks/get_ancestors/) (4.1.1) - Introduced the <code>$resource_type</code> parameter.
-- [`get_comment_author_email`](https://developer.wordpress.org/reference/hooks/get_comment_author_email/) - The <code>$comment_id</code> and <code>$comment</code> parameters were added.
+- [`get_comment_ID`](https://developer.wordpress.org/reference/hooks/get_comment_ID/) - The <code>$comment</code> parameter was added.
 - [`get_comment_author_IP`](https://developer.wordpress.org/reference/hooks/get_comment_author_IP/) - The <code>$comment_id</code> and <code>$comment</code> parameters were added.
+- [`get_comment_author_email`](https://developer.wordpress.org/reference/hooks/get_comment_author_email/) - The <code>$comment_id</code> and <code>$comment</code> parameters were added.
 - [`get_comment_author_link`](https://developer.wordpress.org/reference/hooks/get_comment_author_link/) - The <code>$comment_author</code> and <code>$comment_id</code> parameters were added.
 - [`get_comment_author_url`](https://developer.wordpress.org/reference/hooks/get_comment_author_url/) - The <code>$comment_id</code> and <code>$comment</code> parameters were added.
 - [`get_comment_author`](https://developer.wordpress.org/reference/hooks/get_comment_author/) - The <code>$comment_id</code> and <code>$comment</code> parameters were added.
 - [`get_comment_excerpt`](https://developer.wordpress.org/reference/hooks/get_comment_excerpt/) - The <code>$comment_id</code> and <code>$comment</code> parameters were added.
-- [`get_comment_ID`](https://developer.wordpress.org/reference/hooks/get_comment_ID/) - The <code>$comment</code> parameter was added.
 - [`get_comment_type`](https://developer.wordpress.org/reference/hooks/get_comment_type/) - The <code>$comment_id</code> and <code>$comment</code> parameters were added.
 - [`get_usernumposts`](https://developer.wordpress.org/reference/hooks/get_usernumposts/) - Added <code>$post_type</code> argument.
 - [`nav_menu_css_class`](https://developer.wordpress.org/reference/hooks/nav_menu_css_class/) - The <code>$depth</code> parameter was added.
@@ -1815,10 +1851,10 @@ _No new actions in this version._
 
 ### Changes
 
-- [`{$action}_prefilter`](https://developer.wordpress.org/reference/hooks/action_prefilter/) - Converted to a dynamic hook with <code>$action</code>.
 - [`auth_cookie`](https://developer.wordpress.org/reference/hooks/auth_cookie/) - The <code>$token</code> parameter was added.
 - [`date_formats`](https://developer.wordpress.org/reference/hooks/date_formats/) - Replaced the <code>Y/m/d</code> format with <code>Y-m-d</code> (ISO date standard YYYY-MM-DD).
 - [`preview_post_link`](https://developer.wordpress.org/reference/hooks/preview_post_link/) - Added the <code>$post</code> parameter.
+- [`{$action}_prefilter`](https://developer.wordpress.org/reference/hooks/action_prefilter/) - Converted to a dynamic hook with <code>$action</code>.
 
 ## WordPress 3.9
 
@@ -2179,7 +2215,6 @@ _No changes in this version._
 - [`page_attributes_dropdown_pages_args`](https://developer.wordpress.org/reference/hooks/page_attributes_dropdown_pages_args/) - Filters the arguments used to generate a Pages drop-down element.
 - [`plupload_init`](https://developer.wordpress.org/reference/hooks/plupload_init/) - Filters the default Plupload settings.
 - [`pre_ent2ncr`](https://developer.wordpress.org/reference/hooks/pre_ent2ncr/) - Filters text before named entities are converted into numbered entities.
-- [`print_late_styles`](https://developer.wordpress.org/reference/hooks/print_late_styles/) - Filters whether to print the styles queued too late for the HTML head.
 - [`quicktags_settings`](https://developer.wordpress.org/reference/hooks/quicktags_settings/) - Filters the Quicktags settings.
 - [`sanitize_{$object_type}_meta_{$meta_key}`](https://developer.wordpress.org/reference/hooks/sanitize_object_type_meta_meta_key/) - Filters the sanitization of a specific meta key of a specific meta type.
 - [`tiny_mce_plugins`](https://developer.wordpress.org/reference/hooks/tiny_mce_plugins/) - Filters the list of default TinyMCE plugins.
@@ -2455,6 +2490,7 @@ _No changes in this version._
 - [`delete_site_email_content`](https://developer.wordpress.org/reference/hooks/delete_site_email_content/) - Filters the text for the email sent to the site admin when a request to delete a site in a Multisite network is submitted.
 - [`deprecated_argument_trigger_error`](https://developer.wordpress.org/reference/hooks/deprecated_argument_trigger_error/) - Filters whether to trigger an error for deprecated arguments.
 - [`edit_{$post_type}_per_page`](https://developer.wordpress.org/reference/hooks/edit_post_type_per_page/) - Filters the number of items per page to show for a specific 'per_page' type.
+- [`enable_edit_any_user_configuration`](https://developer.wordpress.org/reference/hooks/enable_edit_any_user_configuration/) - Filters whether to allow administrators on Multisite to edit every user.
 - [`enable_post_by_email_configuration`](https://developer.wordpress.org/reference/hooks/enable_post_by_email_configuration/) - Filters whether the post-by-email functionality is enabled.
 - [`enable_update_services_configuration`](https://developer.wordpress.org/reference/hooks/enable_update_services_configuration/) - Filters whether to enable the Update Services section in the Writing settings screen.
 - [`get_avatar_comment_types`](https://developer.wordpress.org/reference/hooks/get_avatar_comment_types/) - Filters the list of allowed comment types for retrieving avatars.
@@ -2660,7 +2696,6 @@ _No changes in this version._
 
 ### Changes
 
-- [`{$action}_prefilter`](https://developer.wordpress.org/reference/hooks/action_prefilter/) - as 'wp_handle_upload_prefilter'.
 - [`add_site_option_{$option}`](https://developer.wordpress.org/reference/hooks/add_site_option_option/) - As <code>add_site_option_{$key}</code>.
 - [`delete_site_option_{$option}`](https://developer.wordpress.org/reference/hooks/delete_site_option_option/) - As <code>delete_site_option_{$key}</code>.
 - [`pre_add_site_option_{$option}`](https://developer.wordpress.org/reference/hooks/pre_add_site_option_option/) - As <code>pre_add_site_option_{$key}</code>.
@@ -2668,6 +2703,7 @@ _No changes in this version._
 - [`pre_update_site_option_{$option}`](https://developer.wordpress.org/reference/hooks/pre_update_site_option_option/) - As 'pre_update_site<em>option</em>' . $key
 - [`site_option_{$option}`](https://developer.wordpress.org/reference/hooks/site_option_option/) - As <code>site_option_{$key}</code>.
 - [`update_site_option_{$option}`](https://developer.wordpress.org/reference/hooks/update_site_option_option/) - As "update_site<em>option</em>{$key}"
+- [`{$action}_prefilter`](https://developer.wordpress.org/reference/hooks/action_prefilter/) - as 'wp_handle_upload_prefilter'.
 
 ## WordPress 2.8
 
@@ -2768,9 +2804,6 @@ _No changes in this version._
 - [`post_comments_feed_link_html`](https://developer.wordpress.org/reference/hooks/post_comments_feed_link_html/) - Filters the post comment feed link anchor tag.
 - [`post_row_actions`](https://developer.wordpress.org/reference/hooks/post_row_actions/) - Filters the array of row action links on the Posts list table.
 - [`pre_transient_{$transient}`](https://developer.wordpress.org/reference/hooks/pre_transient_transient/) - Filters the value of an existing transient before it is retrieved.
-- [`print_admin_styles`](https://developer.wordpress.org/reference/hooks/print_admin_styles/) - Filters whether to print the admin styles.
-- [`print_footer_scripts`](https://developer.wordpress.org/reference/hooks/print_footer_scripts/) - Filters whether to print the footer scripts.
-- [`print_head_scripts`](https://developer.wordpress.org/reference/hooks/print_head_scripts/) - Filters whether to print the head scripts.
 - [`private_title_format`](https://developer.wordpress.org/reference/hooks/private_title_format/) - Filters the text prepended to the post title of private posts.
 - [`protected_title_format`](https://developer.wordpress.org/reference/hooks/protected_title_format/) - Filters the text prepended to the post title for protected posts.
 - [`retrieve_password_message`](https://developer.wordpress.org/reference/hooks/retrieve_password_message/) - Filters the message body of the password reset mail.
