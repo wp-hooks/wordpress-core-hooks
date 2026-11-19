@@ -30,7 +30,7 @@
 	},
 	"require-dev": {
 		"erusev/parsedown": "1.8.0-beta-7",
-		"wp-hooks/generator": "1.0.2",
+		"wp-hooks/generator": "1.0.3",
 		"oomphinc/composer-installers-extender": "^2",
 		"roots/wordpress-core-installer": "^1.0.0",
 		"roots/wordpress-full": "7.2-RC2"
